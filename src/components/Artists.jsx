@@ -66,7 +66,7 @@ const Artists = () => {
   ]
 
   return (
-    <section id="artists" className="bg-gradient-to-br from-gray-900 to-black relative overflow-hidden">
+    <section id="artists" className="bg-gradient-to-br from-gray-900 to-black relative overflow-hidden py-20">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 opacity-10">
         <motion.div
@@ -97,13 +97,13 @@ const Artists = () => {
       </div>
 
       <div className="container relative z-10">
-        <motion.div
-          ref={ref}
-          variants={containerVariants}
-          initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
-          className="content-wrapper"
-        >
+        <div className="content-wrapper">
+          <motion.div
+            ref={ref}
+            variants={containerVariants}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+          >
           {/* Section Header */}
           <motion.div variants={itemVariants} className="section-header">
             <h2 className="heading-font text-section-title text-white section-title">
@@ -228,7 +228,8 @@ const Artists = () => {
               Become an Artist
             </motion.button>
           </motion.div>
-        </motion.div>
+          </motion.div>
+        </div>
       </div>
     </section>
   )

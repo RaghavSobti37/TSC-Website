@@ -80,7 +80,7 @@ const Team = () => {
   ]
 
   return (
-    <section id="team" className="bg-gradient-to-br from-white to-gray-50 relative overflow-hidden">
+    <section id="team" className="bg-gradient-to-br from-white to-gray-50 relative overflow-hidden py-20">
       {/* Background Elements */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-primary-teal rounded-full blur-3xl" />
@@ -88,13 +88,13 @@ const Team = () => {
       </div>
 
       <div className="container relative z-10">
-        <motion.div
-          ref={ref}
-          variants={containerVariants}
-          initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
-          className="content-wrapper"
-        >
+        <div className="content-wrapper">
+          <motion.div
+            ref={ref}
+            variants={containerVariants}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+          >
           {/* Section Header */}
           <motion.div variants={itemVariants} className="section-header">
             <h2 className="heading-font text-section-title font-bold text-gray-900 section-title">
@@ -192,7 +192,8 @@ const Team = () => {
               </motion.button>
             </div>
           </motion.div>
-        </motion.div>
+          </motion.div>
+        </div>
       </div>
     </section>
   )

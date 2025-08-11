@@ -39,7 +39,7 @@ const About = () => {
   }
 
   return (
-    <section id="about" className="section-gradient relative overflow-hidden">
+    <section id="about" className="section-gradient relative overflow-hidden py-20">
       {/* Enhanced Background Elements */}
       <div className="absolute inset-0 opacity-30">
         <div className="floating-orb absolute top-20 left-10 w-96 h-96 bg-primary-teal" />
@@ -56,13 +56,13 @@ const About = () => {
       </motion.div>
 
       <div className="container relative z-10">
-        <motion.div
-          ref={ref}
-          variants={containerVariants}
-          initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
-          className="content-wrapper"
-        >
+        <div className="content-wrapper">
+          <motion.div
+            ref={ref}
+            variants={containerVariants}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+          >
           {/* Section Header with Enhanced Design */}
           <motion.div variants={itemVariants} className="section-header">
             <h2 className="heading-font text-section-title text-gray-900 section-title">
@@ -220,7 +220,8 @@ const About = () => {
               </div>
             </div>
           </motion.div>
-        </motion.div>
+          </motion.div>
+        </div>
       </div>
 
       {/* Section Transition */}

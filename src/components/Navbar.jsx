@@ -93,12 +93,12 @@ const Navbar = ({ scrollY }) => {
             </motion.div>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-12">
+            <div className="hidden md:flex items-center space-x-16">
               {navItems.map((item) => (
                 <motion.button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className={`text-base font-medium transition-all duration-300 relative group py-2 px-3 ${
+                  className={`text-base font-medium transition-all duration-300 relative group py-3 px-6 ${
                     activeSection === item.id
                       ? 'text-primary-teal'
                       : scrollY > 50

@@ -26,17 +26,17 @@ const Footer = () => {
     >
       {/* Background Elements */}
       <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-[var(--primary-teal)] rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-[var(--secondary-orange)] rounded-full blur-3xl" />
+        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary-teal rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-secondary-orange rounded-full blur-3xl" />
       </div>
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container relative z-10">
         {/* Main Footer Content */}
-        <div className="py-16 grid md:grid-cols-4 gap-8">
+        <div className="section-spacing grid md:grid-cols-4 gap-8">
           {/* Brand Section */}
           <div className="md:col-span-2">
             <motion.div
-              className="flex items-center space-x-3 mb-6"
+              className="flex items-center space-x-3 element-spacing"
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.2 }}
             >
@@ -45,15 +45,15 @@ const Footer = () => {
                 alt="The Shakti Collective" 
                 className="h-12 w-auto"
               />
-              <span className="heading-font text-2xl font-semibold text-gradient">
+              <span className="heading-font text-card-title font-semibold text-gradient">
                 The Shakti Collective
               </span>
             </motion.div>
-            <p className="text-gray-300 leading-relaxed mb-6 max-w-md">
+            <p className="text-gray-300 text-body max-w-md element-spacing">
               Empowering artists to share their stories through powerful visual narratives. 
               Join our community where creativity meets authentic storytelling.
             </p>
-            <div className="flex space-x-4">
+            <div className="flex space-x-6">
               {[
                 { name: 'Facebook', icon: 'facebook' },
                 { name: 'Instagram', icon: 'instagram' },
@@ -63,7 +63,7 @@ const Footer = () => {
                 <motion.a
                   key={social.name}
                   href="#"
-                  className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-[var(--primary-teal)] transition-all duration-300"
+                  className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center hover:bg-primary-teal transition-all duration-300"
                   whileHover={{ scale: 1.1, y: -2 }}
                   whileTap={{ scale: 0.9 }}
                 >
@@ -77,8 +77,8 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h3 className="heading-font text-lg font-semibold mb-6">Quick Links</h3>
-            <ul className="space-y-3">
+            <h3 className="heading-font text-card-subtitle font-semibold element-spacing">Quick Links</h3>
+            <ul className="space-y-4">
               {[
                 { name: 'About Us', href: '#about' },
                 { name: 'Our Artists', href: '#artists' },
@@ -88,7 +88,7 @@ const Footer = () => {
                 <li key={link.name}>
                   <motion.a
                     href={link.href}
-                    className="text-gray-300 hover:text-[var(--primary-teal)] transition-colors duration-200"
+                    className="text-gray-300 hover:text-primary-teal transition-colors duration-200 text-body"
                     whileHover={{ x: 5 }}
                     onClick={(e) => {
                       e.preventDefault()
@@ -107,8 +107,8 @@ const Footer = () => {
 
           {/* Support */}
           <div>
-            <h3 className="heading-font text-lg font-semibold mb-6">Support</h3>
-            <ul className="space-y-3">
+            <h3 className="heading-font text-card-subtitle font-semibold element-spacing">Support</h3>
+            <ul className="space-y-4">
               {[
                 { name: 'Help Center', href: '#' },
                 { name: 'Community Guidelines', href: '#' },
@@ -118,7 +118,7 @@ const Footer = () => {
                 <li key={link.name}>
                   <motion.a
                     href={link.href}
-                    className="text-gray-300 hover:text-[var(--primary-teal)] transition-colors duration-200"
+                    className="text-gray-300 hover:text-primary-teal transition-colors duration-200 text-body"
                     whileHover={{ x: 5 }}
                   >
                     {link.name}
@@ -130,22 +130,22 @@ const Footer = () => {
         </div>
 
         {/* Newsletter Section */}
-        <div className="py-8 border-t border-gray-800">
+        <div className="section-spacing border-t border-gray-800">
           <div className="max-w-2xl mx-auto text-center">
-            <h3 className="heading-font text-2xl font-semibold mb-4">
+            <h3 className="heading-font text-card-title font-semibold element-spacing">
               Stay Connected with Our Community
             </h3>
-            <p className="text-gray-300 mb-6">
+            <p className="text-gray-300 text-body element-spacing">
               Get updates on new artists, featured stories, and community events.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+            <div className="flex flex-col sm:flex-row gap-6 max-w-md mx-auto">
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="flex-1 px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-[var(--primary-teal)] transition-colors"
+                className="flex-1 px-6 py-4 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-primary-teal transition-colors"
               />
               <motion.button
-                className="px-6 py-3 bg-[var(--primary-teal)] text-white font-semibold rounded-lg hover:bg-[var(--light-teal)] transition-all duration-300"
+                className="btn-primary whitespace-nowrap"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -156,18 +156,18 @@ const Footer = () => {
         </div>
 
         {/* Bottom Footer */}
-        <div className="py-6 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-400 text-sm">
+        <div className="element-spacing border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
+          <p className="text-gray-400 text-small">
             © {currentYear} The Shakti Collective. All rights reserved.
           </p>
-          <div className="flex space-x-6 mt-4 md:mt-0">
-            <a href="#" className="text-gray-400 hover:text-[var(--primary-teal)] text-sm transition-colors">
+          <div className="flex space-x-8 mt-6 md:mt-0">
+            <a href="#" className="text-gray-400 hover:text-primary-teal text-small transition-colors">
               Privacy Policy
             </a>
-            <a href="#" className="text-gray-400 hover:text-[var(--primary-teal)] text-sm transition-colors">
+            <a href="#" className="text-gray-400 hover:text-primary-teal text-small transition-colors">
               Terms of Service
             </a>
-            <a href="#" className="text-gray-400 hover:text-[var(--primary-teal)] text-sm transition-colors">
+            <a href="#" className="text-gray-400 hover:text-primary-teal text-small transition-colors">
               Cookie Policy
             </a>
           </div>
@@ -176,7 +176,7 @@ const Footer = () => {
 
       {/* Scroll to Top Button */}
       <motion.button
-        className="fixed bottom-8 right-8 w-12 h-12 bg-[var(--primary-teal)] text-white rounded-full shadow-lg hover:bg-[var(--light-teal)] transition-all duration-300 z-50"
+        className="fixed bottom-8 right-8 w-14 h-14 bg-primary-teal text-white rounded-full shadow-lg hover:bg-light-teal transition-all duration-300 z-50"
         whileHover={{ scale: 1.1, y: -2 }}
         whileTap={{ scale: 0.9 }}
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}

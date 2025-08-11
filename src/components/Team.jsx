@@ -80,33 +80,42 @@ const Team = () => {
   ]
 
   return (
-    <section id="team" className="py-20 bg-gradient-to-br from-white to-gray-50 relative overflow-hidden">
+    <section id="team" className="bg-gradient-to-br from-white to-gray-50 relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-[var(--primary-teal)] rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 left-1/4 w-64 h-64 bg-[var(--secondary-orange)] rounded-full blur-3xl" />
+        <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-primary-teal rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 left-1/4 w-64 h-64 bg-secondary-orange rounded-full blur-3xl" />
       </div>
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container relative z-10">
         <motion.div
           ref={ref}
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
+          className="content-wrapper"
         >
           {/* Section Header */}
-          <motion.div variants={itemVariants} className="text-center mb-16">
-            <h2 className="heading-font text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          <motion.div variants={itemVariants} className="section-header">
+            <div className="inline-block element-spacing">
+              <span className="text-primary-teal font-semibold text-small uppercase tracking-wider mb-4 block">
+                Our Team
+              </span>
+              <div className="decorative-line bg-gradient-to-r from-primary-teal to-secondary-orange" />
+            </div>
+            
+            <h2 className="heading-font text-section-title font-bold text-gray-900 section-title text-wrapper">
               Meet Our <span className="text-gradient">Team</span>
             </h2>
-            <div className="w-20 h-1 bg-gradient-to-r from-[var(--primary-teal)] to-[var(--secondary-orange)] mx-auto mb-8" />
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              The passionate individuals behind The Shakti Collective, working together to create a platform where art and stories converge.
+            
+            <p className="text-lead text-gray-600 text-wrapper font-light">
+              The passionate individuals behind The Shakti Collective, working together to create a platform where 
+              <span className="text-gradient font-medium"> art and stories converge</span>.
             </p>
           </motion.div>
 
           {/* Team Grid */}
-          <motion.div variants={itemVariants} className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+          <motion.div variants={itemVariants} className="grid-4 element-spacing-lg">
             {teamMembers.map((member, index) => (
               <motion.div
                 key={member.id}
@@ -124,24 +133,24 @@ const Team = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
                 
-                <div className="p-6">
-                  <h3 className="heading-font text-xl font-semibold text-gray-900 mb-1">
+                <div className="card">
+                  <h3 className="heading-font text-card-subtitle font-semibold text-gray-900 element-spacing">
                     {member.name}
                   </h3>
-                  <p className="text-[var(--primary-teal)] font-medium text-sm mb-3">
+                  <p className="text-primary-teal font-medium text-small element-spacing">
                     {member.role}
                   </p>
-                  <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                  <p className="text-gray-600 text-small element-spacing">
                     {member.bio}
                   </p>
                   
                   {/* Social Links */}
-                  <div className="flex space-x-3">
+                  <div className="flex space-x-4 element-spacing">
                     {Object.entries(member.social).map(([platform, url]) => (
                       <motion.a
                         key={platform}
                         href={url}
-                        className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-[var(--primary-teal)] hover:text-white transition-all duration-300"
+                        className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-primary-teal hover:text-white transition-all duration-300"
                         whileHover={{ scale: 1.1, y: -2 }}
                         whileTap={{ scale: 0.9 }}
                       >
@@ -171,21 +180,23 @@ const Team = () => {
           {/* Join Team CTA */}
           <motion.div
             variants={itemVariants}
-            className="text-center bg-gradient-to-r from-[var(--primary-teal)] to-[var(--light-teal)] rounded-2xl p-8 md:p-12"
+            className="section-header"
           >
-            <h3 className="heading-font text-2xl md:text-3xl font-bold text-white mb-4">
-              Want to Join Our Team?
-            </h3>
-            <p className="text-white/90 text-lg mb-6 max-w-2xl mx-auto">
-              We're always looking for passionate individuals who share our vision of empowering artists and celebrating creativity.
-            </p>
-            <motion.button
-              className="px-8 py-4 bg-white text-[var(--primary-teal)] font-semibold rounded-full hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl"
-              whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              View Open Positions
-            </motion.button>
+            <div className="bg-gradient-to-r from-primary-teal to-light-teal rounded-2xl card-lg text-center">
+              <h3 className="heading-font text-card-title font-bold text-white element-spacing">
+                Want to Join Our Team?
+              </h3>
+              <p className="text-white/90 text-body element-spacing">
+                We're always looking for passionate individuals who share our vision of empowering artists and celebrating creativity.
+              </p>
+              <motion.button
+                className="px-8 py-4 bg-white text-primary-teal font-semibold rounded-full hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl"
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                View Open Positions
+              </motion.button>
+            </div>
           </motion.div>
         </motion.div>
       </div>

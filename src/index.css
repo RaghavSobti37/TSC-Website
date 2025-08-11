@@ -8,11 +8,18 @@
   --dark-bg: #0a0a0a;
   --light-teal: #7fc7bc;
   --off-white: #f8f9fa;
-  --section-spacing: 8rem;
+  --section-spacing: 6rem;
+  --container-padding: 2rem;
+  --card-spacing: 2rem;
+  --element-spacing: 1.5rem;
   --card-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
   --card-shadow-hover: 0 35px 70px -12px rgba(0, 0, 0, 0.35);
   --gradient-primary: linear-gradient(135deg, #5fb3a3 0%, #7fc7bc 50%, #ff5722 100%);
   --gradient-dark: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #2a2a2a 100%);
+  --border-radius-sm: 0.75rem;
+  --border-radius-md: 1.5rem;
+  --border-radius-lg: 2rem;
+  --border-radius-xl: 3rem;
 }
 
 * {
@@ -23,7 +30,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 80px;
+  scroll-padding-top: 100px;
 }
 
 body {
@@ -160,14 +167,22 @@ body {
   padding: var(--section-spacing) 0;
 }
 
+.section-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
 .section-dark {
   background: var(--gradient-dark);
   color: white;
+  padding: var(--section-spacing) 0;
 }
 
 .section-light {
   background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
   color: #333;
+  padding: var(--section-spacing) 0;
 }
 
 .section-gradient {
@@ -176,6 +191,84 @@ body {
     rgba(248, 249, 250, 1) 25%,
     rgba(248, 249, 250, 1) 75%,
     rgba(255, 87, 34, 0.05) 100%);
+  padding: var(--section-spacing) 0;
+}
+
+/* Container and Layout */
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+.content-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.text-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Grid Systems */
+.grid-auto {
+  display: grid;
+  gap: var(--card-spacing);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.grid-2 {
+  display: grid;
+  gap: var(--card-spacing);
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+}
+
+.grid-3 {
+  display: grid;
+  gap: var(--card-spacing);
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+}
+
+.grid-4 {
+  display: grid;
+  gap: var(--card-spacing);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+/* Card and Element Spacing */
+.card {
+  padding: var(--card-spacing);
+  border-radius: var(--border-radius-md);
+  margin-bottom: var(--element-spacing);
+}
+
+.card-lg {
+  padding: calc(var(--card-spacing) * 1.5);
+  border-radius: var(--border-radius-lg);
+}
+
+.element-spacing {
+  margin-bottom: var(--element-spacing);
+}
+
+.element-spacing-lg {
+  margin-bottom: calc(var(--element-spacing) * 2);
+}
+
+/* Header Spacing */
+.section-header {
+  text-align: center;
+  margin-bottom: calc(var(--section-spacing) * 0.75);
+  padding: 0 var(--container-padding);
+}
+
+.section-title {
+  margin-bottom: var(--element-spacing);
+}
+
+.section-subtitle {
+  margin-bottom: calc(var(--element-spacing) * 2);
 }
 
 /* Smooth Reveal Animations */
@@ -320,23 +413,44 @@ body {
 
 /* Typography Enhancements */
 .text-hero {
-  font-size: clamp(2.5rem, 8vw, 6rem);
+  font-size: clamp(2.5rem, 7vw, 5rem);
   font-weight: 700;
   line-height: 1.1;
   letter-spacing: -0.02em;
+  margin-bottom: var(--element-spacing);
 }
 
 .text-section-title {
-  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-size: clamp(2.25rem, 5vw, 3.5rem);
   font-weight: 600;
   line-height: 1.2;
   letter-spacing: -0.01em;
+  margin-bottom: var(--element-spacing);
 }
 
 .text-card-title {
-  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  font-size: clamp(1.5rem, 3vw, 2rem);
   font-weight: 600;
   line-height: 1.3;
+  margin-bottom: calc(var(--element-spacing) * 0.75);
+}
+
+.text-lead {
+  font-size: clamp(1.125rem, 2.5vw, 1.375rem);
+  font-weight: 400;
+  line-height: 1.6;
+  margin-bottom: var(--element-spacing);
+}
+
+.text-body {
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: var(--element-spacing);
+}
+
+.text-small {
+  font-size: 0.875rem;
+  line-height: 1.5;
 }
 
 /* Divider Elements */
@@ -388,6 +502,9 @@ body {
 @media (max-width: 768px) {
   :root {
     --section-spacing: 4rem;
+    --container-padding: 1.5rem;
+    --card-spacing: 1.5rem;
+    --element-spacing: 1.25rem;
   }
   
   .parallax-bg {
@@ -396,6 +513,17 @@ body {
   
   .hover-lift:hover {
     transform: translateY(-8px) scale(1.01);
+  }
+  
+  .section-header {
+    margin-bottom: calc(var(--section-spacing) * 0.5);
+  }
+  
+  .grid-2,
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: 1fr;
+    gap: calc(var(--card-spacing) * 0.75);
   }
 }
 

@@ -66,11 +66,11 @@ const Artists = () => {
   ]
 
   return (
-    <section id="artists" className="py-20 bg-gradient-to-br from-gray-900 to-black relative overflow-hidden">
+    <section id="artists" className="bg-gradient-to-br from-gray-900 to-black relative overflow-hidden">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 opacity-10">
         <motion.div
-          className="absolute top-1/4 left-1/4 w-96 h-96 bg-[var(--primary-teal)] rounded-full blur-3xl"
+          className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary-teal rounded-full blur-3xl"
           animate={{
             scale: [1, 1.2, 1],
             opacity: [0.1, 0.2, 0.1]
@@ -82,7 +82,7 @@ const Artists = () => {
           }}
         />
         <motion.div
-          className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[var(--secondary-orange)] rounded-full blur-3xl"
+          className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary-orange rounded-full blur-3xl"
           animate={{
             scale: [1.2, 1, 1.2],
             opacity: [0.2, 0.1, 0.2]
@@ -96,21 +96,30 @@ const Artists = () => {
         />
       </div>
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container relative z-10">
         <motion.div
           ref={ref}
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
+          className="content-wrapper"
         >
           {/* Section Header */}
-          <motion.div variants={itemVariants} className="text-center mb-16">
-            <h2 className="heading-font text-4xl md:text-5xl font-bold text-white mb-6">
+          <motion.div variants={itemVariants} className="section-header">
+            <div className="inline-block element-spacing">
+              <span className="text-secondary-orange font-semibold text-small uppercase tracking-wider mb-4 block">
+                Our Artists
+              </span>
+              <div className="decorative-line bg-gradient-to-r from-primary-teal to-secondary-orange" />
+            </div>
+            
+            <h2 className="heading-font text-section-title text-white section-title text-wrapper">
               Our <span className="text-gradient">Artists</span>
             </h2>
-            <div className="w-20 h-1 bg-gradient-to-r from-[var(--primary-teal)] to-[var(--secondary-orange)] mx-auto mb-8" />
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-              Meet the talented artists who bring their stories to life through their incredible work.
+            
+            <p className="text-lead text-gray-300 text-wrapper font-light">
+              Meet the talented artists who bring their stories to life through their 
+              <span className="text-gradient font-medium"> incredible work</span>.
             </p>
           </motion.div>
 
@@ -119,10 +128,10 @@ const Artists = () => {
             <motion.div
               key={artist.id}
               variants={itemVariants}
-              className="mb-20"
+              className="element-spacing-lg"
             >
-              <div className="bg-white/5 backdrop-blur-lg rounded-3xl p-8 md:p-12 border border-white/10">
-                <div className="grid md:grid-cols-2 gap-12 items-center">
+              <div className="bg-white/5 backdrop-blur-lg rounded-3xl border border-white/10 card-lg">
+                <div className="grid-2 items-center">
                   <motion.div
                     whileHover={{ scale: 1.02 }}
                     transition={{ duration: 0.3 }}
@@ -133,23 +142,23 @@ const Artists = () => {
                       className="w-full h-auto rounded-2xl shadow-2xl"
                     />
                   </motion.div>
-                  <div className="space-y-6">
+                  <div className="space-y-8">
                     <div>
-                      <span className="text-[var(--secondary-orange)] font-medium text-sm uppercase tracking-wider">
+                      <span className="text-secondary-orange font-medium text-small uppercase tracking-wider">
                         Featured Artist
                       </span>
-                      <h3 className="heading-font text-3xl md:text-4xl font-bold text-white mt-2">
+                      <h3 className="heading-font text-card-title font-bold text-white mt-2">
                         {artist.name}
                       </h3>
-                      <p className="text-[var(--primary-teal)] text-lg font-medium mt-2">
+                      <p className="text-primary-teal text-body font-medium mt-2">
                         {artist.specialty}
                       </p>
                     </div>
-                    <p className="text-gray-300 text-lg leading-relaxed">
+                    <p className="text-gray-300 text-body">
                       {artist.story}
                     </p>
                     <motion.button
-                      className="px-6 py-3 bg-gradient-to-r from-[var(--primary-teal)] to-[var(--light-teal)] text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300"
+                      className="btn-primary"
                       whileHover={{ scale: 1.05, y: -2 }}
                       whileTap={{ scale: 0.95 }}
                     >
@@ -163,10 +172,14 @@ const Artists = () => {
 
           {/* Other Artists Grid */}
           <motion.div variants={itemVariants}>
-            <h3 className="heading-font text-2xl md:text-3xl font-bold text-white text-center mb-12">
-              More Amazing Artists
-            </h3>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="section-header">
+              <h3 className="heading-font text-card-title font-bold text-white section-title">
+                More Amazing Artists
+              </h3>
+              <div className="section-divider max-w-xs mx-auto" />
+            </div>
+            
+            <div className="grid-3">
               {artists.filter(artist => !artist.featured).map(artist => (
                 <motion.div
                   key={artist.id}
@@ -181,18 +194,18 @@ const Artists = () => {
                       className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
                     />
                   </div>
-                  <div className="p-6">
-                    <h4 className="heading-font text-xl font-semibold text-white mb-2">
+                  <div className="card">
+                    <h4 className="heading-font text-card-subtitle font-semibold text-white element-spacing">
                       {artist.name}
                     </h4>
-                    <p className="text-[var(--primary-teal)] text-sm font-medium mb-3">
+                    <p className="text-primary-teal text-small font-medium element-spacing">
                       {artist.specialty}
                     </p>
-                    <p className="text-gray-300 text-sm leading-relaxed mb-4">
+                    <p className="text-gray-300 text-small element-spacing">
                       {artist.story}
                     </p>
                     <motion.button
-                      className="text-[var(--primary-teal)] hover:text-[var(--light-teal)] font-medium text-sm transition-colors"
+                      className="text-primary-teal hover:text-light-teal font-medium text-small transition-colors"
                       whileHover={{ x: 5 }}
                     >
                       Learn More →
@@ -206,10 +219,10 @@ const Artists = () => {
           {/* Call to Action */}
           <motion.div
             variants={itemVariants}
-            className="text-center mt-16"
+            className="section-header"
           >
             <motion.button
-              className="px-8 py-4 bg-[var(--secondary-orange)] text-white font-semibold rounded-full hover:bg-orange-600 transition-all duration-300 shadow-lg hover:shadow-xl"
+              className="btn-secondary mx-auto"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
             >

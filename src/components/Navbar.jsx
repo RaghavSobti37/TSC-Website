@@ -68,11 +68,11 @@ const Navbar = ({ scrollY }) => {
         animate={{ y: isVisible ? 0 : -100 }}
         transition={{ duration: 0.3, ease: "easeInOut" }}
       >
-        <div className="container mx-auto px-6 py-4">
-          <div className="flex items-center justify-between">
+        <div className="container">
+          <div className="flex items-center justify-between py-4">
             {/* Enhanced Logo */}
             <motion.div
-              className="flex items-center space-x-3 cursor-pointer"
+              className="flex items-center space-x-4 cursor-pointer"
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.2 }}
               onClick={() => scrollToSection('hero')}
@@ -81,7 +81,7 @@ const Navbar = ({ scrollY }) => {
                 <img 
                   src="/src/assets/only logo.png" 
                   alt="The Shakti Collective" 
-                  className="h-10 w-auto transition-all duration-300"
+                  className="h-12 w-auto transition-all duration-300"
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-primary-teal/20 to-secondary-orange/20 blur-lg opacity-0 hover:opacity-100 transition-opacity duration-300" />
               </div>
@@ -93,12 +93,12 @@ const Navbar = ({ scrollY }) => {
             </motion.div>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-8">
+            <div className="hidden md:flex items-center space-x-10">
               {navItems.map((item) => (
                 <motion.button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className={`text-sm font-medium transition-all duration-300 relative group ${
+                  className={`text-sm font-medium transition-all duration-300 relative group py-2 px-1 ${
                     activeSection === item.id
                       ? 'text-primary-teal'
                       : scrollY > 50
@@ -132,7 +132,7 @@ const Navbar = ({ scrollY }) => {
               
               {/* CTA Button */}
               <motion.button
-                className="btn-primary text-sm px-6 py-2"
+                className="btn-primary text-sm px-8 py-3 ml-4"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => scrollToSection('artists')}
@@ -144,7 +144,7 @@ const Navbar = ({ scrollY }) => {
             {/* Mobile Menu Button */}
             <div className="md:hidden">
               <motion.button 
-                className={`p-2 transition-colors duration-300 ${
+                className={`p-3 transition-colors duration-300 ${
                   scrollY > 50 ? 'text-white' : 'text-white'
                 }`}
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -178,38 +178,40 @@ const Navbar = ({ scrollY }) => {
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3 }}
             >
-              <div className="container mx-auto px-6 py-6 space-y-4">
-                {navItems.map((item, index) => (
+              <div className="container">
+                <div className="py-8 space-y-2">
+                  {navItems.map((item, index) => (
+                    <motion.button
+                      key={item.id}
+                      onClick={() => scrollToSection(item.id)}
+                      className={`block w-full text-left py-4 px-6 rounded-xl transition-all duration-300 ${
+                        activeSection === item.id
+                          ? 'text-primary-teal bg-white/10'
+                          : 'text-white hover:text-primary-teal hover:bg-white/5'
+                      }`}
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: index * 0.1 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      {item.label}
+                    </motion.button>
+                  ))}
+                  
                   <motion.button
-                    key={item.id}
-                    onClick={() => scrollToSection(item.id)}
-                    className={`block w-full text-left py-3 px-4 rounded-lg transition-all duration-300 ${
-                      activeSection === item.id
-                        ? 'text-primary-teal bg-white/10'
-                        : 'text-white hover:text-primary-teal hover:bg-white/5'
-                    }`}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: index * 0.1 }}
+                    className="w-full btn-primary mt-6"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: navItems.length * 0.1 }}
                     whileTap={{ scale: 0.95 }}
+                    onClick={() => {
+                      scrollToSection('artists')
+                      setIsMobileMenuOpen(false)
+                    }}
                   >
-                    {item.label}
+                    Join Our Community
                   </motion.button>
-                ))}
-                
-                <motion.button
-                  className="w-full btn-primary mt-4"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: navItems.length * 0.1 }}
-                  whileTap={{ scale: 0.95 }}
-                  onClick={() => {
-                    scrollToSection('artists')
-                    setIsMobileMenuOpen(false)
-                  }}
-                >
-                  Join Our Community
-                </motion.button>
+                </div>
               </div>
             </motion.div>
           )}

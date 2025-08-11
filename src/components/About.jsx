@@ -39,7 +39,7 @@ const About = () => {
   }
 
   return (
-    <section id="about" className="section-spacing section-gradient relative overflow-hidden">
+    <section id="about" className="section-gradient relative overflow-hidden">
       {/* Enhanced Background Elements */}
       <div className="absolute inset-0 opacity-30">
         <div className="floating-orb absolute top-20 left-10 w-96 h-96 bg-primary-teal" />
@@ -55,35 +55,35 @@ const About = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-white/95 via-gray-50/90 to-white/95" />
       </motion.div>
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container relative z-10">
         <motion.div
           ref={ref}
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
-          className="max-w-7xl mx-auto"
+          className="content-wrapper"
         >
           {/* Section Header with Enhanced Design */}
-          <motion.div variants={itemVariants} className="text-center mb-20">
-            <div className="inline-block mb-6">
-              <span className="text-primary-teal font-semibold text-sm uppercase tracking-wider mb-4 block">
+          <motion.div variants={itemVariants} className="section-header">
+            <div className="inline-block element-spacing">
+              <span className="text-primary-teal font-semibold text-small uppercase tracking-wider mb-4 block">
                 About Us
               </span>
               <div className="decorative-line bg-gradient-to-r from-primary-teal to-secondary-orange" />
             </div>
             
-            <h2 className="heading-font text-section-title text-gray-900 mb-8 max-w-4xl mx-auto">
+            <h2 className="heading-font text-section-title text-gray-900 section-title text-wrapper">
               About <span className="text-gradient">The Shakti Collective</span>
             </h2>
             
-            <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-light">
+            <p className="text-lead text-gray-600 text-wrapper font-light">
               We believe that every artist has a unique story to tell, and every story has the power to 
               <span className="text-gradient font-medium"> inspire, heal, and transform</span>.
             </p>
           </motion.div>
 
           {/* Main Content with Enhanced Layout */}
-          <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
+          <div className="grid-2 items-center element-spacing-lg">
             <motion.div variants={itemVariants} className="order-2 lg:order-1">
               <div className="relative group">
                 <div className="absolute -inset-4 bg-gradient-to-r from-primary-teal to-secondary-orange rounded-3xl blur-xl opacity-20 group-hover:opacity-30 transition-opacity duration-500" />
@@ -98,24 +98,24 @@ const About = () => {
 
             <motion.div variants={itemVariants} className="order-1 lg:order-2 space-y-8">
               <div>
-                <h3 className="heading-font text-card-title text-gray-900 mb-6 leading-tight">
+                <h3 className="heading-font text-card-title text-gray-900 leading-tight element-spacing">
                   Empowering Artists Through 
                   <span className="text-gradient block">Authentic Storytelling</span>
                 </h3>
                 
-                <div className="space-y-6 text-gray-700 leading-relaxed">
-                  <p className="text-lg">
+                <div className="space-y-6 text-gray-700">
+                  <p className="text-body">
                     The Shakti Collective is more than just a platform—it's a 
                     <span className="font-semibold text-primary-teal"> thriving community</span> where artists can share their 
                     authentic stories and transform them into powerful visual narratives.
                   </p>
                   
-                  <p className="text-lg">
+                  <p className="text-body">
                     We understand that behind every brushstroke, every sculpture, and every digital creation 
                     lies a <span className="font-semibold text-secondary-orange">personal journey</span> waiting to be discovered.
                   </p>
                   
-                  <p className="text-lg">
+                  <p className="text-body">
                     Our mission is to provide artists with the space, support, and audience they need to 
                     share their stories with the world, celebrating diversity, creativity, and the raw human 
                     experience that drives artistic expression.
@@ -135,14 +135,14 @@ const About = () => {
 
           {/* Enhanced Values Grid */}
           <motion.div variants={itemVariants}>
-            <div className="text-center mb-12">
-              <h3 className="heading-font text-2xl md:text-3xl font-semibold text-gray-900 mb-4">
+            <div className="section-header">
+              <h3 className="heading-font text-card-title font-semibold text-gray-900 section-title">
                 Our Core Values
               </h3>
               <div className="section-divider max-w-xs mx-auto" />
             </div>
 
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid-3">
               {[
                 {
                   title: "Authentic Stories",
@@ -172,17 +172,17 @@ const About = () => {
                 >
                   <div className="absolute -inset-1 bg-gradient-to-r from-primary-teal to-secondary-orange rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-1000 group-hover:duration-200" />
                   
-                  <div className="relative bg-white rounded-2xl p-8 shadow-lg group-hover:shadow-2xl transition-all duration-300">
+                  <div className="relative bg-white rounded-2xl card shadow-lg group-hover:shadow-2xl transition-all duration-300">
                     <div className="text-center">
                       <div className="text-5xl mb-6 transform group-hover:scale-110 transition-transform duration-300">
                         {feature.icon}
                       </div>
                       
-                      <h4 className="heading-font text-xl font-semibold text-gray-900 mb-4">
+                      <h4 className="heading-font text-card-title font-semibold text-gray-900 element-spacing">
                         {feature.title}
                       </h4>
                       
-                      <p className="text-gray-600 leading-relaxed">
+                      <p className="text-body text-gray-600">
                         {feature.description}
                       </p>
                     </div>
@@ -198,17 +198,17 @@ const About = () => {
           {/* Call to Action Section */}
           <motion.div 
             variants={itemVariants}
-            className="mt-20 text-center"
+            className="section-header"
           >
-            <div className="bg-gradient-to-r from-primary-teal via-light-teal to-secondary-orange p-1 rounded-3xl max-w-2xl mx-auto">
-              <div className="bg-white rounded-3xl p-8 md:p-12">
-                <h3 className="heading-font text-2xl md:text-3xl font-semibold text-gray-900 mb-4">
+            <div className="bg-gradient-to-r from-primary-teal via-light-teal to-secondary-orange p-1 rounded-3xl max-w-4xl mx-auto">
+              <div className="bg-white rounded-3xl card-lg text-center">
+                <h3 className="heading-font text-card-title font-semibold text-gray-900 section-title">
                   Ready to Share Your Story?
                 </h3>
-                <p className="text-gray-600 text-lg mb-6 leading-relaxed">
+                <p className="text-body text-gray-600 element-spacing">
                   Join thousands of artists who have found their voice and audience through our platform.
                 </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <div className="flex flex-col sm:flex-row gap-6 justify-center">
                   <motion.button
                     className="btn-primary"
                     whileHover={{ scale: 1.05 }}
@@ -217,7 +217,7 @@ const About = () => {
                     Get Started Today
                   </motion.button>
                   <motion.button
-                    className="px-6 py-3 border-2 border-primary-teal text-primary-teal font-semibold rounded-full hover:bg-primary-teal hover:text-white transition-all duration-300"
+                    className="px-8 py-3 border-2 border-primary-teal text-primary-teal font-semibold rounded-full hover:bg-primary-teal hover:text-white transition-all duration-300"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >

@@ -106,18 +106,11 @@ const Artists = () => {
         >
           {/* Section Header */}
           <motion.div variants={itemVariants} className="section-header">
-            <div className="inline-block element-spacing">
-              <span className="text-secondary-orange font-semibold text-small uppercase tracking-wider mb-4 block">
-                Our Artists
-              </span>
-              <div className="decorative-line bg-gradient-to-r from-primary-teal to-secondary-orange" />
-            </div>
-            
-            <h2 className="heading-font text-section-title text-white section-title text-wrapper">
+            <h2 className="heading-font text-section-title text-white section-title">
               Our <span className="text-gradient">Artists</span>
             </h2>
             
-            <p className="text-lead text-gray-300 text-wrapper font-light">
+            <p className="text-lead text-gray-300 text-wrapper font-light element-spacing-lg">
               Meet the talented artists who bring their stories to life through their 
               <span className="text-gradient font-medium"> incredible work</span>.
             </p>
@@ -176,7 +169,6 @@ const Artists = () => {
               <h3 className="heading-font text-card-title font-bold text-white section-title">
                 More Amazing Artists
               </h3>
-              <div className="section-divider max-w-xs mx-auto" />
             </div>
             
             <div className="grid-3">
@@ -221,8 +213,15 @@ const Artists = () => {
             variants={itemVariants}
             className="section-header"
           >
+            <h3 className="heading-font text-card-title font-bold text-white section-title element-spacing">
+              Join Our Artist Community
+            </h3>
+            <p className="text-body text-gray-300 text-wrapper element-spacing">
+              Ready to showcase your art and share your story? Become part of our growing community of passionate artists 
+              and connect with art lovers who appreciate authentic creativity.
+            </p>
             <motion.button
-              className="btn-secondary mx-auto"
+              className="px-12 py-5 bg-gradient-to-r from-secondary-orange to-red-500 text-white font-bold text-lg rounded-full hover:shadow-2xl transition-all duration-300 transform hover:scale-105 mx-auto"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
             >

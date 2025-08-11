@@ -65,18 +65,11 @@ const About = () => {
         >
           {/* Section Header with Enhanced Design */}
           <motion.div variants={itemVariants} className="section-header">
-            <div className="inline-block element-spacing">
-              <span className="text-primary-teal font-semibold text-small uppercase tracking-wider mb-4 block">
-                About Us
-              </span>
-              <div className="decorative-line bg-gradient-to-r from-primary-teal to-secondary-orange" />
-            </div>
-            
-            <h2 className="heading-font text-section-title text-gray-900 section-title text-wrapper">
+            <h2 className="heading-font text-section-title text-gray-900 section-title">
               About <span className="text-gradient">The Shakti Collective</span>
             </h2>
             
-            <p className="text-lead text-gray-600 text-wrapper font-light">
+            <p className="text-lead text-gray-600 text-wrapper font-light element-spacing-lg">
               We believe that every artist has a unique story to tell, and every story has the power to 
               <span className="text-gradient font-medium"> inspire, heal, and transform</span>.
             </p>
@@ -139,7 +132,6 @@ const About = () => {
               <h3 className="heading-font text-card-title font-semibold text-gray-900 section-title">
                 Our Core Values
               </h3>
-              <div className="section-divider max-w-xs mx-auto" />
             </div>
 
             <div className="grid-3">
@@ -205,19 +197,20 @@ const About = () => {
                 <h3 className="heading-font text-card-title font-semibold text-gray-900 section-title">
                   Ready to Share Your Story?
                 </h3>
-                <p className="text-body text-gray-600 element-spacing">
-                  Join thousands of artists who have found their voice and audience through our platform.
+                <p className="text-body text-gray-600 element-spacing text-wrapper">
+                  Join thousands of artists who have found their voice and audience through our platform. 
+                  Start your creative journey today and become part of a community that celebrates authentic storytelling through art.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-6 justify-center">
                   <motion.button
-                    className="btn-primary"
+                    className="px-12 py-5 bg-gradient-to-r from-primary-teal to-light-teal text-white font-bold text-lg rounded-full hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
                     Get Started Today
                   </motion.button>
                   <motion.button
-                    className="px-8 py-3 border-2 border-primary-teal text-primary-teal font-semibold rounded-full hover:bg-primary-teal hover:text-white transition-all duration-300"
+                    className="px-12 py-5 border-3 border-primary-teal text-primary-teal font-bold text-lg rounded-full hover:bg-primary-teal hover:text-white transition-all duration-300"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >

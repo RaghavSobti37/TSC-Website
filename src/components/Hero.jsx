@@ -29,7 +29,7 @@ const Hero = () => {
         ))}
       </div>
 
-      {/* Background Video with Enhanced Parallax */}
+      {/* Background Video with Enhanced Parallax
       <motion.div 
         className="absolute inset-0 z-10 parallax-element"
         style={{ y, scale }}
@@ -45,7 +45,7 @@ const Hero = () => {
         </video>
         <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-black/60 to-black/80" />
         <div className="absolute inset-0 gradient-overlay" />
-      </motion.div>
+      </motion.div> */}
 
       {/* Content with Enhanced Animation */}
       <div className="container relative z-20">
@@ -65,14 +65,14 @@ const Hero = () => {
             }}
             className="mb-8"
           >
-            <div className="relative inline-block">
+            {/* <div className="relative inline-block">
               <img 
                 src="/src/assets/only text.png" 
                 alt="The Shakti Collective" 
                 className="mx-auto w-full max-w-sm h-auto drop-shadow-2xl"
               />
               <div className="absolute inset-0 bg-gradient-to-r from-primary-teal/20 to-secondary-orange/20 blur-xl animate-pulse" />
-            </div>
+            </div> */}
           </motion.div>
 
           {/* Main Heading with Staggered Animation */}
@@ -105,9 +105,9 @@ const Hero = () => {
             <p className="text-lead text-gray-200 font-light mb-2">
               We are a platform where artists transform their stories into powerful visual narratives.
             </p>
-            <p className="text-body text-gray-300 opacity-90">
+            {/* <p className="text-body text-gray-300 opacity-90">
               Every piece of art has a story, and every story deserves to be told.
-            </p>
+            </p> */}
           </motion.div>
 
           {/* Enhanced CTA Buttons */}
@@ -177,40 +177,6 @@ const Hero = () => {
           </motion.div>
         </motion.div>
       </div>
-
-      {/* Enhanced Scroll Indicator */}
-      <motion.div
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 2.5, duration: 1 }}
-      >
-        <motion.div
-          className="flex flex-col items-center cursor-pointer group"
-          onClick={() => {
-            document.getElementById('about')?.scrollIntoView({ 
-              behavior: 'smooth',
-              block: 'start'
-            })
-          }}
-          whileHover={{ y: -5 }}
-        >
-          <span className="text-white text-small font-medium mb-3 opacity-80 group-hover:opacity-100 transition-opacity">
-            Scroll to explore
-          </span>
-          <motion.div
-            className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center group-hover:border-primary-teal transition-colors"
-            animate={{ y: [0, 10, 0] }}
-            transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
-          >
-            <motion.div
-              className="w-1 h-3 bg-white/70 rounded-full mt-2 group-hover:bg-primary-teal transition-colors"
-              animate={{ opacity: [1, 0, 1] }}
-              transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
-            />
-          </motion.div>
-        </motion.div>
-      </motion.div>
     </section>
   )
 }

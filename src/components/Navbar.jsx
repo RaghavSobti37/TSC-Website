@@ -93,12 +93,12 @@ const Navbar = ({ scrollY }) => {
             </motion.div>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-10">
+            <div className="hidden md:flex items-center space-x-12">
               {navItems.map((item) => (
                 <motion.button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className={`text-sm font-medium transition-all duration-300 relative group py-2 px-1 ${
+                  className={`text-base font-medium transition-all duration-300 relative group py-2 px-3 ${
                     activeSection === item.id
                       ? 'text-primary-teal'
                       : scrollY > 50
@@ -172,38 +172,38 @@ const Navbar = ({ scrollY }) => {
         <AnimatePresence>
           {isMobileMenuOpen && (
             <motion.div
-              className="md:hidden absolute top-full left-0 right-0 bg-gray-900/95 backdrop-blur-lg border-t border-white/10"
+              className="md:hidden absolute top-full left-0 right-0 bg-gray-900/98 backdrop-blur-xl border-t border-white/20 shadow-2xl"
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.3 }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
             >
               <div className="container">
-                <div className="py-8 space-y-2">
+                <div className="py-6 space-y-1">
                   {navItems.map((item, index) => (
                     <motion.button
                       key={item.id}
                       onClick={() => scrollToSection(item.id)}
-                      className={`block w-full text-left py-4 px-6 rounded-xl transition-all duration-300 ${
+                      className={`block w-full text-left py-4 px-6 rounded-xl transition-all duration-300 text-lg ${
                         activeSection === item.id
-                          ? 'text-primary-teal bg-white/10'
+                          ? 'text-primary-teal bg-primary-teal/10 border border-primary-teal/20'
                           : 'text-white hover:text-primary-teal hover:bg-white/5'
                       }`}
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: index * 0.1 }}
-                      whileTap={{ scale: 0.95 }}
+                      whileTap={{ scale: 0.98 }}
                     >
                       {item.label}
                     </motion.button>
                   ))}
                   
                   <motion.button
-                    className="w-full btn-primary mt-6"
+                    className="w-full btn-primary mt-8 py-4 text-lg"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: navItems.length * 0.1 }}
-                    whileTap={{ scale: 0.95 }}
+                    whileTap={{ scale: 0.98 }}
                     onClick={() => {
                       scrollToSection('artists')
                       setIsMobileMenuOpen(false)

@@ -204,11 +204,13 @@ body {
 .content-wrapper {
   max-width: 1200px;
   margin: 0 auto;
+  text-align: center;
 }
 
 .text-wrapper {
   max-width: 800px;
   margin: 0 auto;
+  text-align: center;
 }
 
 /* Grid Systems */
@@ -265,6 +267,20 @@ body {
 
 .section-title {
   margin-bottom: var(--element-spacing);
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4rem;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary-teal), var(--secondary-orange));
+  border-radius: 2px;
 }
 
 .section-subtitle {
@@ -298,6 +314,11 @@ body {
 .stagger-2 { transition-delay: 0.2s; }
 .stagger-3 { transition-delay: 0.3s; }
 .stagger-4 { transition-delay: 0.4s; }
+
+/* Border Utilities */
+.border-3 {
+  border-width: 3px;
+}
 
 /* Advanced Animations */
 @keyframes float {

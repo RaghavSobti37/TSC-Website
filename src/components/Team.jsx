@@ -97,18 +97,11 @@ const Team = () => {
         >
           {/* Section Header */}
           <motion.div variants={itemVariants} className="section-header">
-            <div className="inline-block element-spacing">
-              <span className="text-primary-teal font-semibold text-small uppercase tracking-wider mb-4 block">
-                Our Team
-              </span>
-              <div className="decorative-line bg-gradient-to-r from-primary-teal to-secondary-orange" />
-            </div>
-            
-            <h2 className="heading-font text-section-title font-bold text-gray-900 section-title text-wrapper">
+            <h2 className="heading-font text-section-title font-bold text-gray-900 section-title">
               Meet Our <span className="text-gradient">Team</span>
             </h2>
             
-            <p className="text-lead text-gray-600 text-wrapper font-light">
+            <p className="text-lead text-gray-600 text-wrapper font-light element-spacing-lg">
               The passionate individuals behind The Shakti Collective, working together to create a platform where 
               <span className="text-gradient font-medium"> art and stories converge</span>.
             </p>
@@ -183,14 +176,15 @@ const Team = () => {
             className="section-header"
           >
             <div className="bg-gradient-to-r from-primary-teal to-light-teal rounded-2xl card-lg text-center">
-              <h3 className="heading-font text-card-title font-bold text-white element-spacing">
+              <h3 className="heading-font text-card-title font-bold text-white section-title">
                 Want to Join Our Team?
               </h3>
-              <p className="text-white/90 text-body element-spacing">
-                We're always looking for passionate individuals who share our vision of empowering artists and celebrating creativity.
+              <p className="text-white/90 text-body element-spacing text-wrapper">
+                We're always looking for passionate individuals who share our vision of empowering artists and celebrating creativity. 
+                Join us in building the future of artistic storytelling and make a meaningful impact in the creative community.
               </p>
               <motion.button
-                className="px-8 py-4 bg-white text-primary-teal font-semibold rounded-full hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl"
+                className="px-12 py-5 bg-white text-primary-teal font-bold text-lg rounded-full hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >

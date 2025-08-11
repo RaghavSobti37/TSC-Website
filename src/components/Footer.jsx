@@ -131,21 +131,22 @@ const Footer = () => {
 
         {/* Newsletter Section */}
         <div className="section-spacing border-t border-gray-800">
-          <div className="max-w-2xl mx-auto text-center">
-            <h3 className="heading-font text-card-title font-semibold element-spacing">
+          <div className="max-w-3xl mx-auto text-center">
+            <h3 className="heading-font text-card-title font-semibold element-spacing section-title">
               Stay Connected with Our Community
             </h3>
-            <p className="text-gray-300 text-body element-spacing">
-              Get updates on new artists, featured stories, and community events.
+            <p className="text-gray-300 text-body element-spacing text-wrapper">
+              Get updates on new artists, featured stories, and community events. Be the first to discover 
+              emerging talent and never miss out on inspiring creative content.
             </p>
-            <div className="flex flex-col sm:flex-row gap-6 max-w-md mx-auto">
+            <div className="flex flex-col sm:flex-row gap-6 max-w-lg mx-auto">
               <input
                 type="email"
                 placeholder="Enter your email"
                 className="flex-1 px-6 py-4 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-primary-teal transition-colors"
               />
               <motion.button
-                className="btn-primary whitespace-nowrap"
+                className="px-10 py-4 bg-gradient-to-r from-primary-teal to-light-teal text-white font-bold rounded-lg hover:shadow-xl transition-all duration-300 whitespace-nowrap transform hover:scale-105"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -176,16 +177,16 @@ const Footer = () => {
 
       {/* Scroll to Top Button */}
       <motion.button
-        className="fixed bottom-8 right-8 w-14 h-14 bg-primary-teal text-white rounded-full shadow-lg hover:bg-light-teal transition-all duration-300 z-50"
-        whileHover={{ scale: 1.1, y: -2 }}
+        className="fixed bottom-8 right-8 w-16 h-16 bg-gradient-to-r from-primary-teal to-secondary-orange text-white rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 z-50 flex items-center justify-center"
+        whileHover={{ scale: 1.1, y: -3 }}
         whileTap={{ scale: 0.9 }}
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1 }}
       >
-        <svg className="w-6 h-6 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={3}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M5 10l7-7m0 0l7 7m-7-7v18" />
         </svg>
       </motion.button>
     </motion.footer>

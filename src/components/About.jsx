@@ -39,7 +39,7 @@ const About = () => {
   }
 
   return (
-    <section id="about" className="section-gradient relative overflow-hidden py-20">
+    <section id="about" className="section-gradient relative overflow-hidden py-20 flex justify-center">
       {/* Enhanced Background Elements */}
       <div className="absolute inset-0 opacity-30">
         <div className="floating-orb absolute top-20 left-10 w-96 h-96 bg-primary-teal" />
@@ -56,7 +56,7 @@ const About = () => {
       </motion.div>
 
       <div className="container relative z-10">
-        <div className="content-wrapper">
+        <div className="content-wrapper mx-auto text-center">
           <motion.div
             ref={ref}
             variants={containerVariants}

@@ -9,173 +9,42 @@ const Hero = () => {
   const textY = useTransform(scrollYProgress, [0, 0.5], ['0%', '30%'])
 
   return (
-    <section id="hero" className="relative h-screen flex items-center justify-center overflow-hidden section-dark">
-      {/* Floating Background Orbs */}
-      <div className="absolute inset-0 z-0">
-        {[...Array(4)].map((_, i) => (
-          <div
-            key={i}
-            className={`floating-orb absolute ${
-              i % 2 === 0 ? 'bg-primary-teal' : 'bg-secondary-orange'
-            }`}
-            style={{
-              width: `${Math.random() * 200 + 80}px`,
-              height: `${Math.random() * 200 + 80}px`,
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 8}s`,
-            }}
-          />
-        ))}
-      </div>
-
-      {/* Background Video with Enhanced Parallax
-      <motion.div 
-        className="absolute inset-0 z-10 parallax-element"
-        style={{ y, scale }}
+    <section id="hero" className="relative w-screen h-screen min-h-screen flex flex-col items-center justify-center overflow-hidden bg-black" style={{marginTop: '4.5rem'}}>
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="w-full h-full object-cover absolute inset-0"
+        style={{ width: '100vw', height: '100vh', minHeight: '100vh', minWidth: '100vw', background: 'black' }}
       >
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="w-full h-full object-cover opacity-20"
+        <source src="/src/assets/Video_Generation_Based_on_Design.mp4" type="video/mp4" />
+      </video>
+      <div className="absolute bottom-0 left-0 w-full flex flex-col sm:flex-row items-center justify-center gap-6 pb-8 z-10">
+        <button
+          className="btn-primary relative group"
+          onClick={() => {
+            document.getElementById('artists')?.scrollIntoView({ 
+              behavior: 'smooth',
+              block: 'start'
+            })
+          }}
         >
-          <source src="/src/assets/dummy video.mp4" type="video/mp4" />
-        </video>
-        <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-black/60 to-black/80" />
-        <div className="absolute inset-0 gradient-overlay" />
-      </motion.div> */}
-
-      {/* Content with Enhanced Animation */}
-      <div className="container relative z-20">
-        <motion.div 
-          className="text-center max-w-5xl mx-auto parallax-element"
-          style={{ opacity, y: textY }}
+          <span className="relative z-10">Explore Our Artists</span>
+          <div className="absolute inset-0 bg-gradient-to-r from-primary-teal to-secondary-orange opacity-0 group-hover:opacity-20 transition-opacity duration-300 rounded-full" />
+        </button>
+        <button
+          className="btn-secondary group"
+          onClick={() => {
+            document.getElementById('about')?.scrollIntoView({ 
+              behavior: 'smooth',
+              block: 'start'
+            })
+          }}
         >
-          {/* Logo Animation */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.5, rotateY: 180 }}
-            animate={{ opacity: 1, scale: 1, rotateY: 0 }}
-            transition={{ 
-              duration: 1.5, 
-              delay: 0.2,
-              type: "spring",
-              stiffness: 100
-            }}
-            className="mb-8"
-          >
-            {/* <div className="relative inline-block">
-              <img 
-                src="/src/assets/only text.png" 
-                alt="The Shakti Collective" 
-                className="mx-auto w-full max-w-sm h-auto drop-shadow-2xl"
-              />
-              <div className="absolute inset-0 bg-gradient-to-r from-primary-teal/20 to-secondary-orange/20 blur-xl animate-pulse" />
-            </div> */}
-          </motion.div>
-
-          {/* Main Heading with Staggered Animation */}
-          <motion.div className="element-spacing-lg">
-            <motion.h1
-              className="heading-font text-hero text-white leading-tight mb-2"
-              initial={{ opacity: 0, y: 100 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.8, ease: "easeOut" }}
-            >
-              Where Stories
-            </motion.h1>
-            <motion.h1
-              className="heading-font text-hero text-gradient leading-tight"
-              initial={{ opacity: 0, y: 100 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 1.1, ease: "easeOut" }}
-            >
-              Become Art
-            </motion.h1>
-          </motion.div>
-
-          {/* Subtitle with Enhanced Typography */}
-          <motion.div
-            className="element-spacing-lg max-w-4xl mx-auto"
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 1.4 }}
-          >
-            <p className="text-lead text-gray-200 font-light mb-2">
-              We are a platform where artists transform their stories into powerful visual narratives.
-            </p>
-            {/* <p className="text-body text-gray-300 opacity-90">
-              Every piece of art has a story, and every story deserves to be told.
-            </p> */}
-          </motion.div>
-
-          {/* Enhanced CTA Buttons */}
-          <motion.div
-            className="flex flex-col sm:flex-row items-center justify-center gap-6 element-spacing-lg"
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 1.7 }}
-          >
-            <motion.button
-              className="btn-primary relative group"
-              whileHover={{ scale: 1.05, y: -3 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={() => {
-                document.getElementById('artists')?.scrollIntoView({ 
-                  behavior: 'smooth',
-                  block: 'start'
-                })
-              }}
-            >
-              <span className="relative z-10">Explore Our Artists</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-primary-teal to-secondary-orange opacity-0 group-hover:opacity-20 transition-opacity duration-300 rounded-full" />
-            </motion.button>
-            
-            <motion.button
-              className="btn-secondary group"
-              whileHover={{ scale: 1.05, y: -3 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={() => {
-                document.getElementById('about')?.scrollIntoView({ 
-                  behavior: 'smooth',
-                  block: 'start'
-                })
-              }}
-            >
-              <span className="relative z-10">Learn More</span>
-              <div className="absolute inset-0 bg-white/10 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-full" />
-            </motion.button>
-          </motion.div>
-
-          {/* Stats Section */}
-          <motion.div
-            className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto"
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 2 }}
-          >
-            {[
-              { number: "500+", label: "Artists" },
-              { number: "1000+", label: "Stories" },
-              { number: "50k+", label: "Artworks" }
-            ].map((stat, index) => (
-              <motion.div
-                key={index}
-                className="text-center glass-effect rounded-2xl p-6 hover-lift"
-                whileHover={{ scale: 1.05 }}
-                transition={{ delay: index * 0.1 }}
-              >
-                <div className="text-2xl md:text-3xl font-bold text-gradient mb-2">
-                  {stat.number}
-                </div>
-                <div className="text-gray-300 font-medium text-small">
-                  {stat.label}
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
-        </motion.div>
+          <span className="relative z-10">Learn More</span>
+          <div className="absolute inset-0 bg-white/10 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-full" />
+        </button>
       </div>
     </section>
   )

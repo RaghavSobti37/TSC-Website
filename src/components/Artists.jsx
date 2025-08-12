@@ -1,34 +1,7 @@
-import React from 'react'
-import { motion, useInView } from 'framer-motion'
-import { useRef } from 'react'
+import React, { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 
 const Artists = () => {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, threshold: 0.2 })
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2
-      }
-    }
-  }
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 50, scale: 0.9 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut"
-      }
-    }
-  }
-
   // Sample artist data - you can replace with real data
   const artists = [
     {
@@ -37,7 +10,7 @@ const Artists = () => {
       specialty: "Abstract Expressionism",
       story: "Maya's work explores the intersection of traditional Indian art with contemporary emotions.",
       image: "/src/assets/option 1.png",
-      featured: true
+      featured: false
     },
     {
       id: 2,
@@ -65,172 +38,145 @@ const Artists = () => {
     }
   ]
 
+  const [hovered, setHovered] = useState(false);
+  const [selectedArtist, setSelectedArtist] = useState(null);
+
+
+  // 8 discs for the shelf effect
+  const discs = Array.from({ length: 8 }, (_, i) => artists[i % artists.length]);
+  const discGap = -50; // px
+  const discSize = 180; // px
+  const shelfWidth = discs.length * (discSize + discGap);
+
+
+  // Track which disc is hovered
+  const [hoveredDisc, setHoveredDisc] = useState(null);
+
   return (
-    <section id="artists" className="bg-gradient-to-br from-gray-900 to-black relative overflow-hidden py-20">
-      {/* Animated Background Elements */}
-      <div className="absolute inset-0 opacity-10">
-        <motion.div
-          className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary-teal rounded-full blur-3xl"
-          animate={{
-            scale: [1, 1.2, 1],
-            opacity: [0.1, 0.2, 0.1]
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-        />
-        <motion.div
-          className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary-orange rounded-full blur-3xl"
-          animate={{
-            scale: [1.2, 1, 1.2],
-            opacity: [0.2, 0.1, 0.2]
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 4
-          }}
-        />
+    <section id="artists" className="relative flex flex-col items-center justify-center min-h-[600px] py-32 bg-gradient-to-br from-gray-900 to-black overflow-x-auto">
+      <div className="section-header mb-12">
+        <h2 className="heading-font text-section-title text-white section-title">
+          Our <span className="text-gradient">Artists</span>
+        </h2>
+        <p className="text-lead text-gray-300 text-wrapper font-light element-spacing-lg">
+          Meet the talented artists who bring their stories to life through their <span className="text-gradient font-medium">incredible work</span>.
+        </p>
       </div>
-
-      <div className="container relative z-10">
-        <div className="content-wrapper">
-          <motion.div
-            ref={ref}
-            variants={containerVariants}
-            initial="hidden"
-            animate={isInView ? "visible" : "hidden"}
-          >
-          {/* Section Header */}
-          <motion.div variants={itemVariants} className="section-header">
-            <h2 className="heading-font text-section-title text-white section-title">
-              Our <span className="text-gradient">Artists</span>
-            </h2>
-            
-            <p className="text-lead text-gray-300 text-wrapper font-light element-spacing-lg">
-              Meet the talented artists who bring their stories to life through their 
-              <span className="text-gradient font-medium"> incredible work</span>.
-            </p>
-          </motion.div>
-
-          {/* Featured Artist */}
-          {artists.filter(artist => artist.featured).map(artist => (
+      <div
+        className="relative mx-auto flex items-center justify-center"
+        style={{
+          width: shelfWidth,
+          height: discSize * 1.2,
+          perspective: 1200,
+          transformStyle: 'preserve-3d',
+        }}
+      >
+        {discs.map((artist, i) => {
+          const x = i * (discSize + discGap);
+          return (
             <motion.div
-              key={artist.id}
-              variants={itemVariants}
-              className="element-spacing-lg"
+              key={i}
+              className="cursor-pointer group"
+              style={{
+                position: 'absolute',
+                left: x,
+                top: '50%',
+                width: discSize,
+                height: discSize,
+                borderRadius: '50%',
+                boxShadow: hoveredDisc === i ? '0 8px 32px rgba(0,0,0,0.25)' : '0 2px 8px rgba(0,0,0,0.12)',
+                background: 'rgba(255,255,255,0.07)',
+                border: '2px solid rgba(255,255,255,0.12)',
+                zIndex: hoveredDisc === i ? 2 : 1,
+                transition: 'box-shadow 0.3s, border 0.3s, transform 0.5s cubic-bezier(.25,.8,.25,1)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                overflow: 'hidden',
+                transform: `translateY(-50%)${hoveredDisc === i ? ' translateZ(90px) scale(1.2)' : ''}`
+              }}
+              onMouseEnter={() => setHoveredDisc(i)}
+              onMouseLeave={() => setHoveredDisc(null)}
+              onClick={() => setSelectedArtist(artist)}
             >
-              <div className="bg-white/5 backdrop-blur-lg rounded-3xl border border-white/10 card-lg">
-                <div className="grid-2 items-center">
-                  <motion.div
-                    whileHover={{ scale: 1.02 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <img 
-                      src={artist.image} 
-                      alt={artist.name} 
-                      className="w-full h-auto rounded-2xl shadow-2xl"
-                    />
-                  </motion.div>
-                  <div className="space-y-8">
-                    <div>
-                      <span className="text-secondary-orange font-medium text-small uppercase tracking-wider">
-                        Featured Artist
-                      </span>
-                      <h3 className="heading-font text-card-title font-bold text-white mt-2">
-                        {artist.name}
-                      </h3>
-                      <p className="text-primary-teal text-body font-medium mt-2">
-                        {artist.specialty}
-                      </p>
-                    </div>
-                    <p className="text-gray-300 text-body">
-                      {artist.story}
-                    </p>
-                    <motion.button
-                      className="btn-primary"
-                      whileHover={{ scale: 1.05, y: -2 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      View Portfolio
-                    </motion.button>
-                  </div>
-                </div>
+              <div style={{ position: 'relative', width: '100%', height: '100%' }}>
+                <img
+                  src={artist.image}
+                  alt={artist.name}
+                  className="w-full h-full object-cover rounded-full border-2 border-white/30 group-hover:border-primary-teal transition-all duration-300"
+                />
+                <div
+                  style={{
+                    position: 'absolute',
+                    left: '50%',
+                    top: '50%',
+                    width: discSize * 0.18,
+                    height: discSize * 0.18,
+                    background: '#18181b',
+                    border: '3px solid #333',
+                    borderRadius: '50%',
+                    transform: 'translate(-50%, -50%)',
+                    boxShadow: '0 0 8px 2px rgba(0,0,0,0.25) inset',
+                    zIndex: 2,
+                    pointerEvents: 'none',
+                  }}
+                />
               </div>
+              <motion.div
+                className="absolute left-1/2 bottom-0 w-auto px-4 bg-black/70 text-white text-xs text-center py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                style={{
+                  transform: 'translateX(-50%)',
+                  pointerEvents: 'none',
+                  minWidth: '60%',
+                  maxWidth: '90%',
+                }}
+              >
+                {artist.name}
+              </motion.div>
             </motion.div>
-          ))}
-
-          {/* Other Artists Grid */}
-          <motion.div variants={itemVariants}>
-            <div className="section-header">
-              <h3 className="heading-font text-card-title font-bold text-white section-title">
-                More Amazing Artists
-              </h3>
-            </div>
-            
-            <div className="grid-3">
-              {artists.filter(artist => !artist.featured).map(artist => (
-                <motion.div
-                  key={artist.id}
-                  className="group bg-white/5 backdrop-blur-lg rounded-2xl overflow-hidden border border-white/10 hover:border-white/20 transition-all duration-300"
-                  variants={itemVariants}
-                  whileHover={{ y: -10, scale: 1.02 }}
-                >
-                  <div className="aspect-w-16 aspect-h-12 overflow-hidden">
-                    <img 
-                      src={artist.image} 
-                      alt={artist.name} 
-                      className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
-                    />
-                  </div>
-                  <div className="card">
-                    <h4 className="heading-font text-card-subtitle font-semibold text-white element-spacing">
-                      {artist.name}
-                    </h4>
-                    <p className="text-primary-teal text-small font-medium element-spacing">
-                      {artist.specialty}
-                    </p>
-                    <p className="text-gray-300 text-small element-spacing">
-                      {artist.story}
-                    </p>
-                    <motion.button
-                      className="text-primary-teal hover:text-light-teal font-medium text-small transition-colors"
-                      whileHover={{ x: 5 }}
-                    >
-                      Learn More →
-                    </motion.button>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-
-          {/* Call to Action */}
-          <motion.div
-            variants={itemVariants}
-            className="section-header"
-          >
-            <h3 className="heading-font text-card-title font-bold text-white section-title element-spacing">
-              Join Our Artist Community
-            </h3>
-            <p className="text-body text-gray-300 text-wrapper element-spacing">
-              Ready to showcase your art and share your story? Become part of our growing community of passionate artists 
-              and connect with art lovers who appreciate authentic creativity.
-            </p>
-            <motion.button
-              className="px-12 py-5 bg-gradient-to-r from-secondary-orange to-red-500 text-white font-bold text-lg rounded-full hover:shadow-2xl transition-all duration-300 transform hover:scale-105 mx-auto"
-              whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Become an Artist
-            </motion.button>
-          </motion.div>
-          </motion.div>
-        </div>
+          );
+        })}
       </div>
+
+      {/* Modal for artist details */}
+      <AnimatePresence>
+        {selectedArtist && (
+          <motion.div
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/70"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setSelectedArtist(null)}
+          >
+            <motion.div
+              className="bg-white rounded-2xl shadow-2xl p-8 max-w-md w-full relative"
+              initial={{ scale: 0.8, y: 80, opacity: 0 }}
+              animate={{ scale: 1, y: 0, opacity: 1 }}
+              exit={{ scale: 0.8, y: 80, opacity: 0 }}
+              onClick={e => e.stopPropagation()}
+            >
+              <button
+                className="absolute top-3 right-3 text-gray-400 hover:text-primary-teal text-2xl font-bold"
+                onClick={() => setSelectedArtist(null)}
+                aria-label="Close"
+              >
+                &times;
+              </button>
+              <img
+                src={selectedArtist.image}
+                alt={selectedArtist.name}
+                className="w-32 h-32 object-cover rounded-full mx-auto mb-4 border-4 border-primary-teal"
+              />
+              <h3 className="heading-font text-xl font-bold text-primary-teal mb-2 text-center">
+                {selectedArtist.name}
+              </h3>
+              <p className="text-gray-700 text-center mb-2 font-medium">{selectedArtist.specialty}</p>
+              <p className="text-gray-600 text-center mb-4">{selectedArtist.story}</p>
+              <button className="btn-primary w-full mt-2">View Portfolio</button>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   )
 }

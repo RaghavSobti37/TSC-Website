@@ -72,7 +72,7 @@ const Navbar = ({ scrollY }) => {
           <div className="flex items-center justify-between py-4">
             {/* Enhanced Logo */}
             <motion.div
-              className="flex items-center space-x-4 cursor-pointer"
+              className="flex items-center space-x-6 cursor-pointer"
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.2 }}
               onClick={() => scrollToSection('hero')}
@@ -85,31 +85,28 @@ const Navbar = ({ scrollY }) => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-primary-teal/20 to-secondary-orange/20 blur-lg opacity-0 hover:opacity-100 transition-opacity duration-300" />
               </div>
-              <span className={`heading-font text-xl font-semibold transition-all duration-300 ${
-                scrollY > 50 ? 'text-white' : 'text-white'
-              }`}>
+              <span className={`heading-font text-2xl font-semibold transition-all duration-300 ${scrollY > 50 ? 'text-white' : 'text-white'}`}> 
                 <span className="text-gradient">The Shakti Collective</span>
               </span>
             </motion.div>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-16">
+            <div className="hidden md:flex items-center justify-center gap-12 mx-auto">
               {navItems.map((item) => (
                 <motion.button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className={`text-base font-medium transition-all duration-300 relative group py-3 px-6 ${
+                  className={`text-base font-medium transition-all duration-300 relative group py-3 px-8 rounded-xl ${
                     activeSection === item.id
-                      ? 'text-primary-teal'
+                      ? 'text-primary-teal bg-white/10'
                       : scrollY > 50
                       ? 'text-gray-300 hover:text-primary-teal'
                       : 'text-white hover:text-primary-teal'
                   }`}
-                  whileHover={{ scale: 1.05 }}
+                  whileHover={{ scale: 1.08 }}
                   whileTap={{ scale: 0.95 }}
                 >
                   {item.label}
-                  
                   {/* Active indicator */}
                   {activeSection === item.id && (
                     <motion.div
@@ -119,7 +116,6 @@ const Navbar = ({ scrollY }) => {
                       transition={{ type: "spring", stiffness: 500, damping: 30 }}
                     />
                   )}
-                  
                   {/* Hover effect */}
                   <motion.div
                     className="absolute -bottom-2 left-0 right-0 h-0.5 bg-gradient-to-r from-primary-teal/50 to-secondary-orange/50 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
@@ -129,11 +125,10 @@ const Navbar = ({ scrollY }) => {
                   />
                 </motion.button>
               ))}
-              
               {/* CTA Button */}
               <motion.button
-                className="btn-primary text-sm px-8 py-3 ml-4"
-                whileHover={{ scale: 1.05 }}
+                className="btn-primary text-base px-10 py-3 ml-8 rounded-full shadow-lg"
+                whileHover={{ scale: 1.08 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => scrollToSection('artists')}
               >
@@ -144,9 +139,7 @@ const Navbar = ({ scrollY }) => {
             {/* Mobile Menu Button */}
             <div className="md:hidden">
               <motion.button 
-                className={`p-3 transition-colors duration-300 ${
-                  scrollY > 50 ? 'text-white' : 'text-white'
-                }`}
+                className={`p-3 transition-colors duration-300 ${scrollY > 50 ? 'text-white' : 'text-white'}`}
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 whileTap={{ scale: 0.95 }}
               >

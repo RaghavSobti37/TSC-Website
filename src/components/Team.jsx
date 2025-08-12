@@ -80,7 +80,7 @@ const Team = () => {
   ]
 
   return (
-    <section id="team" className="bg-gradient-to-br from-white to-gray-50 relative overflow-hidden py-20">
+    <section id="team" className="bg-gradient-to-br from-white to-gray-50 relative overflow-hidden py-20 flex justify-center">
       {/* Background Elements */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-primary-teal rounded-full blur-3xl" />
@@ -88,7 +88,7 @@ const Team = () => {
       </div>
 
       <div className="container relative z-10">
-        <div className="content-wrapper">
+    <div className="content-wrapper mx-auto text-center">
           <motion.div
             ref={ref}
             variants={containerVariants}

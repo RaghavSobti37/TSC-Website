@@ -195,17 +195,31 @@ body {
 }
 
 /* Container and Layout */
+
 .container {
   max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 var(--container-padding);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
 }
 
 .content-wrapper {
   max-width: 1200px;
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
   text-align: center;
-  padding: 0 var(--container-padding);
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+}
+
+.mx-auto {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.text-center {
+  text-align: center !important;
 }
 
 .text-wrapper {

@@ -45,11 +45,11 @@ const Footer = () => {
                 alt="The Shakti Collective" 
                 className="h-12 w-auto"
               />
-              <span className="heading-font text-card-title font-semibold text-gradient">
+              <span className="heading-font text-card-title font-semibold text-white card" style={{textShadow: '0 0 8px #23232a, 0 0 2px #fff'}}>
                 The Shakti Collective
               </span>
             </motion.div>
-            <p className="text-gray-300 text-body max-w-md element-spacing">
+            <p className="text-white text-body max-w-md element-spacing" style={{textShadow: '0 0 2px #23232a', background: 'linear-gradient(135deg, #5fb3a3 0%, #ff5722 100%)', borderRadius: '1rem', padding: '1rem'}}>
               Empowering artists to share their stories through powerful visual narratives. 
               Join our community where creativity meets authentic storytelling.
             </p>

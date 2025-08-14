@@ -63,12 +63,12 @@ const Navbar = ({ scrollY }) => {
   return (
     <>
       <motion.nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${navBackground}`}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${navBackground} pt-6`}
         initial={{ y: -100 }}
         animate={{ y: isVisible ? 0 : -100 }}
         transition={{ duration: 0.3, ease: "easeInOut" }}
       >
-        <div className="container">
+  <div className="container mt-6">
           <div className="flex items-center justify-between py-4">
             {/* Enhanced Logo */}
             <motion.div
@@ -96,7 +96,7 @@ const Navbar = ({ scrollY }) => {
                 <motion.button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className={`text-base font-medium transition-all duration-300 relative group py-3 px-8 rounded-xl ${
+                  className={`text-base font-medium transition-all duration-300 relative group py-3 px-8 rounded-xl mt-4 ${
                     activeSection === item.id
                       ? 'text-primary-teal bg-white/10'
                       : scrollY > 50
@@ -177,7 +177,7 @@ const Navbar = ({ scrollY }) => {
                     <motion.button
                       key={item.id}
                       onClick={() => scrollToSection(item.id)}
-                      className={`block w-full text-left py-4 px-6 rounded-xl transition-all duration-300 text-lg ${
+                      className={`block w-full text-left py-6 px-6 rounded-xl transition-all duration-300 text-lg mt-4 ${
                         activeSection === item.id
                           ? 'text-primary-teal bg-primary-teal/10 border border-primary-teal/20'
                           : 'text-white hover:text-primary-teal hover:bg-white/5'

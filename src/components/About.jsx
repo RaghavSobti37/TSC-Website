@@ -39,21 +39,7 @@ const About = () => {
   }
 
   return (
-    <section id="about" className="section-gradient relative overflow-hidden py-20 flex justify-center">
-      {/* Enhanced Background Elements */}
-      <div className="absolute inset-0 opacity-30">
-        <div className="floating-orb absolute top-20 left-10 w-96 h-96 bg-primary-teal" />
-        <div className="floating-orb absolute bottom-20 right-10 w-64 h-64 bg-secondary-orange" />
-        <div className="floating-orb absolute top-1/2 left-1/3 w-32 h-32 bg-light-teal" />
-      </div>
-
-      {/* Parallax Background Image */}
-      <motion.div 
-        className="absolute inset-0 z-0"
-        style={{ y }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-br from-white/95 via-gray-50/90 to-white/95" />
-      </motion.div>
+  <section id="about" className="section-dark py-20 flex justify-center">
 
       <div className="container relative z-10">
         <div className="content-wrapper mx-auto text-center">
@@ -65,7 +51,7 @@ const About = () => {
           >
           {/* Section Header with Enhanced Design */}
           <motion.div variants={itemVariants} className="section-header">
-            <h2 className="heading-font text-section-title text-gray-900 section-title">
+            <h2 className="heading-font text-section-title  section-title">
               About <span className="text-gradient">The Shakti Collective</span>
             </h2>
             
@@ -91,12 +77,12 @@ const About = () => {
 
             <motion.div variants={itemVariants} className="order-1 lg:order-2 space-y-8">
               <div>
-                <h3 className="heading-font text-card-title text-gray-900 leading-tight element-spacing">
+                <h3 className="heading-font text-card-title  leading-tight element-spacing">
                   Empowering Artists Through 
                   <span className="text-gradient block">Authentic Storytelling</span>
                 </h3>
                 
-                <div className="space-y-6 text-gray-700">
+                <div className="space-y-6 ">
                   <p className="text-body">
                     The Shakti Collective is more than just a platform—it's a 
                     <span className="font-semibold text-primary-teal"> thriving community</span> where artists can share their 
@@ -129,56 +115,50 @@ const About = () => {
           {/* Enhanced Values Grid */}
           <motion.div variants={itemVariants}>
             <div className="section-header">
-              <h3 className="heading-font text-card-title font-semibold text-gray-900 section-title">
+              <h3 className="heading-font text-card-title font-semibold  section-title">
                 Our Core Values
               </h3>
             </div>
 
-            <div className="grid-3">
-              {[
+            <div className="flex flex-row flex-wrap gap-8 justify-center items-center w-full px-2 md:px-0">
+              {[ 
                 {
                   title: "Authentic Stories",
                   description: "We value genuine narratives that come from real experiences, emotions, and the depths of human creativity.",
-                  icon: "📖",
-                  gradient: "from-blue-500 to-purple-600"
+                  icon: "📖"
                 },
                 {
                   title: "Creative Freedom",
                   description: "Artists have complete freedom to express themselves in their unique style, without compromise or limitation.",
-                  icon: "🎨",
-                  gradient: "from-primary-teal to-light-teal"
+                  icon: "🎨"
                 },
                 {
                   title: "Community Support",
                   description: "A supportive network of artists, collectors, and art enthusiasts who celebrate each other's success.",
-                  icon: "🤝",
-                  gradient: "from-secondary-orange to-red-500"
+                  icon: "🤝"
                 }
               ].map((feature, index) => (
                 <motion.div
                   key={index}
-                  className="group relative"
+                  className="group relative flex-1 min-w-[260px] max-w-[340px] flex justify-center"
                   variants={itemVariants}
                   whileHover={{ y: -10, scale: 1.02 }}
                   transition={{ type: "spring", stiffness: 300 }}
                 >
-                  <div className="absolute -inset-1 bg-gradient-to-r from-primary-teal to-secondary-orange rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-1000 group-hover:duration-200" />
-                  
-                  <div className="relative bg-white rounded-2xl card shadow-lg group-hover:shadow-2xl transition-all duration-300">
+                  <div className="absolute -inset-1 bg-gradient-to-r from-[#23232a] to-[#5fb3a3] rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-1000 group-hover:duration-200" />
+                  {/* Sleek card style */}
+                  <div className="relative card shadow-lg group-hover:shadow-2xl transition-all duration-300 border border-primary-teal flex flex-col justify-between items-center w-full" style={{ minHeight: '320px', background: 'linear-gradient(135deg, #23232a 0%, #5fb3a3 100%)' }}>
                     <div className="text-center">
                       <div className="text-5xl mb-6 transform group-hover:scale-110 transition-transform duration-300">
                         {feature.icon}
                       </div>
-                      
-                      <h4 className="heading-font text-card-title font-semibold text-gray-900 element-spacing">
+                      <h4 className="heading-font text-card-title font-semibold text-white element-spacing" style={{textShadow: '0 0 8px #23232a, 0 0 2px #fff'}}>
                         {feature.title}
                       </h4>
-                      
-                      <p className="text-body text-gray-600">
+                      <p className="text-white text-body" style={{textShadow: '0 0 2px #23232a'}}>
                         {feature.description}
                       </p>
                     </div>
-                    
                     {/* Decorative element */}
                     <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-12 h-1 bg-gradient-to-r from-primary-teal to-secondary-orange rounded-full" />
                   </div>
@@ -193,29 +173,25 @@ const About = () => {
             className="section-header"
           >
             <div className="bg-gradient-to-r from-primary-teal via-light-teal to-secondary-orange p-1 rounded-3xl max-w-4xl mx-auto">
-              <div className="bg-white rounded-3xl card-lg text-center">
-                <h3 className="heading-font text-card-title font-semibold text-gray-900 section-title">
+              <div className="bg-[#23232a] card text-center">
+                <h3 className="heading-font text-card-title font-semibold section-title text-white" style={{textShadow: '0 0 8px #23232a, 0 0 2px #fff'}}>
                   Ready to Share Your Story?
                 </h3>
-                <p className="text-body text-gray-600 element-spacing text-wrapper">
+                <p className="text-body text-white element-spacing text-wrapper" style={{textShadow: '0 0 2px #23232a'}}>
                   Join thousands of artists who have found their voice and audience through our platform. 
                   Start your creative journey today and become part of a community that celebrates authentic storytelling through art.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                  <motion.button
-                    className="px-12 py-5 bg-gradient-to-r from-primary-teal to-light-teal text-white font-bold text-lg rounded-full hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
+                  <motion.a
+                    href="https://mainbhiartist.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-12 py-5 bg-gradient-to-r from-primary-teal via-light-teal to-secondary-orange text-white font-bold text-lg rounded-full shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 border-2 border-primary-teal"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    Get Started Today
-                  </motion.button>
-                  <motion.button
-                    className="px-12 py-5 border-3 border-primary-teal text-primary-teal font-bold text-lg rounded-full hover:bg-primary-teal hover:text-white transition-all duration-300"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    Learn More
-                  </motion.button>
+                    Submit Your Story
+                  </motion.a>
                 </div>
               </div>
             </div>

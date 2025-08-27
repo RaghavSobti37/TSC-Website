@@ -52,7 +52,7 @@ function App() {
       <motion.div
         className="scroll-indicator fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary-teal via-light-teal to-secondary-orange z-50 origin-left"
         style={{ scaleX }}
-      />
+      ></motion.div>
 
   {/* Enhanced Background Elements with Parallax - limited to hero only */}
       
@@ -81,7 +81,7 @@ function App() {
         </motion.div>
 
         {/* Artists Section with Enhanced Transition */}
-        <motion.div
+        {/* <motion.div
           className="section-transition"
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -89,7 +89,7 @@ function App() {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <Artists />
-        </motion.div>
+        </motion.div> */}
 
         {/* Projects Section */}
         <motion.div
@@ -122,8 +122,8 @@ function App() {
         >
           <Footer />
         </motion.div>
+        {/* <Artists /> */}
       </div>
-
       {/* Intersection Observer for Smooth Reveals */}
       <style jsx global>{`
         .reveal-on-scroll {

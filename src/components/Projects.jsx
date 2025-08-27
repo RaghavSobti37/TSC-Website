@@ -30,21 +30,21 @@ const tagColors = {
 
 export default function Projects() {
   return (
-    <section id="projects" className="section-dark py-20 px-4 md:px-0">
+    <section id="projects" className="section-dark py-20 px-4 md:px-0 font-sans">
       <div className="section-header mb-12">
-        <h2 className="heading-font text-section-title text-white section-title">
-          Our <span className="text-gradient">Projects</span>
+        <h2 className="heading-font text-section-title text-primary-teal section-title">
+          Our <span className="text-secondary-orange">Projects</span>
         </h2>
-        <p className="text-lead text-gray-300 text-wrapper font-light element-spacing-lg">
+        <p className="text-lead text-gray-400 text-wrapper font-light element-spacing-lg">
           Explore what we're building now and what's coming soon.
         </p>
       </div>
-  <div className="grid-auto gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {projects.map((project, idx) => (
-          <div key={idx} className="card flex flex-col items-start shadow-lg border border-primary-teal" style={{background: 'linear-gradient(135deg, #5fb3a3 0%, #ff5722 100%)'}}>
-            <span className={`mb-3 px-4 py-1 rounded-full text-sm font-semibold tracking-wide ${tagColors[project.status]}`}>{project.status === "current" ? "Current Project" : "Future Project"}</span>
-            <h3 className="text-card-title mb-2 text-white" style={{textShadow: '0 0 8px #23232a, 0 0 2px #fff'}}>{project.title}</h3>
-            <p className="text-white text-body" style={{textShadow: '0 0 2px #23232a'}}>{project.description}</p>
+          <div key={idx} className="card flex flex-col items-start justify-center shadow-lg border-2 border-primary-teal rounded-2xl p-6 bg-white/10 hover:bg-primary-teal/20 hover:scale-105 transition-transform duration-300 min-h-[260px] max-w-[340px] mx-auto">
+            <span className={`mb-2 px-3 py-1 rounded-full text-xs font-semibold tracking-wide ${tagColors[project.status]}`}>{project.status === "current" ? "Current Project" : "Future Project"}</span>
+            <h3 className="text-xl mb-1 text-primary-teal font-bold">{project.title}</h3>
+            <p className="text-sm text-gray-200 font-normal">{project.description}</p>
           </div>
         ))}
       </div>

@@ -36,8 +36,8 @@ const Navbar = ({ scrollY }) => {
 
   const navItems = [
     { id: 'hero', label: 'Home' },
+    { id: 'projects', label: 'Projects', highlight: true },
     { id: 'about', label: 'About Us' },
-    { id: 'artists', label: 'Our Artists' },
     { id: 'team', label: 'Meet the Team' },
   ]
 
@@ -96,33 +96,18 @@ const Navbar = ({ scrollY }) => {
                 <motion.button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className={`text-base font-medium transition-all duration-300 relative group py-3 px-8 rounded-xl mt-4 ${
+                  className={`text-base font-medium transition-all duration-300 relative group py-3 px-8 rounded-full mt-4 ${
                     activeSection === item.id
-                      ? 'text-primary-teal bg-white/10'
-                      : scrollY > 50
-                      ? 'text-gray-300 hover:text-primary-teal'
-                      : 'text-white hover:text-primary-teal'
+                      ? 'bg-white text-primary-teal shadow-lg border-2 border-primary-teal scale-105'
+                      : 'text-gray-300 hover:bg-gray-800 hover:text-white'
                   }`}
                   whileHover={{ scale: 1.08 }}
                   whileTap={{ scale: 0.95 }}
                 >
                   {item.label}
-                  {/* Active indicator */}
                   {activeSection === item.id && (
-                    <motion.div
-                      className="absolute -bottom-2 left-0 right-0 h-0.5 bg-gradient-to-r from-primary-teal to-secondary-orange rounded-full"
-                      layoutId="activeSection"
-                      initial={false}
-                      transition={{ type: "spring", stiffness: 500, damping: 30 }}
-                    />
+                    <span className="block h-1 w-6 mx-auto mt-1 rounded-full bg-gradient-to-r from-primary-teal to-secondary-orange"></span>
                   )}
-                  {/* Hover effect */}
-                  <motion.div
-                    className="absolute -bottom-2 left-0 right-0 h-0.5 bg-gradient-to-r from-primary-teal/50 to-secondary-orange/50 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                    initial={{ scaleX: 0 }}
-                    whileHover={{ scaleX: 1 }}
-                    transition={{ duration: 0.3 }}
-                  />
                 </motion.button>
               ))}
               {/* CTA Button */}

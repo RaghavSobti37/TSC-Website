@@ -62,7 +62,16 @@ const Artists = () => {
           Meet the talented artists who bring their stories to life through their <span className="text-gradient font-medium">incredible work</span>.
         </p>
       </div>
-      <div className="w-full overflow-x-auto scrollbar-thin scrollbar-thumb-primary-teal">
+      {/* Scroll right animation and navigation guideline */}
+      <div className="w-full overflow-x-auto scrollbar-thin scrollbar-thumb-primary-teal relative">
+        <div className="absolute left-4 top-2 flex items-center z-20">
+          <div className="scroll-right-anim mr-2">
+            <motion.div initial={{x: 0, opacity: 1}} animate={{x: 32, opacity: 0}} transition={{repeat: Infinity, duration: 1.2}} style={{width: '32px', height: '32px', borderRadius: '50%', border: '2px solid #fff', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'rgba(0,0,0,0.3)'}}>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 8H12M12 8L8 4M12 8L8 12" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+            </motion.div>
+          </div>
+          <span className="text-white text-xs font-medium opacity-80">Scroll right to explore more artists</span>
+        </div>
         <div
           className="relative flex items-center justify-start mx-auto"
           style={{

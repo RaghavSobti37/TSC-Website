@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <rect width="800" height="600" fill="#1a1a1a"/>
+  <circle cx="400" cy="260" r="120" fill="#7fc7bc"/>
+  <text x="50%" y="85%" font-family="Inter, Arial" font-size="28" fill="#fff" text-anchor="middle">Member</text>
+</svg>

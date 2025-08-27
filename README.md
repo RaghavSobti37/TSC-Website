@@ -1,16 +1,50 @@
-# The Shakti Collective — Next.js Starter
+# The Shakti Collective
 
-This project is a lightweight Next.js + Tailwind CSS scaffold using Framer Motion for animations. It uses the assets you provided.
+A modern, animated website for The Shakti Collective, built with Next.js, Tailwind CSS, and Framer Motion.
 
-Quick start:
+## Prerequisites
 
-1. npm install
-2. npm run dev
+Before you begin, ensure you have the following installed:
+- [Node.js](https://nodejs.org/) (v18.x or later recommended)
+- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
 
-The app serves pages: Home (Hero), About, Projects, Team and Footer. Edit components in `components/`.
+## Getting Started
 
-Important asset setup:
+Follow these steps to get your development environment running.
 
-- Move your video file `src/assets/hero video TSC.mp4` into `public/assets/` and rename it to `hero-video.mp4` (no spaces). This avoids bundling binary files and lets Next serve it as `/assets/hero-video.mp4`.
+### 1. Clone the Repository
+```bash
+git clone <your-repository-url>
+cd TSC-Website
+```
 
-- Static images may remain in `src/assets/` and are imported by components. If you prefer, place them in `public/assets/` and update component src paths accordingly.
+### 2. Install Dependencies
+Install the required npm packages.
+```bash
+npm install
+```
+
+### 3. Asset Setup (Important)
+This project uses video backgrounds. For them to work correctly, you must place your video files inside the `public/` directory at the root of the project.
+
+- **Hero Section Video**: Place your video as `public/hero-video.mp4`.
+- **About Section Video**: Place your video as `public/hero.mp4`.
+
+### 4. Run the Development Server
+Start the Next.js development server.
+```bash
+npm run dev
+```
+Open http://localhost:3000 with your browser to see the result.
+
+## Project Structure
+
+- `components/`: Contains all the React components for different sections of the site (e.g., `Hero.js`, `About.js`, `Projects.js`).
+- `styles/globals.css`: Contains global styles and Tailwind CSS directives.
+- `public/`: Contains static assets like videos and images that are served directly by the browser.
+
+## Technologies Used
+
+- **Next.js** - React Framework
+- **Tailwind CSS** - Utility-First CSS Framework
+- **Framer Motion** - Animation Library for React

@@ -28,7 +28,7 @@ const projects = [
     id: 3,
     title: 'Coming Soon',
     category: 'Music Academy',
-    image: '/assets/option 1.png',
+    image: '/assets/Academy coming soon!.png',
     colSpan: 'lg:col-span-1',
     height: 'h-80',
     description:

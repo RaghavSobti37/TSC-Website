@@ -24,7 +24,7 @@ const teamMembers = [
     },
   },
   {
-    id: 3,
+    id: 5,
     name: 'Deepank Soni',
     role: 'G.O.A.T',
     image: '/assets/deepank.jpg',
@@ -34,13 +34,33 @@ const teamMembers = [
       instagram: 'https://www.instagram.com/deepank_soni_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==',
     },
   },
+   {
+    id: 4,
+    name: 'Amaey',
+    role: 'Music Producer',
+    image: '/assets/amaey.jpeg',
+    description: 'Amaey is our sound wizard, crafting immersive audio experiences that elevate our projects.',
+    socials: {
+      
+    },
+  },
+   {
+    id: 3,
+    name: 'Laksh Maheshwari',
+    role: 'StoryTeller',
+    image: '/assets/laksh.jpg',
+    description: 'Laksh is our master storyteller, weaving narratives that resonate with audiences.',
+    socials: {
+      instagram : "https://www.instagram.com/single.handedly?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+    },
+  },
 ]
 
 export default function Team() {
   return (
     <section id="team" className="py-20 px-6 bg-white">
       <div className="container mx-auto text-center">
-        <h2 className="heading-font text-4xl font-bold text-gray-800 mb-12">Our Core Team</h2>
+        <h2 className="heading-font text-4xl font-bold text-gray-800 mb-12">Our Core Collective</h2>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-12 justify-center max-w-5xl mx-auto">
           {teamMembers.map((member) => (
             <div key={member.id} className="group">

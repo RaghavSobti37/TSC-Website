@@ -10,7 +10,7 @@ export default function Home() {
     <>
       <Head>
         <title>The Shakti Collective</title>
-        <meta name="description" content="The Shakti Collective — creative studio" />
+        <meta name="description" content="Music , Stories , Culture forward" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <main>

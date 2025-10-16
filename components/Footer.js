@@ -1,5 +1,6 @@
-import Image from 'next/image'
+import Image from "next/legacy/image"
 import { FaLinkedin, FaTwitter, FaInstagram } from 'react-icons/fa'
+import DarkModeToggle from './DarkModeToggle'
 
 export default function Footer() {
   return (
@@ -13,8 +14,8 @@ export default function Footer() {
             <h3 className="text-2xl font-bold mb-2 heading-font">Join Our Collective</h3>
             <p className="mb-6 text-indigo-200">Get the latest on our projects and creative insights delivered to your inbox.</p>
             <form className="flex flex-col sm:flex-row">
-              <input type="email" placeholder="Your Email Address" className="w-full px-4 py-3 text-gray-800 rounded-md sm:rounded-l-md sm:rounded-r-none focus:outline-none focus:ring-2 focus:ring-indigo-300" required />
-              <button type="submit" className="mt-2 sm:mt-0 px-6 py-3 bg-white text-indigo-600 font-bold rounded-md sm:rounded-r-md sm:rounded-l-none hover:bg-gray-200 transition-colors">
+              <input type="email" placeholder="Your Email Address" className="w-full px-4 py-3 text-gray-800 rounded-md sm:rounded-l-md sm:rounded-r-none focus:outline-none focus:ring-2 focus:ring-indigo-300 dark:bg-gray-700 dark:text-gray-200 dark:placeholder-gray-400" required />
+              <button type="submit" className="mt-2 sm:mt-0 px-6 py-3 bg-white text-indigo-600 font-bold rounded-md sm:rounded-r-md sm:rounded-l-none hover:bg-gray-200 transition-colors dark:bg-indigo-500 dark:text-white dark:hover:bg-indigo-400">
                 Subscribe
               </button>
             </form>
@@ -43,10 +44,11 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-16 border-t border-white/20 pt-8 text-center text-sm text-indigo-200">
+        <div className="mt-16 border-t border-white/20 pt-8 flex justify-between items-center text-sm text-indigo-200">
           <p>&copy; {new Date().getFullYear()} The Shakti Collective. All Rights Reserved.</p>
+          <DarkModeToggle />
         </div>
       </div>
     </footer>
-  )
+  );
 }

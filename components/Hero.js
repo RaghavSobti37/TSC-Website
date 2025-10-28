@@ -6,9 +6,9 @@ export default function Hero() {
 
   return (
     <section className="relative h-screen overflow-hidden">
-      <div className="absolute inset-0 bg-black/40" />
+      <div className="absolute inset-0 bg-deep-teal/40" />
 
-      <div className="relative z-10 flex flex-col items-center justify-center h-full text-white text-center px-6">
+      <div className="relative z-10 flex flex-col items-center justify-center h-full text-cream text-center px-6">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

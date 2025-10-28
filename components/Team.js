@@ -58,29 +58,29 @@ const teamMembers = [
 
 export default function Team() {
   return (
-    <section id="team" className="py-20 px-6 bg-white dark:bg-gray-900">
+    <section id="team" className="py-20 px-6 bg-cream dark:bg-wine">
       <div className="container mx-auto text-center">
-        <h2 className="heading-font text-4xl font-bold text-gray-800 dark:text-gray-200 mb-12">Our Core Collective</h2>
+        <h2 className="heading-font text-4xl font-bold text-deep-teal dark:text-cream mb-12">Our Core Collective</h2>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-12 justify-center max-w-5xl mx-auto">
           {teamMembers.map((member) => (
             <div key={member.id} className="group">
-              <div className="relative w-48 h-48 mx-auto mb-4 rounded-full overflow-hidden shadow-lg border-4 border-white dark:border-gray-800 cursor-pointer">
+              <div className="relative w-48 h-48 mx-auto mb-4 rounded-full overflow-hidden shadow-lg border-4 border-cream dark:border-chestnut cursor-pointer">
                 <Image src={member.image} alt={`Portrait of ${member.name}`} layout="fill" objectFit="cover" />
-                <div className="absolute inset-0 bg-black/70 flex items-center justify-center p-4 text-white opacity-0 group-hover:opacity-100 focus-within:opacity-100 transition-opacity duration-300">
+                <div className="absolute inset-0 bg-deep-teal/70 flex items-center justify-center p-4 text-cream opacity-0 group-hover:opacity-100 focus-within:opacity-100 transition-opacity duration-300">
                   <p className="text-sm text-center">{member.description}</p>
                 </div>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 dark:text-white">{member.name}</h3>
-              <p className="text-gray-500 dark:text-gray-400">{member.role}</p>
+              <h3 className="text-xl font-bold text-deep-teal dark:text-cream">{member.name}</h3>
+              <p className="text-deep-teal/80 dark:text-cream/80">{member.role}</p>
               <div className="flex justify-center gap-4 mt-3">
                 {member.socials.linkedin && (
-                  <a href={member.socials.linkedin} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-indigo-600 dark:text-gray-500 dark:hover:text-indigo-400 transition-colors"><FaLinkedin size={20} /></a>
+                  <a href={member.socials.linkedin} target="_blank" rel="noopener noreferrer" className="text-deep-teal/60 hover:text-pumpkin dark:text-cream/60 dark:hover:text-pumpkin transition-colors"><FaLinkedin size={20} /></a>
                 )}
                 {member.socials.instagram && (
-                  <a href={member.socials.instagram} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-indigo-600 dark:text-gray-500 dark:hover:text-indigo-400 transition-colors"><FaInstagram size={20} /></a>
+                  <a href={member.socials.instagram} target="_blank" rel="noopener noreferrer" className="text-deep-teal/60 hover:text-pumpkin dark:text-cream/60 dark:hover:text-pumpkin transition-colors"><FaInstagram size={20} /></a>
                 )}
                 {member.socials.twitter && (
-                  <a href={member.socials.twitter} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-indigo-600 dark:text-gray-500 dark:hover:text-indigo-400 transition-colors"><FaTwitter size={20} /></a>
+                  <a href={member.socials.twitter} target="_blank" rel="noopener noreferrer" className="text-deep-teal/60 hover:text-pumpkin dark:text-cream/60 dark:hover:text-pumpkin transition-colors"><FaTwitter size={20} /></a>
                 )}
               </div>
             </div>

@@ -5,19 +5,19 @@
 @tailwind utilities;
 
 :root {
-  --primary-teal: #5fb3a3;
-  --secondary-orange: #ff5722;
-  --dark-bg: #0a0a0a;
-  --light-teal: #7fc7bc;
-  --off-white: #f8f9fa;
+  --primary-teal: #126d5e; /* Sea Foam */
+  --secondary-orange: #b74b02; /* Pumpkin */
+  --dark-bg: #083d3a; /* Deep Teal */
+  --light-teal: #08525f; /* Peacock */
+  --off-white: #ffecd1; /* Cream */
   --section-spacing: 6rem;
   --container-padding: 2rem;
   --card-spacing: 2rem;
   --element-spacing: 1.5rem;
   --card-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
   --card-shadow-hover: 0 35px 70px -12px rgba(0, 0, 0, 0.35);
-  --gradient-primary: linear-gradient(135deg, #5fb3a3 0%, #7fc7bc 50%, #ff5722 100%);
-  --gradient-dark: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #2a2a2a 100%);
+  --gradient-primary: linear-gradient(135deg, #126d5e 0%, #08525f 50%, #b74b02 100%);
+  --gradient-dark: linear-gradient(135deg, #083d3a 0%, #592314 100%);
   --border-radius-sm: 0.75rem;
   --border-radius-md: 1.5rem;
   --border-radius-lg: 2rem;

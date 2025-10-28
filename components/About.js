@@ -1,6 +1,6 @@
 export default function About() {
   return (
-    <section id="about" className="py-20 px-6 bg-white dark:bg-gray-900">
+    <section id="about" className="py-20 px-6 bg-cream dark:bg-deep-teal">
       <div className="container mx-auto grid lg:grid-cols-2 gap-12 items-center">
         {/* Video Column */}
         <div className="w-full h-96 rounded-lg overflow-hidden shadow-lg">
@@ -18,11 +18,11 @@ export default function About() {
 
         {/* Text Column */}
         <div>
-          <h2 className="heading-font text-4xl font-bold mb-4 text-gray-800 dark:text-gray-200">About The Collective</h2>
-          <p className="text-lg text-gray-600 dark:text-gray-400 mb-4">
+          <h2 className="heading-font text-4xl font-bold mb-4 text-deep-teal dark:text-cream">About The Collective</h2>
+          <p className="text-lg text-deep-teal/80 dark:text-cream/80 mb-4">
             Imagine a place where music and stories come alive! The Shakti Collective envisions a stage where groundbreaking music and cultural narratives converge, fostering fire artists who resonate with a diverse audience.
           </p>
-          <p className="text-lg text-gray-600 dark:text-gray-400">
+          <p className="text-lg text-deep-teal/80 dark:text-cream/80">
             By modernizing deep cultural stories, crafting entertaining & conscious music, a dedicated fan community, and an academy, all working in sync to discover, nurture, and connect artists with a global audience, and pushing the culture forward. Join the wave!
           </p>
         </div>

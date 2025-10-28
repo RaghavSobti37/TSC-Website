@@ -5,9 +5,7 @@ export default function Hero() {
   const y = useTransform(scrollY, [0, 500], [0, -100])
 
   return (
-    <section className="relative h-screen overflow-hidden">
-      <div className="absolute inset-0 bg-deep-teal/40" />
-
+    <section className="relative h-screen overflow-hidden bg-black">
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-cream text-center px-6">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
@@ -24,7 +22,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="text-lg md:text-xl font-light tracking-wider mb-8 text-gray-200"
+          className="text-lg md:text-xl font-light tracking-wider mb-8 text-cream/80"
         >
           Music , Stories , Culture forward
         </motion.p>
@@ -39,6 +37,18 @@ export default function Hero() {
           <a href="https://www.instagram.com/the_shakti_collective?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" className="btn-secondary">
             Join the Community
           </a>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          className="scroll-down-animation"
+        >
+          <div className="mouse">
+            <div className="scroll-wheel"></div>
+          </div>
+          <span className="">Scroll to explore</span>
         </motion.div>
       </div>
     </section>

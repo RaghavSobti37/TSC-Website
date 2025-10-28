@@ -581,3 +581,49 @@ body {
     background-attachment: scroll;
   }
 }
+
+/* Scroll to explore animation */
+.scroll-down-animation {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--off-white);
+  font-size: 0.875rem;
+  letter-spacing: 0.05em;
+  margin-top: 2rem;
+}
+
+.mouse {
+  width: 24px;
+  height: 40px;
+  border: 2px solid var(--off-white);
+  border-radius: 12px;
+  position: relative;
+}
+
+.scroll-wheel {
+  width: 4px;
+  height: 8px;
+  background-color: var(--off-white);
+  border-radius: 2px;
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: scroll 2s ease-in-out infinite;
+}
+
+@keyframes scroll {
+  0% {
+    opacity: 1;
+    top: 8px;
+  }
+  50% {
+    opacity: 1;
+    top: 20px;
+  }
+  100% {
+    opacity: 0;
+    top: 20px;
+  }
+}

@@ -92,8 +92,34 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="flex flex-col sm:flex-row gap-4"
         >
-          <a href="#projects" className="btn-primary">View Our Work</a>
-          <a href="https://www.instagram.com/the_shakti_collective?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" className="btn-secondary">
+          <a 
+            href="#projects" 
+            className="btn-primary"
+            onClick={() => {
+              // Track button click
+              window.gtag?.('event', 'click', {
+                event_category: 'engagement',
+                event_label: 'view_work_button',
+                value: 1
+              });
+            }}
+          >
+            View Our Work
+          </a>
+          <a 
+            href="https://www.instagram.com/the_shakti_collective?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="btn-secondary"
+            onClick={() => {
+              // Track button click
+              window.gtag?.('event', 'click', {
+                event_category: 'social',
+                event_label: 'instagram_button',
+                value: 1
+              });
+            }}
+          >
             Join the Community
           </a>
         </motion.div>

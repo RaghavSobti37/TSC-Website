@@ -4,10 +4,19 @@ import DarkModeToggle from './DarkModeToggle'
 
 export default function Footer() {
   return (
-    // This assumes you have a gradient defined in your CSS, e.g.,
-    // .bg-gradient-primary { background-image: linear-gradient(to right, #4f46e5, #818cf8); }
-    <footer className="bg-gradient-primary text-cream">
-      <div className="container mx-auto px-6 py-16">
+    <footer className="relative bg-gradient-primary text-cream overflow-hidden">
+      <div className="pattern-container absolute inset-0">
+        <div className="absolute inset-0">
+          <Image 
+            src="/assets/Patterns/LogoArtboard 17@300x-8.png" 
+            alt="Background Pattern" 
+            layout="fill" 
+            objectFit="cover" 
+            className="opacity-30"
+          />
+        </div>
+      </div>
+      <div className="container mx-auto px-6 py-16 relative z-10">
         <div className="grid lg:grid-cols-12 gap-12 items-center">
           {/* Newsletter Section */}
           <div className="lg:col-span-5">

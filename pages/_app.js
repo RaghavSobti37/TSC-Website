@@ -1,3 +1,4 @@
+import '../src/animations.css'
 import '../src/index.css'
 import { AnimatePresence } from 'framer-motion'
 import Head from 'next/head'
@@ -8,7 +9,7 @@ function MyApp({ Component, pageProps, router }) {
   return (
     <ThemeProvider>
       <Head>
-        <link rel="icon" href="/assets/only logo.png" />
+        <link rel="icon" href="/assets/favicon.png" />
       </Head>
       <Header />
       <AnimatePresence mode="wait">

@@ -1,11 +1,70 @@
-import { motion, useScroll, useTransform } from 'framer-motion'
+import { motion } from 'framer-motion'
+import Image from 'next/legacy/image'
+import { useState, useEffect } from 'react'
 
 export default function Hero() {
-  const { scrollY } = useScroll()
-  const y = useTransform(scrollY, [0, 500], [0, -100])
+  const patterns = [
+    "/assets/Patterns/LogoArtboard 17@300x-8.png",
+    "/assets/Patterns/LogoArtboard 18@300x-8.png",
+    "/assets/Patterns/LogoArtboard 19@300x-8.png",
+    "/assets/Patterns/LogoArtboard 20@300x-8.png"
+  ];
+
+  const [currentPattern, setCurrentPattern] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentPattern((prev) => (prev + 1) % patterns.length);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <section className="relative h-screen overflow-hidden bg-black">
+      <div className="pattern-container absolute inset-0 w-full">
+        <motion.div 
+          key={currentPattern}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 1 }}
+          className="absolute inset-0 w-full h-full flex"
+        >
+          {/* Left Pattern */}
+          <div className="w-1/2 h-full relative">
+            <Image 
+              src={patterns[currentPattern]} 
+              alt="Background Pattern Left" 
+              layout="fill" 
+              objectFit="cover"
+              quality={100}
+              priority
+              className="opacity-50"
+              style={{
+                objectPosition: 'right center',
+                transform: 'scale(1.1)'
+              }}
+            />
+          </div>
+          {/* Right Pattern */}
+          <div className="w-1/2 h-full relative">
+            <Image 
+              src={patterns[currentPattern]} 
+              alt="Background Pattern Right" 
+              layout="fill" 
+              objectFit="cover"
+              quality={100}
+              priority
+              className="opacity-50"
+              style={{
+                objectPosition: 'left center',
+                transform: 'scale(1.1)'
+              }}
+            />
+          </div>
+        </motion.div>
+      </div>
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-cream text-center px-6">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}

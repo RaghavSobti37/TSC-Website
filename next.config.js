@@ -5,18 +5,14 @@ const nextConfig = {
         return {
           beforeFiles: [
             {
-              source: '/demoday',
-              destination: 'https://artist-spotlight-hub.vercel.app/',
-            },
-            {
-              source: '/demoday/:path*',
-              destination: 'https://artist-spotlight-hub.vercel.app/:path*',
+              source: '/demo-assets/:path*',
+              destination: 'https://artist-spotlight-hub.vercel.app/assets/:path*',
             },
           ],
           fallback: [
             {
-              source: '/assets/:path*',
-              destination: 'https://artist-spotlight-hub.vercel.app/assets/:path*',
+              source: '/:path*',
+              destination: 'https://artist-spotlight-hub.vercel.app/:path*',
             },
           ],
         }

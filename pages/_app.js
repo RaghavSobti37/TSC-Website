@@ -7,13 +7,15 @@ import Header from '../components/Header'
 import { GoogleAnalytics } from '@next/third-parties/google'
 
 function MyApp({ Component, pageProps, router }) {
+  const hideHeader = Component.hideHeader || false;
+
   return (
     <ThemeProvider>
       <Head>
         <link rel="icon" href="/assets/favicon.png" />
       </Head>
       <GoogleAnalytics gaId="G-2F58657NRP" />
-      <Header />
+      {!hideHeader && <Header />}
       <AnimatePresence mode="wait">
         <Component {...pageProps} key={router.route} />
       </AnimatePresence>

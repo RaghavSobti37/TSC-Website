@@ -14,3 +14,5 @@ export default function DemoDay() {
     </div>
   );
 }
+
+DemoDay.hideHeader = true;

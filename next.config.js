@@ -2,16 +2,24 @@
 const nextConfig = {
     reactStrictMode: true,
     async rewrites() {
-        return [
-          {
-            source: '/demoday',
-            destination: 'https://artist-spotlight-hub.vercel.app',
-          },
-          {
-            source: '/demoday/:path*',
-            destination: 'https://artist-spotlight-hub.vercel.app/:path*',
-          },
-        ]
+        return {
+          beforeFiles: [
+            {
+              source: '/demoday',
+              destination: 'https://artist-spotlight-hub.vercel.app/',
+            },
+            {
+              source: '/demoday/:path*',
+              destination: 'https://artist-spotlight-hub.vercel.app/:path*',
+            },
+          ],
+          fallback: [
+            {
+              source: '/assets/:path*',
+              destination: 'https://artist-spotlight-hub.vercel.app/assets/:path*',
+            },
+          ],
+        }
       },
 }
 

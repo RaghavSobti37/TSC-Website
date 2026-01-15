@@ -35,16 +35,6 @@ const teamMembers = [
     },
   },
    {
-    id: 4,
-    name: 'Amaey',
-    role: 'Music Producer',
-    image: '/assets/amaey.jpeg',
-    description: 'Amaey is our sound wizard, crafting immersive audio experiences that elevate our projects.',
-    socials: {
-      
-    },
-  },
-   {
     id: 3,
     name: 'Laksh Maheshwari',
     role: 'StoryTeller',

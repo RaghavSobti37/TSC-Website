@@ -1,70 +1,87 @@
 import { motion } from 'framer-motion'
-import Image from 'next/legacy/image'
-import { useState, useEffect } from 'react'
 
 export default function Hero() {
-  const patterns = [
-    "/assets/Patterns/LogoArtboard 17@300x-8.png",
-    "/assets/Patterns/LogoArtboard 18@300x-8.png",
-    "/assets/Patterns/LogoArtboard 19@300x-8.png",
-    "/assets/Patterns/LogoArtboard 20@300x-8.png"
-  ];
-
-  const [currentPattern, setCurrentPattern] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentPattern((prev) => (prev + 1) % patterns.length);
-    }, 5000);
-
-    return () => clearInterval(interval);
-  }, []);
 
   return (
     <section className="relative h-screen overflow-hidden bg-black">
-      <div className="pattern-container absolute inset-0 w-full">
-        <motion.div 
-          key={currentPattern}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 1 }}
-          className="absolute inset-0 w-full h-full flex"
+      {/* Liquid Morphic Background */}
+      <div className="absolute inset-0 w-full h-full opacity-50">
+        <svg
+          className="w-full h-full"
+          viewBox="0 0 1200 800"
+          preserveAspectRatio="xMidYMid slice"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          {/* Left Pattern */}
-          <div className="w-1/2 h-full relative">
-            <Image 
-              src={patterns[currentPattern]} 
-              alt="Background Pattern Left" 
-              layout="fill" 
-              objectFit="cover"
-              quality={100}
-              priority
-              className="opacity-50"
-              style={{
-                objectPosition: 'right center',
-                transform: 'scale(1.1)'
+          <defs>
+            <filter id="gooey">
+              <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="coloredBlur" />
+              <feComponentTransfer in="coloredBlur">
+                <feFuncA type="linear" slope="0.5"/>
+              </feComponentTransfer>
+            </filter>
+            <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#FF6B35" stopOpacity="0.8" />
+              <stop offset="50%" stopColor="#8B3A3A" stopOpacity="0.6" />
+              <stop offset="100%" stopColor="#6B4423" stopOpacity="0.8" />
+            </linearGradient>
+          </defs>
+          <g filter="url(#gooey)">
+            <motion.circle
+              cx="600"
+              cy="400"
+              r="200"
+              fill="url(#gradient)"
+              animate={{
+                cx: [600, 700, 500, 600],
+                cy: [400, 300, 500, 400],
+                r: [200, 250, 180, 200]
+              }}
+              transition={{
+                duration: 20,
+                repeat: Infinity,
+                ease: "easeInOut"
               }}
             />
-          </div>
-          {/* Right Pattern */}
-          <div className="w-1/2 h-full relative">
-            <Image 
-              src={patterns[currentPattern]} 
-              alt="Background Pattern Right" 
-              layout="fill" 
-              objectFit="cover"
-              quality={100}
-              priority
-              className="opacity-50"
-              style={{
-                objectPosition: 'left center',
-                transform: 'scale(1.1)'
+            <motion.circle
+              cx="400"
+              cy="300"
+              r="150"
+              fill="url(#gradient)"
+              animate={{
+                cx: [400, 300, 500, 400],
+                cy: [300, 500, 200, 300],
+                r: [150, 200, 180, 150]
+              }}
+              transition={{
+                duration: 18,
+                repeat: Infinity,
+                ease: "easeInOut"
               }}
             />
-          </div>
-        </motion.div>
+            <motion.circle
+              cx="800"
+              cy="500"
+              r="180"
+              fill="url(#gradient)"
+              animate={{
+                cx: [800, 900, 700, 800],
+                cy: [500, 250, 450, 500],
+                r: [180, 220, 160, 180]
+              }}
+              transition={{
+                duration: 22,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+            />
+          </g>
+        </svg>
       </div>
+
+      {/* Dark Overlay */}
+      <div className="absolute inset-0 bg-black/30"></div>
+
+      {/* Scroll Indicator */}
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-cream text-center px-6">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
@@ -90,13 +107,12 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="flex flex-col sm:flex-row gap-4"
+          className="flex flex-col sm:flex-row gap-4 mb-16"
         >
           <a 
             href="#projects" 
             className="btn-primary"
             onClick={() => {
-              // Track button click
               window.gtag?.('event', 'click', {
                 event_category: 'engagement',
                 event_label: 'view_work_button',
@@ -112,7 +128,6 @@ export default function Hero() {
             rel="noopener noreferrer" 
             className="btn-secondary"
             onClick={() => {
-              // Track button click
               window.gtag?.('event', 'click', {
                 event_category: 'social',
                 event_label: 'instagram_button',
@@ -123,9 +138,12 @@ export default function Hero() {
             Join the Community
           </a>
         </motion.div>
+      </div>
 
+      {/* Scroll Indicator - Bottom */}
+      <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 z-10">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
           className="scroll-down-animation"
@@ -133,7 +151,7 @@ export default function Hero() {
           <div className="mouse">
             <div className="scroll-wheel"></div>
           </div>
-          <span className="">Scroll to explore</span>
+          <span className="text-cream/80 text-sm tracking-widest">SCROLL TO EXPLORE</span>
         </motion.div>
       </div>
     </section>

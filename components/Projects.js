@@ -16,9 +16,9 @@ const projects = [
   },
   {
     id: 2,
-    title: 'Coming Soon',
+    title: 'TSC Academy',
     category: 'Music Academy',
-    image: '/assets/BLU01769.jpg',
+    image: '/assets/tsc academy.png',
     colSpan: 'lg:col-span-1',
     height: 'h-80',
     description:

@@ -9,13 +9,13 @@ const teamMembers = [
     name: 'Rohith Sobti',
     role: 'Co-founder and CEO',
     image: '/assets/rohit.png',
-    description: 'Rohith is the visionary force behind The Shakti Collective—a creative leader driven by the belief that art can reshape culture. His journey started with a radical idea: what if we built a space where marginalized voices weren\'t just heard, but celebrated as the heartbeat of our work?',
-    philosophy: '"If your art doesn\'t move you, it won\'t move anyone else."',
+    description: 'Rohit Sobti is a visionary music and entertainment strategist, Co-Founder of The Shakti Collective, and a Harvard Business School (BEMS) and IIM Bangalore alumnus. With 27+ years of experience, he has been at the forefront of creating and monetizing intellectual property across music, films, and brand ecosystems, architecting monetization strategies for catalogs totaling over XX streams.',
+    philosophy: '"Through The Shakti Collective and Artiste First, he continues to build scalable IPs and sustainable music businesses where creativity and commerce thrive together."',
     accomplishments: [
-      'Founded The Shakti Collective to amplify marginalized voices in music and culture',
-      'Strategic vision for Mahavatar Narsimha\'s cultural impact and marketing approach',
-      'Building communities that thrive on authenticity, not algorithms',
-      'Creating pathways for artists who\'ve been overlooked by mainstream systems'
+      'A former Vice President at Yash Raj Films and a leader at global giants like Sony Music and Universal Music India, Rohit brings a rare blend of Ivy League business strategy and deep creative intuition.',
+      'His expertise in Intellectual Property Rights (IPR) and non-theatrical monetization has made him a pivotal figure in taking Indian music to a global stage.',
+      'His career is defined by building sustainable foundations for the industry, from leading strategy for massive IPs like Mahavatar Narsimha to scaling the music labels of India’s most iconic artists, including Arijit Singh, Amit Trivedi, and Vishal Bhardwaj.',
+      'Today, Rohit is dedicated to professionalizing the creator economy and building new models of collaboration.'
     ],
     socials: {
       linkedin: 'https://www.linkedin.com/in/rohitsobti/',
@@ -104,7 +104,7 @@ export default function Team() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 10 }}
                     transition={{ duration: 0.36 }}
-                    className="rounded-2xl overflow-hidden bg-gradient-to-b from-transparent via-chestnut/60 to-wine/80 shadow-2xl"
+                    className="rounded-2xl overflow-hidden bg-gradient-to-b from-transparent via-chestnut/30 to-wine/50 shadow-2xl"
                   >
                     <div className="relative h-56 w-full">
                       <Image src={member.image} alt={member.name} layout="fill" objectFit="cover" />
@@ -148,7 +148,7 @@ export default function Team() {
                     <motion.div
                       initial={{ opacity: 0.6 }}
                       whileHover={{ opacity: 1 }}
-                      className="absolute inset-0 bg-gradient-to-t from-pumpkin via-wine/40 to-transparent"
+                      className="absolute inset-0 bg-gradient-to-t from-pumpkin via-wine/20 to-transparent"
                     ></motion.div>
                     <motion.div
                       initial={{ opacity: 0, y: 10 }}

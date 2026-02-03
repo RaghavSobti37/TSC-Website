@@ -9,12 +9,13 @@ const teamMembers = [
     name: 'Rohith Sobti',
     role: 'Co-founder and CEO',
     image: '/assets/rohit.png',
-    description: 'Rohith is the visionary leader driving the creative and strategic direction of The Shakti Collective.',
+    description: 'Rohith is the visionary force behind The Shakti Collective—a creative leader driven by the belief that art can reshape culture. His journey started with a radical idea: what if we built a space where marginalized voices weren\'t just heard, but celebrated as the heartbeat of our work?',
+    philosophy: '"If your art doesn\'t move you, it won\'t move anyone else."',
     accomplishments: [
-      'Founded The Shakti Collective to amplify marginalized voices',
-      'Led multiple award-winning creative campaigns',
-      'Strategic partnerships with leading brands',
-      'Pioneer in music and culture storytelling'
+      'Founded The Shakti Collective to amplify marginalized voices in music and culture',
+      'Strategic vision for Mahavatar Narsimha\'s cultural impact and marketing approach',
+      'Building communities that thrive on authenticity, not algorithms',
+      'Creating pathways for artists who\'ve been overlooked by mainstream systems'
     ],
     socials: {
       linkedin: 'https://www.linkedin.com/in/rohitsobti/',
@@ -26,12 +27,13 @@ const teamMembers = [
     name: 'Sandesh Shandaliya',
     role: 'Co-founder and Mentor',
     image: '/assets/sandesh.jpg',
-    description: 'With decades of experience, Sandesh guides our team, fostering growth and artistic excellence.',
+    description: 'Sandesh carries decades of music and cultural wisdom. He\'s the keeper of tradition who pushes boundaries—someone who understands that honoring the past and creating the future aren\'t opposing forces. His mentorship anchors our work in authenticity.',
+    philosophy: '"Music is a dialogue between generations. We\'re just listening and responding."',
     accomplishments: [
-      'Decades of industry expertise',
-      'Mentored emerging creative talents',
-      'Strategic visionary and creative director',
-      'Established industry best practices'
+      'Decades of music composition expertise and cultural curation',
+      'Mentored generations of emerging artists with integrity and rigor',
+      'Strategic visionary guiding TSC\'s cultural direction and values',
+      'Bridge between tradition and innovation in Indian music landscape'
     ],
     socials: {
       instagram: 'https://www.instagram.com/sandeshshandilya?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==',
@@ -42,12 +44,13 @@ const teamMembers = [
     name: 'Deepank Soni',
     role: 'G.O.A.T (Master of Motion)',
     image: '/assets/deepank.jpg',
-    description: 'Deepank is our master of motion, bringing static designs to life with unparalleled skill and creativity.',
+    description: 'Deepank is our master of motion—an artist who understands that every frame, every second of movement carries intention. He doesn\'t just animate; he translates emotion into visual language that pierces the soul.',
+    philosophy: '"Motion is meaning. Every pixel deserves purpose."',
     accomplishments: [
-      'Expert in motion graphics and animation',
-      'Created viral animated campaigns',
-      'Award-winning visual effects',
-      'Pioneered innovative animation techniques'
+      'Expert in translating cultural narratives into compelling visual experiences',
+      'Strategic marketing minds behind viral campaigns that sparked conversations',
+      'Master of motion graphics that bridge art and commerce authentically',
+      'Collaborative force in bringing ambitious creative visions to life'
     ],
     socials: {
       linkedin: 'https://www.linkedin.com/in/deepank-soni-bab014243/',
@@ -59,12 +62,13 @@ const teamMembers = [
     name: 'Laksh Maheshwari',
     role: 'Master Storyteller',
     image: '/assets/laksh.jpg',
-    description: 'Laksh is our master storyteller, weaving narratives that resonate with audiences.',
+    description: 'Laksh weaves narratives that stay with people long after they\'re told. He\'s the voice that captures what others feel but can\'t articulate—turning personal struggles into universal stories that build bridges between cultures.',
+    philosophy: '"Every story is a seed. Plant it in the right soil and it transforms worlds."',
     accomplishments: [
-      'Created compelling narratives across mediums',
-      'Storytelling consultant for major brands',
-      'Award-winning content creator',
-      'Cultural bridge through authentic storytelling'
+      'Crafted compelling narratives across music, film, and cultural projects',
+      'Cultural strategist who builds authentic connections between art and audiences',
+      'Master of finding truth in stories others overlook',
+      'Created pathways for marginalized voices through authentic storytelling'
     ],
     socials: {
       instagram : "https://www.instagram.com/single.handedly?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
@@ -113,6 +117,9 @@ export default function Team() {
                     </div>
                     <div className="p-6 bg-chestnut/10">
                       <p className="text-sm text-wine/90 mb-3">{member.description}</p>
+                      {member.philosophy && (
+                        <p className="text-sm italic text-pumpkin mb-4 font-semibold">{member.philosophy}</p>
+                      )}
                       <h4 className="text-xs font-black uppercase tracking-wider mb-2">Selected Works</h4>
                       <ul className="text-sm space-y-1">
                         {member.accomplishments.map((a,i)=>(<li key={i}> {a}</li>))}

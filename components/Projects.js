@@ -17,32 +17,32 @@ const projects = [
   {
     id: 2,
     title: 'TSC Academy',
-    category: 'Music Academy',
+    category: 'Artist Development',
     image: '/assets/tsc academy.png',
     colSpan: 'lg:col-span-1',
     height: 'h-80',
     description:
-      'Unfold yourself , from within to the world. ',
+      'Unfold yourself—from within to the world. Our academy isn\'t a conventional music school. It\'s a sanctuary where artists reclaim their voice, unlearn conformity, and discover the stories only they can tell. We nurture the quiet dreamers, the ones the industry overlooked.',
   },
   {
     id: 4,
-    title: 'Main bhi Artist',
-    category: 'Community',
+    title: 'Main Bhi Artist',
+    category: 'Community & Activism',
     image: '/assets/mba banner.png',
     colSpan: 'lg:col-span-1',
     height: 'h-80',
     description:
-      'Main Bhi Artist is a dedicated community built to uplift genuine artists in India and globally. We\'re a home for quiet music dreamers, offering a supportive space to grow, connect, and collaborate with each other.',
+      'A rebellion dressed as community. Main Bhi Artist emerged because genuine artists were being crushed by gatekeepers. We created a home for the quiet music dreamers—a space where belonging comes before hustle, where collaboration thrives over competition. Every member here is proof that there\'s an alternative to the broken system.',
   },
   {
     id: 3,
     title: 'Artiste First',
-    category: 'Consultant / Marketing',
+    category: 'Strategic Partnerships',
     image: '/assets/image.png',
     colSpan: 'lg:col-span-2',
     height: 'h-80',
     description:
-      'Consulting Artiste First Audio , Video and strategic Partnerships',
+      'We believe artists shouldn\'t have to choose between integrity and opportunity. Artiste First is our commitment to that belief—consulting with creators on strategy, partnerships, and positioning without compromising their soul. From audio production to video direction to brand collaboration, we ensure the artist\'s voice remains sovereign.',
   },
 ]
 
@@ -59,8 +59,8 @@ export default function Projects() {
     <section id="projects" className="py-20 px-6 bg-sea-foam dark:bg-peacock">
       <div className="container mx-auto">
         <div className="text-center mb-12">
-          <h2 className="heading-font text-4xl font-bold text-white dark:text-cream">Featured Projects</h2>
-          <p className="text-lead text-white/80 dark:text-cream/80 mt-2">A selection of our favorite work.</p>
+          <h2 className="heading-font text-4xl font-bold text-white dark:text-cream">Our Work, Our Purpose</h2>
+          <p className="text-lead text-white/80 dark:text-cream/80 mt-2">Projects that shaped culture and built community.</p>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {projects.map((project) => {

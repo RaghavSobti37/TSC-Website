@@ -100,7 +100,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="text-lg md:text-xl font-light tracking-wider mb-8 text-cream/80"
         >
-          Music , Stories , Culture forward
+          Amplifying the voices that reshape culture
         </motion.p>
 
         <motion.div
@@ -120,7 +120,7 @@ export default function Hero() {
               });
             }}
           >
-            View Our Work
+            Explore Our Work
           </a>
           <a 
             href="https://www.instagram.com/the_shakti_collective?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" 
@@ -135,7 +135,7 @@ export default function Hero() {
               });
             }}
           >
-            Join the Community
+            Be Part of Us
           </a>
         </motion.div>
       </div>

@@ -7,15 +7,15 @@ const teamMembers = [
   {
     id: 1,
     name: 'Rohith Sobti',
-    role: 'Co-founder and CEO',
+    role: 'Co-founder and Curator',
     image: '/assets/rohit.png',
-    description: 'Rohit Sobti is a visionary music and entertainment strategist, Co-Founder of The Shakti Collective, and a Harvard Business School (BEMS) and IIM Bangalore alumnus. With 27+ years of experience, he has been at the forefront of creating and monetizing intellectual property across music, films, and brand ecosystems, architecting monetization strategies for catalogs totaling over XX streams.',
+    description: <>Rohit Sobti is a <strong>visionary music and entertainment strategist</strong>, <strong>Co-Founder of The Shakti Collective</strong>, and a <strong>Harvard Business School (BEMS) and IIM Bangalore alumnus</strong>. With <strong>27+ years of experience</strong>, he has been at the forefront of <strong>creating and monetizing intellectual property</strong> across music, films, and brand ecosystems, architecting monetization strategies for catalogs totaling over XX streams.</>,
     philosophy: '"Through The Shakti Collective and Artiste First, he continues to build scalable IPs and sustainable music businesses where creativity and commerce thrive together."',
     accomplishments: [
-      'A former Vice President at Yash Raj Films and a leader at global giants like Sony Music and Universal Music India, Rohit brings a rare blend of Ivy League business strategy and deep creative intuition.',
-      'His expertise in Intellectual Property Rights (IPR) and non-theatrical monetization has made him a pivotal figure in taking Indian music to a global stage.',
-      'His career is defined by building sustainable foundations for the industry, from leading strategy for massive IPs like Mahavatar Narsimha to scaling the music labels of India’s most iconic artists, including Arijit Singh, Amit Trivedi, and Vishal Bhardwaj.',
-      'Today, Rohit is dedicated to professionalizing the creator economy and building new models of collaboration.'
+      <>A former <strong>Vice President at Yash Raj Films</strong> and a leader at global giants like <strong>Sony Music and Universal Music India</strong>, Rohit brings a rare blend of Ivy League business strategy and deep creative intuition.</>,
+      <>His expertise in <strong>Intellectual Property Rights (IPR)</strong> and non-theatrical monetization has made him a pivotal figure in taking Indian music to a global stage.</>,
+      <>His career is defined by building sustainable foundations for the industry, from leading strategy for massive IPs like <strong>Mahavatar Narsimha</strong> to scaling the music labels of India’s most iconic artists, including Arijit Singh, Amit Trivedi, and Vishal Bhardwaj.</>,
+      <>Today, Rohit is dedicated to professionalizing the <strong>creator economy</strong> and building new models of collaboration.</>
     ],
     socials: {
       linkedin: 'https://www.linkedin.com/in/rohitsobti/',
@@ -25,55 +25,54 @@ const teamMembers = [
   {
     id: 2,
     name: 'Sandesh Shandaliya',
-    role: 'Co-founder and Mentor',
+    role: 'Co-founder and Composer',
     image: '/assets/sandesh.jpg',
-    description: 'Sandesh carries decades of music and cultural wisdom. He\'s the keeper of tradition who pushes boundaries—someone who understands that honoring the past and creating the future aren\'t opposing forces. His mentorship anchors our work in authenticity.',
-    philosophy: '"Music is a dialogue between generations. We\'re just listening and responding."',
+    description: <>An acclaimed <strong>music director</strong>, recognised for <strong>50+ films, 30+ years in the Industry</strong>, a <strong>Filmfare nomination</strong> & <strong>7Bn+ streams</strong> across platforms. Creator of iconic songs like <strong>Aaoge Jab Tum, Piya Basanti</strong> & many more. Made generation-defining music with ace directors for multiple Bollywood Blockbusters.</>,
     accomplishments: [
-      'Decades of music composition expertise and cultural curation',
-      'Mentored generations of emerging artists with integrity and rigor',
-      'Strategic visionary guiding TSC\'s cultural direction and values',
-      'Bridge between tradition and innovation in Indian music landscape'
+      <>Iconic songs like <strong>"Piya Basanti"</strong>, <strong>"Aaoge Jab Tum"</strong>, <strong>"Suraj Hua Maddham"</strong>, and from the movie <strong>"Chameli"</strong>.</>,
+      <>Recognised for <strong>50+ films</strong> and <strong>30+ years</strong> in the industry.</>,
+      <>Garnered over <strong>7 billion streams</strong> across platforms.</>,
+      <>Received a <strong>Filmfare nomination</strong> for his work.</>
     ],
     socials: {
       instagram: 'https://www.instagram.com/sandeshshandilya?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==',
     },
   },
-  {
-    id: 4,
-    name: 'Deepank Soni',
-    role: 'G.O.A.T (Master of Motion)',
-    image: '/assets/deepank.jpg',
-    description: 'Deepank is our master of motion—an artist who understands that every frame, every second of movement carries intention. He doesn\'t just animate; he translates emotion into visual language that pierces the soul.',
-    philosophy: '"Motion is meaning. Every pixel deserves purpose."',
-    accomplishments: [
-      'Expert in translating cultural narratives into compelling visual experiences',
-      'Strategic marketing minds behind viral campaigns that sparked conversations',
-      'Master of motion graphics that bridge art and commerce authentically',
-      'Collaborative force in bringing ambitious creative visions to life'
-    ],
-    socials: {
-      linkedin: 'https://www.linkedin.com/in/deepank-soni-bab014243/',
-      instagram: 'https://www.instagram.com/deepank_soni_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==',
-    },
-  },
-  {
-    id: 3,
-    name: 'Laksh Maheshwari',
-    role: 'Master Storyteller',
-    image: '/assets/laksh.jpg',
-    description: 'Laksh weaves narratives that stay with people long after they\'re told. He\'s the voice that captures what others feel but can\'t articulate—turning personal struggles into universal stories that build bridges between cultures.',
-    philosophy: '"Every story is a seed. Plant it in the right soil and it transforms worlds."',
-    accomplishments: [
-      'Crafted compelling narratives across music, film, and cultural projects',
-      'Cultural strategist who builds authentic connections between art and audiences',
-      'Master of finding truth in stories others overlook',
-      'Created pathways for marginalized voices through authentic storytelling'
-    ],
-    socials: {
-      instagram : "https://www.instagram.com/single.handedly?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-    },
-  },
+  // {
+  //   id: 4,
+  //   name: 'Deepank Soni',
+  //   role: 'G.O.A.T',
+  //   image: '/assets/deepank.jpg',
+  //   description: <>Deepank is the creative <strong>powerhouse</strong> behind The Shakti Collective's visual identity. With a keen eye for aesthetics and a deep understanding of <strong>cultural symbolism</strong>, he crafts visuals that <strong>resonate on a profound level</strong>. His work is not just about looking good; it's about telling stories that connect.</>,
+  //   philosophy: '"Design is the silent ambassador of culture. It speaks when words fail."',
+  //   accomplishments: [
+  //     <>Expert in translating cultural narratives into compelling <strong>visual experiences</strong>.</>,
+  //     <>Strategic marketing minds behind <strong>viral campaigns</strong> that sparked conversations.</>,
+  //     <>Master of <strong>motion graphics</strong> that bridge art and commerce authentically.</>,
+  //     <>Collaborative force in bringing ambitious <strong>creative visions</strong> to life.</>
+  //   ],
+  //   socials: {
+  //     linkedin: 'https://www.linkedin.com/in/deepank-soni-bab014243/',
+  //     instagram: 'https://www.instagram.com/deepank_soni_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==',
+  //   },
+  // },
+  // {
+  //   id: 3,
+  //   name: 'Laksh Maheshwari',
+  //   role: 'Master Storyteller',
+  //   image: '/assets/laksh.jpg',
+  //   description: <>Laksh weaves narratives that <strong>stay with people</strong> long after they're told. He's the voice that captures what others feel but can't articulate—turning personal struggles into <strong>universal stories</strong> that build bridges between <strong>cultures</strong>.</>,
+  //   philosophy: '"Every story is a seed. Plant it in the right soil and it transforms worlds."',
+  //   accomplishments: [
+  //     <>Crafted <strong>compelling narratives</strong> across music, film, and cultural projects.</>,
+  //     <>Cultural strategist who builds <strong>authentic connections</strong> between art and audiences.</>,
+  //     <>Master of finding truth in stories <strong>others overlook</strong>.</>,
+  //     <>Created pathways for <strong>marginalized voices</strong> through authentic storytelling.</>
+  //   ],
+  //   socials: {
+  //     instagram : "https://www.instagram.com/single.handedly?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+  //   },
+  // },
 ]
 
 export default function Team() {

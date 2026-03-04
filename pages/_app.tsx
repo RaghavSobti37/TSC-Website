@@ -1,7 +1,7 @@
 import React from 'react';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
-import { Header } from '@/components/layout/Header';
+import Header from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import '@/src/index.css';
 
@@ -27,7 +27,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <div className="min-h-screen flex flex-col bg-cream">
         <Header />
 
-        <main className="flex-1 pt-24 md:pt-32">
+        <main className="flex-1">
           <Component {...pageProps} />
         </main>
 

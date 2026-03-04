@@ -6,16 +6,12 @@ import { motion } from 'framer-motion';
 import HeroSection from '@/components/sections/HeroSection';
 import TensionPanels from '@/components/sections/TensionPanels';
 import InfinityEcosystem from '@/components/sections/InfinityEcosystem';
-import LiveCultureTrack from '@/components/sections/LiveCultureTrack';
 import ValuesSection from '@/components/sections/ValuesSection';
 import IPGallerySection from '@/components/sections/IPGallerySection';
 import AcademySection from '@/components/sections/AcademySection';
 import CollaborationsSection from '@/components/sections/CollaborationsSection';
 import ArtistsSection from '@/components/sections/ArtistsSection';
 import ContactSection from '@/components/sections/ContactSection';
-import Footer from '@/components/layout/Footer';
-import OrbitNav from '@/components/navigation/OrbitNav';
-import AudioWaveform from '@/components/audio/AudioWaveform';
 
 /**
  * TSC Website 2.0 - Single Page Scroller
@@ -113,7 +109,6 @@ export default function Home() {
         'hero',
         'tension-panels',
         'ecosystem',
-        'live-culture',
         'values',
         'ip-gallery',
         'academy',
@@ -163,9 +158,6 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      {/* Global Audio Waveform */}
-      <AudioWaveform />
-
       {/* Scroll Container */}
       <main className="scroll-smooth scroll-behavior-smooth">
         {/* Hero Section */}
@@ -183,15 +175,10 @@ export default function Home() {
           <InfinityEcosystem nodes={ecosystemNodes} />
         </section>
 
-        {/* Live Culture Track */}
-        <section id="live-culture">
-          <LiveCultureTrack />
-        </section>
-
         {/* Values Section */}
-        <section id="values">
+        {/* <section id="values">
           <ValuesSection />
-        </section>
+        </section> */}
 
         {/* IP & Stories Gallery */}
         <section id="ip-gallery">
@@ -217,15 +204,7 @@ export default function Home() {
         <section id="artists">
           <ArtistsSection />
         </section>
-
-        {/* Footer */}
-        <footer>
-          <Footer />
-        </footer>
       </main>
-
-      {/* Global Orbit Navigation */}
-      <OrbitNav activeSection={activeSection} />
 
       {/* Smooth scroll behavior */}
       <style jsx global>{`

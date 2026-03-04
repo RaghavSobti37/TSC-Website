@@ -48,7 +48,7 @@ export default function AcademySection() {
       mentor: 'Prod. Maya',
       level: 'Beginner',
       description: 'Learn the basics of modern music production',
-      icon: '🎵',
+      icon: '♪',
     },
     {
       id: 'course-2',
@@ -56,7 +56,7 @@ export default function AcademySection() {
       mentor: 'Dev. Aarav',
       level: 'Intermediate',
       description: 'Craft compelling narratives around your art',
-      icon: '📖',
+      icon: '↬',
     },
     {
       id: 'course-3',
@@ -64,7 +64,7 @@ export default function AcademySection() {
       mentor: 'Priya Sharma',
       level: 'Intermediate',
       description: 'Protect and monetize your intellectual property',
-      icon: '🛡️',
+      icon: '◆',
     },
   ];
 

@@ -3,32 +3,32 @@ export default function CoreValues() {
     {
       title: 'Amplify, Don\'t Erase',
       description: 'We center marginalized voices and make space for stories that challenge the mainstream. Every project asks: whose story needs to be told? Who\'ve we forgotten?',
-      icon: '🔊',
+      icon: '',
     },
     {
       title: 'Authenticity Over Aesthetics',
       description: 'We prioritize truth over polish. Real struggles, real joy, real humanity. If it serves the algorithm but betrays the artist, we won\'t do it.',
-      icon: '🎭',
+      icon: '',
     },
     {
       title: 'Community First',
       description: 'We measure success by the connections we build, not the metrics we hit. Every member of The Shakti Collective matters. Every voice counts.',
-      icon: '👥',
+      icon: '',
     },
     {
       title: 'Sacred & Spiritual',
       description: 'Shakti is divine feminine energy. Our work honors the spiritual essence of creativity—the transformation that happens when art touches the soul.',
-      icon: '✨',
+      icon: '',
     },
     {
       title: 'Collaboration Over Competition',
       description: 'We believe abundance grows through sharing. Artists rise together. Knowledge flows freely. Partnerships are sacred.',
-      icon: '🤝',
+      icon: '',
     },
     {
       title: 'Unlearn, Evolve, Transcend',
       description: 'We reject the broken systems that define success. We\'re building something new—where artists thrive, where marginalized voices lead, where culture transforms.',
-      icon: '🔄',
+      icon: '',
     },
   ]
 

@@ -2,163 +2,256 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Button } from '@/components/buttons/Button';
-import { cn } from '@/lib/utils';
-
-const navItems = [
-  { label: 'Home', href: '/' },
-  { label: 'Ecosystem', href: '/ecosystem' },
-  { label: 'IP & Stories', href: '/ip' },
-  { label: 'Academy', href: '/academy' },
-  { label: 'Artists', href: '/artists' },
-  { label: 'Collaborations', href: '/collaborations' },
-  { label: 'About', href: '/about' },
-  { label: 'Insights', href: '/insights' },
-];
-
-interface HeaderProps {
-  className?: string;
-}
+import { FishyButton } from '@/components/ui/fishy-button';
 
 /**
- * Header Component
- * Sticky navigation with logo, nav, and CTAs
- * Changes background color on scroll (cream fade-in)
+ * Capsule Navigation Header - Fully Responsive
+ * Frosted glass navigation pill positioned at top-center of viewport
+ * Responsive across all device sizes (375px - 1920px+)
  */
-export const Header: React.FC<HeaderProps> = ({ className }) => {
+export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
+  const [windowWidth, setWindowWidth] = useState(0);
+
+  useEffect(() => {
+    setIsMounted(true);
+    setWindowWidth(window.innerWidth);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('resize', handleResize, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
 
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+      setIsMobileMenuOpen(false);
+    }
+  };
+
+  if (!isMounted) {
+    return null;
+  }
+
+  // Determine if we're on mobile/tablet/desktop
+  const isMobileView = windowWidth < 768;
+  const isTabletView = windowWidth >= 768 && windowWidth < 1024;
+
   return (
-    <motion.header
-      className={cn(
-        'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
-        isScrolled ? 'bg-cream shadow-sm' : 'bg-transparent',
-        className
-      )}
-      initial={{ opacity: 0, y: -20 }}
+    <motion.nav
+      initial={{ opacity: 0, y: -10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
+      className="fixed top-4 md:top-6 left-0 right-0 z-50 flex justify-center px-3 sm:px-4"
     >
-      <nav className="max-w-container mx-auto px-4 md:px-8 py-4 md:py-6">
-        <div className="flex items-center justify-between gap-4">
-          {/* Logo */}
-          <motion.a
-            href="/"
-            className="flex-shrink-0 font-bold text-2xl md:text-3xl text-teal-dark hover:text-teal-primary transition-colors"
-            whileHover={{ scale: 1.05 }}
-          >
-            TSC
-          </motion.a>
+      <motion.div
+        className={`rounded-full backdrop-blur-xl border shadow-xl flex items-center justify-between transition-all duration-300 ${
+          isScrolled
+            ? 'bg-white/25 border-white/40'
+            : 'bg-white/20 border-white/30'
+        } ${
+          isMobileView
+            ? 'px-3 py-2.5 w-full max-w-sm sm:max-w-md'
+            : isTabletView
+            ? 'px-6 py-3 gap-4'
+            : 'px-8 py-4 gap-8'
+        }`}
+        whileHover={!isMobileView ? { scale: 1.02 } : undefined}
+      >
+        {/* Logo */}
+        <motion.button
+          onClick={() => scrollToSection('hero')}
+          whileHover={{ scale: 1.1 }}
+          className={`font-signika font-bold text-cream hover:text-cream/80 transition whitespace-nowrap tracking-wider flex-shrink-0 ${
+            isMobileView ? 'text-xs' : 'text-sm sm:text-base'
+          }`}
+        >
+          TSC
+        </motion.button>
 
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-1">
-            {navItems.map((item) => (
-              <motion.a
-                key={item.label}
-                href={item.href}
-                className="px-3 py-2 text-sm font-medium text-charcoal hover:text-teal-primary transition-colors rounded-lg hover:bg-cream"
-                whileHover={{ y: -2 }}
-              >
-                {item.label}
-              </motion.a>
-            ))}
-          </div>
-
-          {/* Desktop CTAs */}
-          <div className="hidden lg:flex items-center gap-3">
-            <Button variant="outline" size="sm">
-              Join as Artist
-            </Button>
-            <Button variant="primary" size="sm">
-              Partner with TSC
-            </Button>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <motion.button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="lg:hidden p-2 rounded-lg hover:bg-cream transition-colors"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <div className="w-6 h-5 flex flex-col justify-between">
-              <motion.span
-                className="h-0.5 w-full bg-charcoal rounded"
-                animate={
-                  isMobileMenuOpen
-                    ? { rotate: 45, y: 10 }
-                    : { rotate: 0, y: 0 }
-                }
-              />
-              <motion.span
-                className="h-0.5 w-full bg-charcoal rounded"
-                animate={
-                  isMobileMenuOpen
-                    ? { opacity: 0 }
-                    : { opacity: 1 }
-                }
-              />
-              <motion.span
-                className="h-0.5 w-full bg-charcoal rounded"
-                animate={
-                  isMobileMenuOpen
-                    ? { rotate: -45, y: -10 }
-                    : { rotate: 0, y: 0 }
-                }
-              />
-            </div>
-          </motion.button>
-        </div>
-
-        {/* Mobile Navigation Menu */}
-        <AnimatePresence>
-          {isMobileMenuOpen && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.3 }}
-              className="mt-4 pt-4 border-t border-cream-dark lg:hidden"
+        {/* Desktop Links - Hidden on mobile/tablet */}
+        {!isMobileView && (
+          <div className={`hidden lg:flex items-center ${isTabletView ? 'gap-3' : 'gap-6'}`}>
+            <button
+              onClick={() => scrollToSection('tension-panels')}
+              className="text-xs sm:text-sm font-alan-sans text-cream/90 hover:text-cream transition"
             >
-              <div className="flex flex-col gap-2 mb-4">
-                {navItems.map((item, index) => (
-                  <motion.a
-                    key={item.label}
-                    href={item.href}
-                    className="px-4 py-2 text-sm font-medium text-charcoal hover:text-teal-primary hover:bg-cream rounded-lg transition-colors"
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: index * 0.05 }}
-                  >
-                    {item.label}
-                  </motion.a>
-                ))}
-              </div>
+              Mission
+            </button>
+            <button
+              onClick={() => scrollToSection('ecosystem')}
+              className="text-xs sm:text-sm font-alan-sans text-cream/90 hover:text-cream transition"
+            >
+              Ecosystem
+            </button>
+            <button
+              onClick={() => scrollToSection('ip-gallery')}
+              className="text-xs sm:text-sm font-alan-sans text-cream/90 hover:text-cream transition"
+            >
+              IP & Stories
+            </button>
+            <button
+              onClick={() => scrollToSection('academy')}
+              className="text-xs sm:text-sm font-alan-sans text-cream/90 hover:text-cream transition"
+            >
+              Academy
+            </button>
+            <button
+              onClick={() => scrollToSection('collaborations')}
+              className="text-xs sm:text-sm font-alan-sans text-cream/90 hover:text-cream transition"
+            >
+              Partnerships
+            </button>
+          </div>
+        )}
 
-              <div className="flex flex-col gap-2">
-                <Button variant="outline" size="sm" className="w-full justify-center">
-                  Join as Artist
-                </Button>
-                <Button variant="primary" size="sm" className="w-full justify-center">
-                  Partner with TSC
-                </Button>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </nav>
-    </motion.header>
+        {/* Divider - Desktop only */}
+        {!isMobileView && <div className="hidden lg:block w-px h-6 bg-white/20" />}
+
+        {/* CTAs with Fishy Buttons - Responsive sizing */}
+        {!isMobileView && (
+          <div className={`hidden sm:flex items-center ${isTabletView ? 'gap-2' : 'gap-3'}`}>
+            <FishyButton
+              onClick={() => scrollToSection('contact')}
+              variant="pumpkin"
+              width={isTabletView ? '80px' : '96px'}
+              height={isTabletView ? '36px' : '40px'}
+            >
+              Join
+            </FishyButton>
+            <FishyButton
+              onClick={() => scrollToSection('collaborations')}
+              variant="pumpkin"
+              width={isTabletView ? '96px' : '112px'}
+              height={isTabletView ? '36px' : '40px'}
+            >
+              Partner
+            </FishyButton>
+          </div>
+        )}
+
+        {/* Mobile Menu Button */}
+        <motion.button
+          whileHover={{ scale: 1.1 }}
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          className={`${isMobileView ? 'flex' : 'hidden'} sm:hidden text-cream font-signika font-semibold tracking-wider flex-shrink-0 ${
+            isMobileView ? 'text-xs' : 'text-sm'
+          }`}
+        >
+          {isMobileMenuOpen ? 'CLOSE' : 'MENU'}
+        </motion.button>
+      </motion.div>
+
+      {/* Mobile/Tablet Dropdown Menu */}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.2 }}
+            className="absolute top-20 left-4 right-4 px-4 py-4 sm:px-6 sm:py-5 rounded-lg bg-white/20 backdrop-blur-xl border border-white/30 flex flex-col gap-3 sm:gap-4"
+          >
+            <button
+              onClick={() => {
+                scrollToSection('tension-panels');
+                setIsMobileMenuOpen(false);
+              }}
+              className="text-left text-xs sm:text-sm font-alan-sans text-cream/90 hover:text-cream transition py-2 border-b border-white/10"
+            >
+              Mission
+            </button>
+            <button
+              onClick={() => {
+                scrollToSection('ecosystem');
+                setIsMobileMenuOpen(false);
+              }}
+              className="text-left text-xs sm:text-sm font-alan-sans text-cream/90 hover:text-cream transition py-2 border-b border-white/10"
+            >
+              Ecosystem
+            </button>
+            <button
+              onClick={() => {
+                scrollToSection('ip-gallery');
+                setIsMobileMenuOpen(false);
+              }}
+              className="text-left text-xs sm:text-sm font-alan-sans text-cream/90 hover:text-cream transition py-2 border-b border-white/10"
+            >
+              IP & Stories
+            </button>
+            <button
+              onClick={() => {
+                scrollToSection('academy');
+                setIsMobileMenuOpen(false);
+              }}
+              className="text-left text-xs sm:text-sm font-alan-sans text-cream/90 hover:text-cream transition py-2 border-b border-white/10"
+            >
+              Academy
+            </button>
+            <button
+              onClick={() => {
+                scrollToSection('collaborations');
+                setIsMobileMenuOpen(false);
+              }}
+              className="text-left text-xs sm:text-sm font-alan-sans text-cream/90 hover:text-cream transition py-2 border-b border-white/10"
+            >
+              Partnerships
+            </button>
+            <button
+              onClick={() => {
+                scrollToSection('contact');
+                setIsMobileMenuOpen(false);
+              }}
+              className="text-left text-xs sm:text-sm font-alan-sans text-cream/90 hover:text-cream transition py-2 border-b border-white/10"
+            >
+              Contact
+            </button>
+
+            {/* Mobile CTA Buttons */}
+            <div className="pt-2 space-y-2 flex flex-col gap-2">
+              <FishyButton
+                onClick={() => {
+                  scrollToSection('contact');
+                  setIsMobileMenuOpen(false);
+                }}
+                variant="pumpkin"
+                width="100%"
+                height="40px"
+              >
+                Join
+              </FishyButton>
+              <FishyButton
+                onClick={() => {
+                  scrollToSection('collaborations');
+                  setIsMobileMenuOpen(false);
+                }}
+                variant="pumpkin"
+                width="100%"
+                height="40px"
+              >
+                Partner
+              </FishyButton>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.nav>
   );
-};
+}
 
-export default Header;

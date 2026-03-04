@@ -144,7 +144,7 @@ export const Footer: React.FC<FooterProps> = ({ className }) => {
           className="pt-8 border-t border-slate-medium flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-light"
         >
           <p>© {new Date().getFullYear()} TSC. All rights reserved.</p>
-          <p>Designed with ❤️ for creative minds</p>
+          <p>Designed for creative minds</p>
         </motion.div>
       </div>
     </footer>

@@ -8,6 +8,12 @@ module.exports = {
   ],
   theme: {
     extend: {
+      // Brand Font Families
+      fontFamily: {
+        signika: ['Signika', 'sans-serif'],
+        'alan-sans': ['Alata', 'sans-serif'],
+      },
+
       // Brand Color Palette
       colors: {
         // Primary Canvas
@@ -22,6 +28,7 @@ module.exports = {
 
         // Supporting Colors (Rooted Palette)
         pumpkin: '#B74B02',
+        'pumpkin-dark': '#8E3A01',
         wine: '#6D2034',
         'sea-foam': '#126D5E',
         chestnut: '#592314',

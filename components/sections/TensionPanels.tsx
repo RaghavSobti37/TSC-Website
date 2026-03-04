@@ -23,28 +23,28 @@ export default function TensionPanels() {
       title: 'A hegemony of labels',
       description:
         'The music and entertainment industry has long been dominated by traditional gatekeepers who control who gets heard and who remains silent. Artists lack autonomy over their work, their narrative, and their future. True artistry is suppressed by corporate interests.',
-      icon: '🔗',
+      icon: '⊗',
     },
     {
       id: 'algorithms',
       title: 'Serving algorithms & commerce makes for predictability',
       description:
         'When platforms prioritize engagement metrics and profit margins, true artistic expression gets buried. Innovation is sacrificed for algorithmic optimization, leading to a homogenized cultural landscape. Authenticity is drowned out.',
-      icon: '📊',
+      icon: '⊕',
     },
     {
       id: 'ecosystem',
       title: 'No single talent nurture-to-monetize ecosystem',
       description:
         'Artists face fragmented journeys with no cohesive support system. They must navigate multiple platforms, services, and partners, often with conflicting interests, losing focus on their craft. The gap between aspiration and achievement is unbridged.',
-      icon: '🌐',
+      icon: '◈',
     },
     {
       id: 'connection',
       title: 'No direct connect with fans',
       description:
         'The artist-to-fan relationship is mediated by platforms and intermediaries. Direct connection, community building, and authentic relationships are impossible in this structure. Artists are commodities, not creators.',
-      icon: '❤️',
+      icon: '◐',
     },
   ];
 

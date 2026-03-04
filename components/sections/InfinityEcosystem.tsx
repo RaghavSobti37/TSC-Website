@@ -113,6 +113,7 @@ export const InfinityEcosystem: React.FC<InfinityEcosystemProps> = ({
                     animate={{
                       scale: isSelected ? 1.2 : 1,
                     }}
+                    transition={{ duration: 0.3 }}
                     onClick={() => handleNodeClick(node)}
                   />
                   <motion.text
@@ -123,6 +124,7 @@ export const InfinityEcosystem: React.FC<InfinityEcosystemProps> = ({
                       opacity: isSelected ? 0 : 1,
                       fontSize: isSelected ? '10px' : '12px',
                     }}
+                    transition={{ duration: 0.3 }}
                   >
                     {node.label}
                   </motion.text>

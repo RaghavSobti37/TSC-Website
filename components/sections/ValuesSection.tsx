@@ -15,6 +15,13 @@ interface Value {
  * 4 value cards with emoji icons
  */
 export default function ValuesSection() {
+  const colorMap = {
+    pumpkin: { bg: '#B74B02', rgb: 'rgb(183, 75, 2)' },
+    wine: { bg: '#6D2034', rgb: 'rgb(109, 32, 52)' },
+    'sea-foam': { bg: '#126D5E', rgb: 'rgb(18, 109, 94)' },
+    peacock: { bg: '#08525F', rgb: 'rgb(8, 82, 95)' },
+  };
+
   const values: Value[] = [
     {
       title: 'Fearlessness',
@@ -101,7 +108,13 @@ export default function ValuesSection() {
               className="group relative"
             >
               {/* Card */}
-              <div className={`bg-${value.color} bg-opacity-10 rounded-2xl p-8 h-full border border-${value.color} border-opacity-20 hover:border-opacity-40 transition-all duration-300 hover:shadow-lg hover:shadow-${value.color}/20`}>
+              <div
+                style={{
+                  backgroundColor: `${colorMap[value.color as keyof typeof colorMap].bg}15`,
+                  borderColor: `${colorMap[value.color as keyof typeof colorMap].bg}40`,
+                }}
+                className="rounded-2xl p-8 h-full border hover:border-opacity-100 transition-all duration-300 hover:shadow-lg"
+              >
                 {/* Icon */}
                 <div className={`text-5xl mb-6 transition-transform duration-300 group-hover:scale-110`}>
                   {value.icon}

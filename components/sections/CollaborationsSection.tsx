@@ -27,19 +27,19 @@ export default function CollaborationsSection() {
       id: 'model-1',
       title: 'Brand IP Creation',
       description: 'Co-create original cultural properties that align with your brand values',
-      icon: '🎨',
+      icon: '◇',
     },
     {
       id: 'model-2',
       title: 'Content Production',
       description: 'Leverage our talent pool for authentic brand storytelling',
-      icon: '🎬',
+      icon: '▪',
     },
     {
       id: 'model-3',
       title: 'Artist Partnerships',
       description: 'Direct collaboration with emerging artists from our ecosystem',
-      icon: '🤝',
+      icon: '◆',
     },
   ];
 
@@ -48,25 +48,25 @@ export default function CollaborationsSection() {
       id: 'step-1',
       title: 'Brief',
       description: 'Share your vision and objectives',
-      icon: '📋',
+      icon: '◐',
     },
     {
       id: 'step-2',
       title: 'Create',
       description: 'Our team crafts authentic cultural IP',
-      icon: '🎨',
+      icon: '◇',
     },
     {
       id: 'step-3',
       title: 'Launch',
       description: 'Release to audience across platforms',
-      icon: '🚀',
+      icon: '◉',
     },
     {
       id: 'step-4',
       title: 'Scale',
       description: 'Amplify impact and measure success',
-      icon: '📈',
+      icon: '⬆',
     },
   ];
 

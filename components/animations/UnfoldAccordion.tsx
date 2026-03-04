@@ -60,9 +60,14 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
   index,
   prefersReducedMotion,
 }) => {
+  const [isOpen, setIsOpen] = React.useState(false);
+
   return (
     <RadixAccordion.Item value={item.id} className="border-b border-slate-lighter pb-4">
-      <RadixAccordion.Trigger className="w-full text-left py-4 hover:text-teal-primary transition-colors duration-300 group">
+      <RadixAccordion.Trigger
+        className="w-full text-left py-4 hover:text-teal-primary transition-colors duration-300 group"
+        onClick={() => setIsOpen(!isOpen)}
+      >
         <motion.div
           initial={{ opacity: 0, y: 8 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -78,7 +83,10 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
           <motion.span
             initial={false}
             animate={{
-              rotate: 0,
+              rotate: isOpen ? 45 : 0,
+            }}
+            transition={{
+              duration: prefersReducedMotion ? 0 : 0.3,
             }}
             className="text-2xl"
           >

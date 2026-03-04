@@ -108,6 +108,7 @@ export default function ContactSection() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.9 }}
+              transition={{ duration: 0.3 }}
               className="fixed inset-0 flex items-center justify-center z-50 bg-charcoal/50 backdrop-blur"
             >
               <motion.div className="bg-cream rounded-2xl p-12 text-center max-w-md" layout>
@@ -207,6 +208,7 @@ export default function ContactSection() {
                 initial={{ opacity: 0, height: 0 }}
                 animate={{ opacity: 1, height: 'auto' }}
                 exit={{ opacity: 0, height: 0 }}
+                transition={{ duration: 0.4, ease: 'easeInOut' }}
                 className="space-y-4"
               >
                 <div>
@@ -250,6 +252,7 @@ export default function ContactSection() {
                 initial={{ opacity: 0, height: 0 }}
                 animate={{ opacity: 1, height: 'auto' }}
                 exit={{ opacity: 0, height: 0 }}
+                transition={{ duration: 0.4, ease: 'easeInOut' }}
                 className="space-y-4"
               >
                 <div>
@@ -293,6 +296,7 @@ export default function ContactSection() {
                 initial={{ opacity: 0, height: 0 }}
                 animate={{ opacity: 1, height: 'auto' }}
                 exit={{ opacity: 0, height: 0 }}
+                transition={{ duration: 0.4, ease: 'easeInOut' }}
                 className="space-y-4"
               >
                 <div>

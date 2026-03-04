@@ -7,7 +7,7 @@ const teamMembers = [
   {
     id: 1,
     name: 'Rohith Sobti',
-    role: 'Co-founder and Curator',
+    role: 'Curator and Co-founder',
     image: '/assets/rohit.png',
     description: <>Rohit Sobti is a <strong>visionary music and entertainment strategist</strong>, <strong>Co-Founder of The Shakti Collective</strong>, and a <strong>Harvard Business School (BEMS) and IIM Bangalore alumnus</strong>. With <strong>27+ years of experience</strong>, he has been at the forefront of <strong>creating and monetizing intellectual property</strong> across music, films, and brand ecosystems, architecting monetization strategies for catalogs totaling over XX streams.</>,
     philosophy: '"Through The Shakti Collective and Artiste First, he continues to build scalable IPs and sustainable music businesses where creativity and commerce thrive together."',
@@ -25,7 +25,7 @@ const teamMembers = [
   {
     id: 2,
     name: 'Sandesh Shandaliya',
-    role: 'Co-founder and Composer',
+    role: 'Music Composer and Co-founder',
     image: '/assets/sandesh.jpg',
     description: <>An acclaimed <strong>music director</strong>, recognised for <strong>50+ films, 30+ years in the Industry</strong>, a <strong>Filmfare nomination</strong> & <strong>7Bn+ streams</strong> across platforms. Creator of iconic songs like <strong>Aaoge Jab Tum, Piya Basanti</strong> & many more. Made generation-defining music with ace directors for multiple Bollywood Blockbusters.</>,
     accomplishments: [

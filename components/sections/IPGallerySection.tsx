@@ -80,27 +80,27 @@ export default function IPGallerySection() {
       id="ip-gallery"
       background="cream"
       padding="xl"
-      className="relative py-24"
+      className="relative py-12 sm:py-16 md:py-24"
     >
-      <Container className="max-w-6xl">
+      <Container className="max-w-6xl px-4 sm:px-6">
         {/* Section heading */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="mb-16 text-center"
+          className="mb-10 sm:mb-12 md:mb-16 text-center"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-charcoal mb-6 font-signika">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-charcoal mb-4 sm:mb-6 font-signika">
             IP & Stories
           </h2>
-          <p className="text-lg text-slate-600 font-alan-sans max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base md:text-lg text-slate-600 font-alan-sans max-w-2xl mx-auto">
             Cultural properties and breakthrough stories created through our ecosystem
           </p>
         </motion.div>
 
         {/* Gallery grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6">
           {ipItems.map((item, index) => (
             <motion.a
               key={item.id}
@@ -113,7 +113,7 @@ export default function IPGallerySection() {
                 scale: 1.05,
                 boxShadow: '0 20px 40px rgba(183, 75, 2, 0.2)',
               }}
-              className="group relative rounded-2xl overflow-hidden bg-charcoal h-96 cursor-pointer border-2 border-transparent hover:border-pumpkin transition-all duration-300"
+              className="group relative rounded-lg sm:rounded-xl md:rounded-2xl overflow-hidden bg-charcoal h-64 sm:h-72 md:h-96 cursor-pointer border-2 border-transparent hover:border-pumpkin transition-all duration-300"
             >
               {/* Image */}
               <img
@@ -126,19 +126,19 @@ export default function IPGallerySection() {
               <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
               {/* Content overlay */}
-              <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+              <div className="absolute bottom-0 left-0 right-0 p-3 sm:p-4 md:p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
                 {/* Type badge */}
-                <div className="inline-block px-3 py-1 bg-pumpkin text-cream text-xs font-bold rounded-full mb-3 font-signika">
+                <div className="inline-block px-2 sm:px-3 py-0.5 sm:py-1 bg-pumpkin text-cream text-xs font-bold rounded-full mb-2 sm:mb-3 font-signika">
                   {item.type}
                 </div>
 
                 {/* Title */}
-                <h3 className="text-2xl font-bold text-cream mb-2 font-signika line-clamp-2">
+                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-cream mb-1 sm:mb-2 font-signika line-clamp-2">
                   {item.title}
                 </h3>
 
                 {/* Logline */}
-                <p className="text-cream/80 font-alan-sans text-sm mb-4 line-clamp-1">
+                <p className="text-cream/80 font-alan-sans text-xs sm:text-sm mb-2 sm:mb-4 line-clamp-1">
                   {item.logline}
                 </p>
 

@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useState, useRef, useEffect } from 'react';
+import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
 import { cn } from '@/lib/utils';
 import UnfoldReveal from '@/components/animations/UnfoldReveal';
 
@@ -32,6 +32,16 @@ export const InfinityEcosystem: React.FC<InfinityEcosystemProps> = ({
 }) => {
   const [selectedNodeId, setSelectedNodeId] = useState<string | null>(null);
   const [isMobile, setIsMobile] = useState(false);
+  const [isAnimationComplete, setIsAnimationComplete] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ['start center', 'center center'], // Animation ends when element is centered on page
+  });
+
+  // Transform scroll progress to stroke-dashoffset (0 to 2000, then inverts color)
+  // Animation completes when element reaches center of viewport
+  const strokeDashoffset = useTransform(scrollYProgress, [0, 1], [2000, 0]);
 
   React.useEffect(() => {
     const checkMobile = () => {
@@ -42,6 +52,14 @@ export const InfinityEcosystem: React.FC<InfinityEcosystemProps> = ({
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
+  // Monitor animation completion - trigger at 100% (after one complete rotation/drawing)
+  useEffect(() => {
+    const unsubscribe = scrollYProgress.onChange((value) => {
+      setIsAnimationComplete(value >= 1.0); // Set to true when 100% scrolled (after one complete rotation)
+    });
+    return () => unsubscribe();
+  }, [scrollYProgress]);
+
   const handleNodeClick = (node: EcosystemNode) => {
     setSelectedNodeId(node.id);
     onNodeSelect?.(node);
@@ -51,157 +69,181 @@ export const InfinityEcosystem: React.FC<InfinityEcosystemProps> = ({
   // Using circle algorithm for even distribution
   const getNodePosition = (index: number, total: number) => {
     const angle = (index / total) * Math.PI * 2;
-    const radius = 180; // pixels
+    const radius = 450; // pixels (increased 3x for larger buttons)
     const x = Math.cos(angle) * radius;
     const y = Math.sin(angle) * radius;
     return { x, y };
   };
 
   return (
-    <div className={cn('w-full flex flex-col items-center gap-12', className)}>
-      {/* Infinity Loop SVG Container */}
-      <UnfoldReveal className="w-full">
-        <div className="relative w-full aspect-square max-w-xl mx-auto">
-          {/* SVG Infinity Loop */}
-          <svg
-            viewBox="0 0 600 600"
-            className="w-full h-full drop-shadow-sm"
-            preserveAspectRatio="xMidYMid meet"
-          >
-            {/* Infinity loop path */}
-            <motion.path
-              d="M 200 300 Q 100 100 300 100 Q 500 100 500 300 Q 500 450 400 450 Q 300 450 200 300 Q 100 150 100 300 Q 100 400 200 450 Q 300 500 400 500 Q 550 500 550 300"
-              stroke="#0B5147"
-              strokeWidth="3"
-              fill="none"
-              strokeLinecap="round"
-              initial={{ strokeDashoffset: 2000 }}
-              whileInView={{ strokeDashoffset: 0 }}
-              transition={{ duration: 3, ease: 'easeInOut' }}
-              strokeDasharray="2000"
-            />
-
-            {/* Center label */}
-            <g>
-              <text
-                x="300"
-                y="310"
-                textAnchor="middle"
-                className="text-sm md:text-base font-bold fill-charcoal"
-              >
-                {centerLabel}
-              </text>
-            </g>
-
-            {/* Node circles */}
-            {nodes.map((node, index) => {
-              const pos = getNodePosition(index, nodes.length);
-              const isSelected = selectedNodeId === node.id;
-
-              return (
-                <g
-                  key={node.id}
-                  transform={`translate(${300 + pos.x}, ${300 + pos.y})`}
-                >
-                  <motion.circle
-                    r="40"
-                    fill={isSelected ? '#0B5147' : '#083D3A'}
-                    stroke="#FDF6F1"
-                    strokeWidth="3"
-                    className="cursor-pointer hover:drop-shadow-md transition-all"
-                    whileHover={{ scale: 1.1, fill: '#0B5147' }}
-                    animate={{
-                      scale: isSelected ? 1.2 : 1,
-                    }}
-                    transition={{ duration: 0.3 }}
-                    onClick={() => handleNodeClick(node)}
-                  />
-                  <motion.text
-                    y="5"
-                    textAnchor="middle"
-                    className="text-xs font-bold fill-cream pointer-events-none"
-                    animate={{
-                      opacity: isSelected ? 0 : 1,
-                      fontSize: isSelected ? '10px' : '12px',
-                    }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    {node.label}
-                  </motion.text>
-                </g>
-              );
-            })}
-          </svg>
-
-          {/* Mobile Node Label */}
-          {isMobile && selectedNodeId && (
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="absolute bottom-0 left-0 right-0 text-center"
+    <div ref={containerRef} className={cn('w-full flex flex-col lg:flex-row items-stretch gap-6 sm:gap-8 md:gap-10 lg:gap-16', className)}>
+      {/* Left: Infinity Loop SVG Container - Sticky on desktop */}
+      <div className="w-full lg:w-1/2 lg:sticky lg:top-24 h-fit">
+        <UnfoldReveal className="w-full">
+          <div className="relative w-full mx-auto lg:mx-0 px-4 sm:px-0" style={{ aspectRatio: '1/1', maxWidth: 'clamp(300px, 90vw, 720px)' }}>
+            {/* SVG Infinity Loop - Responsive sizing */}
+            <svg
+              viewBox="0 0 1800 1800"
+              className="w-full h-full drop-shadow-sm"
+              preserveAspectRatio="xMidYMid meet"
             >
-              <p className="text-sm font-semibold text-charcoal">
-                {nodes.find((n) => n.id === selectedNodeId)?.label}
-              </p>
-            </motion.div>
-          )}
-        </div>
-      </UnfoldReveal>
+              {/* Perfect Circle - Orange initially, Teal when complete */}
+              <motion.circle
+                cx="900"
+                cy="900"
+                r="450"
+                stroke={isAnimationComplete ? '#0B5147' : '#D4622D'}
+                strokeWidth="12"
+                fill="none"
+                strokeLinecap="round"
+                strokeDasharray={2827}
+                strokeDashoffset={strokeDashoffset}
+                style={{
+                  transition: isAnimationComplete ? 'stroke 0.8s ease-in-out' : 'none',
+                }}
+              />
 
-      {/* Node Details Card */}
-      <AnimatePresence>
-        {selectedNodeId && (
-          <motion.div
-            layoutId="node-card"
-            initial={{ opacity: 0, y: 20, scale: 0.95 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 20, scale: 0.95 }}
-            transition={{ duration: 0.4, type: 'spring', bounce: 0.3 }}
-            className="w-full max-w-2xl"
-          >
-            {nodes.map(
-              (node) =>
-                node.id === selectedNodeId && (
-                  <div
+              {/* Center label - Orange text before complete, Teal after */}
+              <g>
+                <text
+                  x="900"
+                  y="920"
+                  textAnchor="middle"
+                  className={cn('font-bold transition-colors', 
+                    isAnimationComplete ? 'fill-teal-dark' : 'fill-pumpkin'
+                  )}
+                  style={{ fontSize: '54px', fontWeight: 'bold' }}
+                >
+                  {centerLabel}
+                </text>
+              </g>
+
+              {/* Node circles - Orange initially, then Teal when complete */}
+              {nodes.map((node, index) => {
+                const pos = getNodePosition(index, nodes.length);
+                const isSelected = selectedNodeId === node.id;
+
+                return (
+                  <g
                     key={node.id}
-                    className="bg-white rounded-lg shadow-lg p-6 md:p-10 border-2 border-teal-dark"
+                    transform={`translate(${900 + pos.x}, ${900 + pos.y})`}
                   >
-                    <div className="flex items-start justify-between mb-6">
-                      <div>
-                        <h3 className="text-2xl md:text-3xl font-bold text-charcoal mb-2">
-                          {node.title}
-                        </h3>
-                        {node.description && (
-                          <p className="text-slate-medium text-sm md:text-base">
-                            {node.description}
-                          </p>
+                    <motion.circle
+                      r="135"
+                      fill={isSelected ? (isAnimationComplete ? '#126D5E' : '#E07548') : (isAnimationComplete ? '#0B5147' : '#D4622D')}
+                      stroke={isAnimationComplete ? '#0B5147' : '#FDF6F1'}
+                      strokeWidth="9"
+                      className="cursor-pointer hover:drop-shadow-md transition-all"
+                      style={{
+                        transition: isAnimationComplete ? 'fill 0.8s ease-in-out, stroke 0.8s ease-in-out' : 'none',
+                      }}
+                      whileHover={{ scale: 1.1 }}
+                      animate={{
+                        scale: isSelected ? 1.2 : 1,
+                      }}
+                      transition={{ duration: 0.3 }}
+                      onClick={() => handleNodeClick(node)}
+                    />
+                    <motion.text
+                      y="15"
+                      textAnchor="middle"
+                      className={cn('font-bold pointer-events-none',
+                        isSelected
+                          ? isAnimationComplete ? 'fill-charcoal' : 'fill-charcoal'
+                          : isAnimationComplete ? 'fill-cream' : 'fill-cream'
+                      )}
+                      style={{ fontSize: '39px', fontWeight: isSelected ? '900' : 'bold' }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      {node.label}
+                    </motion.text>
+                  </g>
+                );
+              })}
+            </svg>
+
+            {/* Mobile Node Label */}
+            {isMobile && selectedNodeId && (
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="absolute bottom-0 left-0 right-0 text-center"
+              >
+                <p className="text-sm font-semibold text-charcoal">
+                  {nodes.find((n) => n.id === selectedNodeId)?.label}
+                </p>
+              </motion.div>
+            )}
+          </div>
+        </UnfoldReveal>
+      </div>
+
+      {/* Right: Node Details Card - Centered vertically */}
+      <div className="w-full lg:w-1/2 flex items-center justify-center">
+        <AnimatePresence>
+          {selectedNodeId ? (
+            <motion.div
+              layoutId="node-card"
+              initial={{ opacity: 0, y: 20, scale: 0.95 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: 20, scale: 0.95 }}
+              transition={{ duration: 0.4, type: 'spring', bounce: 0.3 }}
+              className="w-full px-3 sm:px-4 md:px-6 lg:px-8"
+            >
+              {nodes.map(
+                (node) =>
+                  node.id === selectedNodeId && (
+                    <div
+                      key={node.id}
+                      className="bg-white rounded-lg shadow-lg p-4 sm:p-6 md:p-10 border-2 border-teal-dark w-full"
+                    >
+                      <div className="flex flex-col sm:flex-row items-start justify-between mb-4 sm:mb-6 gap-3 sm:gap-4">
+                        <div className="w-full">
+                          <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-charcoal mb-2">
+                            {node.title}
+                          </h3>
+                          {node.description && (
+                            <p className="text-slate-medium text-xs sm:text-sm md:text-base">
+                              {node.description}
+                            </p>
+                          )}
+                        </div>
+
+                        {node.icon && (
+                          <div className="text-3xl sm:text-4xl flex-shrink-0">
+                            {node.icon}
+                          </div>
                         )}
                       </div>
 
-                      {node.icon && (
-                        <div className="text-4xl flex-shrink-0 ml-4">
-                          {node.icon}
-                        </div>
-                      )}
-                    </div>
+                      <div className="prose prose-sm md:prose max-w-none text-charcoal mb-4 sm:mb-6 text-xs sm:text-sm">
+                        {node.content}
+                      </div>
 
-                    <div className="prose prose-sm md:prose max-w-none text-charcoal mb-6">
-                      {node.content}
+                      <motion.button
+                        onClick={() => setSelectedNodeId(null)}
+                        className="text-teal-primary font-semibold hover:text-teal-dark transition-colors text-xs sm:text-sm md:text-base"
+                        whileHover={{ x: 4 }}
+                      >
+                        Close ✕
+                      </motion.button>
                     </div>
-
-                    <motion.button
-                      onClick={() => setSelectedNodeId(null)}
-                      className="text-teal-primary font-semibold hover:text-teal-dark transition-colors text-sm md:text-base"
-                      whileHover={{ x: 4 }}
-                    >
-                      Close ✕
-                    </motion.button>
-                  </div>
-                )
-            )}
-          </motion.div>
-        )}
-      </AnimatePresence>
+                  )
+              )}
+            </motion.div>
+          ) : (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              className="w-full text-center lg:text-left py-12 lg:py-0"
+            >
+              <p className="text-slate-medium text-lg font-alan-sans">
+                Select a node to explore the ecosystem
+              </p>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
 
       {/* Mobile Bottom Sheet Alternative */}
       {isMobile && selectedNodeId && (

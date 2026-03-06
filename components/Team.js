@@ -86,13 +86,13 @@ export default function Team() {
           <h2 className="heading-font text-5xl md:text-6xl font-black text-wine mb-4">MEET THE TEAM</h2>
         </div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+        <div className="space-y-6 max-w-5xl mx-auto">
           {teamMembers.map((member) => (
             <motion.div
               key={member.id}
               layoutId={`card-${member.id}`}
               onClick={() => setExpandedId(expandedId === member.id ? null : member.id)}
-              className={`group cursor-pointer transition-all duration-500 ${expandedId === member.id ? 'md:col-span-2 lg:col-span-2 md:row-span-2' : ''}`}
+              className="cursor-pointer transition-all duration-500"
               layout
             >
               <AnimatePresence mode="wait">
@@ -105,26 +105,24 @@ export default function Team() {
                     transition={{ duration: 0.36 }}
                     className="rounded-2xl overflow-hidden bg-gradient-to-b from-transparent via-chestnut/30 to-wine/50 shadow-2xl"
                   >
-                    <div className="relative h-56 w-full">
-                      <Image src={member.image} alt={member.name} layout="fill" objectFit="cover" />
-                      <div className="absolute inset-0 bg-black/35 flex items-end p-4">
-                        <div>
-                          <h3 className="text-2xl font-black text-cream">{member.name}</h3>
-                          <p className="text-cream/90 text-sm">{member.role}</p>
+                    <div className="flex gap-6 p-6">
+                      <div className="flex-1">
+                        <h3 className="text-2xl font-black text-wine mb-2">{member.name}</h3>
+                        <p className="text-wine/80 font-bold text-sm mb-4">{member.role}</p>
+                        <p className="text-sm text-wine/90 mb-3">{member.description}</p>
+                        {member.philosophy && (
+                          <p className="text-sm italic text-pumpkin mb-4 font-semibold">{member.philosophy}</p>
+                        )}
+                        <h4 className="text-xs font-black uppercase tracking-wider mb-2">Selected Works</h4>
+                        <ul className="text-sm space-y-1 mb-4">
+                          {member.accomplishments.map((a,i)=>(<li key={i}> {a}</li>))}
+                        </ul>
+                        <div className="flex gap-3">
+                          {member.socials.instagram && <a href={member.socials.instagram} target="_blank" rel="noopener noreferrer" className="px-3 py-2 bg-pumpkin rounded text-cream text-xs" onClick={e=>e.stopPropagation()}>View Profile</a>}
                         </div>
                       </div>
-                    </div>
-                    <div className="p-6 bg-chestnut/10">
-                      <p className="text-sm text-wine/90 mb-3">{member.description}</p>
-                      {member.philosophy && (
-                        <p className="text-sm italic text-pumpkin mb-4 font-semibold">{member.philosophy}</p>
-                      )}
-                      <h4 className="text-xs font-black uppercase tracking-wider mb-2">Selected Works</h4>
-                      <ul className="text-sm space-y-1">
-                        {member.accomplishments.map((a,i)=>(<li key={i}> {a}</li>))}
-                      </ul>
-                      <div className="flex gap-3 mt-4">
-                        {member.socials.instagram && <a href={member.socials.instagram} target="_blank" rel="noopener noreferrer" className="px-3 py-2 bg-pumpkin rounded text-cream text-xs" onClick={e=>e.stopPropagation()}>View Profile</a>}
+                      <div className="relative w-48 h-64 flex-shrink-0 rounded-xl overflow-hidden">
+                        <Image src={member.image} alt={member.name} layout="fill" objectFit="cover" />
                       </div>
                     </div>
                   </motion.div>
@@ -135,36 +133,22 @@ export default function Team() {
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.3 }}
-                    className="relative h-80 rounded-2xl overflow-hidden group/card cursor-pointer"
+                    className="flex gap-6 items-center bg-white rounded-2xl overflow-hidden shadow-lg p-6 group/card"
                   >
-                    <Image 
-                      src={member.image} 
-                      alt={member.name}
-                      layout="fill"
-                      objectFit="cover"
-                      className="group-hover/card:scale-110 transition-transform duration-500"
-                    />
-                    <motion.div
-                      initial={{ opacity: 0.6 }}
-                      whileHover={{ opacity: 1 }}
-                      className="absolute inset-0 bg-gradient-to-t from-pumpkin via-wine/20 to-transparent"
-                    ></motion.div>
-                    <motion.div
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.4 }}
-                      className="absolute inset-0 flex flex-col justify-end p-6"
-                    >
-                      <h3 className="text-2xl font-black text-cream mb-1">{member.name}</h3>
-                      <p className="text-cream/90 font-bold text-sm">{member.role}</p>
-                    </motion.div>
-                    <motion.div
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      whileHover={{ opacity: 1, scale: 1 }}
-                      className="absolute top-4 right-4 bg-cream/20 hover:bg-cream/40 rounded-full p-2 transition-colors"
-                    >
-                      <span className="text-cream text-xs font-black">+</span>
-                    </motion.div>
+                    <div className="flex-1">
+                      <h3 className="text-2xl font-black text-wine mb-1">{member.name}</h3>
+                      <p className="text-wine/70 font-bold text-sm mb-3">{member.role}</p>
+                      <p className="text-sm text-wine/60 line-clamp-2">{member.description}</p>
+                      <p className="text-xs text-pumpkin font-bold mt-3 cursor-pointer">Click to see more →</p>
+                    </div>
+                    <div className="relative w-48 h-56 flex-shrink-0 rounded-xl overflow-hidden">
+                      <Image 
+                        src={member.image} 
+                        alt={member.name}
+                        layout="fill"
+                        objectFit="cover"
+                      />
+                    </div>
                   </motion.div>
                 )}
               </AnimatePresence>

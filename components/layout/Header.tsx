@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Menu, X } from 'lucide-react';
 import { FishyButton } from '@/components/ui/fishy-button';
 
 /**
@@ -89,12 +90,6 @@ export default function Header() {
         {!isMobileView && (
           <div className={`hidden lg:flex items-center ${isTabletView ? 'gap-3' : 'gap-6'}`}>
             <button
-              onClick={() => scrollToSection('tension-panels')}
-              className="text-xs sm:text-sm font-alan-sans text-cream/90 hover:text-cream transition"
-            >
-              Mission
-            </button>
-            <button
               onClick={() => scrollToSection('ecosystem')}
               className="text-xs sm:text-sm font-alan-sans text-cream/90 hover:text-cream transition"
             >
@@ -132,29 +127,69 @@ export default function Header() {
               variant="pumpkin"
               width={isTabletView ? '80px' : '96px'}
               height={isTabletView ? '36px' : '40px'}
+              className="join-btn"
             >
               Join
             </FishyButton>
             <FishyButton
               onClick={() => scrollToSection('collaborations')}
-              variant="pumpkin"
+              variant="teal"
               width={isTabletView ? '96px' : '112px'}
               height={isTabletView ? '36px' : '40px'}
+              className="partner-btn"
             >
               Partner
             </FishyButton>
+            <style>{`
+              .join-btn .button__text {
+                letter-spacing: 2px;
+                font-size: 18px !important;
+              }
+              .join-btn:hover .button__text {
+                font-size: 19px !important;
+              }
+              .partner-btn .button__text {
+                letter-spacing: 2px;
+                font-size: 18px !important;
+              }
+              .partner-btn:hover .button__text {
+                font-size: 19px !important;
+              }
+            `}</style>
           </div>
         )}
 
-        {/* Mobile Menu Button */}
+        {/* Mobile Hamburger Menu Button */}
         <motion.button
-          whileHover={{ scale: 1.1 }}
+          whileHover={{ scale: 1.15 }}
+          whileTap={{ scale: 0.95 }}
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className={`${isMobileView ? 'flex' : 'hidden'} sm:hidden text-cream font-signika font-semibold tracking-wider flex-shrink-0 ${
-            isMobileView ? 'text-xs' : 'text-sm'
-          }`}
+          className={`${isMobileView ? 'flex' : 'hidden'} sm:hidden items-center justify-center text-cream hover:text-cream/80 transition flex-shrink-0 p-1.5`}
+          aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
         >
-          {isMobileMenuOpen ? 'CLOSE' : 'MENU'}
+          <AnimatePresence mode="wait">
+            {isMobileMenuOpen ? (
+              <motion.div
+                key="close"
+                initial={{ rotate: -90, opacity: 0 }}
+                animate={{ rotate: 0, opacity: 1 }}
+                exit={{ rotate: 90, opacity: 0 }}
+                transition={{ duration: 0.2 }}
+              >
+                <X size={24} strokeWidth={2} />
+              </motion.div>
+            ) : (
+              <motion.div
+                key="menu"
+                initial={{ rotate: 90, opacity: 0 }}
+                animate={{ rotate: 0, opacity: 1 }}
+                exit={{ rotate: -90, opacity: 0 }}
+                transition={{ duration: 0.2 }}
+              >
+                <Menu size={24} strokeWidth={2} />
+              </motion.div>
+            )}
+          </AnimatePresence>
         </motion.button>
       </motion.div>
 
@@ -168,15 +203,6 @@ export default function Header() {
             transition={{ duration: 0.2 }}
             className="absolute top-20 left-4 right-4 px-4 py-4 sm:px-6 sm:py-5 rounded-lg bg-white/20 backdrop-blur-xl border border-white/30 flex flex-col gap-3 sm:gap-4"
           >
-            <button
-              onClick={() => {
-                scrollToSection('tension-panels');
-                setIsMobileMenuOpen(false);
-              }}
-              className="text-left text-xs sm:text-sm font-alan-sans text-cream/90 hover:text-cream transition py-2 border-b border-white/10"
-            >
-              Mission
-            </button>
             <button
               onClick={() => {
                 scrollToSection('ecosystem');
@@ -233,6 +259,7 @@ export default function Header() {
                 variant="pumpkin"
                 width="100%"
                 height="40px"
+                className="join-btn"
               >
                 Join
               </FishyButton>
@@ -244,6 +271,7 @@ export default function Header() {
                 variant="pumpkin"
                 width="100%"
                 height="40px"
+                className="partner-btn"
               >
                 Partner
               </FishyButton>

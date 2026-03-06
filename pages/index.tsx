@@ -4,7 +4,6 @@ import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
 import { motion } from 'framer-motion';
 import HeroSection from '@/components/sections/HeroSection';
-import TensionPanels from '@/components/sections/TensionPanels';
 import InfinityEcosystem from '@/components/sections/InfinityEcosystem';
 import ValuesSection from '@/components/sections/ValuesSection';
 import IPGallerySection from '@/components/sections/IPGallerySection';
@@ -17,7 +16,7 @@ import ContactSection from '@/components/sections/ContactSection';
  * TSC Website 2.0 - Single Page Scroller
  *
  * Cinematic, borderless architecture with continuous content flow
- * Hero → Tension Panels → Ecosystem → IP Gallery → Academy → Collaborations → Contact → Artists → Footer
+ * Hero → Ecosystem → IP Gallery → Academy → Collaborations → Contact → Artists → Footer
  */
 export default function Home() {
   const [activeSection, setActiveSection] = useState('hero');
@@ -31,7 +30,7 @@ export default function Home() {
       title: 'Courses & Mentorship',
       content: (
         <div className="space-y-3">
-          <p className="text-base mb-4 text-cream">
+          <p className="text-base mb-4 text-charcoal">
             Master your fundamentals through industry-led courses and one-on-one mentorship. Learn production, songwriting, visual design, and business.
           </p>
           <a href="#academy" className="text-pumpkin font-semibold hover:text-cream transition-colors">
@@ -46,7 +45,7 @@ export default function Home() {
       title: 'Creation Cafés',
       content: (
         <div className="space-y-3">
-          <p className="text-base mb-4 text-cream">
+          <p className="text-base mb-4 text-charcoal">
             Access world-class studios and creative spaces. Collaborate with peers in facilitated environments designed for innovation and experimentation.
           </p>
           <a href="#ip-gallery" className="text-pumpkin font-semibold hover:text-cream transition-colors">
@@ -61,7 +60,7 @@ export default function Home() {
       title: 'Production Support',
       content: (
         <div className="space-y-3">
-          <p className="text-base mb-4 text-cream">
+          <p className="text-base mb-4 text-charcoal">
             Get funding, technical support, and production resources. From grants to recording to distribution, we've got the infrastructure.
           </p>
           <a href="#contact" className="text-pumpkin font-semibold hover:text-cream transition-colors">
@@ -76,7 +75,7 @@ export default function Home() {
       title: 'Brand Partnerships',
       content: (
         <div className="space-y-3">
-          <p className="text-base mb-4 text-cream">
+          <p className="text-base mb-4 text-charcoal">
             Connect with brands and cultural partners. Monetize your work through authentic collaborations that align with your values.
           </p>
           <a href="#collaborations" className="text-pumpkin font-semibold hover:text-cream transition-colors">
@@ -91,7 +90,7 @@ export default function Home() {
       title: 'Global Impact',
       content: (
         <div className="space-y-3">
-          <p className="text-base mb-4 text-cream">
+          <p className="text-base mb-4 text-charcoal">
             Scale your impact globally. Expand to new markets, build communities, and influence culture across borders and continents.
           </p>
           <a href="#artists" className="text-pumpkin font-semibold hover:text-cream transition-colors">
@@ -107,7 +106,6 @@ export default function Home() {
     const handleScroll = () => {
       const sections = [
         'hero',
-        'tension-panels',
         'ecosystem',
         'values',
         'ip-gallery',
@@ -162,12 +160,7 @@ export default function Home() {
       <main className="scroll-smooth scroll-behavior-smooth">
         {/* Hero Section */}
         <section id="hero">
-          <HeroSection />
-        </section>
-
-        {/* Tension Panels - Why We Were Born */}
-        <section id="tension-panels">
-          <TensionPanels />
+          <HeroSection activeSection={activeSection} setActiveSection={setActiveSection} />
         </section>
 
         {/* Infinity Ecosystem */}
@@ -195,14 +188,14 @@ export default function Home() {
           <CollaborationsSection />
         </section>
 
-        {/* Contact Form */}
-        <section id="contact">
-          <ContactSection />
-        </section>
-
         {/* Artists Community */}
         <section id="artists">
           <ArtistsSection />
+        </section>
+
+        {/* Contact Form */}
+        <section id="contact">
+          <ContactSection />
         </section>
       </main>
 
@@ -210,9 +203,14 @@ export default function Home() {
       <style jsx global>{`
         html {
           scroll-behavior: smooth;
+          background-color: #000;
         }
         body {
           overflow-x: hidden;
+          background-color: #000;
+        }
+        .scroll-behavior-auto {
+          scroll-behavior: auto !important;
         }
       `}</style>
     </>

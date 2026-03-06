@@ -88,7 +88,8 @@ Browserslist: browsers data (caniuse-lite) is 11 months old. Please run:
 
  ✓ Starting...
  ✓ Ready in 3.1s
- (509 modules)
+[?25h
+odules)
  ✓ Compiled in 242ms  ✓ Compiled  ✓ Compiled in 239ms  ✓ Compiled  ✓ Compiled in 349ms (509 modules)
 <w> [webpack.cache.Pack ✓ Compiled in 520ms (567 modules)
  ✓ Compiled in 416ms (567 modules)
@@ -108,4 +109,37 @@ Browserslist: browsers data (caniuse-lite) is 11 months old. Please run:
  ✓ Compiled in 417ms (509 modules)
 <w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory, rename 'C:\Users\ragha\OneDrive\Desktop\TSC-Website\TSC-Website\.next\cache\webpack\client-development\0.pack.gz_' -> 'C:\Users\ragha\OneDrive\Desktop\TSC-Website ✓ Compiled in 332ms (509 modules)
  ✓ Compiled in 408ms (509 modules)
-<w> [webpack.ca
+<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory, rename 'C:\Users\ragha\OneDrive\Desktop\TSC-Website\TSC-Website\.next\cache\webpack\client-development\1.pack.gz_' -> 'C:\Users\ragha\OneDrive\Desktop\TSC-Website\TSC-Website\.next\cache\webpack\client-development\1.pack.gz'
+ ✓ Compiled in 473ms (509 modules)
+<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pa<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory, rename 'C:\Users\ragha\OneDrive\Desktop\TSC-Website\TSC-Website\.next\cache\webpack\client-development\0.pack.gz_' -> 'C:\Users\ragha\OneDr<w> [webpack.cache.Pack ✓ Compiled in 793ms (565 modules)
+ ✓ Compiled in 407ms (567 modules)
+ ✓ Compiled in 330ms (567 modules)
+ ✓ Compiled in 474ms (567 modules)
+ ⚠ Found a change in next.config.js. Restarting the server to ⚠ Found a change in ⚠ Port 3000 is in use, trying 3001 instead.
+ ⚠ Port 3001 i ⚠ Port 3000 is in use, trying 3001 instead.
+ ⚠ Port 3001 is in use, tryin  ▲ Next.js 14.2.35
+  - Local:        http://localhost:3003
+  - Environments: .env.local
+
+ ✓ Starting...
+ ✓ Ready in 2.4s
+ ○ Compiling / ...
+Browserslist: browsers data (caniuse-lite) is 11 months old. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+ ✓ Compiled / in 3.8s (653 modules)
+ GET /_next/static/webpack/617a3ec6d2605834.webpack.hot-update.json 404 in 3993ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ GET / 200 in 4065ms
+ GET / 200 in 26ms
+ ✓ Compiled / in 399ms (651 modules)
+ ✓ Compiled /_error in 86ms (653 modules)
+ GET / 404 in 221ms
+ GET / 404 in 12ms
+ GET / 404 in 7ms
+ GET / 404 in 6ms
+ GET / 404 in 4ms
+ GET / 404 in 12ms
+ GET / 404 in 6ms
+ GET / 404 in 5ms
+[?25h

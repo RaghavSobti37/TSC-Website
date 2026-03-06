@@ -6,6 +6,7 @@ import Section from '@/components/layout/Section';
 import Container from '@/components/layout/Container';
 import UnfoldReveal from '@/components/animations/UnfoldReveal';
 import { Button } from '@/components/buttons/Button';
+import { FishyButton } from '@/components/ui/fishy-button';
 import { cms } from '@/lib/cms';
 
 interface ArtistDetailPageProps {
@@ -121,30 +122,26 @@ export default function ArtistDetailPage({ artist }: ArtistDetailPageProps) {
           <Container className="text-center">
             <UnfoldReveal variant="fadeUp">
               <h3 className="text-2xl font-bold text-charcoal mb-8">Follow & Listen</h3>
-              <div className="flex justify-center gap-6">
+              <div className="flex justify-center gap-6 flex-wrap">
                 {artist.social.instagram && (
-                  <motion.a
-                    href={artist.social.instagram}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="px-8 py-4 bg-teal-dark text-cream rounded-lg font-semibold hover:bg-teal-primary transition-colors"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
+                  <FishyButton
+                    onClick={() => window.open(artist.social?.instagram, '_blank')}
+                    variant="teal"
+                    width="140px"
+                    height="56px"
                   >
                     Instagram
-                  </motion.a>
+                  </FishyButton>
                 )}
-                {artist.social.spotify && (
-                  <motion.a
-                    href={artist.social.spotify}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="px-8 py-4 bg-teal-dark text-cream rounded-lg font-semibold hover:bg-teal-primary transition-colors"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
+                {artist.social?.spotify && (
+                  <FishyButton
+                    onClick={() => window.open(artist.social?.spotify, '_blank')}
+                    variant="teal"
+                    width="140px"
+                    height="56px"
                   >
                     Spotify
-                  </motion.a>
+                  </FishyButton>
                 )}
               </div>
             </UnfoldReveal>

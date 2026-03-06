@@ -164,7 +164,7 @@ export default function Header() {
           whileHover={{ scale: 1.15 }}
           whileTap={{ scale: 0.95 }}
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className={`${isMobileView ? 'flex' : 'hidden'} sm:hidden items-center justify-center text-cream hover:text-cream/80 transition flex-shrink-0 p-1.5`}
+          className={`${isMobileView ? 'flex' : 'hidden'} md:hidden items-center justify-center text-cream hover:text-cream/80 transition flex-shrink-0 p-1.5`}
           aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
         >
           <AnimatePresence mode="wait">

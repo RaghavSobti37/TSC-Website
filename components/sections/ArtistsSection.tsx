@@ -1,5 +1,7 @@
-import React from 'react';
-import KineticTeamHybrid from '@/components/ui/kinetic-team-hybrid';
+'use client';
+import React, { useState } from 'react';
+import Image from 'next/image';
+import { motion, AnimatePresence } from 'framer-motion';
 
 interface TimelineMember {
   id: string;
@@ -11,9 +13,11 @@ interface TimelineMember {
 
 /**
  * Artists Section
- * Displays the TSC artist community using kinetic team component
+ * Displays the TSC artist community with click-to-expand functionality
  */
 export default function ArtistsSection() {
+  const [expandedId, setExpandedId] = useState<string | null>(null);
+
   // Flatten all artists from different categories into a single list
   const teamMembers: TimelineMember[] = [
     {
@@ -103,13 +107,81 @@ export default function ArtistsSection() {
   ];
 
   return (
-    <section id="artists" className="bg-cream">
-      <KineticTeamHybrid
-        title="Artist"
-        subtitle="Community"
-        members={teamMembers}
-        darkMode={false}
-      />
+    <section id="artists" className="py-20 px-6 bg-cream">
+      <div className="container mx-auto">
+        <div className="text-center mb-16">
+          <p className="text-pumpkin font-black text-xs uppercase tracking-widest mb-2">Our Community</p>
+          <h2 className="heading-font text-5xl md:text-6xl font-black text-wine mb-4">ARTIST COLLECTIVE</h2>
+        </div>
+        
+        <div className="space-y-6 max-w-5xl mx-auto">
+          {teamMembers.map((member) => (
+            <motion.div
+              key={member.id}
+              layoutId={`artist-card-${member.id}`}
+              onClick={() => setExpandedId(expandedId === member.id ? null : member.id)}
+              className="cursor-pointer transition-all duration-500"
+              layout
+            >
+              <AnimatePresence mode="wait">
+                {expandedId === member.id ? (
+                  <motion.div
+                    key={`expanded-${member.id}`}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 10 }}
+                    transition={{ duration: 0.36 }}
+                    className="rounded-2xl overflow-hidden bg-gradient-to-b from-transparent via-chestnut/30 to-wine/50 shadow-2xl"
+                  >
+                    <div className="flex gap-6 p-6">
+                      <div className="flex-1">
+                        <h3 className="text-2xl font-black text-wine mb-2">{member.name}</h3>
+                        <p className="text-wine/80 font-bold text-sm mb-4">{member.role}</p>
+                        {member.bio && (
+                          <p className="text-sm text-wine/90 mb-3">{member.bio}</p>
+                        )}
+                      </div>
+                      <div className="relative w-48 h-64 flex-shrink-0 rounded-xl overflow-hidden">
+                        <Image src={member.image} alt={member.name} fill className="object-cover" />
+                      </div>
+                    </div>
+                  </motion.div>
+                ) : (
+                  <motion.div
+                    key={`collapsed-${member.id}`}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="flex gap-6 items-center bg-white rounded-2xl overflow-hidden shadow-lg p-6 group/card"
+                  >
+                    <div className="flex-1">
+                      <h3 className="text-2xl font-black text-wine mb-1">{member.name}</h3>
+                      <p className="text-wine/70 font-bold text-sm mb-3">{member.role}</p>
+                      {member.bio && (
+                        <p className="text-sm text-wine/60 line-clamp-2">{member.bio}</p>
+                      )}
+                      <p className="text-xs text-pumpkin font-bold mt-3 cursor-pointer">Click to see more →</p>
+                    </div>
+                    <div className="relative w-48 h-56 flex-shrink-0 rounded-xl overflow-hidden">
+                      <Image 
+                        src={member.image} 
+                        alt={member.name}
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </motion.div>
+          ))}
+        </div>
+
+        <div className="text-center mt-12 text-wine/60 text-xs uppercase tracking-wider font-bold">
+          Click on any card to see more details
+        </div>
+      </div>
     </section>
   );
 }

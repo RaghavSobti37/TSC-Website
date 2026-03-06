@@ -179,7 +179,7 @@ export const InfinityEcosystem: React.FC<InfinityEcosystemProps> = ({
       </div>
 
       {/* Right: Node Details Card - Centered vertically */}
-      <div className="w-full lg:w-1/2 flex items-center justify-center">
+      <div className="w-full lg:w-1/2 hidden lg:flex items-center justify-center">
         <AnimatePresence>
           {selectedNodeId ? (
             <motion.div

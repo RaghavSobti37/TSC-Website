@@ -201,8 +201,6 @@ export const FishyButton: React.FC<FishyButtonProps> = ({
   position: relative;
   z-index: 7;
   display: inline-block;
-  font-size: 32.4px;
-  letter-spacing: 8px;
   color: #fff;
   transition: all ease 1s;
   font-family: ${fontFamily ? fontFamily : "'Signika', sans-serif"};
@@ -217,8 +215,6 @@ export const FishyButton: React.FC<FishyButtonProps> = ({
   animation-fill-mode: forwards;
 }
 .button:hover .button__text {
-  letter-spacing: 9px;
-  font-size: 34.2px;
 }
 .button:hover .wave:nth-child(1)::before { top: -2px; left: -2px; }
 .button:hover .wave:nth-child(1)::after { bottom: -2px; right: -2px; }

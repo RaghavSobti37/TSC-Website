@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Section from '@/components/layout/Section';
 import Container from '@/components/layout/Container';
-import { FishyButton } from '@/components/ui/fishy-button';
+import { Button } from '@/components/buttons/Button';
 
 interface PartnershipModel {
   id: string;
@@ -190,19 +190,20 @@ export default function CollaborationsSection() {
           <p className="text-cream/80 font-alan-sans text-sm sm:text-base mb-6 sm:mb-8 max-w-2xl mx-auto">
             Let's create cultural IP that resonates with your audience and makes an impact
           </p>
-          <FishyButton 
-            variant="pumpkin" 
-            width="clamp(200px, 85vw, 460px)"
-            height="clamp(50px, 12vw, 100px)"
-            onClick={() => {
-              const contact = document.getElementById('contact');
-              if (contact) {
-                contact.scrollIntoView({ behavior: 'smooth' });
-              }
-            }}
-          >
-            Start Collab
-          </FishyButton>
+          <div className="flex justify-center">
+            <Button
+              variant="secondary"
+              size="lg"
+              onClick={() => {
+                const contact = document.getElementById('contact');
+                if (contact) {
+                  contact.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
+            >
+              Start Collab
+            </Button>
+          </div>
         </motion.div>
       </Container>
     </Section>

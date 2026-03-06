@@ -419,7 +419,7 @@ export default function HeroSection({
           animate="visible"
           whileHover="hover"
           whileTap={{ scale: 0.98 }}
-          className="inline-block"
+          className="flex justify-center"
         >
           <FishyButton 
             variant="pumpkin" 

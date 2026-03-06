@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Section from '@/components/layout/Section';
 import Container from '@/components/layout/Container';
+import { Button } from '@/components/buttons/Button';
 
 interface IPItem {
   id: string;
@@ -175,9 +176,20 @@ export default function IPGallerySection() {
           viewport={{ once: true }}
           className="mt-16 text-center"
         >
-          <a href="#collaborations" className="inline-block px-8 py-3 bg-pumpkin text-cream rounded-full font-semibold hover:bg-pumpkin-dark transition-all font-signika">
-            Build Cultural IP With Us →
-          </a>
+          <div className="flex justify-center">
+            <Button
+              variant="secondary"
+              size="lg"
+              onClick={() => {
+                const collaborations = document.getElementById('collaborations');
+                if (collaborations) {
+                  collaborations.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
+            >
+              Build Cultural IP With Us →
+            </Button>
+          </div>
         </motion.div>
       </Container>
     </Section>

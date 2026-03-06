@@ -79,7 +79,7 @@ export default function Header() {
         <motion.button
           onClick={() => scrollToSection('hero')}
           whileHover={{ scale: 1.1 }}
-          className={`font-signika font-bold text-cream hover:text-cream/80 transition whitespace-nowrap tracking-wider flex-shrink-0 ${
+          className={`font-signika font-bold text-cream hover:text-cream/80 transition whitespace-nowrap tracking-wider flex-shrink-0 text-outline ${
             isMobileView ? 'text-xs' : 'text-sm sm:text-base'
           }`}
         >
@@ -91,25 +91,25 @@ export default function Header() {
           <div className={`hidden lg:flex items-center ${isTabletView ? 'gap-3' : 'gap-6'}`}>
             <button
               onClick={() => scrollToSection('ecosystem')}
-              className="text-xs sm:text-sm font-alan-sans text-cream/90 hover:text-cream transition"
+              className="text-xs sm:text-sm font-alan-sans text-cream/90 hover:text-cream transition text-outline"
             >
               Ecosystem
             </button>
             <button
               onClick={() => scrollToSection('ip-gallery')}
-              className="text-xs sm:text-sm font-alan-sans text-cream/90 hover:text-cream transition"
+              className="text-xs sm:text-sm font-alan-sans text-cream/90 hover:text-cream transition text-outline"
             >
               IP & Stories
             </button>
             <button
               onClick={() => scrollToSection('academy')}
-              className="text-xs sm:text-sm font-alan-sans text-cream/90 hover:text-cream transition"
+              className="text-xs sm:text-sm font-alan-sans text-cream/90 hover:text-cream transition text-outline"
             >
               Academy
             </button>
             <button
               onClick={() => scrollToSection('collaborations')}
-              className="text-xs sm:text-sm font-alan-sans text-cream/90 hover:text-cream transition"
+              className="text-xs sm:text-sm font-alan-sans text-cream/90 hover:text-cream transition text-outline"
             >
               Partnerships
             </button>
@@ -208,7 +208,7 @@ export default function Header() {
                 scrollToSection('ecosystem');
                 setIsMobileMenuOpen(false);
               }}
-              className="text-left text-xs sm:text-sm font-alan-sans text-cream/90 hover:text-cream transition py-2 border-b border-white/10"
+              className="text-left text-xs sm:text-sm font-alan-sans text-cream/90 hover:text-cream transition py-2 border-b border-white/10 text-outline"
             >
               Ecosystem
             </button>
@@ -217,7 +217,7 @@ export default function Header() {
                 scrollToSection('ip-gallery');
                 setIsMobileMenuOpen(false);
               }}
-              className="text-left text-xs sm:text-sm font-alan-sans text-cream/90 hover:text-cream transition py-2 border-b border-white/10"
+              className="text-left text-xs sm:text-sm font-alan-sans text-cream/90 hover:text-cream transition py-2 border-b border-white/10 text-outline"
             >
               IP & Stories
             </button>
@@ -226,7 +226,7 @@ export default function Header() {
                 scrollToSection('academy');
                 setIsMobileMenuOpen(false);
               }}
-              className="text-left text-xs sm:text-sm font-alan-sans text-cream/90 hover:text-cream transition py-2 border-b border-white/10"
+              className="text-left text-xs sm:text-sm font-alan-sans text-cream/90 hover:text-cream transition py-2 border-b border-white/10 text-outline"
             >
               Academy
             </button>
@@ -235,7 +235,7 @@ export default function Header() {
                 scrollToSection('collaborations');
                 setIsMobileMenuOpen(false);
               }}
-              className="text-left text-xs sm:text-sm font-alan-sans text-cream/90 hover:text-cream transition py-2 border-b border-white/10"
+              className="text-left text-xs sm:text-sm font-alan-sans text-cream/90 hover:text-cream transition py-2 border-b border-white/10 text-outline"
             >
               Partnerships
             </button>
@@ -244,7 +244,7 @@ export default function Header() {
                 scrollToSection('contact');
                 setIsMobileMenuOpen(false);
               }}
-              className="text-left text-xs sm:text-sm font-alan-sans text-cream/90 hover:text-cream transition py-2 border-b border-white/10"
+              className="text-left text-xs sm:text-sm font-alan-sans text-cream/90 hover:text-cream transition py-2 border-b border-white/10 text-outline"
             >
               Contact
             </button>

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Section from '@/components/layout/Section';
 import Container from '@/components/layout/Container';
+import { Button } from '@/components/buttons/Button';
 
 type UserType = 'artist' | 'brand' | 'producer' | null;
 
@@ -349,15 +350,17 @@ export default function ContactSection() {
           </div>
 
           {/* Submit button */}
-          <motion.button
-            type="submit"
-            disabled={!userType || !formData.name || !formData.email || !formData.message}
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            className="w-full py-3 sm:py-4 bg-pumpkin text-cream font-bold rounded-lg sm:rounded-xl hover:bg-pumpkin-dark transition-all disabled:opacity-50 disabled:cursor-not-allowed font-signika text-sm sm:text-base"
-          >
-            Send Message →
-          </motion.button>
+          <div className="flex justify-center">
+            <Button
+              type="submit"
+              variant="secondary"
+              size="lg"
+              className="w-full"
+              disabled={!userType || !formData.name || !formData.email || !formData.message}
+            >
+              Send Message →
+            </Button>
+          </div>
         </motion.form>
       </Container>
     </Section>

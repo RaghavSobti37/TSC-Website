@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
-import Head from 'next/head';
-import Section from '@/components/layout/Section';
-import Container from '@/components/layout/Container';
-import UnfoldReveal from '@/components/animations/UnfoldReveal';
+import { Button } from '@/components/buttons/Button';
 import { CMSGrid } from '@/components/cards/CMSCard';
+import Container from '@/components/layout/Container';
+import Section from '@/components/layout/Section';
 import { cms } from '@/lib/cms';
+import Head from 'next/head';
+import React, { useState } from 'react';
+import UnfoldReveal from '@/components/animations/UnfoldReveal';
 
 export default function IPPage() {
   const [selectedType, setSelectedType] = useState<string | null>(null);
@@ -62,28 +63,22 @@ export default function IPPage() {
                 Type
               </h3>
               <div className="flex flex-wrap gap-3">
-                <button
+                <Button
                   onClick={() => setSelectedType(null)}
-                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
-                    selectedType === null
-                      ? 'bg-teal-dark text-cream'
-                      : 'bg-cream text-charcoal hover:bg-cream-dark'
-                  }`}
+                  variant={selectedType === null ? 'primary' : 'outline'}
+                  size="sm"
                 >
                   All Types
-                </button>
+                </Button>
                 {typeFilters.map((type) => (
-                  <button
+                  <Button
                     key={type}
                     onClick={() => setSelectedType(type)}
-                    className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
-                      selectedType === type
-                        ? 'bg-teal-dark text-cream'
-                        : 'bg-cream text-charcoal hover:bg-cream-dark'
-                    }`}
+                    variant={selectedType === type ? 'secondary' : 'outline'}
+                    size="sm"
                   >
                     {type}
-                  </button>
+                  </Button>
                 ))}
               </div>
             </div>
@@ -94,28 +89,22 @@ export default function IPPage() {
                 Status
               </h3>
               <div className="flex flex-wrap gap-3">
-                <button
+                <Button
                   onClick={() => setSelectedStatus(null)}
-                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
-                    selectedStatus === null
-                      ? 'bg-teal-dark text-cream'
-                      : 'bg-cream text-charcoal hover:bg-cream-dark'
-                  }`}
+                  variant={selectedStatus === null ? 'primary' : 'outline'}
+                  size="sm"
                 >
                   All Status
-                </button>
+                </Button>
                 {statusFilters.map((status) => (
-                  <button
+                  <Button
                     key={status}
                     onClick={() => setSelectedStatus(status)}
-                    className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
-                      selectedStatus === status
-                        ? 'bg-teal-dark text-cream'
-                        : 'bg-cream text-charcoal hover:bg-cream-dark'
-                    }`}
+                    variant={selectedStatus === status ? 'secondary' : 'outline'}
+                    size="sm"
                   >
                     {status}
-                  </button>
+                  </Button>
                 ))}
               </div>
             </div>

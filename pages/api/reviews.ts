@@ -9,16 +9,19 @@ const HEADER_ROW = ['Date', 'Name', 'Title', 'Content', 'Rating', 'Approved'];
 
 export default async function handler(req: any, res: any) {
   try {
-    // Path to the service account JSON file
-    const serviceAccountPath = path.join(process.cwd(), 'google_service_account.json');
+    let serviceAccount;
     
-    // Read the service account credentials from file
-    if (!fs.existsSync(serviceAccountPath)) {
-      return res.status(500).json({ error: 'Service account configuration missing' });
+    if (process.env.GOOGLE_SERVICE_ACCOUNT_CREDENTIALS) {
+      // Use environment variable in production (Vercel)
+      serviceAccount = JSON.parse(process.env.GOOGLE_SERVICE_ACCOUNT_CREDENTIALS);
+    } else {
+      // Fallback to local file in development
+      const serviceAccountPath = path.join(process.cwd(), 'google_service_account.json');
+      if (!fs.existsSync(serviceAccountPath)) {
+        return res.status(500).json({ error: 'Service account configuration missing' });
+      }
+      serviceAccount = JSON.parse(fs.readFileSync(serviceAccountPath, 'utf8'));
     }
-    
-    const serviceAccountJson = fs.readFileSync(serviceAccountPath, 'utf8');
-    const serviceAccount = JSON.parse(serviceAccountJson);
 
     // Create an auth client
     const auth = new google.auth.GoogleAuth({

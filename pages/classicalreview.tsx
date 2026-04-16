@@ -7,6 +7,7 @@ export default function ReviewPage() {
   const [totalCount, setTotalCount] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [showRecommendation, setShowRecommendation] = useState(false);
 
   // Form states
   const [name, setName] = useState("");
@@ -59,6 +60,7 @@ export default function ReviewPage() {
           type: "success"
         });
         // Reset form
+        const previousRating = rating;
         setName("");
         setTitle("");
         setContent("");
@@ -66,7 +68,10 @@ export default function ReviewPage() {
         setTimeout(() => {
           setIsModalOpen(false);
           setSubmitMessage({ text: "", type: "" });
-        }, 3000);
+          if (previousRating >= 3) {
+            setShowRecommendation(true);
+          }
+        }, 1500);
       } else {
         setSubmitMessage({ text: data.error || "Failed to submit review.", type: "error" });
       }
@@ -131,8 +136,7 @@ export default function ReviewPage() {
                     ))}
                   </div>
                   <p className="text-sm font-medium text-white/40 text-center">
-                    Based on {reviews.length} approved review{reviews.length !== 1 && 's'}<br />
-                    out of {totalCount} total submissions in the sheet.
+                    out of {totalCount} total reviews
                   </p>
                 </div>
 
@@ -305,6 +309,48 @@ export default function ReviewPage() {
                 ) : "Submit Review"}
               </button>
             </form>
+          </div>
+        </div>
+      )}
+
+      {/* Course Recommendation Pop-up */}
+      {showRecommendation && (
+        <div className="fixed inset-0 z-[60] flex items-center justify-center p-4">
+          <div className="absolute inset-0 bg-black/90 backdrop-blur-md" onClick={() => setShowRecommendation(false)}></div>
+          <div className="relative w-full max-w-2xl bg-[#0F0F0F] border border-white/10 rounded-3xl shadow-2xl overflow-hidden shadow-purple-500/20">
+            <button
+              onClick={() => setShowRecommendation(false)}
+              className="absolute top-4 right-4 z-10 w-8 h-8 flex items-center justify-center bg-black/50 rounded-full text-white/50 hover:text-white hover:bg-black/80 transition-colors backdrop-blur"
+            >
+              <X className="w-5 h-5" />
+            </button>
+            <div className="w-full aspect-video border-b border-white/10 relative">
+              <img
+                src="/assets/The roots of Hindustani Classical Music.png"
+                alt="The roots of Hindustani Classical Music"
+                className="w-full h-full object-cover"
+              />
+              <span className="absolute top-4 left-4 inline-block px-3 py-1 rounded-full bg-purple-500/80 backdrop-blur text-white text-xs font-bold uppercase tracking-widest">
+                Recommended
+              </span>
+            </div>
+            <div className="p-8 sm:p-10 text-center space-y-6">
+              <h3 className="text-2xl sm:text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-white/70">
+                Continue Your Journey
+              </h3>
+              <p className="text-white/60 font-light text-[15px] max-w-lg mx-auto leading-relaxed">
+                Since you loved the masterclass, take your artistry to the next level. Explore the intricate roots of Hindustani Classical Music under expert mentorship.
+              </p>
+              <a
+                href="https://tscacademy.in/course-classical-singing-comprehensive.html"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex w-full sm:w-auto items-center justify-center px-8 py-4 bg-white text-black hover:bg-gray-200 transition-colors rounded-full font-bold shadow-lg shadow-white/10 mt-2"
+                onClick={() => setShowRecommendation(false)}
+              >
+                Explore The Masterclass
+              </a>
+            </div>
           </div>
         </div>
       )}

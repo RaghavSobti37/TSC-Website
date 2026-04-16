@@ -332,7 +332,7 @@ export default function AcademySection() {
         'A comprehensive 6-month program with 200+ mins of recorded content and 12+ live interactive sessions. Learn the art of imagination, emotion to expression, subconscious mind workings, and mainstream mastery. 1 year access to course contents, lifetime community access, and unique training approach where knowledge meets experience. Score 9+ on final capstone to perform at The Young Guns Demo Day.',
       isFeatured: true,
       // ▼ BANNER IMAGE — place the image file in /public/assets/ and set the path below:
-      bannerImage: '/assets/sandesh sir course.jpeg',
+      bannerImage: '/assets/the heart of music composition thumbmail 4K.jpg.jpeg',
       isComingSoon: false,
       enrollUrl: 'https://tscacademy.in/course-composition-intermediate.html',
     },
@@ -355,7 +355,7 @@ export default function AcademySection() {
       level: 'Intermediate',
       description: 'Master the art of Hindustani classical singing under the guidance of Prasad Khaparde. Twelve online group sessions, 120 mins of recorded content, quality assessments, and certification. Top 10 students per 300 enrollments will get opportunity to continue the journey under Prasad Khaparde\'s personal mentorship.',
       // ▼ BANNER IMAGE — place the image file in /public/assets/ and set the path below:
-      // bannerImage: '/assets/your-image-name.jpg',
+      bannerImage: '/assets/The roots of Hindustani Classical Music.png',
       isComingSoon: false,
       enrollUrl: 'https://tscacademy.in/course-classical-singing-comprehensive.html',
     },

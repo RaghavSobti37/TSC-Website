@@ -11,16 +11,25 @@ export default async function handler(req: any, res: any) {
   try {
     let serviceAccount;
     
-    if (process.env.GOOGLE_SERVICE_ACCOUNT_CREDENTIALS) {
-      // Use environment variable in production (Vercel)
-      serviceAccount = JSON.parse(process.env.GOOGLE_SERVICE_ACCOUNT_CREDENTIALS);
-    } else {
-      // Fallback to local file in development
-      const serviceAccountPath = path.join(process.cwd(), 'google_service_account.json');
-      if (!fs.existsSync(serviceAccountPath)) {
-        return res.status(500).json({ error: 'Service account configuration missing' });
+    try {
+      if (process.env.GOOGLE_SERVICE_ACCOUNT_CREDENTIALS) {
+        // Use environment variable in production (Vercel)
+        // Vercel sometimes escapes newlines differently, so we ensure \n is handled
+        const envVal = process.env.GOOGLE_SERVICE_ACCOUNT_CREDENTIALS;
+        serviceAccount = JSON.parse(envVal);
+        if (serviceAccount.private_key) {
+           serviceAccount.private_key = serviceAccount.private_key.replace(/\\n/g, '\n');
+        }
+      } else {
+        // Fallback to local file in development
+        const serviceAccountPath = path.join(process.cwd(), 'google_service_account.json');
+        if (!fs.existsSync(serviceAccountPath)) {
+          return res.status(500).json({ error: 'Service account configuration missing' });
+        }
+        serviceAccount = JSON.parse(fs.readFileSync(serviceAccountPath, 'utf8'));
       }
-      serviceAccount = JSON.parse(fs.readFileSync(serviceAccountPath, 'utf8'));
+    } catch (parseErr: any) {
+      return res.status(500).json({ error: 'Configuration parsing failed', details: parseErr.message });
     }
 
     // Create an auth client

@@ -190,19 +190,19 @@ function FeaturedCourseCard({ course }: { course: Course }) {
     >
       <div className="flex flex-col lg:flex-row">
         {/* Banner image / placeholder — left on desktop, top on mobile */}
-        <div className="w-full lg:w-[55%] flex-shrink-0 overflow-hidden aspect-video lg:aspect-auto lg:min-h-[360px] relative">
+        <div className="w-full lg:w-[55%] flex-shrink-0 overflow-hidden aspect-video lg:aspect-auto lg:min-h-[360px] relative bg-black/40 flex items-center justify-center">
           {course.bannerImage ? (
             <img
               src={course.bannerImage}
               alt={course.title}
-              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+              className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700"
             />
           ) : (
             <ComingSoonBanner className="w-full h-full" />
           )}
 
           {/* Featured pill */}
-          <span className="absolute top-4 left-4 px-3 py-1 rounded-full bg-pumpkin text-cream text-xs font-bold uppercase tracking-widest font-alan-sans shadow-lg">
+          <span className="absolute top-4 left-4 px-3 py-1 rounded-full bg-pumpkin text-cream text-xs font-bold uppercase tracking-widest font-alan-sans shadow-lg z-10">
             ⭐ Featured
           </span>
         </div>

@@ -5,6 +5,7 @@ import { Star, X, MessageSquare, CheckCircle, Quote } from "lucide-react";
 export default function ReviewPage() {
   const [reviews, setReviews] = useState<any[]>([]);
   const [totalCount, setTotalCount] = useState(0);
+  const [stats, setStats] = useState<any>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [showRecommendation, setShowRecommendation] = useState(false);
@@ -27,7 +28,8 @@ export default function ReviewPage() {
       const data = await res.json();
       if (data.success) {
         setReviews(data.reviews);
-        setTotalCount(data.totalCount || data.reviews.length);
+        setTotalCount(data.totalCount || 0);
+        setStats(data.stats);
       }
     } catch (error) {
       console.error("Failed to fetch reviews", error);
@@ -82,12 +84,10 @@ export default function ReviewPage() {
     }
   };
 
-  const averageRating = reviews.length > 0
-    ? (reviews.reduce((acc, r) => acc + r.rating, 0) / reviews.length).toFixed(1)
-    : "5.0";
+  const averageRating = stats?.average || "5.0";
 
   return (
-    <div className="min-h-screen bg-[#050505] text-white font-sans selection:bg-purple-500/30 overflow-hidden no-scrollbar">
+    <div className="min-h-screen bg-[#050505] text-white font-sans selection:bg-purple-500/30 overflow-x-hidden no-scrollbar">
       <Head>
         <title>Reviews: The roots of Hindustani Classical Music | TSC</title>
         <style>{`
@@ -107,7 +107,7 @@ export default function ReviewPage() {
         <div className="absolute bottom-[-10%] left-[-5%] w-[40%] h-[40%] bg-blue-600/20 rounded-full blur-[120px]" />
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-6 pb-16 md:pb-24 overflow-y-auto h-[calc(100vh-80px)] no-scrollbar">
+      <div className="relative max-w-7xl mx-auto px-6 pb-20 no-scrollbar">
         {/* Header Section */}
         <div className="text-center mt-12 mb-20 space-y-4">
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-white to-white/60">
@@ -118,9 +118,9 @@ export default function ReviewPage() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 xl:gap-12">
           {/* Left Column - Stats and CTA */}
-          <div className="lg:col-span-4 space-y-8">
+          <div className="lg:col-span-5 space-y-8 lg:order-last">
             <div className="sticky top-8">
               <div className="bg-white/[0.03] border border-white/[0.08] backdrop-blur-xl rounded-3xl p-8 mb-8 shadow-2xl">
                 <div className="text-center mb-6">
@@ -128,16 +128,47 @@ export default function ReviewPage() {
                   <p className="text-white/40 text-sm">Masterclass Feedback</p>
                 </div>
 
-                <div className="flex flex-col items-center justify-center p-6 bg-black/40 rounded-2xl border border-white/[0.05] mb-8">
-                  <div className="text-6xl font-bold text-white mb-2">{averageRating}</div>
-                  <div className="flex gap-1 mb-2">
-                    {[1, 2, 3, 4, 5].map((s) => (
-                      <Star key={s} className="w-5 h-5 fill-purple-500 text-purple-500" />
-                    ))}
+                <div className="flex flex-col xl:flex-row items-center gap-8 p-6 bg-black/40 rounded-2xl border border-white/[0.05] mb-8">
+                  <div className="flex flex-col items-center justify-center shrink-0">
+                    <div className="text-5xl font-bold text-white mb-2">{averageRating}</div>
+                    <div className="flex gap-1 mb-1">
+                      {[1, 2, 3, 4, 5].map((s) => (
+                        <Star key={s} className="w-4 h-4 fill-purple-500 text-purple-500" />
+                      ))}
+                    </div>
+                    <p className="text-xs font-medium text-white/40 text-center">
+                      of {totalCount} reviews
+                    </p>
                   </div>
-                  <p className="text-sm font-medium text-white/40 text-center">
-                    out of {totalCount} total reviews
-                  </p>
+
+                  {/* Rating Distribution */}
+                  <div className="flex-1 w-full space-y-2.5">
+                    {[
+                      { stars: 5, label: "Excellent", color: "bg-green-500" },
+                      { stars: 4, label: "Good", color: "bg-emerald-400" },
+                      { stars: 3, label: "Average", color: "bg-yellow-400" },
+                      { stars: 2, label: "Fair", color: "bg-orange-500" },
+                      { stars: 1, label: "Poor", color: "bg-red-500" }
+                    ].map(({ stars, label, color }) => {
+                      const starData = stats?.distribution?.find((d: any) => d.stars === stars);
+                      const count = starData?.count || 0;
+                      const percentage = totalCount > 0 ? Math.round((count / totalCount) * 100) : 0;
+                      return (
+                        <div key={stars} className="flex items-center gap-2.5 text-sm group">
+                          <span className="w-3 text-white/80 font-medium group-hover:text-white transition-colors text-xs">{stars}</span>
+                          <Star className="w-3 h-3 fill-white/40 text-white/40 group-hover:fill-white group-hover:text-white transition-colors -ml-1" />
+                          <span className="w-14 text-white/40 text-[11px] hidden sm:block">{label}</span>
+                          <div className="flex-1 h-1.5 bg-white/[0.05] rounded-full overflow-hidden relative">
+                            <div 
+                              className={`absolute top-0 left-0 h-full ${color} rounded-full transition-all duration-1000 ease-out`} 
+                              style={{ width: `${percentage}%` }}
+                            ></div>
+                          </div>
+                          <span className="w-7 text-right text-white/40 font-mono text-[10px]">{percentage}%</span>
+                        </div>
+                      );
+                    })}
+                  </div>
                 </div>
 
                 <button
@@ -162,7 +193,7 @@ export default function ReviewPage() {
           </div>
 
           {/* Right Column - Reviews Grid */}
-          <div className="lg:col-span-8">
+          <div className="lg:col-span-7 lg:order-first">
             {isLoading ? (
               <div className="flex flex-col items-center justify-center py-20">
                 <div className="w-10 h-10 border-4 border-purple-500/30 border-t-purple-500 rounded-full animate-spin mb-4"></div>

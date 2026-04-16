@@ -156,11 +156,10 @@ export default function ContactSection() {
                   key={option.value}
                   type="button"
                   onClick={() => setUserType(option.value as UserType)}
-                  className={`p-3 sm:p-4 rounded-lg sm:rounded-xl border-2 transition-all font-alan-sans ${
-                    userType === option.value
+                  className={`p-3 sm:p-4 rounded-lg sm:rounded-xl border-2 transition-all font-alan-sans ${userType === option.value
                       ? 'border-pumpkin bg-pumpkin/20'
                       : 'border-cream/20 hover:border-cream/40'
-                  }`}
+                    }`}
                 >
                   <p className="font-semibold text-cream font-signika text-sm sm:text-base">
                     {option.label}
@@ -362,6 +361,14 @@ export default function ContactSection() {
             </Button>
           </div>
         </motion.form>
+
+        {/* Style fix: force dark background on native select options */}
+        <style>{`
+          select option {
+            background-color: #1A1A1A;
+            color: #FDF6F1;
+          }
+        `}</style>
       </Container>
     </Section>
   );

@@ -99,7 +99,7 @@ export default function Header() {
               onClick={() => scrollToSection('ip-gallery')}
               className="text-xs sm:text-sm font-alan-sans text-cream/90 hover:text-cream transition text-outline"
             >
-              IP & Stories
+              IP &amp; Stories
             </button>
             <button
               onClick={() => scrollToSection('academy')}
@@ -112,6 +112,12 @@ export default function Header() {
               className="text-xs sm:text-sm font-alan-sans text-cream/90 hover:text-cream transition text-outline"
             >
               Partnerships
+            </button>
+            <button
+              onClick={() => scrollToSection('team')}
+              className="text-xs sm:text-sm font-alan-sans text-cream/90 hover:text-cream transition text-outline"
+            >
+              Team
             </button>
           </div>
         )}
@@ -219,7 +225,7 @@ export default function Header() {
               }}
               className="text-left text-xs sm:text-sm font-alan-sans text-cream/90 hover:text-cream transition py-2 border-b border-white/10 text-outline"
             >
-              IP & Stories
+              IP &amp; Stories
             </button>
             <button
               onClick={() => {
@@ -238,6 +244,15 @@ export default function Header() {
               className="text-left text-xs sm:text-sm font-alan-sans text-cream/90 hover:text-cream transition py-2 border-b border-white/10 text-outline"
             >
               Partnerships
+            </button>
+            <button
+              onClick={() => {
+                scrollToSection('team');
+                setIsMobileMenuOpen(false);
+              }}
+              className="text-left text-xs sm:text-sm font-alan-sans text-cream/90 hover:text-cream transition py-2 border-b border-white/10 text-outline"
+            >
+              Team
             </button>
             <button
               onClick={() => {

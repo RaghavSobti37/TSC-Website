@@ -5,7 +5,12 @@ import Header from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import '@/src/index.css';
 
+import { useRouter } from 'next/router';
+
 export default function App({ Component, pageProps }: AppProps) {
+  const router = useRouter();
+  const isReviewPage = router.pathname === '/classicalreview';
+
   return (
     <>
       <Head>
@@ -24,14 +29,14 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta name="twitter:image" content="https://www.thesoulcompany.com/assets/banner.jpg" />
       </Head>
 
-      <div className="min-h-screen flex flex-col bg-cream">
-        <Header />
+      <div className={`min-h-screen flex flex-col ${isReviewPage ? 'bg-[#050505]' : 'bg-cream'}`}>
+        {!isReviewPage && <Header />}
 
         <main className="flex-1">
           <Component {...pageProps} />
         </main>
 
-        <Footer />
+        {!isReviewPage && <Footer />}
       </div>
     </>
   );

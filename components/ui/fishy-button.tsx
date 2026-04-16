@@ -1,5 +1,5 @@
 "use client";
-import React, { useMemo } from "react";
+import React, { useId } from "react";
 
 interface FishyButtonProps {
   children: React.ReactNode;
@@ -15,10 +15,6 @@ interface FishyButtonProps {
   variant?: "pumpkin" | "teal" | "wine";
 }
 
-function getRandomId() {
-  return Math.random().toString(36).substring(2, 8);
-}
-
 export const FishyButton: React.FC<FishyButtonProps> = ({
   children,
   isDelete = false,
@@ -32,7 +28,9 @@ export const FishyButton: React.FC<FishyButtonProps> = ({
   fishSpeed = "2.3s",
   variant = "pumpkin",
 }) => {
-  const fishSpeedClass = useMemo(() => `fish-speed-${getRandomId()}`, []);
+  const rawId = useId();
+  const fishSpeedClass = `fish-speed-${rawId.replace(/:/g, "")}`;
+
 
   const buttonStyle: React.CSSProperties = {
     fontFamily: fontFamily ? fontFamily : undefined,
@@ -91,14 +89,14 @@ export const FishyButton: React.FC<FishyButtonProps> = ({
         {children}
       </span>
 
-      <style>{`
+      <style dangerouslySetInnerHTML={{ __html: `
 .${fishSpeedClass}:hover .fish {
   animation: fish ease ${fishSpeed} forwards;
   opacity: 1;
 }
-`}</style>
+` }} />
 
-      <style>{`
+      <style dangerouslySetInnerHTML={{ __html: `
 .button {
   --color_1: ${colors.color_1};
   --color_2: ${colors.color_2};
@@ -302,7 +300,7 @@ export const FishyButton: React.FC<FishyButtonProps> = ({
   0% { clip-path: path('M128.7,.2c-16.75-.44-23.99-.69-30.39,5.26-6.4,5.96-8.68,12.19-26.99,7.33-9.6-2.54-24.02-4.44-34.16,2.33-10.83,7.23-14.87,9.49-22.83,10.33C1.59,26.81-.72,39.73,.17,43.92H128.7V.2Z'); }
   100% { clip-path: path('M128.53,0c-13.22,12-19.04,5.96-27.62,4.3-12.9-2.5-14.51,2.69-29.7,10.84-8.75,4.7-15.33,2.81-28.21-.3-15.44-3.72-19.2,7.95-29.03,11.04C4.72,28.8,.76,37.83,0,43.72H128.53V0Z'); }
 }
-      `}</style>
+      ` }} />
     </button>
   );
 };

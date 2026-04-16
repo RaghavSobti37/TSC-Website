@@ -11,6 +11,7 @@ interface IPItem {
   status: string;
   logline: string;
   thumbnail: string;
+  link?: string;
 }
 
 /**
@@ -21,51 +22,54 @@ export default function IPGallerySection() {
   const ipItems: IPItem[] = [
     {
       id: 'ip-1',
-      title: 'Himalayan Harmonies',
-      type: 'Music Series',
-      status: 'Active',
-      logline: 'Blending traditional folk with modern production',
-      thumbnail: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=600&h=600&fit=crop',
+      title: 'Mahavatar Narsimha',
+      type: 'Business Strategy / Core Marketing',
+      status: 'Archived',
+      logline: 'The highest-earning animated film of all time in India — built from devotion, teamwork, and purpose.',
+      thumbnail: '/assets/Movie_images_117.jpg',
     },
     {
       id: 'ip-2',
-      title: 'Young Gunns',
-      type: 'Content Series',
+      title: 'TSC Academy',
+      type: 'Artist Development',
       status: 'Active',
-      logline: 'Stories of emerging artists breaking barriers',
-      thumbnail: 'https://images.unsplash.com/photo-1514567152633-dd10c67f0314?w=600&h=600&fit=crop',
+      logline: 'Unfold yourself — from within to the world. A sanctuary where artists reclaim their voice.',
+      thumbnail: '/assets/tsc academy.png',
+      link: 'https://tscacademy.in',
     },
     {
       id: 'ip-3',
-      title: 'Insta Music League',
-      type: 'Competition',
-      status: 'In Progress',
-      logline: 'Talent discovery through short-form content',
-      thumbnail: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=600&h=600&fit=crop',
+      title: 'Main Bhi Artist',
+      type: 'Community & Activism',
+      status: 'Active',
+      logline: 'A rebellion dressed as community. A home for the quiet music dreamers.',
+      thumbnail: '/assets/mba banner.png',
     },
     {
       id: 'ip-4',
-      title: 'Havells mYOUsic',
-      type: 'Brand Collab',
+      title: 'Artiste First',
+      type: 'Strategic Partnerships',
       status: 'Active',
-      logline: 'Creating home music experiences',
-      thumbnail: 'https://images.unsplash.com/photo-1511379938547-c1f69b13d835?w=600&h=600&fit=crop',
+      logline: 'Consulting with creators on strategy and brand partnerships without compromising their soul.',
+      thumbnail: '/assets/image.png',
     },
     {
       id: 'ip-5',
-      title: 'Motojojo Community',
-      type: 'Lifestyle IP',
-      status: 'Active',
-      logline: 'Urban culture meets two-wheeler community',
-      thumbnail: 'https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=600&h=600&fit=crop',
+      title: 'Insta Music League',
+      type: 'Competition',
+      status: 'Archived',
+      logline: 'Talent discovery through short-form content.',
+      thumbnail: 'assets/IML Logo (1)@3x.png',
+      link: 'https://iml.tscacademy.in',
     },
     {
       id: 'ip-6',
-      title: 'Divine Trance',
-      type: 'Music Production',
-      status: 'Planning',
-      logline: 'Spiritual electronic music exploration',
-      thumbnail: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=600&h=600&fit=crop',
+      title: 'Havells mYOUsic',
+      type: 'Brand Collab',
+      status: 'Active',
+      logline: 'Creating home music experiences with India\'s leading electrical brand.',
+      thumbnail: 'assets/havells logo 2 (2).png',
+      link: 'https://havellsmyousic.com',
     },
   ];
 
@@ -105,7 +109,9 @@ export default function IPGallerySection() {
           {ipItems.map((item, index) => (
             <motion.a
               key={item.id}
-              href="#"
+              href={item.link || "#"}
+              target={item.link ? "_blank" : undefined}
+              rel={item.link ? "noopener noreferrer" : undefined}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1, duration: 0.6 }}

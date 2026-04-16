@@ -88,7 +88,7 @@ export default function ValuesSection() {
           <h2 className="text-4xl md:text-5xl font-bold text-charcoal mb-6 font-signika">
             Our Values
           </h2>
-          <p className="text-lg text-slate-600 font-alan-sans">
+          <p className="text-lg text-slate-medium font-alan-sans">
             The principles that guide everything we do
           </p>
         </motion.div>
@@ -126,7 +126,7 @@ export default function ValuesSection() {
                 </h3>
 
                 {/* Description */}
-                <p className="text-slate-600 font-alan-sans leading-relaxed">
+                <p className="text-slate-medium font-alan-sans leading-relaxed">
                   {value.description}
                 </p>
 
@@ -150,7 +150,7 @@ export default function ValuesSection() {
           viewport={{ once: true }}
           className="mt-16 text-center"
         >
-          <p className="text-slate-600 text-lg font-alan-sans">
+          <p className="text-slate-medium text-lg font-alan-sans">
             These values shape how we work with artists, brands, and each other every single day.
           </p>
         </motion.div>

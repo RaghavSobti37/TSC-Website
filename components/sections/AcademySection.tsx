@@ -3,21 +3,300 @@ import { motion } from 'framer-motion';
 import Section from '@/components/layout/Section';
 import Container from '@/components/layout/Container';
 import { FishyButton } from '@/components/ui/fishy-button';
-import LineDrawSVG from '@/components/animations/LineDrawSVG';
 
+/** ─────────────────────────────────────────────────────────────────────────────
+ *  Types
+ * ───────────────────────────────────────────────────────────────────────────── */
 interface Course {
   id: string;
   title: string;
   mentor: string;
   level: string;
   description: string;
-  icon: string;
+  /**
+   * If true, this course is rendered as the large hero-featured card on its
+   * own full-width row above the secondary cards.
+   */
+  isFeatured?: boolean;
+  /**
+   * Optional URL for a banner/thumbnail image.
+   * – Featured card  → displays as a tall landscape banner.
+   * – Secondary card → displays as a short landscape thumbnail.
+   * If omitted the card shows an SVG "Coming Soon" placeholder instead.
+   */
+  bannerImage?: string;
+  /**
+   * When true the primary CTA reads "Coming Soon" (disabled) instead of
+   * "Enroll Now" (active link).
+   */
+  isComingSoon?: boolean;
+  /** Destination for the "Enroll Now" link. */
+  enrollUrl?: string;
 }
 
-/**
- * Academy Section - The Artist Path
- * Vertical timeline showing artist development path
- */
+/** ─────────────────────────────────────────────────────────────────────────────
+ *  SVG "Coming Soon" banner placeholder
+ * ───────────────────────────────────────────────────────────────────────────── */
+function ComingSoonBanner({ className = '' }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 800 340"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+      aria-label="Coming Soon"
+      preserveAspectRatio="xMidYMid slice"
+    >
+      <defs>
+        <linearGradient id="csGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#1A3A3A" />
+          <stop offset="100%" stopColor="#0D2626" />
+        </linearGradient>
+        <filter id="csGlow">
+          <feGaussianBlur stdDeviation="6" result="blur" />
+          <feMerge>
+            <feMergeNode in="blur" />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+      </defs>
+
+      {/* Background */}
+      <rect width="800" height="340" fill="url(#csGrad)" />
+
+      {/* Decorative circles */}
+      <circle cx="640" cy="60" r="120" fill="#D4622D" opacity="0.06" />
+      <circle cx="160" cy="280" r="90" fill="#D4622D" opacity="0.06" />
+
+      {/* Grid lines */}
+      {[0, 1, 2, 3, 4].map((i) => (
+        <line
+          key={`h${i}`}
+          x1="0"
+          y1={i * 85}
+          x2="800"
+          y2={i * 85}
+          stroke="#FDF6F1"
+          strokeWidth="0.5"
+          opacity="0.05"
+        />
+      ))}
+      {[0, 1, 2, 3, 4, 5, 6].map((i) => (
+        <line
+          key={`v${i}`}
+          x1={i * 133}
+          y1="0"
+          x2={i * 133}
+          y2="340"
+          stroke="#FDF6F1"
+          strokeWidth="0.5"
+          opacity="0.05"
+        />
+      ))}
+
+      {/* COMING SOON text */}
+      <text
+        x="400"
+        y="155"
+        textAnchor="middle"
+        dominantBaseline="middle"
+        fill="#FDF6F1"
+        fontSize="52"
+        fontWeight="800"
+        fontFamily="'Signika', sans-serif"
+        letterSpacing="8"
+        filter="url(#csGlow)"
+        opacity="0.9"
+      >
+        COMING SOON
+      </text>
+
+      {/* Accent underline */}
+      <rect x="280" y="178" width="240" height="4" rx="2" fill="#D4622D" opacity="0.8" />
+
+      {/* Sub-label */}
+      <text
+        x="400"
+        y="220"
+        textAnchor="middle"
+        fill="#FDF6F1"
+        fontSize="18"
+        fontFamily="'Alan Sans', sans-serif"
+        opacity="0.5"
+        letterSpacing="3"
+      >
+        STAY TUNED
+      </text>
+    </svg>
+  );
+}
+
+/** ─────────────────────────────────────────────────────────────────────────────
+ *  Shared CTA buttons
+ * ───────────────────────────────────────────────────────────────────────────── */
+function CourseCTAs({
+  isComingSoon,
+  enrollUrl,
+  size = 'sm',
+}: {
+  isComingSoon?: boolean;
+  enrollUrl?: string;
+  size?: 'sm' | 'lg';
+}) {
+  const base =
+    'inline-flex items-center gap-2 rounded-full font-bold transition-all duration-200 font-signika';
+  const lg = size === 'lg';
+
+  return (
+    <div className={`flex flex-wrap gap-3 ${lg ? 'mt-6' : 'mt-4'}`}>
+      {/* Primary: Enroll Now — disabled (locked) when coming soon, active link otherwise */}
+      {isComingSoon ? (
+        <span
+          className={`${base} cursor-not-allowed bg-cream/10 text-cream/40 border border-cream/20 ${lg ? 'px-6 py-3 text-base' : 'px-4 py-2 text-sm'}`}
+        >
+          🔒 Enroll Now
+        </span>
+      ) : (
+        <a
+          href={enrollUrl ?? '#contact'}
+          className={`${base} bg-pumpkin hover:bg-pumpkin/80 text-cream shadow-lg hover:shadow-pumpkin/30 ${lg ? 'px-7 py-3.5 text-base' : 'px-5 py-2.5 text-sm'}`}
+        >
+          Enroll Now →
+        </a>
+      )}
+
+      {/* Coming Soon badge — only shown when the course is NOT yet active */}
+      {isComingSoon && (
+        <span
+          className={`${base} border border-pumpkin/40 bg-cream/10 text-cream/80 ${lg ? 'px-6 py-3 text-base' : 'px-4 py-2 text-sm'}`}
+        >
+          ⏳ Coming Soon
+        </span>
+      )}
+    </div>
+  );
+}
+
+/** ─────────────────────────────────────────────────────────────────────────────
+ *  Featured (hero) course card — full width, tall banner
+ * ───────────────────────────────────────────────────────────────────────────── */
+function FeaturedCourseCard({ course }: { course: Course }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+      viewport={{ once: true }}
+      className="w-full rounded-2xl overflow-hidden border border-pumpkin/40 bg-cream/5 backdrop-blur-sm shadow-2xl group"
+    >
+      <div className="flex flex-col lg:flex-row">
+        {/* Banner image / placeholder — left on desktop, top on mobile */}
+        <div className="w-full lg:w-[55%] flex-shrink-0 overflow-hidden aspect-video lg:aspect-auto lg:min-h-[360px] relative">
+          {course.bannerImage ? (
+            <img
+              src={course.bannerImage}
+              alt={course.title}
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+            />
+          ) : (
+            <ComingSoonBanner className="w-full h-full" />
+          )}
+
+          {/* Featured pill */}
+          <span className="absolute top-4 left-4 px-3 py-1 rounded-full bg-pumpkin text-cream text-xs font-bold uppercase tracking-widest font-alan-sans shadow-lg">
+            ⭐ Featured
+          </span>
+        </div>
+
+        {/* Content — right on desktop */}
+        <div className="flex-1 p-6 sm:p-8 lg:p-10 flex flex-col justify-between">
+          <div>
+            {/* Level badge */}
+            <span className="inline-block px-3 py-1 rounded-full bg-pumpkin/20 border border-pumpkin/40 text-pumpkin text-xs font-bold uppercase tracking-widest mb-4 font-alan-sans">
+              {course.level}
+            </span>
+
+            <h4 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-cream mb-3 font-signika leading-tight">
+              {course.title}
+            </h4>
+
+            <p className="text-cream/75 font-alan-sans text-sm sm:text-base mb-4 leading-relaxed">
+              {course.description}
+            </p>
+
+            <p className="text-cream/60 font-alan-sans text-sm">
+              Mentor:{' '}
+              <span className="font-semibold text-cream/90">{course.mentor}</span>
+            </p>
+          </div>
+
+          <CourseCTAs
+            // isComingSoon={course.isComingSoon}
+            enrollUrl={course.enrollUrl}
+            size="lg"
+          />
+        </div>
+      </div>
+    </motion.div>
+  );
+}
+
+/** ─────────────────────────────────────────────────────────────────────────────
+ *  Secondary course card — compact, thumbnail banner on top
+ * ───────────────────────────────────────────────────────────────────────────── */
+function SecondaryCourseCard({ course, index }: { course: Course; index: number }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ delay: index * 0.15, duration: 0.6 }}
+      viewport={{ once: true }}
+      className="flex flex-col rounded-xl overflow-hidden border border-cream/20 hover:border-pumpkin/40 bg-cream/5 backdrop-blur-sm hover:bg-cream/10 transition-all duration-300 group shadow-lg"
+    >
+      {/* Thumbnail banner */}
+      <div className="w-full aspect-video overflow-hidden relative flex-shrink-0">
+        {course.bannerImage ? (
+          <img
+            src={course.bannerImage}
+            alt={course.title}
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+          />
+        ) : (
+          <ComingSoonBanner className="w-full h-full" />
+        )}
+      </div>
+
+      {/* Card body */}
+      <div className="flex flex-col flex-1 p-5 sm:p-6">
+        {/* Level badge */}
+        <span className="inline-block self-start px-2.5 py-0.5 rounded-full bg-cream/15 border border-cream/20 text-cream text-xs font-bold uppercase tracking-widest mb-3 font-alan-sans">
+          {course.level}
+        </span>
+
+        <h4 className="text-lg sm:text-xl font-bold text-cream mb-2 font-signika leading-snug">
+          {course.title}
+        </h4>
+
+        <p className="text-cream/75 font-alan-sans text-xs sm:text-sm mb-3 leading-relaxed flex-1">
+          {course.description}
+        </p>
+
+        <p className="text-cream/60 font-alan-sans text-xs mb-1">
+          Mentor: <span className="font-semibold text-cream/85">{course.mentor}</span>
+        </p>
+
+        <CourseCTAs
+          isComingSoon={course.isComingSoon}
+          enrollUrl={course.enrollUrl}
+          size="sm"
+        />
+      </div>
+    </motion.div>
+  );
+}
+
+/** ─────────────────────────────────────────────────────────────────────────────
+ *  Academy Section
+ * ───────────────────────────────────────────────────────────────────────────── */
 export default function AcademySection() {
   const stages = [
     {
@@ -43,31 +322,47 @@ export default function AcademySection() {
   ];
 
   const courses: Course[] = [
+    // ── Featured course (isFeatured: true) renders on its own full-width row ──
     {
-      id: 'course-1',
-      title: 'Music Production Fundamentals',
-      mentor: 'Prod. Maya',
+      id: 'course-featured',
+      title: 'The heART of Composition - Comprehensive',
+      mentor: 'Sandesh Shandilya',
+      level: 'Intermediate',
+      description:
+        'A comprehensive 6-month program with 200+ mins of recorded content and 12+ live interactive sessions. Learn the art of imagination, emotion to expression, subconscious mind workings, and mainstream mastery. 1 year access to course contents, lifetime community access, and unique training approach where knowledge meets experience. Score 9+ on final capstone to perform at The Young Guns Demo Day.',
+      isFeatured: true,
+      // ▼ BANNER IMAGE — place the image file in /public/assets/ and set the path below:
+      bannerImage: '/assets/sandesh sir course.jpeg',
+      isComingSoon: false,
+      enrollUrl: 'https://tscacademy.in/course-composition-intermediate.html',
+    },
+
+    // ── Secondary courses (rendered in a 2-column grid below) ─────────────────
+    {
+      id: 'course-music-prod',
+      title: 'A–Z of Music Production',
+      mentor: 'Luca Petracca',
       level: 'Beginner',
-      description: 'Learn the basics of modern music production',
-      icon: '♪',
+      description: 'Master the complete journey of music production from concept to final mix. Learn professional techniques for recording, arranging, mixing, and mastering your songs. Perfect for singer-songwriters who want to produce their own music.',
+      // ▼ BANNER IMAGE — place the image file in /public/assets/ and set the path below:
+      // bannerImage: '/assets/your-image-name.jpg',
+      isComingSoon: true,
     },
     {
-      id: 'course-2',
-      title: 'Storytelling for Artists',
-      mentor: 'Dev. Aarav',
+      id: 'course-artist-brand',
+      title: 'Classical Singing - Comprehensive',
+      mentor: 'Prasad Khaparde',
       level: 'Intermediate',
-      description: 'Craft compelling narratives around your art',
-      icon: '↬',
-    },
-    {
-      id: 'course-3',
-      title: 'Artist Branding & Rights',
-      mentor: 'Priya Sharma',
-      level: 'Intermediate',
-      description: 'Protect and monetize your intellectual property',
-      icon: '◆',
+      description: 'Master the art of Hindustani classical singing under the guidance of Prasad Khaparde. Twelve online group sessions, 120 mins of recorded content, quality assessments, and certification. Top 10 students per 300 enrollments will get opportunity to continue the journey under Prasad Khaparde\'s personal mentorship.',
+      // ▼ BANNER IMAGE — place the image file in /public/assets/ and set the path below:
+      // bannerImage: '/assets/your-image-name.jpg',
+      isComingSoon: false,
+      enrollUrl: 'https://tscacademy.in/course-classical-singing-comprehensive.html',
     },
   ];
+
+  const featuredCourse = courses.find((c) => c.isFeatured);
+  const secondaryCourses = courses.filter((c) => !c.isFeatured);
 
   return (
     <Section
@@ -130,7 +425,7 @@ export default function AcademySection() {
           </div>
         </div>
 
-        {/* Featured courses */}
+        {/* ── Featured Courses ─────────────────────────────────────────────── */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -138,55 +433,25 @@ export default function AcademySection() {
           viewport={{ once: true }}
           className="mb-8 sm:mb-10 md:mb-12"
         >
-          <h3 className="text-2xl sm:text-3xl font-bold text-cream mb-6 sm:mb-8 font-signika text-center">
+          <h3 className="text-2xl sm:text-3xl font-bold text-cream mb-8 sm:mb-10 font-signika text-center">
             Featured Courses
           </h3>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6">
-            {courses.map((course, index) => (
-              <motion.div
-                key={course.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.15, duration: 0.6 }}
-                viewport={{ once: true }}
-                className="bg-cream/10 rounded-lg sm:rounded-xl p-4 sm:p-6 border border-cream/20 hover:border-cream/50 transition-all hover:bg-cream/20 group cursor-pointer backdrop-blur"
-              >
-                {/* Icon */}
-                <div className="text-3xl sm:text-4xl mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300">
-                  {course.icon}
-                </div>
+          {/* Row 1: Hero featured course */}
+          {featuredCourse && (
+            <div className="mb-6 sm:mb-8">
+              <FeaturedCourseCard course={featuredCourse} />
+            </div>
+          )}
 
-                {/* Course title */}
-                <h4 className="text-lg sm:text-xl font-bold text-cream mb-2 font-signika">
-                  {course.title}
-                </h4>
-
-                {/* Description */}
-                <p className="text-cream/80 font-alan-sans text-xs sm:text-sm mb-3 sm:mb-4">
-                  {course.description}
-                </p>
-
-                {/* Mentor */}
-                <p className="text-cream/70 font-alan-sans text-xs sm:text-sm mb-2 sm:mb-3">
-                  Mentor: <span className="font-semibold">{course.mentor}</span>
-                </p>
-
-                {/* Level badge */}
-                <div className="inline-block px-2 sm:px-3 py-0.5 sm:py-1 bg-cream/20 text-cream rounded-full text-xs font-semibold mb-3 sm:mb-4 font-signika">
-                  {course.level}
-                </div>
-
-                {/* CTA */}
-                <motion.button
-                  whileHover={{ x: 4 }}
-                  className="text-cream font-bold text-xs sm:text-sm flex items-center gap-2 group/btn"
-                >
-                  Enroll Now →
-                </motion.button>
-              </motion.div>
-            ))}
-          </div>
+          {/* Row 2: Secondary courses grid */}
+          {secondaryCourses.length > 0 && (
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+              {secondaryCourses.map((course, index) => (
+                <SecondaryCourseCard key={course.id} course={course} index={index} />
+              ))}
+            </div>
+          )}
         </motion.div>
 
         {/* Bottom CTA */}
@@ -195,12 +460,12 @@ export default function AcademySection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center"
+          className="flex justify-center text-center"
         >
-          <FishyButton 
-            variant="pumpkin" 
-            width="clamp(200px, 85vw, 480px)"
-            height="clamp(50px, 12vw, 168px)"
+          <FishyButton
+            variant="pumpkin"
+            width="clamp(200px, 80vw, 380px)"
+            height="clamp(50px, 10vw, 68px)"
             onClick={() => {
               const contact = document.getElementById('contact');
               if (contact) {

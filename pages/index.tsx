@@ -9,6 +9,7 @@ import ValuesSection from '@/components/sections/ValuesSection';
 import IPGallerySection from '@/components/sections/IPGallerySection';
 import AcademySection from '@/components/sections/AcademySection';
 import CollaborationsSection from '@/components/sections/CollaborationsSection';
+import TeamSection from '@/components/sections/TeamSection';
 import ArtistsSection from '@/components/sections/ArtistsSection';
 import ContactSection from '@/components/sections/ContactSection';
 
@@ -111,8 +112,9 @@ export default function Home() {
         'ip-gallery',
         'academy',
         'collaborations',
-        'contact',
+        'team',
         'artists',
+        'contact',
       ];
 
       const scrollPosition = window.scrollY + window.innerHeight / 3;
@@ -164,9 +166,21 @@ export default function Home() {
         </section>
 
         {/* Infinity Ecosystem */}
-        <section id="ecosystem">
-          <InfinityEcosystem nodes={ecosystemNodes} />
+        <section
+          id="ecosystem"
+          className="bg-teal-dark py-16 sm:py-20 md:py-28 px-4 sm:px-6"
+        >
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-12 sm:mb-16 md:mb-20">
+              <p className="text-pumpkin font-black text-xs uppercase tracking-widest mb-2 font-alan-sans">How It Works</p>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-cream font-signika">The Living Ecosystem</h2>
+            </div>
+            <InfinityEcosystem nodes={ecosystemNodes} />
+          </div>
         </section>
+
+        {/* Section divider */}
+        <div className="h-px bg-gradient-to-r from-transparent via-pumpkin/40 to-transparent" />
 
         {/* Values Section */}
         {/* <section id="values">
@@ -178,25 +192,44 @@ export default function Home() {
           <IPGallerySection />
         </section>
 
+        {/* Section divider */}
+        <div className="h-px bg-gradient-to-r from-transparent via-teal-primary/50 to-transparent" />
+
         {/* Academy Timeline */}
         <section id="academy">
           <AcademySection />
         </section>
+
+        {/* Section divider */}
+        <div className="h-px bg-gradient-to-r from-transparent via-pumpkin/40 to-transparent" />
 
         {/* Collaborations */}
         <section id="collaborations">
           <CollaborationsSection />
         </section>
 
-        {/* Artists Community */}
-        <section id="artists">
-          <ArtistsSection />
+        {/* Section divider */}
+        <div className="h-px bg-gradient-to-r from-transparent via-cream/20 to-transparent" />
+
+        {/* Team Section */}
+        <section id="team">
+          <TeamSection />
         </section>
 
-        {/* Contact Form */}
-        <section id="contact">
+        {/* Section divider */}
+        {/* <div className="h-px bg-gradient-to-r from-transparent via-pumpkin/30 to-transparent" /> */}
+
+        {/* Artists Community - temporarily hidden */}
+        {/* <section id="artists">
+          <ArtistsSection />
+        </section> */}
+
+        {/* <div className="h-px bg-gradient-to-r from-transparent via-pumpkin/30 to-transparent" /> */}
+
+        {/* Contact Form — temporarily hidden */}
+        {/* <section id="contact">
           <ContactSection />
-        </section>
+        </section> */}
       </main>
 
       {/* Smooth scroll behavior */}

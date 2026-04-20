@@ -6,25 +6,6 @@ export default function Footer() {
   const [email, setEmail] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [message, setMessage] = useState('');
-  const [subscriberCount, setSubscriberCount] = useState(0);
-
-  // Fetch subscriber count on component mount
-  useEffect(() => {
-    const fetchSubscriberCount = async () => {
-      try {
-        const response = await fetch('/api/newsletter');
-        const data = await response.json();
-        if (data.count) {
-          setSubscriberCount(data.count);
-        }
-      } catch (error) {
-        console.error('Error fetching subscriber count:', error);
-      }
-    };
-    
-    fetchSubscriberCount();
-  }, []);
-
   const handleSubscribe = async (e) => {
     e.preventDefault();
     
@@ -50,8 +31,6 @@ export default function Footer() {
       if (response.ok) {
         setMessage('Thank you for subscribing!');
         setEmail('');
-        // Update subscriber count
-        setSubscriberCount(prev => prev + 1);
       } else {
         setMessage(data.error || 'Something went wrong. Please try again.');
       }
@@ -91,10 +70,10 @@ export default function Footer() {
               <a href="#team" className="block text-cream/80 hover:text-pumpkin transition-colors text-sm">
                 Meet the Team
               </a>
-              <a href="#about" className="block text-cream/80 hover:text-pumpkin transition-colors text-sm">
-                About Us
+              <a href="#artists" className="block text-cream/80 hover:text-pumpkin transition-colors text-sm">
+                Artist Community
               </a>
-              <a href="#" className="block text-cream/80 hover:text-pumpkin transition-colors text-sm">
+              <a href="#contact" className="block text-cream/80 hover:text-pumpkin transition-colors text-sm">
                 Contact
               </a>
             </div>
@@ -114,7 +93,7 @@ export default function Footer() {
                 <span>Instagram</span>
               </a>
               <a 
-                href="#" 
+                href="https://www.linkedin.com/in/rohitsobti/" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="flex items-center gap-3 text-cream hover:text-pumpkin transition-colors group text-sm"
@@ -160,9 +139,7 @@ export default function Footer() {
                 {message}
               </p>
             )}
-            <p className="text-sm text-cream/60 mt-2">
-              ✓ {subscriberCount} subscribed
-            </p>
+            
           </div>
         </div>
 

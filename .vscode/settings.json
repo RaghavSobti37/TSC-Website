@@ -1,0 +1,58 @@
+{
+    "workbench.editor.empty.hint": "hidden",
+    "workbench.activityBar.location": "top",
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.editor.enablePreview": false,
+    "github.copilot.nextEditSuggestions.enabled": true,
+    "chat.agent.maxRequests": 100,
+    "files.autoSave": "onWindowChange",
+    "explorer.confirmDragAndDrop": false,
+    "explorer.confirmDelete": false,
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "mdb.mcp.server": "enabled",
+    "diffEditor.codeLens": true,
+    "geminicodeassist.project": "isometric-gist-kr9g8",
+    "chat.tools.terminal.autoApprove": {
+        "python \"c:\\Users\\ragha\\OneDrive\\Desktop\\File_convertor\\src\\converter.py\" --dry-run": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "rm -r -force node_modules .next; npm install": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "'{\"name\":\"file-convertor\",\"version\":\"0.1.0\",\"private\":true,\"scripts\":{\"dev\":\"next dev\",\"build\":\"next build\",\"start\":\"next start\",\"lint\":\"next lint\"},\"dependencies\":{\"@types/node\":\"18.15.11\",\"@types/react\":\"18.0.33\",\"@types/react-dom\":\"18.0.11\",\"firebase\":\"9.19.1\",\"lucide-react\":\"0.292.0\",\"next\":\"13.4.19\",\"react\":\"18.2.0\",\"react-dom\":\"18.2.0\",\"react-dropzone\":\"14.2.3\",\"autoprefixer\":\"10.4.14\",\"postcss\":\"8.4.21\",\"tailwindcss\":\"3.3.1\",\"typescript\":\"5.0.3\"},\"devDependencies\":{\"eslint\":\"8.37.0\",\"eslint-config-next\":\"13.4.19\"}}' | Set-Content -Path package.json": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "npm start": true,
+        "/^cd \"c:\\\\Users\\\\ragha\\\\OneDrive\\\\Desktop\\\\AutoMailer\\\\Auto-Mailer\" ; python import_and_archive\\.py$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^python import_and_archive\\.py 2>&1 \\| head -100$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^git checkout -b feature/authentic-branding-redesign$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^npm install 2>&1 \\| tail -50$/": {
+            "approve": true,
+            "matchCommandLine": true
+        }
+    },
+    "editor.wordWrap": "on",
+    "http.systemCertificatesNode": true,
+    "chat.viewSessions.orientation": "stacked",
+    "liveServer.settings.donotShowInfoMsg": true,
+    "terminal.integrated.enableMultiLinePasteWarning": "never",
+    "roo-cline.debug": false,
+    "roo-cline.allowedCommands": [
+        "git log",
+        "git diff",
+        "git show"
+    ],
+    "roo-cline.deniedCommands": []
+}

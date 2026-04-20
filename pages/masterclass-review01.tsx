@@ -9,6 +9,22 @@ type Review = {
   content: string;
   rating: number;
   date: string;
+  completion?: string;
+  artistTypes?: string;
+};
+
+const formatDate = (isoString: string) => {
+  if (!isoString) return '';
+  try {
+    const date = new Date(isoString);
+    const day = date.getDate();
+    const month = date.toLocaleString('en-US', { month: 'long' });
+    const year = date.getFullYear();
+    const daySuffix = day % 10 === 1 && day !== 11 ? 'st' : day % 10 === 2 && day !== 12 ? 'nd' : day % 10 === 3 && day !== 13 ? 'rd' : 'th';
+    return `${day}${daySuffix} ${month}, ${year}`;
+  } catch {
+    return isoString.split('T')[0];
+  }
 };
 
 type Stats = {
@@ -19,6 +35,12 @@ type Stats = {
 type SubmitMessage = {
   text: string;
   type: "success" | "error" | "";
+};
+
+type FieldErrors = {
+  registeredEmail?: string;
+  registeredMobile?: string;
+  oneLineExperience?: string;
 };
 
 type Option = {
@@ -60,13 +82,12 @@ const artistTypeOptions: Option[] = [
 ];
 
 const EXPERIENCE_WEIGHTS = {
-  overallExperience: 0.3,
-  clarity: 0.2,
-  depth: 0.2,
-  usefulness: 0.2,
+  overallExperience: 0.305,
+  clarity: 0.205,
+  depth: 0.205,
+  usefulness: 0.205,
   completion: 0.05,
   pace: 0.03,
-  courseInterest: 0.02,
 };
 
 const mapCompletionToScore = (value: string) => {
@@ -79,13 +100,6 @@ const mapPaceToScore = (value: string) => {
   if (value === "just-right") return 5;
   if (value === "too-fast") return 3;
   if (value === "too-slow") return 3;
-  return 3;
-};
-
-const mapCourseInterestToScore = (value: string) => {
-  if (value === "yes") return 5;
-  if (value === "maybe") return 3;
-  if (value === "no") return 1;
   return 3;
 };
 
@@ -138,7 +152,9 @@ export default function MasterclassReviewPage() {
   const [stats, setStats] = useState<Stats | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
   const [submitMessage, setSubmitMessage] = useState<SubmitMessage>({ text: "", type: "" });
+  const [fieldErrors, setFieldErrors] = useState<FieldErrors>({});
 
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -152,6 +168,7 @@ export default function MasterclassReviewPage() {
   const [depth, setDepth] = useState("5");
   const [usefulness, setUsefulness] = useState("5");
   const [courseInterest, setCourseInterest] = useState("yes");
+  const [oneLineExperience, setOneLineExperience] = useState("");
   const [improvementSuggestion, setImprovementSuggestion] = useState("");
 
   const weightedRating = useMemo(() => {
@@ -161,7 +178,6 @@ export default function MasterclassReviewPage() {
     const usefulnessScore = parseInt(usefulness, 10) || 5;
     const completionScore = mapCompletionToScore(completion);
     const paceScore = mapPaceToScore(pace);
-    const courseInterestScore = mapCourseInterestToScore(courseInterest);
 
     const score =
       overallScore * EXPERIENCE_WEIGHTS.overallExperience +
@@ -169,8 +185,7 @@ export default function MasterclassReviewPage() {
       depthScore * EXPERIENCE_WEIGHTS.depth +
       usefulnessScore * EXPERIENCE_WEIGHTS.usefulness +
       completionScore * EXPERIENCE_WEIGHTS.completion +
-      paceScore * EXPERIENCE_WEIGHTS.pace +
-      courseInterestScore * EXPERIENCE_WEIGHTS.courseInterest;
+      paceScore * EXPERIENCE_WEIGHTS.pace;
 
     return Number(score.toFixed(2));
   }, [overallExperience, clarity, depth, usefulness, completion, pace, courseInterest]);
@@ -209,27 +224,9 @@ export default function MasterclassReviewPage() {
   const buildReviewPayload = () => {
     const experienceLabel = overallExperienceOptions.find((item) => item.value === overallExperience)?.label || "Good";
     const completionLabel = completionOptions.find((item) => item.value === completion)?.label || completion;
-    const artistTypeLabel = artistTypes
-      .map((type) => artistTypeOptions.find((item) => item.value === type)?.label || type)
-      .join(", ");
-    const courseInterestLabel = courseInterestOptions.find((item) => item.value === courseInterest)?.label || courseInterest;
 
     const title = `${experienceLabel} | ${completionLabel}`;
-    const content = [
-      `First name: ${firstName.trim() || "N/A"}`,
-      `Last name: ${lastName.trim() || "N/A"}`,
-      `Registered mobile: ${registeredMobile.trim() || "N/A"}`,
-      `Registered email: ${registeredEmail.trim() || "N/A"}`,
-      `Artist type: ${artistTypeLabel || "N/A"}`,
-      `Completion status: ${completion}`,
-      `Pace: ${pace}`,
-      `Concept clarity (1-5): ${clarity}`,
-      `Depth of content (1-5): ${depth}`,
-      `Practical usefulness (1-5): ${usefulness}`,
-      `Interested in full course: ${courseInterestLabel}`,
-      `Weighted artist experience rating (1-5): ${weightedRating}`,
-      `What should improve: ${improvementSuggestion || "No specific comment"}`,
-    ].join("\n");
+    const content = oneLineExperience.trim() || "No specific comment";
 
     return {
       firstName: firstName.trim(),
@@ -243,6 +240,7 @@ export default function MasterclassReviewPage() {
       depth,
       usefulness,
       courseInterest,
+      oneLineExperience: oneLineExperience.trim(),
       weightedRating,
       improvementSuggestion: improvementSuggestion.trim(),
       name: `${firstName.trim()} ${lastName.trim()}`.trim() || "Anonymous",
@@ -254,6 +252,37 @@ export default function MasterclassReviewPage() {
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
+
+    const emailValue = registeredEmail.trim();
+    const mobileValue = registeredMobile.trim();
+    const oneLineValue = oneLineExperience.trim();
+    const nextErrors: FieldErrors = {};
+
+    if (!emailValue) {
+      nextErrors.registeredEmail = "Registered email is required.";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailValue)) {
+      nextErrors.registeredEmail = "Please enter a valid email format (example: name@example.com).";
+    }
+
+    if (!mobileValue) {
+      nextErrors.registeredMobile = "Registered mobile number is required.";
+    } else if (!/^\d{10,15}$/.test(mobileValue)) {
+      nextErrors.registeredMobile = "Please enter digits only, with 10 to 15 numbers.";
+    }
+
+    if (!oneLineValue) {
+      nextErrors.oneLineExperience = "Please describe your experience in one line.";
+    }
+
+    setFieldErrors(nextErrors);
+
+    if (Object.keys(nextErrors).length > 0) {
+      setSubmitMessage({
+        text: "Please fix the highlighted field errors before submitting.",
+        type: "error",
+      });
+      return;
+    }
 
     if (!firstName.trim() || !lastName.trim() || !registeredMobile.trim() || !registeredEmail.trim() || !improvementSuggestion.trim()) {
       setSubmitMessage({
@@ -284,6 +313,7 @@ export default function MasterclassReviewPage() {
         text: "Thanks for sharing. Your review has been submitted for approval.",
         type: "success",
       });
+      setIsSubmitted(true);
 
       setFirstName("");
       setLastName("");
@@ -297,7 +327,9 @@ export default function MasterclassReviewPage() {
       setDepth("5");
       setUsefulness("5");
       setCourseInterest("yes");
+      setOneLineExperience("");
       setImprovementSuggestion("");
+      setFieldErrors({});
     } catch (error) {
       setSubmitMessage({ text: "An error occurred while submitting. Please try again.", type: "error" });
     } finally {
@@ -323,7 +355,7 @@ export default function MasterclassReviewPage() {
             Average time to complete: 6-8 minutes
           </p>
           <h1 className="text-3xl font-bold tracking-tight text-white sm:text-5xl">
-            Recorded Masterclass Feedback
+            The Roots of Hindustani Classical Music - Masterclass Review
           </h1>
           <p className="max-w-3xl text-sm leading-relaxed text-white/65 sm:text-base">
             Help us improve your learning journey for The Roots of Hindustani Classical Music. This form mixes quick MCQs with focused written inputs so we can identify what worked, what to improve, and how we can support your next step.
@@ -358,19 +390,32 @@ export default function MasterclassReviewPage() {
                   ) : (
                     reviews.slice(0, 8).map((review) => (
                       <article key={review.id} className="rounded-xl border border-white/10 bg-black/30 p-3.5">
-                        <div className="mb-1 flex items-center gap-1">
-                          {[...Array(5)].map((_, i) => (
-                            <Star
-                              key={i}
-                              className={`h-3 w-3 ${i < review.rating ? "fill-emerald-400 text-emerald-400" : "fill-white/10 text-white/10"}`}
-                            />
-                          ))}
+                        <div className="mb-2 flex items-center justify-between">
+                          <h4 className="line-clamp-1 text-sm font-semibold text-white/90">{review.name}</h4>
+                          <div className="flex items-center gap-0.5">
+                            {[...Array(5)].map((_, i) => (
+                              <Star
+                                key={i}
+                                className={`h-3 w-3 ${i < Math.floor(review.rating) ? "fill-emerald-400 text-emerald-400" : "fill-white/10 text-white/10"}`}
+                              />
+                            ))}
+                          </div>
                         </div>
-                        <h4 className="line-clamp-1 text-sm font-semibold text-white/90">{review.title}</h4>
-                        <p className="mt-1 line-clamp-3 text-xs leading-relaxed text-white/65">{review.content}</p>
-                        <div className="mt-2 flex items-center justify-between text-[11px] text-white/45">
-                          <span>{review.name}</span>
-                          <span>{review.date}</span>
+                        <p className="mb-2 line-clamp-3 text-xs leading-relaxed text-white/65">{review.content}</p>
+                        <div className="mb-2 flex flex-wrap gap-1.5">
+                          {review.completion && (
+                            <span className="inline-flex items-center rounded-full bg-emerald-500/20 px-2 py-0.5 text-[10px] font-medium text-emerald-200">
+                              {review.completion === 'saw-complete' ? '✓ Saw complete' : '⊘ Left in between'}
+                            </span>
+                          )}
+                          {review.artistTypes && (
+                            <span className="inline-flex items-center rounded-full bg-blue-500/20 px-2 py-0.5 text-[10px] font-medium text-blue-200">
+                              {review.artistTypes}
+                            </span>
+                          )}
+                        </div>
+                        <div className="text-[11px] text-white/45">
+                          {formatDate(review.date)}
                         </div>
                       </article>
                     ))
@@ -389,7 +434,7 @@ export default function MasterclassReviewPage() {
                 </p>
               </div>
 
-              {submitMessage.text ? (
+              {submitMessage.text && !isSubmitted ? (
                 <div
                   className={`mb-6 rounded-xl border px-4 py-3 text-sm ${
                     submitMessage.type === "success"
@@ -401,54 +446,110 @@ export default function MasterclassReviewPage() {
                 </div>
               ) : null}
 
-              <form onSubmit={handleSubmit} className="space-y-7">
-                <label className="block space-y-2">
-                  <span className="text-sm font-semibold text-white/90">First name</span>
-                  <input
-                    required
-                    type="text"
-                    value={firstName}
-                    onChange={(e) => setFirstName(e.target.value)}
-                    className="w-full rounded-xl border border-white/10 bg-black/30 px-3.5 py-3 text-sm text-white outline-none transition-colors focus:border-emerald-400/60"
-                    placeholder="First name"
-                  />
-                </label>
+              {isSubmitted ? (
+                <div className="rounded-2xl border border-emerald-400/30 bg-emerald-500/10 p-8 text-center">
+                  <CheckCircle2 className="mx-auto h-10 w-10 text-emerald-300" />
+                  <p className="mt-4 text-lg font-semibold text-emerald-100">
+                    Thanks for taking the time and sharing your review. It has been submitted for further improvement.
+                  </p>
+                  <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2">
+                    <a
+                      href="https://tscacademy.exlyapp.com/checkout/c9a2ca8d-dfaa-4db8-ac7b-a558433df4b8?dynamic_link=fb61323e-d4ca-4d92-a0a0-da337ad229d1"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center justify-center rounded-xl border border-emerald-300/50 bg-emerald-300/15 px-4 py-3 text-sm font-semibold text-emerald-100 transition-colors hover:bg-emerald-300/25"
+                    >
+                      Foundation Course
+                    </a>
+                    <a
+                      href="https://tscacademy.exlyapp.com/checkout/245f8992-f7bd-41c2-aa48-864a1ac2b9cd"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center justify-center rounded-xl border border-sky-300/50 bg-sky-300/15 px-4 py-3 text-sm font-semibold text-sky-100 transition-colors hover:bg-sky-300/25"
+                    >
+                      Acceleration Course
+                    </a>
+                  </div>
+                </div>
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-7">
+                <div className="space-y-4">
+                  <h3 className="text-base font-semibold text-white/90">Personal Details (all fields are required)</h3>
 
-                <label className="block space-y-2">
-                  <span className="text-sm font-semibold text-white/90">Last name</span>
-                  <input
-                    required
-                    type="text"
-                    value={lastName}
-                    onChange={(e) => setLastName(e.target.value)}
-                    className="w-full rounded-xl border border-white/10 bg-black/30 px-3.5 py-3 text-sm text-white outline-none transition-colors focus:border-emerald-400/60"
-                    placeholder="Last name"
-                  />
-                </label>
+                  <div className="grid grid-cols-1 gap-5 lg:grid-cols-2">
+                    <label className="block space-y-2">
+                      <span className="text-sm font-semibold text-white/90">First name *</span>
+                      <input
+                        required
+                        type="text"
+                        autoComplete="given-name"
+                        value={firstName}
+                        onChange={(e) => setFirstName(e.target.value)}
+                        className="w-full rounded-xl border border-white/10 bg-black/30 px-3.5 py-3 text-sm text-white outline-none transition-colors focus:border-emerald-400/60"
+                        placeholder="First name"
+                      />
+                    </label>
 
-                <label className="block space-y-2">
-                  <span className="text-sm font-semibold text-white/90">Registered mobile number (used for masterclass registration)</span>
-                  <input
-                    required
-                    type="tel"
-                    value={registeredMobile}
-                    onChange={(e) => setRegisteredMobile(e.target.value)}
-                    className="w-full rounded-xl border border-white/10 bg-black/30 px-3.5 py-3 text-sm text-white outline-none transition-colors focus:border-emerald-400/60"
-                    placeholder="Registered mobile number"
-                  />
-                </label>
+                    <label className="block space-y-2">
+                      <span className="text-sm font-semibold text-white/90">Last name *</span>
+                      <input
+                        required
+                        type="text"
+                        autoComplete="family-name"
+                        value={lastName}
+                        onChange={(e) => setLastName(e.target.value)}
+                        className="w-full rounded-xl border border-white/10 bg-black/30 px-3.5 py-3 text-sm text-white outline-none transition-colors focus:border-emerald-400/60"
+                        placeholder="Last name"
+                      />
+                    </label>
+                  </div>
 
-                <label className="block space-y-2">
-                  <span className="text-sm font-semibold text-white/90">Registered email (used for masterclass registration)</span>
-                  <input
-                    required
-                    type="email"
-                    value={registeredEmail}
-                    onChange={(e) => setRegisteredEmail(e.target.value)}
-                    className="w-full rounded-xl border border-white/10 bg-black/30 px-3.5 py-3 text-sm text-white outline-none transition-colors focus:border-emerald-400/60"
-                    placeholder="Registered email"
-                  />
-                </label>
+                  <div className="grid grid-cols-1 gap-5 lg:grid-cols-2">
+                    <label className="block space-y-2">
+                      <span className="text-sm font-semibold text-white/90">Registered email *</span>
+                      <p className="text-xs text-white/55">(used for masterclass registration)</p>
+                      <input
+                        required
+                        type="email"
+                        autoComplete="email"
+                        value={registeredEmail}
+                        onChange={(e) => {
+                          setRegisteredEmail(e.target.value);
+                          setFieldErrors((prev) => ({ ...prev, registeredEmail: undefined }));
+                        }}
+                        className="w-full rounded-xl border border-white/10 bg-black/30 px-3.5 py-3 text-sm text-white outline-none transition-colors focus:border-emerald-400/60"
+                        placeholder="Enter registered email"
+                      />
+                      {fieldErrors.registeredEmail ? (
+                        <p className="text-xs text-red-300">{fieldErrors.registeredEmail}</p>
+                      ) : null}
+                    </label>
+
+                    <label className="block space-y-2">
+                      <span className="text-sm font-semibold text-white/90">Registered mobile number *</span>
+                      <p className="text-xs text-white/55">(used for masterclass registration)</p>
+                      <input
+                        required
+                        type="tel"
+                        inputMode="numeric"
+                        autoComplete="tel"
+                        minLength={10}
+                        maxLength={15}
+                        pattern="[0-9]{10,15}"
+                        value={registeredMobile}
+                        onChange={(e) => {
+                          setRegisteredMobile(e.target.value);
+                          setFieldErrors((prev) => ({ ...prev, registeredMobile: undefined }));
+                        }}
+                        className="w-full rounded-xl border border-white/10 bg-black/30 px-3.5 py-3 text-sm text-white outline-none transition-colors focus:border-emerald-400/60"
+                        placeholder="Enter registered mobile number"
+                      />
+                      {fieldErrors.registeredMobile ? (
+                        <p className="text-xs text-red-300">{fieldErrors.registeredMobile}</p>
+                      ) : null}
+                    </label>
+                  </div>
+                </div>
 
                 <fieldset className="space-y-3">
                   <legend className="text-sm font-semibold text-white/90">Which type of musician / artist are you? (Select all that apply)</legend>
@@ -482,13 +583,6 @@ export default function MasterclassReviewPage() {
                   options={overallExperienceOptions}
                   value={overallExperience}
                   onChange={setOverallExperience}
-                />
-
-                <RadioCards
-                  label="How much of the recorded masterclass did you complete?"
-                  options={completionOptions}
-                  value={completion}
-                  onChange={setCompletion}
                 />
 
                 <RadioCards
@@ -526,14 +620,36 @@ export default function MasterclassReviewPage() {
                   onChange={setCourseInterest}
                 />
 
+                <RadioCards
+                  label="How much of the recorded masterclass did you complete?"
+                  options={completionOptions}
+                  value={completion}
+                  onChange={setCompletion}
+                />
+
                 <div className="rounded-xl border border-emerald-400/30 bg-emerald-500/10 px-4 py-3">
                   <p className="text-sm font-semibold text-emerald-100">
-                    Weighted Artist Experience Rating: {weightedRating} / 5
-                  </p>
-                  <p className="mt-1 text-xs text-emerald-100/80">
-                    This score combines overall experience, completion, pace, clarity, depth, usefulness, and course interest with weighted importance.
+                    Overall Rating : {weightedRating}/5
                   </p>
                 </div>
+
+                <label className="block space-y-2">
+                  <span className="text-sm font-semibold text-white/90">Describe your experience of the masterclass!</span>
+                  <input
+                    required
+                    type="text"
+                    value={oneLineExperience}
+                    onChange={(e) => {
+                      setOneLineExperience(e.target.value);
+                      setFieldErrors((prev) => ({ ...prev, oneLineExperience: undefined }));
+                    }}
+                    className="w-full rounded-xl border border-white/10 bg-black/30 px-3.5 py-3 text-sm text-white outline-none transition-colors focus:border-emerald-400/60"
+                    placeholder="Your experience"
+                  />
+                  {fieldErrors.oneLineExperience ? (
+                    <p className="text-xs text-red-300">{fieldErrors.oneLineExperience}</p>
+                  ) : null}
+                </label>
 
                 <label className="block space-y-2">
                   <span className="text-sm font-semibold text-white/90">What should we improve in this recorded masterclass?</span>
@@ -553,7 +669,8 @@ export default function MasterclassReviewPage() {
                 >
                   {isSubmitting ? "Submitting..." : "Submit Masterclass Review"}
                 </button>
-              </form>
+                </form>
+              )}
             </div>
           </section>
         </div>

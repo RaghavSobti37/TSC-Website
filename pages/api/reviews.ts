@@ -88,6 +88,8 @@ export default async function handler(req: any, res: any) {
       const allReviews = rows.map((row: any, index: number) => {
         const numericRating = parseFloat(String(getField(row, ['weightedRating', 'weighted rating', 'rating']) || '5')) || 5;
         const approvedValue = getField(row, ['isApproved', 'is approved', 'is_approved', 'approved', 'approval']);
+        const completion = getField(row, ['completion']) || '';
+        const artistTypes = getField(row, ['artistTypes', 'artist types']) || '';
         return {
           id: index + 1,
           date: getField(row, ['submittedAt', 'submitted at']) || '',
@@ -98,6 +100,8 @@ export default async function handler(req: any, res: any) {
           title: getField(row, ['title']) || 'Masterclass Review',
           content: getField(row, ['oneLineExperience', 'one line experience', 'content']) || row.improvementSuggestion || '',
           rating: numericRating,
+          completion,
+          artistTypes,
           isApproved: parseApproved(approvedValue),
         };
       });

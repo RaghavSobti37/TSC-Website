@@ -9,7 +9,7 @@ import { useRouter } from 'next/router';
 
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
-  const isReviewPage = router.pathname === '/classicalreview';
+  const isReviewPage = router.pathname === '/classicalreview' || router.pathname === '/masterclass-review01';
 
   return (
     <>
@@ -17,6 +17,8 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#083D3A" />
+        <link rel="icon" href="/assets/favicon.png" />
+        <link rel="apple-touch-icon" href="/assets/favicon.png" />
         <title>The Soul Company</title>
         <meta name="description" content="A global ecosystem for emerging artists and brands to co-create cultural IP." />
         <meta property="og:title" content="The Soul Company" />

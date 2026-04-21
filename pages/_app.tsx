@@ -9,7 +9,7 @@ import { useRouter } from 'next/router';
 
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
-  const isReviewPage = router.pathname === '/classicalreview' || router.pathname === '/masterclass-review01';
+  const isReviewPage = router.pathname === '/classicalreview' || router.pathname === '/masterclass-review01' || router.pathname === '/masterclass-review02';
 
   return (
     <>

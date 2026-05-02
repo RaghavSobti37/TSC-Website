@@ -10,7 +10,7 @@ const freeTools = [
     category: 'Production',
     description: 'A visual synthesizer. See what you play. Free spectral warping wavetable synth.',
     link: '#',
-    image: 'https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?q=80&w=2070&auto=format&fit=crop', // Placeholder
+    image: '/assets/Patterns/LogoArtboard 20@300x-8.png',
   },
   {
     id: 2,
@@ -18,7 +18,7 @@ const freeTools = [
     category: 'Production',
     description: 'An infinite series of free software instruments, made by musicians and sampling experts in London.',
     link: '#',
-    image: 'https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?q=80&w=2070&auto=format&fit=crop', // Placeholder
+    image: '/assets/Patterns/LogoArtboard 19@300x-8.png',
   },
   {
     id: 3,
@@ -26,7 +26,7 @@ const freeTools = [
     category: 'Mixing',
     description: 'Mind-blowing reverbs, delays, and modulation effects. Perfect for creating huge spaces.',
     link: '#',
-    image: 'https://images.unsplash.com/photo-1593697821252-0c9137d9fc45?q=80&w=2070&auto=format&fit=crop', // Placeholder
+    image: '/assets/Patterns/LogoArtboard 18@300x-8.png',
   },
   {
     id: 4,
@@ -34,7 +34,7 @@ const freeTools = [
     category: 'Mixing',
     description: 'A parallel dynamic equalizer. Appears in the familiar layout of a parametric equalizer, with full dynamics processing.',
     link: '#',
-    image: 'https://images.unsplash.com/photo-1516280440502-6c58fb0bfb0f?q=80&w=2070&auto=format&fit=crop', // Placeholder
+    image: '/assets/Patterns/LogoArtboard 17@300x-8.png',
   },
   {
     id: 5,
@@ -42,7 +42,7 @@ const freeTools = [
     category: 'Vocals',
     description: 'A free plug-in designed to enhance your vocal with a natural doubling effect.',
     link: '#',
-    image: 'https://images.unsplash.com/photo-1525362081669-2b476bb628c3?q=80&w=1974&auto=format&fit=crop', // Placeholder
+    image: '/assets/Patterns/LogoArtboard 20@300x-8.png',
   },
   {
     id: 6,
@@ -50,7 +50,7 @@ const freeTools = [
     category: 'Business',
     description: 'Free split sheet and basic collaboration agreement templates for independent artists.',
     link: '#',
-    image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=2070&auto=format&fit=crop', // Placeholder
+    image: '/assets/Patterns/LogoArtboard 19@300x-8.png',
   },
 ];
 

@@ -8,7 +8,7 @@ const blogPosts = [
     excerpt: 'How to release your music without it getting lost. Learn the pre-release, release day, and post-release strategies.',
     link: '/insights/artist-release-playbook',
     pptLink: '#',
-    image: 'https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?q=80&w=2070&auto=format&fit=crop',
+    image: '/assets/Patterns/LogoArtboard 17@300x-8.png',
     date: 'May 2, 2026',
     readTime: '6 min read',
   },
@@ -18,7 +18,7 @@ const blogPosts = [
     excerpt: 'Most singers think their problem is pitch. It’s not. It’s breath. How to improve your vocal texture practically.',
     link: '/insights/breathing-vocal-texture',
     pptLink: '#',
-    image: 'https://images.unsplash.com/photo-1516280440502-6c58fb0bfb0f?q=80&w=2070&auto=format&fit=crop',
+    image: '/assets/Patterns/LogoArtboard 18@300x-8.png',
     date: 'May 2, 2026',
     readTime: '5 min read',
   },
@@ -28,7 +28,7 @@ const blogPosts = [
     excerpt: 'A practical guide to improving your voice (even if you only have 20 minutes). Discover the ideal daily structure.',
     link: '/insights/daily-riyaaz-routine',
     pptLink: '#',
-    image: 'https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=2070&auto=format&fit=crop',
+    image: '/assets/Patterns/LogoArtboard 19@300x-8.png',
     date: 'May 2, 2026',
     readTime: '7 min read',
   },
@@ -113,17 +113,6 @@ export default function ResourcesBlogs() {
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                     </svg>
-                  </a>
-                  
-                  <a
-                    href={post.pptLink}
-                    download
-                    className="flex-1 flex items-center justify-center gap-2 bg-pumpkin/10 hover:bg-pumpkin/20 text-pumpkin-dark text-sm font-semibold py-2.5 px-4 rounded-lg transition-colors font-alan-sans"
-                  >
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                    </svg>
-                    <span>Download PPT</span>
                   </a>
                 </div>
               </div>

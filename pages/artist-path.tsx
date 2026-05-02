@@ -108,10 +108,10 @@ export default function ArtistPath() {
             >
               <div className="text-center mb-10">
                 <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-cream font-signika mb-4">
-                  Your Artist Path
+                  The Artist Path
                 </h1>
                 <p className="text-lg text-cream-dark/70 font-alan-sans max-w-2xl mx-auto">
-                  Tell us about your musical journey. Where you've been, where you are, and where you're heading.
+                  Tell us about your artist journey. Where you've been, where you are, and where you're heading.
                 </p>
               </div>
 
@@ -124,10 +124,10 @@ export default function ArtistPath() {
               <form onSubmit={handleSubmit} className="space-y-8">
                 {/* Basic Information */}
                 <div className="space-y-6">
-                  <h3 className="text-xl font-bold text-cream font-signika border-b border-white/10 pb-2">
-                    Basic Information
+                  <h3 className="text-2xl sm:text-3xl font-bold text-cream font-alan-sans border-b border-white/10 pb-3">
+                    1. Basic Information
                   </h3>
-                  
+
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <div className="space-y-2">
                       <label className="text-sm font-semibold text-cream-dark/90">Full Name *</label>
@@ -217,8 +217,8 @@ export default function ArtistPath() {
 
                 {/* Why? */}
                 <div className="space-y-6 pt-4">
-                  <h3 className="text-xl font-bold text-cream font-signika border-b border-white/10 pb-2">
-                    Why?
+                  <h3 className="text-2xl sm:text-3xl font-bold text-cream font-alan-sans border-b border-white/10 pb-3">
+                    2. Why?
                   </h3>
 
                   <div className="space-y-2">
@@ -249,8 +249,8 @@ export default function ArtistPath() {
 
                 {/* What? */}
                 <div className="space-y-6 pt-4">
-                  <h3 className="text-xl font-bold text-cream font-signika border-b border-white/10 pb-2">
-                    What?
+                  <h3 className="text-2xl sm:text-3xl font-bold text-cream font-alan-sans border-b border-white/10 pb-3">
+                    3. What?
                   </h3>
 
                   <div className="space-y-2">
@@ -316,8 +316,8 @@ export default function ArtistPath() {
 
                 {/* Where do you stand today? */}
                 <div className="space-y-6 pt-4">
-                  <h3 className="text-xl font-bold text-cream font-signika border-b border-white/10 pb-2">
-                    Where do you stand today?
+                  <h3 className="text-2xl sm:text-3xl font-bold text-cream font-alan-sans border-b border-white/10 pb-3">
+                    4. Where do you stand today?
                   </h3>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -409,8 +409,8 @@ export default function ArtistPath() {
 
                 {/* What you need */}
                 <div className="space-y-6 pt-4">
-                  <h3 className="text-xl font-bold text-cream font-signika border-b border-white/10 pb-2">
-                    What you need
+                  <h3 className="text-2xl sm:text-3xl font-bold text-cream font-alan-sans border-b border-white/10 pb-3">
+                    5. What you need
                   </h3>
 
                   <div className="space-y-2">
@@ -464,8 +464,8 @@ export default function ArtistPath() {
 
                 {/* Aspirational Goal & Others */}
                 <div className="space-y-6 pt-4">
-                  <h3 className="text-xl font-bold text-cream font-signika border-b border-white/10 pb-2">
-                    Aspirational Goal
+                  <h3 className="text-2xl sm:text-3xl font-bold text-cream font-alan-sans border-b border-white/10 pb-3">
+                    6. Aspirational Goal
                   </h3>
 
                   <div className="space-y-2">

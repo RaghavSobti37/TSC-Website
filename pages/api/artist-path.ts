@@ -45,10 +45,18 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       data.anythingElse || '',
     ];
 
-    // Read the service account credentials from file
-    const serviceAccountPath = path.join(process.cwd(), 'google_service_account.json');
-    const serviceAccountJson = fs.readFileSync(serviceAccountPath, 'utf8');
-    const serviceAccount = JSON.parse(serviceAccountJson);
+    // Read the service account credentials from env vars or file
+    let serviceAccount;
+    if (process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL && process.env.GOOGLE_PRIVATE_KEY) {
+      serviceAccount = {
+        client_email: process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
+        private_key: process.env.GOOGLE_PRIVATE_KEY.replace(/\\n/g, '\n'),
+      };
+    } else {
+      const serviceAccountPath = path.join(process.cwd(), 'google_service_account.json');
+      const serviceAccountJson = fs.readFileSync(serviceAccountPath, 'utf8');
+      serviceAccount = JSON.parse(serviceAccountJson);
+    }
 
     // Create an auth client
     const auth = new google.auth.GoogleAuth({

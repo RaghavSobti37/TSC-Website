@@ -17,9 +17,9 @@ export default function ResourcesPage() {
         />
       </Head>
 
-      <main className="bg-cream min-h-screen pt-20 sm:pt-24">
+      <main className="bg-cream min-h-screen">
         {/* Page Header */}
-        <section className="bg-teal-dark py-20 px-4 sm:px-6 relative overflow-hidden">
+        <section className="bg-teal-dark pt-32 pb-20 px-4 sm:px-6 relative overflow-hidden">
           {/* Subtle Background pattern/gradient */}
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-teal-light/20 via-teal-dark to-teal-dark"></div>
           

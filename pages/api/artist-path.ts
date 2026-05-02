@@ -17,8 +17,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const fullName = `${firstName || ''} ${lastName || ''}`.trim();
 
     // We need to write a new row to the sheet with 27 columns (timestamp + 26 fields)
+    const timestamp = new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' });
     const row = [
-      new Date().toLocaleString(),
+      timestamp,
       fullName || '',
       data.stageName || '',
       data.place || '',

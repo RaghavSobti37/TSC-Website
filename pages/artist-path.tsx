@@ -69,10 +69,10 @@ export default function ArtistPath() {
   return (
     <>
       <Head>
-        <title>Artist Path & Journey | The Soul Company</title>
+        <title>Artist Path & Journey</title>
       </Head>
 
-      <main className="min-h-screen bg-[#050505] text-white pt-36 md:pt-48 pb-16 px-2 sm:px-6 relative overflow-hidden">
+      <main className="min-h-screen bg-[#050505] text-white pt-24 md:pt-48 pb-16 px-1 md:px-6 relative overflow-hidden">
         {/* Background Gradients */}
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-teal-dark/30 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
         <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-pumpkin/10 rounded-full blur-[120px] translate-y-1/3 -translate-x-1/3 pointer-events-none"></div>
@@ -103,11 +103,11 @@ export default function ArtistPath() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="bg-white/[0.03] border border-white/10 rounded-2xl p-4 sm:p-10 md:p-12 backdrop-blur-sm"
+              className="bg-white/[0.03] border border-white/10 rounded-2xl p-2 sm:p-10 md:p-12 backdrop-blur-sm"
             >
               <div className="text-center mb-10">
                 <div className="inline-block text-center">
-                  <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-cream font-signika mb-2">
+                  <h1 className="text-3xl min-[380px]:text-4xl sm:text-5xl md:text-6xl font-bold text-cream font-signika mb-2 whitespace-nowrap tracking-tight">
                     The Artist Path
                   </h1>
                   <p
@@ -133,10 +133,10 @@ export default function ArtistPath() {
                 <div className="space-y-6">
                   <div className="border-b border-white/10 pb-3">
                     <div className="flex items-center gap-3 sm:gap-4 mb-2">
-                      <span className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-pumpkin text-cream flex items-center justify-center text-lg sm:text-xl font-bold shrink-0 font-signika shadow-lg">
+                      <span className="w-7 h-7 min-[380px]:w-8 min-[380px]:h-8 sm:w-10 sm:h-10 rounded-full bg-pumpkin text-cream flex items-center justify-center text-base sm:text-xl font-bold shrink-0 font-signika shadow-lg">
                         1
                       </span>
-                      <h3 className="text-2xl sm:text-3xl font-bold text-cream font-alan-sans">
+                      <h3 className="text-lg min-[380px]:text-xl sm:text-2xl md:text-3xl font-bold text-cream font-alan-sans leading-tight">
                         The Essentials
                       </h3>
                     </div>
@@ -233,10 +233,10 @@ export default function ArtistPath() {
                 <div className="space-y-6 pt-4">
                   <div className="border-b border-white/10 pb-3">
                     <div className="flex items-center gap-3 sm:gap-4 mb-2">
-                      <span className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-pumpkin text-cream flex items-center justify-center text-lg sm:text-xl font-bold shrink-0 font-signika shadow-lg">
+                      <span className="w-7 h-7 min-[380px]:w-8 min-[380px]:h-8 sm:w-10 sm:h-10 rounded-full bg-pumpkin text-cream flex items-center justify-center text-base sm:text-xl font-bold shrink-0 font-signika shadow-lg">
                         2
                       </span>
-                      <h3 className="text-2xl sm:text-3xl font-bold text-cream font-alan-sans">
+                      <h3 className="text-lg min-[380px]:text-xl sm:text-2xl md:text-3xl font-bold text-cream font-alan-sans leading-tight">
                         The "Why" Behind the Music
                       </h3>
                     </div>
@@ -276,10 +276,10 @@ export default function ArtistPath() {
                 <div className="space-y-6 pt-4">
                   <div className="border-b border-white/10 pb-3">
                     <div className="flex items-center gap-3 sm:gap-4 mb-2">
-                      <span className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-pumpkin text-cream flex items-center justify-center text-lg sm:text-xl font-bold shrink-0 font-signika shadow-lg">
+                      <span className="w-7 h-7 min-[380px]:w-8 min-[380px]:h-8 sm:w-10 sm:h-10 rounded-full bg-pumpkin text-cream flex items-center justify-center text-base sm:text-xl font-bold shrink-0 font-signika shadow-lg">
                         3
                       </span>
-                      <h3 className="text-2xl sm:text-3xl font-bold text-cream font-alan-sans">
+                      <h3 className="text-lg min-[380px]:text-xl sm:text-2xl md:text-3xl font-bold text-cream font-alan-sans leading-tight">
                         The "What": Your Fingerprint
                       </h3>
                     </div>
@@ -342,10 +342,10 @@ export default function ArtistPath() {
                 <div className="space-y-6 pt-4">
                   <div className="border-b border-white/10 pb-3">
                     <div className="flex items-center gap-3 sm:gap-4 mb-2">
-                      <span className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-pumpkin text-cream flex items-center justify-center text-lg sm:text-xl font-bold shrink-0 font-signika shadow-lg">
+                      <span className="w-7 h-7 min-[380px]:w-8 min-[380px]:h-8 sm:w-10 sm:h-10 rounded-full bg-pumpkin text-cream flex items-center justify-center text-base sm:text-xl font-bold shrink-0 font-signika shadow-lg">
                         4
                       </span>
-                      <h3 className="text-2xl sm:text-3xl font-bold text-cream font-alan-sans">
+                      <h3 className="text-lg min-[380px]:text-xl sm:text-2xl md:text-3xl font-bold text-cream font-alan-sans leading-tight">
                         The "Where": Your Current Pulse
                       </h3>
                     </div>
@@ -433,10 +433,10 @@ export default function ArtistPath() {
                 <div className="space-y-6 pt-4">
                   <div className="border-b border-white/10 pb-3">
                     <div className="flex items-center gap-3 sm:gap-4 mb-2">
-                      <span className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-pumpkin text-cream flex items-center justify-center text-lg sm:text-xl font-bold shrink-0 font-signika shadow-lg">
+                      <span className="w-7 h-7 min-[380px]:w-8 min-[380px]:h-8 sm:w-10 sm:h-10 rounded-full bg-pumpkin text-cream flex items-center justify-center text-base sm:text-xl font-bold shrink-0 font-signika shadow-lg">
                         5
                       </span>
-                      <h3 className="text-2xl sm:text-3xl font-bold text-cream font-alan-sans">
+                      <h3 className="text-lg min-[380px]:text-xl sm:text-2xl md:text-3xl font-bold text-cream font-alan-sans leading-tight">
                         The "Next Step": What do you need?
                       </h3>
                     </div>
@@ -500,10 +500,10 @@ export default function ArtistPath() {
                 <div className="space-y-6 pt-4">
                   <div className="border-b border-white/10 pb-3">
                     <div className="flex items-center gap-3 sm:gap-4 mb-2">
-                      <span className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-pumpkin text-cream flex items-center justify-center text-lg sm:text-xl font-bold shrink-0 font-signika shadow-lg">
+                      <span className="w-7 h-7 min-[380px]:w-8 min-[380px]:h-8 sm:w-10 sm:h-10 rounded-full bg-pumpkin text-cream flex items-center justify-center text-base sm:text-xl font-bold shrink-0 font-signika shadow-lg">
                         6
                       </span>
-                      <h3 className="text-2xl sm:text-3xl font-bold text-cream font-alan-sans">
+                      <h3 className="text-lg min-[380px]:text-xl sm:text-2xl md:text-3xl font-bold text-cream font-alan-sans leading-tight">
                         The Aspirational Goal
                       </h3>
                     </div>
@@ -533,10 +533,10 @@ export default function ArtistPath() {
                 <div className="space-y-6 pt-4">
                   <div className="border-b border-white/10 pb-3">
                     <div className="flex items-center gap-3 sm:gap-4 mb-2">
-                      <span className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-pumpkin text-cream flex items-center justify-center text-lg sm:text-xl font-bold shrink-0 font-signika shadow-lg">
+                      <span className="w-7 h-7 min-[380px]:w-8 min-[380px]:h-8 sm:w-10 sm:h-10 rounded-full bg-pumpkin text-cream flex items-center justify-center text-base sm:text-xl font-bold shrink-0 font-signika shadow-lg">
                         7
                       </span>
-                      <h3 className="text-2xl sm:text-3xl font-bold text-cream font-alan-sans">
+                      <h3 className="text-lg min-[380px]:text-xl sm:text-2xl md:text-3xl font-bold text-cream font-alan-sans leading-tight">
                         Open Mic
                       </h3>
                     </div>

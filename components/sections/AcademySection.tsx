@@ -446,7 +446,7 @@ export default function AcademySection() {
 
           {/* Row 2: Secondary courses grid */}
           {secondaryCourses.length > 0 && (
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
               {secondaryCourses.map((course, index) => (
                 <SecondaryCourseCard key={course.id} course={course} index={index} />
               ))}
@@ -467,10 +467,7 @@ export default function AcademySection() {
             width="clamp(200px, 80vw, 380px)"
             height="clamp(50px, 10vw, 68px)"
             onClick={() => {
-              const contact = document.getElementById('contact');
-              if (contact) {
-                contact.scrollIntoView({ behavior: 'smooth' });
-              }
+              window.location.href = 'https://tscacademy.in';
             }}
           >
             Start Your Path

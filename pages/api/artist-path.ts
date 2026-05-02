@@ -13,21 +13,21 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   try {
     const data = req.body;
 
-    // We need to write a new row to the sheet with 28 columns (timestamp + 27 fields)
+    // We need to write a new row to the sheet with 27 columns (timestamp + 26 fields)
     const row = [
       new Date().toLocaleString(),
       data.fullName || '',
-      data.instagramId || '',
-      data.spotifyId || '',
-      data.youtubeChannel || '',
+      data.stageName || '',
+      data.place || '',
+      data.instagram || '',
+      data.spotify || '',
+      data.youtube || '',
       data.mobile || '',
       data.email || '',
-      data.place || '',
-      data.artistType || '',
+      data.artistIdentity || '',
       data.trainingDetails || '',
       data.coreSkills || '',
-      data.strengths || '',
-      data.uniqueness || '',
+      data.strengthsUniqueness || '',
       data.dailyTime || '',
       data.mentorName || '',
       data.songsReleased || '',
@@ -35,7 +35,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       data.currentFans || '',
       data.currentSetup || '',
       data.currentlyWorkingOn || '',
-      data.riyaazTime || '',
       data.dailyRituals || '',
       data.learningNeeds || '',
       data.mentorshipNeeds || '',
@@ -71,20 +70,19 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     try {
       const response = await sheets.spreadsheets.values.get({
         spreadsheetId: SPREADSHEET_ID,
-        range: 'A1:AB1',
+        range: 'A1:AA1',
       });
       const firstRow = response.data.values?.[0] || [];
       if (!firstRow.length || firstRow[0] !== 'Timestamp') {
         const HEADER_ROW = [
-          'Timestamp', 'FullName', 'InstagramId', 'SpotifyId', 'YoutubeChannel', 'Mobile', 'Email', 'Place', 
-          'ArtistType', 'TrainingDetails', 'CoreSkills', 'Strengths', 'Uniqueness', 'DailyTime', 'MentorName', 
-          'SongsReleased', 'ShowsPerformed', 'CurrentFans', 'CurrentSetup', 'CurrentlyWorkingOn', 'RiyaazTime', 
-          'DailyRituals', 'LearningNeeds', 'MentorshipNeeds', 'CurationNeeds', 'FandomNeeds', 'AspirationalGoal', 
-          'AnythingElse'
+          'Timestamp', 'FullName', 'StageName', 'Place', 'Instagram', 'Spotify', 'Youtube', 'Mobile', 'Email', 
+          'ArtistIdentity', 'TrainingDetails', 'CoreSkills', 'StrengthsUniqueness', 'DailyTime', 'MentorName', 
+          'SongsReleased', 'ShowsPerformed', 'CurrentFans', 'CurrentSetup', 'CurrentlyWorkingOn', 'DailyRituals', 
+          'LearningNeeds', 'MentorshipNeeds', 'CurationNeeds', 'FandomNeeds', 'AspirationalGoal', 'AnythingElse'
         ];
         await sheets.spreadsheets.values.update({
           spreadsheetId: SPREADSHEET_ID,
-          range: 'A1:AB1',
+          range: 'A1:AA1',
           valueInputOption: 'USER_ENTERED',
           requestBody: { values: [HEADER_ROW] },
         });

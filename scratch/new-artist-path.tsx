@@ -110,7 +110,7 @@ export default function ArtistPath() {
                   <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-cream font-signika mb-2">
                     The Artist Path
                   </h1>
-                  <p
+                  <p 
                     className="text-pumpkin font-black text-xs sm:text-sm md:text-base uppercase tracking-wider font-alan-sans w-full"
                     style={{ textAlignLast: 'justify' }}
                   >
@@ -132,19 +132,14 @@ export default function ArtistPath() {
                 {/* 1. The Essentials */}
                 <div className="space-y-6">
                   <div className="border-b border-white/10 pb-3">
-                    <div className="flex items-center gap-3 sm:gap-4 mb-2">
-                      <span className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-pumpkin text-cream flex items-center justify-center text-lg sm:text-xl font-bold shrink-0 font-signika shadow-lg">
-                        1
-                      </span>
-                      <h3 className="text-2xl sm:text-3xl font-bold text-cream font-alan-sans">
-                        The Essentials
-                      </h3>
-                    </div>
+                    <h3 className="text-2xl sm:text-3xl font-bold text-cream font-alan-sans mb-1">
+                      1. The Essentials
+                    </h3>
                     <p className="text-sm sm:text-base text-cream-dark/70 font-alan-sans">
-                      Let’s start with the basics so that we know who you are and where to find your work.
+                      Let’s start with the basics so we know who you are and where to find your work.
                     </p>
                   </div>
-
+                  
                   <div className="grid grid-cols-1 gap-6">
                     <div className="space-y-2">
                       <label className="text-sm font-semibold text-cream-dark/90">Full Name: (The name on your ID) *</label>
@@ -232,14 +227,9 @@ export default function ArtistPath() {
                 {/* 2. The "Why" Behind the Music */}
                 <div className="space-y-6 pt-4">
                   <div className="border-b border-white/10 pb-3">
-                    <div className="flex items-center gap-3 sm:gap-4 mb-2">
-                      <span className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-pumpkin text-cream flex items-center justify-center text-lg sm:text-xl font-bold shrink-0 font-signika shadow-lg">
-                        2
-                      </span>
-                      <h3 className="text-2xl sm:text-3xl font-bold text-cream font-alan-sans">
-                        The "Why" Behind the Music
-                      </h3>
-                    </div>
+                    <h3 className="text-2xl sm:text-3xl font-bold text-cream font-alan-sans mb-1">
+                      2. The "Why" Behind the Music
+                    </h3>
                     <p className="text-sm sm:text-base text-cream-dark/70 font-alan-sans">
                       Every artist has a "why?" Tell us about yours.
                     </p>
@@ -275,14 +265,9 @@ export default function ArtistPath() {
                 {/* 3. The "What": Your Fingerprint */}
                 <div className="space-y-6 pt-4">
                   <div className="border-b border-white/10 pb-3">
-                    <div className="flex items-center gap-3 sm:gap-4 mb-2">
-                      <span className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-pumpkin text-cream flex items-center justify-center text-lg sm:text-xl font-bold shrink-0 font-signika shadow-lg">
-                        3
-                      </span>
-                      <h3 className="text-2xl sm:text-3xl font-bold text-cream font-alan-sans">
-                        The "What": Your Fingerprint
-                      </h3>
-                    </div>
+                    <h3 className="text-2xl sm:text-3xl font-bold text-cream font-alan-sans mb-1">
+                      3. The "What": Your Fingerprint
+                    </h3>
                     <p className="text-sm sm:text-base text-cream-dark/70 font-alan-sans">
                       What makes your sound yours?
                     </p>
@@ -341,14 +326,9 @@ export default function ArtistPath() {
                 {/* 4. The "Where": Your Current Pulse */}
                 <div className="space-y-6 pt-4">
                   <div className="border-b border-white/10 pb-3">
-                    <div className="flex items-center gap-3 sm:gap-4 mb-2">
-                      <span className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-pumpkin text-cream flex items-center justify-center text-lg sm:text-xl font-bold shrink-0 font-signika shadow-lg">
-                        4
-                      </span>
-                      <h3 className="text-2xl sm:text-3xl font-bold text-cream font-alan-sans">
-                        The "Where": Your Current Pulse
-                      </h3>
-                    </div>
+                    <h3 className="text-2xl sm:text-3xl font-bold text-cream font-alan-sans mb-1">
+                      4. The "Where": Your Current Pulse
+                    </h3>
                     <p className="text-sm sm:text-base text-cream-dark/70 font-alan-sans">
                       Let’s look at the data and the gear.
                     </p>
@@ -432,14 +412,9 @@ export default function ArtistPath() {
                 {/* 5. The "Next Step": What do you need? */}
                 <div className="space-y-6 pt-4">
                   <div className="border-b border-white/10 pb-3">
-                    <div className="flex items-center gap-3 sm:gap-4 mb-2">
-                      <span className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-pumpkin text-cream flex items-center justify-center text-lg sm:text-xl font-bold shrink-0 font-signika shadow-lg">
-                        5
-                      </span>
-                      <h3 className="text-2xl sm:text-3xl font-bold text-cream font-alan-sans">
-                        The "Next Step": What do you need?
-                      </h3>
-                    </div>
+                    <h3 className="text-2xl sm:text-3xl font-bold text-cream font-alan-sans mb-1">
+                      5. The "Next Step": What do you need?
+                    </h3>
                     <p className="text-sm sm:text-base text-cream-dark/70 font-alan-sans">
                       Growth requires resources. Be specific about what would change the game for you.
                     </p>
@@ -499,14 +474,9 @@ export default function ArtistPath() {
                 {/* 6. The Aspirational Goal */}
                 <div className="space-y-6 pt-4">
                   <div className="border-b border-white/10 pb-3">
-                    <div className="flex items-center gap-3 sm:gap-4 mb-2">
-                      <span className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-pumpkin text-cream flex items-center justify-center text-lg sm:text-xl font-bold shrink-0 font-signika shadow-lg">
-                        6
-                      </span>
-                      <h3 className="text-2xl sm:text-3xl font-bold text-cream font-alan-sans">
-                        The Aspirational Goal
-                      </h3>
-                    </div>
+                    <h3 className="text-2xl sm:text-3xl font-bold text-cream font-alan-sans mb-1">
+                      6. The Aspirational Goal
+                    </h3>
                     <p className="text-sm sm:text-base text-cream-dark/70 font-alan-sans">
                       Imagine it is exactly one year from today. You are looking back at your most successful year ever.
                     </p>
@@ -532,14 +502,9 @@ export default function ArtistPath() {
                 {/* 7. Open Mic */}
                 <div className="space-y-6 pt-4">
                   <div className="border-b border-white/10 pb-3">
-                    <div className="flex items-center gap-3 sm:gap-4 mb-2">
-                      <span className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-pumpkin text-cream flex items-center justify-center text-lg sm:text-xl font-bold shrink-0 font-signika shadow-lg">
-                        7
-                      </span>
-                      <h3 className="text-2xl sm:text-3xl font-bold text-cream font-alan-sans">
-                        Open Mic
-                      </h3>
-                    </div>
+                    <h3 className="text-2xl sm:text-3xl font-bold text-cream font-alan-sans mb-1">
+                      7. Open Mic
+                    </h3>
                   </div>
 
                   <div className="grid grid-cols-1 gap-6">

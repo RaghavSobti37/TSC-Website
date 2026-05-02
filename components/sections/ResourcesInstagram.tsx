@@ -47,6 +47,7 @@ export default function ResourcesInstagram() {
                 scrolling="no" 
                 allowTransparency={true} 
                 allow="encrypted-media"
+                loading="lazy"
               ></iframe>
             </motion.div>
           ))}

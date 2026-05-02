@@ -39,6 +39,10 @@ export default function Header() {
   }, []);
 
   const scrollToSection = (sectionId: string) => {
+    if (window.location.pathname !== '/') {
+      window.location.href = `/#${sectionId}`;
+      return;
+    }
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
@@ -62,28 +66,34 @@ export default function Header() {
       className="fixed top-4 md:top-6 left-0 right-0 z-50 flex justify-center px-3 sm:px-4"
     >
       <motion.div
-        className={`rounded-full backdrop-blur-xl border shadow-xl flex items-center justify-between transition-all duration-300 ${
-          isScrolled
+        className={`rounded-full backdrop-blur-xl border shadow-xl flex items-center justify-between transition-all duration-300 ${isScrolled
             ? 'bg-white/25 border-white/40'
             : 'bg-white/20 border-white/30'
-        } ${
-          isMobileView
+          } ${isMobileView
             ? 'px-3 py-2.5 w-full max-w-sm sm:max-w-md'
             : isTabletView
-            ? 'px-6 py-3 gap-4'
-            : 'px-8 py-4 gap-8'
-        }`}
+              ? 'px-6 py-3 gap-4'
+              : 'px-8 py-4 gap-8'
+          }`}
         whileHover={!isMobileView ? { scale: 1.02 } : undefined}
       >
         {/* Logo */}
         <motion.button
-          onClick={() => scrollToSection('hero')}
-          whileHover={{ scale: 1.1 }}
-          className={`font-signika font-bold text-cream hover:text-cream/80 transition whitespace-nowrap tracking-wider flex-shrink-0 text-outline ${
-            isMobileView ? 'text-xs' : 'text-sm sm:text-base'
-          }`}
+          onClick={() => {
+            if (window.location.pathname === '/') {
+              scrollToSection('hero');
+            } else {
+              window.location.href = '/';
+            }
+          }}
+          whileHover={{ scale: 1.05 }}
+          className="flex-shrink-0 flex items-center justify-center"
         >
-          TSC
+          <img
+            src="/assets/tsclogo.png"
+            alt="TSC Logo"
+            className={`${isMobileView ? 'h-8' : 'h-10 sm:h-12'} w-auto object-contain`}
+          />
         </motion.button>
 
         {/* Desktop Links - Hidden on mobile/tablet */}
@@ -119,49 +129,18 @@ export default function Header() {
             >
               Team
             </button>
-          </div>
-        )}
-
-        {/* Divider - Desktop only */}
-        {!isMobileView && <div className="hidden lg:block w-px h-6 bg-white/20" />}
-
-        {/* CTAs with Fishy Buttons - Responsive sizing */}
-        {!isMobileView && (
-          <div className={`hidden sm:flex items-center ${isTabletView ? 'gap-2' : 'gap-3'}`}>
-            <FishyButton
-              onClick={() => scrollToSection('contact')}
-              variant="pumpkin"
-              width={isTabletView ? '80px' : '96px'}
-              height={isTabletView ? '36px' : '40px'}
-              className="join-btn"
+            <button
+              onClick={() => window.location.href = '/resources'}
+              className="text-xs sm:text-sm font-alan-sans text-cream/90 hover:text-cream transition text-outline"
             >
-              Join
-            </FishyButton>
-            <FishyButton
-              onClick={() => scrollToSection('collaborations')}
-              variant="teal"
-              width={isTabletView ? '96px' : '112px'}
-              height={isTabletView ? '36px' : '40px'}
-              className="partner-btn"
+              Resources
+            </button>
+            <button
+              onClick={() => window.location.href = '/artist-path'}
+              className="text-xs sm:text-sm font-alan-sans text-cream/90 hover:text-cream transition text-outline"
             >
-              Partner
-            </FishyButton>
-            <style>{`
-              .join-btn .button__text {
-                letter-spacing: 2px;
-                font-size: 18px !important;
-              }
-              .join-btn:hover .button__text {
-                font-size: 19px !important;
-              }
-              .partner-btn .button__text {
-                letter-spacing: 2px;
-                font-size: 18px !important;
-              }
-              .partner-btn:hover .button__text {
-                font-size: 19px !important;
-              }
-            `}</style>
+              Artist Path
+            </button>
           </div>
         )}
 
@@ -263,34 +242,26 @@ export default function Header() {
             >
               Contact
             </button>
+            <button
+              onClick={() => {
+                window.location.href = '/resources';
+                setIsMobileMenuOpen(false);
+              }}
+              className="text-left text-xs sm:text-sm font-alan-sans text-cream/90 hover:text-cream transition py-2 border-b border-white/10 text-outline"
+            >
+              Resources
+            </button>
+            <button
+              onClick={() => {
+                window.location.href = '/artist-path';
+                setIsMobileMenuOpen(false);
+              }}
+              className="text-left text-xs sm:text-sm font-alan-sans text-cream/90 hover:text-cream transition py-2 border-white/10 text-outline"
+            >
+              Artist Path
+            </button>
 
-            {/* Mobile CTA Buttons */}
-            <div className="pt-2 space-y-2 flex flex-col gap-2">
-              <FishyButton
-                onClick={() => {
-                  scrollToSection('contact');
-                  setIsMobileMenuOpen(false);
-                }}
-                variant="pumpkin"
-                width="100%"
-                height="40px"
-                className="join-btn"
-              >
-                Join
-              </FishyButton>
-              <FishyButton
-                onClick={() => {
-                  scrollToSection('collaborations');
-                  setIsMobileMenuOpen(false);
-                }}
-                variant="pumpkin"
-                width="100%"
-                height="40px"
-                className="partner-btn"
-              >
-                Partner
-              </FishyButton>
-            </div>
+            {/* Mobile CTA Buttons - Temporarily removed */}
           </motion.div>
         )}
       </AnimatePresence>

@@ -150,10 +150,7 @@ export default function IPGallerySection() {
                 </p>
 
                 {/* Status and CTA */}
-                <div className="flex items-center justify-between">
-                  <span className={`px-3 py-1 rounded-full text-xs font-semibold ${statusColors[item.status]}`}>
-                    {item.status}
-                  </span>
+                <div className="flex items-center justify-end">
                   <motion.span
                     className="text-pumpkin font-bold"
                     animate={{ x: [0, 4, 0] }}

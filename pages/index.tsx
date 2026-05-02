@@ -64,7 +64,7 @@ export default function Home() {
           <p className="text-base mb-4 text-charcoal">
             Get funding, technical support, and production resources. From grants to recording to distribution, we've got the infrastructure.
           </p>
-          <a href="#contact" className="text-pumpkin font-semibold hover:text-cream transition-colors">
+          <a href="/artist-path" className="text-pumpkin font-semibold hover:text-cream transition-colors">
             Get Support →
           </a>
         </div>
@@ -94,7 +94,7 @@ export default function Home() {
           <p className="text-base mb-4 text-charcoal">
             Scale your impact globally. Expand to new markets, build communities, and influence culture across borders and continents.
           </p>
-          <a href="#artists" className="text-pumpkin font-semibold hover:text-cream transition-colors">
+          <a href="/artist-path" className="text-pumpkin font-semibold hover:text-cream transition-colors">
             Join Community →
           </a>
         </div>

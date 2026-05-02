@@ -1,4 +1,6 @@
-import React from 'react';
+'use client';
+
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/buttons/Button';
 import { cn } from '@/lib/utils';
@@ -12,6 +14,35 @@ interface FooterProps {
  * Global footer with navigation, newsletter signup, and legal links
  */
 export const Footer: React.FC<FooterProps> = ({ className }) => {
+  const [email, setEmail] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [message, setMessage] = useState('');
+
+  const handleSubscribe = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setMessage('');
+
+    try {
+      const res = await fetch('/api/newsletter', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      });
+      const data = await res.json();
+
+      if (data.success) {
+        setMessage('Successfully subscribed!');
+        setEmail('');
+      } else {
+        setMessage(data.error || 'Failed to subscribe.');
+      }
+    } catch (err) {
+      setMessage('A network error occurred.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
   const footerSections = [
     {
       title: 'Explore',
@@ -50,7 +81,7 @@ export const Footer: React.FC<FooterProps> = ({ className }) => {
 
       {/* Newsletter Section */}
       <div className="border-b border-slate-medium">
-        <div className="max-w-container mx-auto px-4 md:px-8 py-16 md:py-24">
+        <div className="max-w-container mx-auto px-4 md:px-8 py-8 md:py-12">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -63,24 +94,31 @@ export const Footer: React.FC<FooterProps> = ({ className }) => {
               Subscribe to our newsletter for updates on new IPs, courses, and collaborations.
             </p>
 
-            <form className="flex flex-col md:flex-row gap-4">
+            <form onSubmit={handleSubscribe} className="flex flex-col md:flex-row gap-4">
               <input
                 type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 placeholder="your@email.com"
                 className="flex-1 px-4 py-3 rounded-lg bg-slate-medium text-cream placeholder-slate-light focus:outline-none focus:ring-2 focus:ring-teal-light transition-all"
                 required
               />
-              <Button variant="primary" size="md" className="md:whitespace-nowrap">
-                Subscribe
+              <Button type="submit" variant="primary" size="md" className="md:whitespace-nowrap" disabled={isSubmitting}>
+                {isSubmitting ? 'Subscribing...' : 'Subscribe'}
               </Button>
             </form>
+            {message && (
+              <p className={`mt-3 text-sm ${message.includes('Success') ? 'text-teal-light' : 'text-red-400'}`}>
+                {message}
+              </p>
+            )}
           </motion.div>
         </div>
       </div>
 
       {/* Main Footer Content */}
-      <div className="max-w-container mx-auto px-4 md:px-8 py-16 md:py-24">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+      <div className="max-w-container mx-auto px-4 md:px-8 py-8 md:py-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-10">
           {/* Brand Column */}
           <motion.div
             initial={{ opacity: 0, y: 16 }}
@@ -88,9 +126,13 @@ export const Footer: React.FC<FooterProps> = ({ className }) => {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-2xl md:text-3xl font-bold mb-4">TSC</h3>
-            <p className="text-sm text-slate-light leading-relaxed mb-6">
-              A talent-centric global culture-creation engine putting artists in control.
+            <img
+              src="/assets/tsclogo-text.png"
+              alt="TSC Logo"
+              className="h-16 md:h-20 w-auto object-contain mb-4 -ml-2"
+            />
+            <p className="text-sm text-slate-light leading-relaxed mb-6 font-alan-sans">
+              Unfolding artist force
             </p>
 
             {/* Social Links */}
@@ -119,7 +161,7 @@ export const Footer: React.FC<FooterProps> = ({ className }) => {
               >
                 LinkedIn
               </motion.a>
-              <motion.a
+              {/* <motion.a
                 href="https://www.instagram.com/sandeshshandilya?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
                 target="_blank"
                 rel="noopener noreferrer"
@@ -130,7 +172,7 @@ export const Footer: React.FC<FooterProps> = ({ className }) => {
                 transition={{ delay: 0.2 }}
               >
                 Sandesh IG
-              </motion.a>
+              </motion.a> */}
             </div>
           </motion.div>
 

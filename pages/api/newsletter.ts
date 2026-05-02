@@ -32,8 +32,12 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       };
     } else {
       const serviceAccountPath = path.join(process.cwd(), 'google_service_account.json');
-      const serviceAccountJson = fs.readFileSync(serviceAccountPath, 'utf8');
-      serviceAccount = JSON.parse(serviceAccountJson);
+      if (fs.existsSync(serviceAccountPath)) {
+        const serviceAccountJson = fs.readFileSync(serviceAccountPath, 'utf8');
+        serviceAccount = JSON.parse(serviceAccountJson);
+      } else {
+        throw new Error('Google Service Account credentials missing. Please set GOOGLE_SERVICE_ACCOUNT_EMAIL and GOOGLE_PRIVATE_KEY in production.');
+      }
     }
 
     // Create an auth client

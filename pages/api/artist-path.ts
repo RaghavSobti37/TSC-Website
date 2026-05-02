@@ -53,13 +53,16 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     if (process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL && process.env.GOOGLE_PRIVATE_KEY) {
       serviceAccount = {
         client_email: process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
-        // Replace escaped newlines and remove any surrounding quotes added by Vercel
         private_key: process.env.GOOGLE_PRIVATE_KEY.replace(/\\n/g, '\n').replace(/^"|"$/g, ''),
       };
     } else {
       const serviceAccountPath = path.join(process.cwd(), 'google_service_account.json');
-      const serviceAccountJson = fs.readFileSync(serviceAccountPath, 'utf8');
-      serviceAccount = JSON.parse(serviceAccountJson);
+      if (fs.existsSync(serviceAccountPath)) {
+        const serviceAccountJson = fs.readFileSync(serviceAccountPath, 'utf8');
+        serviceAccount = JSON.parse(serviceAccountJson);
+      } else {
+        throw new Error('Google Service Account credentials missing. Please set GOOGLE_SERVICE_ACCOUNT_EMAIL and GOOGLE_PRIVATE_KEY in production.');
+      }
     }
 
     // Create an auth client

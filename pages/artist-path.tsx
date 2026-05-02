@@ -5,7 +5,8 @@ import { CheckCircle2, ChevronRight } from 'lucide-react';
 
 export default function ArtistPath() {
   const [formData, setFormData] = useState({
-    fullName: '',
+    firstName: '',
+    lastName: '',
     stageName: '',
     place: '',
     instagram: '',
@@ -44,6 +45,22 @@ export default function ArtistPath() {
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    
+    // Basic Validations
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      setErrorMsg('Please enter a valid email address.');
+      setIsSubmitting(false);
+      return;
+    }
+
+    const mobileClean = formData.mobile.replace(/\D/g, '');
+    if (mobileClean.length < 10) {
+      setErrorMsg('Please enter a valid mobile number with country code (e.g., +91...)');
+      setIsSubmitting(false);
+      return;
+    }
+
     setErrorMsg('');
 
     try {
@@ -72,32 +89,34 @@ export default function ArtistPath() {
         <title>Artist Path & Journey</title>
       </Head>
 
-      <main className="min-h-screen bg-[#050505] text-white pt-24 md:pt-48 pb-16 px-1 md:px-6 relative overflow-hidden">
+      <main className={`min-h-screen bg-[#050505] text-white pb-16 px-1 md:px-6 relative overflow-hidden ${isSubmitted ? 'flex items-center justify-center pt-0' : 'pt-24 md:pt-48'}`}>
         {/* Background Gradients */}
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-teal-dark/30 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
         <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-pumpkin/10 rounded-full blur-[120px] translate-y-1/3 -translate-x-1/3 pointer-events-none"></div>
 
-        <div className="max-w-4xl mx-auto relative z-10">
+        <div className="max-w-4xl w-full mx-auto relative z-10">
           {isSubmitted ? (
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              className="bg-teal-primary/20 border border-teal-light/30 rounded-2xl p-8 sm:p-12 text-center"
-            >
-              <CheckCircle2 className="w-16 h-16 text-teal-light mx-auto mb-6" />
-              <h2 className="text-2xl sm:text-3xl font-bold text-cream font-signika mb-4">
-                Thank You for Sharing
-              </h2>
-              <p className="text-cream-dark/80 mb-8">
-                Your journey has been recorded. We'll be in touch soon to see how we can support your growth.
-              </p>
-              <button
-                onClick={() => window.location.href = '/'}
-                className="inline-flex items-center gap-2 bg-teal-dark hover:bg-teal-light text-cream px-6 py-3 rounded-lg font-semibold transition-colors"
+            <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#050505]">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                className="bg-teal-primary/20 border border-teal-light/30 rounded-2xl p-8 sm:p-12 text-center max-w-lg w-full"
               >
-                Return to Home <ChevronRight className="w-4 h-4" />
-              </button>
-            </motion.div>
+                <CheckCircle2 className="w-16 h-16 text-teal-light mx-auto mb-6" />
+                <h2 className="text-2xl sm:text-3xl font-bold text-cream font-signika mb-4">
+                  Thank You for Sharing
+                </h2>
+                <p className="text-cream-dark/80 mb-8">
+                  Your journey has been recorded. We'll be in touch soon to see how we can support your growth.
+                </p>
+                <button
+                  onClick={() => window.location.href = '/'}
+                  className="inline-flex items-center gap-2 bg-teal-dark hover:bg-teal-light text-cream px-6 py-3 rounded-lg font-semibold transition-colors"
+                >
+                  Return to Home <ChevronRight className="w-4 h-4" />
+                </button>
+              </motion.div>
+            </div>
           ) : (
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -146,16 +165,29 @@ export default function ArtistPath() {
                   </div>
 
                   <div className="grid grid-cols-1 gap-6">
-                    <div className="space-y-2">
-                      <label className="text-sm font-semibold text-cream-dark/90">Full Name: (The name on your ID) *</label>
-                      <input
-                        required
-                        type="text"
-                        name="fullName"
-                        value={formData.fullName}
-                        onChange={handleChange}
-                        className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3 text-cream focus:border-teal-light focus:ring-1 focus:ring-teal-light outline-none transition-all"
-                      />
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                      <div className="space-y-2">
+                        <label className="text-sm font-semibold text-cream-dark/90">First Name: *</label>
+                        <input
+                          required
+                          type="text"
+                          name="firstName"
+                          value={formData.firstName}
+                          onChange={handleChange}
+                          className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3 text-cream focus:border-teal-light focus:ring-1 focus:ring-teal-light outline-none transition-all"
+                        />
+                      </div>
+                      <div className="space-y-2">
+                        <label className="text-sm font-semibold text-cream-dark/90">Last Name: *</label>
+                        <input
+                          required
+                          type="text"
+                          name="lastName"
+                          value={formData.lastName}
+                          onChange={handleChange}
+                          className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3 text-cream focus:border-teal-light focus:ring-1 focus:ring-teal-light outline-none transition-all"
+                        />
+                      </div>
                     </div>
                     <div className="space-y-2">
                       <label className="text-sm font-semibold text-cream-dark/90">Stage Name / Identity: (If different from above)</label>

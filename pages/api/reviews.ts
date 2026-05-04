@@ -23,7 +23,6 @@ const rowColumnOrder = [
   'usefulness',
   'courseInterest',
   'weightedRating',
-  'oneLineExperience',
   'improvementSuggestion',
   'name',
   'title',

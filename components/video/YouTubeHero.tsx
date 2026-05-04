@@ -19,7 +19,7 @@ export default function YouTubeHero({
         width="100%"
         height="100%"
         src={`https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&controls=0&modestbranding=1`}
-        title="The Soul Company Hero Video"
+        title="The Shakti Collective Hero Video"
         frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen

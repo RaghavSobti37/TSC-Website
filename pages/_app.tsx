@@ -19,16 +19,16 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta name="theme-color" content="#083D3A" />
         <link rel="icon" href="/assets/favicon.png" />
         <link rel="apple-touch-icon" href="/assets/favicon.png" />
-        <title>The Soul Company</title>
+        <title>The Shakti Collective</title>
         <meta name="description" content="A global ecosystem for emerging artists and brands to co-create cultural IP." />
-        <meta property="og:title" content="The Soul Company" />
+        <meta property="og:title" content="The Shakti Collective" />
         <meta property="og:description" content="A global ecosystem for emerging artists and brands to co-create cultural IP." />
-        <meta property="og:image" content="https://www.thesoulcompany.com/assets/banner.jpg" />
-        <meta property="og:url" content="https://www.thesoulcompany.com" />
+        <meta property="og:image" content="https://theshakticollective.in/assets/banner.jpg" />
+        <meta property="og:url" content="https://theshakticollective.in" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="The Soul Company" />
+        <meta name="twitter:title" content="The Shakti Collective" />
         <meta name="twitter:description" content="A global ecosystem for emerging artists and brands to co-create cultural IP." />
-        <meta name="twitter:image" content="https://www.thesoulcompany.com/assets/banner.jpg" />
+        <meta name="twitter:image" content="https://theshakticollective.in/assets/banner.jpg" />
       </Head>
 
       <div className={`min-h-screen flex flex-col ${isReviewPage ? 'bg-[#050505]' : 'bg-cream'}`}>

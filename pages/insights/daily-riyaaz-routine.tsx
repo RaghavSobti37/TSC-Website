@@ -6,7 +6,7 @@ export default function DailyRiyaazRoutine() {
   return (
     <>
       <Head>
-        <title>The Daily Riyaaz Routine - The Soul Company</title>
+        <title>The Daily Riyaaz Routine - The Shakti Collective</title>
         <meta
           name="description"
           content="A practical guide to improving your voice (even if you only have 20 minutes). Discover the ideal daily structure."

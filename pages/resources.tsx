@@ -10,7 +10,7 @@ export default function ResourcesPage() {
   return (
     <>
       <Head>
-        <title>Resources - The Soul Company</title>
+        <title>Resources - The Shakti Collective</title>
         <meta
           name="description"
           content="Explore our curated resources, Instagram highlights, insightful blog posts, and a directory of free tools and assets for music production and business."

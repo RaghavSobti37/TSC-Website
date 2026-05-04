@@ -6,7 +6,7 @@ export default function ArtistReleasePlaybook() {
   return (
     <>
       <Head>
-        <title>The Artist Release Playbook - The Soul Company</title>
+        <title>The Artist Release Playbook - The Shakti Collective</title>
         <meta
           name="description"
           content="How to release your music without it getting lost. Learn the pre-release, release day, and post-release strategies."

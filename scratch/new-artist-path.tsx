@@ -69,7 +69,7 @@ export default function ArtistPath() {
   return (
     <>
       <Head>
-        <title>Artist Path & Journey | The Soul Company</title>
+        <title>Artist Path & Journey | The Shakti Collective</title>
       </Head>
 
       <main className="min-h-screen bg-[#050505] text-white pt-36 md:pt-48 pb-16 px-2 sm:px-6 relative overflow-hidden">

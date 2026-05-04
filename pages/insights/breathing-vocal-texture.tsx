@@ -6,7 +6,7 @@ export default function BreathingVocalTexture() {
   return (
     <>
       <Head>
-        <title>Breathing Techniques & Vocal Texture - The Soul Company</title>
+        <title>Breathing Techniques & Vocal Texture - The Shakti Collective</title>
         <meta
           name="description"
           content="Most singers think their problem is pitch. It’s not. It’s breath. How to improve your vocal texture practically."

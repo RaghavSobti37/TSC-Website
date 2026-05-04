@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Button } from '@/components/buttons/Button';
 import { cn } from '@/lib/utils';
 
 interface FooterProps {
@@ -10,8 +9,8 @@ interface FooterProps {
 }
 
 /**
- * Footer Component
- * Global footer with navigation, newsletter signup, and legal links
+ * Footer — TSC Revamp
+ * Updated brand tagline, links, and visual style
  */
 export const Footer: React.FC<FooterProps> = ({ className }) => {
   const [email, setEmail] = useState('');
@@ -30,95 +29,103 @@ export const Footer: React.FC<FooterProps> = ({ className }) => {
         body: JSON.stringify({ email }),
       });
       const data = await res.json();
-
       if (data.success) {
-        setMessage('Successfully subscribed!');
+        setMessage('Welcome to the collective!');
         setEmail('');
       } else {
         setMessage(data.error || 'Failed to subscribe.');
       }
-    } catch (err) {
+    } catch {
       setMessage('A network error occurred.');
     } finally {
       setIsSubmitting(false);
     }
   };
+
   const footerSections = [
     {
       title: 'Explore',
       links: [
-        { label: 'Ecosystem', href: '/#ecosystem' },
-        { label: 'IP & Stories', href: '/#ip-gallery' },
-        { label: 'Academy', href: '/#academy' },
+        { label: 'The Roundway', href: '/#solution' },
+        { label: 'Work Catalogue', href: '/#ip-gallery' },
+        { label: 'TSC Academy', href: 'https://tscacademy.in', external: true },
         { label: 'Meet the Team', href: '/#team' },
-        { label: 'Artist Community', href: '/#artists' },
+        { label: 'Resources', href: '/resources' },
       ],
     },
     {
-      title: 'About',
+      title: 'Artists',
       links: [
-        { label: 'Partnerships', href: '/#collaborations' },
-        { label: 'Contact Us', href: '/#contact' },
-        { label: 'Instagram', href: 'https://www.instagram.com/the_shakti_collective?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==' },
-        { label: 'LinkedIn', href: 'https://www.linkedin.com/in/rohitsobti/' },
+        { label: 'Artist Path', href: '/artist-path' },
+        { label: 'Main Bhi Artist', href: '#' },
+        { label: 'Masterclasses', href: 'https://tscacademy.in' },
+        { label: 'Mentorship', href: 'https://tscacademy.in' },
       ],
     },
     {
-      title: 'Legal',
+      title: 'Connect',
       links: [
+        { label: 'Partner With Us', href: 'mailto:hello@theshaktcollective.com' },
+        { label: 'Instagram', href: 'https://www.instagram.com/the_shakti_collective', external: true },
+        { label: 'LinkedIn', href: 'https://www.linkedin.com/in/rohitsobti/', external: true },
         { label: 'Privacy Policy', href: '#' },
-        { label: 'Terms of Service', href: '#' },
-        { label: 'Cookie Policy', href: '#' },
       ],
     },
   ];
 
   return (
     <footer className={cn('bg-charcoal text-cream', className)}>
-      {/* Brand gradient top-border — connects from Contact section above */}
+      {/* Brand gradient border */}
       <div className="h-px bg-gradient-to-r from-teal-primary via-pumpkin to-teal-primary opacity-60" />
-      <div className="h-0.5 bg-gradient-to-r from-transparent via-pumpkin/30 to-transparent mb-0" />
 
       {/* Newsletter Section */}
-      <div className="border-b border-slate-medium">
-        <div className="max-w-container mx-auto px-4 md:px-8 py-8 md:py-12">
+      <div className="border-b border-white/10">
+        <div className="max-w-container mx-auto px-4 md:px-8 py-10 md:py-14">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="max-w-prose"
+            className="flex flex-col md:flex-row md:items-center md:justify-between gap-8"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Stay updated</h2>
-            <p className="text-base md:text-lg text-slate-light mb-8">
-              Subscribe to our newsletter for updates on new IPs, courses, and collaborations.
-            </p>
+            <div className="max-w-md">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 font-signika">
+                Stay in the collective
+              </h2>
+              <p className="text-sm md:text-base text-white/50 font-alan-sans">
+                Updates on new IPs, masterclasses, artist opportunities, and cultural moments.
+              </p>
+            </div>
 
-            <form onSubmit={handleSubscribe} className="flex flex-col md:flex-row gap-4">
+            <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-3 w-full md:max-w-sm">
               <input
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="your@email.com"
-                className="flex-1 px-4 py-3 rounded-lg bg-slate-medium text-cream placeholder-slate-light focus:outline-none focus:ring-2 focus:ring-teal-light transition-all"
+                className="flex-1 px-4 py-3 rounded-full bg-white/10 text-cream placeholder-white/30 border border-white/15 focus:outline-none focus:border-pumpkin/60 transition-all text-sm"
                 required
               />
-              <Button type="submit" variant="primary" size="md" className="md:whitespace-nowrap" disabled={isSubmitting}>
-                {isSubmitting ? 'Subscribing...' : 'Subscribe'}
-              </Button>
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="px-6 py-3 rounded-full bg-pumpkin text-cream font-bold font-alan-sans text-sm hover:bg-pumpkin/90 transition-all disabled:opacity-50 whitespace-nowrap"
+              >
+                {isSubmitting ? 'Joining...' : 'Join →'}
+              </button>
             </form>
-            {message && (
-              <p className={`mt-3 text-sm ${message.includes('Success') ? 'text-teal-light' : 'text-red-400'}`}>
-                {message}
-              </p>
-            )}
           </motion.div>
+          {message && (
+            <p className={`mt-3 text-sm font-alan-sans ${message.includes('Welcome') ? 'text-sea-foam' : 'text-red-400'}`}>
+              {message}
+            </p>
+          )}
         </div>
       </div>
 
       {/* Main Footer Content */}
-      <div className="max-w-container mx-auto px-4 md:px-8 py-8 md:py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-10">
+      <div className="max-w-container mx-auto px-4 md:px-8 py-10 md:py-14">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
           {/* Brand Column */}
           <motion.div
             initial={{ opacity: 0, y: 16 }}
@@ -128,24 +135,21 @@ export const Footer: React.FC<FooterProps> = ({ className }) => {
           >
             <img
               src="/assets/tsclogo-text.png"
-              alt="TSC Logo"
-              className="h-16 md:h-20 w-auto object-contain mb-4 -ml-2"
+              alt="The Shakti Collective"
+              className="h-14 md:h-16 w-auto object-contain mb-4 -ml-1"
             />
-            <p className="text-sm text-slate-light leading-relaxed mb-6 font-alan-sans">
-              Unfolding artist force
+            <p className="text-sm text-white/40 leading-relaxed mb-6 font-alan-sans">
+              Unfolding artists&apos; force.
             </p>
 
             {/* Social Links */}
             <div className="flex gap-4">
               <motion.a
-                href="https://www.instagram.com/the_shakti_collective?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                href="https://www.instagram.com/the_shakti_collective"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-slate-light hover:text-cream transition-colors text-sm font-medium"
+                className="text-white/40 hover:text-cream transition-colors text-sm font-medium font-alan-sans"
                 whileHover={{ y: -2 }}
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ delay: 0 }}
               >
                 Instagram
               </motion.a>
@@ -153,26 +157,11 @@ export const Footer: React.FC<FooterProps> = ({ className }) => {
                 href="https://www.linkedin.com/in/rohitsobti/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-slate-light hover:text-cream transition-colors text-sm font-medium"
+                className="text-white/40 hover:text-cream transition-colors text-sm font-medium font-alan-sans"
                 whileHover={{ y: -2 }}
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ delay: 0.1 }}
               >
                 LinkedIn
               </motion.a>
-              {/* <motion.a
-                href="https://www.instagram.com/sandeshshandilya?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-slate-light hover:text-cream transition-colors text-sm font-medium"
-                whileHover={{ y: -2 }}
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ delay: 0.2 }}
-              >
-                Sandesh IG
-              </motion.a> */}
             </div>
           </motion.div>
 
@@ -185,7 +174,7 @@ export const Footer: React.FC<FooterProps> = ({ className }) => {
               transition={{ duration: 0.6, delay: (sectionIndex + 1) * 0.1 }}
               viewport={{ once: true }}
             >
-              <h4 className="text-sm uppercase tracking-widest font-bold text-cream mb-6">
+              <h4 className="text-xs uppercase tracking-[0.25em] font-bold text-white/30 mb-5 font-alan-sans">
                 {section.title}
               </h4>
               <ul className="space-y-3">
@@ -193,8 +182,10 @@ export const Footer: React.FC<FooterProps> = ({ className }) => {
                   <li key={link.label}>
                     <motion.a
                       href={link.href}
-                      className="text-slate-light hover:text-cream transition-colors text-sm"
-                      whileHover={{ x: 4 }}
+                      target={'external' in link && link.external ? '_blank' : undefined}
+                      rel={'external' in link && link.external ? 'noopener noreferrer' : undefined}
+                      className="text-white/50 hover:text-cream transition-colors text-sm font-alan-sans"
+                      whileHover={{ x: 3 }}
                     >
                       {link.label}
                     </motion.a>
@@ -211,10 +202,10 @@ export const Footer: React.FC<FooterProps> = ({ className }) => {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="pt-8 border-t border-slate-medium flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-light"
+          className="pt-6 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-white/25 font-alan-sans"
         >
-          <p>© {new Date().getFullYear()} TSC. All rights reserved.</p>
-          <p>Designed for creative minds</p>
+          <p>© {new Date().getFullYear()} The Shakti Collective. All rights reserved.</p>
+          <p>A talent-first global culture engine.</p>
         </motion.div>
       </div>
     </footer>

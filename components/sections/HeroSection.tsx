@@ -1,451 +1,226 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { FishyButton } from '@/components/ui/fishy-button';
 
 /**
- * Hero Section - The Eternal Arc
- * Cinematic split-canvas with video, Arc visualization, light leaks, and editorial text
- * Fades out smoothly as user scrolls down or clicks Explore
+ * Hero Section - TSC Revamp
+ * "Unfolding artists' force" — talent-first culture engine
+ * Dual CTAs: Artists + Brands
  */
-export default function HeroSection({ 
-  activeSection, 
-  setActiveSection 
-}: { 
-  activeSection?: string; 
+export default function HeroSection({
+  activeSection,
+  setActiveSection,
+}: {
+  activeSection?: string;
   setActiveSection?: (section: string) => void;
 }) {
   const [reducedMotion, setReducedMotion] = useState(false);
 
   useEffect(() => {
-    // Check for reduced motion preference
-    const prefersReducedMotion = window.matchMedia('(prefers-reduce-motion: reduce)').matches;
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     setReducedMotion(prefersReducedMotion);
   }, []);
 
-  // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.08,
-        delayChildren: 0.2,
-      },
+      transition: { staggerChildren: 0.1, delayChildren: 0.3 },
     },
   };
 
   const lineVariants = {
-    hidden: { opacity: 0, y: 16 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.7,
-        ease: 'easeOut',
-      },
-    },
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: 'easeOut' } },
   };
 
-  const buttonVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.8, delay: 1.2 },
-    },
-    hover: { scale: 1.05, borderColor: '#ffecd1' },
+  const scrollToSection = (id: string) => {
+    if (setActiveSection) setActiveSection(id);
+    setTimeout(() => {
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }, 100);
   };
+
+  const rippleColors = [
+    '#0B5147', '#D4622D', '#126D5E', '#E07548', '#0B5147',
+    '#D4622D', '#126D5E', '#E07548', '#0B5147', '#D4622D',
+    '#126D5E', '#E07548',
+  ];
+
+  const ripplePositions = [
+    [150, 200], [500, 120], [850, 180], [80, 450], [120, 750],
+    [300, 900], [550, 950], [880, 820], [920, 350], [950, 600],
+    [250, 500], [750, 520],
+  ];
 
   return (
     <section
       id="hero"
-      className="relative w-screen h-screen overflow-hidden bg-black flex items-center justify-center transition-opacity duration-800"
-
+      className="relative w-screen min-h-screen overflow-hidden bg-black flex flex-col items-center justify-center"
     >
-      {/* Black Background with Pattern Gradients for Continuity */}
+      {/* ── Background layers ── */}
       <div className="absolute inset-0 bg-black" />
-      
-      {/* Teal Pattern Gradient - Top Right */}
+
+      {/* Teal glow — top-right */}
       <motion.div
-        className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-teal-dark via-teal-dark to-transparent rounded-full blur-3xl opacity-15 pointer-events-none"
-        animate={
-          !reducedMotion
-            ? {
-                y: [0, -20, 0],
-                x: [0, 10, 0],
-              }
-            : {}
-        }
-        transition={
-          !reducedMotion
-            ? { duration: 8, repeat: Infinity, ease: 'easeInOut' }
-            : {}
-        }
+        className="absolute top-0 right-0 w-72 sm:w-96 h-72 sm:h-96 bg-gradient-to-br from-teal-dark via-teal-dark to-transparent rounded-full blur-3xl opacity-15 pointer-events-none"
+        animate={!reducedMotion ? { y: [0, -20, 0], x: [0, 10, 0] } : {}}
+        transition={!reducedMotion ? { duration: 8, repeat: Infinity, ease: 'easeInOut' } : {}}
       />
 
-      {/* Pumpkin Pattern Gradient - Bottom Left */}
+      {/* Pumpkin glow — bottom-left */}
       <motion.div
-        className="absolute bottom-0 left-0 w-80 h-80 bg-gradient-to-br from-pumpkin to-transparent rounded-full blur-3xl opacity-10 pointer-events-none"
-        animate={
-          !reducedMotion
-            ? {
-                y: [0, 20, 0],
-                x: [0, -10, 0],
-              }
-            : {}
-        }
-        transition={
-          !reducedMotion
-            ? { duration: 10, repeat: Infinity, ease: 'easeInOut' }
-            : {}
-        }
+        className="absolute bottom-0 left-0 w-56 sm:w-80 h-56 sm:h-80 bg-gradient-to-br from-pumpkin to-transparent rounded-full blur-3xl opacity-10 pointer-events-none"
+        animate={!reducedMotion ? { y: [0, 20, 0], x: [0, -10, 0] } : {}}
+        transition={!reducedMotion ? { duration: 10, repeat: Infinity, ease: 'easeInOut' } : {}}
       />
 
-      {/* Subtle Dotted Pattern Overlay */}
+      {/* Dot pattern */}
       <div
-        className="absolute inset-0 opacity-5 pointer-events-none"
-        style={{
-          backgroundImage: 'url("/patterns/textures/dots.svg")',
-          backgroundSize: '40px 40px',
-        }}
+        className="absolute inset-0 opacity-[0.04] pointer-events-none"
+        style={{ backgroundImage: 'url("/patterns/textures/dots.svg")', backgroundSize: '36px 36px' }}
       />
 
-      {/* Dark Overlay for Text Contrast */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/40" />
+      {/* Dark gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/10 to-black/50" />
 
-      {/* Random Ripple Circles - Spread everywhere */}
+      {/* ── Ripple circles ── */}
       <motion.svg
         className="absolute inset-0 w-full h-full pointer-events-none"
         viewBox="0 0 1000 1000"
+        preserveAspectRatio="xMidYMid slice"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 1 }}
+        transition={{ duration: 1.2 }}
       >
-        {/* Circle 1 - Top Left */}
-        <motion.circle
-          cx="150"
-          cy="200"
-          r="60"
-          fill="none"
-          stroke="#0B5147"
-          strokeWidth="2"
-          opacity="0.4"
-          animate={
-            !reducedMotion
-              ? { r: [60, 380], opacity: [0.4, 0] }
-              : {}
-          }
-          transition={
-            !reducedMotion
-              ? { duration: 3.2, repeat: Infinity, ease: 'easeOut' }
-              : {}
-          }
-        />
-        {/* Circle 2 - Top Center */}
-        <motion.circle
-          cx="500"
-          cy="120"
-          r="55"
-          fill="none"
-          stroke="#D4622D"
-          strokeWidth="2"
-          opacity="0.38"
-          animate={
-            !reducedMotion
-              ? { r: [55, 370], opacity: [0.38, 0] }
-              : {}
-          }
-          transition={
-            !reducedMotion
-              ? { duration: 3.1, repeat: Infinity, ease: 'easeOut', delay: 0.25 }
-              : {}
-          }
-        />
-        {/* Circle 3 - Top Right */}
-        <motion.circle
-          cx="850"
-          cy="180"
-          r="65"
-          fill="none"
-          stroke="#126D5E"
-          strokeWidth="2"
-          opacity="0.4"
-          animate={
-            !reducedMotion
-              ? { r: [65, 390], opacity: [0.4, 0] }
-              : {}
-          }
-          transition={
-            !reducedMotion
-              ? { duration: 3.3, repeat: Infinity, ease: 'easeOut', delay: 0.5 }
-              : {}
-          }
-        />
-        {/* Circle 4 - Left Upper */}
-        <motion.circle
-          cx="80"
-          cy="450"
-          r="58"
-          fill="none"
-          stroke="#E07548"
-          strokeWidth="2"
-          opacity="0.36"
-          animate={
-            !reducedMotion
-              ? { r: [58, 375], opacity: [0.36, 0] }
-              : {}
-          }
-          transition={
-            !reducedMotion
-              ? { duration: 2.95, repeat: Infinity, ease: 'easeOut', delay: 0.75 }
-              : {}
-          }
-        />
-        {/* Circle 5 - Left Lower */}
-        <motion.circle
-          cx="120"
-          cy="750"
-          r="62"
-          fill="none"
-          stroke="#0B5147"
-          strokeWidth="2"
-          opacity="0.39"
-          animate={
-            !reducedMotion
-              ? { r: [62, 385], opacity: [0.39, 0] }
-              : {}
-          }
-          transition={
-            !reducedMotion
-              ? { duration: 3.15, repeat: Infinity, ease: 'easeOut', delay: 1 }
-              : {}
-          }
-        />
-        {/* Circle 6 - Bottom Left */}
-        <motion.circle
-          cx="300"
-          cy="900"
-          r="57"
-          fill="none"
-          stroke="#D4622D"
-          strokeWidth="2"
-          opacity="0.4"
-          animate={
-            !reducedMotion
-              ? { r: [57, 372], opacity: [0.4, 0] }
-              : {}
-          }
-          transition={
-            !reducedMotion
-              ? { duration: 3.05, repeat: Infinity, ease: 'easeOut', delay: 1.25 }
-              : {}
-          }
-        />
-        {/* Circle 7 - Bottom Center */}
-        <motion.circle
-          cx="550"
-          cy="950"
-          r="61"
-          fill="none"
-          stroke="#126D5E"
-          strokeWidth="2"
-          opacity="0.37"
-          animate={
-            !reducedMotion
-              ? { r: [61, 382], opacity: [0.37, 0] }
-              : {}
-          }
-          transition={
-            !reducedMotion
-              ? { duration: 3.2, repeat: Infinity, ease: 'easeOut', delay: 1.5 }
-              : {}
-          }
-        />
-        {/* Circle 8 - Bottom Right */}
-        <motion.circle
-          cx="880"
-          cy="820"
-          r="59"
-          fill="none"
-          stroke="#E07548"
-          strokeWidth="2"
-          opacity="0.41"
-          animate={
-            !reducedMotion
-              ? { r: [59, 378], opacity: [0.41, 0] }
-              : {}
-          }
-          transition={
-            !reducedMotion
-              ? { duration: 2.9, repeat: Infinity, ease: 'easeOut', delay: 1.75 }
-              : {}
-          }
-        />
-        {/* Circle 9 - Right Upper */}
-        <motion.circle
-          cx="920"
-          cy="350"
-          r="63"
-          fill="none"
-          stroke="#0B5147"
-          strokeWidth="2"
-          opacity="0.38"
-          animate={
-            !reducedMotion
-              ? { r: [63, 388], opacity: [0.38, 0] }
-              : {}
-          }
-          transition={
-            !reducedMotion
-              ? { duration: 3.25, repeat: Infinity, ease: 'easeOut', delay: 2 }
-              : {}
-          }
-        />
-        {/* Circle 10 - Right Center */}
-        <motion.circle
-          cx="950"
-          cy="600"
-          r="56"
-          fill="none"
-          stroke="#D4622D"
-          strokeWidth="2"
-          opacity="0.4"
-          animate={
-            !reducedMotion
-              ? { r: [56, 368], opacity: [0.4, 0] }
-              : {}
-          }
-          transition={
-            !reducedMotion
-              ? { duration: 3.1, repeat: Infinity, ease: 'easeOut', delay: 2.25 }
-              : {}
-          }
-        />
-        {/* Circle 11 - Center Left Offset */}
-        <motion.circle
-          cx="250"
-          cy="500"
-          r="64"
-          fill="none"
-          stroke="#126D5E"
-          strokeWidth="2"
-          opacity="0.39"
-          animate={
-            !reducedMotion
-              ? { r: [64, 392], opacity: [0.39, 0] }
-              : {}
-          }
-          transition={
-            !reducedMotion
-              ? { duration: 3.05, repeat: Infinity, ease: 'easeOut', delay: 2.5 }
-              : {}
-          }
-        />
-        {/* Circle 12 - Center Right Offset */}
-        <motion.circle
-          cx="750"
-          cy="520"
-          r="58"
-          fill="none"
-          stroke="#E07548"
-          strokeWidth="2"
-          opacity="0.4"
-          animate={
-            !reducedMotion
-              ? { r: [58, 376], opacity: [0.4, 0] }
-              : {}
-          }
-          transition={
-            !reducedMotion
-              ? { duration: 3.15, repeat: Infinity, ease: 'easeOut', delay: 2.75 }
-              : {}
-          }
-        />
+        {ripplePositions.map(([cx, cy], i) => (
+          <motion.circle
+            key={i}
+            cx={cx}
+            cy={cy}
+            r={58}
+            fill="none"
+            stroke={rippleColors[i]}
+            strokeWidth="1.5"
+            opacity="0.35"
+            animate={!reducedMotion ? { r: [58, 380], opacity: [0.35, 0] } : {}}
+            transition={
+              !reducedMotion
+                ? { duration: 3 + (i % 5) * 0.15, repeat: Infinity, ease: 'easeOut', delay: i * 0.28 }
+                : {}
+            }
+          />
+        ))}
       </motion.svg>
 
-      {/* Content Container - Editorial Layout */}
+      {/* ── Main content ──
+          pt accounts for fixed header (~80px nav + 16px gap = ~96px)
+          pb provides room for the scroll hint without content crowding */}
       <motion.div
-        className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 md:px-8 text-center"
+        className="relative z-10 w-full max-w-5xl mx-auto px-5 sm:px-8 md:px-12 text-center flex flex-col items-center pt-24 pb-16 sm:pt-28 sm:pb-20 md:pt-32 md:pb-24"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
       >
-        {/* Main Headline - Staggered Line Reveal */}
+        {/* Eyebrow */}
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="text-pumpkin font-black text-[10px] sm:text-xs md:text-sm uppercase tracking-[0.3em] mb-4 sm:mb-5 md:mb-6 font-alan-sans"
+        >
+          A Talent-First Global Culture Engine
+        </motion.p>
+
+        {/* Main headline */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="mb-8 sm:mb-10 md:mb-12"
+          className="mb-6 sm:mb-8 md:mb-10 w-full"
         >
+          {/* METEORS */}
           <motion.h1
             variants={lineVariants}
-            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold font-signika text-cream leading-[0.95] tracking-tighter"
+            className="text-[13vw] xs:text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold font-signika text-cream leading-[0.88] tracking-tighter"
           >
-            A LIVING
+            METEORS
           </motion.h1>
+
+          {/* "to" divider */}
+          <motion.div
+            variants={lineVariants}
+            className="flex items-center justify-center gap-3 sm:gap-5 my-2 sm:my-3"
+          >
+            <div className="h-px bg-pumpkin/50 flex-1 max-w-[60px] sm:max-w-[100px] md:max-w-[140px]" />
+            <span className="text-pumpkin font-alan-sans text-xs sm:text-sm uppercase tracking-[0.25em]">to</span>
+            <div className="h-px bg-pumpkin/50 flex-1 max-w-[60px] sm:max-w-[100px] md:max-w-[140px]" />
+          </motion.div>
+
+          {/* MAESTROS */}
           <motion.h1
             variants={lineVariants}
-            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold font-signika text-transparent bg-clip-text bg-gradient-to-r from-cream via-pumpkin to-cream leading-[0.95] tracking-tighter"
+            className="text-[13vw] xs:text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold font-signika text-transparent bg-clip-text bg-gradient-to-r from-cream via-pumpkin to-cream leading-[0.88] tracking-tighter"
           >
-            ECOSYSTEM
+            MAESTROS
           </motion.h1>
         </motion.div>
 
-        {/* Subheading - Editorial Copy */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-          className="mb-10 sm:mb-12 md:mb-16 space-y-4 sm:space-y-6"
+        {/* Subheadline */}
+        <motion.p
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.9 }}
+          className="text-sm sm:text-base md:text-lg text-cream/75 font-alan-sans leading-relaxed max-w-xl md:max-w-2xl mx-auto mb-8 sm:mb-10 md:mb-12"
         >
-          <motion.p
-            variants={lineVariants}
-            className="text-sm sm:text-base md:text-lg lg:text-xl text-cream/90 font-alan-sans leading-relaxed max-w-2xl mx-auto"
+          Unfolding artists&apos; force — a living ecosystem where emerging talent prepares, creates, produces, and monetizes their craft globally.
+        </motion.p>
+
+        {/* Dual CTAs */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 1.2 }}
+          className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center w-full max-w-sm sm:max-w-none"
+        >
+          {/* Artist CTA — filled */}
+          <button
+            onClick={() => scrollToSection('artist-path-section')}
+            className="w-full sm:w-auto px-7 sm:px-9 py-3.5 sm:py-4 rounded-full bg-pumpkin text-cream font-bold font-signika text-sm sm:text-base tracking-wide hover:bg-pumpkin/90 transition-all duration-300 shadow-lg shadow-pumpkin/30 hover:shadow-pumpkin/50 hover:scale-[1.03] active:scale-[0.98]"
           >
-            For emerging artists and brands to co-create cultural IP.
-          </motion.p>
-          <motion.p
-            variants={lineVariants}
-            className="text-sm sm:text-base md:text-lg lg:text-xl text-cream/80 font-alan-sans leading-relaxed max-w-2xl mx-auto"
+            I&apos;m an Artist →
+          </button>
+
+          {/* Brand CTA — ghost */}
+          <button
+            onClick={() => scrollToSection('brand-collab')}
+            className="w-full sm:w-auto px-7 sm:px-9 py-3.5 sm:py-4 rounded-full border-2 border-cream/35 text-cream font-bold font-signika text-sm sm:text-base tracking-wide hover:border-cream/70 hover:bg-cream/8 transition-all duration-300 hover:scale-[1.03] active:scale-[0.98]"
           >
-            Mentorship, resources, and direct monetization.
-          </motion.p>
+            I&apos;m a Brand
+          </button>
         </motion.div>
 
-        {/* CTA Button - Ghost Style */}
+        {/* Scroll hint — below CTAs, sits in natural flow */}
         <motion.div
-          variants={buttonVariants}
-          initial="hidden"
-          animate="visible"
-          whileHover="hover"
-          whileTap={{ scale: 0.98 }}
-          className="flex justify-center"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 2.2, duration: 1 }}
+          className="mt-12 sm:mt-14 md:mt-16 flex flex-col items-center gap-1.5"
         >
-          <FishyButton 
-            variant="pumpkin" 
-            width="clamp(200px, 80vw, 420px)"
-            height="clamp(50px, 12vw, 81px)"
-            onClick={() => {
-              if (setActiveSection) {
-                setActiveSection('ecosystem');
-                setTimeout(() => {
-                  const ecosystem = document.getElementById('ecosystem');
-                  if (ecosystem) {
-                    ecosystem.scrollIntoView({ behavior: 'smooth' });
-                  }
-                }, 100);
-              }
-            }}
-          >
-            Explore
-          </FishyButton>
+          <motion.div
+            animate={!reducedMotion ? { y: [0, 6, 0] } : {}}
+            transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+            className="w-px h-8 sm:h-10 bg-gradient-to-b from-cream/35 to-transparent"
+          />
+          <span className="text-cream/25 text-[10px] sm:text-xs font-alan-sans uppercase tracking-[0.22em]">
+            Scroll
+          </span>
         </motion.div>
       </motion.div>
 
-      {/* Decorative Corner Accents */}
-      <div className="absolute top-8 left-8 w-20 h-20 border-l-2 border-t-2 border-cream/20" />
-      <div className="absolute bottom-8 right-8 w-20 h-20 border-r-2 border-b-2 border-cream/20" />
+      {/* Corner accents — hidden on very small screens */}
+      <div className="hidden sm:block absolute top-6 left-6 md:top-8 md:left-8 w-12 md:w-16 h-12 md:h-16 border-l-2 border-t-2 border-cream/10" />
+      <div className="hidden sm:block absolute bottom-6 right-6 md:bottom-8 md:right-8 w-12 md:w-16 h-12 md:h-16 border-r-2 border-b-2 border-cream/10" />
     </section>
   );
 }
-

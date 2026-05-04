@@ -3,12 +3,10 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
-import { FishyButton } from '@/components/ui/fishy-button';
 
 /**
- * Capsule Navigation Header - Fully Responsive
- * Frosted glass navigation pill positioned at top-center of viewport
- * Responsive across all device sizes (375px - 1920px+)
+ * TSC Capsule Navigation Header — Revamped
+ * Frosted glass pill nav with updated brand structure
  */
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -22,13 +20,8 @@ export default function Header() {
   }, []);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 50);
+    const handleResize = () => setWindowWidth(window.innerWidth);
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     window.addEventListener('resize', handleResize, { passive: true });
@@ -50,13 +43,32 @@ export default function Header() {
     }
   };
 
-  if (!isMounted) {
-    return null;
-  }
+  const goTo = (href: string) => {
+    window.location.href = href;
+    setIsMobileMenuOpen(false);
+  };
 
-  // Determine if we're on mobile/tablet/desktop
+  if (!isMounted) return null;
+
   const isMobileView = windowWidth < 768;
   const isTabletView = windowWidth >= 768 && windowWidth < 1024;
+
+  const desktopLinks = [
+    { label: 'The Roundway', action: () => scrollToSection('solution') },
+    { label: 'Our Work', action: () => scrollToSection('ip-gallery') },
+    { label: 'Team', action: () => scrollToSection('team') },
+    { label: 'Resources', action: () => goTo('/resources') },
+    { label: 'Artist Path', action: () => goTo('/artist-path') },
+  ];
+
+  const mobileLinks = [
+    { label: 'The Roundway', action: () => scrollToSection('solution') },
+    { label: 'Our Work', action: () => scrollToSection('ip-gallery') },
+    { label: 'Team', action: () => scrollToSection('team') },
+    { label: 'Resources', action: () => goTo('/resources') },
+    { label: 'Artist Path', action: () => goTo('/artist-path') },
+    { label: 'Partner With Us', action: () => scrollToSection('brand-collab') },
+  ];
 
   return (
     <motion.nav
@@ -66,16 +78,16 @@ export default function Header() {
       className="fixed top-4 md:top-6 left-0 right-0 z-50 flex justify-center px-3 sm:px-4"
     >
       <motion.div
-        className={`rounded-full backdrop-blur-xl border shadow-xl flex items-center justify-between transition-all duration-300 ${isScrolled
-            ? 'bg-white/25 border-white/40'
-            : 'bg-white/20 border-white/30'
-          } ${isMobileView
+        className={`rounded-full backdrop-blur-xl border shadow-xl flex items-center justify-between transition-all duration-300 ${
+          isScrolled ? 'bg-white/25 border-white/40' : 'bg-white/15 border-white/25'
+        } ${
+          isMobileView
             ? 'px-3 py-2.5 w-full max-w-sm sm:max-w-md'
             : isTabletView
-              ? 'px-6 py-3 gap-4'
-              : 'px-8 py-4 gap-8'
-          }`}
-        whileHover={!isMobileView ? { scale: 1.02 } : undefined}
+            ? 'px-5 py-3 gap-4'
+            : 'px-8 py-4 gap-8'
+        }`}
+        whileHover={!isMobileView ? { scale: 1.01 } : undefined}
       >
         {/* Logo */}
         <motion.button
@@ -91,60 +103,38 @@ export default function Header() {
         >
           <img
             src="/assets/tsclogo.png"
-            alt="TSC Logo"
-            className={`${isMobileView ? 'h-8' : 'h-10 sm:h-12'} w-auto object-contain`}
+            alt="The Shakti Collective"
+            className={`${isMobileView ? 'h-8' : 'h-10 sm:h-11'} w-auto object-contain`}
           />
         </motion.button>
 
-        {/* Desktop Links - Hidden on mobile/tablet */}
+        {/* Desktop Links */}
         {!isMobileView && (
-          <div className={`hidden lg:flex items-center ${isTabletView ? 'gap-3' : 'gap-6'}`}>
-            <button
-              onClick={() => scrollToSection('ecosystem')}
-              className="text-xs sm:text-sm font-alan-sans text-cream/90 hover:text-cream transition text-outline"
+          <div className={`hidden lg:flex items-center ${isTabletView ? 'gap-3' : 'gap-5'}`}>
+            {desktopLinks.map((link) => (
+              <button
+                key={link.label}
+                onClick={link.action}
+                className="text-xs sm:text-sm font-alan-sans text-cream/90 hover:text-cream transition font-medium"
+                style={{ textShadow: '0 1px 3px rgba(0,0,0,0.5)' }}
+              >
+                {link.label}
+              </button>
+            ))}
+
+            {/* Academy CTA pill */}
+            <a
+              href="https://tscacademy.in"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="ml-2 px-4 py-1.5 rounded-full bg-pumpkin text-cream text-xs sm:text-sm font-bold font-alan-sans hover:bg-pumpkin/90 transition-all duration-200 whitespace-nowrap"
             >
-              Ecosystem
-            </button>
-            <button
-              onClick={() => scrollToSection('ip-gallery')}
-              className="text-xs sm:text-sm font-alan-sans text-cream/90 hover:text-cream transition text-outline"
-            >
-              IP &amp; Stories
-            </button>
-            <button
-              onClick={() => scrollToSection('academy')}
-              className="text-xs sm:text-sm font-alan-sans text-cream/90 hover:text-cream transition text-outline"
-            >
-              Academy
-            </button>
-            <button
-              onClick={() => scrollToSection('collaborations')}
-              className="text-xs sm:text-sm font-alan-sans text-cream/90 hover:text-cream transition text-outline"
-            >
-              Partnerships
-            </button>
-            <button
-              onClick={() => scrollToSection('team')}
-              className="text-xs sm:text-sm font-alan-sans text-cream/90 hover:text-cream transition text-outline"
-            >
-              Team
-            </button>
-            <button
-              onClick={() => window.location.href = '/resources'}
-              className="text-xs sm:text-sm font-alan-sans text-cream/90 hover:text-cream transition text-outline"
-            >
-              Resources
-            </button>
-            <button
-              onClick={() => window.location.href = '/artist-path'}
-              className="text-xs sm:text-sm font-alan-sans text-cream/90 hover:text-cream transition text-outline"
-            >
-              Artist Path
-            </button>
+              TSC Academy ↗
+            </a>
           </div>
         )}
 
-        {/* Mobile Hamburger Menu Button */}
+        {/* Hamburger */}
         <motion.button
           whileHover={{ scale: 1.15 }}
           whileTap={{ scale: 0.95 }}
@@ -161,7 +151,7 @@ export default function Header() {
                 exit={{ rotate: 90, opacity: 0 }}
                 transition={{ duration: 0.2 }}
               >
-                <X size={24} strokeWidth={2} />
+                <X size={22} strokeWidth={2} />
               </motion.div>
             ) : (
               <motion.div
@@ -171,14 +161,14 @@ export default function Header() {
                 exit={{ rotate: -90, opacity: 0 }}
                 transition={{ duration: 0.2 }}
               >
-                <Menu size={24} strokeWidth={2} />
+                <Menu size={22} strokeWidth={2} />
               </motion.div>
             )}
           </AnimatePresence>
         </motion.button>
       </motion.div>
 
-      {/* Mobile/Tablet Dropdown Menu */}
+      {/* Mobile Dropdown */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
@@ -186,86 +176,28 @@ export default function Header() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.2 }}
-            className="absolute top-20 left-4 right-4 px-4 py-4 sm:px-6 sm:py-5 rounded-lg bg-white/20 backdrop-blur-xl border border-white/30 flex flex-col gap-3 sm:gap-4"
+            className="absolute top-20 left-4 right-4 px-4 py-4 sm:px-6 sm:py-5 rounded-2xl bg-charcoal/95 backdrop-blur-xl border border-white/10 flex flex-col gap-1"
           >
-            <button
-              onClick={() => {
-                scrollToSection('ecosystem');
-                setIsMobileMenuOpen(false);
-              }}
-              className="text-left text-xs sm:text-sm font-alan-sans text-cream/90 hover:text-cream transition py-2 border-b border-white/10 text-outline"
+            {mobileLinks.map((link, i) => (
+              <button
+                key={link.label}
+                onClick={link.action}
+                className="text-left text-sm font-alan-sans text-cream/90 hover:text-cream hover:pl-2 transition-all py-3 border-b border-white/5 last:border-0"
+              >
+                {link.label}
+              </button>
+            ))}
+            <a
+              href="https://tscacademy.in"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-3 text-center px-4 py-3 rounded-full bg-pumpkin text-cream text-sm font-bold font-alan-sans hover:bg-pumpkin/90 transition"
             >
-              Ecosystem
-            </button>
-            <button
-              onClick={() => {
-                scrollToSection('ip-gallery');
-                setIsMobileMenuOpen(false);
-              }}
-              className="text-left text-xs sm:text-sm font-alan-sans text-cream/90 hover:text-cream transition py-2 border-b border-white/10 text-outline"
-            >
-              IP &amp; Stories
-            </button>
-            <button
-              onClick={() => {
-                scrollToSection('academy');
-                setIsMobileMenuOpen(false);
-              }}
-              className="text-left text-xs sm:text-sm font-alan-sans text-cream/90 hover:text-cream transition py-2 border-b border-white/10 text-outline"
-            >
-              Academy
-            </button>
-            <button
-              onClick={() => {
-                scrollToSection('collaborations');
-                setIsMobileMenuOpen(false);
-              }}
-              className="text-left text-xs sm:text-sm font-alan-sans text-cream/90 hover:text-cream transition py-2 border-b border-white/10 text-outline"
-            >
-              Partnerships
-            </button>
-            <button
-              onClick={() => {
-                scrollToSection('team');
-                setIsMobileMenuOpen(false);
-              }}
-              className="text-left text-xs sm:text-sm font-alan-sans text-cream/90 hover:text-cream transition py-2 border-b border-white/10 text-outline"
-            >
-              Team
-            </button>
-            <button
-              onClick={() => {
-                scrollToSection('contact');
-                setIsMobileMenuOpen(false);
-              }}
-              className="text-left text-xs sm:text-sm font-alan-sans text-cream/90 hover:text-cream transition py-2 border-b border-white/10 text-outline"
-            >
-              Contact
-            </button>
-            <button
-              onClick={() => {
-                window.location.href = '/resources';
-                setIsMobileMenuOpen(false);
-              }}
-              className="text-left text-xs sm:text-sm font-alan-sans text-cream/90 hover:text-cream transition py-2 border-b border-white/10 text-outline"
-            >
-              Resources
-            </button>
-            <button
-              onClick={() => {
-                window.location.href = '/artist-path';
-                setIsMobileMenuOpen(false);
-              }}
-              className="text-left text-xs sm:text-sm font-alan-sans text-cream/90 hover:text-cream transition py-2 border-white/10 text-outline"
-            >
-              Artist Path
-            </button>
-
-            {/* Mobile CTA Buttons - Temporarily removed */}
+              TSC Academy ↗
+            </a>
           </motion.div>
         )}
       </AnimatePresence>
     </motion.nav>
   );
 }
-

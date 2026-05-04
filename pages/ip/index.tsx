@@ -5,16 +5,19 @@ import Section from '@/components/layout/Section';
 import { cms } from '@/lib/cms';
 import Head from 'next/head';
 import React, { useState } from 'react';
-import UnfoldReveal from '@/components/animations/UnfoldReveal';
+import { motion } from 'framer-motion';
 
+/**
+ * IP & Work Catalogue Page — TSC Revamp
+ * Full catalogue of TSC's cultural IP and creative properties
+ */
 export default function IPPage() {
   const [selectedType, setSelectedType] = useState<string | null>(null);
   const [selectedStatus, setSelectedStatus] = useState<string | null>(null);
 
   const allIPs = cms.getIPs();
-  const typeFilters = Array.from(new Set(allIPs.map(ip => ip.type)));
-  const statusFilters = Array.from(new Set(allIPs.map(ip => ip.status)));
-
+  const typeFilters = Array.from(new Set(allIPs.map((ip) => ip.type)));
+  const statusFilters = Array.from(new Set(allIPs.map((ip) => ip.status)));
 
   const filteredIP = allIPs
     .map((ip) => ({
@@ -35,40 +38,63 @@ export default function IPPage() {
   return (
     <>
       <Head>
-        <title>IP & Stories - TSC</title>
-        <meta name="description" content="Explore TSC's portfolio of cultural IP and creative stories" />
+        <title>Work Catalogue — The Shakti Collective</title>
+        <meta
+          name="description"
+          content="Explore The Shakti Collective's portfolio of cultural IP and creative properties — from TSC Academy to Main Bhi Artist and Havells mYOUsic."
+        />
       </Head>
 
       {/* Hero */}
-      <Section background="cream" padding="xl" className="min-h-[50vh] flex items-center justify-center">
-        <Container>
-          <UnfoldReveal variant="fadeUp">
-            <h1 className="text-5xl md:text-7xl font-bold text-charcoal mb-6">
-              IP & Stories
-            </h1>
-            <p className="text-lg md:text-xl text-slate-medium max-w-2xl">
-              Breakthrough cultural IP created at the intersection of talent, technology, and commerce.
-            </p>
-          </UnfoldReveal>
+      <section className="relative bg-teal-dark min-h-[55vh] flex items-end pb-16 sm:pb-20 pt-36 sm:pt-40 overflow-hidden px-4 sm:px-6">
+        {/* Background */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-pumpkin/10 via-teal-dark to-teal-dark pointer-events-none" />
+        <motion.div
+          className="absolute top-20 right-20 w-80 h-80 rounded-full border border-cream/5 pointer-events-none"
+          animate={{ scale: [1, 1.2, 1], opacity: [0.5, 0, 0.5] }}
+          transition={{ duration: 7, repeat: Infinity }}
+        />
+
+        <Container className="relative z-10">
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-pumpkin font-black text-xs uppercase tracking-[0.3em] mb-4 font-alan-sans"
+          >
+            Work Catalogue
+          </motion.p>
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+            className="text-5xl sm:text-6xl md:text-7xl font-bold text-cream font-signika mb-5 leading-tight"
+          >
+            What we&apos;ve built
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-base sm:text-lg text-cream/60 max-w-2xl font-alan-sans"
+          >
+            Breakthrough cultural IP created at the intersection of talent, technology, and authentic storytelling.
+          </motion.p>
         </Container>
-      </Section>
+      </section>
 
       {/* Filter Section */}
       <Section background="white" padding="lg">
         <Container>
-          <div className="space-y-6">
+          <div className="flex flex-col sm:flex-row gap-6 sm:gap-10">
             {/* Type Filter */}
-            <div>
-              <h3 className="text-sm uppercase tracking-widest font-bold text-charcoal mb-4">
-                Type
+            <div className="flex-1">
+              <h3 className="text-xs uppercase tracking-[0.2em] font-bold text-charcoal/40 mb-3 font-alan-sans">
+                Filter by Type
               </h3>
-              <div className="flex flex-wrap gap-3">
-                <Button
-                  onClick={() => setSelectedType(null)}
-                  variant={selectedType === null ? 'primary' : 'outline'}
-                  size="sm"
-                >
-                  All Types
+              <div className="flex flex-wrap gap-2">
+                <Button onClick={() => setSelectedType(null)} variant={selectedType === null ? 'primary' : 'outline'} size="sm">
+                  All
                 </Button>
                 {typeFilters.map((type) => (
                   <Button
@@ -85,16 +111,12 @@ export default function IPPage() {
 
             {/* Status Filter */}
             <div>
-              <h3 className="text-sm uppercase tracking-widest font-bold text-charcoal mb-4">
+              <h3 className="text-xs uppercase tracking-[0.2em] font-bold text-charcoal/40 mb-3 font-alan-sans">
                 Status
               </h3>
-              <div className="flex flex-wrap gap-3">
-                <Button
-                  onClick={() => setSelectedStatus(null)}
-                  variant={selectedStatus === null ? 'primary' : 'outline'}
-                  size="sm"
-                >
-                  All Status
+              <div className="flex flex-wrap gap-2">
+                <Button onClick={() => setSelectedStatus(null)} variant={selectedStatus === null ? 'primary' : 'outline'} size="sm">
+                  All
                 </Button>
                 {statusFilters.map((status) => (
                   <Button
@@ -119,7 +141,7 @@ export default function IPPage() {
             <CMSGrid items={filteredIP} columns="3" variant="ip" />
           ) : (
             <div className="text-center py-16">
-              <p className="text-lg text-slate-medium">
+              <p className="text-lg text-charcoal/40 font-alan-sans">
                 No IP matching your filters. Try adjusting your selection.
               </p>
             </div>

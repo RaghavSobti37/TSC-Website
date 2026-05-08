@@ -475,15 +475,18 @@ export default function BookACall() {
                   <X className="w-6 h-6" />
                 </button>
               </div>
-              <input
-                type="date"
-                onChange={(e) => {
-                  setValue('date', e.target.value);
-                  setTimeout(() => setShowDatePicker(false), 300);
-                }}
-                min={new Date().toISOString().split('T')[0]}
-                className="w-full bg-cream rounded-2xl py-6 px-8 text-2xl font-bold border-2 border-transparent focus:border-pumpkin outline-none"
-              />
+              <div className="relative">
+                <Calendar className="absolute left-6 top-1/2 -translate-y-1/2 w-6 h-6 text-pumpkin pointer-events-none" />
+                <input
+                  type="date"
+                  onChange={(e) => {
+                    setValue('date', e.target.value);
+                    setTimeout(() => setShowDatePicker(false), 300);
+                  }}
+                  min={new Date().toISOString().split('T')[0]}
+                  className="w-full bg-slate-50 text-charcoal rounded-2xl py-6 pl-16 pr-6 text-xl font-bold border-2 border-transparent focus:border-pumpkin outline-none appearance-none"
+                />
+              </div>
               <div className="mt-8">
                 <button
                   onClick={() => setShowDatePicker(false)}

@@ -56,17 +56,17 @@ export default function Header() {
   const desktopLinks = [
     { label: 'The Roundway', action: () => scrollToSection('solution') },
     { label: 'Our Work', action: () => scrollToSection('ip-gallery') },
-    { label: 'Team', action: () => scrollToSection('team') },
     { label: 'Resources', action: () => goTo('/resources') },
     { label: 'Artist Path', action: () => goTo('/artist-path') },
+    { label: 'Book a Call', action: () => goTo('/book-a-call') },
   ];
 
   const mobileLinks = [
     { label: 'The Roundway', action: () => scrollToSection('solution') },
     { label: 'Our Work', action: () => scrollToSection('ip-gallery') },
-    { label: 'Team', action: () => scrollToSection('team') },
     { label: 'Resources', action: () => goTo('/resources') },
     { label: 'Artist Path', action: () => goTo('/artist-path') },
+    { label: 'Book a Call', action: () => goTo('/book-a-call') },
     { label: 'Partner With Us', action: () => scrollToSection('brand-collab') },
   ];
 
@@ -79,7 +79,7 @@ export default function Header() {
     >
       <motion.div
         className={`rounded-full backdrop-blur-xl border shadow-xl flex items-center justify-between transition-all duration-300 ${
-          isScrolled ? 'bg-white/25 border-white/40' : 'bg-white/15 border-white/25'
+          isScrolled ? 'bg-white/90 border-black/10' : 'bg-black/90 border-white/10'
         } ${
           isMobileView
             ? 'px-3 py-2.5 w-full max-w-sm sm:max-w-md'
@@ -115,8 +115,9 @@ export default function Header() {
               <button
                 key={link.label}
                 onClick={link.action}
-                className="text-xs sm:text-sm font-alan-sans text-cream/90 hover:text-cream transition font-medium"
-                style={{ textShadow: '0 1px 3px rgba(0,0,0,0.5)' }}
+                className={`text-xs sm:text-sm font-alan-sans transition font-medium ${
+                  isScrolled ? 'text-black/80 hover:text-black' : 'text-white/80 hover:text-white'
+                }`}
               >
                 {link.label}
               </button>
@@ -124,12 +125,10 @@ export default function Header() {
 
             {/* Academy CTA pill */}
             <a
-              href="https://tscacademy.in"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="ml-2 px-4 py-1.5 rounded-full bg-pumpkin text-cream text-xs sm:text-sm font-bold font-alan-sans hover:bg-pumpkin/90 transition-all duration-200 whitespace-nowrap"
+              href="/tscacademy"
+              className="ml-2 px-4 py-1.5 rounded-full bg-orange text-white text-xs sm:text-sm font-bold font-alan-sans hover:bg-orange/90 transition-all duration-200 whitespace-nowrap"
             >
-              TSC Academy ↗
+              TSC Academy
             </a>
           </div>
         )}
@@ -139,7 +138,9 @@ export default function Header() {
           whileHover={{ scale: 1.15 }}
           whileTap={{ scale: 0.95 }}
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className={`${isMobileView ? 'flex' : 'hidden'} md:hidden items-center justify-center text-cream hover:text-cream/80 transition flex-shrink-0 p-1.5`}
+          className={`${isMobileView ? 'flex' : 'hidden'} md:hidden items-center justify-center ${
+            isScrolled ? 'text-black' : 'text-white'
+          } hover:opacity-80 transition flex-shrink-0 p-1.5`}
           aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
         >
           <AnimatePresence mode="wait">
@@ -176,24 +177,22 @@ export default function Header() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.2 }}
-            className="absolute top-20 left-4 right-4 px-4 py-4 sm:px-6 sm:py-5 rounded-2xl bg-charcoal/95 backdrop-blur-xl border border-white/10 flex flex-col gap-1"
+            className="absolute top-20 left-4 right-4 px-4 py-4 sm:px-6 sm:py-5 rounded-2xl bg-black/95 backdrop-blur-xl border border-white/10 flex flex-col gap-1"
           >
             {mobileLinks.map((link, i) => (
               <button
                 key={link.label}
                 onClick={link.action}
-                className="text-left text-sm font-alan-sans text-cream/90 hover:text-cream hover:pl-2 transition-all py-3 border-b border-white/5 last:border-0"
+                className="text-left text-sm font-alan-sans text-white/90 hover:text-white hover:pl-2 transition-all py-3 border-b border-white/5 last:border-0"
               >
                 {link.label}
               </button>
             ))}
             <a
-              href="https://tscacademy.in"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-3 text-center px-4 py-3 rounded-full bg-pumpkin text-cream text-sm font-bold font-alan-sans hover:bg-pumpkin/90 transition"
+              href="/tscacademy"
+              className="mt-3 text-center px-4 py-3 rounded-full bg-orange text-white text-sm font-bold font-alan-sans hover:bg-orange/90 transition"
             >
-              TSC Academy ↗
+              TSC Academy
             </a>
           </motion.div>
         )}

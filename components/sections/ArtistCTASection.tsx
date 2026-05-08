@@ -9,16 +9,16 @@ export default function ArtistCTASection() {
   return (
     <section
       id="artist-path-section"
-      className="relative py-24 sm:py-32 md:py-40 px-4 sm:px-6 bg-cream overflow-hidden"
+      className="relative py-24 sm:py-32 md:py-40 px-4 sm:px-6 bg-white overflow-hidden"
     >
       {/* Decorative circles */}
       <motion.div
-        className="absolute -top-32 -right-32 w-96 h-96 rounded-full border border-pumpkin/10 pointer-events-none"
+        className="absolute -top-32 -right-32 w-96 h-96 rounded-full border border-orange/10 pointer-events-none"
         animate={{ rotate: 360 }}
         transition={{ duration: 60, repeat: Infinity, ease: 'linear' }}
       />
       <motion.div
-        className="absolute -bottom-20 -left-20 w-64 h-64 rounded-full border border-teal-dark/10 pointer-events-none"
+        className="absolute -bottom-20 -left-20 w-64 h-64 rounded-full border border-teal/10 pointer-events-none"
         animate={{ rotate: -360 }}
         transition={{ duration: 40, repeat: Infinity, ease: 'linear' }}
       />
@@ -29,7 +29,7 @@ export default function ArtistCTASection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-pumpkin font-black text-xs uppercase tracking-[0.3em] mb-4 font-alan-sans"
+          className="text-orange font-black text-xs uppercase tracking-[0.3em] mb-4 font-alan-sans"
         >
           For Artists
         </motion.p>
@@ -39,7 +39,7 @@ export default function ArtistCTASection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.1 }}
           viewport={{ once: true }}
-          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-charcoal font-signika leading-tight mb-6"
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-black font-signika leading-tight mb-6"
         >
           Your journey starts<br className="hidden sm:block" /> with one question.
         </motion.h2>
@@ -49,7 +49,7 @@ export default function ArtistCTASection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true }}
-          className="text-base sm:text-lg md:text-xl text-charcoal/60 font-alan-sans leading-relaxed mb-10 sm:mb-12 max-w-2xl mx-auto"
+          className="text-base sm:text-lg md:text-xl text-black/60 font-alan-sans leading-relaxed mb-10 sm:mb-12 max-w-2xl mx-auto"
         >
           Who are you as an artist? What do you want to create? Where do you want to go? Take the Artist Path questionnaire and let us help map your future.
         </motion.p>
@@ -63,7 +63,7 @@ export default function ArtistCTASection() {
         >
           <a
             href="/artist-path"
-            className="px-10 py-4 sm:py-5 rounded-full bg-pumpkin text-cream font-bold font-signika text-base sm:text-lg tracking-wide hover:bg-pumpkin/90 transition-all duration-300 shadow-lg shadow-pumpkin/30 hover:shadow-pumpkin/50 hover:scale-105"
+            className="px-10 py-4 sm:py-5 rounded-full bg-orange text-white font-bold font-signika text-base sm:text-lg tracking-wide hover:bg-orange/90 transition-all duration-300 shadow-lg shadow-orange/30 hover:shadow-orange/50 hover:scale-105 whitespace-nowrap"
           >
             Take the Artist Path →
           </a>
@@ -71,7 +71,7 @@ export default function ArtistCTASection() {
             href="https://tscacademy.in"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-10 py-4 sm:py-5 rounded-full border-2 border-charcoal/20 text-charcoal font-bold font-signika text-base sm:text-lg tracking-wide hover:border-charcoal hover:bg-charcoal/5 transition-all duration-300 hover:scale-105"
+            className="px-10 py-4 sm:py-5 rounded-full border-2 border-black/20 text-black font-bold font-signika text-base sm:text-lg tracking-wide hover:border-black hover:bg-black/5 transition-all duration-300 hover:scale-105 whitespace-nowrap"
           >
             Explore TSC Academy
           </a>

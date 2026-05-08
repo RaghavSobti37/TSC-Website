@@ -1,0 +1,84 @@
+# THE SHAKTI COLLECTIVE - MASTER FRONTEND PROMPT
+
+## 1. BRAND IDENTITY & VISION
+**The Shakti Collective (TSC)** is possibly the world’s first-ever original content-creation ecosystem built around empowering, mentoring, and managing talent (artistes). 
+- **Verb:** UNFOLD (remove constraints and let talent emerge).
+- **Mission:** A talent-first global culture-creation engine. 
+- **Core Proposition:** Spot - Nurture - Nourish - Monetize.
+- **Target Audience:** "Conscious Globalists" (Value original content, human perspectives, and spiritual/emotional residue).
+- **Core Values:** Fearlessness, Integrity, Love for Craft, Insatiable Curiosity.
+
+## 2. VISUAL DESIGN SYSTEM (STRICT GUIDELINES)
+
+### COLOR PALETTE
+- **Main Brand Color (Dominant):** Pumpkin (#b74b02) - Use this for the majority of the UI, primary CTAs, and key brand elements.
+- **Light Mode Background:** Cream (#ffecd1).
+- **Dark Mode Background:** Charcoal (#121212 or equivalent dark grey).
+- **Highlight Color:** Deep Teal (#083d3a) - Use strictly for major/important words and accentuating key information.
+- **Secondary Colors (Assets & Gradients):**
+  - Sea Foam (#126d5e)
+  - Red Oxide (#88281c)
+  - Mustard (#ad6517)
+  - Wine (#6d2034)
+  - Peacock (#08525f)
+  - Chestnut (#592314)
+
+### TYPOGRAPHY
+- **Primary Typeface (Headings/Titles):** Signika (Signika Light to Bold).
+- **Secondary Typeface (Body/Subheadings):** Alan Sans (Alan Sans Light to Bold).
+
+## 3. WEBSITE STRUCTURE & FLOW (HOME PAGE)
+
+### Section 1: Hero (1vh)
+- **Content:** Logo, Navigation (Links + Highlighted TSC Academy button), Hook + Direction.
+- **CTA:** Two CTAs - "For Artists" (Dominant) and "For Brands" (Lighter).
+- **Goal:** Create curiosity and encourage scrolling.
+
+### Section 2: The Hook (Optional)
+- **Content:** A quote or line that creates tension or adds clarity.
+
+### Section 3: The Problem (min 70vh)
+- **Content:** Dynamic height, communicates core pain points for artists (Potential over pessimism, Consciousness over algorithms).
+- **Goal:** Make the artist feel understood ("This is exactly my situation").
+
+### Section 4: The Solution (min 70vh)
+- **Content:** Clear statement of what TSC builds.
+- **Goal:** Make it feel "different" from existing industry models.
+
+### Section 5: How it Works (1vh)
+- **Content:** Visual journey (Spot -> Nurture -> Nourish -> Monetize). Use a nature-inspired analogy (plant growth).
+- **Goal:** Show "how your journey will change".
+
+### Section 6: CTA for Partners/Brands
+- **Content:** "Looking to build culture with artists?" -> "Partner with Us".
+- **Focus:** Rational value and ROI for brands.
+
+### Section 7: People (1vh)
+- **Content:** Founders (Sandesh Shandilya & Rohith Sobti).
+- **Goal:** Build credibility ("Built by people who shape the industry").
+
+### Section 8: Work Catalogue (1vh)
+- **Content:** Showcase Projects, Artists, and Stories.
+
+### Section 9: Featured Programmes
+- **Content:** Intro to TSC Academy (Masterclass, Base Programme, Accelerator).
+- **Link:** Directs to the TSC Academy site.
+
+### Section 10: FAQs & Footer
+- **Content:** Standard FAQs + AI Bot (RAG-based).
+
+## 4. UX/UI & DESIGN PRINCIPLES
+- **Modern Aesthetic:** Premium, state-of-the-art look and feel.
+- **Unique Transitions:** Implement smooth, non-standard transitions for elements (e.g., reveal animations, staggered entrance, parallax effects).
+- **Simple Navigation:** Easy to understand and navigate, despite high information density.
+- **Gradients & Assets:** Use the secondary colors to create rich gradients and assets, always anchored by Pumpkin.
+- **Micro-animations:** Subtle interactions to make the site feel "alive" and responsive.
+
+## 5. CONTENT SUMMARY (FOR AGENT CONTEXT)
+- **The Womb:** Music creation "adda" in Nashik.
+- **IPs:** Creation of cultural IPs for brands (Outsourced Culture Engine™).
+- **Artists for Change:** Using music to provoke thought on social/environmental issues without being preachy.
+- **Conscious Entertainment:** Musicals and movies for global audiences.
+
+---
+**INSTRUCTION:** Use this information to build a high-fidelity, responsive, and visually stunning frontend. Prioritize the Pumpkin/Cream/Deep Teal combination and ensure the "Unfold" philosophy is felt through the UI design (e.g., elements unfolding or expanding on interaction).

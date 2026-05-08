@@ -14,13 +14,13 @@ interface ButtonProps
 
 const variantStyles = {
   primary:
-    'bg-teal-dark text-white hover:bg-teal-primary active:bg-teal-dark shadow-teal',
+    'bg-teal text-white hover:bg-teal-dark active:bg-teal shadow-lg shadow-teal/20',
   secondary:
-    'bg-pumpkin text-white hover:bg-opacity-90 active:bg-opacity-100 shadow-md',
+    'bg-orange text-white hover:bg-orange-dark active:bg-orange shadow-lg shadow-orange/20',
   outline:
-    'border-2 border-teal-dark text-teal-dark hover:bg-teal-dark hover:text-white transition-colors',
+    'border-2 border-teal text-teal hover:bg-teal hover:text-white transition-colors',
   ghost:
-    'text-teal-dark hover:underline hover:underline-offset-4 transition-all',
+    'text-teal hover:underline hover:underline-offset-4 transition-all',
 };
 
 const sizeStyles = {

@@ -2,6 +2,7 @@ import React from 'react';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import Header from '@/components/layout/Header';
+import AcademyHeader from '@/components/layout/AcademyHeader';
 import { Footer } from '@/components/layout/Footer';
 import '@/src/index.css';
 
@@ -10,13 +11,17 @@ import { useRouter } from 'next/router';
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
   const isReviewPage = router.pathname === '/classicalreview' || router.pathname === '/masterclass-review01' || router.pathname === '/masterclass-review02';
+  
+  const isAcademyPage = router.pathname.startsWith('/tscacademy') || 
+                        router.pathname.startsWith('/masterclass/') || 
+                        router.pathname.startsWith('/courses/');
 
   return (
     <>
       <Head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#083D3A" />
+        <meta name="theme-color" content="#000000" />
         <link rel="icon" href="/assets/favicon.png" />
         <link rel="apple-touch-icon" href="/assets/favicon.png" />
         <title>The Shakti Collective</title>
@@ -32,7 +37,9 @@ export default function App({ Component, pageProps }: AppProps) {
       </Head>
 
       <div className={`min-h-screen flex flex-col ${isReviewPage ? 'bg-[#050505]' : 'bg-cream'}`}>
-        {!isReviewPage && <Header />}
+        {!isReviewPage && (
+          isAcademyPage ? <AcademyHeader /> : <Header />
+        )}
 
         <main className="flex-1">
           <Component {...pageProps} />

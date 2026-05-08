@@ -65,9 +65,9 @@ export default function LiveCultureTrack() {
   return (
     <Section
       id="live-culture"
-      background="transparent"
+      background="white"
       padding="xl"
-      className="relative py-24 bg-gradient-to-b from-cream-dark to-cream"
+      className="relative py-24 bg-white"
     >
       <Container className="max-w-full px-4 sm:px-8">
         {/* Section heading */}
@@ -78,10 +78,10 @@ export default function LiveCultureTrack() {
           viewport={{ once: true }}
           className="mb-12 text-center"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-charcoal mb-4 font-signika">
+          <h2 className="text-4xl md:text-5xl font-bold text-black mb-4 font-signika">
             Live Culture Track
           </h2>
-          <p className="text-lg text-slate-600 font-alan-sans">
+          <p className="text-lg text-black/60 font-alan-sans">
             Featured artist releases from our ecosystem
           </p>
         </motion.div>
@@ -134,7 +134,7 @@ export default function LiveCultureTrack() {
                     transition={{ duration: 0.2 }}
                     className="absolute inset-0 flex items-center justify-center"
                   >
-                    <div className="w-16 h-16 rounded-full bg-pumpkin flex items-center justify-center text-white text-2xl hover:bg-pumpkin-dark transition-all">
+                    <div className="w-16 h-16 rounded-full bg-orange flex items-center justify-center text-white text-2xl hover:bg-orange/80 transition-all">
                       ▶
                     </div>
                   </motion.div>
@@ -157,7 +157,7 @@ export default function LiveCultureTrack() {
                         <a
                           href={reel.spotifyUrl}
                           onClick={(e) => e.preventDefault()}
-                          className="w-8 h-8 rounded-full bg-pumpkin/80 hover:bg-pumpkin flex items-center justify-center text-cream text-xs font-bold transition-all"
+                          className="w-8 h-8 rounded-full bg-orange/80 hover:bg-orange flex items-center justify-center text-white text-xs font-bold transition-all"
                         >
                           S
                         </a>
@@ -166,7 +166,7 @@ export default function LiveCultureTrack() {
                         <a
                           href={reel.youtubeUrl}
                           onClick={(e) => e.preventDefault()}
-                          className="w-8 h-8 rounded-full bg-pumpkin/80 hover:bg-pumpkin flex items-center justify-center text-cream text-xs font-bold transition-all"
+                          className="w-8 h-8 rounded-full bg-orange/80 hover:bg-orange flex items-center justify-center text-white text-xs font-bold transition-all"
                         >
                           Y
                         </a>
@@ -186,7 +186,7 @@ export default function LiveCultureTrack() {
             viewport={{ once: true }}
             className="absolute right-0 top-1/2 transform -translate-y-1/2 pointer-events-none"
           >
-            <div className="text-pumpkin text-sm font-semibold font-alan-sans">
+            <div className="text-orange text-sm font-semibold font-alan-sans">
               ← Scroll →
             </div>
           </motion.div>
@@ -200,7 +200,7 @@ export default function LiveCultureTrack() {
           viewport={{ once: true }}
           className="mt-12 text-center"
         >
-          <a href="#artists" className="inline-block px-8 py-3 bg-pumpkin text-cream rounded-full font-semibold hover:bg-pumpkin-dark transition-all font-signika">
+          <a href="#artists" className="inline-block px-8 py-3 bg-orange text-white rounded-full font-semibold hover:bg-orange/80 transition-all font-signika">
             Discover More Artists →
           </a>
         </motion.div>

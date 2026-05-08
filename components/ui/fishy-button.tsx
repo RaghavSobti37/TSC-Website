@@ -23,8 +23,8 @@ export const FishyButton: React.FC<FishyButtonProps> = ({
   className = "",
   fontFamily,
   borderRadius = "20px",
-  width = "140px",
-  height = "53px",
+  width = "auto",
+  height = "64px",
   fishSpeed = "2.3s",
   variant = "pumpkin",
 }) => {
@@ -35,7 +35,8 @@ export const FishyButton: React.FC<FishyButtonProps> = ({
   const buttonStyle: React.CSSProperties = {
     fontFamily: fontFamily ? fontFamily : undefined,
     borderRadius: borderRadius,
-    width: width,
+    minWidth: "220px",
+    padding: "0 32px",
     height: height,
   };
 
@@ -85,7 +86,7 @@ export const FishyButton: React.FC<FishyButtonProps> = ({
       <div className="bubble"></div>
       <div className="bubble"></div>
       <div className="bubble"></div>
-      <span className="button__text" style={{ fontFamily: fontFamily ? fontFamily : undefined }}>
+      <span className="button__text whitespace-nowrap" style={{ fontFamily: fontFamily ? fontFamily : undefined }}>
         {children}
       </span>
 

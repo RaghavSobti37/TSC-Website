@@ -61,11 +61,11 @@ function ComingSoonBanner({ className = '' }: { className?: string }) {
       </defs>
 
       {/* Background */}
-      <rect width="800" height="340" fill="url(#csGrad)" />
+      <rect width="800" height="340" fill="#FFFFFF" />
 
       {/* Decorative circles */}
-      <circle cx="640" cy="60" r="120" fill="#D4622D" opacity="0.06" />
-      <circle cx="160" cy="280" r="90" fill="#D4622D" opacity="0.06" />
+      <circle cx="640" cy="60" r="120" fill="#FF8C00" opacity="0.06" />
+      <circle cx="160" cy="280" r="90" fill="#FF8C00" opacity="0.06" />
 
       {/* Grid lines */}
       {[0, 1, 2, 3, 4].map((i) => (
@@ -75,7 +75,7 @@ function ComingSoonBanner({ className = '' }: { className?: string }) {
           y1={i * 85}
           x2="800"
           y2={i * 85}
-          stroke="#FDF6F1"
+          stroke="#000000"
           strokeWidth="0.5"
           opacity="0.05"
         />
@@ -87,7 +87,7 @@ function ComingSoonBanner({ className = '' }: { className?: string }) {
           y1="0"
           x2={i * 133}
           y2="340"
-          stroke="#FDF6F1"
+          stroke="#000000"
           strokeWidth="0.5"
           opacity="0.05"
         />
@@ -99,26 +99,25 @@ function ComingSoonBanner({ className = '' }: { className?: string }) {
         y="155"
         textAnchor="middle"
         dominantBaseline="middle"
-        fill="#FDF6F1"
+        fill="#000000"
         fontSize="52"
         fontWeight="800"
         fontFamily="'Signika', sans-serif"
         letterSpacing="8"
-        filter="url(#csGlow)"
         opacity="0.9"
       >
         COMING SOON
       </text>
 
       {/* Accent underline */}
-      <rect x="280" y="178" width="240" height="4" rx="2" fill="#D4622D" opacity="0.8" />
+      <rect x="280" y="178" width="240" height="4" rx="2" fill="#FF8C00" opacity="0.8" />
 
       {/* Sub-label */}
       <text
         x="400"
         y="220"
         textAnchor="middle"
-        fill="#FDF6F1"
+        fill="#000000"
         fontSize="18"
         fontFamily="'Alan Sans', sans-serif"
         opacity="0.5"
@@ -151,14 +150,14 @@ function CourseCTAs({
       {/* Primary: Enroll Now — disabled (locked) when coming soon, active link otherwise */}
       {isComingSoon ? (
         <span
-          className={`${base} cursor-not-allowed bg-cream/10 text-cream/40 border border-cream/20 ${lg ? 'px-6 py-3 text-base' : 'px-4 py-2 text-sm'}`}
+          className={`${base} cursor-not-allowed bg-black/5 text-black/40 border border-black/10 ${lg ? 'px-6 py-3 text-base' : 'px-4 py-2 text-sm'}`}
         >
           🔒 Enroll Now
         </span>
       ) : (
         <a
           href={enrollUrl ?? '#contact'}
-          className={`${base} bg-pumpkin hover:bg-pumpkin/80 text-cream shadow-lg hover:shadow-pumpkin/30 ${lg ? 'px-7 py-3.5 text-base' : 'px-5 py-2.5 text-sm'}`}
+          className={`${base} bg-orange hover:bg-orange/80 text-white shadow-lg hover:shadow-orange/30 ${lg ? 'px-7 py-3.5 text-base' : 'px-5 py-2.5 text-sm'} whitespace-nowrap`}
         >
           Enroll Now →
         </a>
@@ -167,7 +166,7 @@ function CourseCTAs({
       {/* Coming Soon badge — only shown when the course is NOT yet active */}
       {isComingSoon && (
         <span
-          className={`${base} border border-pumpkin/40 bg-cream/10 text-cream/80 ${lg ? 'px-6 py-3 text-base' : 'px-4 py-2 text-sm'}`}
+          className={`${base} border border-orange/40 bg-black/5 text-black/80 ${lg ? 'px-6 py-3 text-base' : 'px-4 py-2 text-sm'}`}
         >
           ⏳ Coming Soon
         </span>
@@ -186,7 +185,7 @@ function FeaturedCourseCard({ course }: { course: Course }) {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
       viewport={{ once: true }}
-      className="w-full rounded-2xl overflow-hidden border border-pumpkin/40 bg-cream/5 backdrop-blur-sm shadow-2xl group"
+      className="w-full rounded-2xl overflow-hidden border border-orange/20 bg-white shadow-xl group"
     >
       <div className="flex flex-col lg:flex-row">
         {/* Banner image / placeholder — left on desktop, top on mobile */}
@@ -202,7 +201,7 @@ function FeaturedCourseCard({ course }: { course: Course }) {
           )}
 
           {/* Featured pill */}
-          <span className="absolute top-4 left-4 px-3 py-1 rounded-full bg-pumpkin text-cream text-xs font-bold uppercase tracking-widest font-alan-sans shadow-lg z-10">
+          <span className="absolute top-4 left-4 px-3 py-1 rounded-full bg-orange text-white text-xs font-bold uppercase tracking-widest font-alan-sans shadow-lg z-10">
             ⭐ Featured
           </span>
         </div>
@@ -211,21 +210,21 @@ function FeaturedCourseCard({ course }: { course: Course }) {
         <div className="flex-1 p-6 sm:p-8 lg:p-10 flex flex-col justify-between">
           <div>
             {/* Level badge */}
-            <span className="inline-block px-3 py-1 rounded-full bg-pumpkin/20 border border-pumpkin/40 text-pumpkin text-xs font-bold uppercase tracking-widest mb-4 font-alan-sans">
+            <span className="inline-block px-3 py-1 rounded-full bg-orange/10 border border-orange/30 text-orange text-xs font-bold uppercase tracking-widest mb-4 font-alan-sans">
               {course.level}
             </span>
 
-            <h4 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-cream mb-3 font-signika leading-tight">
+            <h4 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black mb-3 font-signika leading-tight">
               {course.title}
             </h4>
 
-            <p className="text-cream/75 font-alan-sans text-sm sm:text-base mb-4 leading-relaxed">
+            <p className="text-black/70 font-alan-sans text-sm sm:text-base mb-4 leading-relaxed">
               {course.description}
             </p>
 
-            <p className="text-cream/60 font-alan-sans text-sm">
+            <p className="text-black/50 font-alan-sans text-sm">
               Mentor:{' '}
-              <span className="font-semibold text-cream/90">{course.mentor}</span>
+              <span className="font-semibold text-black/80">{course.mentor}</span>
             </p>
           </div>
 
@@ -250,7 +249,7 @@ function SecondaryCourseCard({ course, index }: { course: Course; index: number 
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ delay: index * 0.15, duration: 0.6 }}
       viewport={{ once: true }}
-      className="flex flex-col rounded-xl overflow-hidden border border-cream/20 hover:border-pumpkin/40 bg-cream/5 backdrop-blur-sm hover:bg-cream/10 transition-all duration-300 group shadow-lg"
+      className="flex flex-col rounded-xl overflow-hidden border border-black/10 hover:border-orange/30 bg-white transition-all duration-300 group shadow-lg"
     >
       {/* Thumbnail banner */}
       <div className="w-full aspect-video overflow-hidden relative flex-shrink-0">
@@ -268,20 +267,20 @@ function SecondaryCourseCard({ course, index }: { course: Course; index: number 
       {/* Card body */}
       <div className="flex flex-col flex-1 p-5 sm:p-6">
         {/* Level badge */}
-        <span className="inline-block self-start px-2.5 py-0.5 rounded-full bg-cream/15 border border-cream/20 text-cream text-xs font-bold uppercase tracking-widest mb-3 font-alan-sans">
+        <span className="inline-block self-start px-2.5 py-0.5 rounded-full bg-black/5 border border-black/10 text-black/70 text-xs font-bold uppercase tracking-widest mb-3 font-alan-sans">
           {course.level}
         </span>
 
-        <h4 className="text-lg sm:text-xl font-bold text-cream mb-2 font-signika leading-snug">
+        <h4 className="text-lg sm:text-xl font-bold text-black mb-2 font-signika leading-snug">
           {course.title}
         </h4>
 
-        <p className="text-cream/75 font-alan-sans text-xs sm:text-sm mb-3 leading-relaxed flex-1">
+        <p className="text-black/70 font-alan-sans text-xs sm:text-sm mb-3 leading-relaxed flex-1">
           {course.description}
         </p>
 
-        <p className="text-cream/60 font-alan-sans text-xs mb-1">
-          Mentor: <span className="font-semibold text-cream/85">{course.mentor}</span>
+        <p className="text-black/50 font-alan-sans text-xs mb-1">
+          Mentor: <span className="font-semibold text-black/80">{course.mentor}</span>
         </p>
 
         <CourseCTAs
@@ -334,7 +333,7 @@ export default function AcademySection() {
       // ▼ BANNER IMAGE — place the image file in /public/assets/ and set the path below:
       bannerImage: '/assets/the heart of music composition thumbmail 4K.jpg.jpeg',
       isComingSoon: false,
-      enrollUrl: 'https://tscacademy.in/course-composition-intermediate.html',
+      enrollUrl: '/tscacademy',
     },
 
     // ── Secondary courses (rendered in a 2-column grid below) ─────────────────
@@ -357,7 +356,7 @@ export default function AcademySection() {
       // ▼ BANNER IMAGE — place the image file in /public/assets/ and set the path below:
       bannerImage: '/assets/The roots of Hindustani Classical Music.png',
       isComingSoon: false,
-      enrollUrl: 'https://tscacademy.in/course-classical-singing-comprehensive.html',
+      enrollUrl: '/tscacademy',
     },
   ];
 
@@ -367,9 +366,9 @@ export default function AcademySection() {
   return (
     <Section
       id="academy"
-      background="transparent"
+      background="white"
       padding="xl"
-      className="relative py-12 sm:py-16 md:py-24 bg-gradient-to-br from-sea-foam to-peacock"
+      className="relative py-12 sm:py-16 md:py-24 bg-white"
     >
       <Container className="max-w-6xl px-4 sm:px-6">
         {/* Section heading */}
@@ -380,10 +379,10 @@ export default function AcademySection() {
           viewport={{ once: true }}
           className="mb-10 sm:mb-12 md:mb-16 text-center"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-cream mb-4 sm:mb-6 font-signika">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black mb-4 sm:mb-6 font-signika">
             The Artist Path
           </h2>
-          <p className="text-sm sm:text-base md:text-lg text-cream/90 font-alan-sans max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base md:text-lg text-black/70 font-alan-sans max-w-2xl mx-auto">
             A structured journey from aspiring artist to globally recognized creator
           </p>
         </motion.div>
@@ -391,7 +390,7 @@ export default function AcademySection() {
         {/* Timeline */}
         <div className="relative mb-12 sm:mb-16 md:mb-20">
           {/* Timeline line */}
-          <div className="hidden lg:block absolute left-1/2 transform -translate-x-1/2 w-1 h-96 bg-gradient-to-b from-cream/50 to-transparent" />
+          <div className="hidden lg:block absolute left-1/2 transform -translate-x-1/2 w-1 h-96 bg-gradient-to-b from-black/20 to-transparent" />
 
           {/* Timeline stages */}
           <div className="space-y-8 sm:space-y-10 md:space-y-12">
@@ -405,11 +404,11 @@ export default function AcademySection() {
                 className={`flex flex-col items-center lg:flex-row lg:items-center gap-4 sm:gap-6 md:gap-8 ${index % 2 === 0 ? 'lg:flex-row-reverse' : 'lg:flex-row'}`}
               >
                 {/* Content */}
-                <div className="flex-1 bg-cream/10 rounded-lg sm:rounded-xl p-4 sm:p-6 border border-cream/20 backdrop-blur w-full">
-                  <h3 className="text-xl sm:text-2xl font-bold text-cream mb-2 font-signika">
+                <div className="flex-1 bg-black/5 rounded-lg sm:rounded-xl p-4 sm:p-6 border border-black/10 backdrop-blur w-full">
+                  <h3 className="text-xl sm:text-2xl font-bold text-black mb-2 font-signika">
                     {stage.title}
                   </h3>
-                  <p className="text-sm sm:text-base text-cream/80 font-alan-sans">
+                  <p className="text-sm sm:text-base text-black/70 font-alan-sans">
                     {stage.description}
                   </p>
                 </div>
@@ -418,7 +417,7 @@ export default function AcademySection() {
                 <motion.div
                   animate={{ scale: [1, 1.2, 1] }}
                   transition={{ duration: 2, repeat: Infinity }}
-                  className="flex-shrink-0 w-3 sm:w-4 h-3 sm:h-4 bg-cream rounded-full ring-4 ring-cream/50 lg:order-none"
+                  className="flex-shrink-0 w-3 sm:w-4 h-3 sm:h-4 bg-orange rounded-full ring-4 ring-orange/20 lg:order-none"
                 />
               </motion.div>
             ))}
@@ -433,7 +432,7 @@ export default function AcademySection() {
           viewport={{ once: true }}
           className="mb-8 sm:mb-10 md:mb-12"
         >
-          <h3 className="text-2xl sm:text-3xl font-bold text-cream mb-8 sm:mb-10 font-signika text-center">
+          <h3 className="text-2xl sm:text-3xl font-bold text-black mb-8 sm:mb-10 font-signika text-center">
             Featured Courses
           </h3>
 
@@ -467,7 +466,7 @@ export default function AcademySection() {
             width="clamp(200px, 80vw, 380px)"
             height="clamp(50px, 10vw, 68px)"
             onClick={() => {
-              window.location.href = 'https://tscacademy.in';
+              window.location.href = '/tscacademy';
             }}
           >
             Start Your Path

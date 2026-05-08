@@ -48,7 +48,7 @@ export const Footer: React.FC<FooterProps> = ({ className }) => {
       links: [
         { label: 'The Roundway', href: '/#solution' },
         { label: 'Work Catalogue', href: '/#ip-gallery' },
-        { label: 'TSC Academy', href: 'https://tscacademy.in', external: true },
+        { label: 'TSC Academy', href: '/tscacademy' },
         { label: 'Meet the Team', href: '/#team' },
         { label: 'Resources', href: '/resources' },
       ],
@@ -58,13 +58,14 @@ export const Footer: React.FC<FooterProps> = ({ className }) => {
       links: [
         { label: 'Artist Path', href: '/artist-path' },
         { label: 'Main Bhi Artist', href: '#' },
-        { label: 'Masterclasses', href: 'https://tscacademy.in' },
-        { label: 'Mentorship', href: 'https://tscacademy.in' },
+        { label: 'Masterclasses', href: '/masterclass/sandesh-shandilya' },
+        { label: 'Mentorship', href: '/tscacademy' },
       ],
     },
     {
       title: 'Connect',
       links: [
+        { label: 'Book a Call', href: '/book-a-call' },
         { label: 'Partner With Us', href: 'mailto:hello@theshaktcollective.com' },
         { label: 'Instagram', href: 'https://www.instagram.com/the_shakti_collective', external: true },
         { label: 'LinkedIn', href: 'https://www.linkedin.com/in/rohitsobti/', external: true },
@@ -74,7 +75,7 @@ export const Footer: React.FC<FooterProps> = ({ className }) => {
   ];
 
   return (
-    <footer className={cn('bg-charcoal text-cream', className)}>
+    <footer className={cn('bg-black text-white', className)}>
       {/* Brand gradient border */}
       <div className="h-px bg-gradient-to-r from-teal-primary via-pumpkin to-teal-primary opacity-60" />
 
@@ -109,14 +110,14 @@ export const Footer: React.FC<FooterProps> = ({ className }) => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="px-6 py-3 rounded-full bg-pumpkin text-cream font-bold font-alan-sans text-sm hover:bg-pumpkin/90 transition-all disabled:opacity-50 whitespace-nowrap"
+                className="px-6 py-3 rounded-full bg-orange text-white font-bold font-alan-sans text-sm hover:bg-orange/90 transition-all disabled:opacity-50 whitespace-nowrap"
               >
                 {isSubmitting ? 'Joining...' : 'Join →'}
               </button>
             </form>
           </motion.div>
           {message && (
-            <p className={`mt-3 text-sm font-alan-sans ${message.includes('Welcome') ? 'text-sea-foam' : 'text-red-400'}`}>
+            <p className={`mt-3 text-sm font-alan-sans ${message.includes('Welcome') ? 'text-teal' : 'text-red-400'}`}>
               {message}
             </p>
           )}

@@ -16,10 +16,10 @@ interface Value {
  */
 export default function ValuesSection() {
   const colorMap = {
-    pumpkin: { bg: '#B74B02', rgb: 'rgb(183, 75, 2)' },
-    wine: { bg: '#6D2034', rgb: 'rgb(109, 32, 52)' },
-    'sea-foam': { bg: '#126D5E', rgb: 'rgb(18, 109, 94)' },
-    peacock: { bg: '#08525F', rgb: 'rgb(8, 82, 95)' },
+    pumpkin: { bg: '#FF8C00', rgb: 'rgb(255, 140, 0)' },
+    wine: { bg: '#FF8C00', rgb: 'rgb(255, 140, 0)' },
+    'sea-foam': { bg: '#FF8C00', rgb: 'rgb(255, 140, 0)' },
+    peacock: { bg: '#FF8C00', rgb: 'rgb(255, 140, 0)' },
   };
 
   const values: Value[] = [
@@ -72,7 +72,7 @@ export default function ValuesSection() {
   return (
     <Section
       id="values"
-      background="cream"
+      background="white"
       padding="xl"
       className="relative py-24"
     >
@@ -85,10 +85,10 @@ export default function ValuesSection() {
           viewport={{ once: true }}
           className="mb-16 text-center"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-charcoal mb-6 font-signika">
+          <h2 className="text-4xl md:text-5xl font-bold text-black mb-6 font-signika">
             Our Values
           </h2>
-          <p className="text-lg text-slate-medium font-alan-sans">
+          <p className="text-lg text-black/60 font-alan-sans">
             The principles that guide everything we do
           </p>
         </motion.div>
@@ -110,10 +110,10 @@ export default function ValuesSection() {
               {/* Card */}
               <div
                 style={{
-                  backgroundColor: `${colorMap[value.color as keyof typeof colorMap].bg}15`,
-                  borderColor: `${colorMap[value.color as keyof typeof colorMap].bg}40`,
+                  backgroundColor: `#00000005`,
+                  borderColor: `#00000010`,
                 }}
-                className="rounded-2xl p-8 h-full border hover:border-opacity-100 transition-all duration-300 hover:shadow-lg"
+                className="rounded-2xl p-8 h-full border hover:border-orange/40 transition-all duration-300 hover:shadow-lg"
               >
                 {/* Icon */}
                 <div className={`text-5xl mb-6 transition-transform duration-300 group-hover:scale-110`}>
@@ -121,12 +121,12 @@ export default function ValuesSection() {
                 </div>
 
                 {/* Title */}
-                <h3 className={`text-2xl font-bold text-charcoal mb-3 font-signika`}>
+                <h3 className={`text-2xl font-bold text-black mb-3 font-signika`}>
                   {value.title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-slate-medium font-alan-sans leading-relaxed">
+                <p className="text-black/70 font-alan-sans leading-relaxed">
                   {value.description}
                 </p>
 
@@ -150,7 +150,7 @@ export default function ValuesSection() {
           viewport={{ once: true }}
           className="mt-16 text-center"
         >
-          <p className="text-slate-medium text-lg font-alan-sans">
+          <p className="text-black/40 text-lg font-alan-sans">
             These values shape how we work with artists, brands, and each other every single day.
           </p>
         </motion.div>

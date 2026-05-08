@@ -150,12 +150,12 @@ export const InfinityEcosystem: React.FC<InfinityEcosystemProps> = ({
                 );
               })}
 
-              {/* Center Label — fixed cream, never changes */}
+              {/* Center Label — fixed black, never changes */}
               <text
                 x={CX}
                 y={CY + 20}
                 textAnchor="middle"
-                fill="#FDF6F1"
+                fill="#000000"
                 style={{ fontSize: '52px', fontWeight: 'bold', fontFamily: 'inherit' }}
               >
                 {centerLabel}
@@ -173,19 +173,19 @@ export const InfinityEcosystem: React.FC<InfinityEcosystemProps> = ({
                       <motion.circle
                         r={NODE_R + 24}
                         fill="none"
-                        stroke="#FDF6F1"
+                        stroke="#000000"
                         strokeWidth="6"
-                        opacity={0.25}
+                        opacity={0.1}
                         animate={{ r: [NODE_R + 20, NODE_R + 32, NODE_R + 20] }}
                         transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
                       />
                     )}
 
-                    {/* Node circle — pumpkin when unselected, bright cream-tinted orange when selected */}
+                    {/* Node circle — orange when unselected, bright orange when selected */}
                     <motion.circle
                       r={NODE_R}
-                      fill={isSelected ? '#FF7B3A' : '#D4622D'}
-                      stroke={isSelected ? '#FDF6F1' : '#b35525'}
+                      fill={isSelected ? '#FF8C00' : '#FF8C00'}
+                      stroke={isSelected ? '#000000' : '#FF8C00'}
                       strokeWidth={isSelected ? 12 : 6}
                       className="cursor-pointer"
                       style={{
@@ -204,7 +204,7 @@ export const InfinityEcosystem: React.FC<InfinityEcosystemProps> = ({
                     <motion.text
                       y="16"
                       textAnchor="middle"
-                      fill={isSelected ? '#FFFFFF' : '#FDF6F1'}
+                      fill={isSelected ? '#FFFFFF' : '#FFFFFF'}
                       style={{
                         fontSize: '38px',
                         fontWeight: isSelected ? '900' : 'bold',
@@ -226,7 +226,7 @@ export const InfinityEcosystem: React.FC<InfinityEcosystemProps> = ({
                 animate={{ opacity: 1, y: 0 }}
                 className="absolute bottom-0 left-0 right-0 text-center"
               >
-                <p className="text-sm font-semibold text-cream">
+                <p className="text-sm font-semibold text-black">
                   {nodes.find((n) => n.id === selectedNodeId)?.label}
                 </p>
               </motion.div>
@@ -252,20 +252,20 @@ export const InfinityEcosystem: React.FC<InfinityEcosystemProps> = ({
                   node.id === selectedNodeId && (
                     <div
                       key={node.id}
-                      className="bg-cream/10 backdrop-blur-xl rounded-2xl shadow-2xl p-4 sm:p-6 md:p-10 border border-cream/20 w-full"
+                      className="bg-white rounded-2xl shadow-2xl p-4 sm:p-6 md:p-10 border border-black/5 w-full"
                     >
                       {/* Header row */}
                       <div className="flex flex-col sm:flex-row items-start justify-between mb-4 sm:mb-6 gap-3 sm:gap-4">
                         <div className="w-full">
                           {/* Active node accent */}
-                          <span className="inline-block px-3 py-1 rounded-full bg-pumpkin/30 text-pumpkin text-xs font-bold uppercase tracking-widest mb-3 font-alan-sans">
+                          <span className="inline-block px-3 py-1 rounded-full bg-orange/10 text-orange text-xs font-bold uppercase tracking-widest mb-3 font-alan-sans">
                             {node.label}
                           </span>
-                          <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-cream mb-2 font-signika">
+                          <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-black mb-2 font-signika">
                             {node.title}
                           </h3>
                           {node.description && (
-                            <p className="text-cream/70 text-xs sm:text-sm md:text-base font-alan-sans">
+                            <p className="text-black/70 text-xs sm:text-sm md:text-base font-alan-sans">
                               {node.description}
                             </p>
                           )}
@@ -275,13 +275,13 @@ export const InfinityEcosystem: React.FC<InfinityEcosystemProps> = ({
                         )}
                       </div>
 
-                      <div className="prose prose-sm md:prose max-w-none text-cream/90 mb-4 sm:mb-6 text-xs sm:text-sm font-alan-sans">
+                      <div className="prose prose-sm md:prose max-w-none text-black/90 mb-4 sm:mb-6 text-xs sm:text-sm font-alan-sans">
                         {node.content}
                       </div>
 
                       <motion.button
                         onClick={() => setSelectedNodeId(null)}
-                        className="text-cream/60 font-semibold hover:text-cream transition-colors text-xs sm:text-sm md:text-base"
+                        className="text-black/40 font-semibold hover:text-black transition-colors text-xs sm:text-sm md:text-base"
                         whileHover={{ x: 4 }}
                       >
                         Close ✕
@@ -296,7 +296,7 @@ export const InfinityEcosystem: React.FC<InfinityEcosystemProps> = ({
               animate={{ opacity: 1 }}
               className="w-full text-center lg:text-left py-12 lg:py-0"
             >
-              <p className="text-cream/50 text-lg font-alan-sans">
+              <p className="text-black/30 text-lg font-alan-sans">
                 Select a node to explore the ecosystem
               </p>
             </motion.div>
@@ -322,19 +322,19 @@ export const InfinityEcosystem: React.FC<InfinityEcosystemProps> = ({
               onClick={() => setSelectedNodeId(null)}
               className="absolute inset-0 bg-black/20"
             />
-            <motion.div className="relative bg-teal-dark/95 backdrop-blur-xl rounded-t-2xl border-t border-cream/20 p-6 max-h-[80vh] overflow-y-auto">
+            <motion.div className="relative bg-white rounded-t-2xl border-t border-black/10 p-6 max-h-[80vh] overflow-y-auto">
               <div className="flex justify-between items-start mb-4">
                 <div>
-                  <span className="inline-block px-2 py-0.5 rounded-full bg-pumpkin/30 text-pumpkin text-xs font-bold uppercase tracking-widest mb-2 font-alan-sans">
+                  <span className="inline-block px-2 py-0.5 rounded-full bg-orange/10 text-orange text-xs font-bold uppercase tracking-widest mb-2 font-alan-sans">
                     {nodes.find((n) => n.id === selectedNodeId)?.label}
                   </span>
-                  <h3 className="text-2xl font-bold text-cream font-signika">
+                  <h3 className="text-2xl font-bold text-black font-signika">
                     {nodes.find((n) => n.id === selectedNodeId)?.title}
                   </h3>
                 </div>
                 <button
                   onClick={() => setSelectedNodeId(null)}
-                  className="text-2xl text-cream/60 hover:text-cream transition-colors"
+                  className="text-2xl text-black/40 hover:text-black transition-colors"
                 >
                   ✕
                 </button>

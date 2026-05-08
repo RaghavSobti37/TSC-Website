@@ -81,9 +81,9 @@ export default function ContactSection() {
   return (
     <Section
       id="contact"
-      background="charcoal"
+      background="white"
       padding="xl"
-      className="relative py-12 sm:py-16 md:py-24"
+      className="relative py-12 sm:py-16 md:py-24 bg-white"
     >
       <Container className="max-w-4xl px-4 sm:px-6">
         {/* Section heading */}
@@ -94,10 +94,10 @@ export default function ContactSection() {
           viewport={{ once: true }}
           className="mb-8 sm:mb-10 md:mb-12 text-center"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-cream mb-4 sm:mb-6 font-signika">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black mb-4 sm:mb-6 font-signika">
             Get in Touch
           </h2>
-          <p className="text-sm sm:text-base md:text-lg text-cream/80 font-alan-sans">
+          <p className="text-sm sm:text-base md:text-lg text-black/60 font-alan-sans">
             Tell us about yourself and how we can help you achieve your dreams
           </p>
         </motion.div>
@@ -112,19 +112,19 @@ export default function ContactSection() {
               transition={{ duration: 0.3 }}
               className="fixed inset-0 flex items-center justify-center z-50 bg-charcoal/50 backdrop-blur px-4"
             >
-              <motion.div className="bg-cream rounded-lg sm:rounded-xl md:rounded-2xl p-6 sm:p-8 md:p-12 text-center max-w-md" layout>
+              <motion.div className="bg-white rounded-lg sm:rounded-xl md:rounded-2xl p-6 sm:p-8 md:p-12 text-center max-w-md shadow-2xl border border-black/5" layout>
                 <motion.div
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}
                   transition={{ type: 'spring', delay: 0.2 }}
-                  className="text-5xl sm:text-6xl mb-3 sm:mb-4"
+                  className="text-5xl sm:text-6xl mb-3 sm:mb-4 text-orange"
                 >
                   ✓
                 </motion.div>
-                <h3 className="text-xl sm:text-2xl font-bold text-charcoal mb-2 font-signika">
+                <h3 className="text-xl sm:text-2xl font-bold text-black mb-2 font-signika">
                   Thank You!
                 </h3>
-                <p className="text-sm sm:text-base text-slate-600 font-alan-sans">
+                <p className="text-sm sm:text-base text-black/60 font-alan-sans">
                   We'll be in touch within 48 hours to discuss your opportunities.
                 </p>
               </motion.div>
@@ -143,7 +143,7 @@ export default function ContactSection() {
         >
           {/* User type selector */}
           <div>
-            <label className="block text-cream font-semibold font-signika mb-3 sm:mb-4 text-sm sm:text-base">
+            <label className="block text-black font-semibold font-signika mb-3 sm:mb-4 text-sm sm:text-base">
               I am a...
             </label>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
@@ -157,14 +157,14 @@ export default function ContactSection() {
                   type="button"
                   onClick={() => setUserType(option.value as UserType)}
                   className={`p-3 sm:p-4 rounded-lg sm:rounded-xl border-2 transition-all font-alan-sans ${userType === option.value
-                      ? 'border-pumpkin bg-pumpkin/20'
-                      : 'border-cream/20 hover:border-cream/40'
+                      ? 'border-orange bg-orange/10'
+                      : 'border-black/10 hover:border-black/30'
                     }`}
                 >
-                  <p className="font-semibold text-cream font-signika text-sm sm:text-base">
+                  <p className={`font-semibold font-signika text-sm sm:text-base ${userType === option.value ? 'text-orange' : 'text-black/70'}`}>
                     {option.label}
                   </p>
-                  <p className="text-xs text-cream/70 mt-1">{option.description}</p>
+                  <p className="text-xs text-black/40 mt-1">{option.description}</p>
                 </button>
               ))}
             </div>
@@ -172,7 +172,7 @@ export default function ContactSection() {
 
           {/* Common fields */}
           <div>
-            <label className="block text-cream font-semibold font-signika mb-2 text-sm sm:text-base">
+            <label className="block text-black font-semibold font-signika mb-2 text-sm sm:text-base">
               Full Name
             </label>
             <input
@@ -181,13 +181,13 @@ export default function ContactSection() {
               value={formData.name}
               onChange={handleInputChange}
               required
-              className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-cream/10 border border-cream/20 text-cream placeholder-cream/50 rounded-lg sm:rounded-xl focus:outline-none focus:border-pumpkin transition-all font-alan-sans text-sm sm:text-base"
+              className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-black/5 border border-black/10 text-black placeholder-black/30 rounded-lg sm:rounded-xl focus:outline-none focus:border-orange transition-all font-alan-sans text-sm sm:text-base"
               placeholder="Your name"
             />
           </div>
 
           <div>
-            <label className="block text-cream font-semibold font-signika mb-2 text-sm sm:text-base">
+            <label className="block text-black font-semibold font-signika mb-2 text-sm sm:text-base">
               Email
             </label>
             <input
@@ -196,7 +196,7 @@ export default function ContactSection() {
               value={formData.email}
               onChange={handleInputChange}
               required
-              className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-cream/10 border border-cream/20 text-cream placeholder-cream/50 rounded-lg sm:rounded-xl focus:outline-none focus:border-pumpkin transition-all font-alan-sans text-sm sm:text-base"
+              className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-black/5 border border-black/10 text-black placeholder-black/30 rounded-lg sm:rounded-xl focus:outline-none focus:border-orange transition-all font-alan-sans text-sm sm:text-base"
               placeholder="your@email.com"
             />
           </div>
@@ -212,7 +212,7 @@ export default function ContactSection() {
                 className="space-y-4"
               >
                 <div>
-                  <label className="block text-cream font-semibold font-signika mb-2 text-sm sm:text-base">
+                  <label className="block text-black font-semibold font-signika mb-2 text-sm sm:text-base">
                     Genres
                   </label>
                   <input
@@ -220,19 +220,19 @@ export default function ContactSection() {
                     name="genres"
                     value={formData.genres}
                     onChange={handleInputChange}
-                    className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-cream/10 border border-cream/20 text-cream placeholder-cream/50 rounded-lg sm:rounded-xl focus:outline-none focus:border-pumpkin transition-all font-alan-sans text-sm sm:text-base"
+                    className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-black/5 border border-black/10 text-black placeholder-black/30 rounded-lg sm:rounded-xl focus:outline-none focus:border-orange transition-all font-alan-sans text-sm sm:text-base"
                     placeholder="e.g., Hip-hop, Indie, Electronic"
                   />
                 </div>
                 <div>
-                  <label className="block text-cream font-semibold font-signika mb-2 text-sm sm:text-base">
+                  <label className="block text-black font-semibold font-signika mb-2 text-sm sm:text-base">
                     Years of Experience
                   </label>
                   <select
                     name="experience"
                     value={formData.experience}
                     onChange={handleInputChange}
-                    className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-cream/10 border border-cream/20 text-cream rounded-lg sm:rounded-xl focus:outline-none focus:border-pumpkin transition-all font-alan-sans text-sm sm:text-base"
+                    className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-black/5 border border-black/10 text-black rounded-lg sm:rounded-xl focus:outline-none focus:border-orange transition-all font-alan-sans text-sm sm:text-base"
                   >
                     <option value="">Select experience level</option>
                     <option value="0-1">0-1 years</option>
@@ -256,7 +256,7 @@ export default function ContactSection() {
                 className="space-y-4"
               >
                 <div>
-                  <label className="block text-cream font-semibold font-signika mb-2 text-sm sm:text-base">
+                  <label className="block text-black font-semibold font-signika mb-2 text-sm sm:text-base">
                     Company Name
                   </label>
                   <input
@@ -264,19 +264,19 @@ export default function ContactSection() {
                     name="company"
                     value={formData.company}
                     onChange={handleInputChange}
-                    className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-cream/10 border border-cream/20 text-cream placeholder-cream/50 rounded-lg sm:rounded-xl focus:outline-none focus:border-pumpkin transition-all font-alan-sans text-sm sm:text-base"
+                    className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-black/5 border border-black/10 text-black placeholder-black/30 rounded-lg sm:rounded-xl focus:outline-none focus:border-orange transition-all font-alan-sans text-sm sm:text-base"
                     placeholder="Your company"
                   />
                 </div>
                 <div>
-                  <label className="block text-cream font-semibold font-signika mb-2 text-sm sm:text-base">
+                  <label className="block text-black font-semibold font-signika mb-2 text-sm sm:text-base">
                     Budget Range
                   </label>
                   <select
                     name="budget"
                     value={formData.budget}
                     onChange={handleInputChange}
-                    className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-cream/10 border border-cream/20 text-cream rounded-lg sm:rounded-xl focus:outline-none focus:border-pumpkin transition-all font-alan-sans text-sm sm:text-base"
+                    className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-black/5 border border-black/10 text-black rounded-lg sm:rounded-xl focus:outline-none focus:border-orange transition-all font-alan-sans text-sm sm:text-base"
                   >
                     <option value="">Select budget range</option>
                     <option value="50k-100k">₹50k - ₹100k</option>
@@ -300,7 +300,7 @@ export default function ContactSection() {
                 className="space-y-4"
               >
                 <div>
-                  <label className="block text-cream font-semibold font-signika mb-2">
+                  <label className="block text-black font-semibold font-signika mb-2">
                     Focus Area
                   </label>
                   <input
@@ -308,19 +308,19 @@ export default function ContactSection() {
                     name="focusArea"
                     value={formData.focusArea}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 bg-cream/10 border border-cream/20 text-cream placeholder-cream/50 rounded-xl focus:outline-none focus:border-pumpkin transition-all font-alan-sans"
+                    className="w-full px-4 py-3 bg-black/5 border border-black/10 text-black placeholder-black/30 rounded-xl focus:outline-none focus:border-orange transition-all font-alan-sans"
                     placeholder="e.g., Music, Content, Film"
                   />
                 </div>
                 <div>
-                  <label className="block text-cream font-semibold font-signika mb-2">
+                  <label className="block text-black font-semibold font-signika mb-2">
                     Available Capital
                   </label>
                   <select
                     name="capital"
                     value={formData.capital}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 bg-cream/10 border border-cream/20 text-cream rounded-xl focus:outline-none focus:border-pumpkin transition-all font-alan-sans"
+                    className="w-full px-4 py-3 bg-black/5 border border-black/10 text-black rounded-xl focus:outline-none focus:border-orange transition-all font-alan-sans"
                   >
                     <option value="">Select capital range</option>
                     <option value="1m-5m">₹1M - ₹5M</option>
@@ -334,7 +334,7 @@ export default function ContactSection() {
 
           {/* Message field */}
           <div>
-            <label className="block text-cream font-semibold font-signika mb-2 text-sm sm:text-base">
+            <label className="block text-black font-semibold font-signika mb-2 text-sm sm:text-base">
               Message
             </label>
             <textarea
@@ -343,7 +343,7 @@ export default function ContactSection() {
               onChange={handleInputChange}
               required
               rows={5}
-              className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-cream/10 border border-cream/20 text-cream placeholder-cream/50 rounded-lg sm:rounded-xl focus:outline-none focus:border-pumpkin transition-all font-alan-sans resize-none text-sm sm:text-base"
+              className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-black/5 border border-black/10 text-black placeholder-black/30 rounded-lg sm:rounded-xl focus:outline-none focus:border-orange transition-all font-alan-sans resize-none text-sm sm:text-base"
               placeholder="Tell us about your project or interests..."
             />
           </div>
@@ -365,8 +365,8 @@ export default function ContactSection() {
         {/* Style fix: force dark background on native select options */}
         <style>{`
           select option {
-            background-color: #1A1A1A;
-            color: #FDF6F1;
+            background-color: #FFFFFF;
+            color: #000000;
           }
         `}</style>
       </Container>

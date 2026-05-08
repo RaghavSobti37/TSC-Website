@@ -73,17 +73,17 @@ export default function IPGallerySection() {
   ];
 
   const statusColors: Record<string, { dot: string; label: string }> = {
-    Active: { dot: 'bg-sea-foam', label: 'text-sea-foam' },
-    Archived: { dot: 'bg-slate-medium', label: 'text-slate-medium' },
-    'In Progress': { dot: 'bg-mustard', label: 'text-mustard' },
+    Active: { dot: 'bg-teal', label: 'text-teal' },
+    Archived: { dot: 'bg-black/40', label: 'text-black/40' },
+    'In Progress': { dot: 'bg-orange', label: 'text-orange' },
   };
 
   return (
     <Section
       id="ip-gallery"
-      background="cream"
+      background="white"
       padding="xl"
-      className="relative py-16 sm:py-20 md:py-28"
+      className="relative py-16 sm:py-20 md:py-28 bg-white"
     >
       <Container className="max-w-6xl px-4 sm:px-6">
         {/* Section heading */}
@@ -94,13 +94,13 @@ export default function IPGallerySection() {
           viewport={{ once: true }}
           className="mb-12 sm:mb-16 text-center"
         >
-          <p className="text-pumpkin font-black text-xs uppercase tracking-[0.3em] mb-4 font-alan-sans">
+          <p className="text-orange font-black text-xs uppercase tracking-[0.3em] mb-4 font-alan-sans">
             Work Catalogue
           </p>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-charcoal mb-5 font-signika">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black mb-5 font-signika">
             What we&apos;ve built
           </h2>
-          <p className="text-sm sm:text-base md:text-lg text-charcoal/60 font-alan-sans max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base md:text-lg text-black/60 font-alan-sans max-w-2xl mx-auto">
             Cultural properties and breakthrough stories created through our living ecosystem
           </p>
         </motion.div>
@@ -117,25 +117,21 @@ export default function IPGallerySection() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1, duration: 0.6 }}
               viewport={{ once: true }}
-              whileHover={{ y: -6, boxShadow: '0 24px 48px rgba(183, 75, 2, 0.15)' }}
-              className="group relative rounded-2xl overflow-hidden bg-charcoal h-64 sm:h-72 md:h-[340px] cursor-pointer border-2 border-transparent hover:border-pumpkin/50 transition-all duration-300"
+              className="group relative rounded-2xl overflow-hidden bg-black h-64 sm:h-72 md:h-[400px] cursor-pointer border-2 border-black/5 shadow-lg transition-all duration-300"
             >
               {/* Image */}
               <img
                 src={item.thumbnail}
                 alt={item.title}
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-108"
+                className="w-full h-full object-cover"
                 style={{ objectFit: 'cover' }}
               />
 
               {/* Gradient overlay — always visible at bottom */}
-              <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/20 to-transparent" />
-
-              {/* Hover overlay */}
-              <div className="absolute inset-0 bg-charcoal/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent opacity-90" />
 
               {/* Status badge — top */}
-              <div className="absolute top-4 left-4 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-charcoal/70 backdrop-blur-sm border border-white/10">
+              <div className="absolute top-4 left-4 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-black/70 backdrop-blur-sm border border-white/10">
                 <div
                   className={`w-1.5 h-1.5 rounded-full ${statusColors[item.status]?.dot || 'bg-slate-medium'}`}
                 />
@@ -145,32 +141,26 @@ export default function IPGallerySection() {
               </div>
 
               {/* Content overlay — bottom */}
-              <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-5 md:p-6 translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+              <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-5 md:p-6 translate-y-0 transition-transform duration-300">
                 {/* Type badge */}
-                <div className="inline-block px-2.5 py-1 bg-pumpkin/90 text-cream text-xs font-bold rounded-full mb-2 font-alan-sans">
+                <div className="inline-block px-2.5 py-1 bg-orange text-white text-xs font-bold rounded-full mb-2 font-alan-sans">
                   {item.type}
                 </div>
 
                 {/* Title */}
-                <h3 className="text-lg sm:text-xl font-bold text-cream mb-1.5 font-signika leading-snug">
+                <h3 className="text-lg sm:text-xl font-bold text-white mb-1.5 font-signika leading-snug">
                   {item.title}
                 </h3>
 
-                {/* Logline — visible on hover */}
-                <p className="text-cream/70 font-alan-sans text-xs sm:text-sm line-clamp-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 mb-3">
+                {/* Logline — Always visible */}
+                <p className="text-white/80 font-alan-sans text-xs sm:text-sm line-clamp-3 mb-3">
                   {item.logline}
                 </p>
 
                 {/* CTA */}
                 {item.link && (
-                  <span className="inline-flex items-center gap-1.5 text-pumpkin text-xs font-bold font-alan-sans opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    View project
-                    <motion.span
-                      animate={{ x: [0, 4, 0] }}
-                      transition={{ duration: 1.5, repeat: Infinity }}
-                    >
-                      →
-                    </motion.span>
+                  <span className="inline-flex items-center gap-1.5 text-orange text-xs font-bold font-alan-sans">
+                    View project →
                   </span>
                 )}
               </div>
@@ -188,7 +178,7 @@ export default function IPGallerySection() {
         >
           <a
             href="mailto:hello@theshaktcollective.com"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-full border-2 border-charcoal/20 text-charcoal font-bold font-signika text-base hover:border-pumpkin hover:text-pumpkin transition-all duration-300"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-full border-2 border-black/10 text-black font-bold font-signika text-base hover:border-orange hover:text-orange transition-all duration-300"
           >
             Co-create with us →
           </a>

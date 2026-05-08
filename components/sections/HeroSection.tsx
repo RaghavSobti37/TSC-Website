@@ -56,68 +56,77 @@ export default function HeroSection({
   return (
     <section
       id="hero"
-      className="relative w-screen min-h-screen overflow-hidden bg-black flex flex-col items-center justify-center"
+      className="relative w-screen min-h-screen overflow-hidden bg-white flex flex-col items-center justify-center"
     >
       {/* ── Background layers ── */}
-      <div className="absolute inset-0 bg-black" />
+      <div className="absolute inset-0 bg-white" />
+
+      {/* YouTube Background Video - Commented out per user request */}
+      {/* 
+      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none opacity-60">
+        <iframe
+          className="absolute top-1/2 left-1/2 w-[110%] h-[110%] -translate-x-1/2 -translate-y-1/2 object-cover aspect-video scale-150"
+          src="https://www.youtube.com/embed/qvkbLqffHds?autoplay=1&mute=1&loop=1&playlist=qvkbLqffHds&controls=0&showinfo=0&rel=0&modestbranding=1"
+          allow="autoplay; encrypted-media"
+          frameBorder="0"
+          allowFullScreen
+        ></iframe>
+        <div className="absolute inset-0 bg-white/20" />
+      </div>
+      */}
+
+      {/* Restored Background Animation: Floating Ripples */}
+      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+        {ripplePositions.map((pos, i) => (
+          <motion.div
+            key={i}
+            className="absolute rounded-full blur-[100px] opacity-[0.12]"
+            style={{
+              backgroundColor: rippleColors[i % rippleColors.length],
+              left: `${(pos[0] / 1000) * 100}%`,
+              top: `${(pos[1] / 1000) * 100}%`,
+              width: '450px',
+              height: '450px',
+              marginLeft: '-225px',
+              marginTop: '-225px',
+            }}
+            animate={!reducedMotion ? {
+              scale: [1, 1.15, 1],
+              x: [0, 30, 0],
+              y: [0, -30, 0],
+            } : {}}
+            transition={{
+              duration: 10 + i,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
+        ))}
+      </div>
 
       {/* Teal glow — top-right */}
       <motion.div
-        className="absolute top-0 right-0 w-72 sm:w-96 h-72 sm:h-96 bg-gradient-to-br from-teal-dark via-teal-dark to-transparent rounded-full blur-3xl opacity-15 pointer-events-none"
+        className="absolute top-0 right-0 w-72 sm:w-96 h-72 sm:h-96 bg-gradient-to-br from-teal/20 via-teal/10 to-transparent rounded-full blur-3xl opacity-30 pointer-events-none"
         animate={!reducedMotion ? { y: [0, -20, 0], x: [0, 10, 0] } : {}}
         transition={!reducedMotion ? { duration: 8, repeat: Infinity, ease: 'easeInOut' } : {}}
       />
 
-      {/* Pumpkin glow — bottom-left */}
+      {/* Orange glow — bottom-left */}
       <motion.div
-        className="absolute bottom-0 left-0 w-56 sm:w-80 h-56 sm:h-80 bg-gradient-to-br from-pumpkin to-transparent rounded-full blur-3xl opacity-10 pointer-events-none"
+        className="absolute bottom-0 left-0 w-56 sm:w-80 h-56 sm:h-80 bg-gradient-to-br from-orange/20 to-transparent rounded-full blur-3xl opacity-20 pointer-events-none"
         animate={!reducedMotion ? { y: [0, 20, 0], x: [0, -10, 0] } : {}}
         transition={!reducedMotion ? { duration: 10, repeat: Infinity, ease: 'easeInOut' } : {}}
       />
 
       {/* Dot pattern */}
       <div
-        className="absolute inset-0 opacity-[0.04] pointer-events-none"
+        className="absolute inset-0 opacity-[0.08] pointer-events-none"
         style={{ backgroundImage: 'url("/patterns/textures/dots.svg")', backgroundSize: '36px 36px' }}
       />
 
-      {/* Dark gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/10 to-black/50" />
-
-      {/* ── Ripple circles ── */}
-      <motion.svg
-        className="absolute inset-0 w-full h-full pointer-events-none"
-        viewBox="0 0 1000 1000"
-        preserveAspectRatio="xMidYMid slice"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1.2 }}
-      >
-        {ripplePositions.map(([cx, cy], i) => (
-          <motion.circle
-            key={i}
-            cx={cx}
-            cy={cy}
-            r={58}
-            fill="none"
-            stroke={rippleColors[i]}
-            strokeWidth="1.5"
-            opacity="0.35"
-            animate={!reducedMotion ? { r: [58, 380], opacity: [0.35, 0] } : {}}
-            transition={
-              !reducedMotion
-                ? { duration: 3 + (i % 5) * 0.15, repeat: Infinity, ease: 'easeOut', delay: i * 0.28 }
-                : {}
-            }
-          />
-        ))}
-      </motion.svg>
-
-      {/* ── Main content ──
-          pt accounts for fixed header (~80px nav + 16px gap = ~96px)
-          pb provides room for the scroll hint without content crowding */}
+      {/* ── Main content ── */}
       <motion.div
-        className="relative z-10 w-full max-w-5xl mx-auto px-5 sm:px-8 md:px-12 text-center flex flex-col items-center pt-24 pb-16 sm:pt-28 sm:pb-20 md:pt-32 md:pb-24"
+        className="relative z-10 w-full max-w-5xl mx-auto px-5 sm:px-8 md:px-12 text-center flex flex-col items-center pt-12 pb-16 sm:pt-14 sm:pb-20 md:pt-16 md:pb-24"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
@@ -127,7 +136,7 @@ export default function HeroSection({
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-pumpkin font-black text-[10px] sm:text-xs md:text-sm uppercase tracking-[0.3em] mb-4 sm:mb-5 md:mb-6 font-alan-sans"
+          className="text-orange font-black text-[10px] sm:text-xs md:text-sm uppercase tracking-[0.3em] mb-4 sm:mb-5 md:mb-6 font-alan-sans"
         >
           A Talent-First Global Culture Engine
         </motion.p>
@@ -142,7 +151,7 @@ export default function HeroSection({
           {/* METEORS */}
           <motion.h1
             variants={lineVariants}
-            className="text-[13vw] xs:text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold font-signika text-cream leading-[0.88] tracking-tighter"
+            className="text-[13vw] xs:text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold font-signika text-black leading-[0.88] tracking-tighter"
           >
             METEORS
           </motion.h1>
@@ -152,15 +161,15 @@ export default function HeroSection({
             variants={lineVariants}
             className="flex items-center justify-center gap-3 sm:gap-5 my-2 sm:my-3"
           >
-            <div className="h-px bg-pumpkin/50 flex-1 max-w-[60px] sm:max-w-[100px] md:max-w-[140px]" />
-            <span className="text-pumpkin font-alan-sans text-xs sm:text-sm uppercase tracking-[0.25em]">to</span>
-            <div className="h-px bg-pumpkin/50 flex-1 max-w-[60px] sm:max-w-[100px] md:max-w-[140px]" />
+            <div className="h-px bg-orange/50 flex-1 max-w-[60px] sm:max-w-[100px] md:max-w-[140px]" />
+            <span className="text-orange font-alan-sans text-xs sm:text-sm uppercase tracking-[0.25em]">to</span>
+            <div className="h-px bg-orange/50 flex-1 max-w-[60px] sm:max-w-[100px] md:max-w-[140px]" />
           </motion.div>
 
           {/* MAESTROS */}
           <motion.h1
             variants={lineVariants}
-            className="text-[13vw] xs:text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold font-signika text-transparent bg-clip-text bg-gradient-to-r from-cream via-pumpkin to-cream leading-[0.88] tracking-tighter"
+            className="text-[13vw] xs:text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold font-signika text-transparent bg-clip-text bg-gradient-to-r from-black via-orange to-black leading-[0.88] tracking-tighter"
           >
             MAESTROS
           </motion.h1>
@@ -171,7 +180,7 @@ export default function HeroSection({
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.9 }}
-          className="text-sm sm:text-base md:text-lg text-cream/75 font-alan-sans leading-relaxed max-w-xl md:max-w-2xl mx-auto mb-8 sm:mb-10 md:mb-12"
+          className="text-sm sm:text-base md:text-lg text-black/80 font-bold font-alan-sans leading-relaxed max-w-xl md:max-w-2xl mx-auto mb-8 sm:mb-10 md:mb-12 drop-shadow-sm"
         >
           Unfolding artists&apos; force — a living ecosystem where emerging talent prepares, creates, produces, and monetizes their craft globally.
         </motion.p>
@@ -186,7 +195,7 @@ export default function HeroSection({
           {/* Artist CTA — filled */}
           <button
             onClick={() => scrollToSection('artist-path-section')}
-            className="w-full sm:w-auto px-7 sm:px-9 py-3.5 sm:py-4 rounded-full bg-pumpkin text-cream font-bold font-signika text-sm sm:text-base tracking-wide hover:bg-pumpkin/90 transition-all duration-300 shadow-lg shadow-pumpkin/30 hover:shadow-pumpkin/50 hover:scale-[1.03] active:scale-[0.98]"
+            className="w-full sm:w-auto px-7 sm:px-9 py-3.5 sm:py-4 rounded-full bg-orange text-white font-bold font-signika text-sm sm:text-base tracking-wide hover:bg-orange/90 transition-all duration-300 shadow-lg shadow-orange/30 hover:shadow-orange/50 hover:scale-[1.03] active:scale-[0.98] whitespace-nowrap"
           >
             I&apos;m an Artist →
           </button>
@@ -194,33 +203,16 @@ export default function HeroSection({
           {/* Brand CTA — ghost */}
           <button
             onClick={() => scrollToSection('brand-collab')}
-            className="w-full sm:w-auto px-7 sm:px-9 py-3.5 sm:py-4 rounded-full border-2 border-cream/35 text-cream font-bold font-signika text-sm sm:text-base tracking-wide hover:border-cream/70 hover:bg-cream/8 transition-all duration-300 hover:scale-[1.03] active:scale-[0.98]"
+            className="w-full sm:w-auto px-7 sm:px-9 py-3.5 sm:py-4 rounded-full border-2 border-black/20 text-black font-bold font-signika text-sm sm:text-base tracking-wide hover:border-black/50 hover:bg-black/5 transition-all duration-300 hover:scale-[1.03] active:scale-[0.98] whitespace-nowrap"
           >
             I&apos;m a Brand
           </button>
         </motion.div>
-
-        {/* Scroll hint — below CTAs, sits in natural flow */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 2.2, duration: 1 }}
-          className="mt-12 sm:mt-14 md:mt-16 flex flex-col items-center gap-1.5"
-        >
-          <motion.div
-            animate={!reducedMotion ? { y: [0, 6, 0] } : {}}
-            transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
-            className="w-px h-8 sm:h-10 bg-gradient-to-b from-cream/35 to-transparent"
-          />
-          <span className="text-cream/25 text-[10px] sm:text-xs font-alan-sans uppercase tracking-[0.22em]">
-            Scroll
-          </span>
-        </motion.div>
       </motion.div>
 
       {/* Corner accents — hidden on very small screens */}
-      <div className="hidden sm:block absolute top-6 left-6 md:top-8 md:left-8 w-12 md:w-16 h-12 md:h-16 border-l-2 border-t-2 border-cream/10" />
-      <div className="hidden sm:block absolute bottom-6 right-6 md:bottom-8 md:right-8 w-12 md:w-16 h-12 md:h-16 border-r-2 border-b-2 border-cream/10" />
+      <div className="hidden sm:block absolute top-6 left-6 md:top-8 md:left-8 w-12 md:w-16 h-12 md:h-16 border-l-2 border-t-2 border-black/5" />
+      <div className="hidden sm:block absolute bottom-6 right-6 md:bottom-8 md:right-8 w-12 md:w-16 h-12 md:h-16 border-r-2 border-b-2 border-black/5" />
     </section>
   );
 }

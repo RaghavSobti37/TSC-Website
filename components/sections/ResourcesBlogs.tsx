@@ -36,14 +36,14 @@ const blogPosts = [
 
 export default function ResourcesBlogs() {
   return (
-    <section className="py-16 sm:py-24 bg-cream-light px-4 sm:px-6 border-t border-slate-lightest/50">
+    <section className="py-16 sm:py-24 bg-white px-4 sm:px-6 border-t border-black/5">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12 sm:mb-16">
           <motion.p
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-pumpkin font-black text-xs uppercase tracking-widest mb-2 font-alan-sans"
+            className="text-orange font-black text-xs uppercase tracking-widest mb-2 font-alan-sans"
           >
             Insights & Guides
           </motion.p>
@@ -52,7 +52,7 @@ export default function ResourcesBlogs() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-3xl sm:text-4xl md:text-5xl font-bold text-teal-dark font-signika"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold text-black font-signika"
           >
             From the Blog
           </motion.h2>
@@ -61,7 +61,7 @@ export default function ResourcesBlogs() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-slate-medium max-w-2xl mx-auto mt-4 text-sm sm:text-base"
+            className="text-black/60 max-w-2xl mx-auto mt-4 text-sm sm:text-base"
           >
             Dive deep into our curated articles on Medium, and download accompanying presentation decks for your own reference.
           </motion.p>
@@ -75,11 +75,11 @@ export default function ResourcesBlogs() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.15 }}
-              className="flex flex-col bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-lightest group"
+              className="flex flex-col bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-black/5 group"
             >
               {/* Image Preview */}
               <div className="h-48 overflow-hidden relative">
-                <div className="absolute inset-0 bg-teal-dark/10 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
+                <div className="absolute inset-0 bg-teal/10 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
                 <img
                   src={post.image}
                   alt={post.title}
@@ -89,25 +89,25 @@ export default function ResourcesBlogs() {
 
               {/* Content */}
               <div className="p-6 sm:p-8 flex-1 flex flex-col">
-                <div className="flex items-center text-xs text-slate-light mb-3 font-alan-sans tracking-wide">
+                <div className="flex items-center text-xs text-black/40 mb-3 font-alan-sans tracking-wide">
                   <span>{post.date}</span>
                   <span className="mx-2">•</span>
                   <span>{post.readTime}</span>
                 </div>
                 
-                <h3 className="text-xl sm:text-2xl font-bold text-teal-dark mb-3 font-signika leading-tight group-hover:text-pumpkin transition-colors">
+                <h3 className="text-xl sm:text-2xl font-bold text-black mb-3 font-signika leading-tight group-hover:text-teal transition-colors">
                   {post.title}
                 </h3>
                 
-                <p className="text-slate-medium text-sm leading-relaxed mb-6 flex-1">
+                <p className="text-black/60 text-sm leading-relaxed mb-6 flex-1">
                   {post.excerpt}
                 </p>
 
                 {/* Actions */}
-                <div className="flex flex-col sm:flex-row gap-3 mt-auto pt-4 border-t border-slate-lightest">
+                <div className="flex flex-col sm:flex-row gap-3 mt-auto pt-4 border-t border-black/5">
                   <a
                     href={post.link}
-                    className="flex-1 flex items-center justify-center gap-2 bg-teal-dark hover:bg-teal-primary text-cream text-sm font-semibold py-2.5 px-4 rounded-lg transition-colors font-alan-sans"
+                    className="flex-1 flex items-center justify-center gap-2 bg-teal hover:bg-teal/80 text-white text-sm font-semibold py-2.5 px-4 rounded-lg transition-colors font-alan-sans"
                   >
                     <span>Read Blog</span>
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

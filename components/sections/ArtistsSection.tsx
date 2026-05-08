@@ -107,11 +107,11 @@ export default function ArtistsSection() {
   ];
 
   return (
-    <section id="artists" className="py-20 px-6 bg-charcoal">
+    <section id="artists" className="py-20 px-6 bg-white">
       <div className="container mx-auto">
         <div className="text-center mb-16">
-          <p className="text-pumpkin font-black text-xs uppercase tracking-widest mb-2">Our Community</p>
-          <h2 className="heading-font text-5xl md:text-6xl font-black text-cream mb-4">ARTIST COLLECTIVE</h2>
+          <p className="text-orange font-black text-xs uppercase tracking-widest mb-2">Our Community</p>
+          <h2 className="heading-font text-5xl md:text-6xl font-black text-black mb-4">ARTIST COLLECTIVE</h2>
         </div>
         
         <div className="space-y-6 max-w-5xl mx-auto">
@@ -131,14 +131,14 @@ export default function ArtistsSection() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 10 }}
                     transition={{ duration: 0.36 }}
-                    className="rounded-2xl overflow-hidden bg-cream/15 backdrop-blur-xl border border-cream/20 shadow-2xl"
+                    className="rounded-2xl overflow-hidden bg-black/5 backdrop-blur-xl border border-black/10 shadow-2xl"
                   >
                     <div className="flex gap-6 p-6">
                       <div className="flex-1">
-                        <h3 className="text-2xl font-black text-cream mb-2 font-signika">{member.name}</h3>
-                        <p className="text-cream/70 font-bold text-sm mb-4 font-alan-sans">{member.role}</p>
+                        <h3 className="text-2xl font-black text-black mb-2 font-signika">{member.name}</h3>
+                        <p className="text-black/70 font-bold text-sm mb-4 font-alan-sans">{member.role}</p>
                         {member.bio && (
-                          <p className="text-sm text-cream/80 mb-3 font-alan-sans">{member.bio}</p>
+                          <p className="text-sm text-black/80 mb-3 font-alan-sans">{member.bio}</p>
                         )}
                       </div>
                       <div className="relative w-48 h-64 flex-shrink-0 rounded-xl overflow-hidden ring-1 ring-cream/20">
@@ -153,15 +153,15 @@ export default function ArtistsSection() {
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.3 }}
-                    className="flex gap-6 items-center bg-cream/10 backdrop-blur border border-cream/20 rounded-2xl overflow-hidden shadow-lg p-6 group/card hover:bg-cream/15 hover:border-cream/40 transition-all duration-300"
+                    className="flex gap-6 items-center bg-black/5 backdrop-blur border border-black/10 rounded-2xl overflow-hidden shadow-lg p-6 group/card hover:bg-black/10 hover:border-black/20 transition-all duration-300"
                   >
                     <div className="flex-1">
-                      <h3 className="text-2xl font-black text-cream mb-1 font-signika">{member.name}</h3>
-                      <p className="text-cream/70 font-bold text-sm mb-3 font-alan-sans">{member.role}</p>
+                      <h3 className="text-2xl font-black text-black mb-1 font-signika">{member.name}</h3>
+                      <p className="text-black/70 font-bold text-sm mb-3 font-alan-sans">{member.role}</p>
                       {member.bio && (
-                        <p className="text-sm text-cream/60 line-clamp-2 font-alan-sans">{member.bio}</p>
+                        <p className="text-sm text-black/60 line-clamp-2 font-alan-sans">{member.bio}</p>
                       )}
-                      <p className="text-xs text-pumpkin font-bold mt-3 cursor-pointer">Click to see more →</p>
+                      <p className="text-xs text-orange font-bold mt-3 cursor-pointer">Click to see more →</p>
                     </div>
                     <div className="relative w-48 h-56 flex-shrink-0 rounded-xl overflow-hidden ring-1 ring-cream/20">
                       <Image 
@@ -178,7 +178,7 @@ export default function ArtistsSection() {
           ))}
         </div>
 
-        <div className="text-center mt-12 text-cream/40 text-xs uppercase tracking-wider font-bold">
+        <div className="text-center mt-12 text-black/40 text-xs uppercase tracking-wider font-bold">
           Click on any card to see more details
         </div>
       </div>

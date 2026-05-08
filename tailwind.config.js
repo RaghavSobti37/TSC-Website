@@ -16,33 +16,47 @@ module.exports = {
 
       // Brand Color Palette
       colors: {
-        // Primary Canvas
-        cream: '#FDF6F1',
-        'cream-light': '#FFFAF7',
-        'cream-dark': '#F5E8DD',
+        // Primary Canvas (Strictly Black & White)
+        white: '#FFFFFF',
+        black: '#000000',
+        cream: '#FFFFFF', // Mapping cream to white for B&W background
+        'cream-light': '#FFFFFF',
+        'cream-dark': '#F9F9F9', // Very light gray for subtle contrast
 
-        // Primary Structure
-        'teal-dark': '#083D3A',
-        'teal-primary': '#0B5147',
-        'teal-light': '#126D5E',
+        // Accent Colors
+        teal: {
+          light: '#20B2AA',
+          DEFAULT: '#008080',
+          dark: '#006666',
+        },
+        'teal-primary': '#008080',
+        'teal-dark': '#006666',
+        'teal-light': '#20B2AA',
 
-        // Supporting Colors (Rooted Palette)
-        pumpkin: '#B74B02',
-        'pumpkin-dark': '#8E3A01',
+        // Highlight Colors
+        orange: {
+          light: '#FFB347',
+          DEFAULT: '#FF8C00',
+          dark: '#E67E00',
+        },
+        pumpkin: '#FF8C00', // Mapping pumpkin to orange
+        'pumpkin-dark': '#E67E00',
+
+        // Supporting Colors (Keeping others but they should be used sparingly if at all)
         wine: '#6D2034',
-        'sea-foam': '#126D5E',
+        'sea-foam': '#008080',
         chestnut: '#592314',
         mustard: '#AD6517',
         'red-oxide': '#88281C',
-        peacock: '#08525F',
+        peacock: '#006666',
 
-        // Neutral Scale
-        charcoal: '#1A1A1A',
+        // Neutral Scale (Strictly B&W/Gray)
+        charcoal: '#121212',
         'slate-dark': '#2D2D2D',
         'slate-medium': '#505050',
         'slate-light': '#9A9A9A',
         'slate-lighter': '#D4D4D4',
-        'slate-lightest': '#E8E8E8',
+        'slate-lightest': '#F2F2F2',
       },
 
       // Enhanced Typography Scale

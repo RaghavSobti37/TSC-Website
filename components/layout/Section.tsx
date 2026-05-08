@@ -10,18 +10,18 @@ interface SectionProps {
 }
 
 const paddingMap = {
-  sm: 'px-4 md:px-6 py-8 md:py-12',
-  md: 'px-4 md:px-8 py-12 md:py-20',
-  lg: 'px-4 md:px-8 py-16 md:py-32',
-  xl: 'px-4 md:px-8 py-24 md:py-40',
+  sm: 'px-4 md:px-6 py-4 md:py-6',
+  md: 'px-4 md:px-8 py-6 md:py-8',
+  lg: 'px-4 md:px-8 py-10 md:py-12',
+  xl: 'px-4 md:px-8 py-12 md:py-16',
 };
 
 const backgroundMap = {
-  cream: 'bg-cream',
+  cream: 'bg-white',
   white: 'bg-white',
-  teal: 'bg-teal-dark',
-  'cream-dark': 'bg-cream-dark',
-  charcoal: 'bg-charcoal',
+  teal: 'bg-black',
+  'cream-dark': 'bg-white',
+  charcoal: 'bg-black',
   transparent: 'bg-transparent',
 };
 

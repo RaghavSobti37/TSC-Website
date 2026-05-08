@@ -56,7 +56,7 @@ export const CMSCard: React.FC<CMSCardProps> = ({
               {tags.slice(0, 2).map((tag) => (
                 <span
                   key={tag}
-                  className="px-2 py-1 bg-teal-dark text-cream text-xs font-semibold rounded-full"
+                  className="px-2 py-1 bg-teal text-white text-xs font-semibold rounded-full"
                 >
                   {tag}
                 </span>

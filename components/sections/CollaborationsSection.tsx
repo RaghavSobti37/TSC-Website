@@ -74,9 +74,9 @@ export default function CollaborationsSection() {
   return (
     <Section
       id="collaborations"
-      background="transparent"
+      background="white"
       padding="xl"
-      className="relative py-12 sm:py-16 md:py-24 bg-gradient-to-br from-pumpkin to-red-oxide"
+      className="relative py-12 sm:py-16 md:py-24 bg-white"
     >
       <Container className="max-w-6xl px-4 sm:px-6">
         {/* Section heading */}
@@ -87,10 +87,10 @@ export default function CollaborationsSection() {
           viewport={{ once: true }}
           className="mb-10 sm:mb-12 md:mb-16 text-center"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-cream mb-4 sm:mb-6 font-signika">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black mb-4 sm:mb-6 font-signika">
             Brand Partnerships
           </h2>
-          <p className="text-sm sm:text-base md:text-lg text-cream/90 font-alan-sans max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base md:text-lg text-black/60 font-alan-sans max-w-2xl mx-auto">
             Creating authentic cultural IP that resonates with audiences worldwide
           </p>
         </motion.div>
@@ -103,7 +103,7 @@ export default function CollaborationsSection() {
           viewport={{ once: true }}
           className="mb-12 sm:mb-16 md:mb-20"
         >
-          <h3 className="text-xl sm:text-2xl font-bold text-cream mb-6 sm:mb-8 font-signika text-center">
+          <h3 className="text-xl sm:text-2xl font-bold text-black mb-6 sm:mb-8 font-signika text-center">
             Partnership Models
           </h3>
 
@@ -116,13 +116,13 @@ export default function CollaborationsSection() {
                 transition={{ delay: index * 0.15, duration: 0.6 }}
                 viewport={{ once: true }}
                 whileHover={{ y: -8 }}
-                className="bg-cream/10 rounded-lg sm:rounded-xl md:rounded-2xl p-4 sm:p-6 md:p-8 border border-cream/20 backdrop-blur hover:bg-cream/20 transition-all"
+                className="bg-black/5 rounded-lg sm:rounded-xl md:rounded-2xl p-4 sm:p-6 md:p-8 border border-black/10 hover:bg-black/10 transition-all"
               >
-                <div className="text-4xl sm:text-5xl mb-3 sm:mb-4">{model.icon}</div>
-                <h4 className="text-lg sm:text-xl font-bold text-cream mb-2 sm:mb-3 font-signika">
+                <div className="text-4xl sm:text-5xl mb-3 sm:mb-4 text-orange">{model.icon}</div>
+                <h4 className="text-lg sm:text-xl font-bold text-black mb-2 sm:mb-3 font-signika">
                   {model.title}
                 </h4>
-                <p className="text-cream/80 font-alan-sans text-sm sm:text-base">
+                <p className="text-black/60 font-alan-sans text-sm sm:text-base">
                   {model.description}
                 </p>
               </motion.div>
@@ -137,7 +137,7 @@ export default function CollaborationsSection() {
           transition={{ delay: 0.4, duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h3 className="text-xl sm:text-2xl font-bold text-cream mb-6 sm:mb-8 md:mb-12 font-signika text-center">
+          <h3 className="text-xl sm:text-2xl font-bold text-black mb-6 sm:mb-8 md:mb-12 font-signika text-center">
             Our Process
           </h3>
 
@@ -152,24 +152,24 @@ export default function CollaborationsSection() {
                 className="relative"
               >
                 {/* Step number circle */}
-                <div className="absolute -top-6 sm:-top-8 left-0 w-10 sm:w-12 h-10 sm:h-12 bg-cream text-red-oxide rounded-full flex items-center justify-center font-bold font-signika text-sm sm:text-lg">
+                <div className="absolute -top-6 sm:-top-8 left-0 w-10 sm:w-12 h-10 sm:h-12 bg-orange text-white rounded-full flex items-center justify-center font-bold font-signika text-sm sm:text-lg">
                   {index + 1}
                 </div>
 
                 {/* Step card */}
-                <div className="bg-cream/10 rounded-lg sm:rounded-xl p-4 sm:p-6 border border-cream/20 backdrop-blur pt-10 sm:pt-12">
-                  <div className="text-3xl sm:text-4xl mb-2 sm:mb-3">{step.icon}</div>
-                  <h4 className="text-base sm:text-lg font-bold text-cream mb-1 sm:mb-2 font-signika">
+                <div className="bg-black/5 rounded-lg sm:rounded-xl p-4 sm:p-6 border border-black/10 pt-10 sm:pt-12">
+                  <div className="text-3xl sm:text-4xl mb-2 sm:mb-3 text-orange">{step.icon}</div>
+                  <h4 className="text-base sm:text-lg font-bold text-black mb-1 sm:mb-2 font-signika">
                     {step.title}
                   </h4>
-                  <p className="text-cream/80 font-alan-sans text-xs sm:text-sm">
+                  <p className="text-black/60 font-alan-sans text-xs sm:text-sm">
                     {step.description}
                   </p>
                 </div>
 
                 {/* Connector line to next step */}
                 {index < processSteps.length - 1 && (
-                  <div className="hidden lg:block absolute top-10 sm:top-12 left-full w-4 sm:w-6 h-0.5 bg-cream/30" />
+                  <div className="hidden lg:block absolute top-10 sm:top-12 left-full w-4 sm:w-6 h-0.5 bg-black/10" />
                 )}
               </motion.div>
             ))}
@@ -182,12 +182,12 @@ export default function CollaborationsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.8 }}
           viewport={{ once: true }}
-          className="mt-12 sm:mt-14 md:mt-16 text-center bg-cream/10 rounded-lg sm:rounded-xl md:rounded-2xl p-6 sm:p-8 border border-cream/20 backdrop-blur"
+          className="mt-12 sm:mt-14 md:mt-16 text-center bg-black/5 rounded-lg sm:rounded-xl md:rounded-2xl p-6 sm:p-8 border border-black/10"
         >
-          <h3 className="text-2xl sm:text-3xl font-bold text-cream mb-3 sm:mb-4 font-signika">
+          <h3 className="text-2xl sm:text-3xl font-bold text-black mb-3 sm:mb-4 font-signika">
             Ready to Collaborate?
           </h3>
-          <p className="text-cream/80 font-alan-sans text-sm sm:text-base mb-6 sm:mb-8 max-w-2xl mx-auto">
+          <p className="text-black/60 font-alan-sans text-sm sm:text-base mb-6 sm:mb-8 max-w-2xl mx-auto">
             Let's create cultural IP that resonates with your audience and makes an impact
           </p>
           <div className="flex justify-center">

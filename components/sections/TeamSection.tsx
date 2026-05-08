@@ -110,7 +110,7 @@ export default function TeamSection() {
   ];
 
   return (
-    <section id="team" className="py-16 sm:py-20 md:py-28 px-4 sm:px-6 bg-cream">
+    <section id="team" className="py-12 sm:py-14 md:py-16 px-4 sm:px-6 bg-white">
       <div className="max-w-5xl mx-auto">
         {/* Section Heading */}
         <motion.div
@@ -120,10 +120,10 @@ export default function TeamSection() {
           viewport={{ once: true }}
           className="text-center mb-12 sm:mb-16"
         >
-          <p className="text-pumpkin font-black text-xs uppercase tracking-widest mb-2 font-alan-sans">
+          <p className="text-orange font-black text-xs uppercase tracking-widest mb-2 font-alan-sans">
             WHO MADE IT
           </p>
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-charcoal font-signika">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-black font-signika">
             Meet the Team
           </h2>
         </motion.div>
@@ -151,22 +151,22 @@ export default function TeamSection() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 10 }}
                     transition={{ duration: 0.36 }}
-                    className="rounded-2xl overflow-hidden bg-gradient-to-br from-cream via-pumpkin/10 to-teal-dark/20 shadow-2xl border border-pumpkin/20"
+                    className="rounded-2xl overflow-hidden bg-white shadow-2xl border border-black/5"
                   >
                     <div className="flex flex-col sm:flex-row gap-6 p-6 sm:p-8">
                       {/* Text Content */}
                       <div className="flex-1 order-2 sm:order-1">
-                        <h3 className="text-2xl sm:text-3xl font-bold text-charcoal mb-1 font-signika">
+                        <h3 className="text-2xl sm:text-3xl font-bold text-black mb-1 font-signika">
                           {member.name}
                         </h3>
-                        <p className="text-pumpkin font-bold text-sm mb-4 font-alan-sans uppercase tracking-wide">
+                        <p className="text-orange font-bold text-sm mb-4 font-alan-sans uppercase tracking-wide">
                           {member.role}
                         </p>
-                        <p className="text-sm sm:text-base text-charcoal/80 mb-4 font-alan-sans leading-relaxed">
+                        <p className="text-sm sm:text-base text-black/80 mb-4 font-alan-sans leading-relaxed">
                           {member.description}
                         </p>
                         {member.philosophy && (
-                          <p className="text-sm italic text-pumpkin mb-5 font-semibold font-alan-sans border-l-4 border-pumpkin/40 pl-4">
+                          <p className="text-sm italic text-orange mb-5 font-semibold font-alan-sans border-l-4 border-orange/40 pl-4">
                             {member.philosophy}
                           </p>
                         )}
@@ -188,7 +188,7 @@ export default function TeamSection() {
                               href={member.socials.linkedin}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="flex items-center gap-2 px-4 py-2 bg-charcoal text-cream rounded-lg text-xs font-bold hover:bg-charcoal/80 transition-colors font-alan-sans"
+                              className="flex items-center gap-2 px-4 py-2 bg-charcoal text-cream rounded-lg text-xs font-bold hover:bg-charcoal/80 transition-colors font-alan-sans whitespace-nowrap"
                               onClick={(e) => e.stopPropagation()}
                             >
                               <FaLinkedin size={14} />
@@ -200,7 +200,7 @@ export default function TeamSection() {
                               href={member.socials.instagram}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="flex items-center gap-2 px-4 py-2 bg-pumpkin text-cream rounded-lg text-xs font-bold hover:bg-pumpkin/80 transition-colors font-alan-sans"
+                              className="flex items-center gap-2 px-4 py-2 bg-pumpkin text-cream rounded-lg text-xs font-bold hover:bg-pumpkin/80 transition-colors font-alan-sans whitespace-nowrap"
                               onClick={(e) => e.stopPropagation()}
                             >
                               <FaInstagram size={14} />
@@ -231,16 +231,16 @@ export default function TeamSection() {
                     className="flex flex-col sm:flex-row gap-4 sm:gap-6 items-center bg-white rounded-2xl overflow-hidden shadow-lg p-5 sm:p-6 group/card hover:shadow-xl hover:border-pumpkin/30 border-2 border-transparent transition-all duration-300"
                   >
                     <div className="flex-1 text-center sm:text-left">
-                      <h3 className="text-xl sm:text-2xl font-bold text-charcoal mb-1 font-signika">
+                      <h3 className="text-xl sm:text-2xl font-bold text-black mb-1 font-signika">
                         {member.name}
                       </h3>
-                      <p className="text-pumpkin font-bold text-xs sm:text-sm mb-2 font-alan-sans uppercase tracking-wide">
+                      <p className="text-orange font-bold text-xs sm:text-sm mb-2 font-alan-sans uppercase tracking-wide">
                         {member.role}
                       </p>
-                      <p className="text-sm text-charcoal/60 line-clamp-2 font-alan-sans">
+                      <p className="text-sm text-black/60 line-clamp-2 font-alan-sans">
                         {member.description}
                       </p>
-                      <p className="text-xs text-pumpkin font-bold mt-3 cursor-pointer font-alan-sans group-hover/card:translate-x-1 transition-transform duration-300">
+                      <p className="text-xs text-orange font-bold mt-3 cursor-pointer font-alan-sans group-hover/card:translate-x-1 transition-transform duration-300">
                         Click to see more →
                       </p>
                     </div>

@@ -15,32 +15,32 @@ const ovals = [
     title: 'Our Vision',
     content: 'Empowering emerging artists with the tools, mentorship, and resources to create, monetize, and scale their cultural impact globally.',
     position: 'top-12 left-1/2 -translate-x-1/2',
-    color: 'border-teal-dark',
-    gradient: 'from-teal-dark/20 to-transparent',
+    color: 'border-teal',
+    gradient: 'from-teal/10 to-transparent',
   },
   {
     id: 'mission',
     title: 'Our Mission',
     content: 'Build the most inclusive creative ecosystem where artists own their IP, collaborate freely, and earn directly from their work.',
     position: 'bottom-12 left-12',
-    color: 'border-pumpkin',
-    gradient: 'from-pumpkin/20 to-transparent',
+    color: 'border-orange',
+    gradient: 'from-orange/10 to-transparent',
   },
   {
     id: 'values',
     title: 'Our Values',
     content: 'Creativity, Collaboration, Ownership, and Impact. We believe artists deserve fair compensation and creative control.',
     position: 'bottom-12 right-12',
-    color: 'border-wine',
-    gradient: 'from-wine/20 to-transparent',
+    color: 'border-orange',
+    gradient: 'from-orange/10 to-transparent',
   },
   {
     id: 'culture',
     title: 'Our Culture',
     content: 'Community-first mentality where every member amplifies each other. Together we shape culture, not follow it.',
     position: 'top-12 right-12',
-    color: 'border-cream',
-    gradient: 'from-cream/20 to-transparent',
+    color: 'border-black/20',
+    gradient: 'from-black/5 to-transparent',
   },
 ];
 
@@ -68,7 +68,7 @@ export function PersonFormation({ isOpen, onClose }: PersonFormationProps) {
             transition={{ duration: 0.5, type: 'spring', bounce: 0.3 }}
             className="fixed inset-0 z-50 flex items-center justify-center p-4"
           >
-            <div className="relative w-full max-w-5xl h-[600px] bg-black/80 rounded-3xl border border-cream/20 overflow-hidden">
+            <div className="relative w-full max-w-5xl h-[600px] bg-white rounded-3xl border border-black/10 overflow-hidden shadow-2xl">
               {/* Center Person Formation */}
               <div className="absolute inset-0 flex items-center justify-center">
                 {/* Animated circles forming person shape */}
@@ -83,7 +83,7 @@ export function PersonFormation({ isOpen, onClose }: PersonFormationProps) {
                     cy="60"
                     r="30"
                     fill="none"
-                    stroke="#0B5147"
+                    stroke="#008080"
                     strokeWidth="2"
                     animate={
                       hoveredOval
@@ -104,7 +104,7 @@ export function PersonFormation({ isOpen, onClose }: PersonFormationProps) {
                     cy="125"
                     r="28"
                     fill="none"
-                    stroke="#D4622D"
+                    stroke="#FF8C00"
                     strokeWidth="2"
                     animate={
                       hoveredOval
@@ -125,7 +125,7 @@ export function PersonFormation({ isOpen, onClose }: PersonFormationProps) {
                     cy="195"
                     r="25"
                     fill="none"
-                    stroke="#126D5E"
+                    stroke="#008080"
                     strokeWidth="2"
                     animate={
                       hoveredOval
@@ -164,7 +164,7 @@ export function PersonFormation({ isOpen, onClose }: PersonFormationProps) {
                   onMouseLeave={() => setHoveredOval(null)}
                 >
                   <div className="text-center">
-                    <h3 className="text-sm font-bold text-cream mb-1">
+                    <h3 className="text-sm font-bold text-black mb-1">
                       {oval.title}
                     </h3>
                     <AnimatePresence>
@@ -173,7 +173,7 @@ export function PersonFormation({ isOpen, onClose }: PersonFormationProps) {
                           initial={{ opacity: 0, height: 0 }}
                           animate={{ opacity: 1, height: 'auto' }}
                           exit={{ opacity: 0, height: 0 }}
-                          className="text-xs text-cream/70 line-clamp-2"
+                          className="text-xs text-black/60 line-clamp-2"
                         >
                           {oval.content}
                         </motion.p>
@@ -186,12 +186,12 @@ export function PersonFormation({ isOpen, onClose }: PersonFormationProps) {
               {/* Close Button */}
               <motion.button
                 onClick={onClose}
-                className="absolute top-6 right-6 p-2 hover:bg-cream/10 rounded-full transition-colors z-10"
+                className="absolute top-6 right-6 p-2 hover:bg-black/5 rounded-full transition-colors z-10"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
               >
                 <svg
-                  className="w-6 h-6 text-cream"
+                  className="w-6 h-6 text-black"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"

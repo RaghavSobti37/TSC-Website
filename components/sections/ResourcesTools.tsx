@@ -62,10 +62,10 @@ export default function ResourcesTools() {
     : freeTools.filter(tool => tool.category === activeCategory);
 
   return (
-    <section className="py-16 sm:py-24 bg-teal-dark px-4 sm:px-6 relative overflow-hidden">
+    <section className="py-16 sm:py-24 bg-white px-4 sm:px-6 relative overflow-hidden">
       {/* Background Decor */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-pumpkin/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"></div>
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-teal-light/20 rounded-full blur-3xl translate-y-1/2 -translate-x-1/3"></div>
+      <div className="absolute top-0 right-0 w-96 h-96 bg-orange/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"></div>
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-teal/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/3"></div>
 
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-12 sm:mb-16">
@@ -73,7 +73,7 @@ export default function ResourcesTools() {
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-pumpkin font-black text-xs uppercase tracking-widest mb-2 font-alan-sans"
+            className="text-orange font-black text-xs uppercase tracking-widest mb-2 font-alan-sans"
           >
             Curated Assets
           </motion.p>
@@ -82,7 +82,7 @@ export default function ResourcesTools() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-3xl sm:text-4xl md:text-5xl font-bold text-cream font-signika"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold text-black font-signika"
           >
             Free Tools & Assets
           </motion.h2>
@@ -91,7 +91,7 @@ export default function ResourcesTools() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-cream-dark/80 max-w-2xl mx-auto mt-4 text-sm sm:text-base"
+            className="text-black/60 max-w-2xl mx-auto mt-4 text-sm sm:text-base"
           >
             A growing directory of the best free resources, plugins, and tools handpicked by our community of creators.
           </motion.p>
@@ -109,8 +109,8 @@ export default function ResourcesTools() {
               onClick={() => setActiveCategory(category)}
               className={`px-5 py-2 rounded-full text-sm font-semibold transition-all duration-300 ${
                 activeCategory === category
-                  ? 'bg-pumpkin text-cream shadow-[0_0_15px_rgba(183,75,2,0.4)]'
-                  : 'bg-teal-primary/50 text-cream-dark/70 hover:bg-teal-primary hover:text-cream'
+                  ? 'bg-orange text-white shadow-[0_0_15px_rgba(255,140,0,0.4)]'
+                  : 'bg-black/5 text-black/70 hover:bg-black/10 hover:text-black'
               }`}
             >
               {category}
@@ -129,27 +129,27 @@ export default function ResourcesTools() {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.3 }}
-                className="bg-teal-primary/20 border border-teal-light/30 rounded-2xl overflow-hidden hover:bg-teal-primary/40 transition-colors group flex flex-col"
+                className="bg-white border border-black/10 rounded-2xl overflow-hidden hover:shadow-xl transition-all group flex flex-col shadow-sm"
               >
                 <div className="h-40 overflow-hidden relative">
-                  <div className="absolute inset-0 bg-teal-dark/40 group-hover:bg-teal-dark/20 transition-colors duration-500 z-10"></div>
+                  <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-500 z-10"></div>
                   <img
                     src={tool.image}
                     alt={tool.title}
-                    className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 grayscale group-hover:grayscale-0"
+                    className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
                   />
                   <div className="absolute top-4 right-4 z-20">
-                    <span className="bg-teal-dark/80 backdrop-blur-sm text-cream-light text-xs font-bold px-3 py-1 rounded-full border border-teal-light/50">
+                    <span className="bg-black/80 backdrop-blur-sm text-white text-xs font-bold px-3 py-1 rounded-full border border-white/10">
                       {tool.category}
                     </span>
                   </div>
                 </div>
                 
                 <div className="p-6 flex-1 flex flex-col">
-                  <h3 className="text-xl font-bold text-cream mb-2 font-signika group-hover:text-pumpkin transition-colors">
+                  <h3 className="text-xl font-bold text-black mb-2 font-signika group-hover:text-teal transition-colors">
                     {tool.title}
                   </h3>
-                  <p className="text-cream-dark/70 text-sm leading-relaxed mb-6 flex-1">
+                  <p className="text-black/60 text-sm leading-relaxed mb-6 flex-1">
                     {tool.description}
                   </p>
                   
@@ -157,7 +157,7 @@ export default function ResourcesTools() {
                     href={tool.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-auto inline-flex items-center gap-2 text-pumpkin font-semibold text-sm hover:text-cream transition-colors"
+                    className="mt-auto inline-flex items-center gap-2 text-orange font-semibold text-sm hover:text-teal transition-colors"
                   >
                     <span>Get Resource</span>
                     <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">

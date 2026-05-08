@@ -79,6 +79,18 @@ const timeSlots = [
   '06:00 PM', '06:30 PM', '07:00 PM', '07:30 PM'
 ];
 
+const isTimePassed = (dateStr: string, timeStr: string) => {
+  if (!dateStr) return false;
+  try {
+    const slotDate = new Date(`${dateStr} ${timeStr}`);
+    const now = new Date();
+    const bufferTime = 5 * 60 * 1000; // 5 minutes in milliseconds
+    return slotDate.getTime() < now.getTime() + bufferTime;
+  } catch (e) {
+    return false;
+  }
+};
+
 export default function BookACall() {
   const [step, setStep] = useState(1);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -479,12 +491,12 @@ export default function BookACall() {
                 <Calendar className="absolute left-6 top-1/2 -translate-y-1/2 w-6 h-6 text-pumpkin pointer-events-none" />
                 <input
                   type="date"
+                  style={{ colorScheme: 'light' }}
                   onChange={(e) => {
                     setValue('date', e.target.value);
-                    setTimeout(() => setShowDatePicker(false), 300);
                   }}
                   min={new Date().toISOString().split('T')[0]}
-                  className="w-full bg-slate-50 text-charcoal rounded-2xl py-6 pl-16 pr-6 text-xl font-bold border-2 border-transparent focus:border-pumpkin outline-none appearance-none"
+                  className="w-full bg-slate-50 text-charcoal rounded-2xl py-6 pl-16 pr-6 text-xl font-bold border-2 border-transparent focus:border-pumpkin outline-none"
                 />
               </div>
               <div className="mt-8">
@@ -526,23 +538,31 @@ export default function BookACall() {
               </div>
 
               <div className="grid grid-cols-2 gap-3 overflow-y-auto pr-2 pb-4 scrollbar-hide">
-                {timeSlots.map(slot => (
-                  <button
-                    key={slot}
-                    onClick={() => {
-                      setValue('time', slot);
-                      setTimeout(() => setShowTimePicker(false), 300);
-                    }}
-                    className={`
-                      py-4 px-4 rounded-xl border-2 font-bold transition-all
-                      ${selectedTime === slot
-                        ? 'border-pumpkin bg-pumpkin/10 text-pumpkin scale-[1.02]'
-                        : 'border-cream bg-cream/50 text-slate-medium hover:border-pumpkin/30'}
-                    `}
-                  >
-                    {slot}
-                  </button>
-                ))}
+                {timeSlots.map(slot => {
+                  const isPassed = isTimePassed(selectedDate, slot);
+                  return (
+                    <button
+                      key={slot}
+                      type="button"
+                      disabled={isPassed}
+                      onClick={() => {
+                        if (isPassed) return;
+                        setValue('time', slot);
+                        setTimeout(() => setShowTimePicker(false), 300);
+                      }}
+                      className={`
+                        py-4 px-4 rounded-xl border-2 font-bold transition-all
+                        ${isPassed 
+                          ? 'bg-slate-100 text-slate-300 border-slate-100 cursor-not-allowed opacity-50' 
+                          : selectedTime === slot
+                            ? 'border-pumpkin bg-pumpkin/10 text-pumpkin scale-[1.02]'
+                            : 'border-cream bg-cream/50 text-slate-medium hover:border-pumpkin/30'}
+                      `}
+                    >
+                      {slot}
+                    </button>
+                  );
+                })}
               </div>
 
               <div className="mt-6">

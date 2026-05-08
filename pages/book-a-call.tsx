@@ -2,12 +2,12 @@ import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useForm } from 'react-hook-form';
-import { 
-  Calendar, 
-  Clock, 
-  User, 
-  Phone, 
-  CheckCircle2, 
+import {
+  Calendar,
+  Clock,
+  User,
+  Phone,
+  CheckCircle2,
   ArrowRight,
   ChevronLeft,
   Headphones,
@@ -32,14 +32,20 @@ const courses = [
     title: 'The heART of Composition',
     mentor: 'Sandesh Shandilya',
     icon: Music,
-    color: 'bg-orange/10 text-orange'
+    color: 'bg-orange/10 text-orange',
+    about: 'A comprehensive 6-month journey into mainstream mastery. Learn the art of imagination, converting emotion into timeless expression, and mastering the subconscious mind for effortless creation.',
+    for: 'Aspiring and intermediate composers, songwriters, and musicians who want to move beyond basic theory and create music that connects with the masses.',
+    expect: '200+ mins of deep-dive content, 3 live interactive sessions, '
   },
   {
     id: 'classical',
     title: 'Roots of Hindustani Classical',
     mentor: 'Prasad Khaparde',
     icon: Mic2,
-    color: 'bg-teal-primary/10 text-teal-primary'
+    color: 'bg-teal-primary/10 text-teal-primary',
+    about: 'Master the sacred nuances of classical singing under the Rampur Sahaswan Gharana tradition. Learn directly from the legacy of Padma Bhushan Ustad Rashid Khan Sahab.',
+    for: 'Vocalists of all levels—from beginners wanting a strong foundation to seasoned singers looking to refine their raag interpretation and vocal discipline.',
+    expect: '3 live group sessions, masterclass in breath control (Kanth Saadhna), and official certification recognized in the classical music community.'
   },
   {
     id: 'production',
@@ -47,7 +53,10 @@ const courses = [
     mentor: 'Luca Petracca',
     icon: Headphones,
     color: 'bg-blue-500/10 text-blue-500',
-    isComingSoon: true
+    isComingSoon: true,
+    about: 'A technical and creative roadmap for singer-songwriters to produce professional-grade music from home. From DAW mastery to modern orchestration.',
+    for: 'Singer-songwriters who want to bridge the gap between their songs and a polished, radio-ready sound without relying on external producers.',
+    expect: 'Step-by-step DAW training, arrangement techniques, and essential mixing/mastering secrets for pop and film music.'
   }
 ];
 
@@ -76,7 +85,9 @@ export default function BookACall() {
   const [isSuccess, setIsSuccess] = useState(false);
   const [showDatePicker, setShowDatePicker] = useState(false);
   const [showTimePicker, setShowTimePicker] = useState(false);
-  
+
+  const [expandedCourse, setExpandedCourse] = useState<string | null>(null);
+
   const { register, handleSubmit, watch, setValue, formState: { errors } } = useForm<FormData>({
     defaultValues: {
       course: courses[0].title,
@@ -121,7 +132,7 @@ export default function BookACall() {
   if (isSuccess) {
     return (
       <div className="min-h-screen bg-cream flex items-center justify-center p-4 font-alan-sans">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           className="max-w-md w-full bg-white p-10 rounded-[2.5rem] shadow-2xl text-center border border-pumpkin/10"
@@ -133,7 +144,7 @@ export default function BookACall() {
           <p className="text-slate-medium mb-8 text-lg">
             We&apos;ve received your request. Expect a WhatsApp message from us shortly to confirm the details.
           </p>
-          <button 
+          <button
             onClick={() => window.location.href = '/'}
             className="w-full bg-charcoal text-white py-4 rounded-2xl font-bold text-lg hover:bg-pumpkin transition-all shadow-lg"
           >
@@ -155,7 +166,7 @@ export default function BookACall() {
         {/* Navigation / Header */}
         <div className="flex items-center justify-between mb-8">
           {step > 1 ? (
-            <button 
+            <button
               onClick={prevStep}
               className="flex items-center gap-2 text-slate-medium font-bold text-sm"
             >
@@ -165,12 +176,9 @@ export default function BookACall() {
             <div className="w-10" />
           )}
           <div className="flex flex-col items-center">
-             <span className="text-xs font-black tracking-widest text-pumpkin uppercase">
+            <span className="text-xs font-black tracking-widest text-pumpkin uppercase">
               Step {step} of 3
             </span>
-            <div className="text-[10px] font-bold text-slate-light mt-1 uppercase tracking-tighter">
-              Page {step}/3
-            </div>
           </div>
           <div className="w-10" />
         </div>
@@ -187,10 +195,10 @@ export default function BookACall() {
             >
               <div>
                 <h1 className="text-3xl sm:text-4xl font-signika font-bold text-charcoal mb-4">Which course are you interested in?</h1>
-                
+
                 {/* Progress Bar below question */}
                 <div className="w-full h-1.5 bg-white/50 rounded-full overflow-hidden mb-6">
-                  <motion.div 
+                  <motion.div
                     className="h-full bg-pumpkin"
                     initial={{ width: '0%' }}
                     animate={{ width: '33.33%' }}
@@ -200,37 +208,87 @@ export default function BookACall() {
 
               <div className="grid grid-cols-1 gap-4">
                 {courses.map((course) => (
-                  <button
+                  <div
                     key={course.id}
-                    onClick={() => {
-                      setValue('course', course.title);
-                      nextStep();
-                    }}
                     className={`
-                      relative flex items-center gap-4 p-5 rounded-2xl border-2 text-left transition-all
-                      ${selectedCourse === course.title 
-                        ? 'border-pumpkin bg-white shadow-xl scale-[1.02]' 
+                      relative rounded-[2rem] border-2 transition-all overflow-hidden
+                      ${selectedCourse === course.title
+                        ? 'border-pumpkin bg-white shadow-xl'
                         : 'border-white bg-white/50 hover:border-pumpkin/30'}
                     `}
                   >
-                    <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${course.color}`}>
-                      <course.icon className="w-6 h-6" />
-                    </div>
-                    <div className="flex-1">
-                      <div className="flex items-center gap-2 mb-1">
-                        <h3 className="font-bold text-charcoal leading-tight">{course.title}</h3>
-                        {course.isComingSoon && (
-                          <span className="text-[9px] font-black uppercase tracking-widest bg-pumpkin/10 text-pumpkin px-1.5 py-0.5 rounded-full">
-                            Coming Soon
-                          </span>
-                        )}
+                    {/* Main Card Content (Clickable to Select) */}
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setValue('course', course.title);
+                        nextStep();
+                      }}
+                      className="w-full flex items-center gap-4 p-6 text-left"
+                    >
+                      <div className={`w-14 h-14 rounded-2xl flex items-center justify-center shrink-0 ${course.color}`}>
+                        <course.icon className="w-7 h-7" />
                       </div>
-                      <p className="text-sm text-slate-medium">Mentor: {course.mentor}</p>
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-center gap-2 mb-1">
+                          <h3 className="font-bold text-charcoal leading-tight truncate">{course.title}</h3>
+                          {course.isComingSoon && (
+                            <span className="text-[9px] font-black uppercase tracking-widest bg-pumpkin/10 text-pumpkin px-2 py-0.5 rounded-full shrink-0">
+                              Soon
+                            </span>
+                          )}
+                        </div>
+                        <p className="text-sm text-slate-medium">Mentor: {course.mentor}</p>
+                      </div>
+                      <div className={`w-6 h-6 rounded-full border-2 flex items-center justify-center shrink-0 transition-all ${selectedCourse === course.title ? 'bg-pumpkin border-pumpkin' : 'border-slate-lighter'}`}>
+                        {selectedCourse === course.title && <CheckCircle2 className="w-4 h-4 text-white" />}
+                      </div>
+                    </button>
+
+                    {/* About the Course Dropdown (Inside Card) */}
+                    <div className="px-6 pb-4">
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setExpandedCourse(expandedCourse === course.id ? null : course.id);
+                        }}
+                        className="text-[11px] font-black uppercase tracking-widest text-pumpkin flex items-center gap-1.5 hover:opacity-70 transition-all"
+                      >
+                        {expandedCourse === course.id ? 'Hide Details' : 'About this course'}
+                        <ChevronLeft className={`w-3.5 h-3.5 transition-transform ${expandedCourse === course.id ? 'rotate-90' : '-rotate-90'}`} />
+                      </button>
+
+                      <AnimatePresence>
+                        {expandedCourse === course.id && (
+                          <motion.div
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: 'auto', opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            className="overflow-hidden"
+                          >
+                            <div className="pt-5 pb-2 space-y-5 border-t border-slate-100 mt-4">
+                              <div className="space-y-4">
+                                <div>
+                                  <h4 className="text-[10px] font-black uppercase tracking-widest text-slate-medium mb-2">The Program</h4>
+                                  <p className="text-sm text-charcoal leading-relaxed">{course.about}</p>
+                                </div>
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                                  <div className="p-4 bg-slate-50 rounded-2xl">
+                                    <h4 className="text-[10px] font-black uppercase tracking-widest text-slate-medium mb-2">Ideal For</h4>
+                                    <p className="text-xs text-slate-medium leading-relaxed font-medium">{course.for}</p>
+                                  </div>
+                                  <div className="p-4 bg-pumpkin/5 rounded-2xl">
+                                    <h4 className="text-[10px] font-black uppercase tracking-widest text-pumpkin mb-2">What you get</h4>
+                                    <p className="text-xs text-slate-medium leading-relaxed font-medium">{course.expect}</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
                     </div>
-                    <div className={`w-6 h-6 rounded-full border-2 flex items-center justify-center transition-all ${selectedCourse === course.title ? 'bg-pumpkin border-pumpkin' : 'border-slate-lighter'}`}>
-                      {selectedCourse === course.title && <CheckCircle2 className="w-4 h-4 text-white" />}
-                    </div>
-                  </button>
+                  </div>
                 ))}
               </div>
             </motion.div>
@@ -247,10 +305,10 @@ export default function BookACall() {
             >
               <div>
                 <h1 className="text-3xl sm:text-4xl font-signika font-bold text-charcoal mb-4">Tell us about yourself</h1>
-                
+
                 {/* Progress Bar below question */}
                 <div className="w-full h-1.5 bg-white/50 rounded-full overflow-hidden mb-6">
-                  <motion.div 
+                  <motion.div
                     className="h-full bg-pumpkin"
                     initial={{ width: '33.33%' }}
                     animate={{ width: '66.66%' }}
@@ -263,7 +321,7 @@ export default function BookACall() {
                   <label className="text-sm font-black text-slate-medium uppercase tracking-wider flex items-center gap-2">
                     <User className="w-4 h-4" /> What&apos;s your name?
                   </label>
-                  <input 
+                  <input
                     {...register('name', { required: 'Name is required' })}
                     autoFocus
                     placeholder="Enter your full name"
@@ -277,7 +335,7 @@ export default function BookACall() {
                     <Phone className="w-4 h-4" /> Phone / WhatsApp Number
                   </label>
                   <div className="flex gap-3">
-                    <select 
+                    <select
                       {...register('countryCode')}
                       className="bg-white border-none rounded-2xl py-5 px-4 text-lg font-bold shadow-sm focus:ring-4 focus:ring-pumpkin/20 transition-all appearance-none cursor-pointer min-w-[100px] text-center"
                     >
@@ -285,7 +343,7 @@ export default function BookACall() {
                         <option key={c.code} value={c.code}>{c.code} ({c.country})</option>
                       ))}
                     </select>
-                    <input 
+                    <input
                       {...register('phone', { required: 'Phone is required' })}
                       type="tel"
                       placeholder="98765 43210"
@@ -299,8 +357,8 @@ export default function BookACall() {
                   <label className="text-sm font-black text-slate-medium uppercase tracking-wider flex items-center gap-2">
                     <User className="w-4 h-4" /> Email Address
                   </label>
-                  <input 
-                    {...register('email', { 
+                  <input
+                    {...register('email', {
                       required: 'Email is required',
                       pattern: {
                         value: /^\S+@\S+$/i,
@@ -315,7 +373,7 @@ export default function BookACall() {
                 </div>
               </div>
 
-              <button 
+              <button
                 onClick={nextStep}
                 disabled={!watch('name') || !watch('phone') || !watch('email')}
                 className="w-full bg-charcoal text-white py-5 rounded-2xl font-bold text-xl flex items-center justify-center gap-3 hover:bg-pumpkin transition-all shadow-xl disabled:opacity-50"
@@ -336,10 +394,10 @@ export default function BookACall() {
             >
               <div>
                 <h1 className="text-3xl sm:text-4xl font-signika font-bold text-charcoal mb-4">When should we call?</h1>
-                
+
                 {/* Progress Bar below question */}
                 <div className="w-full h-1.5 bg-white/50 rounded-full overflow-hidden mb-6">
-                  <motion.div 
+                  <motion.div
                     className="h-full bg-pumpkin"
                     initial={{ width: '66.66%' }}
                     animate={{ width: '100%' }}
@@ -381,7 +439,7 @@ export default function BookACall() {
                 </div>
               </div>
 
-              <button 
+              <button
                 onClick={handleSubmit(onSubmit)}
                 disabled={isSubmitting || !selectedDate || !selectedTime}
                 className="w-full bg-pumpkin text-white py-5 rounded-2xl font-bold text-xl flex items-center justify-center gap-3 hover:bg-charcoal transition-all shadow-xl disabled:opacity-50"
@@ -397,14 +455,14 @@ export default function BookACall() {
       <AnimatePresence>
         {showDatePicker && (
           <div className="fixed inset-0 z-[100] flex items-end sm:items-center justify-center p-0 sm:p-4">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               className="absolute inset-0 bg-black/60 backdrop-blur-sm"
               onClick={() => setShowDatePicker(false)}
             />
-            <motion.div 
+            <motion.div
               initial={{ y: '100%' }}
               animate={{ y: 0 }}
               exit={{ y: '100%' }}
@@ -417,7 +475,7 @@ export default function BookACall() {
                   <X className="w-6 h-6" />
                 </button>
               </div>
-              <input 
+              <input
                 type="date"
                 onChange={(e) => {
                   setValue('date', e.target.value);
@@ -427,7 +485,7 @@ export default function BookACall() {
                 className="w-full bg-cream rounded-2xl py-6 px-8 text-2xl font-bold border-2 border-transparent focus:border-pumpkin outline-none"
               />
               <div className="mt-8">
-                <button 
+                <button
                   onClick={() => setShowDatePicker(false)}
                   className="w-full bg-charcoal text-white py-4 rounded-xl font-bold"
                 >
@@ -443,14 +501,14 @@ export default function BookACall() {
       <AnimatePresence>
         {showTimePicker && (
           <div className="fixed inset-0 z-[100] flex items-end sm:items-center justify-center p-0 sm:p-4">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               className="absolute inset-0 bg-black/60 backdrop-blur-sm"
               onClick={() => setShowTimePicker(false)}
             />
-            <motion.div 
+            <motion.div
               initial={{ y: '100%' }}
               animate={{ y: 0 }}
               exit={{ y: '100%' }}
@@ -463,7 +521,7 @@ export default function BookACall() {
                   <X className="w-6 h-6" />
                 </button>
               </div>
-              
+
               <div className="grid grid-cols-2 gap-3 overflow-y-auto pr-2 pb-4 scrollbar-hide">
                 {timeSlots.map(slot => (
                   <button
@@ -474,8 +532,8 @@ export default function BookACall() {
                     }}
                     className={`
                       py-4 px-4 rounded-xl border-2 font-bold transition-all
-                      ${selectedTime === slot 
-                        ? 'border-pumpkin bg-pumpkin/10 text-pumpkin scale-[1.02]' 
+                      ${selectedTime === slot
+                        ? 'border-pumpkin bg-pumpkin/10 text-pumpkin scale-[1.02]'
                         : 'border-cream bg-cream/50 text-slate-medium hover:border-pumpkin/30'}
                     `}
                   >
@@ -485,7 +543,7 @@ export default function BookACall() {
               </div>
 
               <div className="mt-6">
-                <button 
+                <button
                   onClick={() => setShowTimePicker(false)}
                   className="w-full bg-charcoal text-white py-4 rounded-xl font-bold"
                 >

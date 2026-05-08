@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import Section from '@/components/layout/Section';
 import Container from '@/components/layout/Container';
 
@@ -44,6 +45,7 @@ const courses = [
     features: ['Career Roadmap', 'Brand Building', 'Industry Networking'],
     desc: "Navigate your professional journey with a personalized roadmap. Learn how to bridge the gap between your craft and the commercial music world. Guided by Rohith Sobti's 27+ years of experience in curating talent and managing major labels.",
     image: '/assets/academy/rohit.png',
+    link: '/courses/artist-path', // Fixed link
     isComingSoon: true,
   },
   {
@@ -102,11 +104,16 @@ export default function AcademyCourses() {
               {/* Background Image / Overlay */}
               <div className="absolute inset-0 z-0">
                 {course.image ? (
-                  <img
-                    src={course.image}
-                    alt={course.title}
-                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
-                  />
+                  <div className="relative w-full h-full">
+                    <Image
+                      src={course.image}
+                      alt={course.title}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      className="object-cover transition-transform duration-1000 group-hover:scale-110"
+                      priority={index < 2}
+                    />
+                  </div>
                 ) : (
                   <div className="w-full h-full bg-gradient-to-br from-teal-dark to-charcoal" />
                 )}
@@ -147,8 +154,13 @@ export default function AcademyCourses() {
 
                 {!course.isComingSoon && (
                   <div className="flex items-center gap-4">
-                    <div className="w-10 h-10 rounded-full border border-pumpkin overflow-hidden">
-                      <img src={course.mentorImage} alt={course.mentor} className="w-full h-full object-cover" />
+                    <div className="w-10 h-10 rounded-full border border-pumpkin overflow-hidden relative">
+                      <Image 
+                        src={course.mentorImage} 
+                        alt={course.mentor} 
+                        fill
+                        className="object-cover" 
+                      />
                     </div>
                     <span className="text-cream font-bold font-alan-sans text-sm">{course.mentor}</span>
                     <div className="ml-auto w-10 h-10 rounded-full bg-pumpkin/20 border border-pumpkin/50 flex items-center justify-center text-cream group-hover:bg-pumpkin group-hover:scale-110 transition-all">

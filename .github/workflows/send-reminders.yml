@@ -4,7 +4,7 @@ on:
   schedule:
     # Runs every 30 minutes
     - cron: '0,30 * * * *'
-  workflow_dispatch: # Allows manual triggering from GitHub UI
+  workflow_dispatch: 
 
 jobs:
   ping-reminder-api:
@@ -12,4 +12,8 @@ jobs:
     steps:
       - name: Hit Reminder API
         run: |
-          curl -X GET "https://theshakticollective.com/api/check-reminders"
+          # Follow redirects (-L) and use a browser-like User-Agent to avoid 'Lander' parking pages
+          # Replace the URL below with your ACTUAL Vercel production URL if tscacademy.in doesn't work
+          curl -L -X GET "https://tscacademy.in/api/check-reminders" \
+               -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" \
+               -H "Accept: application/json"

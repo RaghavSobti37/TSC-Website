@@ -1,0 +1,15 @@
+name: Send WhatsApp Reminders
+
+on:
+  schedule:
+    # Runs every 30 minutes
+    - cron: '0,30 * * * *'
+  workflow_dispatch: # Allows manual triggering from GitHub UI
+
+jobs:
+  ping-reminder-api:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Hit Reminder API
+        run: |
+          curl -X GET "https://theshakticollective.com/api/check-reminders"

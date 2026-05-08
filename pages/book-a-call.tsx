@@ -487,16 +487,24 @@ export default function BookACall() {
                   <X className="w-6 h-6" />
                 </button>
               </div>
-              <div className="relative">
-                <Calendar className="absolute left-6 top-1/2 -translate-y-1/2 w-6 h-6 text-pumpkin pointer-events-none" />
+               <div className="relative w-full overflow-hidden bg-slate-50 rounded-2xl border-2 border-transparent focus-within:border-pumpkin transition-all">
+                <div className="flex items-center gap-4 py-6 px-6 pointer-events-none">
+                  <Calendar className="w-6 h-6 text-pumpkin" />
+                  <span className={`text-xl font-bold ${selectedDate ? 'text-charcoal' : 'text-slate-light'}`}>
+                    {selectedDate ? new Date(selectedDate).toLocaleDateString('en-GB', { day: '2-digit', month: '2-digit', year: 'numeric' }) : 'Pick Date'}
+                  </span>
+                </div>
                 <input
                   type="date"
                   style={{ colorScheme: 'light' }}
                   onChange={(e) => {
                     setValue('date', e.target.value);
                   }}
+                  onClick={(e) => {
+                    try { (e.target as any).showPicker(); } catch (err) {}
+                  }}
                   min={new Date().toISOString().split('T')[0]}
-                  className="w-full bg-slate-50 text-charcoal rounded-2xl py-6 pl-16 pr-6 text-xl font-bold border-2 border-transparent focus:border-pumpkin outline-none"
+                  className="absolute inset-0 opacity-0 cursor-pointer w-full h-full z-10"
                 />
               </div>
               <div className="mt-8">

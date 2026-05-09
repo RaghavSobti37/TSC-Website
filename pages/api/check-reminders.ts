@@ -7,10 +7,35 @@ const SPREADSHEET_ID = process.env.SPREADSHEET_ID || '19sTRQ-lUls_dWYRgL3OM70Ewp
 const SHEET_NAME = 'BookedCalls';
 const AISENSY_KEY = process.env.AISENSY_API_KEY;
 
+// Business Hours Configuration (IST)
+const FIRST_SLOT = '12:00 PM';
+const LAST_SLOT = '07:30 PM';
+
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  // Security check: Only allow GET requests (from cron services)
-  // You can also add a secret token header for extra security
-  
+  // 1. Check if we are within the active reminder window (IST)
+  const now = new Date();
+  const istTimeStr = now.toLocaleTimeString('en-US', { timeZone: 'Asia/Kolkata', hour12: false, hour: '2-digit', minute: '2-digit' });
+  const [nowH, nowM] = istTimeStr.split(':').map(Number);
+  const nowMinutes = nowH * 60 + nowM;
+
+  // Calculate window bounds in minutes from midnight
+  const parseTimeToMinutes = (tStr: string) => {
+    const [time, period] = tStr.split(' ');
+    let [h, m] = time.split(':').map(Number);
+    if (period === 'PM' && h !== 12) h += 12;
+    if (period === 'AM' && h === 12) h = 0;
+    return h * 60 + m;
+  };
+
+  const firstSlotMinutes = parseTimeToMinutes(FIRST_SLOT);
+  const lastSlotMinutes = parseTimeToMinutes(LAST_SLOT);
+
+  // Buffer: Start 15 mins before first slot, end exactly at last slot trigger
+  if (nowMinutes < firstSlotMinutes - 15 || nowMinutes > lastSlotMinutes) {
+    console.log(`[${istTimeStr} IST] Outside reminder window. Skipping check.`);
+    return res.status(200).json({ message: 'Outside active reminder window' });
+  }
+
   console.log(`[${new Date().toLocaleString()}] Reminder check triggered via API`);
 
   if (!AISENSY_KEY) {
@@ -50,7 +75,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       return res.status(200).json({ message: 'No bookings found' });
     }
 
-    const now = new Date();
     const reminderWindow = new Date(now.getTime() + 15 * 60 * 1000); // Check for appointments in the next 15 mins
     const sentCount = [];
 
@@ -78,7 +102,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             apiKey: AISENSY_KEY,
-            campaignName: 'var_tsc_call_reminder_v2',
+            campaignName: 'final_book_call_reminder',
             destination: cleanDestination,
             userName: name,
             templateParams: [firstName, "10 minutes", timeStr, course],

@@ -72,7 +72,6 @@ const countryCodes = [
 ];
 
 const timeSlots = [
-  '10:00 AM', '10:30 AM', '11:00 AM', '11:30 AM',
   '12:00 PM', '12:30 PM', '01:00 PM', '01:30 PM',
   '02:00 PM', '02:30 PM', '03:00 PM', '03:30 PM',
   '04:00 PM', '04:30 PM', '05:00 PM', '05:30 PM',
@@ -84,7 +83,7 @@ const isTimePassed = (dateStr: string, timeStr: string) => {
   try {
     const slotDate = new Date(`${dateStr} ${timeStr}`);
     const now = new Date();
-    const bufferTime = 5 * 60 * 1000; // 5 minutes in milliseconds
+    const bufferTime = 90 * 60 * 1000; // 1 hour 30 minutes in milliseconds
     return slotDate.getTime() < now.getTime() + bufferTime;
   } catch (e) {
     return false;
@@ -487,7 +486,7 @@ export default function BookACall() {
                   <X className="w-6 h-6" />
                 </button>
               </div>
-               <div className="relative w-full overflow-hidden bg-slate-50 rounded-2xl border-2 border-transparent focus-within:border-pumpkin transition-all">
+              <div className="relative w-full overflow-hidden bg-slate-50 rounded-2xl border-2 border-transparent focus-within:border-pumpkin transition-all">
                 <div className="flex items-center gap-4 py-6 px-6 pointer-events-none">
                   <Calendar className="w-6 h-6 text-pumpkin" />
                   <span className={`text-xl font-bold ${selectedDate ? 'text-charcoal' : 'text-slate-light'}`}>
@@ -501,7 +500,7 @@ export default function BookACall() {
                     setValue('date', e.target.value);
                   }}
                   onClick={(e) => {
-                    try { (e.target as any).showPicker(); } catch (err) {}
+                    try { (e.target as any).showPicker(); } catch (err) { }
                   }}
                   min={new Date().toISOString().split('T')[0]}
                   className="absolute inset-0 opacity-0 cursor-pointer w-full h-full z-10"
@@ -560,8 +559,8 @@ export default function BookACall() {
                       }}
                       className={`
                         py-4 px-4 rounded-xl border-2 font-bold transition-all
-                        ${isPassed 
-                          ? 'bg-slate-100 text-slate-300 border-slate-100 cursor-not-allowed opacity-50' 
+                        ${isPassed
+                          ? 'bg-slate-100 text-slate-300 border-slate-100 cursor-not-allowed opacity-50'
                           : selectedTime === slot
                             ? 'border-pumpkin bg-pumpkin/10 text-pumpkin scale-[1.02]'
                             : 'border-cream bg-cream/50 text-slate-medium hover:border-pumpkin/30'}

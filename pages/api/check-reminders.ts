@@ -51,7 +51,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     }
 
     const now = new Date();
-    const oneHourFromNow = new Date(now.getTime() + 60 * 60 * 1000);
+    const reminderWindow = new Date(now.getTime() + 15 * 60 * 1000); // Check for appointments in the next 15 mins
     const sentCount = [];
 
     // Skip header row
@@ -61,10 +61,14 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       if (reminderSent === 'Yes') continue;
 
       // Clean the numbers for comparison and date parsing
-      const appointmentTime = new Date(`${dateStr} ${timeStr}`);
+      // We append +05:30 to ensure it's parsed as Indian Standard Time
+      const appointmentTime = new Date(`${dateStr} ${timeStr} +05:30`);
 
-      // If appointment is within the next 1 hour AND hasn't passed yet
-      if (appointmentTime <= oneHourFromNow && appointmentTime > now) {
+      console.log(`Checking reminder for ${name}: Appt=${appointmentTime.toISOString()}, Now=${now.toISOString()}, Window=${reminderWindow.toISOString()}`);
+
+      // If appointment is within the next 15 minutes AND hasn't passed yet
+      if (appointmentTime <= reminderWindow && appointmentTime > now) {
+        console.log(`>>> Sending reminder to ${name} for ${timeStr}`);
         const firstName = name.split(' ')[0];
         const cleanDestination = phone.replace(/\D/g, '');
 
@@ -74,12 +78,13 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             apiKey: AISENSY_KEY,
-            campaignName: 'book_call_reminder',
+            campaignName: 'var_tsc_call_reminder_v2',
             destination: cleanDestination,
             userName: name,
-            templateParams: [firstName, timeStr, course],
+            templateParams: [firstName, "10 minutes", timeStr, course],
             attributes: {
               "FirstName": firstName,
+              "TimeRemaining": "10 minutes",
               "ScheduledTime": timeStr,
               "CourseName": course
             }

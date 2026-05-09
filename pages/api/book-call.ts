@@ -76,7 +76,12 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const aisensyKey = process.env.AISENSY_API_KEY;
     if (aisensyKey) {
       const firstName = name.split(' ')[0];
-      const formattedDate = new Date(date).toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric' });
+      const formattedDate = new Date(date).toLocaleDateString('en-IN', { 
+        day: 'numeric', 
+        month: 'long', 
+        year: 'numeric',
+        timeZone: 'Asia/Kolkata'
+      });
       const cleanDestination = (whatsapp || phone).replace(/\D/g, '');
 
       console.log(`[AiSensy] Sending to ${cleanDestination} for campaign book_call_confirmation`);

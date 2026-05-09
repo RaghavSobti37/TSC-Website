@@ -30,34 +30,53 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     // Helper to convert any local time to IST
     const convertToIST = (dStr: string, tStr: string, tz: string) => {
-      // 1. Create a date string that JS can parse
-      const localStr = `${dStr} ${tStr}`;
-      
-      // 2. We use Intl to find the current offset of the provided timezone
-      // This is a robust way to handle DST changes as well
-      const now = new Date();
-      const localFormatter = new Intl.DateTimeFormat('en-US', { timeZone: tz, hour12: false, year: 'numeric', month: 'numeric', day: 'numeric', hour: 'numeric', minute: 'numeric' });
-      const istFormatter = new Intl.DateTimeFormat('en-US', { timeZone: 'Asia/Kolkata', hour12: false, year: 'numeric', month: 'numeric', day: 'numeric', hour: 'numeric', minute: 'numeric' });
-      
-      // Parse a dummy date to find the offset difference
-      const localParts = localFormatter.formatToParts(now);
-      const istParts = istFormatter.formatToParts(now);
-      
-      const getVal = (parts: any, type: string) => parts.find((p: any) => p.type === type).value;
-      
-      const lDate = new Date(`${getVal(localParts, 'year')}-${getVal(localParts, 'month')}-${getVal(localParts, 'day')}T${getVal(localParts, 'hour')}:${getVal(localParts, 'minute')}:00`);
-      const iDate = new Date(`${getVal(istParts, 'year')}-${getVal(istParts, 'month')}-${getVal(istParts, 'day')}T${getVal(istParts, 'hour')}:${getVal(istParts, 'minute')}:00`);
-      
-      const offsetDiffMs = iDate.getTime() - lDate.getTime();
-      
-      // Apply offset to the user's selected slot
-      const userSlot = new Date(`${dStr} ${tStr}`);
-      const istSlot = new Date(userSlot.getTime() - offsetDiffMs);
-      
-      return istSlot;
+      try {
+        // 1. Parse date and time
+        const [year, month, day] = dStr.split('-').map(Number);
+        const [time, period] = tStr.split(' ');
+        let [hours, minutes] = time.split(':').map(Number);
+        if (period === 'PM' && hours !== 12) hours += 12;
+        if (period === 'AM' && hours === 12) hours = 0;
+
+        // 2. Create a timestamp as if these numbers were UTC
+        // This is our "Local Clock" value
+        const localClockUTC = Date.UTC(year, month - 1, day, hours, minutes);
+        
+        // 3. Find what the offset would be for this timezone at this moment
+        const getOffset = (timestamp: number, timeZone: string) => {
+          const date = new Date(timestamp);
+          const parts = new Intl.DateTimeFormat('en-US', {
+            timeZone,
+            year: 'numeric', month: 'numeric', day: 'numeric',
+            hour: 'numeric', minute: 'numeric', second: 'numeric',
+            hour12: false
+          }).formatToParts(date);
+          
+          const getVal = (type: string) => parseInt(parts.find(p => p.type === type)!.value);
+          const utcAtParts = Date.UTC(getVal('year'), getVal('month') - 1, getVal('day'), getVal('hour'), getVal('minute'));
+          return (utcAtParts - timestamp) / 60000;
+        };
+
+        // We use an iterative approach to find the exact offset for the local time
+        // Since offset depends on the time itself (DST), and the time depends on offset.
+        let offset = getOffset(localClockUTC, tz);
+        // Correct the timestamp to real UTC: UTC = Local - Offset
+        const realUTC = localClockUTC - (offset * 60000);
+        
+        // Final moment in time (UTC Date object)
+        return new Date(realUTC);
+      } catch (e) {
+        console.error('Conversion Error:', e);
+        return new Date('Invalid');
+      }
     };
 
     const istSlotDate = convertToIST(date, time, timezone);
+    
+    if (isNaN(istSlotDate.getTime())) {
+      return res.status(400).json({ success: false, error: 'Invalid date or time format provided.' });
+    }
+
     const now = new Date();
     const bufferTime = 90 * 60 * 1000; // 1.5 hours
     
@@ -65,10 +84,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       return res.status(400).json({ success: false, error: 'This slot is no longer available in your timezone.' });
     }
 
-    const yyyy = istSlotDate.getFullYear();
-    const mm = String(istSlotDate.getMonth() + 1).padStart(2, '0');
-    const dd = String(istSlotDate.getDate()).padStart(2, '0');
-    const istDateStr = `${yyyy}-${mm}-${dd}`;
+    // Format IST date (YYYY-MM-DD)
+    const istDateStr = istSlotDate.toLocaleString('en-CA', { timeZone: 'Asia/Kolkata', year: 'numeric', month: '2-digit', day: '2-digit' });
+    // Format IST time (HH:MM AM/PM)
     const istTimeStr = istSlotDate.toLocaleTimeString('en-US', { 
       hour: '2-digit', 
       minute: '2-digit', 

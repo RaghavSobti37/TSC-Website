@@ -20,24 +20,65 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       course, 
       referral, 
       date, 
-      time 
+      time,
+      timezone = 'Asia/Kolkata' 
     } = req.body;
 
     if (!name || !email || !phone || !date || !time) {
       return res.status(400).json({ success: false, error: 'Missing required fields' });
     }
 
+    // Helper to convert any local time to IST
+    const convertToIST = (dStr: string, tStr: string, tz: string) => {
+      // 1. Create a date string that JS can parse
+      const localStr = `${dStr} ${tStr}`;
+      
+      // 2. We use Intl to find the current offset of the provided timezone
+      // This is a robust way to handle DST changes as well
+      const now = new Date();
+      const localFormatter = new Intl.DateTimeFormat('en-US', { timeZone: tz, hour12: false, year: 'numeric', month: 'numeric', day: 'numeric', hour: 'numeric', minute: 'numeric' });
+      const istFormatter = new Intl.DateTimeFormat('en-US', { timeZone: 'Asia/Kolkata', hour12: false, year: 'numeric', month: 'numeric', day: 'numeric', hour: 'numeric', minute: 'numeric' });
+      
+      // Parse a dummy date to find the offset difference
+      const localParts = localFormatter.formatToParts(now);
+      const istParts = istFormatter.formatToParts(now);
+      
+      const getVal = (parts: any, type: string) => parts.find((p: any) => p.type === type).value;
+      
+      const lDate = new Date(`${getVal(localParts, 'year')}-${getVal(localParts, 'month')}-${getVal(localParts, 'day')}T${getVal(localParts, 'hour')}:${getVal(localParts, 'minute')}:00`);
+      const iDate = new Date(`${getVal(istParts, 'year')}-${getVal(istParts, 'month')}-${getVal(istParts, 'day')}T${getVal(istParts, 'hour')}:${getVal(istParts, 'minute')}:00`);
+      
+      const offsetDiffMs = iDate.getTime() - lDate.getTime();
+      
+      // Apply offset to the user's selected slot
+      const userSlot = new Date(`${dStr} ${tStr}`);
+      const istSlot = new Date(userSlot.getTime() - offsetDiffMs);
+      
+      return istSlot;
+    };
+
+    const istSlotDate = convertToIST(date, time, timezone);
+    const now = new Date();
+    const bufferTime = 90 * 60 * 1000; // 1.5 hours
+    
+    if (istSlotDate.getTime() < now.getTime() + bufferTime) {
+      return res.status(400).json({ success: false, error: 'This slot is no longer available in your timezone.' });
+    }
+
+    const istDateStr = istSlotDate.toLocaleDateString('en-GB', { year: 'numeric', month: '2-digit', day: '2-digit' }).split('/').reverse().join('-');
+    const istTimeStr = istSlotDate.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true });
+
     const timestamp = new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' });
     const row = [
       timestamp,
       name,
       email,
-      `'${phone}`, // Force string in Google Sheets to avoid #ERROR!
+      `'${phone}`,
       course,
       referral,
-      date,
-      time,
-      'No' // ReminderSent status
+      istDateStr, // Saved as IST
+      istTimeStr, // Saved as IST
+      'No'
     ];
 
     // Auth

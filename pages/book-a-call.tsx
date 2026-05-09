@@ -61,14 +61,14 @@ const courses = [
 ];
 
 const countryCodes = [
-  { code: '+91', country: 'India' },
-  { code: '+1', country: 'USA' },
-  { code: '+44', country: 'UK' },
-  { code: '+971', country: 'UAE' },
-  { code: '+61', country: 'Australia' },
-  { code: '+65', country: 'Singapore' },
-  { code: '+49', country: 'Germany' },
-  { code: '+33', country: 'France' }
+  { code: '+91', country: 'India', timezone: 'Asia/Kolkata' },
+  { code: '+1', country: 'USA', timezone: 'America/New_York' },
+  { code: '+44', country: 'UK', timezone: 'Europe/London' },
+  { code: '+971', country: 'UAE', timezone: 'Asia/Dubai' },
+  { code: '+61', country: 'Australia', timezone: 'Australia/Sydney' },
+  { code: '+65', country: 'Singapore', timezone: 'Asia/Singapore' },
+  { code: '+49', country: 'Germany', timezone: 'Europe/Berlin' },
+  { code: '+33', country: 'France', timezone: 'Europe/Paris' }
 ];
 
 const timeSlots = [
@@ -78,13 +78,34 @@ const timeSlots = [
   '06:00 PM', '06:30 PM', '07:00 PM', '07:30 PM'
 ];
 
-const isTimePassed = (dateStr: string, timeStr: string) => {
+const isTimePassed = (dateStr: string, timeStr: string, countryCode: string = '+91') => {
   if (!dateStr) return false;
   try {
-    const slotDate = new Date(`${dateStr} ${timeStr}`);
+    const country = countryCodes.find(c => c.code === countryCode) || countryCodes[0];
+    
+    // We create a formatter to find the current offset of the target timezone
     const now = new Date();
-    const bufferTime = 90 * 60 * 1000; // 1 hour 30 minutes in milliseconds
-    return slotDate.getTime() < now.getTime() + bufferTime;
+    const formatter = new Intl.DateTimeFormat('en-US', {
+      timeZone: country.timezone,
+      year: 'numeric', month: 'numeric', day: 'numeric',
+      hour: 'numeric', minute: 'numeric', second: 'numeric',
+      hour12: false
+    });
+    
+    // Calculate the difference between local "now" and target "now" to get the offset
+    const parts = formatter.formatToParts(now);
+    const getPart = (type: string) => parts.find(p => p.type === type)?.value;
+    const targetNowStr = `${getPart('year')}-${getPart('month')}-${getPart('day')} ${getPart('hour')}:${getPart('minute')}:${getPart('second')}`;
+    const targetNow = new Date(targetNowStr);
+    
+    // The slot time as entered
+    const slotDate = new Date(`${dateStr} ${timeStr}`);
+    
+    // Comparison in the same relative "local" timeline
+    const diffMs = slotDate.getTime() - targetNow.getTime();
+    const bufferTime = 90 * 60 * 1000; // 1.5 hours
+    
+    return diffMs < bufferTime;
   } catch (e) {
     return false;
   }
@@ -111,13 +132,26 @@ export default function BookACall() {
   const selectedTime = watch('time');
 
   const onSubmit = async (data: FormData) => {
+    if (isTimePassed(data.date, data.time, data.countryCode)) {
+      alert('This slot is no longer available in your timezone. Please select a later time.');
+      return;
+    }
+
     setIsSubmitting(true);
     try {
+      // Calculate IST equivalent for the sheet/reminders
+      const country = countryCodes.find(c => c.code === data.countryCode) || countryCodes[0];
+      
+      // We use the browser's ability to format to a specific timezone to calculate the IST offset
+      const localSlot = new Date(`${data.date} ${data.time}`);
+      
+      // We need to send the country timezone to the API so it can recalibrate to IST
       const response = await fetch('/api/book-call', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           ...data,
+          timezone: country.timezone,
           phone: `${data.countryCode}${data.phone.replace(/\s/g, '')}`,
           email: data.email,
           whatsapp: `${data.countryCode}${data.phone.replace(/\s/g, '')}`,
@@ -452,11 +486,22 @@ export default function BookACall() {
 
               <button
                 onClick={handleSubmit(onSubmit)}
-                disabled={isSubmitting || !selectedDate || !selectedTime}
-                className="w-full bg-pumpkin text-white py-5 rounded-2xl font-bold text-xl flex items-center justify-center gap-3 hover:bg-charcoal transition-all shadow-xl disabled:opacity-50"
+                disabled={isSubmitting || !selectedDate || !selectedTime || isTimePassed(selectedDate, selectedTime, watch('countryCode'))}
+                className={`
+                  w-full py-5 rounded-2xl font-bold text-xl flex items-center justify-center gap-3 transition-all shadow-xl
+                  ${isTimePassed(selectedDate, selectedTime, watch('countryCode')) 
+                    ? 'bg-red-50 border-2 border-red-500 text-red-500 cursor-not-allowed opacity-100' 
+                    : 'bg-pumpkin text-white hover:bg-charcoal disabled:opacity-50'}
+                `}
               >
-                {isSubmitting ? 'Booking...' : 'Confirm My Call'} <CheckCircle2 className="w-6 h-6" />
+                {isSubmitting ? 'Booking...' : isTimePassed(selectedDate, selectedTime, watch('countryCode')) ? 'Slot Expired' : 'Confirm My Call'} 
+                {isTimePassed(selectedDate, selectedTime, watch('countryCode')) ? <X className="w-6 h-6" /> : <CheckCircle2 className="w-6 h-6" />}
               </button>
+              {isTimePassed(selectedDate, selectedTime, watch('countryCode')) && (
+                <p className="text-center text-red-500 text-xs font-bold mt-2">
+                  Please pick a time at least 1.5 hours in the future for your timezone.
+                </p>
+              )}
             </motion.div>
           )}
         </AnimatePresence>
@@ -546,7 +591,7 @@ export default function BookACall() {
 
               <div className="grid grid-cols-2 gap-3 overflow-y-auto pr-2 pb-4 scrollbar-hide">
                 {timeSlots.map(slot => {
-                  const isPassed = isTimePassed(selectedDate, slot);
+                  const isPassed = isTimePassed(selectedDate, slot, watch('countryCode'));
                   return (
                     <button
                       key={slot}
@@ -560,13 +605,14 @@ export default function BookACall() {
                       className={`
                         py-4 px-4 rounded-xl border-2 font-bold transition-all
                         ${isPassed
-                          ? 'bg-slate-100 text-slate-300 border-slate-100 cursor-not-allowed opacity-50'
+                          ? 'bg-red-50 text-red-300 border-red-200 cursor-not-allowed opacity-60'
                           : selectedTime === slot
                             ? 'border-pumpkin bg-pumpkin/10 text-pumpkin scale-[1.02]'
                             : 'border-cream bg-cream/50 text-slate-medium hover:border-pumpkin/30'}
                       `}
                     >
                       {slot}
+                      {isPassed && <span className="block text-[8px] text-red-400">Unavailable</span>}
                     </button>
                   );
                 })}

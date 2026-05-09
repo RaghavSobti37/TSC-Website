@@ -176,6 +176,18 @@
 - [ ] laksh.jpg displays for artist
 - [ ] All team member images display correctly
 
+### Booking & Reminder System
+- [ ] User timezone detection correctly identifies country-specific offset
+- [ ] 1.5-hour buffer prevents booking slots that are too close to current time
+- [ ] UI correctly marks expired slots with red outline and disables 'Confirm'
+- [ ] Form validation prevents empty submissions for required fields
+- [ ] API successfully converts local slot time to IST for Google Sheets
+- [ ] Google Sheets entry includes all fields: Name, Email, Phone, Course, Referral, IST Date, IST Time
+- [ ] WhatsApp confirmation message triggers immediately after booking (AiSensy)
+- [ ] WhatsApp reminder triggers 10 minutes before the call (IST-calibrated)
+- [ ] Reminder script correctly respects the business hours window (11:50 AM - 7:30 PM IST)
+- [ ] Duplicate reminders are prevented (ReminderSent column updated to 'Yes')
+
 ## Final Sign-Off
 - All pages rendering correctly: ___
 - All interactive elements working: ___
@@ -184,3 +196,4 @@
 - Responsive design verified: ___
 - No console errors: ___
 - Performance acceptable: ___
+- Booking & Reminder system verified: ___

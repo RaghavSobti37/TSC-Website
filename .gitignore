@@ -5,3 +5,4 @@ google_service_account.json
 .env.local
 .env.*
 .DS_Store
+tsc/

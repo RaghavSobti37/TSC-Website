@@ -88,7 +88,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       // We append +05:30 to ensure it's parsed as Indian Standard Time
       const appointmentTime = new Date(`${dateStr} ${timeStr} +05:30`);
 
-      console.log(`Checking reminder for ${name}: Appt=${appointmentTime.toISOString()}, Now=${now.toISOString()}, Window=${reminderWindow.toISOString()}`);
+      if (isNaN(appointmentTime.getTime())) continue;
 
       // If appointment is within the next 15 minutes AND hasn't passed yet
       if (appointmentTime <= reminderWindow && appointmentTime > now) {
@@ -97,38 +97,42 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         const cleanDestination = phone.replace(/\D/g, '');
 
         // 2. Send to AiSensy
-        const aiResponse = await fetch('https://backend.aisensy.com/campaign/t1/api/v2', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            apiKey: AISENSY_KEY,
-            campaignName: 'final_book_call_reminder',
-            destination: cleanDestination,
-            userName: name,
-            templateParams: [firstName, "10 minutes", timeStr, course],
-            attributes: {
-              "FirstName": firstName,
-              "TimeRemaining": "10 minutes",
-              "ScheduledTime": timeStr,
-              "CourseName": course
-            }
-          }),
-        });
-
-        const aiResult = await aiResponse.json();
-        
-        if (aiResult.success) {
-          sentCount.push(name);
-          
-          // 3. Update the sheet to 'Yes'
-          await sheets.spreadsheets.values.update({
-            spreadsheetId: SPREADSHEET_ID,
-            range: `${SHEET_NAME}!J${i + 1}`,
-            valueInputOption: 'USER_ENTERED',
-            requestBody: {
-              values: [['Yes']],
-            },
+        try {
+          const aiResponse = await fetch('https://backend.aisensy.com/campaign/t1/api/v2', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              apiKey: AISENSY_KEY,
+              campaignName: 'final_book_call_reminder',
+              destination: cleanDestination,
+              userName: name,
+              templateParams: [firstName, "10 minutes", timeStr, course],
+              attributes: {
+                "FirstName": firstName,
+                "TimeRemaining": "10 minutes",
+                "ScheduledTime": timeStr,
+                "CourseName": course
+              }
+            }),
           });
+
+          const aiResult = await aiResponse.json();
+          
+          if (aiResult.success) {
+            sentCount.push(name);
+            
+            // 3. Update the sheet to 'Yes'
+            await sheets.spreadsheets.values.update({
+              spreadsheetId: SPREADSHEET_ID,
+              range: `${SHEET_NAME}!I${i + 1}`,
+              valueInputOption: 'USER_ENTERED',
+              requestBody: {
+                values: [['Yes']],
+              },
+            });
+          }
+        } catch (e) {
+          console.error(`AiSensy Error for ${name}:`, e);
         }
       }
     }

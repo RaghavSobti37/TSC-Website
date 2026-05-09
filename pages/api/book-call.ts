@@ -65,8 +65,16 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       return res.status(400).json({ success: false, error: 'This slot is no longer available in your timezone.' });
     }
 
-    const istDateStr = istSlotDate.toLocaleDateString('en-GB', { year: 'numeric', month: '2-digit', day: '2-digit' }).split('/').reverse().join('-');
-    const istTimeStr = istSlotDate.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true });
+    const yyyy = istSlotDate.getFullYear();
+    const mm = String(istSlotDate.getMonth() + 1).padStart(2, '0');
+    const dd = String(istSlotDate.getDate()).padStart(2, '0');
+    const istDateStr = `${yyyy}-${mm}-${dd}`;
+    const istTimeStr = istSlotDate.toLocaleTimeString('en-US', { 
+      hour: '2-digit', 
+      minute: '2-digit', 
+      hour12: true,
+      timeZone: 'Asia/Kolkata' 
+    });
 
     const timestamp = new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' });
     const row = [

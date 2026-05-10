@@ -13,7 +13,7 @@ export default function AcademyHero() {
           alt="TSC Academy"
           className="w-full h-full object-cover opacity-50"
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-teal-light/50 via-teal-dark/70 to-pumpkin/50 z-10" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#1e3a8a]/50 via-[#172554]/70 to-pumpkin/50 z-10" />
         
         {/* Animated Orb */}
         <motion.div
@@ -26,7 +26,7 @@ export default function AcademyHero() {
             repeat: Infinity,
             ease: "easeInOut"
           }}
-          className="absolute -left-48 top-1/4 w-[600px] h-[600px] rounded-full bg-radial-gradient from-teal-light/60 via-pumpkin/40 to-transparent blur-[80px] z-20"
+          className="absolute -left-48 top-1/4 w-[600px] h-[600px] rounded-full bg-radial-gradient from-[#1e3a8a]/60 via-pumpkin/40 to-transparent blur-[80px] z-20"
         />
       </div>
 
@@ -55,7 +55,7 @@ export default function AcademyHero() {
             initial={{ opacity: 0, scaleX: 0 }}
             animate={{ opacity: 1, scaleX: 1 }}
             transition={{ duration: 1, delay: 0.5 }}
-            className="w-20 h-0.5 bg-gradient-to-r from-teal-light to-pumpkin mb-8 origin-left"
+            className="w-20 h-0.5 bg-gradient-to-r from-[#1e3a8a] to-pumpkin mb-8 origin-left"
           />
 
           <motion.p

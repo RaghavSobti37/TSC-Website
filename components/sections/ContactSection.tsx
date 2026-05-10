@@ -4,6 +4,8 @@ import Section from '@/components/layout/Section';
 import Container from '@/components/layout/Container';
 import { Button } from '@/components/buttons/Button';
 
+import { Palette, Handshake, Briefcase, Check, Send } from 'lucide-react';
+
 type UserType = 'artist' | 'brand' | 'producer' | null;
 
 /**
@@ -78,6 +80,12 @@ export default function ContactSection() {
     }
   };
 
+  const userOptions = [
+    { value: 'artist', label: 'Artist', icon: Palette, description: 'Creator / Performer' },
+    { value: 'brand', label: 'Brand', icon: Handshake, description: 'Company / Organization' },
+    { value: 'producer', label: 'Producer', icon: Briefcase, description: 'Financier / Investor' },
+  ];
+
   return (
     <Section
       id="contact"
@@ -117,9 +125,9 @@ export default function ContactSection() {
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}
                   transition={{ type: 'spring', delay: 0.2 }}
-                  className="text-5xl sm:text-6xl mb-3 sm:mb-4 text-orange"
+                  className="w-20 h-20 bg-orange/10 rounded-full flex items-center justify-center mx-auto mb-6"
                 >
-                  ✓
+                  <Check className="w-10 h-10 text-orange" />
                 </motion.div>
                 <h3 className="text-xl sm:text-2xl font-bold text-black mb-2 font-signika">
                   Thank You!
@@ -147,24 +155,21 @@ export default function ContactSection() {
               I am a...
             </label>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
-              {[
-                { value: 'artist', label: 'Artist 🎨', description: 'Creator / Performer' },
-                { value: 'brand', label: 'Brand 🤝', description: 'Company / Organization' },
-                { value: 'producer', label: 'Producer 💼', description: 'Financier / Investor' },
-              ].map((option) => (
+              {userOptions.map((option) => (
                 <button
                   key={option.value}
                   type="button"
                   onClick={() => setUserType(option.value as UserType)}
-                  className={`p-3 sm:p-4 rounded-lg sm:rounded-xl border-2 transition-all font-alan-sans ${userType === option.value
-                      ? 'border-orange bg-orange/10'
-                      : 'border-black/10 hover:border-black/30'
+                  className={`p-4 sm:p-5 rounded-xl border-2 transition-all font-alan-sans flex flex-col items-center text-center group ${userType === option.value
+                      ? 'border-orange bg-orange/5'
+                      : 'border-black/5 bg-black/[0.02] hover:border-black/20 hover:bg-black/[0.04]'
                     }`}
                 >
-                  <p className={`font-semibold font-signika text-sm sm:text-base ${userType === option.value ? 'text-orange' : 'text-black/70'}`}>
+                  <option.icon className={`w-6 h-6 mb-3 transition-colors ${userType === option.value ? 'text-orange' : 'text-black/30 group-hover:text-black/50'}`} />
+                  <p className={`font-bold font-signika text-sm sm:text-base mb-1 ${userType === option.value ? 'text-orange' : 'text-black/80'}`}>
                     {option.label}
                   </p>
-                  <p className="text-xs text-black/40 mt-1">{option.description}</p>
+                  <p className="text-[10px] sm:text-xs text-black/40 uppercase tracking-widest">{option.description}</p>
                 </button>
               ))}
             </div>
@@ -357,7 +362,7 @@ export default function ContactSection() {
               className="w-full"
               disabled={!userType || !formData.name || !formData.email || !formData.message}
             >
-              Send Message →
+              <span className="flex items-center justify-center gap-2">Send Message <Send size={18} /></span>
             </Button>
           </div>
         </motion.form>

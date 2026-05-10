@@ -3,49 +3,39 @@ import { motion } from 'framer-motion';
 import Section from '@/components/layout/Section';
 import Container from '@/components/layout/Container';
 
+import { Zap, ShieldCheck, Sun, Eye } from 'lucide-react';
+
 interface Value {
   title: string;
   description: string;
-  icon: string;
-  color: string;
+  icon: React.ReactNode;
 }
 
 /**
  * Values Section
- * 4 value cards with emoji icons
+ * 4 value cards with Lucide icons
  */
 export default function ValuesSection() {
-  const colorMap = {
-    pumpkin: { bg: '#FF8C00', rgb: 'rgb(255, 140, 0)' },
-    wine: { bg: '#FF8C00', rgb: 'rgb(255, 140, 0)' },
-    'sea-foam': { bg: '#FF8C00', rgb: 'rgb(255, 140, 0)' },
-    peacock: { bg: '#FF8C00', rgb: 'rgb(255, 140, 0)' },
-  };
-
   const values: Value[] = [
     {
       title: 'Fearlessness',
       description: 'We embrace risk and boldly challenge the status quo.',
-      icon: '⚡',
-      color: 'pumpkin',
+      icon: <Zap className="w-12 h-12 text-orange" />,
     },
     {
       title: 'Integrity',
       description: 'We champion authentic voices and transparent relationships.',
-      icon: '🔮',
-      color: 'wine',
+      icon: <ShieldCheck className="w-12 h-12 text-orange" />,
     },
     {
       title: 'Optimism',
       description: 'We believe in the power of culture to create positive change.',
-      icon: '🌟',
-      color: 'sea-foam',
+      icon: <Sun className="w-12 h-12 text-orange" />,
     },
     {
       title: 'Transparency',
       description: 'We operate with openness and accountability in all partnerships.',
-      icon: '🪟',
-      color: 'peacock',
+      icon: <Eye className="w-12 h-12 text-orange" />,
     },
   ];
 

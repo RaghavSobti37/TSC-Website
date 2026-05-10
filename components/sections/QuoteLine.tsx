@@ -1,6 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
+import { Quote } from 'lucide-react';
+
 interface QuoteLineProps {
   quote: string;
   author?: string;
@@ -46,9 +48,9 @@ export default function QuoteLine({ quote, author, bg = 'cream' }: QuoteLineProp
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.4 }}
           viewport={{ once: true }}
-          className={`text-3xl mb-4 ${isDark ? 'text-orange/40' : 'text-orange/30'}`}
+          className={`flex justify-center mb-6 ${isDark ? 'text-orange/40' : 'text-orange/30'}`}
         >
-          ❝
+          <Quote size={48} fill="currentColor" />
         </motion.div>
         <motion.p
           initial={{ opacity: 0, y: 16 }}

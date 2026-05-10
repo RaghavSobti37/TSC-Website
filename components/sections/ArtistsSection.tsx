@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 
+import { ArrowRight } from 'lucide-react';
+
 interface TimelineMember {
   id: string;
   name: string;
@@ -161,7 +163,7 @@ export default function ArtistsSection() {
                       {member.bio && (
                         <p className="text-sm text-black/60 line-clamp-2 font-alan-sans">{member.bio}</p>
                       )}
-                      <p className="text-xs text-orange font-bold mt-3 cursor-pointer">Click to see more →</p>
+                      <p className="text-xs text-orange font-bold mt-3 cursor-pointer flex items-center gap-1">Click to see more <ArrowRight size={14} /></p>
                     </div>
                     <div className="relative w-48 h-56 flex-shrink-0 rounded-xl overflow-hidden ring-1 ring-cream/20">
                       <Image 

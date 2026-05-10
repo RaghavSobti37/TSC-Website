@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
 import { cn } from '@/lib/utils';
 import UnfoldReveal from '@/components/animations/UnfoldReveal';
+import { X } from 'lucide-react';
 
 interface EcosystemNode {
   id: string;
@@ -135,7 +136,7 @@ export const InfinityEcosystem: React.FC<InfinityEcosystemProps> = ({
               {nodes.map((_, index) => {
                 const arc = getArcMidpoint(index, (index + 1) % total);
                 // Chevron symmetric about y=0:
-                // tip → (38, 0), upper-wing → (-18, -26), notch → (-6, 0), lower-wing → (-18, 26)
+                // tip -> (38, 0), upper-wing -> (-18, -26), notch -> (-6, 0), lower-wing -> (-18, 26)
                 // The line (y=0 in local coords after rotation) bisects it perfectly
                 return (
                   <g
@@ -281,10 +282,10 @@ export const InfinityEcosystem: React.FC<InfinityEcosystemProps> = ({
 
                       <motion.button
                         onClick={() => setSelectedNodeId(null)}
-                        className="text-black/40 font-semibold hover:text-black transition-colors text-xs sm:text-sm md:text-base"
+                        className="flex items-center gap-2 text-black/40 font-semibold hover:text-black transition-colors text-xs sm:text-sm md:text-base"
                         whileHover={{ x: 4 }}
                       >
-                        Close ✕
+                        Close <X size={14} />
                       </motion.button>
                     </div>
                   )
@@ -334,9 +335,9 @@ export const InfinityEcosystem: React.FC<InfinityEcosystemProps> = ({
                 </div>
                 <button
                   onClick={() => setSelectedNodeId(null)}
-                  className="text-2xl text-black/40 hover:text-black transition-colors"
+                  className="w-10 h-10 flex items-center justify-center text-black/40 hover:text-black transition-colors bg-black/5 rounded-full"
                 >
-                  ✕
+                  <X size={24} />
                 </button>
               </div>
               {nodes.find((n) => n.id === selectedNodeId)?.content}

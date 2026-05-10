@@ -11,7 +11,7 @@ interface WaveButtonProps {
  * Enhanced Wave Button with Advanced Sound Wave Animation
  * Features:
  * - 150-point waveform with multiple layered sine waves
- * - Multi-layered color gradients (Pumpkin, Cream, Teal, Wine, Sea Foam)
+ * - Multi-layered color gradients (Pumpkin, Cream, Academy Blue, Wine)
  * - Subtle 5-second breathing animation at rest
  * - Mouse-reactive wave amplitude with proximity detection
  * - Enhanced hover state with increased frequency and amplitude
@@ -103,7 +103,7 @@ export default function WaveButton({
         const gradient1 = ctx.createLinearGradient(0, 0, width, height);
         gradient1.addColorStop(0, 'rgba(183, 75, 2, 0.95)'); // Pumpkin
         gradient1.addColorStop(0.25, 'rgba(255, 236, 209, 0.85)'); // Cream
-        gradient1.addColorStop(0.5, 'rgba(8, 61, 58, 0.95)'); // Teal
+        gradient1.addColorStop(0.5, 'rgba(30, 58, 138, 0.95)'); // Academy Blue
         gradient1.addColorStop(0.75, 'rgba(109, 32, 52, 0.8)'); // Wine
         gradient1.addColorStop(1, 'rgba(183, 75, 2, 0.95)'); // Pumpkin
 
@@ -116,7 +116,7 @@ export default function WaveButton({
         // Layer 2: Glow overlay
         const gradientGlow = ctx.createRadialGradient(centerX, centerY, 0, centerX, centerY, radius * 2);
         gradientGlow.addColorStop(0, 'rgba(183, 75, 2, 0.3)');
-        gradientGlow.addColorStop(1, 'rgba(8, 61, 58, 0.1)');
+        gradientGlow.addColorStop(1, 'rgba(30, 58, 138, 0.1)');
         ctx.strokeStyle = gradientGlow;
         ctx.lineWidth = 6;
         ctx.stroke();
@@ -126,8 +126,8 @@ export default function WaveButton({
         const breatheOpacity = 0.4 + Math.sin(timeRef.current * 0.02) * 0.15; // Breathing opacity
 
         gradient.addColorStop(0, `rgba(183, 75, 2, ${breatheOpacity * 0.7})`); // Pumpkin
-        gradient.addColorStop(0.33, `rgba(8, 61, 58, ${breatheOpacity * 0.5})`); // Teal
-        gradient.addColorStop(0.66, `rgba(18, 109, 94, ${breatheOpacity * 0.6})`); // Sea Foam
+        gradient.addColorStop(0.33, `rgba(30, 58, 138, ${breatheOpacity * 0.5})`); // Academy Blue
+        gradient.addColorStop(0.66, `rgba(23, 37, 84, ${breatheOpacity * 0.6})`); // Academy Blue Dark
         gradient.addColorStop(1, `rgba(255, 236, 209, ${breatheOpacity * 0.7})`); // Cream
 
         ctx.strokeStyle = gradient;

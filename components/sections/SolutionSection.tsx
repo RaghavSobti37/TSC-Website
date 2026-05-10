@@ -2,9 +2,11 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import ReadMore from '@/components/ui/ReadMore';
 
+import { ArrowRight } from 'lucide-react';
+
 /**
  * SolutionSection — "The Roundway" / TSC's 5-stage ecosystem
- * How TSC solves the problem: Prepare → Create → Produce → Monetize → Replicate
+ * How TSC solves the problem: Prepare -> Create -> Produce -> Monetize -> Replicate
  */
 export default function SolutionSection() {
   const stages = [
@@ -13,21 +15,21 @@ export default function SolutionSection() {
       label: 'PREPARE',
       title: 'Build Your Foundation',
       desc: 'Master fundamentals through industry-led courses, masterclasses, and one-on-one mentorship from legends who\'ve built India\'s biggest music IPs.',
-      accent: '#008080', // Teal
+      accent: '#FF8C00', // Orange
     },
     {
       num: '02',
       label: 'CREATE',
       title: 'Find Your Voice',
       desc: 'Access world-class studios and Creation Cafés. Collaborate with peers in facilitated environments designed for innovation and experimentation.',
-      accent: '#20B2AA', // Light Teal
+      accent: '#FF8C00', // Orange
     },
     {
       num: '03',
       label: 'PRODUCE',
       title: 'Make It Real',
       desc: 'Get funding, technical support, and production resources. From grants to recording to distribution — we\'ve built the infrastructure.',
-      accent: '#008080', // Teal
+      accent: '#FF8C00', // Orange
     },
     {
       num: '04',
@@ -52,7 +54,7 @@ export default function SolutionSection() {
     >
       {/* Background glow */}
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-orange/5 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-teal/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-orange/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-6xl mx-auto relative z-10">
         {/* Header */}
@@ -74,7 +76,7 @@ export default function SolutionSection() {
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-black font-signika leading-tight mb-6"
           >
             The Shakti Collective<br className="hidden sm:block" /> is{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal via-orange to-teal">The Roundway</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange via-[#E07548] to-orange">The Roundway</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 16 }}
@@ -141,9 +143,7 @@ export default function SolutionSection() {
                 {/* Arrow connector */}
                 {i < stages.length - 1 && (
                   <div className="hidden lg:flex absolute top-10 -right-3 z-20 items-center justify-center w-6 h-6">
-                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                      <path d="M1 7h12M8 2l5 5-5 5" stroke="#FF8C00" strokeWidth="1.5" strokeLinecap="round" />
-                    </svg>
+                    <ArrowRight size={16} className="text-orange" />
                   </div>
                 )}
               </motion.div>

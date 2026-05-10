@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Circle, ExternalLink } from 'lucide-react';
 
 const blogPosts = [
   {
@@ -79,7 +80,7 @@ export default function ResourcesBlogs() {
             >
               {/* Image Preview */}
               <div className="h-48 overflow-hidden relative">
-                <div className="absolute inset-0 bg-teal/10 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
+                <div className="absolute inset-0 bg-orange/10 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
                 <img
                   src={post.image}
                   alt={post.title}
@@ -91,11 +92,11 @@ export default function ResourcesBlogs() {
               <div className="p-6 sm:p-8 flex-1 flex flex-col">
                 <div className="flex items-center text-xs text-black/40 mb-3 font-alan-sans tracking-wide">
                   <span>{post.date}</span>
-                  <span className="mx-2">•</span>
+                  <Circle size={4} fill="currentColor" className="mx-2" />
                   <span>{post.readTime}</span>
                 </div>
                 
-                <h3 className="text-xl sm:text-2xl font-bold text-black mb-3 font-signika leading-tight group-hover:text-teal transition-colors">
+                <h3 className="text-xl sm:text-2xl font-bold text-black mb-3 font-signika leading-tight group-hover:text-orange transition-colors">
                   {post.title}
                 </h3>
                 
@@ -107,12 +108,10 @@ export default function ResourcesBlogs() {
                 <div className="flex flex-col sm:flex-row gap-3 mt-auto pt-4 border-t border-black/5">
                   <a
                     href={post.link}
-                    className="flex-1 flex items-center justify-center gap-2 bg-teal hover:bg-teal/80 text-white text-sm font-semibold py-2.5 px-4 rounded-lg transition-colors font-alan-sans"
+                    className="flex-1 flex items-center justify-center gap-2 bg-orange hover:bg-orange/80 text-white text-sm font-semibold py-2.5 px-4 rounded-lg transition-colors font-alan-sans"
                   >
                     <span>Read Blog</span>
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                    </svg>
+                    <ExternalLink size={14} />
                   </a>
                 </div>
               </div>

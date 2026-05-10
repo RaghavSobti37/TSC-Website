@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import Section from '@/components/layout/Section';
 import Container from '@/components/layout/Container';
-
+import { Play, ArrowLeft, ArrowRight, Music2, Youtube } from 'lucide-react';
 interface Reel {
   id: string;
   artistName: string;
@@ -17,7 +17,7 @@ interface Reel {
  * Horizontal scrollable reel cards with mock data
  */
 export default function LiveCultureTrack() {
-  const [hoviredId, setHoveredId] = useState<string | null>(null);
+  const [hoveredId, setHoveredId] = useState<string | null>(null);
 
   const mockReels: Reel[] = [
     {
@@ -110,7 +110,7 @@ export default function LiveCultureTrack() {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ delay: index * 0.1, duration: 0.6 }}
                 viewport={{ once: true }}
-                className="flex-shrink-0 w-80 h-96 rounded-2xl overflow-hidden group cursor-pointer relative snap-center"
+                className="flex-shrink-0 w-80 h-96 rounded-2xl overflow-hidden group cursor-pointer relative snap-center shadow-lg"
               >
                 {/* Reel card container */}
                 <div className="relative w-full h-full bg-charcoal">
@@ -128,14 +128,14 @@ export default function LiveCultureTrack() {
                   <motion.div
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{
-                      opacity: hoviredId === reel.id ? 1 : 0,
-                      scale: hoviredId === reel.id ? 1 : 0.8,
+                      opacity: hoveredId === reel.id ? 1 : 0,
+                      scale: hoveredId === reel.id ? 1 : 0.8,
                     }}
                     transition={{ duration: 0.2 }}
                     className="absolute inset-0 flex items-center justify-center"
                   >
-                    <div className="w-16 h-16 rounded-full bg-orange flex items-center justify-center text-white text-2xl hover:bg-orange/80 transition-all">
-                      ▶
+                    <div className="w-16 h-16 rounded-full bg-orange flex items-center justify-center text-white hover:bg-orange/90 transition-all shadow-xl">
+                      <Play fill="white" size={24} />
                     </div>
                   </motion.div>
 
@@ -154,22 +154,18 @@ export default function LiveCultureTrack() {
                     {/* Links */}
                     <div className="flex gap-3">
                       {reel.spotifyUrl && (
-                        <a
-                          href={reel.spotifyUrl}
-                          onClick={(e) => e.preventDefault()}
-                          className="w-8 h-8 rounded-full bg-orange/80 hover:bg-orange flex items-center justify-center text-white text-xs font-bold transition-all"
+                        <div
+                          className="w-8 h-8 rounded-full bg-orange/80 hover:bg-orange flex items-center justify-center text-white transition-all"
                         >
-                          S
-                        </a>
+                          <Music2 size={14} />
+                        </div>
                       )}
                       {reel.youtubeUrl && (
-                        <a
-                          href={reel.youtubeUrl}
-                          onClick={(e) => e.preventDefault()}
-                          className="w-8 h-8 rounded-full bg-orange/80 hover:bg-orange flex items-center justify-center text-white text-xs font-bold transition-all"
+                        <div
+                          className="w-8 h-8 rounded-full bg-orange/80 hover:bg-orange flex items-center justify-center text-white transition-all"
                         >
-                          Y
-                        </a>
+                          <Youtube size={14} />
+                        </div>
                       )}
                     </div>
                   </div>
@@ -184,10 +180,12 @@ export default function LiveCultureTrack() {
             whileInView={{ opacity: 1 }}
             transition={{ delay: 1, duration: 1 }}
             viewport={{ once: true }}
-            className="absolute right-0 top-1/2 transform -translate-y-1/2 pointer-events-none"
+            className="absolute right-0 top-1/2 transform -translate-y-1/2 pointer-events-none hidden md:block"
           >
-            <div className="text-orange text-sm font-semibold font-alan-sans">
-              ← Scroll →
+            <div className="flex flex-col items-center gap-2 text-orange bg-white/10 backdrop-blur-md p-3 rounded-full border border-orange/20 shadow-lg">
+              <ArrowLeft size={16} />
+              <span className="text-[10px] font-black uppercase tracking-widest vertical-text py-2">Scroll</span>
+              <ArrowRight size={16} />
             </div>
           </motion.div>
         </div>
@@ -200,8 +198,11 @@ export default function LiveCultureTrack() {
           viewport={{ once: true }}
           className="mt-12 text-center"
         >
-          <a href="#artists" className="inline-block px-8 py-3 bg-orange text-white rounded-full font-semibold hover:bg-orange/80 transition-all font-signika">
-            Discover More Artists →
+          <a 
+            href="#artists" 
+            className="inline-flex items-center gap-2 px-8 py-4 bg-orange text-white rounded-full font-bold hover:bg-orange/90 transition-all font-signika shadow-lg hover:shadow-orange/20 hover:scale-105 active:scale-95"
+          >
+            Discover More Artists <ArrowRight size={18} />
           </a>
         </motion.div>
       </Container>

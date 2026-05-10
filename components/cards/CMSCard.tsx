@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
 import UnfoldReveal from '@/components/animations/UnfoldReveal';
+import { ArrowRight } from 'lucide-react';
 
 interface CMSCardProps {
   image: string;
@@ -56,7 +57,7 @@ export const CMSCard: React.FC<CMSCardProps> = ({
               {tags.slice(0, 2).map((tag) => (
                 <span
                   key={tag}
-                  className="px-2 py-1 bg-teal text-white text-xs font-semibold rounded-full"
+                  className="px-2 py-1 bg-orange text-white text-xs font-semibold rounded-full"
                 >
                   {tag}
                 </span>
@@ -88,7 +89,7 @@ export const CMSCard: React.FC<CMSCardProps> = ({
               {tags.slice(0, 3).map((tag) => (
                 <span
                   key={tag}
-                  className="px-2 py-1 bg-cream-dark text-teal-dark text-xs rounded"
+                  className="px-2 py-1 bg-cream-dark text-orange-dark text-xs rounded"
                 >
                   {tag}
                 </span>
@@ -99,10 +100,10 @@ export const CMSCard: React.FC<CMSCardProps> = ({
           {ctaHref && (
             <motion.a
               href={ctaHref}
-              className="inline-flex items-center gap-2 mt-auto text-teal-primary font-semibold hover:gap-3 transition-all group-hover:text-teal-dark"
+              className="inline-flex items-center gap-2 mt-auto text-orange font-semibold hover:gap-3 transition-all group-hover:text-orange-dark"
               whileHover={{ x: 4 }}
             >
-              {ctaLabel} →
+              {ctaLabel} <ArrowRight size={16} />
             </motion.a>
           )}
         </div>

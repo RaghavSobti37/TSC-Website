@@ -36,7 +36,7 @@ export default function AudioWaveform() {
           <motion.div
             key={bar.id}
             className={`w-1 rounded-full ${
-              isHovering ? 'bg-pumpkin' : 'bg-gradient-to-t from-teal-dark to-cream'
+              isHovering ? 'bg-pumpkin' : 'bg-gradient-to-t from-orange to-cream'
             }`}
             animate={{
               height: isHovering

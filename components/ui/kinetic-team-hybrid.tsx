@@ -68,7 +68,7 @@ export default function KineticTeamHybrid({
   const borderClass = darkMode ? 'border-neutral-900' : 'border-cream-dark';
   const gradientClass = darkMode
     ? 'bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.03),transparent_70%)]'
-    : 'bg-[radial-gradient(circle_at_50%_50%,rgba(8,61,58,0.03),transparent_70%)]';
+    : 'bg-[radial-gradient(circle_at_50%_50%,rgba(255,140,0,0.03),transparent_70%)]';
 
   return (
     <div
@@ -192,7 +192,7 @@ function TeamRow({
         backgroundColor: isActive && isMobile
           ? darkMode
             ? 'rgba(255,255,255,0.03)'
-            : 'rgba(8,61,58,0.03)'
+            : 'rgba(255,140,0,0.03)'
           : 'transparent',
       }}
       transition={{ duration: 0.4, delay: index * 0.05 }}
@@ -208,7 +208,7 @@ function TeamRow({
         <div className="flex items-baseline gap-6 md:gap-12 pl-4 md:pl-0 transition-transform duration-500 group-hover:translate-x-4">
           <span className="font-mono text-xs text-neutral-600">0{index + 1}</span>
           <h2 className={`text-3xl font-medium tracking-tight ${
-            darkMode ? 'text-neutral-400 group-hover:text-white' : 'text-charcoal group-hover:text-teal-primary'
+            darkMode ? 'text-neutral-400 group-hover:text-white' : 'text-charcoal group-hover:text-orange'
           } transition-colors duration-300 md:text-6xl`}>
             {data.name}
           </h2>

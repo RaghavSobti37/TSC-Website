@@ -46,9 +46,9 @@ export default function IPPage() {
       </Head>
 
       {/* Hero */}
-      <section className="relative bg-teal-dark min-h-[55vh] flex items-end pb-16 sm:pb-20 pt-36 sm:pt-40 overflow-hidden px-4 sm:px-6">
+      <section className="relative bg-black min-h-[55vh] flex items-end pb-16 sm:pb-20 pt-36 sm:pt-40 overflow-hidden px-4 sm:px-6">
         {/* Background */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-pumpkin/10 via-teal-dark to-teal-dark pointer-events-none" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-orange/10 via-black to-black pointer-events-none" />
         <motion.div
           className="absolute top-20 right-20 w-80 h-80 rounded-full border border-cream/5 pointer-events-none"
           animate={{ scale: [1, 1.2, 1], opacity: [0.5, 0, 0.5] }}

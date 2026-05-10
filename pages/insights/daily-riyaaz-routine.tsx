@@ -28,7 +28,7 @@ export default function DailyRiyaazRoutine() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-4xl sm:text-5xl md:text-6xl font-bold text-teal-dark font-signika mb-6"
+              className="text-4xl sm:text-5xl md:text-6xl font-bold text-orange font-signika mb-6"
             >
               The Daily Riyaaz Routine
             </motion.h1>
@@ -63,23 +63,23 @@ export default function DailyRiyaazRoutine() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
-            className="prose prose-lg prose-teal max-w-none text-slate-dark font-alan-sans"
+            className="prose prose-lg prose-orange max-w-none text-slate-dark font-alan-sans"
           >
-            <p className="lead text-xl text-teal-dark font-semibold mb-8">
+            <p className="lead text-xl text-orange font-semibold mb-8">
               A practical guide to improving your voice (even if you only have 20 minutes). Discover the ideal daily structure.
             </p>
 
-            <h2 className="text-3xl font-bold text-teal-dark font-signika mt-12 mb-6">Consistency over Duration</h2>
+            <h2 className="text-3xl font-bold text-orange font-signika mt-12 mb-6">Consistency over Duration</h2>
             <p className="mb-6 leading-relaxed">
               When it comes to vocal training, consistency is far more valuable than marathon sessions. Practicing for 20 minutes every single day will yield vastly superior results to practicing for three hours once a week. Your vocal cords are muscles, and they require regular, focused engagement to build strength, flexibility, and muscle memory.
             </p>
 
-            <h2 className="text-3xl font-bold text-teal-dark font-signika mt-12 mb-6">The 20-Minute Riyaaz Framework</h2>
+            <h2 className="text-3xl font-bold text-orange font-signika mt-12 mb-6">The 20-Minute Riyaaz Framework</h2>
             <p className="mb-6 leading-relaxed">
               If you only have 20 minutes, here is how you should structure your daily Riyaaz (practice) to maximize efficiency.
             </p>
 
-            <h3 className="text-2xl font-bold text-teal-dark mt-8 mb-4">Minutes 1-5: Physical & Breath Warm-up</h3>
+            <h3 className="text-2xl font-bold text-orange mt-8 mb-4">Minutes 1-5: Physical & Breath Warm-up</h3>
             <p className="mb-4 leading-relaxed">
               Never start singing cold. Begin with gentle physical stretches to release tension in the neck, shoulders, and jaw. Follow this with foundational breathing exercises.
             </p>
@@ -89,7 +89,7 @@ export default function DailyRiyaazRoutine() {
               <li>Gentle lip trills without pitch.</li>
             </ul>
 
-            <h3 className="text-2xl font-bold text-teal-dark mt-8 mb-4">Minutes 6-12: Vocal Warm-up & Flexibility</h3>
+            <h3 className="text-2xl font-bold text-orange mt-8 mb-4">Minutes 6-12: Vocal Warm-up & Flexibility</h3>
             <p className="mb-4 leading-relaxed">
               Gradually introduce pitch. Start in the middle of your range and slowly expand outward.
             </p>
@@ -99,7 +99,7 @@ export default function DailyRiyaazRoutine() {
               <li>Vowel exercises (e.g., "Mee-May-Mah-Moh-Moo") focusing on smooth transitions.</li>
             </ul>
 
-            <h3 className="text-2xl font-bold text-teal-dark mt-8 mb-4">Minutes 13-20: Repertoire Application</h3>
+            <h3 className="text-2xl font-bold text-orange mt-8 mb-4">Minutes 13-20: Repertoire Application</h3>
             <p className="mb-4 leading-relaxed">
               Spend the final minutes applying your warmed-up voice to actual repertoire. Don't just sing through a song mindlessly. Target specific challenging phrases.
             </p>
@@ -109,10 +109,10 @@ export default function DailyRiyaazRoutine() {
               <li>Record yourself to objectively evaluate your progress.</li>
             </ul>
 
-            <div className="bg-teal-light/20 p-8 rounded-xl border border-teal-light/30 mt-12 text-center">
-              <h3 className="text-2xl font-bold text-teal-dark font-signika mb-4">Elevate Your Practice</h3>
+            <div className="bg-orange/10 p-8 rounded-xl border border-orange/20 mt-12 text-center">
+              <h3 className="text-2xl font-bold text-orange font-signika mb-4">Elevate Your Practice</h3>
               <p className="text-slate-medium mb-6">Access professional vocal scales, backing tracks, and personalized coaching.</p>
-              <a href="/academy" className="inline-block bg-teal-dark hover:bg-teal-primary text-cream font-semibold py-3 px-8 rounded-lg transition-colors">
+              <a href="/academy" className="inline-block bg-orange hover:bg-orange-dark text-cream font-semibold py-3 px-8 rounded-lg transition-colors">
                 Discover Training Programs
               </a>
             </div>

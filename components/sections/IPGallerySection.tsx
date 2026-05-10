@@ -3,6 +3,8 @@ import { motion } from 'framer-motion';
 import Section from '@/components/layout/Section';
 import Container from '@/components/layout/Container';
 
+import { ArrowRight } from 'lucide-react';
+
 interface IPItem {
   id: string;
   title: string;
@@ -73,7 +75,7 @@ export default function IPGallerySection() {
   ];
 
   const statusColors: Record<string, { dot: string; label: string }> = {
-    Active: { dot: 'bg-teal', label: 'text-teal' },
+    Active: { dot: 'bg-orange', label: 'text-orange' },
     Archived: { dot: 'bg-black/40', label: 'text-black/40' },
     'In Progress': { dot: 'bg-orange', label: 'text-orange' },
   };
@@ -160,7 +162,7 @@ export default function IPGallerySection() {
                 {/* CTA */}
                 {item.link && (
                   <span className="inline-flex items-center gap-1.5 text-orange text-xs font-bold font-alan-sans">
-                    View project →
+                    View project <ArrowRight size={14} />
                   </span>
                 )}
               </div>
@@ -180,7 +182,7 @@ export default function IPGallerySection() {
             href="mailto:hello@theshaktcollective.com"
             className="inline-flex items-center gap-2 px-8 py-4 rounded-full border-2 border-black/10 text-black font-bold font-signika text-base hover:border-orange hover:text-orange transition-all duration-300"
           >
-            Co-create with us →
+            Co-create with us <ArrowRight size={18} />
           </a>
         </motion.div>
       </Container>

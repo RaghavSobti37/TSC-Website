@@ -24,14 +24,14 @@ module.exports = {
         'cream-dark': '#F9F9F9', // Very light gray for subtle contrast
 
         // Accent Colors
-        teal: {
-          light: '#20B2AA',
-          DEFAULT: '#008080',
-          dark: '#006666',
+        'academy-blue': {
+          light: '#3b82f6',
+          DEFAULT: '#1e3a8a',
+          dark: '#172554',
         },
-        'teal-primary': '#008080',
-        'teal-dark': '#006666',
-        'teal-light': '#20B2AA',
+        'blue-primary': '#1e3a8a',
+        'blue-dark': '#172554',
+        'blue-light': '#3b82f6',
 
         // Highlight Colors
         orange: {
@@ -183,7 +183,7 @@ module.exports = {
         'md': '0 10px 15px -3px rgba(0,0,0,0.1)',
         'lg': '0 20px 25px -5px rgba(0,0,0,0.1)',
         'xl': '0 25px 50px -12px rgba(0,0,0,0.15)',
-        'teal': '0 10px 30px rgba(8,61,58,0.15)',
+        'academy-blue': '0 10px 30px rgba(30, 58, 138, 0.15)',
       },
 
       // Screen breakpoints (mobile-first)

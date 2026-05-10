@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaLinkedin, FaInstagram } from 'react-icons/fa';
+import { Quote, Circle, ArrowUp, ArrowRight, Linkedin, Instagram } from 'lucide-react';
 
 interface TeamMember {
   id: string;
@@ -112,18 +112,18 @@ export default function TeamSection() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
                 onClick={() => setExpandedId(isExpanded ? null : member.id)}
-                className={`cursor-pointer relative rounded-3xl p-5 sm:p-8 border transition-all duration-300 ${
+                className={`cursor-pointer relative rounded-[2.5rem] p-6 sm:p-10 border transition-all duration-300 ${
                   isExpanded 
                   ? 'bg-black/[0.02] border-orange/20 shadow-xl' 
                   : 'bg-white border-black/5 hover:border-orange/20 shadow-sm hover:shadow-md'
                 }`}
               >
-                <div className={`flex flex-col gap-8 items-center ${isExpanded ? '' : 'sm:flex-row'}`}>
+                <div className="flex flex-col gap-6 sm:gap-8 items-center w-full">
                   {/* Image Container */}
                   <motion.div 
                     layout
-                    className={`relative flex-shrink-0 transition-all duration-500 rounded-2xl overflow-hidden ${
-                      isExpanded ? 'w-full max-w-[400px] h-80 sm:h-[450px]' : 'w-32 h-40 sm:w-44 sm:h-52'
+                    className={`relative flex-shrink-0 transition-all duration-500 rounded-[2rem] overflow-hidden ring-1 ring-black/5 ${
+                      isExpanded ? 'w-full max-w-[420px] h-80 sm:h-[480px]' : 'w-40 h-48 sm:w-56 sm:h-64'
                     }`}
                   >
                     <Image
@@ -135,18 +135,18 @@ export default function TeamSection() {
                   </motion.div>
 
                   {/* Text Container */}
-                  <div className={`flex-1 ${isExpanded ? 'w-full text-left' : 'text-center sm:text-left'}`}>
+                  <div className={`flex-1 w-full ${isExpanded ? 'text-left' : 'text-center'}`}>
                     <motion.div layout>
-                      <h3 className={`font-bold text-black mb-1 font-signika ${isExpanded ? 'text-3xl sm:text-5xl' : 'text-xl sm:text-3xl'}`}>
+                      <h3 className={`font-bold text-black mb-1 font-signika transition-all duration-300 ${isExpanded ? 'text-3xl sm:text-5xl' : 'text-xl sm:text-2xl'}`}>
                         {member.name}
                       </h3>
-                      <p className={`text-orange font-bold font-alan-sans uppercase tracking-widest ${isExpanded ? 'text-sm sm:text-base mb-6' : 'text-xs sm:text-sm mb-3'}`}>
+                      <p className={`text-orange font-bold font-alan-sans uppercase tracking-widest transition-all duration-300 ${isExpanded ? 'text-sm sm:text-base mb-6' : 'text-[10px] sm:text-xs mb-4'}`}>
                         {member.role}
                       </p>
                     </motion.div>
 
                     {!isExpanded && (
-                      <p className="text-sm text-black/60 line-clamp-2 font-alan-sans leading-relaxed">
+                      <p className="text-sm text-black/60 line-clamp-2 font-alan-sans leading-relaxed max-w-2xl mx-auto">
                         {member.description}
                       </p>
                     )}
@@ -165,8 +165,10 @@ export default function TeamSection() {
                           </div>
 
                           {member.philosophy && (
-                            <div className="relative py-6 px-8 bg-white/50 rounded-2xl border border-orange/10 italic text-black/80 font-alan-sans text-sm sm:text-base">
-                              <span className="absolute -top-4 left-4 text-6xl text-orange/10 font-serif leading-none">“</span>
+                            <div className="relative py-6 px-8 bg-white/50 rounded-2xl border border-orange/10 italic text-black/80 font-alan-sans text-sm sm:text-base overflow-hidden">
+                              <div className="absolute -top-2 -left-2 text-orange/10">
+                                <Quote size={48} fill="currentColor" />
+                              </div>
                               {member.philosophy}
                             </div>
                           )}
@@ -177,8 +179,8 @@ export default function TeamSection() {
                             </h4>
                             <ul className="space-y-3 font-alan-sans text-black/80">
                               {member.accomplishments.map((a, i) => (
-                                <li key={i} className="flex gap-3 text-sm sm:text-base">
-                                  <span className="text-orange font-bold">•</span>
+                                <li key={i} className="flex gap-3 text-sm sm:text-base items-start">
+                                  <Circle size={6} fill="currentColor" className="text-orange mt-1.5 flex-shrink-0" />
                                   <span>{a}</span>
                                 </li>
                               ))}
@@ -194,7 +196,7 @@ export default function TeamSection() {
                                 className="w-12 h-12 flex items-center justify-center rounded-xl bg-black text-white hover:bg-orange transition-colors"
                                 onClick={(e) => e.stopPropagation()}
                               >
-                                <FaLinkedin size={20} />
+                                <Linkedin size={20} />
                               </a>
                             )}
                             {member.socials.instagram && (
@@ -205,21 +207,21 @@ export default function TeamSection() {
                                 className="w-12 h-12 flex items-center justify-center rounded-xl bg-orange text-white hover:bg-black transition-colors"
                                 onClick={(e) => e.stopPropagation()}
                               >
-                                <FaInstagram size={20} />
+                                <Instagram size={20} />
                               </a>
                             )}
                           </div>
                           
-                          <button className="text-[10px] font-black uppercase tracking-widest text-black/20 hover:text-orange transition-colors pt-4">
-                            Close Profile ↑
+                          <button className="text-[10px] font-black uppercase tracking-widest text-black/20 hover:text-orange transition-colors pt-4 flex items-center gap-2">
+                            Close Profile <ArrowUp size={10} />
                           </button>
                         </motion.div>
                       )}
                     </AnimatePresence>
 
                     {!isExpanded && (
-                      <p className="text-[10px] font-black uppercase tracking-widest text-orange mt-4 group-hover:translate-x-1 transition-transform">
-                        Tap to expand →
+                      <p className="text-[10px] font-black uppercase tracking-widest text-orange mt-4 group-hover:translate-x-1 transition-transform flex items-center justify-center gap-2">
+                        Tap to expand <ArrowRight size={10} />
                       </p>
                     )}
                   </div>

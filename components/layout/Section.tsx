@@ -4,7 +4,7 @@ import { cn } from '@/lib/utils';
 interface SectionProps {
   children: ReactNode;
   className?: string;
-  background?: 'cream' | 'white' | 'teal' | 'cream-dark' | 'charcoal' | 'transparent';
+  background?: 'cream' | 'white' | 'academy-blue' | 'cream-dark' | 'charcoal' | 'transparent';
   padding?: 'sm' | 'md' | 'lg' | 'xl';
   id?: string;
 }
@@ -19,8 +19,8 @@ const paddingMap = {
 const backgroundMap = {
   cream: 'bg-white',
   white: 'bg-white',
-  teal: 'bg-black',
   'cream-dark': 'bg-white',
+  'academy-blue': 'bg-academy-blue',
   charcoal: 'bg-black',
   transparent: 'bg-transparent',
 };

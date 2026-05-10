@@ -5,10 +5,11 @@
 @tailwind utilities;
 
 :root {
-  --primary-teal: #008080;
+  --primary-orange: #FF8C00;
+  --academy-blue: #1e3a8a;
   --secondary-orange: #FF8C00;
   --dark-bg: #000000;
-  --light-teal: #20B2AA;
+  --light-orange: #FFB347;
   --off-white: #FFFFFF;
   --bg-white: #FFFFFF;
   --bg-black: #000000;
@@ -18,7 +19,7 @@
   --element-spacing: 1.5rem;
   --card-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
   --card-shadow-hover: 0 35px 70px -12px rgba(0, 0, 0, 0.2);
-  --gradient-primary: linear-gradient(135deg, var(--primary-teal) 0%, var(--secondary-orange) 100%);
+  --gradient-primary: linear-gradient(135deg, var(--primary-orange) 0%, var(--secondary-orange) 100%);
   --gradient-dark: linear-gradient(135deg, #000000 0%, #121212 100%);
   --border-radius-sm: 0.75rem;
   --border-radius-md: 1.5rem;
@@ -105,8 +106,8 @@ body {
 /* Enhanced Gradients */
 .gradient-overlay {
   background: linear-gradient(135deg, 
-    rgba(0, 128, 128, 0.1) 0%, 
-    rgba(0, 128, 128, 0.05) 50%,
+    rgba(255, 140, 0, 0.1) 0%, 
+    rgba(255, 140, 0, 0.05) 50%,
     rgba(255, 140, 0, 0.05) 100%);
   backdrop-filter: blur(1px);
 }
@@ -299,7 +300,7 @@ body {
   transform: translateX(-50%);
   width: 4rem;
   height: 3px;
-  background: linear-gradient(90deg, var(--primary-teal), var(--secondary-orange));
+  background: linear-gradient(90deg, var(--primary-orange), var(--secondary-orange));
   border-radius: 2px;
 }
 
@@ -358,10 +359,10 @@ body {
 
 @keyframes pulse-glow {
   0%, 100% { 
-    box-shadow: 0 0 20px rgba(95, 179, 163, 0.3);
+    box-shadow: 0 0 20px rgba(255, 140, 0, 0.3);
   }
   50% { 
-    box-shadow: 0 0 40px rgba(95, 179, 163, 0.6);
+    box-shadow: 0 0 40px rgba(255, 140, 0, 0.6);
   }
 }
 
@@ -386,14 +387,14 @@ body {
 
 /* Button Enhancements */
 .btn-primary {
-  background: var(--primary-teal);
+  background: var(--primary-orange);
   border: none;
   color: white;
   font-weight: 600;
   padding: 1rem 2rem;
   border-radius: 50px;
   transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  box-shadow: 0 10px 25px rgba(0, 128, 128, 0.2);
+  box-shadow: 0 10px 25px rgba(255, 140, 0, 0.2);
   position: relative;
   overflow: hidden;
 }
@@ -415,7 +416,7 @@ body {
 
 .btn-primary:hover {
   transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 15px 35px rgba(95, 179, 163, 0.4);
+  box-shadow: 0 15px 35px rgba(255, 140, 0, 0.4);
 }
 
 .btn-secondary {
@@ -497,7 +498,7 @@ body {
 /* Divider Elements */
 .section-divider {
   height: 1px;
-  background: linear-gradient(90deg, transparent 0%, var(--primary-teal) 50%, transparent 100%);
+  background: linear-gradient(90deg, transparent 0%, var(--primary-orange) 50%, transparent 100%);
   margin: 4rem 0;
   opacity: 0.15;
 }
@@ -536,7 +537,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--primary-teal);
+  background: var(--primary-orange);
 }
 
 /* Mobile Optimizations */

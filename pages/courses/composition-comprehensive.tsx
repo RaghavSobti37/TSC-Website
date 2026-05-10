@@ -11,14 +11,18 @@ export default function CompositionComprehensive() {
     heroImage: "/assets/academy/sandesh.jpg",
     credentials: ["Acclaimed Music Composer", "30+ Years Experience", "7Bn+ Streams"],
     overview: [
-      "Dive deeper into advanced composition techniques with this comprehensive 6-month program designed for those who have mastered the fundamentals.",
-      "Learn directly from Sandesh Shandilya through 12+ exclusive live interactive sessions where you'll receive personalized feedback, refine your craft, and explore advanced compositional concepts."
+      "Dive deeper into advanced composition techniques with this comprehensive 6-month course designed for those who have mastered the fundamentals. This course takes your compositional skills to the next level through intensive live sessions, comprehensive recorded content, and a unique training approach where knowledge meets experience.",
+      "Learn directly from Sandesh Shandilya through 3 exclusive live interactive sessions where you'll receive personalized feedback, refine your craft, and explore advanced compositional concepts. With 200+ minutes of recorded content, 6 Months access to course contents, lifetime access to community, and direct mentorship, this course is designed to transform you into a confident and skilled composer."
     ],
     highlights: [
       { icon: "⏱️", title: "6 Months Duration", desc: "Comprehensive 6-month program designed for deep learning" },
       { icon: "📹", title: "200+ Mins Recorded", desc: "Extensive content covering advanced techniques" },
-      { icon: "👥", title: "12+ Live Sessions", desc: "Multiple live sessions for personalized guidance" },
-      { icon: "🎵", title: "Demo Day", desc: "Opportunity to perform at The Young Gunns Demo Day" }
+      { icon: "👥", title: "3 Live Sessions", desc: "Multiple live sessions for personalized guidance" },
+      { icon: "📚", title: "6 Months Access", desc: "Full access to all course materials and recordings" },
+      { icon: "🤝", title: "Lifetime Community", desc: "Join and stay connected with a vibrant community forever" },
+      { icon: "🎓", title: "EWS Scholarships", desc: "Scholarships available for economically weaker sections" },
+      { icon: "✨", title: "Unique Approach", desc: "Combines traditional learning with innovative techniques" },
+      { icon: "🌟", title: "Knowledge & Experience", desc: "Learn from decades of proven compositional mastery" }
     ],
     learnings: [
       { title: "The Art Of Imagination", desc: "Learn how to play with your imagination and get into the correct zone." },
@@ -27,6 +31,15 @@ export default function CompositionComprehensive() {
       { title: "Mainstream Mastery", desc: "Create music that connects with the masses while staying creative." }
     ],
     curriculum: [
+      {
+        title: "Chapter 0 — It all Starts Here",
+        desc: "Introduction to the fundamental concepts of music composition.",
+        icon: "📚",
+        segments: [
+          { number: "0A", name: "The heART of Music Composition", assignment: true },
+          { number: "0B", name: "Align Yourself" }
+        ]
+      },
       {
         title: "Chapter 1 — Introduction (Aamad)",
         desc: "Meet your mentor and understand the balance between emotion and technique.",
@@ -153,25 +166,20 @@ export default function CompositionComprehensive() {
         ]
       }
     ],
-    enrollLink: "https://tscacademy.exlyapp.com/checkout/55bdc656-c92d-4812-a775-944d5becf544",
+    enrollLink: "https://tscacademy.exlyapp.com/checkout/55bdc656-c92d-4812-a775-944d5becf544?dynamic_link=ad961260-1373-49a9-9307-241497380256",
     masterclassLink: "/masterclass/sandesh-shandilya",
     comparisonTable: {
-      headers: ["Feature", "Foundation", "Accelerator"],
+      headers: ["Feature", "Accelerator"],
       rows: [
-        ["Recorded content", "Yes", "Yes"],
-        ["Live sessions", "No", "12 / year"],
-        ["Community", "Yes", "Yes"],
-        ["Demo Day", "No", "Yes"],
-        ["WhatsApp access", "No", "Yes"],
-        ["Assignment feedback", "No", "Yes"],
-        ["Making 1 song", "No", "Yes"],
-        ["Access", "6 Months", "1 Year"],
-        ["Actual Price", "₹14,999", "₹39,999"],
-        ["Offer Price", "₹3,999", "₹19,999"]
+        ["Recorded content", "Yes"],
+        ["Live sessions", "3 sessions"],
+        ["Community", "Yes"],
+        ["WhatsApp access", "Yes"],
+        ["Assignment feedback", "Yes"],
+        ["Access", "6 Months"]
       ],
       tierLinks: [
-        "https://tscacademy.exlyapp.com/checkout/1d0a602b-3c35-401c-8c43-1b88780520f2?dynamic_link=8f97793a-18dd-471f-9b2b-3bc046936957",
-        "https://tscacademy.exlyapp.com/checkout/55bdc656-c92d-4812-a775-944d5becf544?dynamic_link=cec6c043-4b7f-493a-b2c4-c6ca7e21d137"
+        "https://tscacademy.exlyapp.com/checkout/55bdc656-c92d-4812-a775-944d5becf544?dynamic_link=ad961260-1373-49a9-9307-241497380256"
       ]
     }
   };

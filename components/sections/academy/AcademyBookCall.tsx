@@ -1,12 +1,13 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { ArrowRight } from 'lucide-react';
 
 export default function AcademyBookCall() {
   return (
     <section className="py-24 bg-white relative overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-orange/5 rounded-full blur-3xl -mr-48 -mt-48" />
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-teal/5 rounded-full blur-3xl -ml-48 -mb-48" />
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#1e3a8a]/5 rounded-full blur-3xl -ml-48 -mb-48" />
 
       <div className="max-w-5xl mx-auto px-6 relative z-10">
         <div className="flex flex-col md:flex-row items-center gap-12">
@@ -62,7 +63,7 @@ export default function AcademyBookCall() {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-black text-white font-bold font-signika text-base hover:bg-black/90 transition-all hover:scale-105 shadow-xl shadow-black/10"
             >
-              Book a Discovery Call →
+              Book a Discovery Call <ArrowRight size={18} />
             </motion.a>
           </div>
 
@@ -89,7 +90,7 @@ export default function AcademyBookCall() {
             </div>
             {/* Abstract shapes */}
             <div className="absolute -top-6 -right-6 w-24 h-24 border-2 border-orange/20 rounded-full" />
-            <div className="absolute -bottom-10 -left-10 w-40 h-40 border border-teal/10 rounded-full" />
+            <div className="absolute -bottom-10 -left-10 w-40 h-40 border border-[#1e3a8a]/10 rounded-full" />
           </motion.div>
         </div>
       </div>

@@ -28,7 +28,7 @@ export default function ArtistReleasePlaybook() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-4xl sm:text-5xl md:text-6xl font-bold text-teal-dark font-signika mb-6"
+              className="text-4xl sm:text-5xl md:text-6xl font-bold text-orange font-signika mb-6"
             >
               The Artist Release Playbook
             </motion.h1>
@@ -63,13 +63,13 @@ export default function ArtistReleasePlaybook() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
-            className="prose prose-lg prose-teal max-w-none text-slate-dark font-alan-sans"
+            className="prose prose-lg prose-orange max-w-none text-slate-dark font-alan-sans"
           >
-            <p className="lead text-xl text-teal-dark font-semibold mb-8">
+            <p className="lead text-xl text-orange font-semibold mb-8">
               How to release your music without it getting lost. Learn the pre-release, release day, and post-release strategies.
             </p>
 
-            <h2 className="text-3xl font-bold text-teal-dark font-signika mt-12 mb-6">Phase 1: Pre-Release (4-6 Weeks Out)</h2>
+            <h2 className="text-3xl font-bold text-orange font-signika mt-12 mb-6">Phase 1: Pre-Release (4-6 Weeks Out)</h2>
             <p className="mb-6 leading-relaxed">
               The biggest mistake independent artists make is treating the release date as the finish line. It’s actually the starting line. Your pre-release phase is where you build the foundation for a successful launch. Start by ensuring your metadata is pristine. Submit to Spotify for Artists at least 3 weeks in advance to be considered for editorial playlists and to guarantee your song appears in your followers' Release Radar.
             </p>
@@ -79,7 +79,7 @@ export default function ArtistReleasePlaybook() {
               <li>Tease the release on social media using engaging, behind-the-scenes content.</li>
             </ul>
 
-            <h2 className="text-3xl font-bold text-teal-dark font-signika mt-12 mb-6">Phase 2: Release Day</h2>
+            <h2 className="text-3xl font-bold text-orange font-signika mt-12 mb-6">Phase 2: Release Day</h2>
             <p className="mb-6 leading-relaxed">
               Release day is all about momentum. Your goal is to drive as much traffic to your streaming links as possible within the first 24 hours. This triggers algorithms on platforms like Spotify and Apple Music. Update all your social media bios with a smart link that directs fans to their preferred streaming platform.
             </p>
@@ -87,7 +87,7 @@ export default function ArtistReleasePlaybook() {
               Don't just post an album cover and say "out now." Share a story. Go live on Instagram or TikTok to celebrate with your audience. Respond to every comment and message. Engagement is key.
             </p>
 
-            <h2 className="text-3xl font-bold text-teal-dark font-signika mt-12 mb-6">Phase 3: Post-Release (Weeks 1-4)</h2>
+            <h2 className="text-3xl font-bold text-orange font-signika mt-12 mb-6">Phase 3: Post-Release (Weeks 1-4)</h2>
             <p className="mb-6 leading-relaxed">
               Many artists experience a post-release slump. To combat this, you need a sustained content strategy. Break down your music video into short-form clips for Shorts, Reels, and TikTok. Share lyrics, the story behind the song, and acoustic performance versions.
             </p>
@@ -95,10 +95,10 @@ export default function ArtistReleasePlaybook() {
               Remember, consistent promotion over a longer period is more effective than one massive spike on release day. Keep finding new angles to talk about your art.
             </p>
 
-            <div className="bg-teal-light/20 p-8 rounded-xl border border-teal-light/30 mt-12 text-center">
-              <h3 className="text-2xl font-bold text-teal-dark font-signika mb-4">Want the full framework?</h3>
+            <div className="bg-orange/10 p-8 rounded-xl border border-orange/20 mt-12 text-center">
+              <h3 className="text-2xl font-bold text-orange font-signika mb-4">Want the full framework?</h3>
               <p className="text-slate-medium mb-6">Join our community to access comprehensive playbooks, templates, and expert guidance.</p>
-              <a href="/academy" className="inline-block bg-teal-dark hover:bg-teal-primary text-cream font-semibold py-3 px-8 rounded-lg transition-colors">
+              <a href="/academy" className="inline-block bg-orange hover:bg-orange-dark text-cream font-semibold py-3 px-8 rounded-lg transition-colors">
                 Explore Academy
               </a>
             </div>

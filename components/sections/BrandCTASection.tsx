@@ -1,6 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
+import { ArrowRight } from 'lucide-react';
+
 /**
  * BrandCTASection — Full-width CTA targeting brands/partners
  * Positioned between Ecosystem and People sections
@@ -61,7 +63,7 @@ export default function BrandCTASection() {
                 href="/query"
                 className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-orange text-white font-bold font-signika text-base hover:bg-orange/90 transition-all duration-300 hover:scale-105 shadow-xl whitespace-nowrap"
               >
-                Partner With Us →
+                Partner With Us <ArrowRight size={20} />
               </a>
             </motion.div>
           </div>

@@ -4,6 +4,8 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
 
+import { ArrowRight } from 'lucide-react';
+
 interface FooterProps {
   className?: string;
 }
@@ -77,7 +79,7 @@ export const Footer: React.FC<FooterProps> = ({ className }) => {
   return (
     <footer className={cn('bg-black text-white', className)}>
       {/* Brand gradient border */}
-      <div className="h-px bg-gradient-to-r from-teal-primary via-pumpkin to-teal-primary opacity-60" />
+      <div className="h-px bg-gradient-to-r from-orange/20 via-pumpkin to-orange/20 opacity-60" />
 
       {/* Newsletter Section */}
       <div className="border-b border-white/10">
@@ -112,12 +114,12 @@ export const Footer: React.FC<FooterProps> = ({ className }) => {
                 disabled={isSubmitting}
                 className="px-6 py-3 rounded-full bg-orange text-white font-bold font-alan-sans text-sm hover:bg-orange/90 transition-all disabled:opacity-50 whitespace-nowrap"
               >
-                {isSubmitting ? 'Joining...' : 'Join →'}
+                {isSubmitting ? 'Joining...' : <span className="flex items-center justify-center gap-1.5">Join <ArrowRight size={14} /></span>}
               </button>
             </form>
           </motion.div>
           {message && (
-            <p className={`mt-3 text-sm font-alan-sans ${message.includes('Welcome') ? 'text-teal' : 'text-red-400'}`}>
+            <p className={`mt-3 text-sm font-alan-sans ${message.includes('Welcome') ? 'text-orange' : 'text-red-400'}`}>
               {message}
             </p>
           )}

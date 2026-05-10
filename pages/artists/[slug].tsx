@@ -2,6 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import { MapPin } from 'lucide-react';
 import Section from '@/components/layout/Section';
 import Container from '@/components/layout/Container';
 import UnfoldReveal from '@/components/animations/UnfoldReveal';
@@ -50,12 +51,14 @@ export default function ArtistDetailPage({ artist }: ArtistDetailPageProps) {
               <h1 className="text-6xl md:text-7xl font-bold text-charcoal mb-6">{artist.name}</h1>
               <div className="flex flex-wrap gap-3 mb-8">
                 {artist.roles.map((role, index) => (
-                  <span key={index} className="px-4 py-2 bg-teal-dark text-cream rounded-full text-sm font-semibold">
+                  <span key={index} className="px-4 py-2 bg-orange text-cream rounded-full text-sm font-semibold">
                     {role}
                   </span>
                 ))}
               </div>
-              <p className="text-xl text-slate-medium mb-4">📍 {artist.location}</p>
+              <p className="text-xl text-slate-medium mb-4 flex items-center">
+                <MapPin size={20} className="text-orange mr-2" /> {artist.location}
+              </p>
               <p className="text-lg text-slate-medium mb-8 leading-relaxed">{artist.bioShort}</p>
               {artist.bookingEnabled && (
                 <Link href={`/contact?artist=${artist.slug}`}>
@@ -102,7 +105,7 @@ export default function ArtistDetailPage({ artist }: ArtistDetailPageProps) {
               {artist.genres.map((genre, index) => (
                 <motion.div
                   key={index}
-                  className="px-6 py-3 bg-white rounded-lg border-2 border-teal-dark"
+                  className="px-6 py-3 bg-white rounded-lg border-2 border-orange"
                   initial={{ opacity: 0, scale: 0.8 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
@@ -126,7 +129,7 @@ export default function ArtistDetailPage({ artist }: ArtistDetailPageProps) {
                 {artist.social.instagram && (
                   <FishyButton
                     onClick={() => window.open(artist.social?.instagram, '_blank')}
-                    variant="teal"
+                    variant="pumpkin"
                     width="140px"
                     height="56px"
                   >
@@ -136,7 +139,7 @@ export default function ArtistDetailPage({ artist }: ArtistDetailPageProps) {
                 {artist.social?.spotify && (
                   <FishyButton
                     onClick={() => window.open(artist.social?.spotify, '_blank')}
-                    variant="teal"
+                    variant="pumpkin"
                     width="140px"
                     height="56px"
                   >
@@ -151,7 +154,7 @@ export default function ArtistDetailPage({ artist }: ArtistDetailPageProps) {
 
       {/* Booking CTA */}
       {artist.bookingEnabled && (
-        <Section background="teal" padding="xl">
+        <Section background="charcoal" padding="xl">
           <Container className="text-center">
             <UnfoldReveal variant="fadeUp" className="text-white">
               <h2 className="text-4xl md:text-5xl font-bold mb-6">Ready to Collaborate?</h2>
@@ -159,7 +162,7 @@ export default function ArtistDetailPage({ artist }: ArtistDetailPageProps) {
                 Get in touch to discuss collaborations, bookings, and creative opportunities with {artist.name}.
               </p>
               <Link href={`/contact?artist=${artist.slug}`}>
-                <Button variant="primary" size="lg" className="bg-cream text-teal-dark hover:bg-cream-dark">
+                <Button variant="primary" size="lg" className="bg-cream text-orange hover:bg-cream-dark border-none">
                   Start a Conversation
                 </Button>
               </Link>

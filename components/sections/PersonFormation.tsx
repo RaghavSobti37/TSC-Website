@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { cn } from '@/lib/utils';
+import { X } from 'lucide-react';
 
 interface PersonFormationProps {
   isOpen: boolean;
@@ -15,8 +16,8 @@ const ovals = [
     title: 'Our Vision',
     content: 'Empowering emerging artists with the tools, mentorship, and resources to create, monetize, and scale their cultural impact globally.',
     position: 'top-12 left-1/2 -translate-x-1/2',
-    color: 'border-teal',
-    gradient: 'from-teal/10 to-transparent',
+    color: 'border-orange',
+    gradient: 'from-orange/10 to-transparent',
   },
   {
     id: 'mission',
@@ -83,7 +84,7 @@ export function PersonFormation({ isOpen, onClose }: PersonFormationProps) {
                     cy="60"
                     r="30"
                     fill="none"
-                    stroke="#008080"
+                    stroke="#FF8C00"
                     strokeWidth="2"
                     animate={
                       hoveredOval
@@ -125,7 +126,7 @@ export function PersonFormation({ isOpen, onClose }: PersonFormationProps) {
                     cy="195"
                     r="25"
                     fill="none"
-                    stroke="#008080"
+                    stroke="#FF8C00"
                     strokeWidth="2"
                     animate={
                       hoveredOval
@@ -190,19 +191,7 @@ export function PersonFormation({ isOpen, onClose }: PersonFormationProps) {
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <svg
-                  className="w-6 h-6 text-black"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
+                <X size={24} />
               </motion.button>
             </div>
           </motion.div>

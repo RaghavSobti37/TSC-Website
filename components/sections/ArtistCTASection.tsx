@@ -1,6 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
+import { ArrowRight } from 'lucide-react';
+
 /**
  * ArtistCTASection — Full-width CTA targeting artists
  * Positioned after the People / Credibility section
@@ -18,7 +20,7 @@ export default function ArtistCTASection() {
         transition={{ duration: 60, repeat: Infinity, ease: 'linear' }}
       />
       <motion.div
-        className="absolute -bottom-20 -left-20 w-64 h-64 rounded-full border border-teal/10 pointer-events-none"
+        className="absolute -bottom-20 -left-20 w-64 h-64 rounded-full border border-orange/10 pointer-events-none"
         animate={{ rotate: -360 }}
         transition={{ duration: 40, repeat: Infinity, ease: 'linear' }}
       />
@@ -65,7 +67,7 @@ export default function ArtistCTASection() {
             href="/artist-path"
             className="w-full max-w-[320px] px-10 py-5 rounded-full bg-orange text-white font-bold font-signika text-base sm:text-lg tracking-wide hover:bg-orange/90 transition-all duration-300 shadow-lg shadow-orange/30 hover:shadow-orange/50 hover:scale-105 text-center"
           >
-            Take the Artist Path →
+            <span className="flex items-center justify-center gap-2">Take the Artist Path <ArrowRight size={20} /></span>
           </a>
           <a
             href="https://tscacademy.in"

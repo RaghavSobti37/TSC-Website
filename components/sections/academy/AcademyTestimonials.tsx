@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Quote } from 'lucide-react';
 import Section from '@/components/layout/Section';
 import Container from '@/components/layout/Container';
 
@@ -30,8 +31,10 @@ export default function AcademyTestimonials() {
       <Container>
         <div className="flex flex-col md:flex-row items-end justify-between mb-16 gap-8">
           <div>
-            <div className="text-6xl text-pumpkin/20 font-serif leading-none mb-[-20px] font-bold">&quot;</div>
-            <h2 className="text-4xl md:text-5xl font-bold text-teal-dark font-signika">
+            <div className="mb-4 text-[#1e3a8a]/20">
+              <Quote size={48} fill="currentColor" />
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-[#1e3a8a] font-signika">
               Artist Testimonials
             </h2>
           </div>
@@ -45,9 +48,11 @@ export default function AcademyTestimonials() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.15 }}
-              className="bg-white p-10 rounded-[2.5rem] shadow-xl border border-teal-dark/5 flex flex-col relative"
+              className="bg-white p-10 rounded-[2.5rem] shadow-xl border border-[#1e3a8a]/5 flex flex-col relative"
             >
-              <div className="absolute top-8 right-10 text-6xl text-teal-dark/5 font-serif leading-none italic font-bold opacity-10">&quot;</div>
+              <div className="absolute top-8 right-10 text-[#1e3a8a]/5">
+                <Quote size={64} fill="currentColor" className="opacity-10" />
+              </div>
               
               <p className="text-slate-medium font-alan-sans text-sm leading-relaxed mb-10 flex-1 italic relative z-10">
                 {t.text}
@@ -58,7 +63,7 @@ export default function AcademyTestimonials() {
                   <img src={t.image} alt={t.name} className="w-full h-full object-cover" />
                 </div>
                 <div>
-                  <h4 className="text-teal-dark font-bold font-signika tracking-tight">{t.name}</h4>
+                  <h4 className="text-[#1e3a8a] font-bold font-signika tracking-tight">{t.name}</h4>
                   <p className="text-xs font-bold text-pumpkin font-alan-sans uppercase tracking-widest">{t.role}</p>
                 </div>
               </div>

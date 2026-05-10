@@ -1,6 +1,7 @@
 import React, { ReactNode } from 'react';
 import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
+import { ArrowRight } from 'lucide-react';
 
 interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -14,13 +15,13 @@ interface ButtonProps
 
 const variantStyles = {
   primary:
-    'bg-teal text-white hover:bg-teal-dark active:bg-teal shadow-lg shadow-teal/20',
+    'bg-orange text-white hover:bg-orange-dark active:bg-orange shadow-lg shadow-orange/20',
   secondary:
     'bg-orange text-white hover:bg-orange-dark active:bg-orange shadow-lg shadow-orange/20',
   outline:
-    'border-2 border-teal text-teal hover:bg-teal hover:text-white transition-colors',
+    'border-2 border-orange text-orange hover:bg-orange hover:text-white transition-colors',
   ghost:
-    'text-teal hover:underline hover:underline-offset-4 transition-all',
+    'text-orange hover:underline hover:underline-offset-4 transition-all',
 };
 
 const sizeStyles = {
@@ -106,24 +107,24 @@ export const CTACluster: React.FC<CTAClusterProps> = ({
           viewport={{ once: true }}
           className="flex flex-col items-start"
         >
-          <div className="mb-4 h-1 w-12 bg-teal-primary rounded" />
+          <div className="mb-4 h-1 w-12 bg-orange rounded" />
           {item.description && (
             <p className="text-sm text-slate-medium mb-6">{item.description}</p>
           )}
           {item.href ? (
             <a
               href={item.href}
-              className="inline-flex text-teal-primary font-semibold hover:gap-2 gap-1 transition-all"
+              className="inline-flex items-center text-orange font-semibold hover:gap-2 gap-1 transition-all"
             >
-              {item.label} →
+              {item.label} <ArrowRight size={16} />
             </a>
           ) : (
             <motion.button
               onClick={item.onClick}
-              className="inline-flex text-teal-primary font-semibold hover:gap-2 gap-1 transition-all"
+              className="inline-flex items-center text-orange font-semibold hover:gap-2 gap-1 transition-all"
               whileHover={{ x: 4 }}
             >
-              {item.label} →
+              {item.label} <ArrowRight size={16} />
             </motion.button>
           )}
         </motion.div>

@@ -28,7 +28,7 @@ export default function BreathingVocalTexture() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-4xl sm:text-5xl md:text-6xl font-bold text-teal-dark font-signika mb-6"
+              className="text-4xl sm:text-5xl md:text-6xl font-bold text-orange font-signika mb-6"
             >
               Breathing Techniques & Vocal Texture
             </motion.h1>
@@ -63,18 +63,18 @@ export default function BreathingVocalTexture() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
-            className="prose prose-lg prose-teal max-w-none text-slate-dark font-alan-sans"
+            className="prose prose-lg prose-orange max-w-none text-slate-dark font-alan-sans"
           >
-            <p className="lead text-xl text-teal-dark font-semibold mb-8">
+            <p className="lead text-xl text-orange font-semibold mb-8">
               Most singers think their problem is pitch. It’s not. It’s breath. How to improve your vocal texture practically.
             </p>
 
-            <h2 className="text-3xl font-bold text-teal-dark font-signika mt-12 mb-6">The Myth of Pitch</h2>
+            <h2 className="text-3xl font-bold text-orange font-signika mt-12 mb-6">The Myth of Pitch</h2>
             <p className="mb-6 leading-relaxed">
               When a note falls flat or sharp, the immediate reaction is to adjust the vocal cords. However, more often than not, pitch issues are symptoms of a deeper problem: poor breath support. Your breath is the fuel for your voice. Without a consistent and controlled airflow, your vocal cords have to overcompensate, leading to tension, fatigue, and pitch inaccuracies.
             </p>
 
-            <h2 className="text-3xl font-bold text-teal-dark font-signika mt-12 mb-6">Diaphragmatic Breathing: The Foundation</h2>
+            <h2 className="text-3xl font-bold text-orange font-signika mt-12 mb-6">Diaphragmatic Breathing: The Foundation</h2>
             <p className="mb-6 leading-relaxed">
               The foundation of powerful vocal texture is diaphragmatic breathing. Place a hand on your stomach. As you inhale, your stomach should expand outward. As you exhale, it should pull inward. Your shoulders and chest should remain relatively still. This ensures you are utilizing the full capacity of your lungs and creating a solid column of air to support your tone.
             </p>
@@ -83,7 +83,7 @@ export default function BreathingVocalTexture() {
               <li><strong>Lip Trills:</strong> These help balance breath pressure and vocal cord tension. Glide smoothly up and down your range while maintaining the trill.</li>
             </ul>
 
-            <h2 className="text-3xl font-bold text-teal-dark font-signika mt-12 mb-6">Unlocking Vocal Texture</h2>
+            <h2 className="text-3xl font-bold text-orange font-signika mt-12 mb-6">Unlocking Vocal Texture</h2>
             <p className="mb-6 leading-relaxed">
               Once your breath support is solid, you can begin to explore vocal texture. Texture refers to the quality or "color" of your voice—is it breathy, raspy, resonant, or pure? You manipulate texture by adjusting your vocal tract (the space in your throat and mouth).
             </p>
@@ -91,10 +91,10 @@ export default function BreathingVocalTexture() {
               For a breathier, more intimate tone, allow more air to pass through the vocal cords. For a brighter, more piercing tone, focus the resonance forward into the "mask" (the area behind your nose and eyes). Experiment with different vowel shapes and placements to discover the unique textures your voice can produce.
             </p>
 
-            <div className="bg-teal-light/20 p-8 rounded-xl border border-teal-light/30 mt-12 text-center">
-              <h3 className="text-2xl font-bold text-teal-dark font-signika mb-4">Master Your Voice</h3>
+            <div className="bg-orange/10 p-8 rounded-xl border border-orange/20 mt-12 text-center">
+              <h3 className="text-2xl font-bold text-orange font-signika mb-4">Master Your Voice</h3>
               <p className="text-slate-medium mb-6">Explore our advanced vocal training modules to unlock your true potential.</p>
-              <a href="/academy" className="inline-block bg-teal-dark hover:bg-teal-primary text-cream font-semibold py-3 px-8 rounded-lg transition-colors">
+              <a href="/academy" className="inline-block bg-orange hover:bg-orange-dark text-cream font-semibold py-3 px-8 rounded-lg transition-colors">
                 View Masterclasses
               </a>
             </div>

@@ -12,7 +12,7 @@ interface FishyButtonProps {
   width?: string;
   height?: string;
   fishSpeed?: string;
-  variant?: "pumpkin" | "teal" | "wine";
+  variant?: "pumpkin" | "academy-blue" | "wine";
 }
 
 export const FishyButton: React.FC<FishyButtonProps> = ({
@@ -50,13 +50,13 @@ export const FishyButton: React.FC<FishyButtonProps> = ({
       color_5: "#8E3A01",
       color_6: "#5F2700",
     },
-    teal: {
-      color_1: "#083D3A",
-      color_2: "#0B5147",
-      color_3: "#126D5E",
-      color_4: "#18897A",
-      color_5: "#062D2B",
-      color_6: "#041A19",
+    'academy-blue': {
+      color_1: "#0a1d4a",
+      color_2: "#0f2b6e",
+      color_3: "#1e3a8a",
+      color_4: "#3b82f6",
+      color_5: "#081636",
+      color_6: "#050e24",
     },
     wine: {
       color_1: "#6D2034",

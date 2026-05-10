@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { ArrowRight } from 'lucide-react';
 
 const categories = ['All', 'Production', 'Mixing', 'Vocals', 'Business'];
 
@@ -65,7 +66,7 @@ export default function ResourcesTools() {
     <section className="py-16 sm:py-24 bg-white px-4 sm:px-6 relative overflow-hidden">
       {/* Background Decor */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-orange/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"></div>
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-teal/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/3"></div>
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-orange/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/3"></div>
 
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-12 sm:mb-16">
@@ -146,23 +147,21 @@ export default function ResourcesTools() {
                 </div>
                 
                 <div className="p-6 flex-1 flex flex-col">
-                  <h3 className="text-xl font-bold text-black mb-2 font-signika group-hover:text-teal transition-colors">
+                  <h3 className="text-xl font-bold text-black mb-2 font-signika group-hover:text-orange transition-colors">
                     {tool.title}
                   </h3>
                   <p className="text-black/60 text-sm leading-relaxed mb-6 flex-1">
                     {tool.description}
                   </p>
                   
-                  <a
+                   <a
                     href={tool.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-auto inline-flex items-center gap-2 text-orange font-semibold text-sm hover:text-teal transition-colors"
+                    className="mt-auto inline-flex items-center gap-2 text-orange font-semibold text-sm hover:text-orange/80 transition-colors"
                   >
                     <span>Get Resource</span>
-                    <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                    </svg>
+                    <ArrowRight size={14} className="transform group-hover:translate-x-1 transition-transform" />
                   </a>
                 </div>
               </motion.div>

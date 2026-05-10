@@ -67,7 +67,7 @@ export default function CourseLayout({
   const [openModule, setOpenModule] = useState<number | null>(0);
 
   return (
-    <div className="bg-charcoal pt-12">
+    <div className="bg-charcoal pt-24">
       {/* Hero */}
       <section className="relative py-12 overflow-hidden border-b border-white/5">
         <Container>
@@ -127,7 +127,7 @@ export default function CourseLayout({
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-teal-dark mb-8 font-signika">Course Overview</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-academy-blue mb-8 font-signika">Course Overview</h2>
               {overview.map((p, i) => (
                 <p key={i} className="text-lg text-slate-medium mb-6 font-alan-sans leading-relaxed">
                   {p}
@@ -138,7 +138,7 @@ export default function CourseLayout({
               {highlights.map((h, i) => (
                 <div key={i} className="p-6 bg-white rounded-2xl shadow-sm border border-slate-lightest hover:shadow-md transition-shadow">
                   <div className="text-3xl mb-4">{h.icon}</div>
-                  <h3 className="text-lg font-bold text-teal-dark mb-2 font-signika">{h.title}</h3>
+                  <h3 className="text-lg font-bold text-academy-blue mb-2 font-signika">{h.title}</h3>
                   <p className="text-sm text-slate-medium font-alan-sans leading-relaxed">{h.desc}</p>
                 </div>
               ))}
@@ -148,7 +148,7 @@ export default function CourseLayout({
       </Section>
 
       {/* What You'll Learn */}
-      <Section background="teal" padding="xl" className="text-cream">
+      <Section background="academy-blue" padding="xl" className="text-cream">
         <Container>
           <h2 className="text-3xl md:text-4xl font-bold font-signika mb-16 text-center">What You&apos;ll Learn</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -175,7 +175,7 @@ export default function CourseLayout({
       {/* Curriculum */}
       <Section background="cream-dark" padding="xl">
         <Container className="max-w-4xl">
-          <h2 className="text-3xl md:text-4xl font-bold text-teal-dark mb-4 text-center font-signika">Curriculum Overview</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-academy-blue mb-4 text-center font-signika">Curriculum Overview</h2>
           <p className="text-slate-medium text-center mb-16 font-alan-sans">A focused path with structured chapters and assignments.</p>
           
           <div className="space-y-4">
@@ -187,7 +187,7 @@ export default function CourseLayout({
                 >
                   <div className="text-2xl">{module.icon}</div>
                   <div className="flex-1">
-                    <h3 className="text-lg font-bold text-teal-dark font-signika">{module.title}</h3>
+                    <h3 className="text-lg font-bold text-academy-blue font-signika">{module.title}</h3>
                     <p className="text-sm text-slate-light font-alan-sans">{module.desc}</p>
                   </div>
                   <div className={`transform transition-transform ${openModule === i ? 'rotate-180' : ''}`}>▼</div>
@@ -206,7 +206,7 @@ export default function CourseLayout({
                           <div key={si} className="flex items-center justify-between p-4 bg-white rounded-xl border border-slate-lightest shadow-sm">
                             <div className="flex items-center gap-4">
                               <span className="text-xs font-bold text-pumpkin font-alan-sans">{seg.number}</span>
-                              <span className="font-bold text-teal-dark font-signika">{seg.name}</span>
+                              <span className="font-bold text-academy-blue font-signika">{seg.name}</span>
                             </div>
                             {seg.assignment && (
                               <span className="text-[10px] font-bold uppercase tracking-widest text-sea-foam bg-sea-foam/10 px-2 py-1 rounded">Assignment</span>
@@ -227,11 +227,11 @@ export default function CourseLayout({
       {comparisonTable && (
         <Section background="cream" padding="xl" id="comparison">
           <Container>
-            <h2 className="text-3xl md:text-4xl font-bold text-teal-dark mb-16 text-center font-signika">Choose Your Path</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-academy-blue mb-16 text-center font-signika">Choose Your Path</h2>
             <div className="overflow-x-auto rounded-3xl border border-slate-lightest shadow-xl">
               <table className="w-full text-left bg-white min-w-[600px]">
                 <thead>
-                  <tr className="bg-teal-dark text-cream">
+                  <tr className="bg-academy-blue text-cream">
                     {comparisonTable.headers.map((h, i) => (
                       <th key={i} className={`p-6 font-signika text-lg ${i > 0 ? 'text-center' : ''}`}>{h}</th>
                     ))}
@@ -241,7 +241,7 @@ export default function CourseLayout({
                   {comparisonTable.rows.map((row, i) => (
                     <tr key={i} className="hover:bg-slate-50 transition-colors">
                       {row.map((cell, ci) => (
-                        <td key={ci} className={`p-6 font-alan-sans ${ci === 0 ? 'font-bold text-teal-dark' : 'text-slate-medium text-center'}`}>
+                        <td key={ci} className={`p-6 font-alan-sans ${ci === 0 ? 'font-bold text-academy-blue' : 'text-slate-medium text-center'}`}>
                           {cell}
                         </td>
                       ))}

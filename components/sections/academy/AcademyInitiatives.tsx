@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { ArrowRight } from 'lucide-react';
 import Section from '@/components/layout/Section';
 import Container from '@/components/layout/Container';
 
@@ -9,7 +10,7 @@ const initiatives = [
     desc: 'Every week at 7:00 PM, we go live on our Instagram page (@the_shakti_collective) with our mentors, followers & learners. Join us for exclusive sessions, Q&As, and real-time interactions with industry legends.',
     image: 'https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=400&h=300&fit=crop',
     link: 'https://www.instagram.com/the_shakti_collective',
-    linkText: 'Follow @the_shakti_collective →',
+    linkText: 'Follow @the_shakti_collective',
   },
   {
     title: 'TSC Scholarships',
@@ -42,7 +43,7 @@ export default function AcademyInitiatives() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-bold text-teal-dark font-signika mb-6"
+            className="text-4xl md:text-5xl font-bold text-[#1e3a8a] font-signika mb-6"
           >
             Our Initiatives
           </motion.h2>
@@ -76,7 +77,7 @@ export default function AcademyInitiatives() {
                 <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors" />
               </div>
               <div className="p-8 flex flex-col flex-1">
-                <h3 className="text-2xl font-bold text-teal-dark mb-4 font-signika">{item.title}</h3>
+                <h3 className="text-2xl font-bold text-[#1e3a8a] mb-4 font-signika">{item.title}</h3>
                 <p className="text-slate-medium font-alan-sans text-sm leading-relaxed mb-6 flex-1">
                   {item.desc}
                 </p>
@@ -85,9 +86,9 @@ export default function AcademyInitiatives() {
                     href={item.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-pumpkin font-bold font-alan-sans text-sm hover:translate-x-2 transition-transform inline-block"
+                    className="text-pumpkin font-bold font-alan-sans text-sm hover:translate-x-2 transition-transform flex items-center gap-2"
                   >
-                    {item.linkText}
+                    {item.linkText} <ArrowRight size={14} />
                   </a>
                 )}
               </div>
@@ -99,9 +100,9 @@ export default function AcademyInitiatives() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="bg-white p-12 rounded-[2.5rem] text-center shadow-xl border border-teal-dark/5"
+          className="bg-white p-12 rounded-[2.5rem] text-center shadow-xl border border-[#1e3a8a]/5"
         >
-          <p className="text-xl md:text-2xl font-bold text-teal-dark mb-8 font-signika">
+          <p className="text-xl md:text-2xl font-bold text-[#1e3a8a] mb-8 font-signika">
             Want to ask anything about our initiatives and programs?
           </p>
           <a

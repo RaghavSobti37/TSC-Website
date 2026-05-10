@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Plus, ArrowRight } from 'lucide-react';
 
 /**
  * FAQSection — Common questions about TSC
@@ -19,7 +20,7 @@ const faqs = [
   },
   {
     q: 'What is "The Roundway"?',
-    a: 'The Roundway is our 5-stage framework: Prepare → Create → Produce → Monetize → Replicate. It\'s a living cycle — not a linear path — designed to take artists from raw potential to global cultural impact.',
+    a: 'The Roundway is our 5-stage framework: Prepare -> Create -> Produce -> Monetize -> Replicate. It\'s a living cycle — not a linear path — designed to take artists from raw potential to global cultural impact.',
   },
   {
     q: 'Can brands work with TSC?',
@@ -89,7 +90,7 @@ export default function FAQSection() {
                   transition={{ duration: 0.25 }}
                   className="flex-shrink-0 w-6 h-6 rounded-full border border-black/20 flex items-center justify-center text-black/60 group-hover:border-orange group-hover:text-orange transition-colors"
                 >
-                  +
+                  <Plus size={16} />
                 </motion.span>
               </button>
 
@@ -125,7 +126,7 @@ export default function FAQSection() {
             href="mailto:hello@theshaktcollective.com"
             className="inline-flex items-center gap-2 text-orange font-bold font-alan-sans hover:gap-3 transition-all"
           >
-            Reach out to us →
+            Reach out to us <ArrowRight size={18} />
           </a>
         </motion.div>
       </div>

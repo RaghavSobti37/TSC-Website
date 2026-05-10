@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { cn } from '@/lib/utils';
+import { Plus } from 'lucide-react';
 import { useReducedMotion } from '@/lib/animations';
 import * as RadixAccordion from '@radix-ui/react-accordion';
 
@@ -65,7 +66,7 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
   return (
     <RadixAccordion.Item value={item.id} className="border-b border-slate-lighter pb-4">
       <RadixAccordion.Trigger
-        className="w-full text-left py-4 hover:text-teal-primary transition-colors duration-300 group"
+        className="w-full text-left py-4 hover:text-orange transition-colors duration-300 group"
         onClick={() => setIsOpen(!isOpen)}
       >
         <motion.div
@@ -77,7 +78,7 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
           }}
           className="flex items-center justify-between"
         >
-          <h3 className="text-xl md:text-2xl font-bold text-charcoal group-hover:text-teal-primary">
+          <h3 className="text-xl md:text-2xl font-bold text-charcoal group-hover:text-orange">
             {item.title}
           </h3>
           <motion.span
@@ -90,7 +91,7 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
             }}
             className="text-2xl"
           >
-            ➕
+            <Plus size={24} className="text-orange" />
           </motion.span>
         </motion.div>
       </RadixAccordion.Trigger>

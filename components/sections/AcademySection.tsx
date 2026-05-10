@@ -20,8 +20,8 @@ interface Course {
   isFeatured?: boolean;
   /**
    * Optional URL for a banner/thumbnail image.
-   * – Featured card  → displays as a tall landscape banner.
-   * – Secondary card → displays as a short landscape thumbnail.
+   * – Featured card  -> displays as a tall landscape banner.
+   * – Secondary card -> displays as a short landscape thumbnail.
    * If omitted the card shows an SVG "Coming Soon" placeholder instead.
    */
   bannerImage?: string;
@@ -33,6 +33,8 @@ interface Course {
   /** Destination for the "Enroll Now" link. */
   enrollUrl?: string;
 }
+
+import { Lock, Clock, Star, ArrowRight } from 'lucide-react';
 
 /** ─────────────────────────────────────────────────────────────────────────────
  *  SVG "Coming Soon" banner placeholder
@@ -48,50 +50,17 @@ function ComingSoonBanner({ className = '' }: { className?: string }) {
     >
       <defs>
         <linearGradient id="csGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#1A3A3A" />
-          <stop offset="100%" stopColor="#0D2626" />
+          <stop offset="0%" stopColor="#1e3a8a" />
+          <stop offset="100%" stopColor="#172554" />
         </linearGradient>
-        <filter id="csGlow">
-          <feGaussianBlur stdDeviation="6" result="blur" />
-          <feMerge>
-            <feMergeNode in="blur" />
-            <feMergeNode in="SourceGraphic" />
-          </feMerge>
-        </filter>
       </defs>
 
       {/* Background */}
-      <rect width="800" height="340" fill="#FFFFFF" />
+      <rect width="800" height="340" fill="url(#csGrad)" />
 
       {/* Decorative circles */}
-      <circle cx="640" cy="60" r="120" fill="#FF8C00" opacity="0.06" />
-      <circle cx="160" cy="280" r="90" fill="#FF8C00" opacity="0.06" />
-
-      {/* Grid lines */}
-      {[0, 1, 2, 3, 4].map((i) => (
-        <line
-          key={`h${i}`}
-          x1="0"
-          y1={i * 85}
-          x2="800"
-          y2={i * 85}
-          stroke="#000000"
-          strokeWidth="0.5"
-          opacity="0.05"
-        />
-      ))}
-      {[0, 1, 2, 3, 4, 5, 6].map((i) => (
-        <line
-          key={`v${i}`}
-          x1={i * 133}
-          y1="0"
-          x2={i * 133}
-          y2="340"
-          stroke="#000000"
-          strokeWidth="0.5"
-          opacity="0.05"
-        />
-      ))}
+      <circle cx="640" cy="60" r="120" fill="#FFFFFF" opacity="0.06" />
+      <circle cx="160" cy="280" r="90" fill="#FFFFFF" opacity="0.06" />
 
       {/* COMING SOON text */}
       <text
@@ -99,7 +68,7 @@ function ComingSoonBanner({ className = '' }: { className?: string }) {
         y="155"
         textAnchor="middle"
         dominantBaseline="middle"
-        fill="#000000"
+        fill="#FFFFFF"
         fontSize="52"
         fontWeight="800"
         fontFamily="'Signika', sans-serif"
@@ -117,7 +86,7 @@ function ComingSoonBanner({ className = '' }: { className?: string }) {
         x="400"
         y="220"
         textAnchor="middle"
-        fill="#000000"
+        fill="#FFFFFF"
         fontSize="18"
         fontFamily="'Alan Sans', sans-serif"
         opacity="0.5"
@@ -152,14 +121,14 @@ function CourseCTAs({
         <span
           className={`${base} cursor-not-allowed bg-black/5 text-black/40 border border-black/10 ${lg ? 'px-6 py-3 text-base' : 'px-4 py-2 text-sm'}`}
         >
-          🔒 Enroll Now
+          <Lock className="w-4 h-4" /> Enroll Now
         </span>
       ) : (
         <a
           href={enrollUrl ?? '/book-a-call'}
-          className={`${base} bg-orange hover:bg-orange/80 text-white shadow-lg hover:shadow-orange/30 ${lg ? 'px-7 py-3.5 text-base' : 'px-5 py-2.5 text-sm'} whitespace-nowrap`}
+          className={`${base} bg-[#1e3a8a] hover:bg-[#1e3a8a]/80 text-white shadow-lg hover:shadow-blue-900/30 ${lg ? 'px-7 py-3.5 text-base' : 'px-5 py-2.5 text-sm'} whitespace-nowrap`}
         >
-          Enroll Now →
+          Enroll Now <ArrowRight size={16} />
         </a>
       )}
 
@@ -168,7 +137,7 @@ function CourseCTAs({
         <span
           className={`${base} border border-orange/40 bg-black/5 text-black/80 ${lg ? 'px-6 py-3 text-base' : 'px-4 py-2 text-sm'}`}
         >
-          ⏳ Coming Soon
+          <Clock className="w-4 h-4" /> Coming Soon
         </span>
       )}
     </div>
@@ -202,9 +171,8 @@ function FeaturedCourseCard({ course }: { course: Course }) {
             <ComingSoonBanner className="w-full h-full" />
           )}
 
-          {/* Featured pill */}
-          <span className="absolute top-4 left-4 px-3 py-1 rounded-full bg-orange text-white text-xs font-bold uppercase tracking-widest font-alan-sans shadow-lg z-10">
-            ⭐ Featured
+          <span className="absolute top-4 left-4 px-3 py-1.5 rounded-full bg-orange text-white text-[10px] font-bold uppercase tracking-widest font-alan-sans shadow-lg z-10 flex items-center gap-1.5">
+            <Star className="w-3 h-3 fill-white" /> Featured
           </span>
         </div>
 

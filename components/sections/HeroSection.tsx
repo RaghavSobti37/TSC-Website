@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 
+import { ArrowRight } from 'lucide-react';
+
 /**
  * Hero Section - TSC Revamp
  * "Unfolding artists' force" — talent-first culture engine
@@ -42,9 +44,9 @@ export default function HeroSection({
   };
 
   const rippleColors = [
-    '#0B5147', '#D4622D', '#126D5E', '#E07548', '#0B5147',
-    '#D4622D', '#126D5E', '#E07548', '#0B5147', '#D4622D',
-    '#126D5E', '#E07548',
+    '#B74B02', '#FF8C00', '#D4622D', '#E07548', '#FFB347',
+    '#FFCC33', '#B74B02', '#FF8C00', '#D4622D', '#E07548',
+    '#FFB347', '#FFCC33',
   ];
 
   const ripplePositions = [
@@ -104,9 +106,9 @@ export default function HeroSection({
         ))}
       </div>
 
-      {/* Teal glow — top-right */}
+      {/* Orange glow — top-right */}
       <motion.div
-        className="absolute top-0 right-0 w-72 sm:w-96 h-72 sm:h-96 bg-gradient-to-br from-teal/20 via-teal/10 to-transparent rounded-full blur-3xl opacity-30 pointer-events-none"
+        className="absolute top-0 right-0 w-72 sm:w-96 h-72 sm:h-96 bg-gradient-to-br from-orange/20 via-orange/10 to-transparent rounded-full blur-3xl opacity-30 pointer-events-none"
         animate={!reducedMotion ? { y: [0, -20, 0], x: [0, 10, 0] } : {}}
         transition={!reducedMotion ? { duration: 8, repeat: Infinity, ease: 'easeInOut' } : {}}
       />
@@ -197,12 +199,12 @@ export default function HeroSection({
             onClick={() => scrollToSection('artist-path-section')}
             className="w-full sm:w-auto px-7 sm:px-9 py-3.5 sm:py-4 rounded-full bg-orange text-white font-bold font-signika text-sm sm:text-base tracking-wide hover:bg-orange/90 transition-all duration-300 shadow-lg shadow-orange/30 hover:shadow-orange/50 hover:scale-[1.03] active:scale-[0.98] whitespace-nowrap"
           >
-            I&apos;m an Artist →
+            <span className="flex items-center justify-center gap-2">I&apos;m an Artist <ArrowRight size={18} /></span>
           </button>
 
           {/* Brand CTA — ghost */}
           <button
-            onClick={() => window.location.href = '/query'}
+            onClick={() => scrollToSection('brand-collab')}
             className="w-full sm:w-auto px-7 sm:px-9 py-3.5 sm:py-4 rounded-full border-2 border-black/20 text-black font-bold font-signika text-sm sm:text-base tracking-wide hover:border-black/50 hover:bg-black/5 transition-all duration-300 hover:scale-[1.03] active:scale-[0.98] whitespace-nowrap"
           >
             I&apos;m a Brand

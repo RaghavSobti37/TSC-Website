@@ -25,7 +25,7 @@ export default function ResourcesInstagram() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-3xl sm:text-4xl md:text-5xl font-bold text-teal-dark font-signika"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold text-black font-signika"
           >
             Latest on Instagram
           </motion.h2>

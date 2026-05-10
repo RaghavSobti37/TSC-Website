@@ -3,6 +3,8 @@ import { motion } from 'framer-motion';
 import Section from '@/components/layout/Section';
 import Container from '@/components/layout/Container';
 
+import { Mic2, Music2, Guitar } from 'lucide-react';
+
 const featuredMentors = [
   {
     name: 'Sandesh Shandilya',
@@ -46,17 +48,17 @@ const comingSoonMentors = [
   {
     role: 'Iconic Voice Behind Bollywood Hits',
     desc: 'A renowned Bollywood playback singer known for her rustic voice behind some of the most iconic songs across Bollywood genres.',
-    icon: '🎤'
+    icon: <Mic2 className="w-12 h-12 text-[#1e3a8a]" />
   },
   {
     role: 'Master of Musical Excellence',
     desc: 'An internationally acclaimed artist with decades of experience shaping the music industry and inspiring generations.',
-    icon: '🎼'
+    icon: <Music2 className="w-12 h-12 text-[#1e3a8a]" />
   },
   {
     role: 'Visionary in Music Creation',
     desc: 'A trailblazer in the music industry, known for innovative compositions and groundbreaking work that redefined musical boundaries.',
-    icon: '🎸'
+    icon: <Guitar className="w-12 h-12 text-[#1e3a8a]" />
   }
 ];
 
@@ -69,7 +71,7 @@ export default function AcademyMentors() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-bold text-teal-dark font-signika mb-6"
+            className="text-4xl md:text-5xl font-bold text-[#1e3a8a] font-signika mb-6"
           >
             Our Mentors
           </motion.h2>
@@ -95,7 +97,7 @@ export default function AcademyMentors() {
               transition={{ delay: index * 0.15 }}
               className="bg-white p-8 rounded-3xl border border-slate-lightest shadow-lg hover:shadow-2xl transition-all duration-400 group"
             >
-              <h3 className="text-2xl font-bold text-teal-dark font-signika mb-1">{mentor.name}</h3>
+              <h3 className="text-2xl font-bold text-[#1e3a8a] font-signika mb-1">{mentor.name}</h3>
               <p className="text-sm font-bold text-pumpkin font-alan-sans mb-6 uppercase tracking-wider">{mentor.role}</p>
               
               <div className="h-80 overflow-hidden rounded-2xl mb-8">
@@ -122,7 +124,7 @@ export default function AcademyMentors() {
         </div>
 
         <div className="text-center mb-12">
-          <h3 className="text-3xl font-bold text-teal-dark font-signika mb-4">Launching Soon</h3>
+          <h3 className="text-3xl font-bold text-[#1e3a8a] font-signika mb-4">Launching Soon</h3>
           <p className="text-slate-medium font-alan-sans">More legends joining the force</p>
         </div>
 
@@ -134,10 +136,10 @@ export default function AcademyMentors() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="bg-cream-dark/30 p-8 rounded-3xl border border-dashed border-teal-primary/20 text-center"
+              className="bg-cream-dark/30 p-8 rounded-3xl border border-dashed border-[#1e3a8a]/20 text-center"
             >
-              <div className="text-5xl mb-6 opacity-30">{mentor.icon}</div>
-              <h4 className="text-lg font-bold text-teal-dark font-signika mb-4">{mentor.role}</h4>
+              <div className="flex justify-center mb-6 opacity-80">{mentor.icon}</div>
+              <h4 className="text-lg font-bold text-[#1e3a8a] font-signika mb-4">{mentor.role}</h4>
               <p className="text-sm text-slate-medium font-alan-sans leading-relaxed">
                 {mentor.desc}
               </p>

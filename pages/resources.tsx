@@ -1,6 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import { motion } from 'framer-motion';
+import { ArrowRight } from 'lucide-react';
 
 import ResourcesInstagram from '@/components/sections/ResourcesInstagram';
 import ResourcesBlogs from '@/components/sections/ResourcesBlogs';
@@ -23,9 +24,9 @@ export default function ResourcesPage() {
 
       <main className="bg-cream min-h-screen">
         {/* Page Header */}
-        <section className="relative pt-36 pb-24 sm:pt-40 sm:pb-28 px-4 sm:px-6 overflow-hidden bg-teal-dark">
+        <section className="relative pt-36 pb-24 sm:pt-40 sm:pb-28 px-4 sm:px-6 overflow-hidden bg-black">
           {/* Background blobs */}
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-teal-light/20 via-teal-dark to-teal-dark pointer-events-none" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-orange/10 via-black to-black pointer-events-none" />
           <div className="absolute bottom-0 left-0 w-80 h-80 bg-pumpkin/10 rounded-full blur-3xl pointer-events-none" />
 
           {/* Ripple accent */}
@@ -92,7 +93,7 @@ export default function ResourcesPage() {
         <ResourcesTools />
 
         {/* Bottom CTA */}
-        <section className="bg-teal-dark py-20 px-4 sm:px-6 text-center">
+        <section className="bg-black py-20 px-4 sm:px-6 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -110,7 +111,7 @@ export default function ResourcesPage() {
               href="/artist-path"
               className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-pumpkin text-cream font-bold font-signika text-base hover:bg-pumpkin/90 transition-all hover:scale-105 shadow-lg shadow-pumpkin/30"
             >
-              Take the Artist Path →
+              Take the Artist Path <ArrowRight size={18} />
             </a>
           </motion.div>
         </section>

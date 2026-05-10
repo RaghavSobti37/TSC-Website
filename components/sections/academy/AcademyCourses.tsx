@@ -4,15 +4,17 @@ import Image from 'next/image';
 import Section from '@/components/layout/Section';
 import Container from '@/components/layout/Container';
 
+import { ArrowRight } from 'lucide-react';
+
 const courses = [
   {
     id: 'comp-comprehensive',
     title: 'The heART of Composition - Comprehensive',
     mentor: 'Sandesh Shandilya',
     mentorImage: '/assets/academy/sandesh.jpg',
-    features: ['6 Months', '200+ Mins Content', '12+ Live Sessions', 'Demo Day'],
-    desc: 'A comprehensive program learning the art of imagination, emotion to expression, and mainstream mastery. Score 9+ on final capstone to perform at The Young Guns Demo Day.',
-    image: '/assets/academy/sandesh.jpg', // Placeholder for actual banner
+    features: ['6 Months', '200+ Mins Content', '3 Live Sessions', 'Industry Mentorship'],
+    desc: 'Dive deeper into advanced composition techniques with this comprehensive 6-month course. Learn the art of imagination, emotion to expression, and mainstream mastery directly from a legend.',
+    image: '/assets/academy/sandesh.jpg',
     link: '/courses/composition-comprehensive',
     isLive: true,
   },
@@ -21,8 +23,8 @@ const courses = [
     title: 'The Roots of Hindustani Classical Music',
     mentor: 'Prasad Khaparde',
     mentorImage: '/assets/academy/prasadji.jpg',
-    features: ['Live Sessions', '120 Mins Content', 'Certification'],
-    desc: 'Master the art of Hindustani classical singing under the guidance of Prasad Khaparde. Twelve online group sessions, quality assessments, and certification.',
+    features: ['6 Months', '3+ Live Sessions', '300+ Mins Content', 'Certification'],
+    desc: 'Immerse yourself in the timeless art of Hindustani classical singing. Twelve exclusive online group sessions, quality assessments, and certification under the guidance of Pandit Prasad Khaparde.',
     image: '/assets/academy/prasadji.jpg',
     link: '/courses/hindustani-classical',
     isLive: true,
@@ -95,6 +97,7 @@ export default function AcademyCourses() {
               className={`
                 group relative min-h-[480px] rounded-3xl overflow-hidden border border-white/10
                 flex flex-col justify-end p-8 md:p-12
+                ${index === 0 ? 'md:col-span-2' : ''}
                 ${course.isComingSoon ? 'opacity-80' : 'cursor-pointer'}
               `}
               onClick={() => {
@@ -111,11 +114,11 @@ export default function AcademyCourses() {
                       fill
                       sizes="(max-width: 768px) 100vw, 50vw"
                       className="object-cover transition-transform duration-1000 group-hover:scale-110"
-                      priority={index < 2}
+                      priority={index < 3}
                     />
                   </div>
                 ) : (
-                  <div className="w-full h-full bg-gradient-to-br from-teal-dark to-charcoal" />
+                  <div className="w-full h-full bg-gradient-to-br from-academy-blue to-charcoal" />
                 )}
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent z-10" />
                 {course.isComingSoon && (
@@ -132,7 +135,7 @@ export default function AcademyCourses() {
                 <div className="text-xs font-bold text-cream/60 tracking-widest uppercase mb-4 font-alan-sans">
                   {course.isComingSoon ? 'Coming Soon' : `By ${course.mentor}`}
                 </div>
-                
+
                 <h3 className="text-3xl font-bold text-cream mb-6 font-signika leading-tight">
                   {course.title}
                 </h3>
@@ -155,16 +158,16 @@ export default function AcademyCourses() {
                 {!course.isComingSoon && (
                   <div className="flex items-center gap-4">
                     <div className="w-10 h-10 rounded-full border border-pumpkin overflow-hidden relative">
-                      <Image 
-                        src={course.mentorImage} 
-                        alt={course.mentor} 
+                      <Image
+                        src={course.mentorImage}
+                        alt={course.mentor}
                         fill
-                        className="object-cover" 
+                        className="object-cover"
                       />
                     </div>
                     <span className="text-cream font-bold font-alan-sans text-sm">{course.mentor}</span>
                     <div className="ml-auto w-10 h-10 rounded-full bg-pumpkin/20 border border-pumpkin/50 flex items-center justify-center text-cream group-hover:bg-pumpkin group-hover:scale-110 transition-all">
-                      →
+                      <ArrowRight size={18} />
                     </div>
                   </div>
                 )}

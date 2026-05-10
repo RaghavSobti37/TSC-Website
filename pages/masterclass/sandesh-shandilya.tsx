@@ -6,6 +6,7 @@ import Container from '@/components/layout/Container';
 import Section from '@/components/layout/Section';
 import { FishyButton } from '@/components/ui/fishy-button';
 import { motion } from 'framer-motion';
+import { Mic2, Rocket, Users, Play, Star } from 'lucide-react';
 
 export default function SandeshMasterclass() {
   const enrollmentLink = "https://tscacademy.exlyapp.com/checkout/ac754377-b8db-4722-9cf9-1cc3ba3e743a";
@@ -17,7 +18,7 @@ export default function SandeshMasterclass() {
         <meta name="description" content="Join an exclusive masterclass with acclaimed Bollywood composer Sandesh Shandilya. Learn the secrets of creating timeless music from a legend." />
       </Head>
 
-      <main className="pt-12 bg-white text-black">
+      <main className="pt-24 bg-white text-black">
         {/* Hero Section */}
         <section className="relative min-h-[70vh] flex items-center overflow-hidden bg-white border-b border-black/5">
           <Container>
@@ -28,7 +29,7 @@ export default function SandeshMasterclass() {
                 transition={{ duration: 0.8 }}
               >
                 <div className="inline-block px-4 py-1.5 rounded-full bg-pumpkin/20 border border-pumpkin/40 text-pumpkin text-xs font-bold uppercase tracking-widest mb-8 font-alan-sans">
-                  🎵 Exclusive Masterclass
+                  Exclusive Masterclass
                 </div>
                 <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-black mb-8 font-signika leading-tight">
                   The heART of Music Composition with <br />
@@ -53,7 +54,7 @@ export default function SandeshMasterclass() {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="relative"
               >
-                <div className="absolute inset-0 bg-gradient-to-tr from-pumpkin/20 to-teal-primary/20 blur-3xl rounded-full" />
+                <div className="absolute inset-0 bg-gradient-to-tr from-pumpkin/20 to-academy-blue/20 blur-3xl rounded-full" />
                 <img 
                   src="/assets/academy/sss.png" 
                   alt="Sandesh Shandilya" 
@@ -68,7 +69,7 @@ export default function SandeshMasterclass() {
         <Section background="cream" padding="xl">
           <Container>
             <div className="text-center mb-20">
-              <h2 className="text-4xl md:text-5xl font-bold text-teal-dark font-signika mb-6">What to Expect?</h2>
+              <h2 className="text-4xl md:text-5xl font-bold text-academy-blue font-signika mb-6">What to Expect?</h2>
               <p className="text-lg text-slate-medium font-alan-sans max-w-2xl mx-auto">
                 Discover the secrets behind creating timeless music, understanding the creative process, and developing the right mindset for success.
               </p>
@@ -104,7 +105,7 @@ export default function SandeshMasterclass() {
                     <img src={step.img} alt={step.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
                   </div>
                   <div className="p-8">
-                    <h3 className="text-2xl font-bold text-teal-dark mb-4 font-signika">{step.title}</h3>
+                    <h3 className="text-2xl font-bold text-academy-blue mb-4 font-signika">{step.title}</h3>
                     <p className="text-slate-medium font-alan-sans leading-relaxed">{step.desc}</p>
                   </div>
                 </motion.div>
@@ -125,20 +126,20 @@ export default function SandeshMasterclass() {
         </Section>
 
         {/* Who is it for */}
-        <Section background="teal" padding="xl" className="text-cream relative overflow-hidden">
+        <Section background="academy-blue" padding="xl" className="text-cream relative overflow-hidden">
           <div className="absolute top-0 right-0 w-96 h-96 bg-pumpkin/10 rounded-full blur-[100px] -mr-48 -mt-48" />
           <Container className="relative z-10">
             <h2 className="text-4xl md:text-5xl font-bold font-signika mb-12 text-center">Who Should DEFINITELY ATTEND?</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
               <div className="flex gap-6">
-                <div className="text-4xl">🎤</div>
+                <div className="text-4xl text-orange"><Mic2 size={40} /></div>
                 <div>
                   <h3 className="text-2xl font-bold font-signika mb-4">Full-Time Artists</h3>
                   <p className="text-cream/80 font-alan-sans leading-relaxed">Singers, Songwriters, Composers, Lyrics Writers, Musicians & Music Producers can learn from the journey & industry insights.</p>
                 </div>
               </div>
               <div className="flex gap-6">
-                <div className="text-4xl">🌱</div>
+                <div className="text-4xl text-orange"><Rocket size={40} /></div>
                 <div>
                   <h3 className="text-2xl font-bold font-signika mb-4">Just Starting Out</h3>
                   <p className="text-cream/80 font-alan-sans leading-relaxed">Decided to become a professional artist? Connect with the right mentor and learn the right approach from day one.</p>
@@ -158,26 +159,26 @@ export default function SandeshMasterclass() {
           <Container>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <div className="order-2 lg:order-1">
-                <h3 className="text-4xl font-bold text-teal-dark font-signika mb-2">Sandesh Shandilya</h3>
+                <h3 className="text-4xl font-bold text-academy-blue font-signika mb-2">Sandesh Shandilya</h3>
                 <p className="text-pumpkin font-bold font-alan-sans uppercase tracking-widest mb-8">Acclaimed Film Composer & Music Director</p>
                 <p className="text-lg text-slate-medium font-alan-sans leading-relaxed mb-8">
                   An acclaimed music director, recognized for 50+ films, 30+ years in the Industry, a Filmfare nomination & 7Bn+ streams across platforms. Creator of iconic songs like Aaoge Jab Tum, Piya Basanti & many more.
                 </p>
                 <div className="grid grid-cols-3 gap-8 mb-12">
                   <div>
-                    <div className="text-3xl font-bold text-teal-dark font-signika">50+</div>
+                    <div className="text-3xl font-bold text-academy-blue font-signika">50+</div>
                     <div className="text-sm text-slate-light font-alan-sans">Films</div>
                   </div>
                   <div>
-                    <div className="text-3xl font-bold text-teal-dark font-signika">30+</div>
+                    <div className="text-3xl font-bold text-academy-blue font-signika">30+</div>
                     <div className="text-sm text-slate-light font-alan-sans">Years Exp</div>
                   </div>
                   <div>
-                    <div className="text-3xl font-bold text-teal-dark font-signika">7Bn+</div>
+                    <div className="text-3xl font-bold text-academy-blue font-signika">7Bn+</div>
                     <div className="text-sm text-slate-light font-alan-sans">Streams</div>
                   </div>
                 </div>
-                <h4 className="text-xl font-bold text-teal-dark mb-6 font-signika">Iconic Works</h4>
+                <h4 className="text-xl font-bold text-academy-blue mb-6 font-signika">Iconic Works</h4>
                 <div className="grid grid-cols-3 sm:grid-cols-6 lg:grid-cols-3 gap-4">
                   {['aaoge-jab-tum.jpg', 'k3g.jpg', 'piya-basanti.jpg', 'chameli.jpg', 'socha-na-tha.jpeg', 'dholna.png'].map(img => (
                     <img key={img} src={`/assets/academy/${img}`} className="rounded-lg shadow-md hover:scale-105 transition-all aspect-square object-cover" alt="Work" />

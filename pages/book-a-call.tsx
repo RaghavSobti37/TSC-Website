@@ -42,7 +42,7 @@ const courses = [
     title: 'Roots of Hindustani Classical',
     mentor: 'Prasad Khaparde',
     icon: Mic2,
-    color: 'bg-teal-primary/10 text-teal-primary',
+    color: 'bg-[#1e3a8a]/10 text-[#1e3a8a]',
     about: 'Master the sacred nuances of classical singing under the Rampur Sahaswan Gharana tradition. Learn directly from the legacy of Padma Bhushan Ustad Rashid Khan Sahab.',
     for: 'Vocalists of all levels—from beginners wanting a strong foundation to seasoned singers looking to refine their raag interpretation and vocal discipline.',
     expect: '3 live group sessions, masterclass in breath control (Kanth Saadhna), and official certification recognized in the classical music community.'

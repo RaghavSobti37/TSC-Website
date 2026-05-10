@@ -4,18 +4,20 @@ import Section from '@/components/layout/Section';
 import Container from '@/components/layout/Container';
 import { Button } from '@/components/buttons/Button';
 
+import { Layers, Clapperboard, Users, PenTool, Cpu, Rocket, TrendingUp } from 'lucide-react';
+
 interface PartnershipModel {
   id: string;
   title: string;
   description: string;
-  icon: string;
+  icon: React.ReactNode;
 }
 
 interface ProcessStep {
   id: string;
   title: string;
   description: string;
-  icon: string;
+  icon: React.ReactNode;
 }
 
 /**
@@ -28,19 +30,19 @@ export default function CollaborationsSection() {
       id: 'model-1',
       title: 'Brand IP Creation',
       description: 'Co-create original cultural properties that align with your brand values',
-      icon: '◇',
+      icon: <Layers className="w-10 h-10" />,
     },
     {
       id: 'model-2',
       title: 'Content Production',
       description: 'Leverage our talent pool for authentic brand storytelling',
-      icon: '▪',
+      icon: <Clapperboard className="w-10 h-10" />,
     },
     {
       id: 'model-3',
       title: 'Artist Partnerships',
       description: 'Direct collaboration with emerging artists from our ecosystem',
-      icon: '◆',
+      icon: <Users className="w-10 h-10" />,
     },
   ];
 
@@ -49,25 +51,25 @@ export default function CollaborationsSection() {
       id: 'step-1',
       title: 'Brief',
       description: 'Share your vision and objectives',
-      icon: '◐',
+      icon: <PenTool className="w-8 h-8" />,
     },
     {
       id: 'step-2',
       title: 'Create',
       description: 'Our team crafts authentic cultural IP',
-      icon: '◇',
+      icon: <Cpu className="w-8 h-8" />,
     },
     {
       id: 'step-3',
       title: 'Launch',
       description: 'Release to audience across platforms',
-      icon: '◉',
+      icon: <Rocket className="w-8 h-8" />,
     },
     {
       id: 'step-4',
       title: 'Scale',
       description: 'Amplify impact and measure success',
-      icon: '⬆',
+      icon: <TrendingUp className="w-8 h-8" />,
     },
   ];
 

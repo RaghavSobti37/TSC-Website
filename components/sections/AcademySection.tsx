@@ -220,14 +220,14 @@ function FeaturedCourseCard({ course }: { course: Course }) {
               {course.title}
             </h4>
 
-            <p className={`text-black/70 font-alan-sans text-sm sm:text-base mb-4 leading-relaxed ${!isExpanded ? 'line-clamp-3 sm:line-clamp-none' : ''}`}>
+            <p className={`text-black/70 font-alan-sans text-sm sm:text-base mb-4 leading-relaxed ${!isExpanded ? 'line-clamp-3' : ''}`}>
               {course.description}
             </p>
             
             {course.description.length > 150 && (
               <button 
                 onClick={() => setIsExpanded(!isExpanded)}
-                className="text-orange font-bold text-sm mb-4 sm:hidden"
+                className="text-orange font-bold text-sm mb-4 block"
               >
                 {isExpanded ? 'Read Less' : 'Read More'}
               </button>
@@ -288,14 +288,14 @@ function SecondaryCourseCard({ course, index }: { course: Course; index: number 
           {course.title}
         </h4>
 
-        <p className={`text-black/70 font-alan-sans text-xs sm:text-sm mb-3 leading-relaxed flex-1 ${!isExpanded ? 'line-clamp-3 sm:line-clamp-none' : ''}`}>
+        <p className={`text-black/70 font-alan-sans text-xs sm:text-sm mb-3 leading-relaxed flex-1 ${!isExpanded ? 'line-clamp-3' : ''}`}>
           {course.description}
         </p>
 
         {course.description.length > 100 && (
           <button 
             onClick={() => setIsExpanded(!isExpanded)}
-            className="text-orange font-bold text-xs mb-3 text-left sm:hidden"
+            className="text-orange font-bold text-xs mb-3 text-left block"
           >
             {isExpanded ? 'Read Less' : 'Read More'}
           </button>
@@ -358,27 +358,24 @@ export default function AcademySection() {
       enrollUrl: '/tscacademy',
     },
 
-    // ── Secondary courses (rendered in a 2-column grid below) ─────────────────
-    {
-      id: 'course-music-prod',
-      title: 'A–Z of Music Production',
-      mentor: 'Luca Petracca',
-      level: 'Beginner',
-      description: 'Master the complete journey of music production from concept to final mix. Learn professional techniques for recording, arranging, mixing, and mastering your songs. Perfect for singer-songwriters who want to produce their own music.',
-      // ▼ BANNER IMAGE — place the image file in /public/assets/ and set the path below:
-      // bannerImage: '/assets/your-image-name.jpg',
-      isComingSoon: true,
-    },
+    // ── Secondary courses (rendered in a grid) ─────────────────
     {
       id: 'course-artist-brand',
       title: 'Classical Singing - Comprehensive',
       mentor: 'Prasad Khaparde',
       level: 'Intermediate',
       description: 'Master the art of Hindustani classical singing under the guidance of Prasad Khaparde. Twelve online group sessions, 120 mins of recorded content, quality assessments, and certification. Top 10 students per 300 enrollments will get opportunity to continue the journey under Prasad Khaparde\'s personal mentorship.',
-      // ▼ BANNER IMAGE — place the image file in /public/assets/ and set the path below:
       bannerImage: '/assets/The roots of Hindustani Classical Music.png',
       isComingSoon: false,
       enrollUrl: '/tscacademy',
+    },
+    {
+      id: 'course-music-prod',
+      title: 'A–Z of Music Production',
+      mentor: 'Luca Petracca',
+      level: 'Beginner',
+      description: 'Master the complete journey of music production from concept to final mix. Learn professional techniques for recording, arranging, mixing, and mastering your songs. Perfect for singer-songwriters who want to produce their own music.',
+      isComingSoon: true,
     },
   ];
 
@@ -465,9 +462,9 @@ export default function AcademySection() {
             </div>
           )}
 
-          {/* Row 2: Secondary courses grid */}
+          {/* Row 2: Secondary courses grid — One per row as requested */}
           {secondaryCourses.length > 0 && (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+            <div className="flex flex-col gap-8 max-w-3xl mx-auto">
               {secondaryCourses.map((course, index) => (
                 <SecondaryCourseCard key={course.id} course={course} index={index} />
               ))}

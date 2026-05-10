@@ -63,8 +63,8 @@ export default function ProblemSection() {
           </motion.div>
         </div>
 
-        {/* Stats grid — More balanced size on web */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 mb-16 sm:mb-20">
+        {/* Stats grid — Stacked vertically as requested */}
+        <div className="flex flex-col gap-8 mb-16 sm:mb-20 items-center">
           {stats.map((stat, i) => (
             <motion.div
               key={i}
@@ -72,10 +72,10 @@ export default function ProblemSection() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: i * 0.15 }}
               viewport={{ once: true }}
-              className="text-center py-10 sm:py-12 px-6 sm:px-8 rounded-[3.5rem] border border-black/5 bg-black/[0.03] backdrop-blur-sm flex flex-col items-center justify-center min-h-[280px] sm:min-h-[320px] hover:border-orange/20 transition-all duration-500"
+              className="text-center py-10 sm:py-14 px-8 sm:px-12 rounded-[4rem] border border-black/5 bg-black/[0.03] backdrop-blur-sm flex flex-col items-center justify-center min-h-[220px] sm:min-h-[280px] w-full max-w-[400px] hover:border-orange/20 transition-all duration-500"
             >
-              <div className="text-4xl sm:text-5xl md:text-6xl font-black text-orange font-signika mb-4 sm:mb-6">{stat.value}</div>
-              <div className="text-xs sm:text-sm md:text-base text-black/60 font-alan-sans leading-snug max-w-[140px] sm:max-w-[160px]">{stat.label}</div>
+              <div className="text-5xl sm:text-7xl font-black text-orange font-signika mb-4">{stat.value}</div>
+              <div className="text-sm sm:text-lg text-black/60 font-alan-sans leading-snug max-w-[200px]">{stat.label}</div>
             </motion.div>
           ))}
         </div>

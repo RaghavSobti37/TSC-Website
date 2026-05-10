@@ -18,10 +18,6 @@ interface TeamMember {
   };
 }
 
-/**
- * Team Section - The founding team of The Shakti Collective
- * Click-to-expand cards with real team member data
- */
 export default function TeamSection() {
   const [expandedId, setExpandedId] = useState<string | null>(null);
 
@@ -37,38 +33,20 @@ export default function TeamSection() {
           <strong>Co-Founder of The Shakti Collective</strong>, and a{' '}
           <strong>Harvard Business School (BEMS) and IIM Bangalore alumnus</strong>. With{' '}
           <strong>27+ years of experience</strong>, he has been at the forefront of{' '}
-          <strong>creating and monetizing intellectual property</strong> across music, films, and
-          brand ecosystems, architecting monetization strategies for catalogs totaling over XX
-          streams.
+          <strong>creating and monetizing intellectual property</strong>.
         </>
       ),
       philosophy:
         '"Through The Shakti Collective and Artiste First, he continues to build scalable IPs and sustainable music businesses where creativity and commerce thrive together."',
       accomplishments: [
-        <>
-          A former <strong>Vice President at Yash Raj Films</strong> and a leader at global giants
-          like <strong>Sony Music and Universal Music India</strong>, Rohit brings a rare blend of
-          Ivy League business strategy and deep creative intuition.
-        </>,
-        <>
-          His expertise in <strong>Intellectual Property Rights (IPR)</strong> and non-theatrical
-          monetization has made him a pivotal figure in taking Indian music to a global stage.
-        </>,
-        <>
-          His career is defined by building sustainable foundations for the industry, from leading
-          strategy for massive IPs like <strong>Mahavatar Narsimha</strong> to scaling the music
-          labels of India's most iconic artists, including Arijit Singh, Amit Trivedi, and Vishal
-          Bhardwaj.
-        </>,
-        <>
-          Today, Rohit is dedicated to professionalizing the <strong>creator economy</strong> and
-          building new models of collaboration.
-        </>,
+        <>A former <strong>Vice President at Yash Raj Films</strong> and a leader at <strong>Sony Music and Universal Music India</strong>.</>,
+        <>Expertise in <strong>Intellectual Property Rights (IPR)</strong> and non-theatrical monetization.</>,
+        <>Architected monetization strategies for catalogs totaling over <strong>7Bn+ streams</strong>.</>,
+        <>Led strategy for massive IPs like <strong>Mahavatar Narsimha</strong> and scaled labels for top artists.</>,
       ],
       socials: {
         linkedin: 'https://www.linkedin.com/in/rohitsobti/',
-        instagram:
-          'https://www.instagram.com/rohitsobti1?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==',
+        instagram: 'https://www.instagram.com/rohitsobti1/',
       },
     },
     {
@@ -80,195 +58,176 @@ export default function TeamSection() {
         <>
           An acclaimed <strong>music director</strong>, recognised for{' '}
           <strong>50+ films, 30+ years in the Industry</strong>, a{' '}
-          <strong>Filmfare nomination</strong> &amp; <strong>7Bn+ streams</strong> across platforms.
-          Creator of iconic songs like <strong>Aaoge Jab Tum, Piya Basanti</strong> &amp; many more.
-          Made generation-defining music with ace directors for multiple Bollywood Blockbusters.
+          <strong>Filmfare nomination</strong> &amp; <strong>7Bn+ streams</strong>.
+          Creator of iconic songs like <strong>Aaoge Jab Tum and Piya Basanti</strong>.
         </>
       ),
       accomplishments: [
-        <>
-          Iconic songs like <strong>&quot;Piya Basanti&quot;</strong>,{' '}
-          <strong>&quot;Aaoge Jab Tum&quot;</strong>,{' '}
-          <strong>&quot;Suraj Hua Maddham&quot;</strong>, and from the movie{' '}
-          <strong>&quot;Chameli&quot;</strong>.
-        </>,
-        <>
-          Recognised for <strong>50+ films</strong> and <strong>30+ years</strong> in the industry.
-        </>,
-        <>
-          Garnered over <strong>7 billion streams</strong> across platforms.
-        </>,
-        <>
-          Received a <strong>Filmfare nomination</strong> for his work.
-        </>,
+        <>Iconic songs like <strong>"Piya Basanti"</strong> and <strong>"Suraj Hua Maddham"</strong>.</>,
+        <>Recognised for <strong>50+ films</strong> and <strong>30+ years</strong> in the industry.</>,
+        <>Garnered over <strong>7 billion streams</strong> across platforms.</>,
+        <>Received a <strong>Filmfare nomination</strong> for his legendary work.</>,
       ],
       socials: {
-        instagram:
-          'https://www.instagram.com/sandeshshandilya?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==',
+        instagram: 'https://www.instagram.com/sandeshshandilya/',
       },
     },
   ];
 
   return (
-    <section id="team" className="py-12 sm:py-14 md:py-16 px-4 sm:px-6 bg-white">
-      <div className="max-w-5xl mx-auto">
+    <section id="team" className="py-16 sm:py-24 px-4 sm:px-6 bg-white overflow-hidden">
+      <div className="max-w-4xl mx-auto">
         {/* Section Heading */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center mb-12 sm:mb-16"
-        >
-          <p className="text-orange font-black text-xs uppercase tracking-widest mb-2 font-alan-sans">
-            WHO MADE IT
-          </p>
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-black font-signika">
-            Meet the Team
-          </h2>
-        </motion.div>
-
-        {/* Team Cards */}
-        <div className="space-y-6">
-          {teamMembers.map((member, index) => (
-            <motion.div
-              key={member.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.15, duration: 0.6 }}
-              viewport={{ once: true }}
-              layoutId={`team-card-${member.id}`}
-              onClick={() => setExpandedId(expandedId === member.id ? null : member.id)}
-              className="cursor-pointer"
-              layout
-            >
-              <AnimatePresence mode="wait">
-                {expandedId === member.id ? (
-                  /* -- Expanded State -- */
-                  <motion.div
-                    key={`expanded-${member.id}`}
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 10 }}
-                    transition={{ duration: 0.36 }}
-                    className="rounded-2xl overflow-hidden bg-white shadow-2xl border border-black/5"
-                  >
-                    <div className="flex flex-col sm:flex-row gap-6 p-6 sm:p-8">
-                      {/* Text Content */}
-                      <div className="flex-1 order-2 sm:order-1">
-                        <h3 className="text-2xl sm:text-3xl font-bold text-black mb-1 font-signika">
-                          {member.name}
-                        </h3>
-                        <p className="text-orange font-bold text-sm mb-4 font-alan-sans uppercase tracking-wide">
-                          {member.role}
-                        </p>
-                        <p className="text-sm sm:text-base text-black/80 mb-4 font-alan-sans leading-relaxed">
-                          {member.description}
-                        </p>
-                        {member.philosophy && (
-                          <p className="text-sm italic text-orange mb-5 font-semibold font-alan-sans border-l-4 border-orange/40 pl-4">
-                            {member.philosophy}
-                          </p>
-                        )}
-                        <h4 className="text-xs font-black uppercase tracking-wider mb-3 text-charcoal font-signika">
-                          Selected Works &amp; Highlights
-                        </h4>
-                        <ul className="text-sm space-y-2 mb-5 font-alan-sans text-charcoal/80">
-                          {member.accomplishments.map((a, i) => (
-                            <li key={i} className="flex gap-2">
-                              <span className="text-pumpkin mt-0.5 flex-shrink-0">▸</span>
-                              <span>{a}</span>
-                            </li>
-                          ))}
-                        </ul>
-                        {/* Social Links */}
-                        <div className="flex gap-3 flex-wrap">
-                          {member.socials.linkedin && (
-                            <a
-                              href={member.socials.linkedin}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="flex items-center gap-2 px-4 py-2 bg-charcoal text-cream rounded-lg text-xs font-bold hover:bg-charcoal/80 transition-colors font-alan-sans whitespace-nowrap"
-                              onClick={(e) => e.stopPropagation()}
-                            >
-                              <FaLinkedin size={14} />
-                              LinkedIn
-                            </a>
-                          )}
-                          {member.socials.instagram && (
-                            <a
-                              href={member.socials.instagram}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="flex items-center gap-2 px-4 py-2 bg-pumpkin text-cream rounded-lg text-xs font-bold hover:bg-pumpkin/80 transition-colors font-alan-sans whitespace-nowrap"
-                              onClick={(e) => e.stopPropagation()}
-                            >
-                              <FaInstagram size={14} />
-                              Instagram
-                            </a>
-                          )}
-                        </div>
-                      </div>
-                      {/* Image */}
-                      <div className="relative w-full sm:w-52 h-64 sm:h-72 flex-shrink-0 rounded-xl overflow-hidden order-1 sm:order-2 ring-2 ring-pumpkin/20">
-                        <Image
-                          src={member.image}
-                          alt={member.name}
-                          fill
-                          className="object-cover"
-                        />
-                      </div>
-                    </div>
-                  </motion.div>
-                ) : (
-                  /* -- Collapsed State -- */
-                  <motion.div
-                    key={`collapsed-${member.id}`}
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.3 }}
-                    className="flex flex-col sm:flex-row gap-4 sm:gap-6 items-center bg-white rounded-2xl overflow-hidden shadow-lg p-5 sm:p-6 group/card hover:shadow-xl hover:border-pumpkin/30 border-2 border-transparent transition-all duration-300"
-                  >
-                    <div className="flex-1 text-center sm:text-left">
-                      <h3 className="text-xl sm:text-2xl font-bold text-black mb-1 font-signika">
-                        {member.name}
-                      </h3>
-                      <p className="text-orange font-bold text-xs sm:text-sm mb-2 font-alan-sans uppercase tracking-wide">
-                        {member.role}
-                      </p>
-                      <p className="text-sm text-black/60 line-clamp-2 font-alan-sans">
-                        {member.description}
-                      </p>
-                      <p className="text-xs text-orange font-bold mt-3 cursor-pointer font-alan-sans group-hover/card:translate-x-1 transition-transform duration-300">
-                        Click to see more →
-                      </p>
-                    </div>
-                    <div className="relative w-40 h-48 sm:w-48 sm:h-56 flex-shrink-0 rounded-xl overflow-hidden ring-2 ring-charcoal/10">
-                      <Image
-                        src={member.image}
-                        alt={member.name}
-                        fill
-                        className="object-cover group-hover/card:scale-105 transition-transform duration-500"
-                      />
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </motion.div>
-          ))}
+        <div className="text-center mb-12 sm:mb-20">
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-orange font-black text-[10px] sm:text-xs uppercase tracking-[0.4em] mb-3 font-alan-sans"
+          >
+            THE ARCHITECTS
+          </motion.p>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+            viewport={{ once: true }}
+            className="text-3xl sm:text-5xl md:text-6xl font-bold text-black font-signika leading-tight"
+          >
+            Meet the Founders
+          </motion.h2>
         </div>
 
-        {/* Footer hint */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ delay: 0.4, duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center mt-10 text-charcoal/40 text-xs uppercase tracking-wider font-bold font-alan-sans"
-        >
-          Click on any card to see achievements
-        </motion.div>
+        {/* Team Cards */}
+        <div className="flex flex-col gap-6 sm:gap-10">
+          {teamMembers.map((member, index) => {
+            const isExpanded = expandedId === member.id;
+            return (
+              <motion.div
+                key={member.id}
+                layout
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                onClick={() => setExpandedId(isExpanded ? null : member.id)}
+                className={`cursor-pointer relative rounded-3xl p-5 sm:p-8 border transition-all duration-300 ${
+                  isExpanded 
+                  ? 'bg-black/[0.02] border-orange/20 shadow-xl' 
+                  : 'bg-white border-black/5 hover:border-orange/20 shadow-sm hover:shadow-md'
+                }`}
+              >
+                <div className={`flex flex-col gap-8 items-center ${isExpanded ? '' : 'sm:flex-row'}`}>
+                  {/* Image Container */}
+                  <motion.div 
+                    layout
+                    className={`relative flex-shrink-0 transition-all duration-500 rounded-2xl overflow-hidden ${
+                      isExpanded ? 'w-full max-w-[400px] h-80 sm:h-[450px]' : 'w-32 h-40 sm:w-44 sm:h-52'
+                    }`}
+                  >
+                    <Image
+                      src={member.image}
+                      alt={member.name}
+                      fill
+                      className="object-cover"
+                    />
+                  </motion.div>
+
+                  {/* Text Container */}
+                  <div className={`flex-1 ${isExpanded ? 'w-full text-left' : 'text-center sm:text-left'}`}>
+                    <motion.div layout>
+                      <h3 className={`font-bold text-black mb-1 font-signika ${isExpanded ? 'text-3xl sm:text-5xl' : 'text-xl sm:text-3xl'}`}>
+                        {member.name}
+                      </h3>
+                      <p className={`text-orange font-bold font-alan-sans uppercase tracking-widest ${isExpanded ? 'text-sm sm:text-base mb-6' : 'text-xs sm:text-sm mb-3'}`}>
+                        {member.role}
+                      </p>
+                    </motion.div>
+
+                    {!isExpanded && (
+                      <p className="text-sm text-black/60 line-clamp-2 font-alan-sans leading-relaxed">
+                        {member.description}
+                      </p>
+                    )}
+
+                    <AnimatePresence>
+                      {isExpanded && (
+                        <motion.div
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={{ opacity: 1, height: 'auto' }}
+                          exit={{ opacity: 0, height: 0 }}
+                          transition={{ duration: 0.4 }}
+                          className="space-y-6 pt-6 border-t border-black/5"
+                        >
+                          <div className="text-sm sm:text-lg text-black/70 font-alan-sans leading-relaxed">
+                            {member.description}
+                          </div>
+
+                          {member.philosophy && (
+                            <div className="relative py-6 px-8 bg-white/50 rounded-2xl border border-orange/10 italic text-black/80 font-alan-sans text-sm sm:text-base">
+                              <span className="absolute -top-4 left-4 text-6xl text-orange/10 font-serif leading-none">“</span>
+                              {member.philosophy}
+                            </div>
+                          )}
+
+                          <div className="space-y-4">
+                            <h4 className="text-xs font-black uppercase tracking-widest text-orange/60 font-alan-sans">
+                              HIGHLIGHTS
+                            </h4>
+                            <ul className="space-y-3 font-alan-sans text-black/80">
+                              {member.accomplishments.map((a, i) => (
+                                <li key={i} className="flex gap-3 text-sm sm:text-base">
+                                  <span className="text-orange font-bold">•</span>
+                                  <span>{a}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+
+                          <div className="flex justify-start gap-4 pt-4">
+                            {member.socials.linkedin && (
+                              <a
+                                href={member.socials.linkedin}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="w-12 h-12 flex items-center justify-center rounded-xl bg-black text-white hover:bg-orange transition-colors"
+                                onClick={(e) => e.stopPropagation()}
+                              >
+                                <FaLinkedin size={20} />
+                              </a>
+                            )}
+                            {member.socials.instagram && (
+                              <a
+                                href={member.socials.instagram}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="w-12 h-12 flex items-center justify-center rounded-xl bg-orange text-white hover:bg-black transition-colors"
+                                onClick={(e) => e.stopPropagation()}
+                              >
+                                <FaInstagram size={20} />
+                              </a>
+                            )}
+                          </div>
+                          
+                          <button className="text-[10px] font-black uppercase tracking-widest text-black/20 hover:text-orange transition-colors pt-4">
+                            Close Profile ↑
+                          </button>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+
+                    {!isExpanded && (
+                      <p className="text-[10px] font-black uppercase tracking-widest text-orange mt-4 group-hover:translate-x-1 transition-transform">
+                        Tap to expand →
+                      </p>
+                    )}
+                  </div>
+                </div>
+              </motion.div>
+            );
+          })}
+        </div>
       </div>
     </section>
   );

@@ -6,6 +6,16 @@ import nodemailer from 'nodemailer';
 
 const SPREADSHEET_ID = '1Yyj8bL8-9lRiJTKhkqQb1X_5Yu02zGCzGPFHln85Pa0';
 
+function escapeHtml(text: string): string {
+  if (!text) return '';
+  return text
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;');
+}
+
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'POST') {
     return res.status(405).json({ success: false, error: 'Method not allowed' });
@@ -13,22 +23,41 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
   try {
     const data = req.body;
+    if (!data || Object.keys(data).length === 0) {
+      return res.status(400).json({ success: false, error: 'Empty request body' });
+    }
+
     const timestamp = new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' });
+
+    // Sanitize data for email
+    const sanitized = {
+      name: escapeHtml(data.name),
+      company: escapeHtml(data.company),
+      email: escapeHtml(data.email),
+      phone: escapeHtml(data.phone),
+      collabType: escapeHtml(data.collabType),
+      artist: escapeHtml(data.artist),
+      nature: escapeHtml(data.nature),
+      locationTime: escapeHtml(data.locationTime),
+      scale: escapeHtml(data.scale),
+      logisticsSupport: escapeHtml(data.logisticsSupport),
+      additionalVision: escapeHtml(data.additionalVision),
+    };
 
     // 1. Data mapping for Sheet
     const row = [
       timestamp,
-      data.name || '',
-      data.company || '',
-      data.email || '',
-      data.phone || '',
-      data.collabType || '',
-      data.artist || '',
-      data.nature || '',
-      data.locationTime || '',
-      data.scale || '',
-      data.logisticsSupport || '',
-      data.additionalVision || '',
+      sanitized.name,
+      sanitized.company,
+      sanitized.email,
+      sanitized.phone,
+      sanitized.collabType,
+      sanitized.artist,
+      sanitized.nature,
+      sanitized.locationTime,
+      sanitized.scale,
+      sanitized.logisticsSupport,
+      sanitized.additionalVision,
     ];
 
     // 2. Append to Google Sheets
@@ -94,25 +123,25 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         
         <div style="margin: 20px 0;">
           <h3 style="color: #333; margin-bottom: 5px;">Contact Information</h3>
-          <p><strong>Name:</strong> ${data.name}</p>
-          <p><strong>Company:</strong> ${data.company}</p>
-          <p><strong>Email:</strong> ${data.email}</p>
-          <p><strong>Phone:</strong> ${data.phone}</p>
+          <p><strong>Name:</strong> ${sanitized.name}</p>
+          <p><strong>Company:</strong> ${sanitized.company}</p>
+          <p><strong>Email:</strong> ${sanitized.email}</p>
+          <p><strong>Phone:</strong> ${sanitized.phone}</p>
         </div>
 
         <div style="margin: 20px 0; padding: 15px; background: #f9f9f9; border-radius: 8px;">
           <h3 style="color: #333; margin-top: 0;">Collaboration Details</h3>
-          <p><strong>Artist:</strong> ${data.artist}</p>
-          <p><strong>Type:</strong> ${data.collabType}</p>
-          <p><strong>Nature:</strong> ${data.nature}</p>
-          <p><strong>When & Where:</strong> ${data.locationTime}</p>
-          <p><strong>Scale/Reach:</strong> ${data.scale}</p>
-          <p><strong>Logistics Provided:</strong> ${data.logisticsSupport}</p>
+          <p><strong>Artist:</strong> ${sanitized.artist}</p>
+          <p><strong>Type:</strong> ${sanitized.collabType}</p>
+          <p><strong>Nature:</strong> ${sanitized.nature}</p>
+          <p><strong>When & Where:</strong> ${sanitized.locationTime}</p>
+          <p><strong>Scale/Reach:</strong> ${sanitized.scale}</p>
+          <p><strong>Logistics Provided:</strong> ${sanitized.logisticsSupport}</p>
         </div>
 
         <div style="margin: 20px 0;">
           <h3 style="color: #333;">Vision / Extra Details</h3>
-          <p style="white-space: pre-wrap;">${data.additionalVision || 'No additional details provided.'}</p>
+          <p style="white-space: pre-wrap;">${sanitized.additionalVision || 'No additional details provided.'}</p>
         </div>
 
         <hr style="border: 0; border-top: 1px solid #eee; margin: 30px 0;" />
@@ -123,7 +152,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     await transporter.sendMail({
       from: `"TSC Website" <${process.env.EMAIL_ADDRESS}>`,
       to: process.env.NOTIFICATION_EMAILS,
-      subject: `New Artist Enquiry: ${data.name} for ${data.artist}`,
+      subject: `New Artist Enquiry: ${sanitized.name} for ${sanitized.artist}`,
       html: emailHtml,
     });
 

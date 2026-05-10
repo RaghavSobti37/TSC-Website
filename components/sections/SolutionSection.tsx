@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import ReadMore from '@/components/ui/ReadMore';
 
 /**
  * SolutionSection — "The Roundway" / TSC's 5-stage ecosystem
@@ -130,9 +131,11 @@ export default function SolutionSection() {
                   </h3>
 
                   {/* Desc */}
-                  <p className="text-black/60 font-alan-sans text-xs sm:text-sm leading-relaxed relative z-10">
-                    {stage.desc}
-                  </p>
+                  <ReadMore 
+                    text={stage.desc}
+                    maxLength={60}
+                    className="text-black/60 font-alan-sans text-xs sm:text-sm leading-relaxed relative z-10"
+                  />
                 </div>
 
                 {/* Arrow connector */}

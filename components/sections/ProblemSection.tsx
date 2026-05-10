@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import ReadMore from '@/components/ui/ReadMore';
 
 /**
  * ProblemSection — "The industry is broken for emerging artists"
@@ -47,17 +48,22 @@ export default function ProblemSection() {
           brilliant flashes that fade fast.
         </motion.h2>
 
-        <motion.p
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          viewport={{ once: true }}
-          className="text-base sm:text-lg md:text-xl text-black/70 font-alan-sans leading-relaxed max-w-3xl mx-auto text-center mb-16 sm:mb-20"
-        >
-          The music industry is broken for emerging artists. Talent is everywhere. Mentorship, structure, and monetization pathways are not. The gap between potential and opportunity has never been wider.
-        </motion.p>
+        <div className="max-w-3xl mx-auto text-center mb-16 sm:mb-20">
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="text-base sm:text-lg md:text-xl text-black/70 font-alan-sans leading-relaxed"
+          >
+            <ReadMore 
+              text="The music industry is broken for emerging artists. Talent is everywhere. Mentorship, structure, and monetization pathways are not. The gap between potential and opportunity has never been wider."
+              maxLength={120}
+            />
+          </motion.div>
+        </div>
 
-        {/* Stats grid */}
+        {/* Stats grid — More balanced size on web */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 mb-16 sm:mb-20">
           {stats.map((stat, i) => (
             <motion.div
@@ -66,10 +72,10 @@ export default function ProblemSection() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: i * 0.15 }}
               viewport={{ once: true }}
-              className="text-center p-8 rounded-2xl border border-black/10 bg-black/5 backdrop-blur-sm"
+              className="text-center py-10 sm:py-12 px-6 sm:px-8 rounded-[3.5rem] border border-black/5 bg-black/[0.03] backdrop-blur-sm flex flex-col items-center justify-center min-h-[280px] sm:min-h-[320px] hover:border-orange/20 transition-all duration-500"
             >
-              <div className="text-4xl sm:text-5xl font-bold text-orange font-signika mb-3">{stat.value}</div>
-              <div className="text-sm sm:text-base text-black/60 font-alan-sans leading-snug">{stat.label}</div>
+              <div className="text-4xl sm:text-5xl md:text-6xl font-black text-orange font-signika mb-4 sm:mb-6">{stat.value}</div>
+              <div className="text-xs sm:text-sm md:text-base text-black/60 font-alan-sans leading-snug max-w-[140px] sm:max-w-[160px]">{stat.label}</div>
             </motion.div>
           ))}
         </div>
@@ -109,7 +115,11 @@ export default function ProblemSection() {
             >
               <div className="text-3xl mb-4 opacity-90">{item.icon}</div>
               <h3 className="text-lg sm:text-xl font-bold font-signika mb-3 text-teal">{item.title}</h3>
-              <p className="text-black/70 font-alan-sans text-sm sm:text-base leading-relaxed">{item.desc}</p>
+              <ReadMore 
+                text={item.desc}
+                maxLength={80}
+                className="text-black/70 font-alan-sans text-sm sm:text-base leading-relaxed"
+              />
             </motion.div>
           ))}
         </motion.div>

@@ -59,11 +59,11 @@ export default function ArtistCTASection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.35 }}
           viewport={{ once: true }}
-          className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+          className="flex flex-col sm:flex-row gap-6 sm:gap-8 justify-center items-center px-4"
         >
           <a
             href="/artist-path"
-            className="px-10 py-4 sm:py-5 rounded-full bg-orange text-white font-bold font-signika text-base sm:text-lg tracking-wide hover:bg-orange/90 transition-all duration-300 shadow-lg shadow-orange/30 hover:shadow-orange/50 hover:scale-105 whitespace-nowrap"
+            className="w-full sm:w-auto px-10 py-5 rounded-full bg-orange text-white font-bold font-signika text-base sm:text-lg tracking-wide hover:bg-orange/90 transition-all duration-300 shadow-lg shadow-orange/30 hover:shadow-orange/50 hover:scale-105 text-center"
           >
             Take the Artist Path →
           </a>
@@ -71,7 +71,7 @@ export default function ArtistCTASection() {
             href="https://tscacademy.in"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-10 py-4 sm:py-5 rounded-full border-2 border-black/20 text-black font-bold font-signika text-base sm:text-lg tracking-wide hover:border-black hover:bg-black/5 transition-all duration-300 hover:scale-105 whitespace-nowrap"
+            className="w-full sm:w-auto px-10 py-5 rounded-full border-2 border-black/20 text-black font-bold font-signika text-base sm:text-lg tracking-wide hover:border-black hover:bg-black/5 transition-all duration-300 hover:scale-105 text-center"
           >
             Explore TSC Academy
           </a>

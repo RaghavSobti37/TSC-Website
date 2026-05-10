@@ -54,7 +54,7 @@ export default function Header() {
   const isTabletView = windowWidth >= 768 && windowWidth < 1024;
 
   const desktopLinks = [
-    { label: 'The Roundway', action: () => scrollToSection('solution') },
+    { label: 'Home', action: () => scrollToSection('hero') },
     { label: 'Our Work', action: () => scrollToSection('ip-gallery') },
     { label: 'Resources', action: () => goTo('/resources') },
     { label: 'Artist Path', action: () => goTo('/artist-path') },
@@ -62,12 +62,12 @@ export default function Header() {
   ];
 
   const mobileLinks = [
-    { label: 'The Roundway', action: () => scrollToSection('solution') },
+    { label: 'Home', action: () => scrollToSection('hero') },
     { label: 'Our Work', action: () => scrollToSection('ip-gallery') },
     { label: 'Resources', action: () => goTo('/resources') },
     { label: 'Artist Path', action: () => goTo('/artist-path') },
     { label: 'Book a Call', action: () => goTo('/book-a-call') },
-    { label: 'Partner With Us', action: () => scrollToSection('brand-collab') },
+    { label: 'Partner With Us', action: () => goTo('/query') },
   ];
 
   return (
@@ -78,15 +78,13 @@ export default function Header() {
       className="fixed top-4 md:top-6 left-0 right-0 z-50 flex justify-center px-3 sm:px-4"
     >
       <motion.div
-        className={`rounded-full backdrop-blur-xl border shadow-xl flex items-center justify-between transition-all duration-300 ${
-          isScrolled ? 'bg-white/90 border-black/10' : 'bg-black/90 border-white/10'
-        } ${
-          isMobileView
+        className={`rounded-full backdrop-blur-xl border shadow-xl flex items-center justify-between transition-all duration-300 ${isScrolled ? 'bg-white/90 border-black/10' : 'bg-black/90 border-white/10'
+          } ${isMobileView
             ? 'px-3 py-2.5 w-full max-w-sm sm:max-w-md'
             : isTabletView
-            ? 'px-5 py-3 gap-4'
-            : 'px-8 py-4 gap-8'
-        }`}
+              ? 'px-5 py-3 gap-4'
+              : 'px-8 py-4 gap-8'
+          }`}
         whileHover={!isMobileView ? { scale: 1.01 } : undefined}
       >
         {/* Logo */}
@@ -115,9 +113,8 @@ export default function Header() {
               <button
                 key={link.label}
                 onClick={link.action}
-                className={`text-xs sm:text-sm font-alan-sans transition font-medium ${
-                  isScrolled ? 'text-black/80 hover:text-black' : 'text-white/80 hover:text-white'
-                }`}
+                className={`text-xs sm:text-sm font-alan-sans transition font-medium ${isScrolled ? 'text-black/80 hover:text-black' : 'text-white/80 hover:text-white'
+                  }`}
               >
                 {link.label}
               </button>
@@ -138,9 +135,8 @@ export default function Header() {
           whileHover={{ scale: 1.15 }}
           whileTap={{ scale: 0.95 }}
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className={`${isMobileView ? 'flex' : 'hidden'} md:hidden items-center justify-center ${
-            isScrolled ? 'text-black' : 'text-white'
-          } hover:opacity-80 transition flex-shrink-0 p-1.5`}
+          className={`${isMobileView ? 'flex' : 'hidden'} md:hidden items-center justify-center ${isScrolled ? 'text-black' : 'text-white'
+            } hover:opacity-80 transition flex-shrink-0 p-1.5`}
           aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
         >
           <AnimatePresence mode="wait">

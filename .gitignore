@@ -6,3 +6,4 @@ google_service_account.json
 .env.*
 .DS_Store
 tsc/
+vercel_production_guidelines.md

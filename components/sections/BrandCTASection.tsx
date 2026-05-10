@@ -58,7 +58,7 @@ export default function BrandCTASection() {
               viewport={{ once: true }}
             >
               <a
-                href="mailto:hello@theshaktcollective.com"
+                href="/query"
                 className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-orange text-white font-bold font-signika text-base hover:bg-orange/90 transition-all duration-300 hover:scale-105 shadow-xl whitespace-nowrap"
               >
                 Partner With Us →

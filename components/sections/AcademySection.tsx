@@ -142,11 +142,11 @@ function CourseCTAs({
   size?: 'sm' | 'lg';
 }) {
   const base =
-    'inline-flex items-center gap-2 rounded-full font-bold transition-all duration-200 font-signika';
+    'inline-flex items-center justify-center gap-2 rounded-full font-bold transition-all duration-200 font-signika w-full sm:w-auto';
   const lg = size === 'lg';
 
   return (
-    <div className={`flex flex-wrap gap-3 ${lg ? 'mt-6' : 'mt-4'}`}>
+    <div className={`flex flex-col sm:flex-row gap-3 ${lg ? 'mt-6' : 'mt-4'}`}>
       {/* Primary: Enroll Now — disabled (locked) when coming soon, active link otherwise */}
       {isComingSoon ? (
         <span
@@ -156,7 +156,7 @@ function CourseCTAs({
         </span>
       ) : (
         <a
-          href={enrollUrl ?? '#contact'}
+          href={enrollUrl ?? '/book-a-call'}
           className={`${base} bg-orange hover:bg-orange/80 text-white shadow-lg hover:shadow-orange/30 ${lg ? 'px-7 py-3.5 text-base' : 'px-5 py-2.5 text-sm'} whitespace-nowrap`}
         >
           Enroll Now →
@@ -179,6 +179,8 @@ function CourseCTAs({
  *  Featured (hero) course card — full width, tall banner
  * ───────────────────────────────────────────────────────────────────────────── */
 function FeaturedCourseCard({ course }: { course: Course }) {
+  const [isExpanded, setIsExpanded] = React.useState(false);
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -218,9 +220,18 @@ function FeaturedCourseCard({ course }: { course: Course }) {
               {course.title}
             </h4>
 
-            <p className="text-black/70 font-alan-sans text-sm sm:text-base mb-4 leading-relaxed">
+            <p className={`text-black/70 font-alan-sans text-sm sm:text-base mb-4 leading-relaxed ${!isExpanded ? 'line-clamp-3 sm:line-clamp-none' : ''}`}>
               {course.description}
             </p>
+            
+            {course.description.length > 150 && (
+              <button 
+                onClick={() => setIsExpanded(!isExpanded)}
+                className="text-orange font-bold text-sm mb-4 sm:hidden"
+              >
+                {isExpanded ? 'Read Less' : 'Read More'}
+              </button>
+            )}
 
             <p className="text-black/50 font-alan-sans text-sm">
               Mentor:{' '}
@@ -243,6 +254,8 @@ function FeaturedCourseCard({ course }: { course: Course }) {
  *  Secondary course card — compact, thumbnail banner on top
  * ───────────────────────────────────────────────────────────────────────────── */
 function SecondaryCourseCard({ course, index }: { course: Course; index: number }) {
+  const [isExpanded, setIsExpanded] = React.useState(false);
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -275,9 +288,18 @@ function SecondaryCourseCard({ course, index }: { course: Course; index: number 
           {course.title}
         </h4>
 
-        <p className="text-black/70 font-alan-sans text-xs sm:text-sm mb-3 leading-relaxed flex-1">
+        <p className={`text-black/70 font-alan-sans text-xs sm:text-sm mb-3 leading-relaxed flex-1 ${!isExpanded ? 'line-clamp-3 sm:line-clamp-none' : ''}`}>
           {course.description}
         </p>
+
+        {course.description.length > 100 && (
+          <button 
+            onClick={() => setIsExpanded(!isExpanded)}
+            className="text-orange font-bold text-xs mb-3 text-left sm:hidden"
+          >
+            {isExpanded ? 'Read Less' : 'Read More'}
+          </button>
+        )}
 
         <p className="text-black/50 font-alan-sans text-xs mb-1">
           Mentor: <span className="font-semibold text-black/80">{course.mentor}</span>

@@ -202,7 +202,7 @@ export default function HeroSection({
 
           {/* Brand CTA — ghost */}
           <button
-            onClick={() => scrollToSection('brand-collab')}
+            onClick={() => window.location.href = '/query'}
             className="w-full sm:w-auto px-7 sm:px-9 py-3.5 sm:py-4 rounded-full border-2 border-black/20 text-black font-bold font-signika text-sm sm:text-base tracking-wide hover:border-black/50 hover:bg-black/5 transition-all duration-300 hover:scale-[1.03] active:scale-[0.98] whitespace-nowrap"
           >
             I&apos;m a Brand

@@ -15,7 +15,7 @@ import { FaInstagram, FaSpotify, FaYoutube, FaGlobe, FaCalendarAlt, FaMusic } fr
 const HarshadDuhitaLinks = () => {
   const artistData = {
     name: "Harshad & Duhita",
-    bio: "Indian Musical Duo | Composers | Producers. Creating soulful melodies and contemporary sounds.",
+    bio: "Deep Rooted • Divine • Diverse. Indian Musical Duo | Composers | Producers.",
     avatarUrl: "/artists/hnd-posing.jpeg",
     links: [
       {
@@ -24,6 +24,12 @@ const HarshadDuhitaLinks = () => {
         icon: FaCalendarAlt,
         primary: true,
         highlight: true,
+      },
+      {
+        label: "Listen on Spotify",
+        url: "https://open.spotify.com/artist/6L88xirodmbWYoZuvseUnc?si=jT1v3lbeQUuC9UNuoVEHeQ",
+        icon: FaSpotify,
+        primary: false,
       },
       {
         label: "Gananayaka (Ganpati Song 2024)",
@@ -47,6 +53,7 @@ const HarshadDuhitaLinks = () => {
     socials: {
       instagram: "https://www.instagram.com/harshaduhita_collective/",
       youtube: "https://www.youtube.com/watch?v=IcknSFj2rys",
+      spotify: "https://open.spotify.com/artist/6L88xirodmbWYoZuvseUnc?si=jT1v3lbeQUuC9UNuoVEHeQ",
       website: "/",
     }
   };

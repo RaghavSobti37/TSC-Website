@@ -62,14 +62,26 @@ const HarshadDuhitaPage = () => {
         <meta name="description" content="Official website of Harshad & Duhita. Golden Buzzer winners on India's Got Talent. Explore their music, discography, and book them for events." />
       </Head>
 
-      {/* 1. Media / Hero Section - Redesigned with Single Image & Top Blur */}
+      {/* 1. Media / Hero Section - Blur Preserved Setup */}
       <section className="relative min-h-[95vh] flex items-center justify-center pt-32 overflow-hidden bg-black">
+        {/* Blurred Background to fill space without stretching */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/artists/hnd-with-audience.jpeg"
-            alt="Harshad & Duhita Live with Audience"
+            src="/artists/hnd-singing-2.jpeg"
+            alt="Background Blur"
             fill
-            className="object-cover opacity-70 object-bottom md:object-center"
+            className="object-cover opacity-30 blur-2xl scale-110"
+            priority
+          />
+        </div>
+        
+        {/* Sharp Center Image */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/artists/hnd-singing-2.jpeg"
+            alt="Harshad & Duhita Live"
+            fill
+            className="object-contain opacity-80"
             priority
           />
           {/* Top Blur/Gradient to prevent white space and blend with navbar */}
@@ -78,43 +90,45 @@ const HarshadDuhitaPage = () => {
           <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-white via-white/20 to-transparent h-32 z-10 pointer-events-none" />
         </div>
 
-        <div className="relative z-20 container mx-auto px-4 text-center">
-          <motion.div
-            initial={{ scale: 0.8, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            className="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 text-orange font-bold text-sm mb-8"
-          >
-            <FaAward /> IGT SEASON 11 GOLDEN BUZZER
-          </motion.div>
-
-          <motion.h1
-            initial={{ y: 30, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            className="text-6xl md:text-9xl font-signika font-bold text-white mb-6 tracking-tighter drop-shadow-2xl"
-          >
-            Harshad & Duhita
-          </motion.h1>
-
-          <motion.div
-            initial={{ y: 20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.3 }}
-            className="flex flex-wrap justify-center gap-6 mt-12"
-          >
-            <button
-              onClick={() => document.getElementById('book-now')?.scrollIntoView({ behavior: 'smooth' })}
-              className="px-10 py-5 rounded-full bg-orange text-white font-bold text-xl hover:scale-105 transition-transform shadow-2xl shadow-orange/30"
+        <div className="relative z-20 container mx-auto px-4 text-center flex flex-col justify-between md:justify-center items-center h-[75vh] md:h-auto mt-4 md:mt-0 pb-10 md:pb-0">
+          <div>
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              className="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 text-orange font-bold text-sm mb-4 md:mb-8"
             >
-              Book for Events
-            </button>
-            <a
-              href="#discography"
-              className="px-10 py-5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold text-xl hover:bg-white/20 transition-all shadow-xl"
+              <FaAward /> IGT SEASON 11 GOLDEN BUZZER
+            </motion.div>
+
+            <motion.h1
+              initial={{ y: 30, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              className="text-6xl md:text-9xl font-signika font-bold text-white mb-6 tracking-tighter drop-shadow-2xl"
             >
-              Explore Music
-            </a>
-          </motion.div>
+              Harshad & Duhita
+            </motion.h1>
+          </div>
         </div>
+
+        <motion.div
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.3 }}
+          className="absolute bottom-12 md:bottom-[8%] left-0 right-0 flex flex-col sm:flex-row justify-center items-center gap-4 md:gap-6 w-full px-4 z-30"
+        >
+          <button
+            onClick={() => document.getElementById('book-now')?.scrollIntoView({ behavior: 'smooth' })}
+            className="px-8 md:px-10 py-4 md:py-5 rounded-full bg-orange text-white font-bold text-lg md:text-xl hover:scale-105 transition-transform shadow-2xl shadow-orange/30 w-full sm:w-auto"
+          >
+            Book for Events
+          </button>
+          <a
+            href="#discography"
+            className="px-8 md:px-10 py-4 md:py-5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold text-lg md:text-xl hover:bg-white/20 transition-all shadow-xl w-full sm:w-auto"
+          >
+            Explore Music
+          </a>
+        </motion.div>
       </section>
 
       {/* 2. Experience Section */}
@@ -160,12 +174,12 @@ const HarshadDuhitaPage = () => {
       {/* 3. Discography Section */}
       <section id="discography" className="py-24 bg-slate-dark text-white">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row items-end justify-between mb-16 gap-6">
+          <div className="flex flex-col md:flex-row items-center md:items-end justify-between mb-16 gap-6 text-center md:text-left">
             <div className="max-w-2xl">
               <h2 className="text-sm font-bold text-orange uppercase tracking-widest mb-4">Song Catalogue</h2>
               <h3 className="text-4xl md:text-6xl font-signika font-bold">Featured Tracks</h3>
             </div>
-            <div className="flex gap-4">
+            <div className="flex justify-center md:justify-end gap-4">
               <a href="https://open.spotify.com/artist/6L88xirodmbWYoZuvseUnc" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-6 py-3 rounded-full bg-[#1DB954] text-white font-bold hover:scale-105 transition-transform">
                 <FaSpotify /> Spotify
               </a>
@@ -220,17 +234,26 @@ const HarshadDuhitaPage = () => {
               </div>
             </div>
             <div className="w-full md:w-7/12">
-              <h2 className="text-sm font-bold text-orange uppercase tracking-widest mb-4">Behind the Duo</h2>
-              <h3 className="text-4xl md:text-6xl font-signika font-bold text-slate-dark mb-8">Two Voices, One Creative Soul</h3>
+              <h2 className="text-sm font-bold text-orange uppercase tracking-widest mb-4">About the Harshad & Duhita Collective</h2>
+              <h3 className="text-4xl md:text-5xl font-signika font-bold text-slate-dark mb-8">Deep Rooted • Divine • Diverse</h3>
               <div className="space-y-6 text-slate-medium font-alan-sans text-lg leading-relaxed">
                 <p>
-                  Harshad Golesar and Duhita are a musical force that blends the rich heritage of Indian Classical music with the vibrant pulse of contemporary sounds. Their journey from Nashik to the national stage of <strong>India's Got Talent</strong> is a testament to their dedication and artistry.
+                  The Harshad & Duhita Collective is a premier musical ensemble that redefines the experience of Indian music. The group’s identity is built on three pillars: a deep-rooted connection to classical heritage, a divine approach to spiritual and soulful melodies, and a diverse repertoire that spans genres. By blending the sophistication of Indian ragas with modern arrangements, the collective creates an immersive journey through Bhajans, Thumris, Ghazals, and Sufi traditions, alongside reimagined Bollywood classics. The ensemble features a rich sonic layer of Keyboards, Guitars, Harmonium, Flute, Tabla, and Drums, making every performance a unique cultural bridge.
                 </p>
+
+                <h4 className="text-2xl font-signika font-bold text-slate-dark mt-8 mb-4">Artistic Journey & Achievements</h4>
                 <p>
-                  Known for their signature "Couple Singing" style, they have carved a unique niche in the fusion space. Whether it's soulful devotional anthems like <em>Gananayaka</em> or intense film soundtracks for movies like <em>Raudra</em>, their versatility is unmatched.
+                  Led by the powerhouse duo of Harshad and Duhita Golesar, the collective brings a rare combination of academic excellence and mainstream stardom to the stage. Both artists rose to national prominence as Semifinalists on <strong>India’s Got Talent (Sony TV)</strong> and have been featured on major platforms including Rising Star, Sangeet Samrat, and Sur Nava Dhyas Nava.
                 </p>
-                <p>
-                  As the leads of the <strong>Harshaduhita Collective</strong>, they bring together high-energy arrangements and soul-stirring vocals that create an immersive experience for every audience.
+                
+                <p>Their credentials go beyond the screen:</p>
+                <ul className="list-disc pl-5 space-y-2">
+                  <li><strong>Duhita Golesar:</strong> A Gold Medalist in Bachelor of Music from the University of Mumbai and an M.A. in Music, she is trained in the Jaipur Gharana. Her versatile playback career includes work for Zee Music and the film Navra Maza Navsacha 2.</li>
+                  <li><strong>Harshad Golesar:</strong> A Sangeet Visharad trained in the Rampur Gharana, Harshad is a winner of the MiMa Award for his composition 'Gananayaka.' He has represented India at international youth festivals and is a recognized voice in the world of Ghazal and Folk.</li>
+                </ul>
+                
+                <p className="font-bold">
+                  Together, they lead a team of world-class musicians, delivering performances that are technically brilliant, emotionally resonant, and designed for a global audience.
                 </p>
               </div>
 
@@ -285,7 +308,7 @@ const HarshadDuhitaPage = () => {
                   href="tel:8390109447"
                   className="w-full md:w-auto px-12 py-6 rounded-full bg-orange text-white font-bold text-2xl hover:scale-105 transition-transform shadow-xl shadow-orange/20"
                 >
-                  Book Now: +91 83901 09447
+                  Call to Book
                 </a>
                 <button
                   onClick={() => window.location.href = '/query'}

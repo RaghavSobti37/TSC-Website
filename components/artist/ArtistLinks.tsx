@@ -72,8 +72,14 @@ const ArtistLinks: React.FC<ArtistLinksProps> = ({
   };
 
   return (
-    <div className="min-h-screen bg-cream selection:bg-academy-blue selection:text-white pt-32 pb-12 px-4 sm:px-6">
-      <div className="max-w-md mx-auto flex flex-col items-center">
+    <div className="relative min-h-screen bg-cream selection:bg-academy-blue selection:text-white pt-32 pb-12 px-4 sm:px-6 overflow-hidden">
+      {/* Premium Ambient Background Elements */}
+      <div className="absolute top-[-10%] left-[-10%] w-[30rem] md:w-[40rem] h-[30rem] md:h-[40rem] bg-orange/10 rounded-full blur-[100px] pointer-events-none z-0" />
+      <div className="absolute bottom-[-10%] right-[-10%] w-[30rem] md:w-[40rem] h-[30rem] md:h-[40rem] bg-academy-blue/10 rounded-full blur-[100px] pointer-events-none z-0" />
+      <div className="absolute inset-0 bg-[url('/noise.svg')] opacity-[0.015] pointer-events-none mix-blend-overlay z-0" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[150%] bg-[radial-gradient(circle_at_center,rgba(255,249,240,0.4)_0%,transparent_70%)] pointer-events-none z-0" />
+
+      <div className="relative z-10 max-w-md mx-auto flex flex-col items-center">
         {/* Profile Section */}
         <motion.div
           initial={{ scale: 0.8, opacity: 0 }}

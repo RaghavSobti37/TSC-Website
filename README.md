@@ -70,3 +70,12 @@ The system is designed for a global audience. When a user selects their country 
 - **AiSensy API** - WhatsApp Automation
 - **GitHub Actions** - Scheduled Reminders
 
+## 🔍 SEO & Google Search Console
+
+To ensure optimal indexing, visibility, and search performance:
+1. **Sitemap**: Configured and aligned at `/sitemap.xml` (contains all core static pages, dynamic artist pages, courses, masterclasses, and insights). Old defunct routes have been removed.
+2. **Robots.txt**: Served at `/robots.txt`, allowing crawler access for search bots (including AI search engines like OAI-SearchBot and PerplexityBot) and specifying the sitemap link.
+3. **Verification**: If site ownership re-verification is required via meta tag, add `<meta name="google-site-verification" content="YOUR_TOKEN" />` within the `<Head>` component of `pages/_app.tsx`.
+
+*Current version: 2.0.1*
+

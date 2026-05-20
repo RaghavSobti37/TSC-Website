@@ -1,0 +1,7 @@
+{
+  "pre_process_skills": [
+    "token-tracker",
+    "caveman-auto",
+    "multi-agent-workflow"
+  ]
+}

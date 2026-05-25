@@ -6,4 +6,6 @@ google_service_account.json
 .env.*
 .DS_Store
 tsc/
+scripts/scratch/
+tsconfig.tsbuildinfo
 vercel_production_guidelines.md

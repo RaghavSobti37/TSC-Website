@@ -77,5 +77,8 @@ To ensure optimal indexing, visibility, and search performance:
 2. **Robots.txt**: Served at `/robots.txt`, allowing crawler access for search bots (including AI search engines like OAI-SearchBot and PerplexityBot) and specifying the sitemap link.
 3. **Verification**: If site ownership re-verification is required via meta tag, add `<meta name="google-site-verification" content="YOUR_TOKEN" />` within the `<Head>` component of `pages/_app.tsx`.
 
-*Current version: 2.0.1*
+*Current version: 2.0.2*
 
+## [2026-05-27] Version 2.0.2
+- Migrated Book-A-Call backend processing to Taskmaster CRM Webhook.
+- Centralized Google Sheets and AiSensy synchronization within CRM core.

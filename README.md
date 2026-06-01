@@ -6,7 +6,7 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/version-2.0.4-e85d26?style=flat-square" alt="Version 2.0.4" />
+  <img src="https://img.shields.io/badge/version-2.0.5-e85d26?style=flat-square" alt="Version 2.0.5" />
   <img src="https://img.shields.io/badge/next-14-000000?style=flat-square&logo=next.js&logoColor=white" alt="Next.js 14" />
   <img src="https://img.shields.io/badge/deploy-Vercel-000000?style=flat-square&logo=vercel&logoColor=white" alt="Vercel" />
 </p>
@@ -22,7 +22,7 @@ Public site for [The Shakti Collective](https://theshakticollective.in): artist 
 | `/` | Marketing homepage |
 | `/yugm` | YUGM band profile — hero, achievements, member cards, booking CTA |
 | `/links/yugm` | Link-in-bio hub for YUGM (query call, email, website, socials) |
-| `/query` | **Artist Enquiry** — 3-step collaboration form (Google Sheets + email) |
+| `/query` | **Artist Enquiry** — 3-step collaboration form (Google Sheets + Taskmaster task) |
 | `/book-a-call` | **Academy Book a Call** — timezone-aware slot booking via Taskmaster CRM |
 
 Book-a-call bookings are proxied to the Taskmaster API on Render; IST conversion, rep assignment, WhatsApp, and Google Sheets sync run in the CRM.
@@ -31,7 +31,7 @@ Book-a-call bookings are proxied to the Taskmaster API on Render; IST conversion
 
 | Feature | Description |
 | --- | --- |
-| **Artist Enquiry** | 3-step form at `/query` → `POST /api/query` → Google Sheets (`Inqueries` tab) + team email |
+| **Artist Enquiry** | 3-step form at `/query` → `POST /api/query` → Google Sheets (`Inqueries` tab) + Taskmaster webhook |
 | **Book a Call** | 3-step flow: course → contact → slot; 1.5h buffer in the visitor's timezone |
 | **CRM handoff** | `POST /api/book-call` → `POST /api/webhooks/book-call` on Taskmaster |
 | **Artist pages** | Dedicated profiles (YUGM, Harshad & Duhita) with link hubs under `/links/*` |
@@ -42,8 +42,8 @@ Book-a-call bookings are proxied to the Taskmaster API on Render; IST conversion
 
 1. Visitor completes the 3-step wizard at `/query` (contact → collaboration → logistics).
 2. Frontend posts JSON to `/api/query`.
-3. API timestamps in IST, appends a row to the **Inqueries** Google Sheet, and sends an HTML notification email to `NOTIFICATION_EMAILS`.
-4. Success screen confirms receipt; team follows up manually from the sheet/email.
+3. API timestamps in IST, appends a row to the **Inqueries** Google Sheet, then forwards the payload to Taskmaster (`/api/webhooks/artist-enquiry`) to create a project task.
+4. Success screen confirms receipt even if Taskmaster forward fails (errors logged server-side).
 
 Entry points: header **Partner With Us**, brand CTA, artist pages (`/query?artist=YUGM`), and link hubs.
 
@@ -61,10 +61,9 @@ Create `.env.local` for local dev (never commit). On **Vercel → Settings → E
 | --- | --- | --- |
 | `TASKMASTER_WEBHOOK_URL` | **Production (book-call)** | `https://taskmaster-jfw0.onrender.com/api/webhooks/book-call` |
 | `CRM_WEBHOOK_URL` | Optional alias | Same value as above |
-| `EMAIL_ADDRESS` | **Artist enquiry** | Gmail sender for nodemailer |
-| `EMAIL_PASSWORD` | **Artist enquiry** | App password for sender |
-| `NOTIFICATION_EMAILS` | **Artist enquiry** | Comma-separated team inboxes |
-| `GOOGLE_SERVICE_ACCOUNT_EMAIL` | **Artist enquiry / legacy** | Service account with Sheets access |
+| `TASKMASTER_ARTIST_ENQUIRY_WEBHOOK_URL` | **Artist enquiry** | Default derived from `TASKMASTER_WEBHOOK_URL` or prod `…/artist-enquiry` |
+| `ARTIST_ENQUIRY_WEBHOOK_SECRET` | Optional | Shared secret → `X-Webhook-Secret` header |
+| `GOOGLE_SERVICE_ACCOUNT_EMAIL` | **Artist enquiry** | Service account with Sheets access |
 | `GOOGLE_PRIVATE_KEY` | **Artist enquiry / legacy** | PEM for the service account |
 | `SPREADSHEET_ID` | Legacy routes only | Google Sheet ID if using local sheet APIs |
 | `AISENSY_API_KEY` | Legacy routes only | Prefer CRM-side keys on Render |
@@ -96,12 +95,12 @@ pages/
 ├── query.tsx             # Artist enquiry wizard
 ├── book-a-call.tsx       # Academy call booking UI
 └── api/
-    ├── query.ts          # Enquiry → Sheets + email
+    ├── query.ts          # Enquiry → Sheets + Taskmaster webhook
     ├── book-call.ts      # Booking → Taskmaster webhook
     └── check-reminders.ts
 
 public/artists/yugm/      # YUGM photos (hero, about, member cards)
-components/artist/        # Shared ArtistLinks component
+lib/forwardArtistEnquiry.ts  # Taskmaster artist-enquiry webhook helper
 .github/workflows/        # send-reminders.yml (legacy cron)
 docs/BOOKING_SYSTEM.md    # Book-a-call architecture notes
 ```
@@ -120,7 +119,7 @@ When a user selects their country code:
 - **Tailwind CSS** — Styling
 - **Framer Motion** — Animations
 - **Google Sheets API** — Artist enquiry CRM + legacy routes
-- **Nodemailer** — Enquiry notification emails
+- **Taskmaster CRM** — Artist enquiry tasks via webhook
 - **Taskmaster CRM** — Book-a-call processing on Render
 - **AiSensy** — WhatsApp automation (CRM-side)
 - **GitHub Actions** — Scheduled reminders (legacy)
@@ -131,9 +130,13 @@ When a user selects their country code:
 2. **Robots.txt** — `/robots.txt` with sitemap link
 3. **Verification** — Add Google site verification meta in `pages/_app.tsx` if needed
 
-*Current version: 2.0.4*
+*Current version: 2.0.5*
 
 ## Changelog
+
+### [2026-06-01] v2.0.5
+- Artist enquiry (`/api/query`) forwards to Taskmaster after Google Sheets append; email notifications removed.
+- Added `lib/forwardArtistEnquiry.ts` with env-based webhook URL resolution.
 
 ### [2026-06-01] v2.0.4
 - Refreshed **YUGM artist page** (`/yugm`): new hero/about imagery, member photo cards, unified contact email (`artist@theshakticollective.in`).

@@ -1,32 +1,51 @@
 # The Shakti Collective
 
-A high-performance, premium website for The Shakti Collective, built with Next.js, Tailwind CSS, and Framer Motion.
+<p align="center">
+  <strong>Premium marketing site & booking funnel for TSC Academy</strong><br/>
+  Next.js · Tailwind CSS · Framer Motion · Taskmaster CRM webhooks
+</p>
 
-## 🚀 Key Features
+<p align="center">
+  <img src="https://img.shields.io/badge/version-2.0.3-e85d26?style=flat-square" alt="Version 2.0.3" />
+  <img src="https://img.shields.io/badge/next-14-000000?style=flat-square&logo=next.js&logoColor=white" alt="Next.js 14" />
+  <img src="https://img.shields.io/badge/deploy-Vercel-000000?style=flat-square&logo=vercel&logoColor=white" alt="Vercel" />
+</p>
 
-- **Dynamic Booking System**: Real-time timezone-aware scheduling with country-code detection.
-- **Automated CRM**: Seamless integration with Google Sheets for tracking all booked calls.
-- **Smart WhatsApp Reminders**: Automated reminders and confirmations via AiSensy integration.
-- **Global Timezone Calibration**: Automatically recalibrates all global booking slots to Indian Standard Time (IST) for consistent reminders.
-- **Intelligent Buffer**: Enforces a strict 1.5-hour booking buffer relative to the user's local time.
+---
 
-## 🛠️ Prerequisites
+## Overview
 
-- [Node.js](https://nodejs.org/) (v18.x or later)
-- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
-- Google Service Account Credentials (`google_service_account.json`)
+Public site for [The Shakti Collective](https://theshakticollective.in): courses, artists, resources, and the **[Book a Call](https://theshakticollective.in/book-a-call)** funnel. Bookings are proxied to the Taskmaster API on Render; heavy lifting (IST conversion, rep assignment, WhatsApp, Google Sheets) runs in the CRM.
 
-## 🔑 Environment Variables
+## Key features
 
-Create a `.env.local` file in the root directory and add the following:
+| Feature | Description |
+| --- | --- |
+| **Book a Call** | 3-step flow: course → contact → slot; 1.5h buffer in the visitor's timezone |
+| **CRM handoff** | `POST /api/book-call` → `POST /api/webhooks/book-call` on Taskmaster |
+| **Newsletter & forms** | Additional API routes for sheets and lead capture |
+| **SEO** | Sitemap, robots.txt, structured static pages |
 
-```env
-SPREADSHEET_ID=your_google_sheet_id
-AISENSY_API_KEY=your_aisensy_api_key
-# Optional: Service Account Email and Private Key if not using JSON file
-GOOGLE_SERVICE_ACCOUNT_EMAIL=your_email
-GOOGLE_PRIVATE_KEY=your_private_key
-```
+## Prerequisites
+
+- Node.js 18+
+- npm or yarn
+- Vercel project linked to this repo (production: `theshakticollective.in`)
+
+## Environment variables
+
+Create `.env.local` for local dev. On **Vercel → Settings → Environment Variables**, set at least:
+
+| Variable | Required | Example / notes |
+| --- | --- | --- |
+| `TASKMASTER_WEBHOOK_URL` | **Production** | `https://taskmaster-jfw0.onrender.com/api/webhooks/book-call` |
+| `CRM_WEBHOOK_URL` | Optional alias | Same value as above |
+| `SPREADSHEET_ID` | Legacy routes only | Google Sheet ID if using local sheet APIs |
+| `AISENSY_API_KEY` | Legacy routes only | Prefer CRM-side keys on Render |
+| `GOOGLE_SERVICE_ACCOUNT_EMAIL` | Optional | For routes that still write to Sheets from this app |
+| `GOOGLE_PRIVATE_KEY` | Optional | PEM for the service account |
+
+Default production webhook URL (if env unset): `https://taskmaster-jfw0.onrender.com/api/webhooks/book-call`.
 
 ## 🚀 Getting Started
 
@@ -77,8 +96,14 @@ To ensure optimal indexing, visibility, and search performance:
 2. **Robots.txt**: Served at `/robots.txt`, allowing crawler access for search bots (including AI search engines like OAI-SearchBot and PerplexityBot) and specifying the sitemap link.
 3. **Verification**: If site ownership re-verification is required via meta tag, add `<meta name="google-site-verification" content="YOUR_TOKEN" />` within the `<Head>` component of `pages/_app.tsx`.
 
-*Current version: 2.0.2*
+*Current version: 2.0.3*
 
-## [2026-05-27] Version 2.0.2
+## Changelog
+
+### [2026-06-01] v2.0.3
+- Fixed production `book-call` API: no longer calls `localhost`; uses `TASKMASTER_WEBHOOK_URL` with default `taskmaster-jfw0.onrender.com`.
+- Improved error responses when CRM sync fails.
+
+### [2026-05-27] v2.0.2
 - Migrated Book-A-Call backend processing to Taskmaster CRM Webhook.
 - Centralized Google Sheets and AiSensy synchronization within CRM core.

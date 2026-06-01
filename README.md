@@ -1,12 +1,12 @@
 # The Shakti Collective
 
 <p align="center">
-  <strong>Premium marketing site & booking funnel for TSC Academy</strong><br/>
+  <strong>Premium marketing site, artist profiles & booking funnels for TSC</strong><br/>
   Next.js · Tailwind CSS · Framer Motion · Taskmaster CRM webhooks
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/version-2.0.3-e85d26?style=flat-square" alt="Version 2.0.3" />
+  <img src="https://img.shields.io/badge/version-2.0.4-e85d26?style=flat-square" alt="Version 2.0.4" />
   <img src="https://img.shields.io/badge/next-14-000000?style=flat-square&logo=next.js&logoColor=white" alt="Next.js 14" />
   <img src="https://img.shields.io/badge/deploy-Vercel-000000?style=flat-square&logo=vercel&logoColor=white" alt="Vercel" />
 </p>
@@ -15,16 +15,37 @@
 
 ## Overview
 
-Public site for [The Shakti Collective](https://theshakticollective.in): courses, artists, resources, and the **[Book a Call](https://theshakticollective.in/book-a-call)** funnel. Bookings are proxied to the Taskmaster API on Render; heavy lifting (IST conversion, rep assignment, WhatsApp, Google Sheets) runs in the CRM.
+Public site for [The Shakti Collective](https://theshakticollective.in): artist profiles, brand partnerships, academy courses, and conversion funnels.
+
+| Route | Purpose |
+| --- | --- |
+| `/` | Marketing homepage |
+| `/yugm` | YUGM band profile — hero, achievements, member cards, booking CTA |
+| `/links/yugm` | Link-in-bio hub for YUGM (query call, email, website, socials) |
+| `/query` | **Artist Enquiry** — 3-step collaboration form (Google Sheets + email) |
+| `/book-a-call` | **Academy Book a Call** — timezone-aware slot booking via Taskmaster CRM |
+
+Book-a-call bookings are proxied to the Taskmaster API on Render; IST conversion, rep assignment, WhatsApp, and Google Sheets sync run in the CRM.
 
 ## Key features
 
 | Feature | Description |
 | --- | --- |
+| **Artist Enquiry** | 3-step form at `/query` → `POST /api/query` → Google Sheets (`Inqueries` tab) + team email |
 | **Book a Call** | 3-step flow: course → contact → slot; 1.5h buffer in the visitor's timezone |
 | **CRM handoff** | `POST /api/book-call` → `POST /api/webhooks/book-call` on Taskmaster |
+| **Artist pages** | Dedicated profiles (YUGM, Harshad & Duhita) with link hubs under `/links/*` |
 | **Newsletter & forms** | Additional API routes for sheets and lead capture |
 | **SEO** | Sitemap, robots.txt, structured static pages |
+
+## Artist Enquiry flow
+
+1. Visitor completes the 3-step wizard at `/query` (contact → collaboration → logistics).
+2. Frontend posts JSON to `/api/query`.
+3. API timestamps in IST, appends a row to the **Inqueries** Google Sheet, and sends an HTML notification email to `NOTIFICATION_EMAILS`.
+4. Success screen confirms receipt; team follows up manually from the sheet/email.
+
+Entry points: header **Partner With Us**, brand CTA, artist pages (`/query?artist=YUGM`), and link hubs.
 
 ## Prerequisites
 
@@ -34,71 +55,91 @@ Public site for [The Shakti Collective](https://theshakticollective.in): courses
 
 ## Environment variables
 
-Create `.env.local` for local dev. On **Vercel → Settings → Environment Variables**, set at least:
+Create `.env.local` for local dev (never commit). On **Vercel → Settings → Environment Variables**, set at least:
 
 | Variable | Required | Example / notes |
 | --- | --- | --- |
-| `TASKMASTER_WEBHOOK_URL` | **Production** | `https://taskmaster-jfw0.onrender.com/api/webhooks/book-call` |
+| `TASKMASTER_WEBHOOK_URL` | **Production (book-call)** | `https://taskmaster-jfw0.onrender.com/api/webhooks/book-call` |
 | `CRM_WEBHOOK_URL` | Optional alias | Same value as above |
+| `EMAIL_ADDRESS` | **Artist enquiry** | Gmail sender for nodemailer |
+| `EMAIL_PASSWORD` | **Artist enquiry** | App password for sender |
+| `NOTIFICATION_EMAILS` | **Artist enquiry** | Comma-separated team inboxes |
+| `GOOGLE_SERVICE_ACCOUNT_EMAIL` | **Artist enquiry / legacy** | Service account with Sheets access |
+| `GOOGLE_PRIVATE_KEY` | **Artist enquiry / legacy** | PEM for the service account |
 | `SPREADSHEET_ID` | Legacy routes only | Google Sheet ID if using local sheet APIs |
 | `AISENSY_API_KEY` | Legacy routes only | Prefer CRM-side keys on Render |
-| `GOOGLE_SERVICE_ACCOUNT_EMAIL` | Optional | For routes that still write to Sheets from this app |
-| `GOOGLE_PRIVATE_KEY` | Optional | PEM for the service account |
 
 Default production webhook URL (if env unset): `https://taskmaster-jfw0.onrender.com/api/webhooks/book-call`.
 
-## 🚀 Getting Started
+## Getting Started
 
-1. **Install Dependencies**:
+1. **Install dependencies**
    ```bash
    npm install
    ```
 
-2. **Asset Setup**:
-   Place your video assets in the `public/` directory:
-   - `hero-video.mp4` (Hero Section)
-   - `hero.mp4` (About Section)
+2. **Asset setup**
+   - Hero/about videos: `public/hero-video.mp4`, `public/hero.mp4`
+   - Artist media: `public/artists/<slug>/` (e.g. `public/artists/yugm/`)
 
-3. **Development Server**:
+3. **Development server**
    ```bash
    npm run dev
    ```
 
-## 📂 Project Structure
+## Project structure
 
-- `pages/api/`: 
-  - `book-call.ts`: Handles data entry to Google Sheets and sends WhatsApp confirmations.
-  - `check-reminders.ts`: Cron-ready API that processes upcoming reminders (IST recalibrated).
-- `.github/workflows/`:
-  - `send-reminders.yml`: GitHub Action that triggers the reminder API every 10 minutes.
-- `pages/book-a-call.tsx`: Timezone-aware frontend booking interface.
+```
+pages/
+├── yugm.tsx              # YUGM artist profile
+├── links/yugm.tsx        # YUGM link-in-bio hub
+├── query.tsx             # Artist enquiry wizard
+├── book-a-call.tsx       # Academy call booking UI
+└── api/
+    ├── query.ts          # Enquiry → Sheets + email
+    ├── book-call.ts      # Booking → Taskmaster webhook
+    └── check-reminders.ts
 
-## 🌐 Timezone Logic
+public/artists/yugm/      # YUGM photos (hero, about, member cards)
+components/artist/        # Shared ArtistLinks component
+.github/workflows/        # send-reminders.yml (legacy cron)
+docs/BOOKING_SYSTEM.md    # Book-a-call architecture notes
+```
 
-The system is designed for a global audience. When a user selects their country code:
-1. The frontend calculates the 1.5-hour buffer relative to the **user's local time**.
-2. The backend recalibrates the chosen slot to **Indian Standard Time (IST)**.
-3. All spreadsheet entries and automated reminders are synchronized to IST to ensure the team never misses a call.
+## Timezone logic (Book a Call)
 
-## ⚙️ Technologies Used
+When a user selects their country code:
 
-- **Next.js** - React Framework
-- **Tailwind CSS** - Styling
-- **Framer Motion** - Animations
-- **Google Sheets API** - CRM Integration
-- **AiSensy API** - WhatsApp Automation
-- **GitHub Actions** - Scheduled Reminders
+1. Frontend applies a **1.5-hour buffer** in the user's local timezone.
+2. Backend (Taskmaster CRM) recalibrates the slot to **IST**.
+3. Spreadsheet entries and WhatsApp reminders stay in IST for the ops team.
 
-## 🔍 SEO & Google Search Console
+## Technologies
 
-To ensure optimal indexing, visibility, and search performance:
-1. **Sitemap**: Configured and aligned at `/sitemap.xml` (contains all core static pages, dynamic artist pages, courses, masterclasses, and insights). Old defunct routes have been removed.
-2. **Robots.txt**: Served at `/robots.txt`, allowing crawler access for search bots (including AI search engines like OAI-SearchBot and PerplexityBot) and specifying the sitemap link.
-3. **Verification**: If site ownership re-verification is required via meta tag, add `<meta name="google-site-verification" content="YOUR_TOKEN" />` within the `<Head>` component of `pages/_app.tsx`.
+- **Next.js 14** — React framework (Pages Router)
+- **Tailwind CSS** — Styling
+- **Framer Motion** — Animations
+- **Google Sheets API** — Artist enquiry CRM + legacy routes
+- **Nodemailer** — Enquiry notification emails
+- **Taskmaster CRM** — Book-a-call processing on Render
+- **AiSensy** — WhatsApp automation (CRM-side)
+- **GitHub Actions** — Scheduled reminders (legacy)
 
-*Current version: 2.0.3*
+## SEO & Google Search Console
+
+1. **Sitemap** — `/sitemap.xml` (static pages, artists, courses, insights)
+2. **Robots.txt** — `/robots.txt` with sitemap link
+3. **Verification** — Add Google site verification meta in `pages/_app.tsx` if needed
+
+*Current version: 2.0.4*
 
 ## Changelog
+
+### [2026-06-01] v2.0.4
+- Refreshed **YUGM artist page** (`/yugm`): new hero/about imagery, member photo cards, unified contact email (`artist@theshakticollective.in`).
+- Updated **YUGM link hub** (`/links/yugm`): new avatar, social links (Instagram, YouTube, Spotify), query-call CTA.
+- Added artist assets under `public/artists/yugm/`.
+- README expanded with artist enquiry flow, route map, and env var docs.
 
 ### [2026-06-01] v2.0.3
 - Fixed production `book-call` API: no longer calls `localhost`; uses `TASKMASTER_WEBHOOK_URL` with default `taskmaster-jfw0.onrender.com`.

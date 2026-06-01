@@ -42,12 +42,14 @@ const YugmPage = () => {
     {
       name: 'Abhishek',
       role: 'Frontman, Guitar & Lead Vocals',
+      imageUrl: '/artists/yugm/yugm12.jpg',
       description:
         'Abhishek brings raw energy to every performance, blending expressive guitar work with powerful vocal storytelling. His stage presence turns poetic social commentary into anthems that resonate across audiences.',
     },
     {
       name: 'Mayank',
       role: 'Flute, Classical Fusion & Sound Designer',
+      imageUrl: '/artists/yugm/yugm10.jpg',
       description:
         'Mayank fuses Indian classical grace with modern indie textures, using flute and sonic layers to create evocative, atmospheric soundscapes. His music adds depth, emotion, and an unforgettable folk touch.',
     },
@@ -63,20 +65,21 @@ const YugmPage = () => {
         />
       </Head>
 
-      <section className="relative min-h-[95vh] flex items-center justify-center pt-32 overflow-hidden bg-slate-dark text-white">
+      <section className="relative min-h-screen flex items-center justify-center pt-32 pb-20 overflow-hidden bg-slate-dark text-white">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/assets/yugm/yugm12.jpg"
+            src="/artists/yugm/img-9384.jpg"
             alt="Yugm live performance"
             fill
-            className="object-cover opacity-30 blur-2xl scale-110"
+            className="object-cover"
             priority
           />
         </div>
 
-        <div className="absolute inset-0 z-0 bg-gradient-to-b from-black/70 via-black/35 to-black/90" />
+        <div className="absolute inset-0 z-0 bg-gradient-to-b from-black/60 via-black/45 to-black/70" />
+        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-white to-transparent z-10 pointer-events-none" />
 
-        <div className="relative z-20 container mx-auto px-4 text-center flex flex-col justify-center items-center h-[80vh]">
+        <div className="relative z-20 container mx-auto px-4 text-center flex flex-col justify-center items-center">
           <motion.div
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
@@ -140,9 +143,9 @@ const YugmPage = () => {
               </p>
             </div>
 
-            <div className="relative overflow-hidden rounded-[3rem] shadow-2xl border border-slate-100">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-[3rem] shadow-2xl border border-slate-100">
               <Image
-                src="/assets/yugm/yugm10.jpg"
+                src="/artists/yugm/yugm-about.png"
                 alt="Yugm band portrait"
                 fill
                 className="object-cover"
@@ -211,11 +214,21 @@ const YugmPage = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="rounded-[2.5rem] border border-slate-200/80 bg-slate-950/95 p-10 shadow-2xl"
+                className="overflow-hidden rounded-[2.5rem] border border-slate-200/80 bg-slate-950/95 shadow-2xl"
               >
+                <div className="relative aspect-[4/3] w-full">
+                  <Image
+                    src={member.imageUrl}
+                    alt={member.name}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div className="p-10">
                 <p className="text-sm font-bold uppercase tracking-[0.35em] text-orange mb-3">{member.role}</p>
-                <h4 className="text-3xl font-signika font-bold mb-4">{member.name}</h4>
+                <h4 className="text-3xl font-signika font-bold mb-4 text-white">{member.name}</h4>
                 <p className="text-slate-200 leading-relaxed">{member.description}</p>
+                </div>
               </motion.div>
             ))}
           </div>
@@ -230,10 +243,10 @@ const YugmPage = () => {
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <a
-              href="mailto:yugmofficial@gmail.com"
+              href="mailto:artist@theshakticollective.in"
               className="inline-flex items-center justify-center rounded-full bg-orange px-10 py-4 text-white font-bold text-lg hover:scale-105 transition-transform"
             >
-              <FaEnvelope className="mr-3" /> Email Yugm
+              <FaEnvelope className="mr-3" /> Email Us
             </a>
             <a
               href="/links/yugm"

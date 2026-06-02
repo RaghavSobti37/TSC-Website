@@ -60,6 +60,7 @@ Create `.env.local` for local dev (never commit). On **Vercel → Settings → E
 | Variable | Required | Example / notes |
 | --- | --- | --- |
 | `TASKMASTER_WEBHOOK_URL` | **Production (book-call)** | `https://taskmaster-jfw0.onrender.com/api/webhooks/book-call` |
+| `BOOK_CALL_WEBHOOK_SECRET` | **Production (book-call)** | Same value as Taskmaster `BOOK_CALL_WEBHOOK_SECRET` |
 | `CRM_WEBHOOK_URL` | Optional alias | Same value as above |
 | `TASKMASTER_ARTIST_ENQUIRY_WEBHOOK_URL` | **Artist enquiry** | Default derived from `TASKMASTER_WEBHOOK_URL` or prod `…/artist-enquiry` |
 | `ARTIST_ENQUIRY_WEBHOOK_SECRET` | Optional | Shared secret → `X-Webhook-Secret` header |

@@ -6,9 +6,11 @@ This document outlines the technical architecture of the automated booking and r
 
 The system consists of four main components:
 1.  **Timezone-Aware Frontend**: Detects user timezone and validates availability.
-2.  **API Handler (`book-call`)**: Calibrates local times to IST and saves to Google Sheets.
-3.  **Google Sheets CRM**: Acts as the central database for all bookings.
-4.  **Reminder Engine (`check-reminders`)**: A scheduled background process that triggers WhatsApp messages.
+2.  **API Handler (`book-call`)**: Forwards the booking to **Taskmaster CRM** (`POST /api/webhooks/book-call`). Taskmaster creates/updates the lead, assigns a sales rep (2:1:1), and sends AiSensy messages.
+3.  **Taskmaster CRM (primary database)**: MongoDB leads — no HolySheet required for new bookings.
+4.  **Google Sheets (optional)**: Legacy backup + `check-reminders` cron. Disable append on Taskmaster with `BOOKED_CALLS_CRM_ONLY=true` when reminders move to Taskmaster.
+
+See Taskmaster `docs/BOOKED_CALLS_CRM_DIRECT.md` for env vars (`TASKMASTER_WEBHOOK_URL`, `BOOK_CALL_WEBHOOK_SECRET`).
 
 ---
 

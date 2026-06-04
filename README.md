@@ -6,7 +6,7 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/version-2.0.5-e85d26?style=flat-square" alt="Version 2.0.5" />
+  <img src="https://img.shields.io/badge/version-2.0.7-e85d26?style=flat-square" alt="Version 2.0.7" />
   <img src="https://img.shields.io/badge/next-14-000000?style=flat-square&logo=next.js&logoColor=white" alt="Next.js 14" />
   <img src="https://img.shields.io/badge/deploy-Vercel-000000?style=flat-square&logo=vercel&logoColor=white" alt="Vercel" />
 </p>
@@ -24,8 +24,12 @@ Public site for [The Shakti Collective](https://theshakticollective.in): artist 
 | `/links/yugm` | Link-in-bio hub for YUGM (query call, email, website, socials) |
 | `/query` | **Artist Enquiry** — 3-step collaboration form (Google Sheets + Taskmaster task) |
 | `/book-a-call` | **Academy Book a Call** — timezone-aware slot booking via Taskmaster CRM |
+| `/tscacademy` | TSC Academy marketing hub — courses, mentors, initiatives |
+| `/tscacademy/ambassador` | **Ambassador Program** — referral overview; CTAs link to Exly affiliate onboarding |
 
 Book-a-call bookings are proxied to the Taskmaster API on Render; IST conversion, rep assignment, WhatsApp, and Google Sheets sync run in the CRM.
+
+Ambassador registration opens [Exly affiliate onboarding](https://tscacademy.exlyapp.com/affiliate/onboarding/login) in a new tab (₹500 referral discount / ₹500 ambassador cashback).
 
 ## Key features
 
@@ -35,6 +39,7 @@ Book-a-call bookings are proxied to the Taskmaster API on Render; IST conversion
 | **Book a Call** | 3-step flow: course → contact → slot; 1.5h buffer in the visitor's timezone |
 | **CRM handoff** | `POST /api/book-call` → `POST /api/webhooks/book-call` on Taskmaster |
 | **Artist pages** | Dedicated profiles (YUGM, Harshad & Duhita) with link hubs under `/links/*` |
+| **Academy Ambassador** | Landing page at `/tscacademy/ambassador`; navbar **Become an Affiliate** on all academy routes |
 | **Newsletter & forms** | Additional API routes for sheets and lead capture |
 | **SEO** | Sitemap, robots.txt, structured static pages |
 
@@ -91,6 +96,9 @@ Default production webhook URL (if env unset): `https://taskmaster-jfw0.onrender
 
 ```
 pages/
+├── tscacademy.tsx        # Academy homepage
+├── tscacademy/
+│   └── ambassador.tsx    # Ambassador program landing
 ├── yugm.tsx              # YUGM artist profile
 ├── links/yugm.tsx        # YUGM link-in-bio hub
 ├── query.tsx             # Artist enquiry wizard
@@ -101,6 +109,9 @@ pages/
     └── check-reminders.ts
 
 public/artists/yugm/      # YUGM photos (hero, about, member cards)
+components/sections/academy/
+├── AmbassadorProgram.tsx    # Ambassador page sections
+└── …
 lib/forwardArtistEnquiry.ts  # Taskmaster artist-enquiry webhook helper
 .github/workflows/        # send-reminders.yml (legacy cron)
 docs/BOOKING_SYSTEM.md    # Book-a-call architecture notes
@@ -131,9 +142,14 @@ When a user selects their country code:
 2. **Robots.txt** — `/robots.txt` with sitemap link
 3. **Verification** — Add Google site verification meta in `pages/_app.tsx` if needed
 
-*Current version: 2.0.5*
+*Current version: 2.0.7*
 
 ## Changelog
+
+### [2026-06-04] v2.0.7
+- Added **TSC Academy Ambassador Program** at `/tscacademy/ambassador` with hero, win-win-win overview, referral steps, and Exly registration CTAs.
+- Academy navbar: **Become an Affiliate** (gradient pill → ambassador page) alongside **Main Website**.
+- Responsive two-column “How It Works” section with Learn / Earn / Give back cards.
 
 ### [2026-06-01] v2.0.5
 - Artist enquiry (`/api/query`) forwards to Taskmaster after Google Sheets append; email notifications removed.

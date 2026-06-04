@@ -148,7 +148,13 @@ export default function AcademyHeader() {
               </AnimatePresence>
             </div>
 
-            {/* Back to Website Link */}
+            <a
+              href="/tscacademy/ambassador"
+              className="px-5 py-2 rounded-full bg-gradient-to-r from-pumpkin to-academy-blue text-cream text-xs sm:text-sm font-bold font-alan-sans hover:opacity-90 shadow-md transition-all duration-200 whitespace-nowrap"
+            >
+              Become an Affiliate
+            </a>
+
             <a
               href="/"
               className="ml-2 px-5 py-2 rounded-full border border-white/30 bg-white/10 text-cream text-xs sm:text-sm font-bold font-alan-sans hover:bg-white/20 transition-all duration-200 whitespace-nowrap"
@@ -206,8 +212,15 @@ export default function AcademyHeader() {
             </div>
 
             <a
+              href="/tscacademy/ambassador"
+              className="mt-3 text-center px-4 py-3 rounded-full bg-gradient-to-r from-pumpkin to-academy-blue text-cream text-sm font-bold font-alan-sans"
+            >
+              Become an Affiliate
+            </a>
+
+            <a
               href="/"
-              className="mt-3 text-center px-4 py-3 rounded-full bg-white/10 text-cream text-sm font-bold font-alan-sans"
+              className="mt-2 text-center px-4 py-3 rounded-full bg-white/10 text-cream text-sm font-bold font-alan-sans"
             >
               Back to Main Website
             </a>

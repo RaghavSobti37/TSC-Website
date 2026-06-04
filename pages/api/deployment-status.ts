@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-const EXPECTED_COMMIT = 'cf3a5b0';
+const EXPECTED_COMMIT = '044eb5b';
 const AMBASSADOR_PATH = '/tscacademy/ambassador';
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {

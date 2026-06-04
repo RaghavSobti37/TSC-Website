@@ -1,0 +1,27 @@
+name: Deploy Production (Vercel)
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  trigger-vercel:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Vercel Deploy Hook
+        if: ${{ secrets.VERCEL_DEPLOY_HOOK != '' }}
+        env:
+          VERCEL_DEPLOY_HOOK: ${{ secrets.VERCEL_DEPLOY_HOOK }}
+        run: |
+          echo "Triggering Vercel production deploy..."
+          curl -fsS -X POST "$VERCEL_DEPLOY_HOOK"
+          echo "Deploy hook accepted."
+
+      - name: Deploy hook not configured
+        if: ${{ secrets.VERCEL_DEPLOY_HOOK == '' }}
+        run: |
+          echo "::warning::VERCEL_DEPLOY_HOOK secret is missing."
+          echo "Add a Deploy Hook from Vercel → Project → Settings → Git → Deploy Hooks"
+          echo "Then add it as a GitHub repository secret named VERCEL_DEPLOY_HOOK."
+          echo "Until then, redeploy manually from the Vercel dashboard for each push to main."

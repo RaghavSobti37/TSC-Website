@@ -136,6 +136,14 @@ When a user selects their country code:
 - **AiSensy** — WhatsApp automation (CRM-side)
 - **GitHub Actions** — Scheduled reminders (legacy)
 
+## Deployment (Vercel)
+
+Production: **theshakticollective.in** on Vercel. Pushes to `main` should auto-deploy; if Vercel does not show a new commit, see [docs/VERCEL_DEPLOY.md](docs/VERCEL_DEPLOY.md).
+
+Check live commit: `GET /api/deployment-status` (returns `VERCEL_GIT_COMMIT_SHA` on Vercel).
+
+Optional: add GitHub secret `VERCEL_DEPLOY_HOOK` so `.github/workflows/deploy-production.yml` triggers a deploy on every `main` push.
+
 ## SEO & Google Search Console
 
 1. **Sitemap** — `/sitemap.xml` (static pages, artists, courses, insights)

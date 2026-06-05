@@ -6,7 +6,7 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/version-2.0.7-e85d26?style=flat-square" alt="Version 2.0.7" />
+  <img src="https://img.shields.io/badge/version-2.0.8-e85d26?style=flat-square" alt="Version 2.0.8" />
   <img src="https://img.shields.io/badge/next-14-000000?style=flat-square&logo=next.js&logoColor=white" alt="Next.js 14" />
   <img src="https://img.shields.io/badge/deploy-Vercel-000000?style=flat-square&logo=vercel&logoColor=white" alt="Vercel" />
 </p>
@@ -21,7 +21,9 @@ Public site for [The Shakti Collective](https://theshakticollective.in): artist 
 | --- | --- |
 | `/` | Marketing homepage |
 | `/yugm` | YUGM band profile — hero, achievements, member cards, booking CTA |
+| `/harshadduhita` | Harshaduhita Collective — EPK-driven profile, discography, booking CTA |
 | `/links/yugm` | Link-in-bio hub for YUGM (query call, email, website, socials) |
+| `/links/harshad-and-duhita` | Link-in-bio hub for Harshaduhita Collective |
 | `/query` | **Artist Enquiry** — 3-step collaboration form (Google Sheets + Taskmaster task) |
 | `/book-a-call` | **Academy Book a Call** — timezone-aware slot booking via Taskmaster CRM |
 | `/tscacademy` | TSC Academy marketing hub — courses, mentors, initiatives |
@@ -38,7 +40,7 @@ Ambassador registration opens [Exly affiliate onboarding](https://tscacademy.exl
 | **Artist Enquiry** | 3-step form at `/query` → `POST /api/query` → Google Sheets (`Inqueries` tab) + Taskmaster webhook |
 | **Book a Call** | 3-step flow: course → contact → slot; 1.5h buffer in the visitor's timezone |
 | **CRM handoff** | `POST /api/book-call` → `POST /api/webhooks/book-call` on Taskmaster |
-| **Artist pages** | Dedicated profiles (YUGM, Harshad & Duhita) with link hubs under `/links/*` |
+| **Artist pages** | Dedicated profiles (YUGM, Harshaduhita Collective) with link hubs under `/links/*` |
 | **Academy Ambassador** | Landing page at `/tscacademy/ambassador`; navbar **Become an Affiliate** on all academy routes |
 | **Newsletter & forms** | Additional API routes for sheets and lead capture |
 | **SEO** | Sitemap, robots.txt, structured static pages |
@@ -85,7 +87,7 @@ Default production webhook URL (if env unset): `https://taskmaster-jfw0.onrender
 
 2. **Asset setup**
    - Hero/about videos: `public/hero-video.mp4`, `public/hero.mp4`
-   - Artist media: `public/artists/<slug>/` (e.g. `public/artists/yugm/`)
+   - Artist media: `public/artists/<slug>/` (e.g. `public/artists/yugm/`, `public/artists/harshadduhita/`)
 
 3. **Development server**
    ```bash
@@ -100,7 +102,9 @@ pages/
 ├── tscacademy/
 │   └── ambassador.tsx    # Ambassador program landing
 ├── yugm.tsx              # YUGM artist profile
+├── harshadduhita.tsx     # Harshaduhita Collective artist profile
 ├── links/yugm.tsx        # YUGM link-in-bio hub
+├── links/harshad-and-duhita.tsx  # Harshaduhita link-in-bio hub
 ├── query.tsx             # Artist enquiry wizard
 ├── book-a-call.tsx       # Academy call booking UI
 └── api/
@@ -108,7 +112,8 @@ pages/
     ├── book-call.ts      # Booking → Taskmaster webhook
     └── check-reminders.ts
 
-public/artists/yugm/      # YUGM photos (hero, about, member cards)
+public/artists/yugm/           # YUGM photos (hero, about, member cards)
+public/artists/harshadduhita/  # Harshaduhita hero, portraits, live shots
 components/sections/academy/
 ├── AmbassadorProgram.tsx    # Ambassador page sections
 └── …
@@ -150,9 +155,15 @@ Optional: add GitHub secret `VERCEL_DEPLOY_HOOK` so `.github/workflows/deploy-pr
 2. **Robots.txt** — `/robots.txt` with sitemap link
 3. **Verification** — Add Google site verification meta in `pages/_app.tsx` if needed
 
-*Current version: 2.0.7*
+*Current version: 2.0.8*
 
 ## Changelog
+
+### [2026-06-05] v2.0.8
+- Added **Harshaduhita Collective** artist page at `/harshadduhita` with EPK content: hero, Who Are We (duo bios), milestones, live repertoire, discography, and booking contact.
+- Permanent redirect from legacy `/harshad-duhita` → `/harshadduhita` (`next.config.js`).
+- Consolidated artist assets under `public/artists/harshadduhita/`; updated link hub and sitemap.
+- Added `npm run audit:exposure` pre-commit exposure scan.
 
 ### [2026-06-04] v2.0.7
 - Added **TSC Academy Ambassador Program** at `/tscacademy/ambassador` with hero, win-win-win overview, referral steps, and Exly registration CTAs.

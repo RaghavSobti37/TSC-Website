@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "type-check": "tsc --noEmit",
+    "audit:exposure": "node scripts/checkCommittedExposure.js",
     "security_check": "npm audit --audit-level=moderate",
     "send-reminders": "node scripts/send-reminders.mjs"
   },

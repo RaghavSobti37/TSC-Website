@@ -14,9 +14,9 @@ import { FaInstagram, FaSpotify, FaYoutube, FaGlobe, FaCalendarAlt, FaMusic } fr
 
 const HarshadDuhitaLinks = () => {
   const artistData = {
-    name: "Harshad & Duhita",
-    bio: "Deep Rooted • Divine • Diverse. Indian Musical Duo | Composers | Producers.",
-    avatarUrl: "/artists/hnd-posing.jpeg",
+    name: "Harshaduhita Collective",
+    bio: "A live music duo blending deep-rooted Indian classical music with divine emotion and diverse musical expression.",
+    avatarUrl: "/artists/harshadduhita/heroHND.jpeg",
     links: [
       {
         label: "Book a Query Call",
@@ -45,7 +45,7 @@ const HarshadDuhitaLinks = () => {
       },
       {
         label: "Official Website",
-        url: "/harshad-duhita",
+        url: "/harshadduhita",
         icon: FaGlobe,
         primary: false,
       },

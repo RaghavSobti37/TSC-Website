@@ -9,15 +9,6 @@ const nextConfig = {
             },
         ],
     },
-    async redirects() {
-        return [
-            {
-                source: '/harshad-duhita',
-                destination: '/harshadduhita',
-                permanent: true,
-            },
-        ];
-    },
 }
 
 module.exports = nextConfig

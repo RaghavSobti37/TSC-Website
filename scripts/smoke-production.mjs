@@ -2,24 +2,10 @@
 /**
  * Production smoke — direct Taskmaster webhooks + TSC proxy routes.
  * Requires *_WEBHOOK_SECRET env vars (same as Render/Vercel).
- *
- * Usage:
- *   TASKMASTER_BASE_URL=https://taskmaster-jfw0.onrender.com \
- *   TSC_BASE_URL=https://theshakticollective.in \
- *   BOOK_CALL_WEBHOOK_SECRET=... ... \
- *   node scripts/smoke-production.mjs
  */
 const TM = (process.env.TASKMASTER_BASE_URL || 'https://taskmaster-jfw0.onrender.com').replace(/\/$/, '');
 const TSC = (process.env.TSC_BASE_URL || 'https://theshakticollective.in').replace(/\/$/, '');
-
-const slotDate = new Date(Date.now() + 3 * 60 * 60 * 1000);
-const yyyy = slotDate.getFullYear();
-const mm = String(slotDate.getMonth() + 1).padStart(2, '0');
-const dd = String(slotDate.getDate()).padStart(2, '0');
-let hours = slotDate.getHours();
-const minutes = String(slotDate.getMinutes()).padStart(2, '0');
-const period = hours >= 12 ? 'PM' : 'AM';
-hours = hours % 12 || 12;
+const TEST_EMAIL = 'webhook.smoke@example.com';
 
 async function post(url, body, secret) {
   const headers = { 'Content-Type': 'application/json' };
@@ -31,17 +17,21 @@ async function post(url, body, secret) {
 
 const directTests = [
   ['newsletter', `${TM}/api/webhooks/newsletter`, process.env.NEWSLETTER_WEBHOOK_SECRET, {
-    email: 'raghavsobti37@gmail.com', source: 'tsc-footer', sourceSite: 'tsc-website',
+    email: TEST_EMAIL, source: 'tsc-footer', sourceSite: 'tsc-website',
   }],
   ['artist-enquiry', `${TM}/api/webhooks/artist-enquiry`, process.env.ARTIST_ENQUIRY_WEBHOOK_SECRET, {
-    source: 'tsc-website', name: 'Raghav Raj Sobti', email: 'raghavsobti37@gmail.com',
-    phone: '+918591499393', artist: 'YUGM', collaborationType: 'Live performance',
+    source: 'tsc-website', name: 'Webhook Smoke Test', email: TEST_EMAIL,
+    phone: '+919876543210', artist: 'YUGM', collaborationType: 'Live performance',
     projectNature: 'Smoke test', whenWhere: 'Mumbai', scaleReach: '100', logisticsSupport: 'N/A', vision: 'Test',
   }],
 ];
 
 const proxyTests = [
-  ['tsc-newsletter', `${TSC}/api/newsletter`, null, { email: 'raghavsobti37@gmail.com' }],
+  ['tsc-book-call', `${TSC}/api/book-call`, null, {
+    name: 'Webhook Smoke Test', email: TEST_EMAIL, phone: '9876543210', whatsapp: '9876543210',
+    course: 'Prod Smoke', date: '2026-06-07', time: '04:00 PM', timezone: 'Asia/Kolkata',
+  }],
+  ['tsc-newsletter', `${TSC}/api/newsletter`, null, { email: TEST_EMAIL }],
 ];
 
 console.log('=== Taskmaster direct ===');

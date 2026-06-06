@@ -1,19 +1,15 @@
 name: Send WhatsApp Reminders
 
+# Deprecated — book-call reminders now run in Taskmaster CRM (Render).
+# Kept for manual inspection only; scheduled cron disabled.
+
 on:
-  schedule:
-    # Runs every 10 minutes
-    - cron: '*/10 * * * *'
-  workflow_dispatch: 
+  workflow_dispatch:
 
 jobs:
   ping-reminder-api:
+    if: false
     runs-on: ubuntu-latest
     steps:
-      - name: Hit Reminder API
-        run: |
-          # Follow redirects (-L) and use a browser-like User-Agent to avoid 'Lander' parking pages
-          # Hit the correct Next.js production API
-          curl -L -X GET "https://theshakticollective.in/api/check-reminders" \
-               -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" \
-               -H "Accept: application/json"
+      - name: Deprecated
+        run: echo "Reminders moved to Taskmaster — do not re-enable without removing TSC Google Sheet dependency."

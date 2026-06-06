@@ -1,7 +1,4 @@
-const DEFAULT_ARTIST_ENQUIRY_WEBHOOK_URL =
-  process.env.NODE_ENV === 'production'
-    ? 'https://taskmaster-jfw0.onrender.com/api/webhooks/artist-enquiry'
-    : 'http://127.0.0.1:5000/api/webhooks/artist-enquiry';
+import { forwardToTaskmaster as postToTaskmaster, resolveWebhookUrl } from './taskmasterWebhook';
 
 function resolveArtistEnquiryWebhookUrl(): string {
   const explicit = (process.env.TASKMASTER_ARTIST_ENQUIRY_WEBHOOK_URL || '').trim();
@@ -12,33 +9,30 @@ function resolveArtistEnquiryWebhookUrl(): string {
     return bookCallUrl.replace(/book-call\/?$/, 'artist-enquiry');
   }
 
-  return DEFAULT_ARTIST_ENQUIRY_WEBHOOK_URL;
+  return resolveWebhookUrl('TASKMASTER_ARTIST_ENQUIRY_WEBHOOK_URL', '/api/webhooks/artist-enquiry');
 }
 
-export async function forwardToTaskmaster(data: Record<string, unknown>): Promise<void> {
-  const taskmasterUrl = resolveArtistEnquiryWebhookUrl();
-
-  const headers: Record<string, string> = { 'Content-Type': 'application/json' };
+export async function forwardToTaskmasterEnquiry(data: Record<string, unknown>): Promise<void> {
   const secret = process.env.ARTIST_ENQUIRY_WEBHOOK_SECRET;
-  if (secret) headers['X-Webhook-Secret'] = secret;
 
-  try {
-    const res = await fetch(taskmasterUrl, {
-      method: 'POST',
-      headers,
-      body: JSON.stringify(data),
-    });
-    if (!res.ok) {
-      const body = await res.text().catch(() => '');
-      console.error('[artist-enquiry] Taskmaster forward non-OK', res.status, body);
-    }
-  } catch (e) {
-    console.error('[artist-enquiry] Taskmaster forward failed', e);
+  const { ok, status, body } = await postToTaskmaster({
+    url: resolveArtistEnquiryWebhookUrl(),
+    secret,
+    payload: data,
+  });
+
+  if (!ok) {
+    console.error('[artist-enquiry] Taskmaster forward non-OK', status, body);
   }
 }
 
+/** @deprecated use forwardToTaskmasterEnquiry */
+export const forwardToTaskmaster = forwardToTaskmasterEnquiry;
+
 export function buildTaskmasterEnquiryPayload(data: Record<string, string>): Record<string, unknown> {
   return {
+    source: 'tsc-website',
+    sourceSite: 'tsc-website',
     name: data.name,
     email: data.email,
     phone: data.phone,

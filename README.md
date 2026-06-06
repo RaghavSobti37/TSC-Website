@@ -29,7 +29,7 @@ Public site for [The Shakti Collective](https://theshakticollective.in): artist 
 | `/tscacademy` | TSC Academy marketing hub — courses, mentors, initiatives |
 | `/tscacademy/ambassador` | **Ambassador Program** — referral overview; CTAs link to Exly affiliate onboarding |
 
-Book-a-call bookings are proxied to the Taskmaster API on Render; IST conversion, rep assignment, WhatsApp, and Google Sheets sync run in the CRM.
+Book-a-call and all other form submissions proxy to the Taskmaster API on Render; IST conversion, rep assignment, WhatsApp, and Data Hub sync run in the CRM.
 
 Ambassador registration opens [Exly affiliate onboarding](https://tscacademy.exlyapp.com/affiliate/onboarding/login) in a new tab (₹500 referral discount / ₹500 ambassador cashback).
 
@@ -49,8 +49,8 @@ Ambassador registration opens [Exly affiliate onboarding](https://tscacademy.exl
 
 1. Visitor completes the 3-step wizard at `/query` (contact → collaboration → logistics).
 2. Frontend posts JSON to `/api/query`.
-3. API timestamps in IST, appends a row to the **Inqueries** Google Sheet, then forwards the payload to Taskmaster (`/api/webhooks/artist-enquiry`) to create a project task.
-4. Success screen confirms receipt even if Taskmaster forward fails (errors logged server-side).
+3. API forwards the payload to Taskmaster (`/api/webhooks/artist-enquiry`) to create a project task.
+4. Success screen confirms receipt (Taskmaster errors logged server-side).
 
 Entry points: header **Partner With Us**, brand CTA, artist pages (`/query?artist=YUGM`), and link hubs.
 
@@ -66,17 +66,21 @@ Create `.env.local` for local dev (never commit). On **Vercel → Settings → E
 
 | Variable | Required | Example / notes |
 | --- | --- | --- |
-| `TASKMASTER_WEBHOOK_URL` | **Production (book-call)** | `https://taskmaster-jfw0.onrender.com/api/webhooks/book-call` |
-| `BOOK_CALL_WEBHOOK_SECRET` | **Production (book-call)** | Same value as Taskmaster `BOOK_CALL_WEBHOOK_SECRET` |
-| `CRM_WEBHOOK_URL` | Optional alias | Same value as above |
-| `TASKMASTER_ARTIST_ENQUIRY_WEBHOOK_URL` | **Artist enquiry** | Default derived from `TASKMASTER_WEBHOOK_URL` or prod `…/artist-enquiry` |
-| `ARTIST_ENQUIRY_WEBHOOK_SECRET` | Optional | Shared secret → `X-Webhook-Secret` header |
-| `GOOGLE_SERVICE_ACCOUNT_EMAIL` | **Artist enquiry** | Service account with Sheets access |
-| `GOOGLE_PRIVATE_KEY` | **Artist enquiry / legacy** | PEM for the service account |
-| `SPREADSHEET_ID` | Legacy routes only | Google Sheet ID if using local sheet APIs |
-| `AISENSY_API_KEY` | Legacy routes only | Prefer CRM-side keys on Render |
+| `TASKMASTER_WEBHOOK_URL` | **Production** | `https://taskmaster-jfw0.onrender.com/api/webhooks/book-call` |
+| `BOOK_CALL_WEBHOOK_SECRET` | **Production** | Same as Taskmaster `BOOK_CALL_WEBHOOK_SECRET` |
+| `TASKMASTER_ARTIST_ENQUIRY_WEBHOOK_URL` | **Production** | `…/artist-enquiry` |
+| `ARTIST_ENQUIRY_WEBHOOK_SECRET` | **Production** | `X-Webhook-Secret` header |
+| `TASKMASTER_ARTIST_PATH_WEBHOOK_URL` | **Production** | `…/artist-path` |
+| `ARTIST_PATH_WEBHOOK_SECRET` | **Production** | Shared with Render |
+| `TASKMASTER_NEWSLETTER_WEBHOOK_URL` | **Production** | `…/newsletter` |
+| `NEWSLETTER_WEBHOOK_SECRET` | **Production** | Shared with Render |
+| `TASKMASTER_MASTERCLASS_REVIEW_WEBHOOK_URL` | **Production** | `…/masterclass-review` |
+| `MASTERCLASS_REVIEW_WEBHOOK_SECRET` | **Production** | Shared with Render |
+| `TASKMASTER_BASE_URL` | Optional | Public reviews GET proxy base |
 
-Default production webhook URL (if env unset): `https://taskmaster-jfw0.onrender.com/api/webhooks/book-call`.
+Full matrix: [docs/INTEGRATION.md](docs/INTEGRATION.md) and Taskmaster `docs/tsc-integration.env.example`.
+
+**Remove from Vercel after cutover:** `GOOGLE_*`, `HOLYSHEET_*`, `AISENSY_*`, `SPREADSHEET_ID`.
 
 ## Getting Started
 
@@ -108,18 +112,17 @@ pages/
 ├── query.tsx             # Artist enquiry wizard
 ├── book-a-call.tsx       # Academy call booking UI
 └── api/
-    ├── query.ts          # Enquiry → Sheets + Taskmaster webhook
-    ├── book-call.ts      # Booking → Taskmaster webhook
-    └── check-reminders.ts
+    ├── query.ts          # Enquiry → Taskmaster webhook
+    ├── artist-path.ts    # Artist path → Taskmaster webhook
+    ├── newsletter.ts     # Newsletter → Taskmaster webhook
+    ├── reviews.ts        # Masterclass review 01 proxy
+    └── reviews02.ts      # Masterclass review 02 proxy
 
-public/artists/yugm/           # YUGM photos (hero, about, member cards)
-public/artists/harshadduhita/  # Harshaduhita hero, portraits, live shots
-components/sections/academy/
-├── AmbassadorProgram.tsx    # Ambassador page sections
-└── …
-lib/forwardArtistEnquiry.ts  # Taskmaster artist-enquiry webhook helper
-.github/workflows/        # send-reminders.yml (legacy cron)
-docs/BOOKING_SYSTEM.md    # Book-a-call architecture notes
+lib/taskmasterWebhook.ts       # Shared forward layer
+lib/forwardMasterclassReview.ts
+lib/forwardArtistEnquiry.ts
+docs/INTEGRATION.md
+scripts/test-tsc-webhooks.mjs  # Local/prod proxy smoke
 ```
 
 ## Timezone logic (Book a Call)
@@ -128,18 +131,15 @@ When a user selects their country code:
 
 1. Frontend applies a **1.5-hour buffer** in the user's local timezone.
 2. Backend (Taskmaster CRM) recalibrates the slot to **IST**.
-3. Spreadsheet entries and WhatsApp reminders stay in IST for the ops team.
+3. WhatsApp confirmations and CRM records are handled on Render.
 
 ## Technologies
 
 - **Next.js 14** — React framework (Pages Router)
 - **Tailwind CSS** — Styling
 - **Framer Motion** — Animations
-- **Google Sheets API** — Artist enquiry CRM + legacy routes
-- **Taskmaster CRM** — Artist enquiry tasks via webhook
-- **Taskmaster CRM** — Book-a-call processing on Render
-- **AiSensy** — WhatsApp automation (CRM-side)
-- **GitHub Actions** — Scheduled reminders (legacy)
+- **Taskmaster CRM** — All form processing on Render
+- **AiSensy** — WhatsApp on Taskmaster (book-call, artist-path)
 
 ## Deployment (Vercel)
 
@@ -161,8 +161,7 @@ Optional: add GitHub secret `VERCEL_DEPLOY_HOOK` so `.github/workflows/deploy-pr
 
 ### [2026-06-05] v2.0.8
 - Added **Harshaduhita Collective** artist page at `/harshadduhita` with EPK content: hero, Who Are We (duo bios), milestones, live repertoire, discography, and booking contact.
-- Permanent redirect from legacy `/harshad-duhita` → `/harshadduhita` (`next.config.js`).
-- Consolidated artist assets under `public/artists/harshadduhita/`; updated link hub and sitemap.
+- Removed legacy `/harshad-duhita` route; consolidated artist assets under `public/artists/harshadduhita/`; updated link hub and sitemap.
 - Added `npm run audit:exposure` pre-commit exposure scan.
 
 ### [2026-06-04] v2.0.7

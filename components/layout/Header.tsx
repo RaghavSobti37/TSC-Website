@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
+import { ARTIST_PATH_LANDING_URL } from '@/lib/siteUrls';
 
 /**
  * TSC Capsule Navigation Header — Revamped
@@ -57,7 +58,7 @@ export default function Header() {
     { label: 'Home', action: () => scrollToSection('hero') },
     { label: 'Our Work', action: () => scrollToSection('ip-gallery') },
     { label: 'Resources', action: () => goTo('/resources') },
-    { label: 'Artist Path', action: () => goTo('/artist-path') },
+    { label: 'Artist Path', action: () => goTo(ARTIST_PATH_LANDING_URL) },
     { label: 'Book a Call', action: () => goTo('/book-a-call') },
   ];
 
@@ -65,7 +66,7 @@ export default function Header() {
     { label: 'Home', action: () => scrollToSection('hero') },
     { label: 'Our Work', action: () => scrollToSection('ip-gallery') },
     { label: 'Resources', action: () => goTo('/resources') },
-    { label: 'Artist Path', action: () => goTo('/artist-path') },
+    { label: 'Artist Path', action: () => goTo(ARTIST_PATH_LANDING_URL) },
     { label: 'Book a Call', action: () => goTo('/book-a-call') },
     { label: 'Partner With Us', action: () => goTo('/query') },
   ];

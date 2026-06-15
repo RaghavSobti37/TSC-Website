@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-
 import { ArrowRight } from 'lucide-react';
+import { ARTIST_PATH_FORM_PATH, ARTIST_PATH_LANDING_URL } from '@/lib/siteUrls';
 
 /**
  * ArtistCTASection — Full-width CTA targeting artists
@@ -64,10 +64,18 @@ export default function ArtistCTASection() {
           className="flex flex-col gap-6 justify-center items-center px-4"
         >
           <a
-            href="/artist-path"
+            href={ARTIST_PATH_FORM_PATH}
             className="w-full max-w-[320px] px-10 py-5 rounded-full bg-orange text-white font-bold font-signika text-base sm:text-lg tracking-wide hover:bg-orange/90 transition-all duration-300 shadow-lg shadow-orange/30 hover:shadow-orange/50 hover:scale-105 text-center"
           >
-            <span className="flex items-center justify-center gap-2">Take the Artist Path <ArrowRight size={20} /></span>
+            <span className="flex items-center justify-center gap-2">Apply to Artist Path <ArrowRight size={20} /></span>
+          </a>
+          <a
+            href={ARTIST_PATH_LANDING_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full max-w-[320px] px-10 py-5 rounded-full border-2 border-black/20 text-black font-bold font-signika text-base sm:text-lg tracking-wide hover:border-black hover:bg-black/5 transition-all duration-300 hover:scale-105 text-center"
+          >
+            About the program
           </a>
           <a
             href="https://tscacademy.in"

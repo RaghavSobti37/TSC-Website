@@ -381,7 +381,7 @@ export default function ArtistPath() {
           {/* Step 2: Digital Identity */}
           {step === 2 && (
             <motion.div
-              key="step2"
+              key="step2-digital"
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -20 }}
@@ -451,10 +451,10 @@ export default function ArtistPath() {
             </motion.div>
           )}
 
-          {/* Step 2: Identity & Foundation */}
-          {step === 2 && (
+          {/* Step 3: Identity & Foundation */}
+          {step === 3 && (
             <motion.div
-              key="step2"
+              key="step3-identity"
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -20 }}
@@ -466,8 +466,8 @@ export default function ArtistPath() {
                 <div className="w-full h-1.5 bg-white/50 rounded-full overflow-hidden mb-6">
                   <motion.div
                     className="h-full bg-pumpkin"
-                    initial={{ width: '25%' }}
-                    animate={{ width: '50%' }}
+                    initial={{ width: '40%' }}
+                    animate={{ width: '60%' }}
                   />
                 </div>
               </div>
@@ -553,10 +553,10 @@ export default function ArtistPath() {
             </motion.div>
           )}
 
-          {/* Step 3: Current Pulse */}
-          {step === 3 && (
+          {/* Step 4: Current Pulse */}
+          {step === 4 && (
             <motion.div
-              key="step3"
+              key="step4"
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -20 }}
@@ -568,8 +568,8 @@ export default function ArtistPath() {
                 <div className="w-full h-1.5 bg-white/50 rounded-full overflow-hidden mb-6">
                   <motion.div
                     className="h-full bg-pumpkin"
-                    initial={{ width: '50%' }}
-                    animate={{ width: '75%' }}
+                    initial={{ width: '60%' }}
+                    animate={{ width: '80%' }}
                   />
                 </div>
               </div>
@@ -656,10 +656,10 @@ export default function ArtistPath() {
             </motion.div>
           )}
 
-          {/* Step 4: Needs & Goals */}
-          {step === 4 && (
+          {/* Step 5: Needs & Goals */}
+          {step === 5 && (
             <motion.div
-              key="step4"
+              key="step5"
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -20 }}
@@ -671,7 +671,7 @@ export default function ArtistPath() {
                 <div className="w-full h-1.5 bg-white/50 rounded-full overflow-hidden mb-6">
                   <motion.div
                     className="h-full bg-pumpkin"
-                    initial={{ width: '75%' }}
+                    initial={{ width: '80%' }}
                     animate={{ width: '100%' }}
                   />
                 </div>

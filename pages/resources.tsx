@@ -2,6 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
+import { ARTIST_PATH_FORM_PATH } from '@/lib/siteUrls';
 
 import ResourcesInstagram from '@/components/sections/ResourcesInstagram';
 import ResourcesBlogs from '@/components/sections/ResourcesBlogs';
@@ -108,7 +109,7 @@ export default function ResourcesPage() {
               Resources are just the start. The Artist Path questionnaire maps your complete journey through our ecosystem.
             </p>
             <a
-              href="/artist-path"
+              href={ARTIST_PATH_FORM_PATH}
               className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-pumpkin text-cream font-bold font-signika text-base hover:bg-pumpkin/90 transition-all hover:scale-105 shadow-lg shadow-pumpkin/30"
             >
               Take the Artist Path <ArrowRight size={18} />

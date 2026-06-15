@@ -71,7 +71,9 @@ Create `.env.local` for local dev (never commit). On **Vercel → Settings → E
 | `TASKMASTER_ARTIST_ENQUIRY_WEBHOOK_URL` | **Production** | `…/artist-enquiry` |
 | `ARTIST_ENQUIRY_WEBHOOK_SECRET` | **Production** | `X-Webhook-Secret` header |
 | `TASKMASTER_ARTIST_PATH_WEBHOOK_URL` | **Production** | `…/artist-path` |
-| `ARTIST_PATH_WEBHOOK_SECRET` | **Production** | Shared with Render |
+| `ARTIST_PATH_WEBHOOK_SECRET` | **Production** | Shared with Render + Platform API |
+| `TSC_API_URL` | **Production** | `https://api.theshakticollective.in/api` — Postgres via Platform API |
+| `NEXT_PUBLIC_ARTIST_PATH_URL` | Optional | Program landing (`https://theartistpath.in`) |
 | `TASKMASTER_NEWSLETTER_WEBHOOK_URL` | **Production** | `…/newsletter` |
 | `NEWSLETTER_WEBHOOK_SECRET` | **Production** | Shared with Render |
 | `TASKMASTER_MASTERCLASS_REVIEW_WEBHOOK_URL` | **Production** | `…/masterclass-review` |

@@ -10,7 +10,9 @@ TSC form routes are thin proxies to Taskmaster webhooks. No Google Sheets, HolyS
 |----------|---------|
 | `TASKMASTER_WEBHOOK_URL` | Book-call webhook |
 | `TASKMASTER_ARTIST_ENQUIRY_WEBHOOK_URL` | Query/enquiry |
-| `TASKMASTER_ARTIST_PATH_WEBHOOK_URL` | Artist path |
+| `TASKMASTER_ARTIST_PATH_WEBHOOK_URL` | Artist path (CoreKnot legacy webhook) |
+| `TSC_API_URL` | Platform API — Postgres storage for CoreKnot admin |
+| `NEXT_PUBLIC_ARTIST_PATH_URL` | Program landing (`theartistpath.in`) |
 | `TASKMASTER_NEWSLETTER_WEBHOOK_URL` | Footer newsletter |
 | `TASKMASTER_MASTERCLASS_REVIEW_WEBHOOK_URL` | Review POST ingest |
 | `*_WEBHOOK_SECRET` | Same values as Render (5 secrets) |

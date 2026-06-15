@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
+import { ARTIST_PATH_FORM_PATH, ARTIST_PATH_LANDING_URL } from '@/lib/siteUrls';
 
 import { ArrowRight } from 'lucide-react';
 
@@ -58,7 +59,8 @@ export const Footer: React.FC<FooterProps> = ({ className }) => {
     {
       title: 'Artists',
       links: [
-        { label: 'Artist Path', href: '/artist-path' },
+        { label: 'Artist Path', href: ARTIST_PATH_LANDING_URL, external: true },
+        { label: 'Apply to Artist Path', href: ARTIST_PATH_FORM_PATH },
         { label: 'Main Bhi Artist', href: '#' },
         { label: 'Masterclasses', href: '/masterclass/sandesh-shandilya' },
         { label: 'Mentorship', href: '/tscacademy' },

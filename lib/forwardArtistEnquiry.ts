@@ -12,18 +12,25 @@ function resolveArtistEnquiryWebhookUrl(): string {
   return resolveWebhookUrl('TASKMASTER_ARTIST_ENQUIRY_WEBHOOK_URL', '/api/webhooks/artist-enquiry');
 }
 
-export async function forwardToTaskmasterEnquiry(data: Record<string, unknown>): Promise<void> {
+export async function forwardToTaskmasterEnquiry(
+  data: Record<string, unknown>
+): Promise<{ ok: boolean; status: number; body: unknown }> {
   const secret = process.env.ARTIST_ENQUIRY_WEBHOOK_SECRET;
+  if (process.env.NODE_ENV === 'production' && !secret) {
+    throw new Error('ARTIST_ENQUIRY_WEBHOOK_SECRET is required in production');
+  }
 
-  const { ok, status, body } = await postToTaskmaster({
+  const result = await postToTaskmaster({
     url: resolveArtistEnquiryWebhookUrl(),
     secret,
     payload: data,
   });
 
-  if (!ok) {
-    console.error('[artist-enquiry] Taskmaster forward non-OK', status, body);
+  if (!result.ok) {
+    console.error('[artist-enquiry] Taskmaster forward non-OK', result.status, result.body);
   }
+
+  return result;
 }
 
 /** @deprecated use forwardToTaskmasterEnquiry */

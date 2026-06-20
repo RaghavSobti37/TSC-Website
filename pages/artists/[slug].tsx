@@ -61,7 +61,7 @@ export default function ArtistDetailPage({ artist }: ArtistDetailPageProps) {
               </p>
               <p className="text-lg text-slate-medium mb-8 leading-relaxed">{artist.bioShort}</p>
               {artist.bookingEnabled && (
-                <Link href={`/contact?artist=${artist.slug}`}>
+                <Link href={`/query?artist=${encodeURIComponent(artist.name)}`}>
                   <Button variant="primary" size="lg">
                     Booking & Collaborations
                   </Button>

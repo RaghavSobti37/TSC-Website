@@ -31,9 +31,23 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       additionalVision: sanitizeField(data.additionalVision),
     };
 
-    await forwardToTaskmasterEnquiry(buildTaskmasterEnquiryPayload(sanitized));
+    const { ok, status, body } = await forwardToTaskmasterEnquiry(buildTaskmasterEnquiryPayload(sanitized));
 
-    return res.status(200).json({ success: true });
+    if (!ok) {
+      const err =
+        (body as { error?: string; details?: string })?.error ||
+        (body as { details?: string })?.details ||
+        `CRM sync failed (${status})`;
+      throw new Error(err);
+    }
+
+    const payload = body as { message?: string; taskId?: string; leadId?: string };
+    return res.status(status === 202 ? 200 : status).json({
+      success: true,
+      message: payload.message || 'Enquiry submitted',
+      taskId: payload.taskId,
+      leadId: payload.leadId,
+    });
   } catch (error: unknown) {
     const message = error instanceof Error ? error.message : 'Internal server error';
     console.error('[query] forward error:', message);

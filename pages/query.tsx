@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useForm } from 'react-hook-form';
@@ -35,6 +35,18 @@ type FormData = {
   additionalVision: string;
 };
 
+const ARTIST_OPTIONS = [
+  { value: 'Harshad and Duhita Golesar', match: [/harshad/i, /duhita/i] },
+  { value: 'YUGM', match: [/yugm/i] },
+] as const;
+
+function resolveArtistPrefill(raw: string | string[] | undefined): string {
+  const text = Array.isArray(raw) ? raw[0] : raw;
+  if (!text) return '';
+  const hit = ARTIST_OPTIONS.find((opt) => opt.match.some((re) => re.test(text)));
+  return hit?.value || text;
+}
+
 export default function ArtistQuery() {
   const router = useRouter();
   const [step, setStep] = useState(1);
@@ -42,7 +54,13 @@ export default function ArtistQuery() {
   const [isSuccess, setIsSuccess] = useState(false);
   const [errorMsg, setErrorMsg] = useState('');
 
-  const { register, handleSubmit, watch, formState: { errors } } = useForm<FormData>();
+  const { register, handleSubmit, watch, setValue, formState: { errors } } = useForm<FormData>();
+
+  useEffect(() => {
+    if (!router.isReady) return;
+    const artist = resolveArtistPrefill(router.query.artist);
+    if (artist) setValue('artist', artist);
+  }, [router.isReady, router.query.artist, setValue]);
 
   const onSubmit = async (data: FormData) => {
     setIsSubmitting(true);

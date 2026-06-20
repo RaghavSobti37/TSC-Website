@@ -162,7 +162,11 @@ export default function BookACall() {
       if (response.ok) {
         setIsSuccess(true);
       } else {
-        alert('Something went wrong. Please try again.');
+        const errBody = await response.json().catch(() => ({}));
+        const message =
+          (errBody as { error?: string })?.error ||
+          'Something went wrong. Please try again.';
+        alert(message);
       }
     } catch (error) {
       alert('Failed to book call. Check your connection.');

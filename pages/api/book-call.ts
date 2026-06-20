@@ -17,11 +17,13 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       throw new Error(err);
     }
 
-    const payload = body as { message?: string; leadId?: string };
+    const payload = body as { message?: string; leadId?: string; assignedRepId?: string; assignedRepName?: string };
     return res.status(status === 202 ? 200 : status).json({
       success: true,
       message: payload.message || 'Call booked successfully!',
       leadId: payload.leadId,
+      assignedRepId: payload.assignedRepId,
+      assignedRepName: payload.assignedRepName,
     });
   } catch (error: unknown) {
     const message = error instanceof Error ? error.message : 'Internal server error';

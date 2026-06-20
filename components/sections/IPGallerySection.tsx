@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Section from '@/components/layout/Section';
 import Container from '@/components/layout/Container';
+import { MAILTO } from '@/lib/contacts';
 
 import { ArrowRight } from 'lucide-react';
 
@@ -179,7 +180,7 @@ export default function IPGallerySection() {
           className="mt-14 sm:mt-16 text-center"
         >
           <a
-            href="mailto:hello@theshaktcollective.com"
+            href={MAILTO.general}
             className="inline-flex items-center gap-2 px-8 py-4 rounded-full border-2 border-black/10 text-black font-bold font-signika text-base hover:border-orange hover:text-orange transition-all duration-300"
           >
             Co-create with us <ArrowRight size={18} />

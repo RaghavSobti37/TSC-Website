@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Plus, ArrowRight } from 'lucide-react';
+import { MAILTO } from '@/lib/contacts';
 
 /**
  * FAQSection — Common questions about TSC
@@ -123,7 +124,7 @@ export default function FAQSection() {
         >
           <p className="text-black/40 font-alan-sans text-sm mb-4">Still have questions?</p>
           <a
-            href="mailto:hello@theshaktcollective.com"
+            href={MAILTO.general}
             className="inline-flex items-center gap-2 text-orange font-bold font-alan-sans hover:gap-3 transition-all"
           >
             Reach out to us <ArrowRight size={18} />

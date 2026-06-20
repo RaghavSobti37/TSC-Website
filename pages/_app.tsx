@@ -5,6 +5,8 @@ import Header from '@/components/layout/Header';
 import AcademyHeader from '@/components/layout/AcademyHeader';
 import { Footer } from '@/components/layout/Footer';
 import '@/src/index.css';
+import { CONTACT_EMAILS } from '@/lib/contacts';
+import { SITE_BASE_URL } from '@/lib/siteUrls';
 
 import { useRouter } from 'next/router';
 
@@ -20,6 +22,8 @@ export default function App({ Component, pageProps }: AppProps) {
   const isSuccess = router.query.success === 'true';
   const hideNavbar = isReviewPage;
   const hideFooter = (isArtistPath && !isSuccess) || isReviewPage;
+  const ogImage = `${SITE_BASE_URL}/assets/banner.jpg`;
+  const logoUrl = `${SITE_BASE_URL}/assets/logo.png`;
 
   return (
     <>
@@ -33,22 +37,22 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta name="description" content="A global ecosystem for emerging artists and brands to co-create cultural IP." />
         <meta property="og:title" content="The Shakti Collective" />
         <meta property="og:description" content="A global ecosystem for emerging artists and brands to co-create cultural IP." />
-        <meta property="og:image" content="https://theshakticollective.in/assets/banner.jpg" />
-        <meta property="og:url" content="https://theshakticollective.in" />
+        <meta property="og:image" content={ogImage} />
+        <meta property="og:url" content={SITE_BASE_URL} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="The Shakti Collective" />
         <meta name="twitter:description" content="A global ecosystem for emerging artists and brands to co-create cultural IP." />
-        <meta name="twitter:image" content="https://theshakticollective.in/assets/banner.jpg" />
+        <meta name="twitter:image" content={ogImage} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Organization",
-              "@id": "https://theshakticollective.in/#organization",
+              "@id": `${SITE_BASE_URL}/#organization`,
               "name": "The Shakti Collective",
-              "url": "https://theshakticollective.in",
-              "logo": "https://theshakticollective.in/assets/logo.png",
+              "url": SITE_BASE_URL,
+              "logo": logoUrl,
               "description": "A global ecosystem for emerging artists and brands to co-create cultural IP.",
               "sameAs": [
                 "https://www.linkedin.com/company/theshakticollective",
@@ -57,7 +61,7 @@ export default function App({ Component, pageProps }: AppProps) {
               "contactPoint": {
                 "@type": "ContactPoint",
                 "contactType": "customer support",
-                "email": "hello@theshakticollective.in"
+                "email": CONTACT_EMAILS.general
               }
             })
           }}

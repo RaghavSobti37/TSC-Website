@@ -1,16 +1,28 @@
 import crypto from 'crypto';
 
 const PRODUCTION_TASKMASTER_HOST = 'https://taskmaster-jfw0.onrender.com';
+const LOCAL_TASKMASTER_HOST = 'http://127.0.0.1:5000';
+
+export function resolveTaskmasterBaseUrl(): string {
+  const configured = (process.env.TASKMASTER_API_URL || process.env.TASKMASTER_BASE_URL || '').trim();
+  if (configured) return configured.replace(/\/$/, '');
+
+  if (process.env.NODE_ENV === 'production') {
+    throw new Error('Missing required env var in production: TASKMASTER_API_URL');
+  }
+
+  return LOCAL_TASKMASTER_HOST;
+}
 
 export function resolveWebhookUrl(envKey: string, defaultPath: string): string {
   const configured = (process.env[envKey] || '').trim();
   if (configured) return configured;
 
   if (process.env.NODE_ENV === 'production') {
-    throw new Error(`Missing required env var in production: ${envKey}`);
+    return `${resolveTaskmasterBaseUrl()}${defaultPath}`;
   }
 
-  return `http://127.0.0.1:5000${defaultPath}`;
+  return `${LOCAL_TASKMASTER_HOST}${defaultPath}`;
 }
 
 export function computeWebhookSignature(rawBody: string, secret: string): string {

@@ -164,22 +164,7 @@ export default function ArtistPath() {
     }
   };
 
-  const checkBypass = () => {
-    const fn = watch('firstName').trim().toLowerCase();
-    const ln = watch('lastName').trim().toLowerCase();
-
-    if (fn === 'bypass' && ln === 'raghav') {
-      setRecommendedCourse(courses[0]);
-      setIsSuccess(true);
-      // Signal _app.tsx to show footer
-      router.push({ query: { ...router.query, success: 'true' } }, undefined, { shallow: true });
-      return true;
-    }
-    return false;
-  };
-
   const handleNext = () => {
-    if (step === 1 && checkBypass()) return;
     nextStep();
   };
 
@@ -248,8 +233,6 @@ export default function ArtistPath() {
       </div>
     );
   }
-
-  const isBypass = watch('firstName').trim().toLowerCase() === 'bypass' && watch('lastName').trim().toLowerCase() === 'raghav';
 
   return (
     <div className="min-h-screen bg-cream font-alan-sans selection:bg-pumpkin/30 pb-20 overflow-x-hidden">
@@ -336,7 +319,7 @@ export default function ArtistPath() {
                     <MapPin className="w-3.5 h-3.5" /> Where are you based? *
                   </label>
                   <input
-                    {...register('place', { required: !isBypass ? 'Location is required' : false })}
+                    {...register('place', { required: 'Location is required' })}
                     className="w-full bg-white border-none rounded-2xl py-4 px-5 text-lg font-medium shadow-sm focus:ring-4 focus:ring-pumpkin/20 transition-all"
                     placeholder="City / Home base"
                   />
@@ -347,7 +330,7 @@ export default function ArtistPath() {
                     <Phone className="w-3.5 h-3.5" /> Mobile Number *
                   </label>
                   <input
-                    {...register('mobile', { required: !isBypass ? 'Mobile number is required' : false })}
+                    {...register('mobile', { required: 'Mobile number is required' })}
                     className="w-full bg-white border-none rounded-2xl py-4 px-5 text-lg font-medium shadow-sm focus:ring-4 focus:ring-pumpkin/20 transition-all"
                     placeholder="+91..."
                   />
@@ -359,8 +342,8 @@ export default function ArtistPath() {
                   </label>
                   <input
                     {...register('email', {
-                      required: !isBypass ? 'Email is required' : false,
-                      pattern: !isBypass ? { value: /^\S+@\S+$/i, message: 'Invalid email' } : undefined
+                      required: 'Email is required',
+                      pattern: { value: /^\S+@\S+$/i, message: 'Invalid email' }
                     })}
                     className="w-full bg-white border-none rounded-2xl py-4 px-5 text-lg font-medium shadow-sm focus:ring-4 focus:ring-pumpkin/20 transition-all"
                     placeholder="john@example.com"
@@ -370,10 +353,10 @@ export default function ArtistPath() {
 
               <button
                 onClick={handleNext}
-                disabled={!watch('firstName') || !watch('lastName') || (!isBypass && (!watch('place') || !watch('mobile') || !watch('email')))}
+                disabled={!watch('firstName') || !watch('lastName') || !watch('place') || !watch('mobile') || !watch('email')}
                 className="w-full bg-charcoal text-white py-5 rounded-2xl font-bold text-xl flex items-center justify-center gap-3 hover:bg-pumpkin transition-all shadow-xl disabled:opacity-50"
               >
-                {isSubmitting ? 'Bypassing...' : 'Continue'} <ArrowRight className="w-6 h-6" />
+                Continue <ArrowRight className="w-6 h-6" />
               </button>
             </motion.div>
           )}

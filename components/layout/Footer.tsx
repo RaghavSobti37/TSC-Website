@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
 import { ARTIST_PATH_FORM_PATH, ARTIST_PATH_LANDING_URL } from '@/lib/siteUrls';
+import { MAILTO } from '@/lib/contacts';
 
 import { ArrowRight } from 'lucide-react';
 
@@ -70,7 +71,7 @@ export const Footer: React.FC<FooterProps> = ({ className }) => {
       title: 'Connect',
       links: [
         { label: 'Book a Call', href: '/book-a-call' },
-        { label: 'Partner With Us', href: 'mailto:hello@theshaktcollective.com' },
+        { label: 'Partner With Us', href: MAILTO.general },
         { label: 'Instagram', href: 'https://www.instagram.com/the_shakti_collective', external: true },
         { label: 'LinkedIn', href: 'https://www.linkedin.com/in/rohitsobti/', external: true },
         { label: 'Privacy Policy', href: '#' },

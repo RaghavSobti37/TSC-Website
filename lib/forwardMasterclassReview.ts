@@ -1,4 +1,4 @@
-import { buildMasterclassReviewPayload, forwardToTaskmaster, resolveWebhookUrl } from './taskmasterWebhook';
+import { buildMasterclassReviewPayload, forwardToTaskmaster, resolveTaskmasterBaseUrl, resolveWebhookUrl } from './taskmasterWebhook';
 
 const DEFAULT_PUBLIC_REVIEWS_PATH = '/api/public/masterclass-reviews';
 
@@ -18,11 +18,7 @@ export function resolvePublicReviewsUrl(campaign: 'review01' | 'review02'): stri
     return `${taskmasterBase.replace(/\/$/, '')}${DEFAULT_PUBLIC_REVIEWS_PATH}?campaign=${campaign}`;
   }
 
-  if (process.env.NODE_ENV === 'production') {
-    return `https://taskmaster-jfw0.onrender.com${DEFAULT_PUBLIC_REVIEWS_PATH}?campaign=${campaign}`;
-  }
-
-  return `http://127.0.0.1:5000${DEFAULT_PUBLIC_REVIEWS_PATH}?campaign=${campaign}`;
+  return `${resolveTaskmasterBaseUrl()}${DEFAULT_PUBLIC_REVIEWS_PATH}?campaign=${campaign}`;
 }
 
 export async function forwardMasterclassReview(

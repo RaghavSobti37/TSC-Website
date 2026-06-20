@@ -8,3 +8,6 @@ export const ARTIST_PATH_FORM_PATH = '/artist-path';
 export const ARTIST_PATH_FORM_URL = `${
   (process.env.NEXT_PUBLIC_SITE_URL || 'https://theshakticollective.in').replace(/\/$/, '')
 }${ARTIST_PATH_FORM_PATH}`;
+
+export const SITE_BASE_URL =
+  (process.env.NEXT_PUBLIC_SITE_URL || 'https://theshakticollective.in').replace(/\/$/, '');

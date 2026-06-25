@@ -13,17 +13,15 @@ import { useRouter } from 'next/router';
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
   const isReviewPage = router.pathname === '/classicalreview' || router.pathname === '/masterclass-review01' || router.pathname === '/masterclass-review02';
-  const isWixStandalone =
-    router.pathname === '/harshadduhita' || router.pathname === '/harshad-duhita';
-
+  
   const isAcademyPage = router.pathname.startsWith('/tscacademy') || 
                         router.pathname.startsWith('/masterclass/') || 
                         router.pathname.startsWith('/courses/');
 
   const isArtistPath = router.pathname === '/artist-path' || router.pathname === '/query';
   const isSuccess = router.query.success === 'true';
-  const hideNavbar = isReviewPage || isWixStandalone;
-  const hideFooter = (isArtistPath && !isSuccess) || isReviewPage || isWixStandalone;
+  const hideNavbar = isReviewPage;
+  const hideFooter = (isArtistPath && !isSuccess) || isReviewPage;
   const ogImage = `${SITE_BASE_URL}/assets/banner.jpg`;
   const logoUrl = `${SITE_BASE_URL}/assets/logo.png`;
 
@@ -70,7 +68,7 @@ export default function App({ Component, pageProps }: AppProps) {
         />
       </Head>
 
-      <div className={`min-h-screen flex flex-col ${isReviewPage ? 'bg-[#050505]' : isWixStandalone ? '' : 'bg-cream'}`}>
+      <div className={`min-h-screen flex flex-col ${isReviewPage ? 'bg-[#050505]' : 'bg-cream'}`}>
         {!hideNavbar && (
           isAcademyPage ? <AcademyHeader /> : <Header />
         )}

@@ -13,7 +13,7 @@ export default function AcademyHero() {
           alt="TSC Academy"
           className="w-full h-full object-cover opacity-50"
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-[#1e3a8a]/50 via-[#172554]/70 to-pumpkin/50 z-10" />
+        <div className="absolute inset-0 bg-gradient-to-br from-charcoal/60 via-wine/40 to-mustard/30 z-10" />
         
         {/* Animated Orb */}
         <motion.div
@@ -26,7 +26,7 @@ export default function AcademyHero() {
             repeat: Infinity,
             ease: "easeInOut"
           }}
-          className="absolute -left-48 top-1/4 w-[600px] h-[600px] rounded-full bg-radial-gradient from-[#1e3a8a]/60 via-pumpkin/40 to-transparent blur-[80px] z-20"
+          className="absolute -left-48 top-1/4 w-[600px] h-[600px] rounded-full bg-radial-gradient from-wine/40 via-mustard/30 to-transparent blur-[80px] z-20"
         />
       </div>
 
@@ -48,21 +48,21 @@ export default function AcademyHero() {
             className="text-5xl md:text-7xl lg:text-8xl font-bold text-cream mb-8 font-signika leading-[1.1] tracking-tight"
           >
             Unfolding <br />
-            <span className="text-pumpkin">Artist Force</span>
+            <span className="text-mustard">Artist Force</span>
           </motion.h1>
 
           <motion.div
             initial={{ opacity: 0, scaleX: 0 }}
             animate={{ opacity: 1, scaleX: 1 }}
             transition={{ duration: 1, delay: 0.5 }}
-            className="w-20 h-0.5 bg-gradient-to-r from-[#1e3a8a] to-pumpkin mb-8 origin-left"
+            className="w-20 h-0.5 bg-gradient-to-r from-wine to-mustard mb-8 origin-left"
           />
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-lg md:text-xl text-cream/85 mb-12 font-alan-sans leading-relaxed max-w-xl"
+            className="text-xl md:text-2xl text-cream/90 mb-12 font-alan-sans leading-relaxed max-w-xl"
           >
             We help artists who aspire to go professional attain their maximum
             potential by providing right learning, guidance, incubation & acceleration.

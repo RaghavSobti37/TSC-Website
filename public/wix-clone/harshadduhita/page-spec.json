@@ -1,0 +1,241 @@
+{
+  "source": "https://meghanabhawalkarwo.wixstudio.com/my-site/blank-10",
+  "theme": {
+    "cream": "#ffecd1",
+    "orangeDark": "#b74b02",
+    "tealDark": "#083d3a",
+    "teal": "#126d5e",
+    "orange": "#ad6517"
+  },
+  "nav": [
+    {
+      "href": "https://meghanabhawalkarwo.wixstudio.com/my-site/blank",
+      "label": "About"
+    },
+    {
+      "href": "https://meghanabhawalkarwo.wixstudio.com/my-site/blank-1",
+      "label": "Work"
+    },
+    {
+      "href": "https://meghanabhawalkarwo.wixstudio.com/my-site/blank-2",
+      "label": "Artists"
+    },
+    {
+      "href": "https://meghanabhawalkarwo.wixstudio.com/my-site/blank-5",
+      "label": "Resources"
+    },
+    {
+      "href": "https://meghanabhawalkarwo.wixstudio.com/my-site/blank-3",
+      "label": "TSC Academy"
+    },
+    {
+      "href": "https://meghanabhawalkarwo.wixstudio.com/my-site/blank-11",
+      "label": "Stories"
+    }
+  ],
+  "sectionIds": [
+    "comp-mq6h99jp",
+    "comp-mqffd5wc",
+    "comp-mq7lr7m2",
+    "comp-mq6ig1tw",
+    "comp-mq7r4iw7",
+    "comp-mq7z6hk6",
+    "comp-mq84m6ve",
+    "comp-mqgaclmh"
+  ],
+  "sections": [
+    {
+      "id": "comp-mq6h99jp",
+      "headings": [
+        "Harshaduhita Collective"
+      ],
+      "paragraphs": [
+        "Harshaduhita CollectiveA live music duo blending deep-rooted Indian classical music with divine emotion and diverse musical expression.",
+        "Winner - PADMA SHRI MAHENDRA KAPOOR AWARD 2026"
+      ],
+      "images": [
+        "19f989_91292b68cbaa497d93970b52b24b324a~mv2.png",
+        "19f989_8e2dc7ce6bf94b5eb40e97c752240903~mv2.jpg"
+      ],
+      "buttons": [],
+      "links": [
+        {
+          "href": "https://meghanabhawalkarwo.wixstudio.com/my-site/blank-10",
+          "context": "Explore Music"
+        }
+      ]
+    },
+    {
+      "id": "comp-mqffd5wc",
+      "headings": [
+        "Harshaduhita Collective"
+      ],
+      "paragraphs": [
+        "Harshaduhita CollectiveA live music duo blending deep-rooted Indian classical music with divine emotion and diverse musical expression.",
+        "Winner - PADMA SHRI MAHENDRA KAPOOR AWARD 2026"
+      ],
+      "images": [
+        "19f989_91292b68cbaa497d93970b52b24b324a~mv2.png",
+        "19f989_8165221835804ff1a6eb3e12ce3b8b66~mv2.jpg"
+      ],
+      "buttons": [],
+      "links": [
+        {
+          "href": "https://meghanabhawalkarwo.wixstudio.com/my-site/blank-10",
+          "context": "Explore Music"
+        }
+      ]
+    },
+    {
+      "id": "comp-mq7lr7m2",
+      "headings": [
+        "Who Are We?"
+      ],
+      "paragraphs": [
+        "Deep Rooted &bull; Divine &bull; Diverse",
+        "Rooted in the traditions of the Rampur and Jaipur Gharanas, Harshad and Duhita bring together bhajans, sufi, folk, ghazals, and contemporary live arrangements into one emotionally powerful performance experience.",
+        "Duhita Golesar",
+        "Raised in a family steeped in classical recordings, she is a University of Mumbai Gold Medalist, trained in the Jaipur Gharana, and a successful playback singer for films like Navra Maza Navsacha 2.",
+        "Harshad Golesar",
+        "Hailing from a 12th-generation temple lineage, he is a Sangeet Visharad trained in the Rampur Gharana and a MiMa award-winning composer.",
+        "Together, they create a sound that feels deeply rooted yet contemporary."
+      ],
+      "images": [],
+      "buttons": [],
+      "links": []
+    },
+    {
+      "id": "comp-mq6ig1tw",
+      "headings": [
+        "Achievements & Milestones"
+      ],
+      "paragraphs": [
+        "2024",
+        "India's Got Talent",
+        "Season 11 Semi-finalists on Sony TV's global reality franchise, bringing Indian classical music to mainstream audiences.",
+        "2026",
+        "Padma Shri Mahendra Kapoor Award",
+        "Awarded for outstanding contributions to contemporary Indian music.",
+        "2024",
+        "Single : Gananayaka",
+        "MiMa award-winning devotional anthem that became a viral Ganpati release across digital platforms."
+      ],
+      "images": [
+        "19f989_6df63c1f380d441cb790c0c556cdbc81~mv2.png",
+        "19f989_176f463854774f7ea1399dc7082fe0f4~mv2.png",
+        "19f989_26dcc12fb2e742dda1019d93b4d91f8d~mv2.jpg",
+        "19f989_186d6228a0e24d50843636a776a3938d~mv2.jpg",
+        "19f989_28835a7a334d45e78f665de9922c1bfd~mv2.jpg"
+      ],
+      "buttons": [],
+      "links": []
+    },
+    {
+      "id": "comp-mq7r4iw7",
+      "headings": [
+        "Emotionally Immersive Performances"
+      ],
+      "paragraphs": [
+        "THE LIVE SPECTACLE",
+        "From intimate baithaks to large-format cultural stages, Harshaduhita Collective creates emotionally immersive live performances rooted in Indian musical traditions.",
+        "SUFI MUSIC",
+        "SEMI CLASSICAL",
+        "MARATHI MUSICALS",
+        "GHAZALS",
+        "ORIGINAL COMPOSITIONS",
+        "Contemporary Fusion Sets",
+        "BHAJANS",
+        "INDIAN FOLK MUSIC",
+        "Devotional ConcertS",
+        "BOLLYWOOD CLASSICS"
+      ],
+      "images": [],
+      "buttons": [],
+      "links": []
+    },
+    {
+      "id": "comp-mq7z6hk6",
+      "headings": [
+        "Discography"
+      ],
+      "paragraphs": [
+        "DiscographyFeatured tracks",
+        "Gananayaka",
+        "Devotional / Original Composition",
+        "Murchana",
+        "Original Composition",
+        "IGT Highlights",
+        "India&#39;s Got Talent Season 11"
+      ],
+      "images": [
+        "19f989_4ebf43b465d741318c26ae1de2950282~mv2.png",
+        "19f989_6ef61fd6e880415987cc78ff72cd8300~mv2.png",
+        "19f989_77906b25ff9d48248ebf5a39c4f8f12b~mv2.jpg",
+        "19f989_186d6228a0e24d50843636a776a3938d~mv2.jpg",
+        "19f989_6592546481f648a68d7dde078ace15ea~mv2.png"
+      ],
+      "buttons": [],
+      "links": [
+        {
+          "href": "https://open.spotify.com/track/1utLt90yMwsYKYGAFqWOB5?si=6832f0a99fef4270&amp;nd=1&amp;dlsi=b4329b47b49f43d9",
+          "context": "Harshad"
+        }
+      ]
+    },
+    {
+      "id": "comp-mq84m6ve",
+      "headings": [],
+      "paragraphs": [
+        "Harshaduhita Collective\r\n\n    \n        \n    \n\nCONNECT",
+        "Digital Presence"
+      ],
+      "images": [
+        "19f989_aa253abda5504ab6bd9aec467737fd29~mv2.png"
+      ],
+      "buttons": [],
+      "links": [
+        {
+          "href": "https://www.instagram.com/harshad_golesar/",
+          "context": "Harshad"
+        },
+        {
+          "href": "https://www.instagram.com/harshaduhita_collective/",
+          "context": "Harshad"
+        },
+        {
+          "href": "https://www.instagram.com/duhita_harshad/",
+          "context": "Duhita"
+        },
+        {
+          "href": "https://open.spotify.com/artist/6L88xirodmbWYoZuvseUnc",
+          "context": "Spotify"
+        }
+      ]
+    },
+    {
+      "id": "comp-mqgaclmh",
+      "headings": [
+        "Perfect For"
+      ],
+      "paragraphs": [
+        "Corporate & Leadership Events"
+      ],
+      "images": [
+        "19f989_5725323963cd4a0580a3fd807f58cb35~mv2.jpg"
+      ],
+      "buttons": [],
+      "links": []
+    }
+  ],
+  "animSnippets": [
+    "transition:opacity .5s,visibility .5s}[data-mesh-id$=inlineContent-gridContainer]:has(>[id^",
+    "transition:opacity var(--transition-duration)cubic-bezier(.37,0,.63,1)}.HTrn1j{opacity:1}.s",
+    "transition:opacity var(--transition-duration)cubic-bezier(.37,0,.63,1)}.cCFKrw{opacity:0}.y",
+    "transition:opacity var(--transition-duration)cubic-bezier(.64,0,.78,0)}._mj5qU{opacity:1}.g",
+    "transition:opacity var(--transition-duration)cubic-bezier(.22,1,.36,1)}.k0CnHT{transform:tr",
+    "transition:transform var(--transition-duration)cubic-bezier(.87,0,.13,1)",
+    "transition:transform var(--transition-duration)cubic-bezier(.87,0,.13,1)",
+    "transition:transform var(--transition-duration)cubic-bezier(.87,0,.13,1)"
+  ],
+  "extractedAt": "2026-06-25T07:59:43.297Z"
+}

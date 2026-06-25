@@ -1,0 +1,181 @@
+{
+  "id": "comp-mq7z6hk6",
+  "label": "Discography",
+  "headings": [
+    "Discography"
+  ],
+  "paragraphs": [
+    "DiscographyFeatured tracks",
+    "Gananayaka",
+    "Devotional / Original Composition",
+    "Murchana",
+    "Original Composition",
+    "IGT Highlights",
+    "India's Got Talent Season 11"
+  ],
+  "imageUris": [
+    "19f989_4ebf43b465d741318c26ae1de2950282~mv2.png",
+    "19f989_6ef61fd6e880415987cc78ff72cd8300~mv2.png",
+    "19f989_77906b25ff9d48248ebf5a39c4f8f12b~mv2.jpg",
+    "19f989_186d6228a0e24d50843636a776a3938d~mv2.jpg",
+    "19f989_6592546481f648a68d7dde078ace15ea~mv2.png"
+  ],
+  "buttons": [],
+  "links": [],
+  "animations": [
+    {
+      "id": "BG_LAYER-comp-mq7z6hk6",
+      "sectionId": "comp-mq7z6hk6",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "BG_MEDIA-comp-mq7z6hk6",
+      "sectionId": "comp-mq7z6hk6",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "BG_LAYER-comp-mq835zjp",
+      "sectionId": "comp-mq7z6hk6",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "BG_MEDIA-comp-mq835zjp",
+      "sectionId": "comp-mq7z6hk6",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "BG_IMG-comp-mq835zjp",
+      "sectionId": "comp-mq7z6hk6",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "BG_LAYER-comp-mq833dkx",
+      "sectionId": "comp-mq7z6hk6",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "BG_MEDIA-comp-mq833dkx",
+      "sectionId": "comp-mq7z6hk6",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "BG_IMG-comp-mq833dkx",
+      "sectionId": "comp-mq7z6hk6",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "BG_LAYER-comp-mq7z6hlt3__item1",
+      "sectionId": "comp-mq7z6hk6",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "BG_MEDIA-comp-mq7z6hlt3__item1",
+      "sectionId": "comp-mq7z6hk6",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "BG_IMG-comp-mq7z6hlt3__item1",
+      "sectionId": "comp-mq7z6hk6",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "BG_LAYER-comp-mq7z6hlt3__item-j9ples3e",
+      "sectionId": "comp-mq7z6hk6",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "BG_MEDIA-comp-mq7z6hlt3__item-j9ples3e",
+      "sectionId": "comp-mq7z6hk6",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "BG_IMG-comp-mq7z6hlt3__item-j9ples3e",
+      "sectionId": "comp-mq7z6hk6",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "BG_LAYER-comp-mq7z6hlt3__item-j9plerjk",
+      "sectionId": "comp-mq7z6hk6",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "BG_MEDIA-comp-mq7z6hlt3__item-j9plerjk",
+      "sectionId": "comp-mq7z6hk6",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "BG_IMG-comp-mq7z6hlt3__item-j9plerjk",
+      "sectionId": "comp-mq7z6hk6",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "comp-mq835zjp--parallax",
+      "sectionId": "comp-mq7z6hk6",
+      "preset": "parallax",
+      "parallaxSpeed": 1.5,
+      "source": "parallaxSpeed"
+    },
+    {
+      "id": "comp-mq833dkx--parallax",
+      "sectionId": "comp-mq7z6hk6",
+      "preset": "parallax",
+      "parallaxSpeed": 1.5,
+      "source": "parallaxSpeed"
+    },
+    {
+      "id": "comp-mq7z6hlt3__item1--parallax",
+      "sectionId": "comp-mq7z6hk6",
+      "preset": "parallax",
+      "parallaxSpeed": 1.5,
+      "source": "parallaxSpeed"
+    },
+    {
+      "id": "comp-mq7z6hlt3__item-j9ples3e--parallax",
+      "sectionId": "comp-mq7z6hk6",
+      "preset": "parallax",
+      "parallaxSpeed": 1.5,
+      "source": "parallaxSpeed"
+    },
+    {
+      "id": "comp-mq7z6hlt3__item-j9plerjk--parallax",
+      "sectionId": "comp-mq7z6hk6",
+      "preset": "parallax",
+      "parallaxSpeed": 1.5,
+      "source": "parallaxSpeed"
+    }
+  ]
+}

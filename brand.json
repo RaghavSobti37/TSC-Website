@@ -1,0 +1,33 @@
+{
+  "url": "https://meghanabhawalkarwo.wixstudio.com/my-site",
+  "fonts": {
+    "body": { "family": "Alata", "stack": "'Alata', sans-serif", "delivery": "google" },
+    "heading": { "family": "Signika", "stack": "'Signika', sans-serif", "delivery": "google" },
+    "headingSizes": {
+      "xxl": { "desktop": "56px" },
+      "xl": { "desktop": "42px" },
+      "lg": { "desktop": "30px" }
+    }
+  },
+  "colors": {
+    "background": "#FFFFFF",
+    "backgroundDark": "#000000",
+    "text": "#1A1A1A",
+    "textLight": "#FFFFFF",
+    "link": "#A54B2B",
+    "linkHover": "#B3542B",
+    "accent": "#FF8C00",
+    "accentDark": "#B74B02",
+    "terracotta": "#A54B2B",
+    "terracottaLight": "#B3542B"
+  },
+  "spacing": {
+    "sectionPadding": "5rem",
+    "contentMaxWidth": "1200px",
+    "navHeight": "72px"
+  },
+  "patterns": {
+    "terracotta": "#A54B2B",
+    "cursorUnit": "/patterns/units/pattern5-cursor.svg"
+  }
+}

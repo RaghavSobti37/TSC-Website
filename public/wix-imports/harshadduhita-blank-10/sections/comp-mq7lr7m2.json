@@ -1,0 +1,65 @@
+{
+  "id": "comp-mq7lr7m2",
+  "label": "Who Are We?",
+  "headings": [
+    "Who Are We?"
+  ],
+  "paragraphs": [
+    "Deep Rooted • Divine • Diverse",
+    "Rooted in the traditions of the Rampur and Jaipur Gharanas, Harshad and Duhita bring together bhajans, sufi, folk, ghazals, and contemporary live arrangements into one emotionally powerful performance experience.",
+    "Duhita Golesar",
+    "Raised in a family steeped in classical recordings, she is a University of Mumbai Gold Medalist, trained in the Jaipur Gharana, and a successful playback singer for films like Navra Maza Navsacha 2.",
+    "Harshad Golesar",
+    "Hailing from a 12th-generation temple lineage, he is a Sangeet Visharad trained in the Rampur Gharana and a MiMa award-winning composer.",
+    "Together, they create a sound that feels deeply rooted yet contemporary."
+  ],
+  "imageUris": [
+    "19f989_650aa41c4dc24f20b1ccc46a346506cd~mv2.jpg"
+  ],
+  "buttons": [],
+  "links": [],
+  "animations": [
+    {
+      "id": "BG_LAYER-comp-mq7lr7m2",
+      "sectionId": "comp-mq7lr7m2",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "BG_MEDIA-comp-mq7lr7m2",
+      "sectionId": "comp-mq7lr7m2",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "BG_LAYER-comp-mq7lr7n43",
+      "sectionId": "comp-mq7lr7m2",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "BG_MEDIA-comp-mq7lr7n43",
+      "sectionId": "comp-mq7lr7m2",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "BG_IMG-comp-mq7lr7n43",
+      "sectionId": "comp-mq7lr7m2",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "comp-mq7lr7n43--parallax",
+      "sectionId": "comp-mq7lr7m2",
+      "preset": "parallax",
+      "parallaxSpeed": 1.5,
+      "source": "parallaxSpeed"
+    }
+  ]
+}

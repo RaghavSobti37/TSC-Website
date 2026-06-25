@@ -1,0 +1,40 @@
+{
+  "id": "comp-mq7r4iw7",
+  "label": "Emotionally Immersive Performances",
+  "headings": [
+    "Emotionally Immersive Performances"
+  ],
+  "paragraphs": [
+    "THE LIVE SPECTACLE",
+    "From intimate baithaks to large-format cultural stages, Harshaduhita Collective creates emotionally immersive live performances rooted in Indian musical traditions.",
+    "SUFI MUSIC",
+    "SEMI CLASSICAL",
+    "MARATHI MUSICALS",
+    "GHAZALS",
+    "ORIGINAL COMPOSITIONS",
+    "Contemporary Fusion Sets",
+    "BHAJANS",
+    "INDIAN FOLK MUSIC",
+    "Devotional ConcertS",
+    "BOLLYWOOD CLASSICS"
+  ],
+  "imageUris": [],
+  "buttons": [],
+  "links": [],
+  "animations": [
+    {
+      "id": "BG_LAYER-comp-mq7r4iw7",
+      "sectionId": "comp-mq7r4iw7",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "BG_MEDIA-comp-mq7r4iw7",
+      "sectionId": "comp-mq7r4iw7",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    }
+  ]
+}

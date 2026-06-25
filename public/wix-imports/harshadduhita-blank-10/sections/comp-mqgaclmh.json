@@ -1,0 +1,38 @@
+{
+  "id": "comp-mqgaclmh",
+  "label": "Perfect For",
+  "headings": [
+    "Perfect For"
+  ],
+  "paragraphs": [
+    "Corporate & Leadership Events"
+  ],
+  "imageUris": [
+    "19f989_5725323963cd4a0580a3fd807f58cb35~mv2.jpg"
+  ],
+  "buttons": [],
+  "links": [],
+  "animations": [
+    {
+      "id": "BG_LAYER-comp-mqgaclmh",
+      "sectionId": "comp-mqgaclmh",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "BG_MEDIA-comp-mqgaclmh",
+      "sectionId": "comp-mqgaclmh",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "BG_IMG-comp-mqgaclmh",
+      "sectionId": "comp-mqgaclmh",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    }
+  ]
+}

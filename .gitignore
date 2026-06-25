@@ -12,3 +12,7 @@ vercel_production_guidelines.md
 /Harshaduhita EPK.pdf
 /heroHND.jpeg
 .vercel
+archive/
+.agents/
+skills-lock.json
+.cursor/git-promotion.json

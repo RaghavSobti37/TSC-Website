@@ -1,0 +1,73 @@
+{
+  "id": "comp-mqffd5wc",
+  "label": "Harshaduhita Collective",
+  "headings": [
+    "Harshaduhita Collective"
+  ],
+  "paragraphs": [
+    "Harshaduhita CollectiveA live music duo blending deep-rooted Indian classical music with divine emotion and diverse musical expression.",
+    "Winner - PADMA SHRI MAHENDRA KAPOOR AWARD 2026"
+  ],
+  "imageUris": [
+    "19f989_91292b68cbaa497d93970b52b24b324a~mv2.png",
+    "19f989_8165221835804ff1a6eb3e12ce3b8b66~mv2.jpg"
+  ],
+  "buttons": [],
+  "links": [
+    {
+      "href": "https://meghanabhawalkarwo.wixstudio.com/my-site/blank-10",
+      "label": "Book for Events"
+    }
+  ],
+  "animations": [
+    {
+      "id": "BG_LAYER-comp-mqffd5wc",
+      "sectionId": "comp-mqffd5wc",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "BG_MEDIA-comp-mqffd5wc",
+      "sectionId": "comp-mqffd5wc",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "BG_IMG-comp-mqffd5wc",
+      "sectionId": "comp-mqffd5wc",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "BG_LAYER-comp-mqfgozm3",
+      "sectionId": "comp-mqffd5wc",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "BG_MEDIA-comp-mqfgozm3",
+      "sectionId": "comp-mqffd5wc",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "BG_IMG-comp-mqfgozm3",
+      "sectionId": "comp-mqffd5wc",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "comp-mqfgozm3--parallax",
+      "sectionId": "comp-mqffd5wc",
+      "preset": "parallax",
+      "parallaxSpeed": 1.5,
+      "source": "parallaxSpeed"
+    }
+  ]
+}

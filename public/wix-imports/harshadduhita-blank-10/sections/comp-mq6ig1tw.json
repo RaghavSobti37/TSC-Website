@@ -1,0 +1,183 @@
+{
+  "id": "comp-mq6ig1tw",
+  "label": "Achievements & Milestones",
+  "headings": [
+    "Achievements & Milestones"
+  ],
+  "paragraphs": [
+    "2024",
+    "India's Got Talent",
+    "Season 11 Semi-finalists on Sony TV's global reality franchise, bringing Indian classical music to mainstream audiences.",
+    "2026",
+    "Padma Shri Mahendra Kapoor Award",
+    "Awarded for outstanding contributions to contemporary Indian music.",
+    "2024",
+    "Single : Gananayaka",
+    "MiMa award-winning devotional anthem that became a viral Ganpati release across digital platforms."
+  ],
+  "imageUris": [
+    "19f989_6df63c1f380d441cb790c0c556cdbc81~mv2.png",
+    "19f989_176f463854774f7ea1399dc7082fe0f4~mv2.png",
+    "19f989_26dcc12fb2e742dda1019d93b4d91f8d~mv2.jpg",
+    "19f989_186d6228a0e24d50843636a776a3938d~mv2.jpg",
+    "19f989_28835a7a334d45e78f665de9922c1bfd~mv2.jpg"
+  ],
+  "buttons": [],
+  "links": [],
+  "animations": [
+    {
+      "id": "BG_LAYER-comp-mq6ig1tw",
+      "sectionId": "comp-mq6ig1tw",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "BG_MEDIA-comp-mq6ig1tw",
+      "sectionId": "comp-mq6ig1tw",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "BG_LAYER-comp-mq9cuzxm",
+      "sectionId": "comp-mq6ig1tw",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "BG_MEDIA-comp-mq9cuzxm",
+      "sectionId": "comp-mq6ig1tw",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "BG_IMG-comp-mq9cuzxm",
+      "sectionId": "comp-mq6ig1tw",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "BG_LAYER-comp-mq9cl9si",
+      "sectionId": "comp-mq6ig1tw",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "BG_MEDIA-comp-mq9cl9si",
+      "sectionId": "comp-mq6ig1tw",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "BG_IMG-comp-mq9cl9si",
+      "sectionId": "comp-mq6ig1tw",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "BG_LAYER-comp-mq99dj2j",
+      "sectionId": "comp-mq6ig1tw",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "BG_MEDIA-comp-mq99dj2j",
+      "sectionId": "comp-mq6ig1tw",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "BG_IMG-comp-mq99dj2j",
+      "sectionId": "comp-mq6ig1tw",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "BG_LAYER-comp-mq9ans6o",
+      "sectionId": "comp-mq6ig1tw",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "BG_MEDIA-comp-mq9ans6o",
+      "sectionId": "comp-mq6ig1tw",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "BG_IMG-comp-mq9ans6o",
+      "sectionId": "comp-mq6ig1tw",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "BG_LAYER-comp-mq9anx8b",
+      "sectionId": "comp-mq6ig1tw",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "BG_MEDIA-comp-mq9anx8b",
+      "sectionId": "comp-mq6ig1tw",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "BG_IMG-comp-mq9anx8b",
+      "sectionId": "comp-mq6ig1tw",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "comp-mq9cuzxm--parallax",
+      "sectionId": "comp-mq6ig1tw",
+      "preset": "parallax",
+      "parallaxSpeed": 1.5,
+      "source": "parallaxSpeed"
+    },
+    {
+      "id": "comp-mq9cl9si--parallax",
+      "sectionId": "comp-mq6ig1tw",
+      "preset": "parallax",
+      "parallaxSpeed": 1.5,
+      "source": "parallaxSpeed"
+    },
+    {
+      "id": "comp-mq99dj2j--parallax",
+      "sectionId": "comp-mq6ig1tw",
+      "preset": "parallax",
+      "parallaxSpeed": 1.5,
+      "source": "parallaxSpeed"
+    },
+    {
+      "id": "comp-mq9ans6o--parallax",
+      "sectionId": "comp-mq6ig1tw",
+      "preset": "parallax",
+      "parallaxSpeed": 1.5,
+      "source": "parallaxSpeed"
+    },
+    {
+      "id": "comp-mq9anx8b--parallax",
+      "sectionId": "comp-mq6ig1tw",
+      "preset": "parallax",
+      "parallaxSpeed": 1.5,
+      "source": "parallaxSpeed"
+    }
+  ]
+}

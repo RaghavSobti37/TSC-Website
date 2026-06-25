@@ -1,0 +1,628 @@
+{
+  "slug": "harshadduhita-blank-10",
+  "sourceHtml": "C:\\Users\\ragha\\OneDrive\\Desktop\\TSC Platform\\Harshaduhita_TSC_HTML (1)\\Harshad Duhita _ TSC_files\\Harshad Duhita _ TSC.html",
+  "extractedAt": "2026-06-25T10:38:50.918Z",
+  "theme": {
+    "cream": "#ffecd1",
+    "orangeDark": "#b74b02",
+    "tealDark": "#083d3a",
+    "teal": "#126d5e",
+    "orange": "#ad6517"
+  },
+  "nav": [
+    {
+      "href": "https://meghanabhawalkarwo.wixstudio.com/my-site/blank",
+      "label": "About"
+    },
+    {
+      "href": "https://meghanabhawalkarwo.wixstudio.com/my-site/blank-1",
+      "label": "Work"
+    },
+    {
+      "href": "https://meghanabhawalkarwo.wixstudio.com/my-site/blank-2",
+      "label": "Artists"
+    },
+    {
+      "href": "https://meghanabhawalkarwo.wixstudio.com/my-site/blank-5",
+      "label": "Resources"
+    },
+    {
+      "href": "https://meghanabhawalkarwo.wixstudio.com/my-site/blank-3",
+      "label": "TSC Academy"
+    }
+  ],
+  "menu": {
+    "items": [
+      {
+        "href": "https://meghanabhawalkarwo.wixstudio.com/my-site/blank",
+        "label": "About"
+      },
+      {
+        "href": "https://meghanabhawalkarwo.wixstudio.com/my-site/blank-1",
+        "label": "Work"
+      },
+      {
+        "href": "https://meghanabhawalkarwo.wixstudio.com/my-site/blank-2",
+        "label": "Artists"
+      },
+      {
+        "href": "https://meghanabhawalkarwo.wixstudio.com/my-site/blank-5",
+        "label": "Resources"
+      },
+      {
+        "href": "https://meghanabhawalkarwo.wixstudio.com/my-site/blank-3",
+        "label": "TSC Academy"
+      }
+    ],
+    "mobileBreakpoint": 1000,
+    "desktopComponent": "comp-mq6d7i6d",
+    "mobileDrawer": "comp-mq6d7i8b"
+  },
+  "fonts": [
+    {
+      "family": "Madefor-Text",
+      "urls": [
+        "//static.parastorage.com/services/santa-resources/resources/viewer/user-site-fonts/fonts/WixMadefor/v3/WixMadeforTextVF_W_Wght.woff2",
+        "//static.parastorage.com/services/santa-resources/resources/viewer/user-site-fonts/fonts/WixMadefor/v3/WixMadeforText_W_Rg.woff2",
+        "//static.parastorage.com/services/santa-resources/resources/viewer/user-site-fonts/fonts/WixMadefor/v3/WixMadeforText_W_Rg.woff"
+      ]
+    },
+    {
+      "family": "wf_d08c6fe9ca9b47ccb21ecdcb7",
+      "urls": [
+        "https://static.wixstatic.com/ufonts/834fa9_d08c6fe9ca9b47ccb21ecdcb74412010/woff2/file.woff2",
+        "https://static.wixstatic.com/ufonts/834fa9_d08c6fe9ca9b47ccb21ecdcb74412010/woff/file.woff",
+        "https://static.wixstatic.com/ufonts/834fa9_d08c6fe9ca9b47ccb21ecdcb74412010/ttf/file.ttf"
+      ]
+    },
+    {
+      "family": "'din-next-w01-light'",
+      "urls": [
+        "//static.parastorage.com/fonts/v2/eca8b0cd-45d8-43cf-aee7-ca462bc5497c/v1/din-next-w10-light.woff2"
+      ]
+    },
+    {
+      "family": "'din-next-w01-light'",
+      "urls": [
+        "//static.parastorage.com/fonts/v2/eca8b0cd-45d8-43cf-aee7-ca462bc5497c/v1/din-next-w02-light.woff2"
+      ]
+    },
+    {
+      "family": "'din-next-w01-light'",
+      "urls": [
+        "//static.parastorage.com/fonts/v2/eca8b0cd-45d8-43cf-aee7-ca462bc5497c/v1/din-next-w01-light.woff2"
+      ]
+    },
+    {
+      "family": "'signika'",
+      "urls": [
+        "//static.parastorage.com/tag-bundler/api/v1/fonts-cache/googlefont/woff2/s/signika/v10/vEFU2_JTCgwQ5ejvE-oDE3lJamIe2tKnXg.woff2"
+      ]
+    },
+    {
+      "family": "'signika'",
+      "urls": [
+        "//static.parastorage.com/tag-bundler/api/v1/fonts-cache/googlefont/woff2/s/signika/v10/vEFR2_JTCgwQ5ejvG18mBlprZ0gk0w.woff2"
+      ]
+    },
+    {
+      "family": "'signika'",
+      "urls": [
+        "//static.parastorage.com/tag-bundler/api/v1/fonts-cache/googlefont/woff2/s/signika/v10/vEFU2_JTCgwQ5ejvE-oDE3dJamIe2tI.woff2"
+      ]
+    },
+    {
+      "family": "'signika'",
+      "urls": [
+        "//static.parastorage.com/tag-bundler/api/v1/fonts-cache/googlefont/woff2/s/signika/v10/vEFR2_JTCgwQ5ejvG1EmBlprZ0g.woff2"
+      ]
+    },
+    {
+      "family": "wf_1615e2f9d1214a96a88382b24",
+      "urls": [
+        "https://static.wixstatic.com/ufonts/68aed7_1615e2f9d1214a96a88382b24d67727b/woff2/file.woff2",
+        "https://static.wixstatic.com/ufonts/68aed7_1615e2f9d1214a96a88382b24d67727b/woff/file.woff",
+        "https://static.wixstatic.com/ufonts/68aed7_1615e2f9d1214a96a88382b24d67727b/ttf/file.ttf"
+      ]
+    },
+    {
+      "family": "wf_d08c6fe9ca9b47ccb21ecdcb7",
+      "urls": [
+        "https://static.wixstatic.com/ufonts/834fa9_d08c6fe9ca9b47ccb21ecdcb74412010/woff2/file.woff2",
+        "https://static.wixstatic.com/ufonts/834fa9_d08c6fe9ca9b47ccb21ecdcb74412010/woff/file.woff",
+        "https://static.wixstatic.com/ufonts/834fa9_d08c6fe9ca9b47ccb21ecdcb74412010/ttf/file.ttf"
+      ]
+    },
+    {
+      "family": "'helveticaneuew01-45ligh'",
+      "urls": [
+        "//static.parastorage.com/fonts/v2/e333842f-0a84-43f9-9ab7-fb1093ba1628/v1/helveticaneuew01-45ligh.other.woff2"
+      ]
+    },
+    {
+      "family": "'helveticaneuew01-45ligh'",
+      "urls": [
+        "//static.parastorage.com/fonts/v2/e333842f-0a84-43f9-9ab7-fb1093ba1628/v1/helveticaneuew01-45ligh.latin-ext.woff2"
+      ]
+    },
+    {
+      "family": "'helveticaneuew01-45ligh'",
+      "urls": [
+        "//static.parastorage.com/fonts/v2/e333842f-0a84-43f9-9ab7-fb1093ba1628/v1/helveticaneuew01-45ligh.latin.woff2"
+      ]
+    },
+    {
+      "family": "'helveticaneuew02-45ligh'",
+      "urls": [
+        "//static.parastorage.com/fonts/v2/bcaffff6-40a1-4827-ace9-c65e93f5fb5f/v1/helveticaneuew02-45ligh.other.woff2"
+      ]
+    },
+    {
+      "family": "'helveticaneuew02-45ligh'",
+      "urls": [
+        "//static.parastorage.com/fonts/v2/bcaffff6-40a1-4827-ace9-c65e93f5fb5f/v1/helveticaneuew02-45ligh.math.woff2"
+      ]
+    },
+    {
+      "family": "'helveticaneuew02-45ligh'",
+      "urls": [
+        "//static.parastorage.com/fonts/v2/bcaffff6-40a1-4827-ace9-c65e93f5fb5f/v1/helveticaneuew02-45ligh.latin-ext.woff2"
+      ]
+    },
+    {
+      "family": "'helveticaneuew02-45ligh'",
+      "urls": [
+        "//static.parastorage.com/fonts/v2/bcaffff6-40a1-4827-ace9-c65e93f5fb5f/v1/helveticaneuew02-45ligh.latin.woff2"
+      ]
+    },
+    {
+      "family": "'helveticaneuew10-45ligh'",
+      "urls": [
+        "//static.parastorage.com/fonts/v2/68b86ae9-7ca0-48cc-b777-6559005a8f94/v1/helveticaneuew10-45ligh.other.woff2"
+      ]
+    },
+    {
+      "family": "'helveticaneuew10-45ligh'",
+      "urls": [
+        "//static.parastorage.com/fonts/v2/68b86ae9-7ca0-48cc-b777-6559005a8f94/v1/helveticaneuew10-45ligh.math.woff2"
+      ]
+    },
+    {
+      "family": "'helveticaneuew10-45ligh'",
+      "urls": [
+        "//static.parastorage.com/fonts/v2/68b86ae9-7ca0-48cc-b777-6559005a8f94/v1/helveticaneuew10-45ligh.cyrillic.woff2"
+      ]
+    },
+    {
+      "family": "'helveticaneuew10-45ligh'",
+      "urls": [
+        "//static.parastorage.com/fonts/v2/68b86ae9-7ca0-48cc-b777-6559005a8f94/v1/helveticaneuew10-45ligh.greek.woff2"
+      ]
+    },
+    {
+      "family": "'helveticaneuew10-45ligh'",
+      "urls": [
+        "//static.parastorage.com/fonts/v2/68b86ae9-7ca0-48cc-b777-6559005a8f94/v1/helveticaneuew10-45ligh.latin-ext.woff2"
+      ]
+    },
+    {
+      "family": "'helveticaneuew10-45ligh'",
+      "urls": [
+        "//static.parastorage.com/fonts/v2/68b86ae9-7ca0-48cc-b777-6559005a8f94/v1/helveticaneuew10-45ligh.latin.woff2"
+      ]
+    },
+    {
+      "family": "'madefor-text'",
+      "urls": [
+        "//static.parastorage.com/fonts/v2/f73e760d-c6b3-4659-9a8c-9ce1d76c1173/madefor-text.var.original.woff2",
+        "//static.parastorage.com/fonts/v2/f73e760d-c6b3-4659-9a8c-9ce1d76c1173/v1/madefor-text.woff2"
+      ]
+    },
+    {
+      "family": "'madefor-text'",
+      "urls": [
+        "//static.parastorage.com/fonts/v2/19247d19-0454-4de8-b907-b818135794bd/madefor-text.var.original.woff2",
+        "//static.parastorage.com/fonts/v2/19247d19-0454-4de8-b907-b818135794bd/v1/madefor-text.woff2"
+      ]
+    },
+    {
+      "family": "'signika'",
+      "urls": [
+        "//static.parastorage.com/tag-bundler/api/v1/fonts-cache/googlefont/woff2/s/signika/v10/vEFU2_JTCgwQ5ejvE-oDE3lJamIe2tKnXg.woff2"
+      ]
+    },
+    {
+      "family": "'signika'",
+      "urls": [
+        "//static.parastorage.com/tag-bundler/api/v1/fonts-cache/googlefont/woff2/s/signika/v10/vEFR2_JTCgwQ5ejvG18mBlprZ0gk0w.woff2"
+      ]
+    },
+    {
+      "family": "'signika'",
+      "urls": [
+        "//static.parastorage.com/tag-bundler/api/v1/fonts-cache/googlefont/woff2/s/signika/v10/vEFU2_JTCgwQ5ejvE-oDE3dJamIe2tI.woff2"
+      ]
+    },
+    {
+      "family": "'signika'",
+      "urls": [
+        "//static.parastorage.com/tag-bundler/api/v1/fonts-cache/googlefont/woff2/s/signika/v10/vEFR2_JTCgwQ5ejvG1EmBlprZ0g.woff2"
+      ]
+    }
+  ],
+  "sectionIds": [
+    "comp-mq6h99jp",
+    "comp-mqffd5wc",
+    "comp-mq7lr7m2",
+    "comp-mq6ig1tw",
+    "comp-mq7r4iw7",
+    "comp-mq7z6hk6",
+    "comp-mq84m6ve",
+    "comp-mqgaclmh"
+  ],
+  "pageRoute": "/blank-10",
+  "reactPage": "components/harshadduhita/Blank10Page.tsx",
+  "assets": [
+    {
+      "uri": "19f989_91292b68cbaa497d93970b52b24b324a~mv2.png",
+      "publicUrl": "/images/wix/harshadduhita/19f989_91292b68cbaa497d93970b52b24b324a~mv2.png"
+    },
+    {
+      "uri": "19f989_8e2dc7ce6bf94b5eb40e97c752240903~mv2.jpg",
+      "publicUrl": "/images/wix/harshadduhita/19f989_8e2dc7ce6bf94b5eb40e97c752240903~mv2.jpg"
+    },
+    {
+      "uri": "19f989_8165221835804ff1a6eb3e12ce3b8b66~mv2.jpg",
+      "publicUrl": "/images/wix/harshadduhita/19f989_8165221835804ff1a6eb3e12ce3b8b66~mv2.jpg"
+    },
+    {
+      "uri": "19f989_650aa41c4dc24f20b1ccc46a346506cd~mv2.jpg",
+      "publicUrl": "/images/wix/harshadduhita/19f989_650aa41c4dc24f20b1ccc46a346506cd~mv2.jpg"
+    },
+    {
+      "uri": "19f989_6df63c1f380d441cb790c0c556cdbc81~mv2.png",
+      "publicUrl": "/images/wix/harshadduhita/19f989_6df63c1f380d441cb790c0c556cdbc81~mv2.png"
+    },
+    {
+      "uri": "19f989_176f463854774f7ea1399dc7082fe0f4~mv2.png",
+      "publicUrl": "/images/wix/harshadduhita/19f989_176f463854774f7ea1399dc7082fe0f4~mv2.png"
+    },
+    {
+      "uri": "19f989_26dcc12fb2e742dda1019d93b4d91f8d~mv2.jpg",
+      "publicUrl": "/images/wix/harshadduhita/19f989_26dcc12fb2e742dda1019d93b4d91f8d~mv2.jpg"
+    },
+    {
+      "uri": "19f989_186d6228a0e24d50843636a776a3938d~mv2.jpg",
+      "publicUrl": "/images/wix/harshadduhita/19f989_186d6228a0e24d50843636a776a3938d~mv2.jpg"
+    },
+    {
+      "uri": "19f989_28835a7a334d45e78f665de9922c1bfd~mv2.jpg",
+      "publicUrl": "/images/wix/harshadduhita/19f989_28835a7a334d45e78f665de9922c1bfd~mv2.jpg"
+    },
+    {
+      "uri": "19f989_4ebf43b465d741318c26ae1de2950282~mv2.png",
+      "publicUrl": "/images/wix/harshadduhita/19f989_4ebf43b465d741318c26ae1de2950282~mv2.png"
+    },
+    {
+      "uri": "19f989_6ef61fd6e880415987cc78ff72cd8300~mv2.png",
+      "publicUrl": "/images/wix/harshadduhita/19f989_6ef61fd6e880415987cc78ff72cd8300~mv2.png"
+    },
+    {
+      "uri": "19f989_77906b25ff9d48248ebf5a39c4f8f12b~mv2.jpg",
+      "publicUrl": "/images/wix/harshadduhita/19f989_77906b25ff9d48248ebf5a39c4f8f12b~mv2.jpg"
+    },
+    {
+      "uri": "19f989_6592546481f648a68d7dde078ace15ea~mv2.png",
+      "publicUrl": "/images/wix/harshadduhita/19f989_6592546481f648a68d7dde078ace15ea~mv2.png"
+    },
+    {
+      "uri": "19f989_aa253abda5504ab6bd9aec467737fd29~mv2.png",
+      "publicUrl": "/images/wix/harshadduhita/19f989_aa253abda5504ab6bd9aec467737fd29~mv2.png"
+    },
+    {
+      "uri": "19f989_5725323963cd4a0580a3fd807f58cb35~mv2.jpg",
+      "publicUrl": "/images/wix/harshadduhita/19f989_5725323963cd4a0580a3fd807f58cb35~mv2.jpg"
+    },
+    {
+      "uri": "whiteArtboard 22(1)",
+      "publicUrl": "/images/wix/harshadduhita/decor-22-alt.png"
+    }
+  ],
+  "fontsCss": "/fonts/wix/wix-blank10.css",
+  "fontsManifest": [
+    {
+      "family": "Madefor-Text",
+      "files": [
+        {
+          "url": "//static.parastorage.com/services/santa-resources/resources/viewer/user-site-fonts/fonts/WixMadefor/v3/WixMadeforTextVF_W_Wght.woff2",
+          "local": "/fonts/wix/madefor-text-Ly9zdGF0.woff2"
+        },
+        {
+          "url": "//static.parastorage.com/services/santa-resources/resources/viewer/user-site-fonts/fonts/WixMadefor/v3/WixMadeforText_W_Rg.woff2",
+          "local": "/fonts/wix/madefor-text-Ly9zdGF0.woff2"
+        }
+      ]
+    },
+    {
+      "family": "wf_d08c6fe9ca9b47ccb21ecdcb7",
+      "files": [
+        {
+          "url": "https://static.wixstatic.com/ufonts/834fa9_d08c6fe9ca9b47ccb21ecdcb74412010/woff2/file.woff2",
+          "local": "/fonts/wix/wf_d08c6fe9ca9b47ccb21ecdcb7-aHR0cHM6.woff2"
+        },
+        {
+          "url": "https://static.wixstatic.com/ufonts/834fa9_d08c6fe9ca9b47ccb21ecdcb74412010/woff/file.woff",
+          "local": "/fonts/wix/wf_d08c6fe9ca9b47ccb21ecdcb7-aHR0cHM6.woff"
+        }
+      ]
+    },
+    {
+      "family": "din-next-w01-light",
+      "files": [
+        {
+          "url": "//static.parastorage.com/fonts/v2/eca8b0cd-45d8-43cf-aee7-ca462bc5497c/v1/din-next-w10-light.woff2",
+          "local": "/fonts/wix/din-next-w01-light-Ly9zdGF0.woff2"
+        }
+      ]
+    },
+    {
+      "family": "din-next-w01-light",
+      "files": [
+        {
+          "url": "//static.parastorage.com/fonts/v2/eca8b0cd-45d8-43cf-aee7-ca462bc5497c/v1/din-next-w02-light.woff2",
+          "local": "/fonts/wix/din-next-w01-light-Ly9zdGF0.woff2"
+        }
+      ]
+    },
+    {
+      "family": "din-next-w01-light",
+      "files": [
+        {
+          "url": "//static.parastorage.com/fonts/v2/eca8b0cd-45d8-43cf-aee7-ca462bc5497c/v1/din-next-w01-light.woff2",
+          "local": "/fonts/wix/din-next-w01-light-Ly9zdGF0.woff2"
+        }
+      ]
+    },
+    {
+      "family": "signika",
+      "files": [
+        {
+          "url": "//static.parastorage.com/tag-bundler/api/v1/fonts-cache/googlefont/woff2/s/signika/v10/vEFU2_JTCgwQ5ejvE-oDE3lJamIe2tKnXg.woff2",
+          "local": "/fonts/wix/signika-Ly9zdGF0.woff2"
+        }
+      ]
+    },
+    {
+      "family": "signika",
+      "files": [
+        {
+          "url": "//static.parastorage.com/tag-bundler/api/v1/fonts-cache/googlefont/woff2/s/signika/v10/vEFR2_JTCgwQ5ejvG18mBlprZ0gk0w.woff2",
+          "local": "/fonts/wix/signika-Ly9zdGF0.woff2"
+        }
+      ]
+    },
+    {
+      "family": "signika",
+      "files": [
+        {
+          "url": "//static.parastorage.com/tag-bundler/api/v1/fonts-cache/googlefont/woff2/s/signika/v10/vEFU2_JTCgwQ5ejvE-oDE3dJamIe2tI.woff2",
+          "local": "/fonts/wix/signika-Ly9zdGF0.woff2"
+        }
+      ]
+    },
+    {
+      "family": "signika",
+      "files": [
+        {
+          "url": "//static.parastorage.com/tag-bundler/api/v1/fonts-cache/googlefont/woff2/s/signika/v10/vEFR2_JTCgwQ5ejvG1EmBlprZ0g.woff2",
+          "local": "/fonts/wix/signika-Ly9zdGF0.woff2"
+        }
+      ]
+    },
+    {
+      "family": "wf_1615e2f9d1214a96a88382b24",
+      "files": [
+        {
+          "url": "https://static.wixstatic.com/ufonts/68aed7_1615e2f9d1214a96a88382b24d67727b/woff2/file.woff2",
+          "local": "/fonts/wix/wf_1615e2f9d1214a96a88382b24-aHR0cHM6.woff2"
+        },
+        {
+          "url": "https://static.wixstatic.com/ufonts/68aed7_1615e2f9d1214a96a88382b24d67727b/woff/file.woff",
+          "local": "/fonts/wix/wf_1615e2f9d1214a96a88382b24-aHR0cHM6.woff"
+        }
+      ]
+    },
+    {
+      "family": "wf_d08c6fe9ca9b47ccb21ecdcb7",
+      "files": [
+        {
+          "url": "https://static.wixstatic.com/ufonts/834fa9_d08c6fe9ca9b47ccb21ecdcb74412010/woff2/file.woff2",
+          "local": "/fonts/wix/wf_d08c6fe9ca9b47ccb21ecdcb7-aHR0cHM6.woff2"
+        },
+        {
+          "url": "https://static.wixstatic.com/ufonts/834fa9_d08c6fe9ca9b47ccb21ecdcb74412010/woff/file.woff",
+          "local": "/fonts/wix/wf_d08c6fe9ca9b47ccb21ecdcb7-aHR0cHM6.woff"
+        }
+      ]
+    },
+    {
+      "family": "helveticaneuew01-45ligh",
+      "files": [
+        {
+          "url": "//static.parastorage.com/fonts/v2/e333842f-0a84-43f9-9ab7-fb1093ba1628/v1/helveticaneuew01-45ligh.other.woff2",
+          "local": "/fonts/wix/helveticaneuew01-45ligh-Ly9zdGF0.woff2"
+        }
+      ]
+    },
+    {
+      "family": "helveticaneuew01-45ligh",
+      "files": [
+        {
+          "url": "//static.parastorage.com/fonts/v2/e333842f-0a84-43f9-9ab7-fb1093ba1628/v1/helveticaneuew01-45ligh.latin-ext.woff2",
+          "local": "/fonts/wix/helveticaneuew01-45ligh-Ly9zdGF0.woff2"
+        }
+      ]
+    },
+    {
+      "family": "helveticaneuew01-45ligh",
+      "files": [
+        {
+          "url": "//static.parastorage.com/fonts/v2/e333842f-0a84-43f9-9ab7-fb1093ba1628/v1/helveticaneuew01-45ligh.latin.woff2",
+          "local": "/fonts/wix/helveticaneuew01-45ligh-Ly9zdGF0.woff2"
+        }
+      ]
+    },
+    {
+      "family": "helveticaneuew02-45ligh",
+      "files": [
+        {
+          "url": "//static.parastorage.com/fonts/v2/bcaffff6-40a1-4827-ace9-c65e93f5fb5f/v1/helveticaneuew02-45ligh.other.woff2",
+          "local": "/fonts/wix/helveticaneuew02-45ligh-Ly9zdGF0.woff2"
+        }
+      ]
+    },
+    {
+      "family": "helveticaneuew02-45ligh",
+      "files": [
+        {
+          "url": "//static.parastorage.com/fonts/v2/bcaffff6-40a1-4827-ace9-c65e93f5fb5f/v1/helveticaneuew02-45ligh.math.woff2",
+          "local": "/fonts/wix/helveticaneuew02-45ligh-Ly9zdGF0.woff2"
+        }
+      ]
+    },
+    {
+      "family": "helveticaneuew02-45ligh",
+      "files": [
+        {
+          "url": "//static.parastorage.com/fonts/v2/bcaffff6-40a1-4827-ace9-c65e93f5fb5f/v1/helveticaneuew02-45ligh.latin-ext.woff2",
+          "local": "/fonts/wix/helveticaneuew02-45ligh-Ly9zdGF0.woff2"
+        }
+      ]
+    },
+    {
+      "family": "helveticaneuew02-45ligh",
+      "files": [
+        {
+          "url": "//static.parastorage.com/fonts/v2/bcaffff6-40a1-4827-ace9-c65e93f5fb5f/v1/helveticaneuew02-45ligh.latin.woff2",
+          "local": "/fonts/wix/helveticaneuew02-45ligh-Ly9zdGF0.woff2"
+        }
+      ]
+    },
+    {
+      "family": "helveticaneuew10-45ligh",
+      "files": [
+        {
+          "url": "//static.parastorage.com/fonts/v2/68b86ae9-7ca0-48cc-b777-6559005a8f94/v1/helveticaneuew10-45ligh.other.woff2",
+          "local": "/fonts/wix/helveticaneuew10-45ligh-Ly9zdGF0.woff2"
+        }
+      ]
+    },
+    {
+      "family": "helveticaneuew10-45ligh",
+      "files": [
+        {
+          "url": "//static.parastorage.com/fonts/v2/68b86ae9-7ca0-48cc-b777-6559005a8f94/v1/helveticaneuew10-45ligh.math.woff2",
+          "local": "/fonts/wix/helveticaneuew10-45ligh-Ly9zdGF0.woff2"
+        }
+      ]
+    },
+    {
+      "family": "helveticaneuew10-45ligh",
+      "files": [
+        {
+          "url": "//static.parastorage.com/fonts/v2/68b86ae9-7ca0-48cc-b777-6559005a8f94/v1/helveticaneuew10-45ligh.cyrillic.woff2",
+          "local": "/fonts/wix/helveticaneuew10-45ligh-Ly9zdGF0.woff2"
+        }
+      ]
+    },
+    {
+      "family": "helveticaneuew10-45ligh",
+      "files": [
+        {
+          "url": "//static.parastorage.com/fonts/v2/68b86ae9-7ca0-48cc-b777-6559005a8f94/v1/helveticaneuew10-45ligh.greek.woff2",
+          "local": "/fonts/wix/helveticaneuew10-45ligh-Ly9zdGF0.woff2"
+        }
+      ]
+    },
+    {
+      "family": "helveticaneuew10-45ligh",
+      "files": [
+        {
+          "url": "//static.parastorage.com/fonts/v2/68b86ae9-7ca0-48cc-b777-6559005a8f94/v1/helveticaneuew10-45ligh.latin-ext.woff2",
+          "local": "/fonts/wix/helveticaneuew10-45ligh-Ly9zdGF0.woff2"
+        }
+      ]
+    },
+    {
+      "family": "helveticaneuew10-45ligh",
+      "files": [
+        {
+          "url": "//static.parastorage.com/fonts/v2/68b86ae9-7ca0-48cc-b777-6559005a8f94/v1/helveticaneuew10-45ligh.latin.woff2",
+          "local": "/fonts/wix/helveticaneuew10-45ligh-Ly9zdGF0.woff2"
+        }
+      ]
+    },
+    {
+      "family": "madefor-text",
+      "files": [
+        {
+          "url": "//static.parastorage.com/fonts/v2/f73e760d-c6b3-4659-9a8c-9ce1d76c1173/madefor-text.var.original.woff2",
+          "local": "/fonts/wix/madefor-text-Ly9zdGF0.woff2"
+        },
+        {
+          "url": "//static.parastorage.com/fonts/v2/f73e760d-c6b3-4659-9a8c-9ce1d76c1173/v1/madefor-text.woff2",
+          "local": "/fonts/wix/madefor-text-Ly9zdGF0.woff2"
+        }
+      ]
+    },
+    {
+      "family": "madefor-text",
+      "files": [
+        {
+          "url": "//static.parastorage.com/fonts/v2/19247d19-0454-4de8-b907-b818135794bd/madefor-text.var.original.woff2",
+          "local": "/fonts/wix/madefor-text-Ly9zdGF0.woff2"
+        },
+        {
+          "url": "//static.parastorage.com/fonts/v2/19247d19-0454-4de8-b907-b818135794bd/v1/madefor-text.woff2",
+          "local": "/fonts/wix/madefor-text-Ly9zdGF0.woff2"
+        }
+      ]
+    },
+    {
+      "family": "signika",
+      "files": [
+        {
+          "url": "//static.parastorage.com/tag-bundler/api/v1/fonts-cache/googlefont/woff2/s/signika/v10/vEFU2_JTCgwQ5ejvE-oDE3lJamIe2tKnXg.woff2",
+          "local": "/fonts/wix/signika-Ly9zdGF0.woff2"
+        }
+      ]
+    },
+    {
+      "family": "signika",
+      "files": [
+        {
+          "url": "//static.parastorage.com/tag-bundler/api/v1/fonts-cache/googlefont/woff2/s/signika/v10/vEFR2_JTCgwQ5ejvG18mBlprZ0gk0w.woff2",
+          "local": "/fonts/wix/signika-Ly9zdGF0.woff2"
+        }
+      ]
+    },
+    {
+      "family": "signika",
+      "files": [
+        {
+          "url": "//static.parastorage.com/tag-bundler/api/v1/fonts-cache/googlefont/woff2/s/signika/v10/vEFU2_JTCgwQ5ejvE-oDE3dJamIe2tI.woff2",
+          "local": "/fonts/wix/signika-Ly9zdGF0.woff2"
+        }
+      ]
+    },
+    {
+      "family": "signika",
+      "files": [
+        {
+          "url": "//static.parastorage.com/tag-bundler/api/v1/fonts-cache/googlefont/woff2/s/signika/v10/vEFR2_JTCgwQ5ejvG1EmBlprZ0g.woff2",
+          "local": "/fonts/wix/signika-Ly9zdGF0.woff2"
+        }
+      ]
+    }
+  ]
+}

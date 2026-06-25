@@ -1,0 +1,553 @@
+{
+  "version": 1,
+  "presets": {
+    "fade-up": {
+      "duration": 0.8,
+      "ease": [
+        0.22,
+        1,
+        0.36,
+        1
+      ],
+      "y": 40
+    },
+    "fade-in": {
+      "duration": 1,
+      "ease": [
+        0.37,
+        0,
+        0.63,
+        1
+      ]
+    },
+    "blur-reveal": {
+      "duration": 0.8,
+      "blur": 9
+    },
+    "parallax": {
+      "driver": "scroll"
+    },
+    "slide-left": {
+      "duration": 0.8,
+      "ease": [
+        0.87,
+        0,
+        0.13,
+        1
+      ],
+      "x": "100%"
+    }
+  },
+  "elements": [
+    {
+      "id": "BG_LAYER-comp-mq6h99jp",
+      "sectionId": "comp-mq6h99jp",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "BG_MEDIA-comp-mq6h99jp",
+      "sectionId": "comp-mq6h99jp",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "BG_IMG-comp-mq6h99jp",
+      "sectionId": "comp-mq6h99jp",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "BG_LAYER-comp-mq6hsozz",
+      "sectionId": "comp-mq6h99jp",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "BG_MEDIA-comp-mq6hsozz",
+      "sectionId": "comp-mq6h99jp",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "BG_IMG-comp-mq6hsozz",
+      "sectionId": "comp-mq6h99jp",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "comp-mq6hsozz--parallax",
+      "sectionId": "comp-mq6h99jp",
+      "preset": "parallax",
+      "parallaxSpeed": 1.5,
+      "source": "parallaxSpeed"
+    },
+    {
+      "id": "BG_LAYER-comp-mqffd5wc",
+      "sectionId": "comp-mqffd5wc",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "BG_MEDIA-comp-mqffd5wc",
+      "sectionId": "comp-mqffd5wc",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "BG_IMG-comp-mqffd5wc",
+      "sectionId": "comp-mqffd5wc",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "BG_LAYER-comp-mqfgozm3",
+      "sectionId": "comp-mqffd5wc",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "BG_MEDIA-comp-mqfgozm3",
+      "sectionId": "comp-mqffd5wc",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "BG_IMG-comp-mqfgozm3",
+      "sectionId": "comp-mqffd5wc",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "comp-mqfgozm3--parallax",
+      "sectionId": "comp-mqffd5wc",
+      "preset": "parallax",
+      "parallaxSpeed": 1.5,
+      "source": "parallaxSpeed"
+    },
+    {
+      "id": "BG_LAYER-comp-mq7lr7m2",
+      "sectionId": "comp-mq7lr7m2",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "BG_MEDIA-comp-mq7lr7m2",
+      "sectionId": "comp-mq7lr7m2",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "BG_LAYER-comp-mq7lr7n43",
+      "sectionId": "comp-mq7lr7m2",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "BG_MEDIA-comp-mq7lr7n43",
+      "sectionId": "comp-mq7lr7m2",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "BG_IMG-comp-mq7lr7n43",
+      "sectionId": "comp-mq7lr7m2",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "comp-mq7lr7n43--parallax",
+      "sectionId": "comp-mq7lr7m2",
+      "preset": "parallax",
+      "parallaxSpeed": 1.5,
+      "source": "parallaxSpeed"
+    },
+    {
+      "id": "BG_LAYER-comp-mq6ig1tw",
+      "sectionId": "comp-mq6ig1tw",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "BG_MEDIA-comp-mq6ig1tw",
+      "sectionId": "comp-mq6ig1tw",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "BG_LAYER-comp-mq9cuzxm",
+      "sectionId": "comp-mq6ig1tw",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "BG_MEDIA-comp-mq9cuzxm",
+      "sectionId": "comp-mq6ig1tw",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "BG_IMG-comp-mq9cuzxm",
+      "sectionId": "comp-mq6ig1tw",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "BG_LAYER-comp-mq9cl9si",
+      "sectionId": "comp-mq6ig1tw",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "BG_MEDIA-comp-mq9cl9si",
+      "sectionId": "comp-mq6ig1tw",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "BG_IMG-comp-mq9cl9si",
+      "sectionId": "comp-mq6ig1tw",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "BG_LAYER-comp-mq99dj2j",
+      "sectionId": "comp-mq6ig1tw",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "BG_MEDIA-comp-mq99dj2j",
+      "sectionId": "comp-mq6ig1tw",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "BG_IMG-comp-mq99dj2j",
+      "sectionId": "comp-mq6ig1tw",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "BG_LAYER-comp-mq9ans6o",
+      "sectionId": "comp-mq6ig1tw",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "BG_MEDIA-comp-mq9ans6o",
+      "sectionId": "comp-mq6ig1tw",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "BG_IMG-comp-mq9ans6o",
+      "sectionId": "comp-mq6ig1tw",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "BG_LAYER-comp-mq9anx8b",
+      "sectionId": "comp-mq6ig1tw",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "BG_MEDIA-comp-mq9anx8b",
+      "sectionId": "comp-mq6ig1tw",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "BG_IMG-comp-mq9anx8b",
+      "sectionId": "comp-mq6ig1tw",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "comp-mq9cuzxm--parallax",
+      "sectionId": "comp-mq6ig1tw",
+      "preset": "parallax",
+      "parallaxSpeed": 1.5,
+      "source": "parallaxSpeed"
+    },
+    {
+      "id": "comp-mq9cl9si--parallax",
+      "sectionId": "comp-mq6ig1tw",
+      "preset": "parallax",
+      "parallaxSpeed": 1.5,
+      "source": "parallaxSpeed"
+    },
+    {
+      "id": "comp-mq99dj2j--parallax",
+      "sectionId": "comp-mq6ig1tw",
+      "preset": "parallax",
+      "parallaxSpeed": 1.5,
+      "source": "parallaxSpeed"
+    },
+    {
+      "id": "comp-mq9ans6o--parallax",
+      "sectionId": "comp-mq6ig1tw",
+      "preset": "parallax",
+      "parallaxSpeed": 1.5,
+      "source": "parallaxSpeed"
+    },
+    {
+      "id": "comp-mq9anx8b--parallax",
+      "sectionId": "comp-mq6ig1tw",
+      "preset": "parallax",
+      "parallaxSpeed": 1.5,
+      "source": "parallaxSpeed"
+    },
+    {
+      "id": "BG_LAYER-comp-mq7r4iw7",
+      "sectionId": "comp-mq7r4iw7",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "BG_MEDIA-comp-mq7r4iw7",
+      "sectionId": "comp-mq7r4iw7",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "BG_LAYER-comp-mq7z6hk6",
+      "sectionId": "comp-mq7z6hk6",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "BG_MEDIA-comp-mq7z6hk6",
+      "sectionId": "comp-mq7z6hk6",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "BG_LAYER-comp-mq835zjp",
+      "sectionId": "comp-mq7z6hk6",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "BG_MEDIA-comp-mq835zjp",
+      "sectionId": "comp-mq7z6hk6",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "BG_IMG-comp-mq835zjp",
+      "sectionId": "comp-mq7z6hk6",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "BG_LAYER-comp-mq833dkx",
+      "sectionId": "comp-mq7z6hk6",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "BG_MEDIA-comp-mq833dkx",
+      "sectionId": "comp-mq7z6hk6",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "BG_IMG-comp-mq833dkx",
+      "sectionId": "comp-mq7z6hk6",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "BG_LAYER-comp-mq7z6hlt3__item1",
+      "sectionId": "comp-mq7z6hk6",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "BG_MEDIA-comp-mq7z6hlt3__item1",
+      "sectionId": "comp-mq7z6hk6",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "BG_IMG-comp-mq7z6hlt3__item1",
+      "sectionId": "comp-mq7z6hk6",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "BG_LAYER-comp-mq7z6hlt3__item-j9ples3e",
+      "sectionId": "comp-mq7z6hk6",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "BG_MEDIA-comp-mq7z6hlt3__item-j9ples3e",
+      "sectionId": "comp-mq7z6hk6",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "BG_IMG-comp-mq7z6hlt3__item-j9ples3e",
+      "sectionId": "comp-mq7z6hk6",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "BG_LAYER-comp-mq7z6hlt3__item-j9plerjk",
+      "sectionId": "comp-mq7z6hk6",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "BG_MEDIA-comp-mq7z6hlt3__item-j9plerjk",
+      "sectionId": "comp-mq7z6hk6",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "BG_IMG-comp-mq7z6hlt3__item-j9plerjk",
+      "sectionId": "comp-mq7z6hk6",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "comp-mq835zjp--parallax",
+      "sectionId": "comp-mq7z6hk6",
+      "preset": "parallax",
+      "parallaxSpeed": 1.5,
+      "source": "parallaxSpeed"
+    },
+    {
+      "id": "comp-mq833dkx--parallax",
+      "sectionId": "comp-mq7z6hk6",
+      "preset": "parallax",
+      "parallaxSpeed": 1.5,
+      "source": "parallaxSpeed"
+    },
+    {
+      "id": "comp-mq7z6hlt3__item1--parallax",
+      "sectionId": "comp-mq7z6hk6",
+      "preset": "parallax",
+      "parallaxSpeed": 1.5,
+      "source": "parallaxSpeed"
+    },
+    {
+      "id": "comp-mq7z6hlt3__item-j9ples3e--parallax",
+      "sectionId": "comp-mq7z6hk6",
+      "preset": "parallax",
+      "parallaxSpeed": 1.5,
+      "source": "parallaxSpeed"
+    },
+    {
+      "id": "comp-mq7z6hlt3__item-j9plerjk--parallax",
+      "sectionId": "comp-mq7z6hk6",
+      "preset": "parallax",
+      "parallaxSpeed": 1.5,
+      "source": "parallaxSpeed"
+    },
+    {
+      "id": "BG_LAYER-comp-mq84m6ve",
+      "sectionId": "comp-mq84m6ve",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "BG_MEDIA-comp-mq84m6ve",
+      "sectionId": "comp-mq84m6ve",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "BG_IMG-comp-mq84m6ve",
+      "sectionId": "comp-mq84m6ve",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "BG_LAYER-comp-mqgaclmh",
+      "sectionId": "comp-mqgaclmh",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "BG_MEDIA-comp-mqgaclmh",
+      "sectionId": "comp-mqgaclmh",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "BG_IMG-comp-mqgaclmh",
+      "sectionId": "comp-mqgaclmh",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "global--button-hover",
+      "preset": "none",
+      "duration": 0.4,
+      "source": "css-hover"
+    }
+  ]
+}

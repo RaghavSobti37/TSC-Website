@@ -1,0 +1,46 @@
+{
+  "id": "comp-mq84m6ve",
+  "label": "comp-mq84m6ve",
+  "headings": [],
+  "paragraphs": [
+    "Harshaduhita Collective CONNECT",
+    "Digital Presence"
+  ],
+  "imageUris": [
+    "19f989_aa253abda5504ab6bd9aec467737fd29~mv2.png"
+  ],
+  "buttons": [],
+  "links": [
+    {
+      "href": "https://www.instagram.com/harshad_golesar/",
+      "label": "Harshaduhita Collective"
+    },
+    {
+      "href": "https://www.instagram.com/duhita_harshad/",
+      "label": "Spotify"
+    }
+  ],
+  "animations": [
+    {
+      "id": "BG_LAYER-comp-mq84m6ve",
+      "sectionId": "comp-mq84m6ve",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "BG_MEDIA-comp-mq84m6ve",
+      "sectionId": "comp-mq84m6ve",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    },
+    {
+      "id": "BG_IMG-comp-mq84m6ve",
+      "sectionId": "comp-mq84m6ve",
+      "preset": "fade-in",
+      "duration": 0.8,
+      "source": "data-motion-part"
+    }
+  ]
+}

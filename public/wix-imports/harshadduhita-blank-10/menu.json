@@ -1,0 +1,27 @@
+{
+  "items": [
+    {
+      "href": "https://meghanabhawalkarwo.wixstudio.com/my-site/blank",
+      "label": "About"
+    },
+    {
+      "href": "https://meghanabhawalkarwo.wixstudio.com/my-site/blank-1",
+      "label": "Work"
+    },
+    {
+      "href": "https://meghanabhawalkarwo.wixstudio.com/my-site/blank-2",
+      "label": "Artists"
+    },
+    {
+      "href": "https://meghanabhawalkarwo.wixstudio.com/my-site/blank-5",
+      "label": "Resources"
+    },
+    {
+      "href": "https://meghanabhawalkarwo.wixstudio.com/my-site/blank-3",
+      "label": "TSC Academy"
+    }
+  ],
+  "mobileBreakpoint": 1000,
+  "desktopComponent": "comp-mq6d7i6d",
+  "mobileDrawer": "comp-mq6d7i8b"
+}

@@ -95,9 +95,9 @@ export default function AcademyHeader() {
           className="flex-shrink-0 flex items-center justify-center"
         >
           <img
-            src="/assets/tsclogo.png"
+            src="/assets/academy/tscacademylogo.png"
             alt="TSC Academy"
-            className={`${isMobileView ? 'h-8' : 'h-10 sm:h-11'} w-auto object-contain`}
+            className={`${isMobileView ? 'h-9' : 'h-11 sm:h-12'} w-auto object-contain`}
           />
         </motion.button>
 

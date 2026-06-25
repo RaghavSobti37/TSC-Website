@@ -31,10 +31,10 @@ export default function AcademyTestimonials() {
       <Container>
         <div className="flex flex-col md:flex-row items-end justify-between mb-16 gap-8">
           <div>
-            <div className="mb-4 text-[#1e3a8a]/20">
+            <div className="mb-4 text-wine/20">
               <Quote size={48} fill="currentColor" />
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-[#1e3a8a] font-signika">
+            <h2 className="text-4xl md:text-5xl font-bold text-wine font-signika">
               Artist Testimonials
             </h2>
           </div>
@@ -48,9 +48,9 @@ export default function AcademyTestimonials() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.15 }}
-              className="bg-white p-10 rounded-[2.5rem] shadow-xl border border-[#1e3a8a]/5 flex flex-col relative"
+              className="bg-white p-10 rounded-[2.5rem] shadow-xl border border-wine/5 flex flex-col relative"
             >
-              <div className="absolute top-8 right-10 text-[#1e3a8a]/5">
+              <div className="absolute top-8 right-10 text-wine/5">
                 <Quote size={64} fill="currentColor" className="opacity-10" />
               </div>
               
@@ -59,12 +59,12 @@ export default function AcademyTestimonials() {
               </p>
 
               <div className="flex items-center gap-6 pt-8 border-t border-slate-lightest">
-                <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-pumpkin/30 flex-shrink-0">
+                <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-mustard/30 flex-shrink-0">
                   <img src={t.image} alt={t.name} className="w-full h-full object-cover" />
                 </div>
                 <div>
-                  <h4 className="text-[#1e3a8a] font-bold font-signika tracking-tight">{t.name}</h4>
-                  <p className="text-xs font-bold text-pumpkin font-alan-sans uppercase tracking-widest">{t.role}</p>
+                  <h4 className="text-wine font-bold font-signika tracking-tight">{t.name}</h4>
+                  <p className="text-xs font-bold text-mustard font-alan-sans uppercase tracking-widest">{t.role}</p>
                 </div>
               </div>
             </motion.article>

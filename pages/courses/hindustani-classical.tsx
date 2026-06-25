@@ -12,12 +12,12 @@ export default function HindustaniClassical() {
     credentials: ["Legendary Classical Vocalist", "30+ Years Experience", "Rampur Sahaswan Gharana Master"],
     overview: [
       "Immerse yourself in the timeless art of Hindustani classical singing with this comprehensive learning program designed for aspiring vocalists of all levels. Learn the sacred nuances, raag structures, and vocal techniques that form the foundation of classical Indian music. This learning program takes you on a deep journey through one of the world's oldest musical traditions.",
-      "Learn directly from Pandit Prasad Khaparde, a legendary Hindustani classical vocalist with over 30 years of experience, trained in the prestigious Rampur Sahaswan gharana under Padma Bhushan Ustad Rashid Khan. Through 3+ exclusive live group sessions where you'll receive personalized feedback and guidance, 120+ minutes of recorded content, quality assessments, and certification, this learning program is designed to develop your classical singing abilities."
+      "Learn directly from Pandit Prasad Khaparde, a legendary Hindustani classical vocalist with over 30 years of experience, trained in the prestigious Rampur Sahaswan gharana under Padma Bhushan Ustad Rashid Khan. Through 5+ exclusive live group sessions where you'll receive personalized feedback and guidance, 500+ minutes of recorded content, quality assessments, and certification, this learning program is designed to develop your classical singing abilities."
     ],
     highlights: [
       { icon: "⏱️", title: "Comprehensive Program", desc: "Structured program for deep learning and skill development" },
-      { icon: "📹", title: "120+ Mins Recorded", desc: "Extensive modules covering raagas, vocal techniques, and traditions" },
-      { icon: "👥", title: "3+ Live Sessions", desc: "Live group sessions for personalized guidance and feedback" },
+      { icon: "📹", title: "500+ Mins Recorded", desc: "Extensive modules covering raagas, vocal techniques, and traditions" },
+      { icon: "👥", title: "5+ Live Sessions", desc: "Live group sessions for personalized guidance and feedback" },
       { icon: "🎤", title: "Raag Training", desc: "Master the fundamental and advanced raags central to the art" },
       { icon: "📚", title: "Quality Assessments", desc: "Regular assessments to track progress and identify improvements" },
       { icon: "🏆", title: "Certification", desc: "Official certification recognized in the classical music community" },
@@ -175,7 +175,7 @@ export default function HindustaniClassical() {
       headers: ["Feature", "Accelerator"],
       rows: [
         ["Recorded content", "Yes"],
-        ["Live sessions", "3+ Group Sessions"],
+        ["Live sessions", { text: "5+ Group Sessions", tooltip: "5+ live interactive group sessions with Pandit Prasad Khaparde for personalized vocal feedback, raag practice, and peer learning throughout the program." }],
         ["Community", "Yes"],
         ["WhatsApp access", "Yes"],
         ["Assignment feedback", "Yes"],

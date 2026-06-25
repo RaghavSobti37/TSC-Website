@@ -12,12 +12,12 @@ export default function CompositionComprehensive() {
     credentials: ["Acclaimed Music Composer", "30+ Years Experience", "7Bn+ Streams"],
     overview: [
       "Dive deeper into advanced composition techniques with this comprehensive 6-month course designed for those who have mastered the fundamentals. This course takes your compositional skills to the next level through intensive live sessions, comprehensive recorded content, and a unique training approach where knowledge meets experience.",
-      "Learn directly from Sandesh Shandilya through 3 exclusive live interactive sessions where you'll receive personalized feedback, refine your craft, and explore advanced compositional concepts. With 200+ minutes of recorded content, 6 Months access to course contents, lifetime access to community, and direct mentorship, this course is designed to transform you into a confident and skilled composer."
+      "Learn directly from Sandesh Shandilya through 5 exclusive live interactive sessions where you'll receive personalized feedback, refine your craft, and explore advanced compositional concepts. With 500+ minutes of recorded content, 6 Months access to course contents, lifetime access to community, and direct mentorship, this course is designed to transform you into a confident and skilled composer."
     ],
     highlights: [
       { icon: "⏱️", title: "6 Months Duration", desc: "Comprehensive 6-month program designed for deep learning" },
-      { icon: "📹", title: "200+ Mins Recorded", desc: "Extensive content covering advanced techniques" },
-      { icon: "👥", title: "3 Live Sessions", desc: "Multiple live sessions for personalized guidance" },
+      { icon: "📹", title: "500+ Mins Recorded", desc: "Extensive content covering advanced techniques" },
+      { icon: "👥", title: "5 Live Sessions", desc: "Multiple live sessions for personalized guidance" },
       { icon: "📚", title: "6 Months Access", desc: "Full access to all course materials and recordings" },
       { icon: "🤝", title: "Lifetime Community", desc: "Join and stay connected with a vibrant community forever" },
       { icon: "🎓", title: "EWS Scholarships", desc: "Scholarships available for economically weaker sections" },
@@ -172,7 +172,7 @@ export default function CompositionComprehensive() {
       headers: ["Feature", "Accelerator"],
       rows: [
         ["Recorded content", "Yes"],
-        ["Live sessions", "3 sessions"],
+        ["Live sessions", { text: "5 sessions", tooltip: "5 live interactive sessions with Sandesh Shandilya for personalized feedback, Q&A, and advanced compositional guidance throughout the program." }],
         ["Community", "Yes"],
         ["WhatsApp access", "Yes"],
         ["Assignment feedback", "Yes"],

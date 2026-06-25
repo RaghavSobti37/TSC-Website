@@ -1,9 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Headphones, PenLine } from 'lucide-react';
 import Section from '@/components/layout/Section';
 import Container from '@/components/layout/Container';
-
-import { Mic2, Music2, Guitar } from 'lucide-react';
 
 const featuredMentors = [
   {
@@ -44,22 +43,21 @@ const featuredMentors = [
   }
 ];
 
-const comingSoonMentors = [
+const mentorSessions = [
   {
-    role: 'Iconic Voice Behind Bollywood Hits',
-    desc: 'A renowned Bollywood playback singer known for her rustic voice behind some of the most iconic songs across Bollywood genres.',
-    icon: <Mic2 className="w-12 h-12 text-[#1e3a8a]" />
+    name: 'Luca Petracca',
+    role: 'Music Producer & Film Composer',
+    desc: 'Master the end-to-end process of producing professional music for your songs. From recording and arrangement to mixing and mastering, Luca Petracca guides you through DAW training, orchestration, and film music production for singer-songwriters.',
+    image: '/assets/academy/luca.jpg',
+    icon: <Headphones className="w-10 h-10 text-wine" />,
   },
   {
-    role: 'Master of Musical Excellence',
-    desc: 'An internationally acclaimed artist with decades of experience shaping the music industry and inspiring generations.',
-    icon: <Music2 className="w-12 h-12 text-[#1e3a8a]" />
+    name: 'Geet Sagar',
+    role: 'Singer, Lyricist & X Factor India Winner',
+    desc: 'Learn the art of singing and songwriting from the winner of X Factor India. Geet Sagar shares 20+ years of experience as a singer, lyricist, and RJ to help you find your unique voice and craft songs that stand out in the mainstream.',
+    image: '/assets/academy/geetsagar.jpg',
+    icon: <PenLine className="w-10 h-10 text-wine" />,
   },
-  {
-    role: 'Visionary in Music Creation',
-    desc: 'A trailblazer in the music industry, known for innovative compositions and groundbreaking work that redefined musical boundaries.',
-    icon: <Guitar className="w-12 h-12 text-[#1e3a8a]" />
-  }
 ];
 
 export default function AcademyMentors() {
@@ -71,7 +69,7 @@ export default function AcademyMentors() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-bold text-[#1e3a8a] font-signika mb-6"
+            className="text-4xl md:text-5xl font-bold text-charcoal font-signika mb-6"
           >
             Our Mentors
           </motion.h2>
@@ -80,7 +78,7 @@ export default function AcademyMentors() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-lg text-slate-medium font-alan-sans max-w-2xl mx-auto"
+            className="text-xl text-slate-medium font-alan-sans max-w-2xl mx-auto leading-relaxed"
           >
             We define international standards. Our mentors are only the best artists in the world
             with proven craft and impeccable track records.
@@ -97,18 +95,14 @@ export default function AcademyMentors() {
               transition={{ delay: index * 0.15 }}
               className="bg-white p-8 rounded-3xl border border-slate-lightest shadow-lg hover:shadow-2xl transition-all duration-400 group"
             >
-              <h3 className="text-2xl font-bold text-[#1e3a8a] font-signika mb-1">{mentor.name}</h3>
-              <p className="text-sm font-bold text-pumpkin font-alan-sans mb-6 uppercase tracking-wider">{mentor.role}</p>
-              
+              <h3 className="text-2xl font-bold text-charcoal font-signika mb-1">{mentor.name}</h3>
+              <p className="text-sm font-bold text-mustard font-alan-sans mb-6 uppercase tracking-wider">{mentor.role}</p>
+
               <div className="h-80 overflow-hidden rounded-2xl mb-8">
-                <img
-                  src={mentor.image}
-                  alt={mentor.name}
-                  className="w-full h-full object-cover transition-all duration-700"
-                />
+                <img src={mentor.image} alt={mentor.name} className="w-full h-full object-cover transition-all duration-700" />
               </div>
 
-              <p className="text-slate-medium font-alan-sans text-sm leading-relaxed mb-8 h-24 overflow-hidden line-clamp-4">
+              <p className="text-slate-medium font-alan-sans text-base leading-relaxed mb-8 h-24 overflow-hidden line-clamp-4">
                 {mentor.bio}
               </p>
 
@@ -124,26 +118,35 @@ export default function AcademyMentors() {
         </div>
 
         <div className="text-center mb-12">
-          <h3 className="text-3xl font-bold text-[#1e3a8a] font-signika mb-4">Launching Soon</h3>
-          <p className="text-slate-medium font-alan-sans">More legends joining the force</p>
+          <h3 className="text-3xl font-bold text-charcoal font-signika mb-4">Mentor Sessions</h3>
+          <p className="text-lg text-slate-medium font-alan-sans">Upcoming courses with industry experts</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {comingSoonMentors.map((mentor, index) => (
-            <motion.div
-              key={index}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          {mentorSessions.map((mentor, index) => (
+            <motion.article
+              key={mentor.name}
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="bg-cream-dark/30 p-8 rounded-3xl border border-dashed border-[#1e3a8a]/20 text-center"
+              className="bg-white p-8 rounded-3xl border border-slate-lightest shadow-lg text-left"
             >
-              <div className="flex justify-center mb-6 opacity-80">{mentor.icon}</div>
-              <h4 className="text-lg font-bold text-[#1e3a8a] font-signika mb-4">{mentor.role}</h4>
-              <p className="text-sm text-slate-medium font-alan-sans leading-relaxed">
-                {mentor.desc}
-              </p>
-            </motion.div>
+              <div className="h-56 overflow-hidden rounded-2xl mb-6 relative">
+                <img src={mentor.image} alt={mentor.name} className="w-full h-full object-cover" />
+                <div className="absolute top-3 right-3 bg-mustard text-charcoal text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                  Revealing Soon
+                </div>
+              </div>
+              <div className="flex items-center gap-3 mb-4">
+                <div className="opacity-80">{mentor.icon}</div>
+                <div>
+                  <h4 className="text-xl font-bold text-charcoal font-signika">{mentor.name}</h4>
+                  <p className="text-sm font-bold text-mustard font-alan-sans uppercase tracking-wider">{mentor.role}</p>
+                </div>
+              </div>
+              <p className="text-base text-slate-medium font-alan-sans leading-relaxed">{mentor.desc}</p>
+            </motion.article>
           ))}
         </div>
       </Container>

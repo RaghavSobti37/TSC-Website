@@ -12,7 +12,7 @@ const courses = [
     title: 'The heART of Composition - Comprehensive',
     mentor: 'Sandesh Shandilya',
     mentorImage: '/assets/academy/sandesh.jpg',
-    features: ['6 Months', '200+ Mins Content', '3 Live Sessions', 'Industry Mentorship'],
+    features: ['6 Months', '500+ Mins Content', '5 Live Sessions', 'Industry Mentorship'],
     desc: 'Dive deeper into advanced composition techniques with this comprehensive 6-month course. Learn the art of imagination, emotion to expression, and mainstream mastery directly from a legend.',
     image: '/assets/academy/sandesh.jpg',
     link: '/courses/composition-comprehensive',
@@ -23,8 +23,8 @@ const courses = [
     title: 'The Roots of Hindustani Classical Music',
     mentor: 'Prasad Khaparde',
     mentorImage: '/assets/academy/prasadji.jpg',
-    features: ['6 Months', '3+ Live Sessions', '300+ Mins Content', 'Certification'],
-    desc: 'Immerse yourself in the timeless art of Hindustani classical singing. Twelve exclusive online group sessions, quality assessments, and certification under the guidance of Pandit Prasad Khaparde.',
+    features: ['6 Months', '5+ Live Sessions', '500+ Mins Content', 'Certification'],
+    desc: 'Immerse yourself in the timeless art of Hindustani classical singing. Five exclusive online group sessions, quality assessments, and certification under the guidance of Pandit Prasad Khaparde.',
     image: '/assets/academy/prasadji.jpg',
     link: '/courses/hindustani-classical',
     isLive: true,
@@ -80,7 +80,7 @@ export default function AcademyCourses() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-lg text-cream/70 font-alan-sans max-w-2xl mx-auto"
+            className="text-xl text-cream/80 font-alan-sans max-w-2xl mx-auto leading-relaxed"
           >
             Learn from industry legends and take your musical journey to the next level
           </motion.p>
@@ -118,13 +118,20 @@ export default function AcademyCourses() {
                     />
                   </div>
                 ) : (
-                  <div className="w-full h-full bg-gradient-to-br from-academy-blue to-charcoal" />
+                  <div className="w-full h-full bg-gradient-to-br from-wine to-charcoal" />
                 )}
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent z-10" />
                 {course.isComingSoon && (
-                  <div className="absolute inset-0 bg-black/40 backdrop-blur-[2px] z-20 flex items-center justify-center">
-                    <div className="px-6 py-2 bg-pumpkin text-cream rounded-full font-bold text-sm tracking-widest uppercase shadow-xl">
+                  <div className="absolute top-5 right-5 z-20">
+                    <div className="px-4 py-2 bg-mustard text-charcoal rounded-full font-bold text-xs tracking-widest uppercase shadow-lg border border-cream/20">
                       Revealing Soon
+                    </div>
+                  </div>
+                )}
+                {!course.isComingSoon && (
+                  <div className="absolute top-5 left-5 z-20">
+                    <div className="px-4 py-2 bg-wine text-cream rounded-full font-bold text-xs tracking-wide shadow-lg">
+                      50% OFF · ₹4,999 <span className="line-through opacity-70 ml-1">₹9,999</span>
                     </div>
                   </div>
                 )}
@@ -143,7 +150,7 @@ export default function AcademyCourses() {
                 <div className="flex flex-wrap gap-x-4 gap-y-2 mb-8">
                   {course.features.map((f, i) => (
                     <React.Fragment key={f}>
-                      <span className="text-xs font-bold text-cream/80 font-alan-sans">{f}</span>
+                      <span className="text-sm font-bold text-cream/90 font-alan-sans">{f}</span>
                       {i < course.features.length - 1 && (
                         <span className="text-white/20">|</span>
                       )}
@@ -151,13 +158,13 @@ export default function AcademyCourses() {
                   ))}
                 </div>
 
-                <p className="text-cream/70 font-alan-sans text-sm leading-relaxed mb-10 max-w-lg line-clamp-3 group-hover:line-clamp-none transition-all duration-500">
+                <p className="text-cream/80 font-alan-sans text-base leading-relaxed mb-10 max-w-lg line-clamp-3 group-hover:line-clamp-none transition-all duration-500">
                   {course.desc}
                 </p>
 
                 {!course.isComingSoon && (
                   <div className="flex items-center gap-4">
-                    <div className="w-10 h-10 rounded-full border border-pumpkin overflow-hidden relative">
+                    <div className="w-10 h-10 rounded-full border border-mustard overflow-hidden relative">
                       <Image
                         src={course.mentorImage}
                         alt={course.mentor}
@@ -166,7 +173,7 @@ export default function AcademyCourses() {
                       />
                     </div>
                     <span className="text-cream font-bold font-alan-sans text-sm">{course.mentor}</span>
-                    <div className="ml-auto w-10 h-10 rounded-full bg-pumpkin/20 border border-pumpkin/50 flex items-center justify-center text-cream group-hover:bg-pumpkin group-hover:scale-110 transition-all">
+                    <div className="ml-auto w-10 h-10 rounded-full bg-mustard/20 border border-mustard/50 flex items-center justify-center text-cream group-hover:bg-mustard group-hover:scale-110 transition-all">
                       <ArrowRight size={18} />
                     </div>
                   </div>

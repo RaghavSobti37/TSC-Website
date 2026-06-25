@@ -28,12 +28,12 @@ export default function PrasadMasterclass() {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8 }}
               >
-                <div className="inline-block px-4 py-1.5 rounded-full bg-pumpkin/20 border border-pumpkin/40 text-pumpkin text-xs font-bold uppercase tracking-widest mb-8 font-alan-sans">
+                <div className="inline-block px-4 py-1.5 rounded-full bg-mustard/20 border border-mustard/40 text-mustard text-xs font-bold uppercase tracking-widest mb-8 font-alan-sans">
                   Exclusive Masterclass
                 </div>
                 <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-black mb-8 font-signika leading-tight">
                   The Roots of Hindustani Classical Music with <br />
-                  <span className="text-orange">Pandit Prasad Khaparde</span>
+                  <span className="text-mustard">Pandit Prasad Khaparde</span>
                 </h1>
                 <p className="text-xl text-black/70 mb-12 font-alan-sans leading-relaxed max-w-xl">
                   Access the secrets of classical singing from a legend of the Rampur Sahaswan Gharana.
@@ -54,7 +54,7 @@ export default function PrasadMasterclass() {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="relative"
               >
-                <div className="absolute inset-0 bg-gradient-to-tr from-pumpkin/20 to-academy-blue/20 blur-3xl rounded-full" />
+                <div className="absolute inset-0 bg-gradient-to-tr from-mustard/20 to-wine/20 blur-3xl rounded-full" />
                 <img 
                   src="/assets/academy/prasad-hero.jpg" 
                   alt="Pandit Prasad Khaparde" 
@@ -69,7 +69,7 @@ export default function PrasadMasterclass() {
         <Section background="cream" padding="xl">
           <Container>
             <div className="text-center mb-20">
-              <h2 className="text-4xl md:text-5xl font-bold text-academy-blue font-signika mb-6">What to Expect?</h2>
+              <h2 className="text-4xl md:text-5xl font-bold text-charcoal font-signika mb-6">What to Expect?</h2>
               <p className="text-lg text-slate-medium font-alan-sans max-w-2xl mx-auto">
                 Discover the secrets behind Hindustani classical music, understanding the sacred traditions, and developing technical mastery.
               </p>
@@ -105,7 +105,7 @@ export default function PrasadMasterclass() {
                     <img src={step.img} alt={step.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
                   </div>
                   <div className="p-8">
-                    <h3 className="text-2xl font-bold text-academy-blue mb-4 font-signika">{step.title}</h3>
+                    <h3 className="text-2xl font-bold text-charcoal mb-4 font-signika">{step.title}</h3>
                     <p className="text-slate-medium font-alan-sans leading-relaxed">{step.desc}</p>
                   </div>
                 </motion.div>
@@ -115,7 +115,7 @@ export default function PrasadMasterclass() {
             <div className="mt-20 text-center">
               <button 
                 onClick={() => window.open(enrollmentLink, '_blank')}
-                className="inline-flex items-center gap-4 bg-orange text-white px-10 py-5 rounded-2xl font-bold font-alan-sans hover:scale-105 transition-all shadow-xl shadow-orange/20 whitespace-nowrap"
+                className="inline-flex items-center gap-4 bg-gradient-to-r from-mustard to-wine text-white px-10 py-5 rounded-2xl font-bold font-alan-sans hover:scale-105 transition-all shadow-xl shadow-mustard/20 whitespace-nowrap"
               >
                 <span>Enroll Now</span>
                 <span className="w-px h-6 bg-white/20" />
@@ -126,20 +126,20 @@ export default function PrasadMasterclass() {
         </Section>
 
         {/* Who is it for */}
-        <Section background="academy-blue" padding="xl" className="text-cream relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-pumpkin/10 rounded-full blur-[100px] -mr-48 -mt-48" />
+        <Section background="charcoal" padding="xl" className="text-cream relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-mustard/10 rounded-full blur-[100px] -mr-48 -mt-48" />
           <Container className="relative z-10">
             <h2 className="text-4xl md:text-5xl font-bold font-signika mb-12 text-center">Who Should DEFINITELY ATTEND?</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
               <div className="flex gap-6">
-                <div className="text-4xl text-orange"><Mic2 size={40} /></div>
+                <div className="text-4xl text-mustard"><Mic2 size={40} /></div>
                 <div>
                   <h3 className="text-2xl font-bold font-signika mb-4">Vocalists & Students</h3>
                   <p className="text-cream/80 font-alan-sans leading-relaxed">Classical vocalists, semi-classical singers, and students can learn sacred traditions and technical mastery.</p>
                 </div>
               </div>
               <div className="flex gap-6">
-                <div className="text-4xl text-orange"><Rocket size={40} /></div>
+                <div className="text-4xl text-mustard"><Rocket size={40} /></div>
                 <div>
                   <h3 className="text-2xl font-bold font-signika mb-4">Just Starting Out</h3>
                   <p className="text-cream/80 font-alan-sans leading-relaxed">Decided to become a professional artist? Connect with the right mentor and learn from day one.</p>
@@ -154,22 +154,22 @@ export default function PrasadMasterclass() {
           <Container>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <div className="order-2 lg:order-1">
-                <h3 className="text-4xl font-bold text-academy-blue font-signika mb-2">Pandit Prasad Khaparde</h3>
-                <p className="text-pumpkin font-bold font-alan-sans uppercase tracking-widest mb-8">Legendary Hindustani Classical Vocalist</p>
+                <h3 className="text-4xl font-bold text-charcoal font-signika mb-2">Pandit Prasad Khaparde</h3>
+                <p className="text-mustard font-bold font-alan-sans uppercase tracking-widest mb-8">Legendary Hindustani Classical Vocalist</p>
                 <p className="text-lg text-slate-medium font-alan-sans leading-relaxed mb-8">
                   A renowned Hindustani classical vocalist of international repute with over 30 years of illustrious career. Trained under Padma Bhushan Ustad Rashid Khan Sahab.
                 </p>
                 <div className="grid grid-cols-3 gap-8">
                   <div>
-                    <div className="text-3xl font-bold text-academy-blue font-signika">30+</div>
+                    <div className="text-3xl font-bold text-charcoal font-signika">30+</div>
                     <div className="text-sm text-slate-light font-alan-sans">Years Exp</div>
                   </div>
                   <div>
-                    <div className="text-3xl font-bold text-academy-blue font-signika">Gharana</div>
+                    <div className="text-3xl font-bold text-charcoal font-signika">Gharana</div>
                     <div className="text-sm text-slate-light font-alan-sans">Rampur Sahaswan</div>
                   </div>
                   <div>
-                    <div className="text-3xl font-bold text-academy-blue font-signika">Legacy</div>
+                    <div className="text-3xl font-bold text-charcoal font-signika">Legacy</div>
                     <div className="text-sm text-slate-light font-alan-sans">Rashid Khan Disciple</div>
                   </div>
                 </div>

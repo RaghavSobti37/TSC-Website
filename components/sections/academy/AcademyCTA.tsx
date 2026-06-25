@@ -6,10 +6,10 @@ import { AcademyButton } from '@/components/ui/AcademyButton';
 
 export default function AcademyCTA() {
   return (
-    <Section id="cta" padding="xl" className="relative overflow-hidden bg-gradient-to-br from-[#1e3a8a] to-[#172554]">
+    <Section id="cta" padding="xl" className="relative overflow-hidden bg-gradient-to-br from-charcoal to-wine">
       {/* Decorative background elements */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-pumpkin/10 rounded-full blur-[100px] -mr-48 -mt-48" />
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#1e3a8a]/20 rounded-full blur-[100px] -ml-48 -mb-48" />
+      <div className="absolute top-0 right-0 w-96 h-96 bg-mustard/10 rounded-full blur-[100px] -mr-48 -mt-48" />
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-wine/20 rounded-full blur-[100px] -ml-48 -mb-48" />
 
       <Container className="relative z-10">
         <div className="max-w-3xl mx-auto text-center">

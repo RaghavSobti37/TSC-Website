@@ -35,7 +35,7 @@ const courses = [
     color: 'bg-orange/10 text-orange',
     about: 'A comprehensive 6-month journey into mainstream mastery. Learn the art of imagination, converting emotion into timeless expression, and mastering the subconscious mind for effortless creation.',
     for: 'Aspiring and intermediate composers, songwriters, and musicians who want to move beyond basic theory and create music that connects with the masses.',
-    expect: '200+ mins of deep-dive content, 3 live interactive sessions, '
+    expect: '500+ mins of deep-dive content, 5 live interactive sessions, lifetime community access, and direct mentorship from Sandesh Shandilya. Enroll at ₹4,999 (50% off — was ₹9,999).'
   },
   {
     id: 'classical',
@@ -45,7 +45,7 @@ const courses = [
     color: 'bg-[#1e3a8a]/10 text-[#1e3a8a]',
     about: 'Master the sacred nuances of classical singing under the Rampur Sahaswan Gharana tradition. Learn directly from the legacy of Padma Bhushan Ustad Rashid Khan Sahab.',
     for: 'Vocalists of all levels—from beginners wanting a strong foundation to seasoned singers looking to refine their raag interpretation and vocal discipline.',
-    expect: '3 live group sessions, masterclass in breath control (Kanth Saadhna), and official certification recognized in the classical music community.'
+    expect: '5+ live group sessions, 500+ mins of recorded content, masterclass in breath control (Kanth Saadhna), and official certification. Enroll at ₹4,999 (50% off — was ₹9,999).'
   },
   {
     id: 'production',

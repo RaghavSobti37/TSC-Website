@@ -1,0 +1,9 @@
+{
+  "name": "The Shakti Collective",
+  "short_name": "TSC",
+  "description": "The Shakti Collective is a culture-first artist development ecosystem for singers, musicians, producers, storytellers, and conscious creative communities.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FFECD1",
+  "theme_color": "#083D3A"
+}

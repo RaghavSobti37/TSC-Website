@@ -1,0 +1,56 @@
+{
+  "version": 2,
+  "buildCommand": "npm run build",
+  "outputDirectory": "public",
+  "rewrites": [
+    {
+      "source": "/assets/mirror/disabled-telemetry",
+      "destination": "/api/disabled-telemetry"
+    },
+    {
+      "source": "/_api/:path*",
+      "destination": "/api/disabled-telemetry"
+    },
+    {
+      "source": "/assets/mirror/siteassets.parastorage.com/pages/pages/thunderbolt",
+      "has": [
+        {
+          "type": "query",
+          "key": "module",
+          "value": "(?<module>[^&]+)"
+        },
+        {
+          "type": "query",
+          "key": "pageId",
+          "value": "(?<pageId>[^&]+)"
+        },
+        {
+          "type": "query",
+          "key": "formFactor",
+          "value": "(?<formFactor>[^&]+)"
+        },
+        {
+          "type": "query",
+          "key": "fileId",
+          "value": "(?<fileId>[^&]+)"
+        }
+      ],
+      "destination": "/assets/mirror/siteassets.parastorage.com/pages/pages/thunderbolt/:module--:pageId--:formFactor--:fileId.json"
+    },
+    {
+      "source": "/assets/mirror/static.wixstatic.com/media/:asset/v1/:transform*",
+      "destination": "/assets/mirror/static.wixstatic.com/original-media/:asset"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/assets/mirror/siteassets.parastorage.com/pages/pages/thunderbolt",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/json; charset=utf-8"
+        }
+      ]
+    }
+  ]
+}

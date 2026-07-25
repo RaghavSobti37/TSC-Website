@@ -1,0 +1,9 @@
+TimeoutError: Waiting failed: 30000ms exceeded
+    at new WaitTask (file:///C:/Users/ragha/OneDrive/Desktop/website%20cloner/node_modules/puppeteer-core/lib/puppeteer/common/WaitTask.js:46:34)
+    at IsolatedWorld.waitForFunction (file:///C:/Users/ragha/OneDrive/Desktop/website%20cloner/node_modules/puppeteer-core/lib/puppeteer/api/Realm.js:49:26)
+    at CdpFrame.waitForFunction (file:///C:/Users/ragha/OneDrive/Desktop/website%20cloner/node_modules/puppeteer-core/lib/puppeteer/api/Frame.js:580:43)
+    at CdpFrame.<anonymous> (file:///C:/Users/ragha/OneDrive/Desktop/website%20cloner/node_modules/puppeteer-core/lib/puppeteer/util/decorators.js:101:27)
+    at CdpPage.waitForFunction (file:///C:/Users/ragha/OneDrive/Desktop/website%20cloner/node_modules/puppeteer-core/lib/puppeteer/api/Page.js:1447:37)
+    at waitForRuntime (C:\Users\ragha\OneDrive\Desktop\website cloner\scripts\audit-interactions.js:75:14)
+    at auditRoute (C:\Users\ragha\OneDrive\Desktop\website cloner\scripts\audit-interactions.js:162:9)
+    at async main (C:\Users\ragha\OneDrive\Desktop\website cloner\scripts\audit-interactions.js:228:22)

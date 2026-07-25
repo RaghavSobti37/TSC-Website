@@ -1,0 +1,294 @@
+{
+  "generatedAt": "2026-07-25T08:08:49.179Z",
+  "target": "https://wix-site-clone-psi.vercel.app",
+  "passed": true,
+  "results": [
+    {
+      "route": "home",
+      "url": "https://wix-site-clone-psi.vercel.app/",
+      "passed": true,
+      "mountFinished": true,
+      "clientRenderFinished": true,
+      "authored": {
+        "hoverTests": [
+          {
+            "sourceId": "comp-mrlr0ide",
+            "targetId": "comp-mrlrm6bo",
+            "stateNames": [
+              "variants-mrltykzx"
+            ]
+          },
+          {
+            "sourceId": "comp-mrlrorgn",
+            "targetId": "comp-mrlrorgr",
+            "stateNames": [
+              "variants-mrltz4wi"
+            ]
+          },
+          {
+            "sourceId": "comp-mrlrqzuf",
+            "targetId": "comp-mrlrqzui",
+            "stateNames": [
+              "variants-mrltzhk21"
+            ]
+          },
+          {
+            "sourceId": "comp-kbgakxmn_r_comp-mrsrn7dh",
+            "targetId": "comp-kbgakxmn_r_comp-mrsrn7dh",
+            "stateNames": [
+              "comp-kbgakxmn_r_variants-mrst53iu"
+            ]
+          },
+          {
+            "sourceId": "comp-kbgakxmn_r_comp-mrsrmk22",
+            "targetId": "comp-kbgakxmn_r_comp-mrsrmk22",
+            "stateNames": [
+              "comp-kbgakxmn_r_variants-mrst6mny"
+            ]
+          },
+          {
+            "sourceId": "comp-kbgakxmn_r_comp-mrsrlyv2",
+            "targetId": "comp-kbgakxmn_r_comp-mrsrlyv2",
+            "stateNames": [
+              "comp-kbgakxmn_r_variants-mrst74mc"
+            ]
+          },
+          {
+            "sourceId": "comp-kbgakxmn_r_comp-mrsrnf35",
+            "targetId": "comp-kbgakxmn_r_comp-mrsrnf35",
+            "stateNames": [
+              "comp-kbgakxmn_r_variants-mrst7nl2"
+            ]
+          },
+          {
+            "sourceId": "comp-kbgakxmn_r_comp-mrsrmzjv",
+            "targetId": "comp-kbgakxmn_r_comp-mrsrmzjv",
+            "stateNames": [
+              "comp-kbgakxmn_r_variants-mrst86i8"
+            ]
+          },
+          {
+            "sourceId": "comp-kbgakxmn_r_comp-mrsro01g",
+            "targetId": "comp-kbgakxmn_r_comp-mrsro01g",
+            "stateNames": [
+              "comp-kbgakxmn_r_variants-mrst8po6"
+            ]
+          }
+        ],
+        "viewportTriggers": 5,
+        "progressTriggers": 1
+      },
+      "observed": {
+        "namedMotion": [
+          {
+            "name": "motion-fadeIn",
+            "target": "comp-mrgcdx8y",
+            "duration": 1400
+          },
+          {
+            "name": "motion-blurIn",
+            "target": "comp-mrgcdx8y",
+            "duration": 2000
+          },
+          {
+            "name": "motion-fadeIn",
+            "target": "comp-mrgd8bb6",
+            "duration": 1400
+          },
+          {
+            "name": "motion-blurIn",
+            "target": "comp-mrgd8bb6",
+            "duration": 2000
+          },
+          {
+            "name": "motion-fadeIn",
+            "target": "comp-mrg8g77c__item-mp3ozw9b",
+            "duration": 1200
+          },
+          {
+            "name": "motion-flipIn",
+            "target": "comp-mrg8g77c__item-mp3ozw9b",
+            "duration": 1200
+          },
+          {
+            "name": "motion-fadeIn",
+            "target": "comp-mrg8g77k6__item-mp3ozw9b",
+            "duration": 1200
+          },
+          {
+            "name": "motion-fadeIn",
+            "target": "comp-mrg8g77c__item-mrg8jnrt",
+            "duration": 1200
+          },
+          {
+            "name": "motion-flipIn",
+            "target": "comp-mrg8g77c__item-mrg8jnrt",
+            "duration": 1200
+          },
+          {
+            "name": "motion-fadeIn",
+            "target": "comp-mrg8g77k6__item-mrg8jnrt",
+            "duration": 1200
+          },
+          {
+            "name": "motion-fadeIn",
+            "target": "comp-mrg8g77c__item-mrg8klt9",
+            "duration": 1200
+          },
+          {
+            "name": "motion-flipIn",
+            "target": "comp-mrg8g77c__item-mrg8klt9",
+            "duration": 1200
+          },
+          {
+            "name": "motion-fadeIn",
+            "target": "comp-mrg8g77k6__item-mrg8klt9",
+            "duration": 1200
+          },
+          {
+            "name": "motion-fadeIn",
+            "target": "comp-mrg8g77c__item-mrg8knii1",
+            "duration": 1200
+          },
+          {
+            "name": "motion-flipIn",
+            "target": "comp-mrg8g77c__item-mrg8knii1",
+            "duration": 1200
+          },
+          {
+            "name": "motion-fadeIn",
+            "target": "comp-mrg8g77k6__item-mrg8knii1",
+            "duration": 1200
+          },
+          {
+            "name": "motion-fadeIn",
+            "target": "comp-mrxkm2y2",
+            "duration": 1400
+          },
+          {
+            "name": "motion-blurIn",
+            "target": "comp-mrxkm2y2",
+            "duration": 2000
+          },
+          {
+            "name": "motion-breathe-1",
+            "target": "comp-mrge27je",
+            "duration": 2900
+          }
+        ],
+        "scrubMotion": [
+          {
+            "name": "(scrub)",
+            "target": "bgMedia_comp-mrlrzobh",
+            "duration": "auto"
+          },
+          {
+            "name": "(scrub)",
+            "target": "comp-mrqgho75_r_comp-mrqgho3a",
+            "duration": 1000
+          }
+        ],
+        "hoverResults": [
+          {
+            "sourceId": "comp-mrlr0ide",
+            "targetId": "comp-mrlrm6bo",
+            "stateNames": [
+              "variants-mrltykzx"
+            ],
+            "status": "passed",
+            "changed": true,
+            "stateApplied": true
+          },
+          {
+            "sourceId": "comp-mrlrorgn",
+            "targetId": "comp-mrlrorgr",
+            "stateNames": [
+              "variants-mrltz4wi"
+            ],
+            "status": "passed",
+            "changed": true,
+            "stateApplied": true
+          },
+          {
+            "sourceId": "comp-mrlrqzuf",
+            "targetId": "comp-mrlrqzui",
+            "stateNames": [
+              "variants-mrltzhk21"
+            ],
+            "status": "passed",
+            "changed": true,
+            "stateApplied": true
+          },
+          {
+            "sourceId": "comp-kbgakxmn_r_comp-mrsrlyv2",
+            "targetId": "comp-kbgakxmn_r_comp-mrsrlyv2",
+            "stateNames": [
+              "comp-kbgakxmn_r_variants-mrst74mc"
+            ],
+            "status": "passed",
+            "changed": true,
+            "stateApplied": true
+          },
+          {
+            "sourceId": "comp-kbgakxmn_r_comp-mrsro01g",
+            "targetId": "comp-kbgakxmn_r_comp-mrsro01g",
+            "stateNames": [
+              "comp-kbgakxmn_r_variants-mrst8po6"
+            ],
+            "status": "passed",
+            "changed": true,
+            "stateApplied": true
+          },
+          {
+            "sourceId": "comp-kbgakxmn_r_comp-mrsrn7dh",
+            "targetId": "comp-kbgakxmn_r_comp-mrsrn7dh",
+            "stateNames": [
+              "comp-kbgakxmn_r_variants-mrst53iu"
+            ],
+            "status": "passed",
+            "changed": true,
+            "stateApplied": true
+          },
+          {
+            "sourceId": "comp-kbgakxmn_r_comp-mrsrmk22",
+            "targetId": "comp-kbgakxmn_r_comp-mrsrmk22",
+            "stateNames": [
+              "comp-kbgakxmn_r_variants-mrst6mny"
+            ],
+            "status": "passed",
+            "changed": true,
+            "stateApplied": true
+          },
+          {
+            "sourceId": "comp-kbgakxmn_r_comp-mrsrnf35",
+            "targetId": "comp-kbgakxmn_r_comp-mrsrnf35",
+            "stateNames": [
+              "comp-kbgakxmn_r_variants-mrst7nl2"
+            ],
+            "status": "passed",
+            "changed": true,
+            "stateApplied": true
+          },
+          {
+            "sourceId": "comp-kbgakxmn_r_comp-mrsrmzjv",
+            "targetId": "comp-kbgakxmn_r_comp-mrsrmzjv",
+            "stateNames": [
+              "comp-kbgakxmn_r_variants-mrst86i8"
+            ],
+            "status": "passed",
+            "changed": true,
+            "stateApplied": true
+          }
+        ]
+      },
+      "diagnostics": {
+        "pageErrors": [],
+        "requestFailures": [],
+        "consoleErrors": [
+          "TypeError: Failed to construct 'URL': Invalid URL",
+          "TypeError: Failed to construct 'URL': Invalid URL"
+        ]
+      }
+    }
+  ]
+}

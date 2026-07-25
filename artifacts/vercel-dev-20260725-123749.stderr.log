@@ -1,0 +1,8 @@
+Retrieving project…
+> Removing .vercel\output
+[vc] PATH TO REGEXP PATH DIFF @ #632: {"path":"/assets/mirror/siteassets.parastorage.com/pages/pages/thunderbolt/:module--:pageId--:formFactor--:fileId.json","currentRegExp":"/^\\/assets\\/mirror\\/siteassets\\.parastorage\\.com\\/pages\\/pages\\/thunderbolt(?:\\/([^\\/]+?))--([^\\/]+?)--([^\\/]+?)--([^\\/]+?)\\.json$/","newRegExp":"/^\\/assets\\/mirror\\/siteassets\\.parastorage\\.com\\/pages\\/pages\\/thunderbolt(?:\\/([^\\/]+?))--((?:(?!--)[^\\/])+?)--((?:(?!--)[^\\/])+?)--((?:(?!--)[^\\/])+?)\\.json$/"}
+[vc] PATH TO REGEXP PATH DIFF @ #528: {"path":"/assets/mirror/siteassets.parastorage.com/pages/pages/thunderbolt/:module--:pageId--:formFactor--:fileId.json","currentRegExp":"/^\\/assets\\/mirror\\/siteassets\\.parastorage\\.com\\/pages\\/pages\\/thunderbolt(?:\\/([^\\/#\\?]+?))--([^\\/#\\?]+?)--([^\\/#\\?]+?)--([^\\/#\\?]+?)\\.json[\\/#\\?]?$/i","newRegExp":"/^\\/assets\\/mirror\\/siteassets\\.parastorage\\.com\\/pages\\/pages\\/thunderbolt(?:\\/([^\\/#\\?]+?))--((?:(?!--)[^\\/#\\?])+?)--((?:(?!--)[^\\/#\\?])+?)--((?:(?!--)[^\\/#\\?])+?)\\.json[\\/#\\?]?$/i"}
+WARN! The "has" property in vercel.json will be ignored during development. Deployments will work as expected.
+> Creating initial build
+'yarn' is not recognized as an internal or external command,
+operable program or batch file.

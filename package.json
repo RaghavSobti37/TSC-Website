@@ -1,0 +1,17 @@
+{
+  "name": "the-shakti-collective",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "node scripts/build.js",
+    "dev": "node scripts/serve-mirror.js 3000",
+    "repair:assets": "node scripts/mirror-wix-site.js --rewrite-existing-assets",
+    "audit:production": "node scripts/audit-site.js",
+    "audit:original": "node scripts/audit-site.js --original",
+    "audit:interactions": "node scripts/audit-interactions.js",
+    "audit:navigation": "node scripts/audit-navigation.js"
+  },
+  "devDependencies": {
+    "puppeteer": "^25.3.0"
+  }
+}

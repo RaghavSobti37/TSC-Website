@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "source": "https://meghanabhawalkarwo.wixstudio.com/my-site",
+      "path": "/",
+      "file": "index.html"
+    },
+    {
+      "source": "https://meghanabhawalkarwo.wixstudio.com/my-site/blank",
+      "path": "/about",
+      "file": "about/index.html"
+    },
+    {
+      "source": "https://meghanabhawalkarwo.wixstudio.com/my-site/blank-1",
+      "path": "/work",
+      "file": "work/index.html"
+    },
+    {
+      "source": "https://meghanabhawalkarwo.wixstudio.com/my-site/blank-2",
+      "path": "/artists",
+      "file": "artists/index.html"
+    },
+    {
+      "source": "https://meghanabhawalkarwo.wixstudio.com/my-site/blank-4",
+      "path": "/artist-path",
+      "file": "artist-path/index.html"
+    },
+    {
+      "source": "https://meghanabhawalkarwo.wixstudio.com/my-site/blank-3-1",
+      "path": "/learn-with-tsc",
+      "file": "learn-with-tsc/index.html"
+    },
+    {
+      "source": "https://meghanabhawalkarwo.wixstudio.com/my-site/blank-11",
+      "path": "/films",
+      "file": "films/index.html"
+    },
+    {
+      "source": "https://meghanabhawalkarwo.wixstudio.com/my-site/blank-5",
+      "path": "/resources",
+      "file": "resources/index.html"
+    },
+    {
+      "source": "https://meghanabhawalkarwo.wixstudio.com/my-site/blank-3",
+      "path": "/academy",
+      "file": "academy/index.html"
+    }
+  ],
+  "assets": 562,
+  "generatedAt": "2026-07-25T07:07:18.997Z",
+  "sourceRepo": "https://github.com/AhmadIbrahiim/Website-downloader.git"
+}

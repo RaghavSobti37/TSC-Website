@@ -1,0 +1,10 @@
+Auditing interactions home... PASS
+Auditing interactions about... PASS
+Auditing interactions work... PASS
+Auditing interactions artists... PASS
+Auditing interactions artist-path... PASS
+Auditing interactions learn-with-tsc... FAIL
+Auditing interactions films... PASS
+Auditing interactions resources... PASS
+Auditing interactions academy... FAIL
+Result: FAIL

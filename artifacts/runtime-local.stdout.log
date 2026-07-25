@@ -1,0 +1,29 @@
+Auditing local desktop home... PASS
+Auditing local desktop about... PASS
+Auditing local desktop work... PASS
+Auditing local desktop artists... PASS
+Auditing local desktop artist-path... PASS
+Auditing local desktop learn-with-tsc... PASS
+Auditing local desktop films... PASS
+Auditing local desktop resources... FAIL
+Auditing local desktop academy... PASS
+Auditing local tablet home... PASS
+Auditing local tablet about... PASS
+Auditing local tablet work... PASS
+Auditing local tablet artists... PASS
+Auditing local tablet artist-path... PASS
+Auditing local tablet learn-with-tsc... PASS
+Auditing local tablet films... PASS
+Auditing local tablet resources... FAIL
+Auditing local tablet academy... PASS
+Auditing local mobile home... PASS
+Auditing local mobile about... PASS
+Auditing local mobile work... PASS
+Auditing local mobile artists... PASS
+Auditing local mobile artist-path... PASS
+Auditing local mobile learn-with-tsc... PASS
+Auditing local mobile films... PASS
+Auditing local mobile resources... FAIL
+Auditing local mobile academy... PASS
+Report: C:\Users\ragha\OneDrive\Desktop\website cloner\artifacts\runtime-audit\local-report.json
+Result: FAIL

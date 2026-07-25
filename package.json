@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "node scripts/build.js",
+    "build": "node scripts/build.js && node scripts/optimize-assets.js",
     "dev": "node scripts/serve-mirror.js 3000",
     "repair:assets": "node scripts/mirror-wix-site.js --rewrite-existing-assets",
     "audit:production": "node scripts/audit-site.js",
@@ -12,6 +12,7 @@
     "audit:navigation": "node scripts/audit-navigation.js"
   },
   "devDependencies": {
-    "puppeteer": "^25.3.0"
+    "puppeteer": "^25.3.0",
+    "sharp": "^0.35.3"
   }
 }

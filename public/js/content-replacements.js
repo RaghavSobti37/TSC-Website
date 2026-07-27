@@ -252,13 +252,18 @@
   }
 
   function buildMobileHeader() {
-    if (document.querySelector('.tsc-mobile-site-header')) return;
+    var compact = window.matchMedia && window.matchMedia('(max-width: 700px)').matches;
+    var existing = document.querySelector('.tsc-mobile-site-header');
+    if (!compact) {
+      if (existing) existing.parentNode.removeChild(existing);
+      return;
+    }
+    if (existing) return;
     var path = normalizedPath();
     var academyMode = !!academyPaths[path];
     var brand = academyMode ? brandAssets.academy : brandAssets.main;
     var header = document.createElement('div');
     header.className = 'tsc-mobile-site-header';
-    // ponytail: logo-only header on small screens
     header.innerHTML = [
       '<a class="tsc-mobile-brand" href="' + (academyMode ? '/academy' : '/') + '" aria-label="' + (academyMode ? 'TSC Academy' : 'The Shakti Collective') + '">',
         '<img class="tsc-mobile-brand-logo ' + (academyMode ? 'tsc-mobile-brand-logo-academy' : 'tsc-mobile-brand-logo-main') + '" src="' + brand.logo + '" alt="">',
@@ -294,10 +299,16 @@
       if (rect.left > 360 || rect.width < 40 || rect.height < 35) return;
       link.setAttribute('href', academyMode ? '/academy' : '/');
       link.setAttribute('aria-label', academyMode ? 'TSC Academy' : 'The Shakti Collective');
+      // ponytail: keep Wix wordmark on main site; only swap mark on academy pages
+      if (!academyMode) {
+        link.classList.remove('tsc-desktop-brand-link');
+        delete link.dataset.tscBrandLogo;
+        return;
+      }
       link.classList.add('tsc-desktop-brand-link');
       if (link.dataset.tscBrandLogo === brand.logo) return;
       link.dataset.tscBrandLogo = brand.logo;
-      link.innerHTML = '<img class="tsc-desktop-brand-logo ' + (academyMode ? 'tsc-desktop-brand-logo-academy' : 'tsc-desktop-brand-logo-main') + '" src="' + brand.logo + '" alt="">';
+      link.innerHTML = '<img class="tsc-desktop-brand-logo tsc-desktop-brand-logo-academy" src="' + brand.logo + '" alt="">';
     });
   }
 
@@ -420,7 +431,10 @@
   }
 
   ui.applyOnSchedule(boot);
-  window.addEventListener('resize', alignResponsiveElements);
+  window.addEventListener('resize', function() {
+    buildMobileHeader();
+    alignResponsiveElements();
+  });
   window.addEventListener('load', scheduleResponsiveAlignment);
   if ('MutationObserver' in window) {
     var observer = new MutationObserver(function() {

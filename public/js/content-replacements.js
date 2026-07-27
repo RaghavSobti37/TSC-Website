@@ -262,14 +262,53 @@
     var path = normalizedPath();
     var academyMode = !!academyPaths[path];
     var brand = academyMode ? brandAssets.academy : brandAssets.main;
+    var navLinks = academyMode
+      ? [
+          ['/resources', 'Resources'],
+          ['/the-heart-of-composition', 'The HeART of Composition'],
+          ['/roots-of-hindustani-classical', 'Roots of Hindustani Classical'],
+          ['/academy', 'Courses'],
+          ['/academy', 'Testimonials'],
+          ['/book-a-call', 'Know More']
+        ]
+      : [
+          ['/about', 'About'],
+          ['/work', 'Work'],
+          ['/artists', 'Artists'],
+          ['/films', 'Films'],
+          ['/resources', 'Resources'],
+          ['/academy', 'TSC Academy']
+        ];
     var header = document.createElement('div');
-    header.className = 'tsc-mobile-site-header';
+    header.className = 'tsc-mobile-site-header' + (academyMode ? ' tsc-mobile-site-header-academy' : '');
     header.innerHTML = [
       '<a class="tsc-mobile-brand" href="' + (academyMode ? '/academy' : '/') + '" aria-label="' + (academyMode ? 'TSC Academy' : 'The Shakti Collective') + '">',
         '<img class="tsc-mobile-brand-logo ' + (academyMode ? 'tsc-mobile-brand-logo-academy' : 'tsc-mobile-brand-logo-main') + '" src="' + brand.logo + '" alt="">',
-      '</a>'
+      '</a>',
+      '<details class="tsc-mobile-menu">',
+        '<summary aria-label="Open navigation"><span></span><span></span><span></span></summary>',
+        '<nav aria-label="Mobile">',
+          navLinks.map(function(item) {
+            return '<a href="' + item[0] + '">' + item[1] + '</a>';
+          }).join(''),
+        '</nav>',
+      '</details>',
+      '<a class="tsc-mobile-header-cta" href="' + (academyMode ? '/' : '/academy') + '">' + (academyMode ? 'Main Website' : 'TSC Academy') + '</a>'
     ].join('');
     document.body.insertBefore(header, document.getElementById('SITE_CONTAINER') || document.body.firstChild);
+
+    var menu = header.querySelector('.tsc-mobile-menu');
+    if (menu) {
+      menu.querySelectorAll('nav a').forEach(function(link) {
+        link.addEventListener('click', function() {
+          menu.removeAttribute('open');
+        });
+      });
+      document.addEventListener('click', function(event) {
+        if (!menu.hasAttribute('open')) return;
+        if (!menu.contains(event.target)) menu.removeAttribute('open');
+      });
+    }
   }
 
   function applyBrandFavicons() {
@@ -293,22 +332,14 @@
   function updateHeaderBrandLogos() {
     var path = normalizedPath();
     var academyMode = !!academyPaths[path];
-    var brand = academyMode ? brandAssets.academy : brandAssets.main;
+    // ponytail: keep original Wix wordmarks; only fix href/aria
     Array.prototype.forEach.call(document.querySelectorAll('header .wixui-vector-image a'), function(link) {
       var rect = link.getBoundingClientRect();
       if (rect.left > 360 || rect.width < 40 || rect.height < 35) return;
       link.setAttribute('href', academyMode ? '/academy' : '/');
       link.setAttribute('aria-label', academyMode ? 'TSC Academy' : 'The Shakti Collective');
-      // ponytail: keep Wix wordmark on main site; only swap mark on academy pages
-      if (!academyMode) {
-        link.classList.remove('tsc-desktop-brand-link');
-        delete link.dataset.tscBrandLogo;
-        return;
-      }
-      link.classList.add('tsc-desktop-brand-link');
-      if (link.dataset.tscBrandLogo === brand.logo) return;
-      link.dataset.tscBrandLogo = brand.logo;
-      link.innerHTML = '<img class="tsc-desktop-brand-logo tsc-desktop-brand-logo-academy" src="' + brand.logo + '" alt="">';
+      link.classList.remove('tsc-desktop-brand-link');
+      delete link.dataset.tscBrandLogo;
     });
   }
 

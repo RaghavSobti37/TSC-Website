@@ -1,0 +1,33 @@
+/* Remove the reserved Wix ad strip so the navbar and page content start at the top. */
+:root,
+body,
+.theme-vars,
+.max-width-container {
+  --wix-ads-height: 0px !important;
+  --wix-ads-top-height: 0px !important;
+  --sticky-offset: 0px !important;
+}
+
+#site-root {
+  top: 0 !important;
+}
+
+#WIX_ADS,
+a[href*="wix.com/studio"] {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+}
+
+/* Logo-only navbar: keep brand mark, hide Wix menu + header CTAs. */
+header [data-part="navbar"],
+header .wixui-horizontal-menu,
+header nav[data-hook="menu-root"],
+header [class*="HamburgerOpenButton"],
+header .wixui-button,
+header a.PoVCDy,
+header [class*="StylableButton"] {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}

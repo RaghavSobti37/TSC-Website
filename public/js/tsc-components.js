@@ -256,7 +256,15 @@
 
   function pageDatasetSlug(path) {
     if (LEARN_DATA_PAGE[path]) return 'learn-with-tsc';
-    return pathBasename(path);
+    var base = pathBasename(path);
+    // Semantic blog slugs keep blog-N mobile CSS / layout rules
+    var dataPageAlias = {
+      'start-making-music': 'blog-1',
+      'online-music-course-worth-it': 'blog-2',
+      'artist-release-playbook': 'blog-3',
+      'impact-report': 'mba-impact'
+    };
+    return dataPageAlias[base] || base;
   }
 
   function isLearnStickyPage(path) {

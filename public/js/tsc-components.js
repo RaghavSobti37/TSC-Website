@@ -187,8 +187,10 @@
     '/you-released-a-song-now-what': true
   };
 
-  var TSC_LOGO_SRC = '/assets/brand/tsc-logo-text.png';
-  var ACADEMY_LOGO_SRC = '/assets/brand/tsc-academy-logo-text.png';
+  var TSC_LOGO_SRC = '/assets/brand/tsc-logo-trim-nav.png';
+  var ACADEMY_LOGO_SRC = '/assets/brand/tsc-academy-logo-trim-nav.png';
+  var TSC_FOOTER_LOGO_SRC = '/assets/brand/tsc-logo-trim-footer.png';
+  var ACADEMY_FOOTER_LOGO_SRC = '/assets/brand/tsc-academy-logo-trim-footer.png';
   var DEFAULT_BRAND_ASSETS = {
     main: {
       logo: TSC_LOGO_SRC,
@@ -670,16 +672,20 @@
     return config && config.academy ? ACADEMY_LOGO_SRC : TSC_LOGO_SRC;
   }
 
+  function footerLogoSrcForConfig(config) {
+    return config && config.academy ? ACADEMY_FOOTER_LOGO_SRC : TSC_FOOTER_LOGO_SRC;
+  }
+
   function legacyFooterLogoMarkup(config, brandName, fallbackLogo) {
-    return '<img class="tsc-desktop-footer-logo" src="' + logoSrcForConfig(config) + '" alt="' + escapeHtml(brandName) + '" width="360" height="96" decoding="async">';
+    return '<img class="tsc-desktop-footer-logo" src="' + footerLogoSrcForConfig(config) + '" alt="' + escapeHtml(brandName) + '" width="360" height="96" decoding="async">';
   }
 
   function mobileFooterLogoMarkup(config, brandName) {
-    return '<img class="tsc-mobile-footer-logo" src="' + logoSrcForConfig(config) + '" alt="' + escapeHtml(brandName) + '" width="168" height="56" decoding="async">';
+    return '<img class="tsc-mobile-footer-logo" src="' + footerLogoSrcForConfig(config) + '" alt="' + escapeHtml(brandName) + '" width="168" height="56" decoding="async">';
   }
 
   function mobileHeaderLogoMarkup(config) {
-    return '<img class="tsc-mobile-brand-logo tsc-mobile-brand-logo-unified" src="' + logoSrcForConfig(config) + '" alt="">';
+    return '<img class="tsc-mobile-brand-logo tsc-mobile-brand-logo-unified" src="' + logoSrcForConfig(config) + '" alt="" width="160" height="40" decoding="async">';
   }
 
   function buildFooterLinks(group) {
@@ -1033,14 +1039,28 @@
     updateButton: updateButton,
     wireMobileAssets: wireMobileAssets
   };
+  function wireCourseAccordions() {
+    var path = canonicalPathname();
+    if (!LEARN_DATA_PAGE[path] || path === '/learn-with-tsc') return;
+    ensureScript('/js/tsc-course-accordion.js', function () {
+      if (window.TSCCourseAccordion && window.TSCCourseAccordion.init) {
+        window.TSCCourseAccordion.init();
+      }
+    });
+  }
+
   ensureStylesheet('/css/tsc-responsive.css');
   ensureStylesheet('/css/tsc-brand-card.css');
   ensureScript('/js/tsc-brand-cards.js');
+  function bootUi() {
+    wireMobileAssets();
+    wireCourseAccordions();
+  }
   if (document.body) {
-    wireMobileAssets();
+    bootUi();
   } else if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', wireMobileAssets);
+    document.addEventListener('DOMContentLoaded', bootUi);
   } else {
-    wireMobileAssets();
+    bootUi();
   }
 })();

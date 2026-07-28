@@ -904,7 +904,7 @@
     height: auto !important;
     min-height: 0 !important;
     width: 100% !important;
-    max-width: 360px !important;
+    max-width: 100% !important;
     margin-left: auto !important;
     margin-right: auto !important;
     border: 1px solid rgba(255, 236, 209, 0.35) !important;
@@ -914,6 +914,7 @@
     opacity: 1 !important;
     display: block !important;
     pointer-events: auto !important;
+    box-sizing: border-box !important;
   }
 
   /* quote top; bottom row = faded circle photo LEFT + name/title RIGHT */

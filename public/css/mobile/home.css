@@ -154,8 +154,9 @@
     opacity: 0.5 !important;
     pointer-events: none !important;
     overflow: visible !important;
-    text-align: center !important;
+    text-align: left !important;
     white-space: nowrap !important;
+    padding-left: 16px !important;
   }
 
   #comp-mrxkm2y2 p,

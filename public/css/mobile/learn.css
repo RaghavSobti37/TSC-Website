@@ -165,13 +165,17 @@
     box-sizing: border-box !important;
   }
 
-  /* Course detail curriculum accordions: desktop mesh sits off-canvas on phone. */
+  /*
+   * Course curriculum: Wix puts two accordion columns side-by-side on the box itself
+   * (#comp-mpqy3lne.comp-mpqy3lne-container). Descendant selectors never matched —
+   * stack columns so each chapter is one full-width row.
+   */
   #comp-mrf1e0hg3,
   #comp-mpqy3lne,
+  #comp-mrf1e0hg3.comp-mrf1e0hg3-container,
+  #comp-mpqy3lne.comp-mpqy3lne-container,
   #comp-mrf1e0hg3 [data-testid="responsive-container-content"],
-  #comp-mpqy3lne [data-testid="responsive-container-content"],
-  #comp-mrf1e0hg3 .comp-mrf1e0hg3-container,
-  #comp-mpqy3lne .comp-mpqy3lne-container {
+  #comp-mpqy3lne [data-testid="responsive-container-content"] {
     box-sizing: border-box !important;
     height: auto !important;
     min-height: 0 !important;
@@ -179,28 +183,19 @@
     max-width: 100% !important;
     min-width: 0 !important;
     overflow: visible !important;
-  }
-
-  #comp-mrf1e0hg3 [data-testid="responsive-container-content"],
-  #comp-mpqy3lne [data-testid="responsive-container-content"],
-  #comp-mrf1e0hg3 .comp-mrf1e0hg3-container,
-  #comp-mpqy3lne .comp-mpqy3lne-container {
     display: flex !important;
     flex-direction: column !important;
     align-items: stretch !important;
     gap: 14px !important;
-    width: 100% !important;
-    max-width: 100% !important;
     padding: 24px 20px 36px !important;
-    box-sizing: border-box !important;
     grid-template-rows: none !important;
     grid-template-columns: none !important;
   }
 
+  #comp-mrf1e0hg3 > [id^="comp-"],
+  #comp-mpqy3lne > [id^="comp-"],
   #comp-mrf1e0hg3 [data-testid="responsive-container-content"] > [id^="comp-"],
-  #comp-mpqy3lne [data-testid="responsive-container-content"] > [id^="comp-"],
-  #comp-mrf1e0hg3 .comp-mrf1e0hg3-container > [id^="comp-"],
-  #comp-mpqy3lne .comp-mpqy3lne-container > [id^="comp-"] {
+  #comp-mpqy3lne [data-testid="responsive-container-content"] > [id^="comp-"] {
     position: relative !important;
     left: auto !important;
     top: auto !important;
@@ -215,14 +210,17 @@
     transform: none !important;
     grid-area: auto !important;
     place-self: stretch !important;
+    flex: 0 0 auto !important;
   }
 
   #comp-mrf1e0hk,
+  #comp-mrf1e0j9,
   #comp-mpnvvkdi,
-  #comp-mrf1e0hk .AccordionContainer1266025101__container,
-  #comp-mpnvvkdi .AccordionContainer1266025101__container,
+  #comp-mppkbcdr,
   #comp-mrf1e0hk .AccordionContainer1266025101__root,
-  #comp-mpnvvkdi .AccordionContainer1266025101__root {
+  #comp-mrf1e0j9 .AccordionContainer1266025101__root,
+  #comp-mpnvvkdi .AccordionContainer1266025101__root,
+  #comp-mppkbcdr .AccordionContainer1266025101__root {
     width: 100% !important;
     max-width: 100% !important;
     min-width: 0 !important;
@@ -230,8 +228,18 @@
     transform: none !important;
   }
 
+  #comp-mrf1e0hk .wixui-accordion__item,
+  #comp-mrf1e0j9 .wixui-accordion__item,
+  #comp-mpnvvkdi .wixui-accordion__item,
+  #comp-mppkbcdr .wixui-accordion__item {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
   #comp-mrf1e0hk .AccordionContainer1266025101__accordionHeader,
-  #comp-mpnvvkdi .AccordionContainer1266025101__accordionHeader {
+  #comp-mrf1e0j9 .AccordionContainer1266025101__accordionHeader,
+  #comp-mpnvvkdi .AccordionContainer1266025101__accordionHeader,
+  #comp-mppkbcdr .AccordionContainer1266025101__accordionHeader {
     box-sizing: border-box !important;
     width: 100% !important;
     padding-left: 14px !important;
@@ -448,11 +456,12 @@
   #comp-mrufx9pr5 [data-testid="responsive-container-content"] > [id^="comp-"],
   #comp-mrufx9qt3 [data-testid="responsive-container-content"] > [id^="comp-"],
   #comp-mrufx9rx1 [data-testid="responsive-container-content"] > [id^="comp-"] {
-    width: calc(50% - 4px) !important;
-    max-width: calc(50% - 4px) !important;
-    flex: 1 1 calc(50% - 4px) !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: none !important;
     box-sizing: border-box !important;
     text-align: center !important;
+    justify-self: stretch !important;
   }
 
   /* Course 1 order */
@@ -689,7 +698,38 @@
     flex: 0 0 auto !important;
   }
 
-  /* center course body / creds / chips (not photo) */
+  /* center ALL course-card internals as one column */
+  #comp-mrufx9pp4,
+  #comp-mrufx9qk,
+  #comp-mrufx9rg4,
+  #comp-mrufx9pp4 [data-testid="responsive-container-content"],
+  #comp-mrufx9qk [data-testid="responsive-container-content"],
+  #comp-mrufx9rg4 [data-testid="responsive-container-content"],
+  #comp-mrufx9pp4 .comp-mrufx9pp4-container,
+  #comp-mrufx9qk .comp-mrufx9qk-container,
+  #comp-mrufx9rg4 .comp-mrufx9rg4-container {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  #comp-mrufx9pp4 > [id^="comp-"],
+  #comp-mrufx9qk > [id^="comp-"],
+  #comp-mrufx9rg4 > [id^="comp-"],
+  #comp-mrufx9pp4 [data-testid="responsive-container-content"] > [id^="comp-"],
+  #comp-mrufx9qk [data-testid="responsive-container-content"] > [id^="comp-"],
+  #comp-mrufx9rg4 [data-testid="responsive-container-content"] > [id^="comp-"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    justify-self: center !important;
+    text-align: center !important;
+  }
+
   #comp-mrufx9q33,
   #comp-mrufx9qn4,
   #comp-mrufx9rj1,
@@ -701,6 +741,7 @@
   #comp-mrufx9rj1 [data-testid="responsive-container-content"] {
     text-align: center !important;
     align-items: center !important;
+    justify-content: center !important;
   }
 
   #comp-mrufx9q33 .wixui-rich-text__text,
@@ -709,10 +750,29 @@
   #comp-mrufx9qb1 .wixui-rich-text__text,
   #comp-mrufx9r8 .wixui-rich-text__text,
   #comp-mrufx9rp .wixui-rich-text__text,
+  #comp-mrufx9py5 .wixui-rich-text__text,
+  #comp-mrufx9r03 .wixui-rich-text__text,
+  #comp-mrufx9rt2 .wixui-rich-text__text,
   #comp-mrufx9pp4 [data-testid="richTextElement"] .wixui-rich-text__text,
   #comp-mrufx9qk [data-testid="richTextElement"] .wixui-rich-text__text,
-  #comp-mrufx9rg4 [data-testid="richTextElement"] .wixui-rich-text__text {
+  #comp-mrufx9rg4 [data-testid="richTextElement"] .wixui-rich-text__text,
+  #comp-mrufx9pp4 :is(p, h1, h2, h3, h4, h5, h6, span, li, a),
+  #comp-mrufx9qk :is(p, h1, h2, h3, h4, h5, h6, span, li, a),
+  #comp-mrufx9rg4 :is(p, h1, h2, h3, h4, h5, h6, span, li, a) {
     text-align: center !important;
+  }
+
+  #comp-mrufx9qf1,
+  #comp-mrufx9rb5,
+  #comp-mrufx9s21,
+  #comp-mrufx9qf1 .wixui-button,
+  #comp-mrufx9rb5 .wixui-button,
+  #comp-mrufx9s21 .wixui-button,
+  #comp-mrufx9qf1 .wixui-button__label,
+  #comp-mrufx9rb5 .wixui-button__label,
+  #comp-mrufx9s21 .wixui-button__label {
+    text-align: center !important;
+    justify-content: center !important;
   }
 
   #comp-mrufx9q33 ul,
@@ -731,6 +791,63 @@
   #comp-mrufx9rx1 .comp-mrufx9rx1-container {
     gap: 6px !important;
     justify-content: center !important;
+  }
+
+  /* Feature chips: outer full-width block; INNER is 2×2 grid */
+  #comp-mrufx9pr5,
+  #comp-mrufx9qt3,
+  #comp-mrufx9rx1 {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    align-self: stretch !important;
+    justify-self: stretch !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    grid-template-columns: none !important;
+    grid-template-rows: none !important;
+  }
+
+  #comp-mrufx9pr5 .comp-mrufx9pr5-container,
+  #comp-mrufx9qt3 .comp-mrufx9qt3-container,
+  #comp-mrufx9rx1 .comp-mrufx9rx1-container,
+  #comp-mrufx9pr5 [data-testid="responsive-container-content"],
+  #comp-mrufx9qt3 [data-testid="responsive-container-content"],
+  #comp-mrufx9rx1 [data-testid="responsive-container-content"] {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+    grid-template-rows: auto auto !important;
+    gap: 8px !important;
+    align-items: stretch !important;
+    justify-items: stretch !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  #comp-mrufx9pr5 > [id^="comp-"],
+  #comp-mrufx9qt3 > [id^="comp-"],
+  #comp-mrufx9rx1 > [id^="comp-"],
+  #comp-mrufx9pr5 [data-testid="responsive-container-content"] > [id^="comp-"],
+  #comp-mrufx9qt3 [data-testid="responsive-container-content"] > [id^="comp-"],
+  #comp-mrufx9rx1 [data-testid="responsive-container-content"] > [id^="comp-"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    height: auto !important;
+    min-height: 48px !important;
+    position: relative !important;
+    inset: auto !important;
+    left: auto !important;
+    top: auto !important;
+    grid-area: auto !important;
+    justify-self: stretch !important;
+    align-self: stretch !important;
+    transform: none !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
   }
 
   /* —— Partner cards: desktop-style icon LEFT of title, 1 card/row —— */
@@ -940,9 +1057,11 @@
   #comp-mrufx9sk1 .comp-mrufx9sk1-container {
     display: flex !important;
     flex-direction: column !important;
+    align-items: center !important;
     height: auto !important;
     padding: 60px 18px 30px !important;
     box-sizing: border-box !important;
+    width: 100% !important;
   }
 
   #comp-mrufx9sk1 .comp-mrufx9sk1-container > [id^="comp-"] {
@@ -976,7 +1095,7 @@
     height: auto !important;
     min-height: 0 !important;
     width: 100% !important;
-    max-width: 360px !important;
+    max-width: 100% !important;
     margin-left: auto !important;
     margin-right: auto !important;
     border: 1px solid rgba(255, 236, 209, 0.35) !important;
@@ -987,6 +1106,15 @@
     opacity: 1 !important;
     display: block !important;
     pointer-events: auto !important;
+    box-sizing: border-box !important;
+  }
+
+  #comp-mrufx9so,
+  #comp-mrufx9t72 {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
 
   /* quote top; bottom row = faded circle photo LEFT + name/title RIGHT */

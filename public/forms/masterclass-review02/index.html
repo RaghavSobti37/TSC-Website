@@ -1,6 +1,60 @@
 <!doctype html>
 <html lang="en">
 <head>
+<script data-tsc-mobile-boot>/* DESKTOP LOCK: early mobile CSS — no desktop FOUC */
+(function () {
+  var mq = window.matchMedia && window.matchMedia('(max-width: 1024px)');
+  if (!mq || !mq.matches) return;
+  var html = document.documentElement;
+  html.classList.add('tsc-boot-mobile');
+  function link(href) {
+    if (document.querySelector('link[data-tsc-boot][href="' + href + '"]')) return;
+    var l = document.createElement('link');
+    l.rel = 'stylesheet';
+    l.href = href;
+    l.media = '(max-width: 1024px)';
+    l.setAttribute('data-tsc-boot', '1');
+    (document.head || document.documentElement).appendChild(l);
+  }
+  link('/css/mobile/boot.css');
+  link('/css/tsc-mobile-system.css');
+  var p = (location.pathname || '/').replace(/\/$/, '') || '/';
+  if (p.indexOf('/pages/') === 0) p = p.replace('/pages', '').replace(/\.html$/, '') || '/';
+  var seg = p === '/' ? 'home' : p.replace(/^\//, '').split('/')[0];
+  var map = {
+    home: '/css/mobile/home.css',
+    about: '/css/mobile/about.css',
+    work: '/css/mobile/work.css',
+    mba: '/css/mobile/work.css',
+    artists: '/css/mobile/artists.css',
+    'artist-path': '/css/mobile/artists.css',
+    'harshad-duhita': '/css/mobile/artists.css',
+    yugm: '/css/mobile/artists.css',
+    'book-an-artist': '/css/mobile/artists.css',
+    'artist-query': '/css/mobile/artists.css',
+    'collab-query': '/css/mobile/artists.css',
+    'learn-with-tsc': '/css/mobile/learn.css',
+    academy: '/css/mobile/learn.css',
+    'the-heart-of-composition': '/css/mobile/learn.css',
+    'roots-of-hindustani-classical': '/css/mobile/learn.css',
+    'music-production': '/css/mobile/learn.css',
+    'book-a-call': '/css/mobile/learn.css',
+    films: '/css/mobile/films.css',
+    'mahavatar-narsimha': '/css/mobile/films.css',
+    'hanuman-ansh': '/css/mobile/films.css',
+    mahaprbhu: '/css/mobile/films.css',
+    kalki: '/css/mobile/films.css',
+    resources: '/css/mobile/resources.css',
+    'blog-1': '/css/mobile/resources.css',
+    'blog-2': '/css/mobile/resources.css',
+    'blog-3': '/css/mobile/resources.css'
+  };
+  if (map[seg]) link(map[seg]);
+  else link('/css/mobile/home.css');
+  /* safety: never leave page invisible */
+  setTimeout(function () { html.classList.add('tsc-mobile-ready'); }, 4000);
+})();
+</script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="refresh" content="0; url=/pages/masterclass-review02.html">
@@ -8,5 +62,34 @@
   <link rel="icon" href="/assets/brand/tsc-favicon-32.png" type="image/png" sizes="32x32">
   <link rel="apple-touch-icon" href="/assets/brand/tsc-apple-touch-icon.png" sizes="180x180">
 </head>
-<body><a href="/pages/masterclass-review02.html">Open /masterclass-review02</a></body>
+<body><a href="/pages/masterclass-review02.html">Open /masterclass-review02</a><script data-tsc-mobile-loader>/* DESKTOP LOCK: mobile-only enhancements, never at >=1025px */
+(function () {
+  var mq = window.matchMedia && window.matchMedia('(max-width: 1024px)');
+  if (!mq) return;
+  var up = window.matchMedia('(min-width: 1025px)');
+  var onUp = function (e) { if (e.matches) location.reload(); };
+  if (up.addEventListener) up.addEventListener('change', onUp); else if (up.addListener) up.addListener(onUp);
+  if (!mq.matches) return;
+  var markReady = function () {
+    document.documentElement.classList.add('tsc-mobile-ready');
+  };
+  var inject = function () {
+    if (document.querySelector('script[data-tsc-components-boot]')) return;
+    var s = document.createElement('script');
+    s.src = '/js/tsc-components.js';
+    s.defer = true;
+    s.setAttribute('data-tsc-components-boot', '1');
+    s.onload = markReady;
+    s.onerror = markReady;
+    document.head.appendChild(s);
+  };
+  /* Inject ASAP after DOM — no artificial delay (local FOUC felt like hung load) */
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', inject, { once: true });
+  } else {
+    inject();
+  }
+})();
+</script>
+</body>
 </html>

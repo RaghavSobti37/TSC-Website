@@ -5,23 +5,46 @@
 @media (max-width: 1024px) {
   html.tsc-boot-mobile {
     overflow-x: hidden !important;
-  }
-
-  /* Hide until mobile chrome/CSS wired — avoid desktop mesh flash */
-  html.tsc-boot-mobile:not(.tsc-mobile-ready) body {
-    opacity: 0 !important;
-    visibility: hidden !important;
-  }
-
-  html.tsc-boot-mobile.tsc-mobile-ready body {
-    opacity: 1 !important;
-    visibility: visible !important;
-    transition: opacity 0.12s ease-out;
+    background: #083d3a !important;
   }
 
   html.tsc-boot-mobile,
   html.tsc-boot-mobile body {
     max-width: 100vw !important;
     overflow-x: hidden !important;
+  }
+
+  /*
+   * Keep body painted (branded shell) — hide only the Wix mesh until chrome ready.
+   * Blank opacity:0 body felt like a broken local load.
+   */
+  html.tsc-boot-mobile:not(.tsc-mobile-ready) body {
+    background: #083d3a !important;
+    min-height: 100vh !important;
+  }
+
+  html.tsc-boot-mobile:not(.tsc-mobile-ready) #SITE_CONTAINER,
+  html.tsc-boot-mobile:not(.tsc-mobile-ready) #SITE_HEADER,
+  html.tsc-boot-mobile:not(.tsc-mobile-ready) #SITE_FOOTER,
+  html.tsc-boot-mobile:not(.tsc-mobile-ready) main,
+  html.tsc-boot-mobile:not(.tsc-mobile-ready) [data-testid="site-root"] {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+  }
+
+  html.tsc-boot-mobile.tsc-mobile-ready #SITE_CONTAINER,
+  html.tsc-boot-mobile.tsc-mobile-ready #SITE_HEADER,
+  html.tsc-boot-mobile.tsc-mobile-ready #SITE_FOOTER,
+  html.tsc-boot-mobile.tsc-mobile-ready main,
+  html.tsc-boot-mobile.tsc-mobile-ready [data-testid="site-root"] {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    transition: opacity 0.14s ease-out;
+  }
+
+  html.tsc-boot-mobile.tsc-mobile-ready body {
+    background: transparent;
   }
 }

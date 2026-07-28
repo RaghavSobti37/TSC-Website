@@ -485,7 +485,7 @@
     visibility: hidden !important;
   }
 
-  /* —— Nav logo: ~36px mark, left-padded, vertically centered w/ hamburger —— */
+  /* —— Nav: left logo + right hamburger; trimmed PNG contain (no crop-zoom) —— */
   .tsc-mobile-site-header {
     display: flex !important;
     align-items: center !important;
@@ -496,9 +496,10 @@
     min-height: var(--tsc-nav-bar-h, 56px) !important;
     height: var(--tsc-nav-bar-h, 56px) !important;
     margin: 0 !important;
-    padding: 0 16px !important;
+    padding: 0 14px !important;
     border: 0 !important;
     border-bottom: 0 !important;
+    border-top-left-radius: 12px !important;
     background:
       radial-gradient(circle at 9% 50%, rgba(190, 86, 0, 0.95) 0 17%, rgba(150, 96, 24, 0.62) 37%, transparent 66%),
       linear-gradient(100deg, #b94f00 0%, #8b6820 35%, #005b53 72%, #00423d 100%) !important;
@@ -523,16 +524,16 @@
   .tsc-mobile-brand,
   .tsc-mobile-brand.tsc-desktop-brand-link {
     position: relative !important;
-    display: block !important;
+    display: flex !important;
     flex: 0 0 auto !important;
     align-items: center !important;
     justify-content: flex-start !important;
-    width: var(--tsc-nav-logo-w, 112px) !important;
-    height: var(--tsc-nav-logo-h, 28px) !important;
-    max-width: 42vw !important;
+    width: var(--tsc-nav-logo-w, 160px) !important;
+    height: var(--tsc-nav-logo-h, 40px) !important;
+    max-width: min(58vw, 200px) !important;
     margin: 0 !important;
     padding: 0 !important;
-    overflow: hidden !important;
+    overflow: visible !important;
     grid-column: auto !important;
     grid-row: auto !important;
     text-decoration: none !important;
@@ -541,20 +542,19 @@
   .tsc-mobile-brand-logo,
   .tsc-mobile-brand-logo-unified,
   .tsc-mobile-brand img {
-    position: absolute !important;
-    left: 50% !important;
-    top: 50% !important;
-    /* Crop black pad — smaller mark (~28px tall) */
-    width: 172px !important;
-    height: 96px !important;
-    max-width: none !important;
-    max-height: none !important;
+    position: static !important;
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
     margin: 0 !important;
     padding: 0 !important;
-    transform: translate(-50%, -50%) !important;
-    object-fit: fill !important;
-    mix-blend-mode: screen !important;
-    filter: brightness(1.55) contrast(1.2) saturate(0.55) !important;
+    transform: none !important;
+    object-fit: contain !important;
+    object-position: left center !important;
+    mix-blend-mode: normal !important;
+    filter: none !important;
     opacity: 1 !important;
     visibility: visible !important;
   }
@@ -569,7 +569,7 @@
     align-self: center !important;
     grid-column: auto !important;
     justify-self: auto !important;
-    margin: 0 !important;
+    margin: 0 0 0 auto !important;
     z-index: 900 !important;
   }
 
@@ -584,6 +584,14 @@
     margin: 0 !important;
     cursor: pointer !important;
     list-style: none !important;
+  }
+
+  /* Dropdown: left-aligned to screen (same gutter as logo) */
+  .tsc-mobile-menu nav {
+    left: 14px !important;
+    right: auto !important;
+    top: calc(var(--tsc-nav-bar-h, 56px) + 8px) !important;
+    width: min(280px, calc(100vw - 28px)) !important;
   }
 
   .tsc-mobile-header-cta {

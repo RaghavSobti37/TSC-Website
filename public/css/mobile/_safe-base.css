@@ -137,11 +137,11 @@
   .tsc-mobile-footer-brand {
     display: block;
     position: relative;
-    width: var(--tsc-footer-logo-w, 132px);
-    height: var(--tsc-footer-logo-h, 44px);
+    width: var(--tsc-footer-logo-w, 168px);
+    height: var(--tsc-footer-logo-h, 48px);
     margin: 0 0 16px;
     padding: 0;
-    overflow: hidden;
+    overflow: visible;
     flex: 0 0 auto;
     background: transparent;
   }
@@ -194,25 +194,22 @@
   }
 
   .tsc-mobile-footer-logo {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    /* Asset has large black pad — zoom so mark fills ~132×44 */
-    width: 200px;
-    height: auto;
-    max-width: none;
-    max-height: none;
+    position: static;
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
     margin: 0;
     padding: 0;
-    transform: translate(-50%, -50%);
-    object-fit: fill;
+    transform: none;
+    object-fit: contain;
+    object-position: left center;
     border-radius: 0;
-    /* logo PNGs ship on black — screen lifts cream mark; keep visible */
-    mix-blend-mode: screen;
-    filter: brightness(1.35) contrast(1.15);
+    mix-blend-mode: normal;
+    filter: none;
     opacity: 1;
     visibility: visible;
-    display: block;
   }
 
   /* Hide leftover Wix footer marks once TSC accordion footer mounts */
@@ -414,7 +411,8 @@
   }
 
   .tsc-mobile-footer-academy .tsc-mobile-footer-logo {
-    mix-blend-mode: lighten;
+    mix-blend-mode: normal;
+    filter: none;
   }
 
   .tsc-mobile-footer-academy .tsc-mobile-footer-tagline,

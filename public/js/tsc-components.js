@@ -1,3 +1,8 @@
+/*
+ * DESKTOP DESIGN LOCK — PERMANENT. Desktop (>=1025px) of the 9 primary pages is locked to commit faf9dea.
+ * This script must NOT alter desktop rendering of those pages. Mobile-only behavior must be guarded by
+ * matchMedia('(max-width: 1024px)'). Never change desktop unless the site owner explicitly asks.
+ */
 (function() {
   var ENABLE_CUSTOM_MOBILE_CHROME = true;
 

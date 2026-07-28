@@ -1,5 +1,13 @@
 # The Shakti Collective Static Site
 
+> **DESKTOP DESIGN LOCK — PERMANENT.** The desktop design (viewport >= 1025px) of the 9 primary pages
+> (`/`, `/about`, `/work`, `/artists`, `/artist-path`, `/learn-with-tsc`, `/films`, `/resources`, `/academy`)
+> is locked forever to commit `faf9dea`. It was restored with `scripts/restore-faf9dea-desktop.js` and verified
+> pixel-identical against that commit. Do **not** change desktop markup, styles, copy, or behavior of these pages
+> unless the site owner explicitly and specifically asks for a desktop design change. All responsive/mobile work
+> must live exclusively inside `@media (max-width: 1024px)` blocks or stylesheets linked with
+> `media="(max-width: 1024px)"`.
+
 Static mirror + cleaned local runtime for The Shakti Collective website.
 
 ## What this repo ships

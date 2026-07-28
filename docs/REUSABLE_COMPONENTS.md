@@ -1,5 +1,9 @@
 # Reusable Local Components
 
+> **DESKTOP DESIGN LOCK — PERMANENT.** The desktop design (viewport >= 1025px) of the 9 primary pages is locked
+> forever to commit `faf9dea`. Components must never alter desktop rendering of those pages unless the site owner
+> explicitly and specifically asks. Mobile behavior only inside `@media (max-width: 1024px)` / matchMedia guards.
+
 This static clone keeps original Wix page HTML/CSS intact where possible. Reusable behavior is layered through small local JavaScript components so repeated elements can be configured once and mounted into any page.
 
 ## Core file

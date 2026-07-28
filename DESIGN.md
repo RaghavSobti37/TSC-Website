@@ -1,5 +1,10 @@
 # The Shakti Collective Design System
 
+> **DESKTOP DESIGN LOCK — PERMANENT.** The desktop design (viewport >= 1025px) of the 9 primary pages is locked
+> forever to commit `faf9dea` and verified pixel-identical. Never change desktop layout, markup, styles, or copy
+> unless the site owner explicitly and specifically requests a desktop change. Mobile/responsive improvements are
+> allowed only inside `@media (max-width: 1024px)` or stylesheets linked with `media="(max-width: 1024px)"`.
+
 ## Design Direction
 
 The website uses an editorial, culture-first visual language: warm, grounded, cinematic, and artist-led. The design should feel like a creative ecosystem rather than a SaaS dashboard or generic music landing page.

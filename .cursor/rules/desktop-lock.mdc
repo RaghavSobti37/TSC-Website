@@ -1,0 +1,24 @@
+---
+description: Permanent desktop design lock for the 9 primary pages
+alwaysApply: true
+---
+
+# DESKTOP DESIGN LOCK — PERMANENT
+
+The desktop design (viewport width >= 1025px) of the 9 primary pages —
+`public/pages/home.html`, `about.html`, `work.html`, `artists.html`, `artist-path.html`,
+`learn-with-tsc.html`, `films.html`, `resources.html`, `academy.html` — is **locked forever**
+to the exact rendering of commit `faf9dea` (restored via `scripts/restore-faf9dea-desktop.js`,
+verified pixel-identical).
+
+Rules for every agent session:
+
+1. **Never** modify desktop markup, inline styles, copy, media, or behavior of these pages
+   unless the user explicitly and specifically asks to change the desktop design.
+2. All responsive/mobile work must live **only** inside `@media (max-width: 1024px)` blocks,
+   stylesheets linked with `media="(max-width: 1024px)"`, or JS guarded by
+   `matchMedia('(max-width: 1024px)')`.
+3. Do not let build scripts inject CSS/JS into these pages (`scripts/inject-responsive-assets.js`
+   is intentionally a no-op).
+4. After any change that could touch these pages, verify desktop (1280px) rendering is unchanged
+   before finishing.

@@ -4,6 +4,30 @@ const path = require('path');
 
 const publicDir = path.resolve(__dirname, '..', 'public');
 const port = Number(process.argv[2] || 3100);
+const pageRoutes = new Map([
+  ['/', '/pages/home.html'],
+  ['/about', '/pages/about.html'],
+  ['/work', '/pages/work.html'],
+  ['/artists', '/pages/artists.html'],
+  ['/artist-path', '/pages/artist-path.html'],
+  ['/learn-with-tsc', '/pages/learn-with-tsc.html'],
+  ['/films', '/pages/films.html'],
+  ['/resources', '/pages/resources.html'],
+  ['/academy', '/pages/academy.html'],
+]);
+
+const routeManifestPath = path.join(publicDir, 'pages', 'routes.manifest.json');
+if (fs.existsSync(routeManifestPath)) {
+  const manifest = JSON.parse(fs.readFileSync(routeManifestPath, 'utf8'));
+  const pages = [...(manifest.primaryPages || []), ...(manifest.subpages || [])];
+  for (const page of pages) {
+    if (page.route && page.file) pageRoutes.set(page.route, `/pages/${page.file}`);
+  }
+  for (const alias of manifest.aliases || []) {
+    const target = pages.find(page => page.route === alias.route);
+    if (alias.alias && target?.file) pageRoutes.set(alias.alias, `/pages/${target.file}`);
+  }
+}
 
 const mimeTypes = {
   '.css': 'text/css; charset=utf-8',
@@ -29,6 +53,7 @@ function safePart(value, fallback) {
 
 function requestPath(url) {
   const pathname = decodeURIComponent(url.pathname);
+  if (pageRoutes.has(pathname)) return pageRoutes.get(pathname);
   if (pathname === '/api/disabled-telemetry' || pathname === '/assets/mirror/disabled-telemetry' || pathname.startsWith('/_api/')) {
     return { json: '{}' };
   }

@@ -4,6 +4,246 @@
   "outputDirectory": "public",
   "rewrites": [
     {
+      "source": "/work/young-gunns",
+      "destination": "/pages/young-gunns.html"
+    },
+    {
+      "source": "/young-gunns",
+      "destination": "/pages/young-gunns.html"
+    },
+    {
+      "source": "/work/insta-music-league",
+      "destination": "/pages/insta-music-league.html"
+    },
+    {
+      "source": "/insta-music-league",
+      "destination": "/pages/insta-music-league.html"
+    },
+    {
+      "source": "/work/havells-myousic",
+      "destination": "/pages/havells-myousic.html"
+    },
+    {
+      "source": "/havells-myousic",
+      "destination": "/pages/havells-myousic.html"
+    },
+    {
+      "source": "/resources/you-released-a-song-now-what",
+      "destination": "/pages/you-released-a-song-now-what.html"
+    },
+    {
+      "source": "/academy/roots-of-hindustani-classical",
+      "destination": "/pages/roots-of-hindustani-classical.html"
+    },
+    {
+      "source": "/resources/from-bhajan-to-clubbing",
+      "destination": "/pages/from-bhajan-to-clubbing.html"
+    },
+    {
+      "source": "/academy/the-heart-of-composition",
+      "destination": "/pages/the-heart-of-composition.html"
+    },
+    {
+      "source": "/roots-of-hindustani-classical",
+      "destination": "/pages/roots-of-hindustani-classical.html"
+    },
+    {
+      "source": "/you-released-a-song-now-what",
+      "destination": "/pages/you-released-a-song-now-what.html"
+    },
+    {
+      "source": "/forms/masterclass-review01",
+      "destination": "/pages/masterclass-review01.html"
+    },
+    {
+      "source": "/forms/masterclass-review02",
+      "destination": "/pages/masterclass-review02.html"
+    },
+    {
+      "source": "/films/mahavatar-narsimha",
+      "destination": "/pages/mahavatar-narsimha.html"
+    },
+    {
+      "source": "/the-heart-of-composition",
+      "destination": "/pages/the-heart-of-composition.html"
+    },
+    {
+      "source": "/from-bhajan-to-clubbing",
+      "destination": "/pages/from-bhajan-to-clubbing.html"
+    },
+    {
+      "source": "/academy/learn-with-tsc",
+      "destination": "/pages/learn-with-tsc.html"
+    },
+    {
+      "source": "/artists/harshad-duhita",
+      "destination": "/pages/harshad-duhita.html"
+    },
+    {
+      "source": "/forms/classicalreview",
+      "destination": "/pages/classicalreview.html"
+    },
+    {
+      "source": "/forms/book-an-artist",
+      "destination": "/pages/book-an-artist.html"
+    },
+    {
+      "source": "/masterclass-review01",
+      "destination": "/pages/masterclass-review01.html"
+    },
+    {
+      "source": "/masterclass-review02",
+      "destination": "/pages/masterclass-review02.html"
+    },
+    {
+      "source": "/artists/artist-path",
+      "destination": "/pages/artist-path.html"
+    },
+    {
+      "source": "/films/hanuman-ansh",
+      "destination": "/pages/hanuman-ansh.html"
+    },
+    {
+      "source": "/forms/artist-query",
+      "destination": "/pages/artist-query.html"
+    },
+    {
+      "source": "/forms/collab-query",
+      "destination": "/pages/collab-query.html"
+    },
+    {
+      "source": "/mahavatar-narsimha",
+      "destination": "/pages/mahavatar-narsimha.html"
+    },
+    {
+      "source": "/forms/book-a-call",
+      "destination": "/pages/book-a-call.html"
+    },
+    {
+      "source": "/resources/blog-1",
+      "destination": "/pages/blog-1.html"
+    },
+    {
+      "source": "/resources/blog-2",
+      "destination": "/pages/blog-2.html"
+    },
+    {
+      "source": "/resources/blog-3",
+      "destination": "/pages/blog-3.html"
+    },
+    {
+      "source": "/classicalreview",
+      "destination": "/pages/classicalreview.html"
+    },
+    {
+      "source": "/films/mahaprbhu",
+      "destination": "/pages/mahaprbhu.html"
+    },
+    {
+      "source": "/book-an-artist",
+      "destination": "/pages/book-an-artist.html"
+    },
+    {
+      "source": "/harshad-duhita",
+      "destination": "/pages/harshad-duhita.html"
+    },
+    {
+      "source": "/learn-with-tsc",
+      "destination": "/pages/learn-with-tsc.html"
+    },
+    {
+      "source": "/artist-query",
+      "destination": "/pages/artist-query.html"
+    },
+    {
+      "source": "/artists/yugm",
+      "destination": "/pages/yugm.html"
+    },
+    {
+      "source": "/collab-query",
+      "destination": "/pages/collab-query.html"
+    },
+    {
+      "source": "/hanuman-ansh",
+      "destination": "/pages/hanuman-ansh.html"
+    },
+    {
+      "source": "/artist-path",
+      "destination": "/pages/artist-path.html"
+    },
+    {
+      "source": "/book-a-call",
+      "destination": "/pages/book-a-call.html"
+    },
+    {
+      "source": "/films/kalki",
+      "destination": "/pages/kalki.html"
+    },
+    {
+      "source": "/mahaprbhu",
+      "destination": "/pages/mahaprbhu.html"
+    },
+    {
+      "source": "/resources",
+      "destination": "/pages/resources.html"
+    },
+    {
+      "source": "/work/mba",
+      "destination": "/pages/mba.html"
+    },
+    {
+      "source": "/academy",
+      "destination": "/pages/academy.html"
+    },
+    {
+      "source": "/artists",
+      "destination": "/pages/artists.html"
+    },
+    {
+      "source": "/blog-1",
+      "destination": "/pages/blog-1.html"
+    },
+    {
+      "source": "/blog-2",
+      "destination": "/pages/blog-2.html"
+    },
+    {
+      "source": "/blog-3",
+      "destination": "/pages/blog-3.html"
+    },
+    {
+      "source": "/about",
+      "destination": "/pages/about.html"
+    },
+    {
+      "source": "/films",
+      "destination": "/pages/films.html"
+    },
+    {
+      "source": "/kalki",
+      "destination": "/pages/kalki.html"
+    },
+    {
+      "source": "/query",
+      "destination": "/pages/book-an-artist.html"
+    },
+    {
+      "source": "/work",
+      "destination": "/pages/work.html"
+    },
+    {
+      "source": "/yugm",
+      "destination": "/pages/yugm.html"
+    },
+    {
+      "source": "/mba",
+      "destination": "/pages/mba.html"
+    },
+    {
+      "source": "/",
+      "destination": "/pages/home.html"
+    },
+    {
       "source": "/assets/mirror/disabled-telemetry",
       "destination": "/api/disabled-telemetry"
     },
@@ -43,6 +283,97 @@
     }
   ],
   "headers": [
+    {
+      "source": "/llms.txt",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/plain; charset=utf-8"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600"
+        }
+      ]
+    },
+    {
+      "source": "/llms-full.txt",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/plain; charset=utf-8"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600"
+        }
+      ]
+    },
+    {
+      "source": "/about.md",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/markdown; charset=utf-8"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600"
+        }
+      ]
+    },
+    {
+      "source": "/site/(.*)\\.md",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/markdown; charset=utf-8"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600"
+        }
+      ]
+    },
+    {
+      "source": "/sitemap.xml",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/xml; charset=utf-8"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600"
+        }
+      ]
+    },
+    {
+      "source": "/sitemap-pages.xml",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/xml; charset=utf-8"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600"
+        }
+      ]
+    },
+    {
+      "source": "/sitemap-index.xml",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/xml; charset=utf-8"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600"
+        }
+      ]
+    },
     {
       "source": "/assets/mirror/siteassets.parastorage.com/pages/pages/thunderbolt",
       "headers": [
@@ -126,6 +457,158 @@
           "value": "strict-origin-when-cross-origin"
         }
       ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/about-8",
+      "destination": "/book-a-call",
+      "permanent": true
+    },
+    {
+      "source": "/about-8-1",
+      "destination": "/book-an-artist",
+      "permanent": true
+    },
+    {
+      "source": "/about-8-1-1",
+      "destination": "/artist-query",
+      "permanent": true
+    },
+    {
+      "source": "/about-9",
+      "destination": "/the-heart-of-composition",
+      "permanent": true
+    },
+    {
+      "source": "/about-9-1",
+      "destination": "/roots-of-hindustani-classical",
+      "permanent": true
+    },
+    {
+      "source": "/blank-10",
+      "destination": "/harshad-duhita",
+      "permanent": true
+    },
+    {
+      "source": "/blank-10-1",
+      "destination": "/yugm",
+      "permanent": true
+    },
+    {
+      "source": "/blank-12",
+      "destination": "/mahavatar-narsimha",
+      "permanent": true
+    },
+    {
+      "source": "/blank-12-1",
+      "destination": "/hanuman-ansh",
+      "permanent": true
+    },
+    {
+      "source": "/blank-12-1-1",
+      "destination": "/mahaprbhu",
+      "permanent": true
+    },
+    {
+      "source": "/blank-12-1-1-1",
+      "destination": "/kalki",
+      "permanent": true
+    },
+    {
+      "source": "/blank-13",
+      "destination": "/blog-1",
+      "permanent": true
+    },
+    {
+      "source": "/blank-13-1",
+      "destination": "/blog-2",
+      "permanent": true
+    },
+    {
+      "source": "/blank-13-1-1",
+      "destination": "/blog-3",
+      "permanent": true
+    },
+    {
+      "source": "/blank-6",
+      "destination": "/collab-query",
+      "permanent": true
+    },
+    {
+      "source": "/blank-7",
+      "destination": "/mba",
+      "permanent": true
+    },
+    {
+      "source": "/blank-8",
+      "destination": "/book-a-call",
+      "permanent": true
+    },
+    {
+      "source": "/blank-8-1",
+      "destination": "/book-an-artist",
+      "permanent": true
+    },
+    {
+      "source": "/blank-8-1-1",
+      "destination": "/artist-query",
+      "permanent": true
+    },
+    {
+      "source": "/blank-9",
+      "destination": "/the-heart-of-composition",
+      "permanent": true
+    },
+    {
+      "source": "/blank-9-1",
+      "destination": "/roots-of-hindustani-classical",
+      "permanent": true
+    },
+    {
+      "source": "/work0",
+      "destination": "/young-gunns",
+      "permanent": true
+    },
+    {
+      "source": "/work0-1",
+      "destination": "/yugm",
+      "permanent": true
+    },
+    {
+      "source": "/work2",
+      "destination": "/havells-myousic",
+      "permanent": true
+    },
+    {
+      "source": "/work2-1",
+      "destination": "/hanuman-ansh",
+      "permanent": true
+    },
+    {
+      "source": "/work2-1-1",
+      "destination": "/mahaprbhu",
+      "permanent": true
+    },
+    {
+      "source": "/work2-1-1-1",
+      "destination": "/kalki",
+      "permanent": true
+    },
+    {
+      "source": "/work3",
+      "destination": "/insta-music-league",
+      "permanent": true
+    },
+    {
+      "source": "/work3-1",
+      "destination": "/blog-2",
+      "permanent": true
+    },
+    {
+      "source": "/work3-1-1",
+      "destination": "/blog-3",
+      "permanent": true
     }
   ]
 }

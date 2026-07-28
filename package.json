@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "node scripts/build.js && node scripts/optimize-assets.js",
+    "build": "node scripts/generate-subpage-shells.js && node scripts/repair-runtime-assets.js && node scripts/generate-page-asset-manifests.js && node scripts/build.js && node scripts/optimize-assets.js",
     "dev": "node scripts/serve-mirror.js 3000",
+    "mirror:subpages": "node scripts/generate-subpage-shells.js && node scripts/mirror-subpages.js && node scripts/repair-runtime-assets.js && node scripts/generate-page-asset-manifests.js",
     "repair:assets": "node scripts/mirror-wix-site.js --rewrite-existing-assets",
     "audit:production": "node scripts/audit-site.js",
     "audit:original": "node scripts/audit-site.js --original",

@@ -531,7 +531,36 @@ function writeSupportFiles() {
     return `  <url><loc>${loc}</loc><lastmod>2026-07-24</lastmod><changefreq>weekly</changefreq><priority>${priority}</priority></url>`;
   }).join('\n');
   fs.writeFileSync(path.join(PUBLIC_DIR, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${sitemapUrls}\n</urlset>\n`);
-  fs.writeFileSync(path.join(PUBLIC_DIR, 'robots.txt'), `User-agent: *\nAllow: /\n\nUser-agent: GPTBot\nAllow: /\n\nUser-agent: PerplexityBot\nAllow: /\n\nUser-agent: ClaudeBot\nAllow: /\n\nUser-agent: Google-Extended\nAllow: /\n\nUser-agent: Applebot-Extended\nAllow: /\n\nUser-agent: cohere-ai\nAllow: /\n\nSitemap: ${SITE_URL}/sitemap.xml\n`);
+  fs.writeFileSync(path.join(PUBLIC_DIR, 'robots.txt'), `User-agent: *
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+Sitemap: ${SITE_URL}/sitemap.xml
+
+# LLM-friendly site maps (https://llmstxt.org/)
+# LLMs: ${SITE_URL}/llms.txt
+# LLMs-Full: ${SITE_URL}/llms-full.txt
+`);
   fs.writeFileSync(path.join(PUBLIC_DIR, 'site.webmanifest'), JSON.stringify({
     name: BRAND_NAME,
     short_name: 'TSC',

@@ -578,7 +578,7 @@ a {
   line-height: 1.1;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   .report-header {
     position: relative;
     align-items: flex-start;

@@ -12,7 +12,7 @@
 @import url("./mobile/_tokens.css");
 @import url("./mobile/_safe-base.css");
 
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   /* —— Section Label / Kicker —— */
   .tsc-kicker {
     display: block;

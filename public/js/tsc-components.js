@@ -700,7 +700,7 @@
       unmountCustomMobileChrome();
       return null;
     }
-    var desktop = !window.matchMedia || window.matchMedia('(min-width: 901px)').matches;
+    var desktop = !window.matchMedia || window.matchMedia('(min-width: 1025px)').matches;
     var existing = document.querySelector('.tsc-desktop-footer');
     if (!desktop) {
       if (existing && existing.parentNode) existing.parentNode.removeChild(existing);
@@ -807,7 +807,7 @@
       unmountCustomMobileChrome();
       return null;
     }
-    var compact = window.matchMedia && window.matchMedia('(max-width: 900px)').matches;
+    var compact = window.matchMedia && window.matchMedia('(max-width: 1024px)').matches;
     var existing = document.querySelector('.tsc-mobile-footer');
     if (!compact) {
       if (existing && existing.parentNode) existing.parentNode.removeChild(existing);

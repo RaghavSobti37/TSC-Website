@@ -17,7 +17,7 @@
 (function (global) {
   "use strict";
 
-  var MQ = "(max-width: 900px)";
+  var MQ = '(max-width: 1024px)';
   var SCROLL_SHOW_VH = 1;
   var DIR_DELTA = 8;
 

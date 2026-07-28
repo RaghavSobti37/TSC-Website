@@ -3,7 +3,7 @@
  * Hides Wix hover/peek carousel on ≤900px; desktop unchanged.
  */
 (function () {
-  var MQ = '(max-width: 900px)';
+  var MQ = '(max-width: 1024px)';
   var SECTION = '#comp-mqtnpars';
   var CAROUSEL = '#comp-mqutig8q';
   var HOST_ATTR = 'data-tsc-artists-accordion';

@@ -16,7 +16,7 @@
 }
 
 /* —— All visual redesign: mobile only —— */
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   /* Kill secondary box strokes */
   .tsc-brand-card__eyebrow > .inner-box,
   .tsc-brand-card__eyebrow > .jdJeEr,

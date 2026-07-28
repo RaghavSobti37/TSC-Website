@@ -4,7 +4,7 @@
  * Artists bucket — hub, Artist Path, roster profiles, booking/query forms.
  * Scale-first: gutters, type, buttons, form fields. No mesh→flex redesign.
  */
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   /* —— Overflow / gutters —— */
   main,
   #SITE_PAGES,

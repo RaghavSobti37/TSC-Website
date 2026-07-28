@@ -580,7 +580,7 @@
     if (path !== '/work') return;
 
     function renderWorkHeroCopy() {
-      var compact = window.matchMedia && window.matchMedia('(max-width: 900px)').matches;
+      var compact = window.matchMedia && window.matchMedia('(max-width: 1024px)').matches;
       if (!compact) return;
       var titleHost = document.querySelector('#comp-mr4ozdiu');
       if (titleHost) {
@@ -596,9 +596,9 @@
     renderWorkHeroCopy();
     if (!window.__tscWorkHeroCopyResizeBound) {
       window.__tscWorkHeroCopyResizeBound = true;
-      var lastCompact = window.matchMedia && window.matchMedia('(max-width: 900px)').matches;
+      var lastCompact = window.matchMedia && window.matchMedia('(max-width: 1024px)').matches;
       window.addEventListener('resize', function() {
-        var compact = window.matchMedia && window.matchMedia('(max-width: 900px)').matches;
+        var compact = window.matchMedia && window.matchMedia('(max-width: 1024px)').matches;
         if (compact !== lastCompact) {
           lastCompact = compact;
           renderWorkHeroCopy();
@@ -608,7 +608,7 @@
 
     var hero = document.getElementById('comp-mp3okkrk');
     if (!hero) return;
-    if (!(window.matchMedia && window.matchMedia('(max-width: 900px)').matches)) return;
+    if (!(window.matchMedia && window.matchMedia('(max-width: 1024px)').matches)) return;
     hero.classList.add('tsc-work-hero-redesign');
     [80, 300, 800].forEach(function(delay) {
       window.setTimeout(renderWorkHeroCopy, delay);
@@ -648,7 +648,7 @@
   }
 
   function buildMobileWorkCases() {
-    var compact = window.matchMedia && window.matchMedia('(max-width: 900px)').matches;
+    var compact = window.matchMedia && window.matchMedia('(max-width: 1024px)').matches;
     var path = location.pathname.replace(/\/$/, '') || '/';
     var host = document.querySelector('#comp-mr69hwoy');
     if ((path !== '/work' && path !== '/pages/work.html') || !host) return;
@@ -784,7 +784,7 @@
     var path = normalizedPath();
     if (path !== '/films') return;
 
-    var compact = window.matchMedia && window.matchMedia('(max-width: 900px)').matches;
+    var compact = window.matchMedia && window.matchMedia('(max-width: 1024px)').matches;
     if (!compact) {
       teardownMobileFilmsShells();
       return;
@@ -988,7 +988,7 @@
         whatsappCommunityUrl: whatsappCommunityUrl
       });
     }
-    var compact = window.matchMedia && window.matchMedia('(max-width: 900px)').matches;
+    var compact = window.matchMedia && window.matchMedia('(max-width: 1024px)').matches;
     var existing = document.querySelector('.tsc-mobile-footer');
     var footer = findSiteFooter();
     if (!compact) {
@@ -1089,7 +1089,7 @@
   }
 
   function alignResponsiveElements() {
-    var compact = window.matchMedia && window.matchMedia('(max-width: 900px)').matches;
+    var compact = window.matchMedia && window.matchMedia('(max-width: 1024px)').matches;
     var selectors = [
       'footer .wixui-text-input',
       'footer .wixui-text-box'
@@ -1147,7 +1147,7 @@
 
     var heroContent = hero.querySelector(':scope > [data-testid="responsive-container-content"], :scope .max-width-container');
     if (heroContent) {
-      var compact = window.matchMedia && window.matchMedia('(max-width: 900px)').matches;
+      var compact = window.matchMedia && window.matchMedia('(max-width: 1024px)').matches;
       heroContent.style.setProperty('padding-top', compact ? '56px' : '28px', 'important');
     }
 

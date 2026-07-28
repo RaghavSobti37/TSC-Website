@@ -259,7 +259,7 @@
  * Hero: stack mesh (eyebrow → headline → quote → caption → spiral).
  * Cases shell mounts inside #comp-mr69hwoy (see content-replacements.js).
  */
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   main,
   #SITE_PAGES {
     overflow-x: clip;
@@ -1141,7 +1141,7 @@
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   body:has(#comp-mp3okkrk.tsc-work-hero-redesign) .tsc-mobile-site-header,
   body:has(#comp-mp3okkrk.tsc-work-hero-redesign) #SITE_HEADER {
     background:

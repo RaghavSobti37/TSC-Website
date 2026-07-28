@@ -4,7 +4,7 @@
  * only mounted by the <=1024px loader. All rules stay inside max-width media queries.
  */
 
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   /* ---------- Hero: stack welcome / title / body / CTA ---------- */
   body[data-page="academy"] .comp-mqwcognj-container {
     display: flex !important;

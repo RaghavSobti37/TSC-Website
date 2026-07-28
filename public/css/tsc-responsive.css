@@ -11,7 +11,7 @@
  *   --tsc-bp-lg: 900px | --tsc-bp-xl: 1000px | --tsc-bp-2xl: 1120px | --tsc-bp-3xl: 1500px
  * Media queries keep px literals (custom props not reliable in @media).
  * Adjacent pairs only — no off-by-one gaps:
- *   max-width: 900px / min-width: 901px  (--tsc-bp-lg)
+ *   max-width: 1024px / min-width: 1025px  (--tsc-bp-lg)
  *   max-width: 1000px / min-width: 1001px (--tsc-bp-xl)
  */
 
@@ -222,7 +222,7 @@ body:has(#comp-mr69hwoy) :is(#comp-mr69hwvf5, #comp-mr69hwvh) {
 }
 
 /* Adjacent pair (--tsc-bp-lg: 900px): max-width:900 / min-width:901 — no gap, no overlap */
-@media (min-width: 901px) {
+@media (min-width: 1025px) {
   footer:has(.tsc-desktop-footer) {
     background: var(--tsc-footer-bg, var(--tsc-deep-teal)) !important;
     color: var(--tsc-footer-fg, var(--tsc-cream)) !important;
@@ -1078,7 +1078,7 @@ body.tsc-has-mobile-footer .tsc-legacy-footer-host:not(:has(.tsc-mobile-footer))
 
 
 
-@media (min-width: 901px) and (max-width: 1500px) {
+@media (min-width: 1025px) and (max-width: 1500px) {
   .tsc-desktop-footer {
     padding-left: clamp(36px, 5vw, 72px);
     padding-right: clamp(36px, 5vw, 72px);
@@ -1103,7 +1103,7 @@ body.tsc-has-mobile-footer .tsc-legacy-footer-host:not(:has(.tsc-mobile-footer))
   }
 }
 
-@media (min-width: 901px) and (max-width: 1120px) {
+@media (min-width: 1025px) and (max-width: 1120px) {
   .tsc-desktop-footer-top,
   .tsc-desktop-footer-main {
     grid-template-columns: 1fr;
@@ -1120,7 +1120,7 @@ body.tsc-has-mobile-footer .tsc-legacy-footer-host:not(:has(.tsc-mobile-footer))
 
 
 
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   body {
     overflow-x: hidden;
   }

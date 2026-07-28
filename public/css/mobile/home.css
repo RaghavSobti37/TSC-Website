@@ -6,7 +6,7 @@
  * or convert the repeater to a flex column.
  */
 
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   #c1dmp,
   #PAGE_SECTIONSc1dmp {
     overflow-x: clip;
@@ -763,7 +763,7 @@
 }
 
 /* Tablet: breathe — wider gutters, larger CTAs, optional 2-col build cards */
-@media (min-width: 600px) and (max-width: 900px) {
+@media (min-width: 600px) and (max-width: 1024px) {
   #comp-mrjlvhv6 {
     gap: 14px !important;
     max-width: 520px !important;

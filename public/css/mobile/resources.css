@@ -5,7 +5,7 @@
  * Keep editorial card chrome; stack only where Wix mesh overlaps.
  * Article body target: 16px / 1.55.
  */
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   /* —— Shared type / media —— */
   main [data-testid="richTextElement"] h1 .wixui-rich-text__text,
   main [data-testid="richTextElement"] h2 .wixui-rich-text__text,

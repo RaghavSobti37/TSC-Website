@@ -2,7 +2,7 @@
  * Shared safe mobile page polish — gutters, type, overflow.
  * Footer: mockup accordion shell (.tsc-mobile-footer) when JS mounts it.
  */
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   main,
   #SITE_PAGES,
   [data-testid="page-bg"] {

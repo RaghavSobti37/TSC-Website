@@ -4,7 +4,7 @@
  * About mobile — stack Wix mesh side-by-side bands.
  * Who/Why, Vision boxes, Beliefs cards overlap on phone without this.
  */
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   /* Sections must grow when mesh children stack */
   #comp-mr1u2p4j,
   #comp-mr1whees,
@@ -1447,7 +1447,7 @@
 
 /* Final shared mobile skin for all What We Build information cards.
    Kept after the older ID fixes so every card matches the supplied compact design. */
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   body[data-page="about"] :is(#comp-mr38xqqo, #comp-mr3axlwa, #comp-mr3hvomh, #comp-mr3fzsjq, #comp-mr3hkny1),
   body[data-page="about"] :is(#comp-mr38xqqo, #comp-mr3axlwa, #comp-mr3hvomh, #comp-mr3fzsjq, #comp-mr3hkny1) > [data-testid="responsive-container-content"],
   body[data-page="about"] :is(#comp-mr38xqqo, #comp-mr3axlwa, #comp-mr3hvomh, #comp-mr3fzsjq, #comp-mr3hkny1) > [class*="-container"] {
@@ -2007,7 +2007,7 @@
 }
 
 /* —— Full-scroll polish pass (390 + 768) —— */
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   /* Belief cards: hug content, stop bottom text clipping + title overflow */
   #comp-mr1wvwvr,
   #comp-mr1wvwym,
@@ -2226,7 +2226,7 @@
 }
 
 /* Tablet: vision twins side-by-side once wide enough */
-@media (min-width: 641px) and (max-width: 900px) {
+@media (min-width: 641px) and (max-width: 1024px) {
   #comp-mr1whees [data-testid="responsive-container-content"],
   #comp-mr1whees .comp-mr1whees-container {
     flex-direction: row !important;
@@ -2266,7 +2266,7 @@
  * Stack: tiny shell → THE SHAKTI COLLECTIVE → tagline.
  * Specificity must beat tsc-responsive (loads after mobile/about.css).
  */
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   html body.responsive[data-page="about"] #comp-mp2vlkbh2,
   html body.responsive[data-page="about"] #comp-mp2vlkbh2 .comp-mp2vlkbh2-overflow-wrapper {
     height: auto !important;
@@ -2410,7 +2410,7 @@
   }
 }
 
-@media (min-width: 601px) and (max-width: 900px) {
+@media (min-width: 601px) and (max-width: 1024px) {
   html body.responsive[data-page="about"] #comp-mp2vlkbh2 .comp-mp2vlkbh2-container,
   html body.responsive[data-page="about"] #comp-mp2vlkbh2 [data-testid="responsive-container-content"] {
     padding: 48px 40px 56px !important;

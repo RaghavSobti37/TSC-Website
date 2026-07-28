@@ -609,7 +609,7 @@ url("/assets/mirror/static.wixstatic.com/ufonts/834fa9_d08c6fe9ca9b47ccb21ecdcb7
 /* style 38 */
 #comp-mruf9s08_r_comp-mruf8w8h svg [data-color="1"] {fill: #FFECD1;}
 /* TSC Films: keep card index numerals inside their cards and remove duplicated Partnerships pair. */
-@media screen and (min-width: 901px) {
+@media screen and (min-width: 1025px) {
   #comp-mqktx0nc #comp-mqmhowf1,
   #comp-mqktx0nc #comp-mqmhp1sq {
     display: none !important;
@@ -673,7 +673,7 @@ url("/assets/mirror/static.wixstatic.com/ufonts/834fa9_d08c6fe9ca9b47ccb21ecdcb7
   }
 }
 
-@media screen and (min-width: 901px) and (max-width: 1000px) {
+@media screen and (min-width: 1025px) and (max-width: 1000px) {
   #comp-mqktx0nc .comp-mqktx0nc-container {
     grid-template-rows:
       minmax(max(0.5px, 0.260418 * (var(--scaling-factor) - var(--scrollbar-width))), auto)
@@ -712,7 +712,7 @@ url("/assets/mirror/static.wixstatic.com/ufonts/834fa9_d08c6fe9ca9b47ccb21ecdcb7
   overflow: visible !important;
 }
 
-/* ===== TSC mobile safety (max-width: 1024px) — films ===== */
+/* ===== TSC mobile safety (max-width: 1024px) ï¿½ films ===== */
 @media (max-width: 1024px) {
   main,
   #SITE_PAGES {

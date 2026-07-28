@@ -2,7 +2,7 @@
  * About mobile hero — kept in sync with public/css/mobile/about.css hero rules.
  * Note: currently not linked by the mobile loader; mobile/about.css is the live source.
  */
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   html body.responsive[data-page="about"] #comp-mp2vlkbh2,
   html body.responsive[data-page="about"] #comp-mp2vlkbh2 .comp-mp2vlkbh2-overflow-wrapper,
   body.responsive #comp-mp2vlkbh2,

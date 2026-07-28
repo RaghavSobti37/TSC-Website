@@ -179,7 +179,7 @@
 
   .tsc-mobile-footer-wordmark-mark {
     display: block;
-    filter: brightness(0) saturate(100%) invert(91%) sepia(18%) saturate(483%) hue-rotate(333deg) brightness(107%) contrast(101%);
+    filter: brightness(0) invert(1) !important;
     height: 42px;
     object-fit: contain;
     width: 42px;
@@ -207,7 +207,8 @@
     object-position: left center;
     border-radius: 0;
     mix-blend-mode: normal;
-    filter: none;
+    /* force white mark everywhere (TSC + Academy) */
+    filter: brightness(0) invert(1) !important;
     opacity: 1;
     visibility: visible;
   }
@@ -412,7 +413,7 @@
 
   .tsc-mobile-footer-academy .tsc-mobile-footer-logo {
     mix-blend-mode: normal;
-    filter: none;
+    filter: brightness(0) invert(1) !important;
   }
 
   .tsc-mobile-footer-academy .tsc-mobile-footer-tagline,

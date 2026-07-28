@@ -20,14 +20,14 @@ const routes = [
   const [baseUrl, prefix, widthArg] = process.argv.slice(2);
   const width = Number(widthArg || 1280);
   const outDir = __dirname;
-  const browser = await puppeteer.launch({ headless: 'new', args: ['--no-sandbox'] });
+  const browser = await puppeteer.launch({ headless: 'shell', args: ['--no-sandbox'], protocolTimeout: 240000 });
   const page = await browser.newPage();
   await page.setViewport({ width, height: 900, deviceScaleFactor: 1 });
 
   for (const [slug, route] of routes) {
     const url = baseUrl.replace(/\/$/, '') + route;
     try {
-      await page.goto(url, { waitUntil: 'networkidle2', timeout: 60000 });
+      await page.goto(url, { waitUntil: 'load', timeout: 90000 });
     } catch (e) {
       console.log(`WARN ${slug}: goto ${e.message}`);
     }

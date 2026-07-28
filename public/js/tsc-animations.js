@@ -48,6 +48,8 @@
     if (element.closest('header, footer, nav, script, style')) return true;
     if (element.id === 'SITE_PAGES' || element.id === 'SITE_PAGES_TRANSITION_GROUP') return true;
     if (element.classList.contains('tsc-reveal-ready')) return true;
+    // Decorative Wix chrome — binding it double-hides parent .wixui-box reveals.
+    if (element.classList.contains('inner-box') || element.classList.contains('NYfD3h')) return true;
     var rect = element.getBoundingClientRect();
     return rect.width === 0 || rect.height === 0;
   }
@@ -95,6 +97,11 @@
     }
     if (document.documentElement) {
       document.documentElement.addEventListener('scroll', requestReveal, { passive: true });
+    }
+    // Mirror pages often scroll on body while scrollingElement.scrollTop stays 0.
+    var se = document.scrollingElement;
+    if (se && se !== document.body && se !== document.documentElement) {
+      se.addEventListener('scroll', requestReveal, { passive: true });
     }
     window.addEventListener('resize', requestReveal);
   }

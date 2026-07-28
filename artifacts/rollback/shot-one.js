@@ -5,10 +5,10 @@ const puppeteer = require(path.resolve(__dirname, '..', '..', 'node_modules', 'p
 (async () => {
   const [baseUrl, route, outfile, widthArg] = process.argv.slice(2);
   const width = Number(widthArg || 1280);
-  const browser = await puppeteer.launch({ headless: 'new', args: ['--no-sandbox'] });
+  const browser = await puppeteer.launch({ headless: 'shell', args: ['--no-sandbox'], protocolTimeout: 240000 });
   const page = await browser.newPage();
   await page.setViewport({ width, height: 900, deviceScaleFactor: 1 });
-  await page.goto(baseUrl.replace(/\/$/, '') + route, { waitUntil: 'networkidle2', timeout: 60000 });
+  await page.goto(baseUrl.replace(/\/$/, '') + route, { waitUntil: 'load', timeout: 90000 });
   await page.evaluate(async () => {
     const h = document.body.scrollHeight;
     for (let y = 0; y < h; y += 800) { window.scrollTo(0, y); await new Promise(r => setTimeout(r, 60)); }

@@ -554,7 +554,8 @@
     object-fit: contain !important;
     object-position: left center !important;
     mix-blend-mode: normal !important;
-    filter: none !important;
+    /* force white mark on both TSC + Academy headers */
+    filter: brightness(0) invert(1) !important;
     opacity: 1 !important;
     visibility: visible !important;
   }

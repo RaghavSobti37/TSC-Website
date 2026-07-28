@@ -1,0 +1,34 @@
+{
+  "overlaps": [],
+  "sticky": [],
+  "backIds": [
+    {
+      "id": "comp-mrg0d1923",
+      "missing": true
+    },
+    {
+      "id": "comp-mrg0d7rc",
+      "missing": true
+    },
+    {
+      "id": "comp-mrfzwkwe",
+      "display": "grid",
+      "pos": "relative",
+      "w": 55,
+      "h": 12,
+      "t": 46,
+      "text": "Back To Resources",
+      "opacity": "1"
+    },
+    {
+      "id": "comp-mrg3qw6u",
+      "display": "flex",
+      "pos": "relative",
+      "w": 95,
+      "h": 28,
+      "t": 38,
+      "text": "Back To Resources",
+      "opacity": "1"
+    }
+  ]
+}

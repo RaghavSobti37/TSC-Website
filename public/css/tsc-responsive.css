@@ -59,6 +59,14 @@ body {
   width: clamp(220px, 18vw, 340px) !important;
 }
 
+/* Academy mark → solid white on dark header (same as TSC nav/footer). */
+header a[data-tsc-brand-logo="academy"] .tsc-desktop-brand-logo-unified,
+header .tsc-desktop-brand-logo-unified[src*="tsc-academy-logo"],
+header .tsc-desktop-brand-logo-unified[src*="academy-logo"] {
+  filter: brightness(0) invert(1) !important;
+  mix-blend-mode: normal !important;
+}
+
 img,
 video,
 canvas,
@@ -345,9 +353,10 @@ body:has(#comp-mr69hwoy) :is(#comp-mr69hwvf5, #comp-mr69hwvh) {
     display: block;
     height: auto;
     max-height: 96px;
-    mix-blend-mode: screen;
+    mix-blend-mode: normal;
     object-fit: contain;
     width: clamp(220px, 18vw, 340px);
+    filter: brightness(0) invert(1);
   }
 
   .tsc-desktop-footer-brand span {
@@ -696,6 +705,8 @@ body:has(#comp-mr69hwoy) :is(#comp-mr69hwvf5, #comp-mr69hwvh) {
     max-height: 128px;
     object-fit: contain;
     width: clamp(250px, 20vw, 360px);
+    filter: brightness(0) invert(1);
+    mix-blend-mode: normal;
   }
 
   .tsc-desktop-footer-wordmark {
@@ -710,7 +721,7 @@ body:has(#comp-mr69hwoy) :is(#comp-mr69hwvf5, #comp-mr69hwvh) {
 
   .tsc-desktop-footer-wordmark-mark {
     display: block;
-    filter: brightness(0) saturate(100%) invert(91%) sepia(18%) saturate(483%) hue-rotate(333deg) brightness(107%) contrast(101%);
+    filter: brightness(0) invert(1);
     height: auto;
     width: 100%;
   }
@@ -1432,14 +1443,17 @@ body.tsc-has-mobile-footer .tsc-legacy-footer-host:not(:has(.tsc-mobile-footer))
     display: block;
     object-fit: contain;
     object-position: left center;
+    filter: brightness(0) invert(1) !important;
+    mix-blend-mode: normal !important;
   }
 
   .tsc-mobile-brand-logo-unified {
     height: 100%;
     width: 100%;
-    mix-blend-mode: normal;
+    mix-blend-mode: normal !important;
     object-fit: contain;
     object-position: left center;
+    filter: brightness(0) invert(1) !important;
   }
 
   .tsc-mobile-header-tagline {
@@ -1493,7 +1507,7 @@ body.tsc-has-mobile-footer .tsc-legacy-footer-host:not(:has(.tsc-mobile-footer))
   }
 
   .tsc-mobile-site-header-academy .tsc-mobile-menu summary span {
-    background: var(--tsc-cream);
+    background: #fff;
   }
 
   .tsc-mobile-menu nav {

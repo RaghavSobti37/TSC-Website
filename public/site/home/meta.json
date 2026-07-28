@@ -1,0 +1,9 @@
+{
+  "title": "Home",
+  "canonicalRoute": "/",
+  "pageFile": "pages/home.html",
+  "css": "css/pages/home.css",
+  "js": "js/pages/home.animations.js",
+  "section": "home",
+  "aliases": []
+}

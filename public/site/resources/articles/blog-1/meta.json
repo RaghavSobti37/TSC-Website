@@ -1,0 +1,13 @@
+{
+  "title": "Blog 1",
+  "canonicalRoute": "/blog-1",
+  "pageFile": "pages/blog-1.html",
+  "css": "css/pages/blog-1.css",
+  "js": "js/pages/blog-1.animations.js",
+  "section": "resources",
+  "aliases": [
+    "/blank-13",
+    "/work3",
+    "/resources/blog-1"
+  ]
+}

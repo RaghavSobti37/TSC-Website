@@ -1,0 +1,13 @@
+{
+  "title": "The HeART of Composition",
+  "canonicalRoute": "/the-heart-of-composition",
+  "pageFile": "pages/the-heart-of-composition.html",
+  "css": "css/pages/the-heart-of-composition.css",
+  "js": "js/pages/the-heart-of-composition.animations.js",
+  "section": "academy",
+  "aliases": [
+    "/blank-9",
+    "/about-9",
+    "/academy/the-heart-of-composition"
+  ]
+}

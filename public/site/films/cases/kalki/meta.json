@@ -1,0 +1,13 @@
+{
+  "title": "Kalki",
+  "canonicalRoute": "/kalki",
+  "pageFile": "pages/kalki.html",
+  "css": "css/pages/kalki.css",
+  "js": "js/pages/kalki.animations.js",
+  "section": "films",
+  "aliases": [
+    "/blank-12-1-1-1",
+    "/work2-1-1-1",
+    "/films/kalki"
+  ]
+}

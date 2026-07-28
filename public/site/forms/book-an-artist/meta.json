@@ -1,0 +1,14 @@
+{
+  "title": "Book An Artist",
+  "canonicalRoute": "/book-an-artist",
+  "pageFile": "pages/book-an-artist.html",
+  "css": "css/pages/book-an-artist.css",
+  "js": "js/pages/book-an-artist.animations.js",
+  "section": "forms",
+  "aliases": [
+    "/blank-8-1",
+    "/about-8-1",
+    "/query",
+    "/forms/book-an-artist"
+  ]
+}

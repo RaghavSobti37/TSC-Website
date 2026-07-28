@@ -1,0 +1,9 @@
+{
+  "title": "TSC Artists",
+  "canonicalRoute": "/artists",
+  "pageFile": "pages/artists.html",
+  "css": "css/pages/artists.css",
+  "js": "js/pages/artists.animations.js",
+  "section": "artists",
+  "aliases": []
+}

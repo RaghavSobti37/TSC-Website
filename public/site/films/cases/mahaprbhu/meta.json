@@ -1,0 +1,13 @@
+{
+  "title": "Mahaprbhu",
+  "canonicalRoute": "/mahaprbhu",
+  "pageFile": "pages/mahaprbhu.html",
+  "css": "css/pages/mahaprbhu.css",
+  "js": "js/pages/mahaprbhu.animations.js",
+  "section": "films",
+  "aliases": [
+    "/blank-12-1-1",
+    "/work2-1-1",
+    "/films/mahaprbhu"
+  ]
+}

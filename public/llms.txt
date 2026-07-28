@@ -1,0 +1,63 @@
+# The Shakti Collective
+
+> The Shakti Collective is a culture-first artist development ecosystem for singers, musicians, producers, storytellers, and conscious creative communities. We build systems for learning, collaboration, storytelling, films, and sustainable creative careers.
+
+The Shakti Collective (TSC) is a culture-forward artist ecosystem company founded and curated by Rohit Sobti. TSC works across music education (TSC Academy), artist partnerships (TSC Artists / Artist Path), film mounting and IP (TSC Films), brand collaborations, and editorial resources for independent artists.
+
+Canonical site: https://wix-site-clone-psi.vercel.app  
+Contact: Artist@theshakticollective.in  
+Full corpus for LLMs: [llms-full.txt](https://wix-site-clone-psi.vercel.app/llms-full.txt)
+
+## Core pages
+
+- [Home](https://wix-site-clone-psi.vercel.app/): Culture-first ecosystem overview — mentorship, collaboration, learning, and go-to-market for artists
+- [About](https://wix-site-clone-psi.vercel.app/about): Who TSC is, why it exists, verticals, philosophy, and founder Rohit Sobti
+- [About (Markdown)](https://wix-site-clone-psi.vercel.app/about.md): Plain-text About page for AI parsers (preferred over Wix HTML)
+- [Work](https://wix-site-clone-psi.vercel.app/work): Platforms, partnerships, and cultural initiatives (brand IPs, artist programs, films)
+- [TSC Artists](https://wix-site-clone-psi.vercel.app/artists): Independent artist partnerships — development, audiences, live, PR, career support
+- [Artist Path](https://wix-site-clone-psi.vercel.app/artist-path): Selective artist accelerator and growth diagnostic for emerging talent
+- [Films](https://wix-site-clone-psi.vercel.app/films): Film mounting, audience development, partnerships, and long-term IP growth
+- [TSC Academy](https://wix-site-clone-psi.vercel.app/academy): Mentorship-led music learning from composers, classical masters, and producers
+- [Learn With TSC](https://wix-site-clone-psi.vercel.app/learn-with-tsc): Mentorship-led music education and craft frameworks
+- [Resources](https://wix-site-clone-psi.vercel.app/resources): Guides and tools for release strategy, craft, and sustainable artist careers
+
+## Academy courses
+
+- [Roots of Hindustani Classical](https://wix-site-clone-psi.vercel.app/roots-of-hindustani-classical): Mentored by Pandit Prasad Khaparde — raag, sur, voice culture, riyaaz
+- [The HeART of Composition](https://wix-site-clone-psi.vercel.app/the-heart-of-composition): Mentored by Sandesh Shandilya — emotional architecture of composition and songwriting
+
+## Artists
+
+- [Harshad Duhita](https://wix-site-clone-psi.vercel.app/harshad-duhita): TSC artist profile
+- [YUGM](https://wix-site-clone-psi.vercel.app/yugm): TSC artist profile
+
+## Films & stories
+
+- [Mahavatar Narsimha](https://wix-site-clone-psi.vercel.app/mahavatar-narsimha): Mythology-led animated feature — positioning, audience, IP
+- [Hanuman ansh](https://wix-site-clone-psi.vercel.app/hanuman-ansh): Spiritual entertainment IP
+- [Mahaprbhu](https://wix-site-clone-psi.vercel.app/mahaprbhu): Jagannath / cultural resonance initiative
+- [Kalki](https://wix-site-clone-psi.vercel.app/kalki): Culture-forward storytelling initiative
+- [MBA](https://wix-site-clone-psi.vercel.app/mba): Work / case study page
+
+## Editorial
+
+- [From Bhajan to Clubbing, From Mythology to Cinema](https://wix-site-clone-psi.vercel.app/from-bhajan-to-clubbing): Rohit Sobti essay on Indian culture finding mainstream forms
+- [You Released a Song. Now What?](https://wix-site-clone-psi.vercel.app/you-released-a-song-now-what): Independent artist post-release playbook
+
+## Contact & forms
+
+- [Book a Call](https://wix-site-clone-psi.vercel.app/book-a-call): Talk with TSC about learning, collaboration, or partnerships
+- [Book an Artist](https://wix-site-clone-psi.vercel.app/book-an-artist): Book TSC artists for shows, festivals, colleges, brands
+- [Artist Path Query](https://wix-site-clone-psi.vercel.app/artist-query): Apply / inquire about Artist Path
+- [Collab Query](https://wix-site-clone-psi.vercel.app/collab-query): Brand, institution, and culture partnership inquiries
+
+## Optional
+
+- [Sitemap (urlset)](https://wix-site-clone-psi.vercel.app/sitemap.xml): All canonical URLs as a single urlset
+- [Sitemap pages (urlset)](https://wix-site-clone-psi.vercel.app/sitemap-pages.xml): Same urlset mirror
+- [Robots](https://wix-site-clone-psi.vercel.app/robots.txt): Crawler access policy (AI bots allowed)
+- [Instagram](https://www.instagram.com/the_shakti_collective/): @the_shakti_collective
+- [YouTube](https://youtube.com/@theshakticollective): @theshakticollective
+- [LinkedIn](https://www.linkedin.com/company/theshakticollective): Company page
+- [Site structure (repo index)](https://wix-site-clone-psi.vercel.app/site/README.md): Human/AI route map of public pages
+- [About content.md](https://wix-site-clone-psi.vercel.app/site/about/content.md): About copy without HTML chrome

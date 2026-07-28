@@ -1,0 +1,9 @@
+{
+  "title": "Resources",
+  "canonicalRoute": "/resources",
+  "pageFile": "pages/resources.html",
+  "css": "css/pages/resources.css",
+  "js": "js/pages/resources.animations.js",
+  "section": "resources",
+  "aliases": []
+}

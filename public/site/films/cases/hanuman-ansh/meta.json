@@ -1,0 +1,13 @@
+{
+  "title": "Hanuman ansh",
+  "canonicalRoute": "/hanuman-ansh",
+  "pageFile": "pages/hanuman-ansh.html",
+  "css": "css/pages/hanuman-ansh.css",
+  "js": "js/pages/hanuman-ansh.animations.js",
+  "section": "films",
+  "aliases": [
+    "/blank-12-1",
+    "/work2-1",
+    "/films/hanuman-ansh"
+  ]
+}

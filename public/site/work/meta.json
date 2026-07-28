@@ -1,0 +1,9 @@
+{
+  "title": "Work",
+  "canonicalRoute": "/work",
+  "pageFile": "pages/work.html",
+  "css": "css/pages/work.css",
+  "js": "js/pages/work.animations.js",
+  "section": "work",
+  "aliases": []
+}

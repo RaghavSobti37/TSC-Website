@@ -1,0 +1,9 @@
+{
+  "title": "About",
+  "canonicalRoute": "/about",
+  "pageFile": "pages/about.html",
+  "css": "css/pages/about.css",
+  "js": "js/pages/about.animations.js",
+  "section": "about",
+  "aliases": []
+}

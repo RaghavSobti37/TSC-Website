@@ -1,0 +1,13 @@
+{
+  "title": "Artist Path Query",
+  "canonicalRoute": "/artist-query",
+  "pageFile": "pages/artist-query.html",
+  "css": "css/pages/artist-query.css",
+  "js": "js/pages/artist-query.animations.js",
+  "section": "forms",
+  "aliases": [
+    "/blank-8-1-1",
+    "/about-8-1-1",
+    "/forms/artist-query"
+  ]
+}

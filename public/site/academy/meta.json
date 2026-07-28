@@ -1,0 +1,9 @@
+{
+  "title": "TSC Academy",
+  "canonicalRoute": "/academy",
+  "pageFile": "pages/academy.html",
+  "css": "css/pages/academy.css",
+  "js": "js/pages/academy.animations.js",
+  "section": "academy",
+  "aliases": []
+}

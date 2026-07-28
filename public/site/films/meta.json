@@ -1,0 +1,9 @@
+{
+  "title": "Films",
+  "canonicalRoute": "/films",
+  "pageFile": "pages/films.html",
+  "css": "css/pages/films.css",
+  "js": "js/pages/films.animations.js",
+  "section": "films",
+  "aliases": []
+}

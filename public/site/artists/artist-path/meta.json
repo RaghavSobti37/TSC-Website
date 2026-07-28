@@ -1,0 +1,11 @@
+{
+  "title": "Artist Path",
+  "canonicalRoute": "/artist-path",
+  "pageFile": "pages/artist-path.html",
+  "css": "css/pages/artist-path.css",
+  "js": "js/pages/artist-path.animations.js",
+  "section": "artists",
+  "aliases": [
+    "/artists/artist-path"
+  ]
+}

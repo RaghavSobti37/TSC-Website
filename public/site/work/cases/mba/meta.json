@@ -1,0 +1,12 @@
+{
+  "title": "MBA",
+  "canonicalRoute": "/mba",
+  "pageFile": "pages/mba.html",
+  "css": "css/pages/mba.css",
+  "js": "js/pages/mba.animations.js",
+  "section": "work",
+  "aliases": [
+    "/blank-7",
+    "/work/mba"
+  ]
+}

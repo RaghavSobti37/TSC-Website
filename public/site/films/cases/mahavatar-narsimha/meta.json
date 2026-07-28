@@ -1,0 +1,13 @@
+{
+  "title": "Mahavatar Narsimha",
+  "canonicalRoute": "/mahavatar-narsimha",
+  "pageFile": "pages/mahavatar-narsimha.html",
+  "css": "css/pages/mahavatar-narsimha.css",
+  "js": "js/pages/mahavatar-narsimha.animations.js",
+  "section": "films",
+  "aliases": [
+    "/blank-12",
+    "/work2",
+    "/films/mahavatar-narsimha"
+  ]
+}

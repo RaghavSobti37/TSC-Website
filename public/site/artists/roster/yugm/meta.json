@@ -1,0 +1,13 @@
+{
+  "title": "YUGM",
+  "canonicalRoute": "/yugm",
+  "pageFile": "pages/yugm.html",
+  "css": "css/pages/yugm.css",
+  "js": "js/pages/yugm.animations.js",
+  "section": "artists",
+  "aliases": [
+    "/blank-10-1",
+    "/work0-1",
+    "/artists/yugm"
+  ]
+}

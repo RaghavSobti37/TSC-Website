@@ -1,0 +1,12 @@
+{
+  "title": "A-Z of Music Production",
+  "canonicalRoute": "/music-production",
+  "pageFile": "pages/music-production.html",
+  "css": "css/pages/music-production.css",
+  "js": "js/pages/music-production.animations.js",
+  "section": "academy",
+  "aliases": [
+    "/academy/music-production",
+    "/courses/music-production"
+  ]
+}

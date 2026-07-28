@@ -1,0 +1,11 @@
+{
+  "title": "Classical Review",
+  "canonicalRoute": "/classicalreview",
+  "pageFile": "pages/classicalreview.html",
+  "css": "css/pages/classicalreview.css",
+  "js": "js/pages/classicalreview.animations.js",
+  "section": "forms",
+  "aliases": [
+    "/forms/classicalreview"
+  ]
+}

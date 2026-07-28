@@ -1,0 +1,12 @@
+{
+  "title": "Collab Q",
+  "canonicalRoute": "/collab-query",
+  "pageFile": "pages/collab-query.html",
+  "css": "css/pages/collab-query.css",
+  "js": "js/pages/collab-query.animations.js",
+  "section": "forms",
+  "aliases": [
+    "/blank-6",
+    "/forms/collab-query"
+  ]
+}

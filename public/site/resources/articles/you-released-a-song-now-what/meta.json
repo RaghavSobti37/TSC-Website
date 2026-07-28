@@ -1,0 +1,11 @@
+{
+  "title": "You Released a Song. Now What?",
+  "canonicalRoute": "/you-released-a-song-now-what",
+  "pageFile": "pages/you-released-a-song-now-what.html",
+  "css": "css/pages/editorial-blog.css",
+  "js": null,
+  "section": "resources",
+  "aliases": [
+    "/resources/you-released-a-song-now-what"
+  ]
+}

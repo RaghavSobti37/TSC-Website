@@ -1,0 +1,11 @@
+{
+  "title": "Masterclass Review 02",
+  "canonicalRoute": "/masterclass-review02",
+  "pageFile": "pages/masterclass-review02.html",
+  "css": "css/pages/masterclass-review02.css",
+  "js": "js/pages/masterclass-review02.animations.js",
+  "section": "forms",
+  "aliases": [
+    "/forms/masterclass-review02"
+  ]
+}

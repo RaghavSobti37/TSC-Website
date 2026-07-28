@@ -1,0 +1,13 @@
+{
+  "title": "Book A Call",
+  "canonicalRoute": "/book-a-call",
+  "pageFile": "pages/book-a-call.html",
+  "css": "css/pages/book-a-call.css",
+  "js": "js/pages/book-a-call.animations.js",
+  "section": "forms",
+  "aliases": [
+    "/blank-8",
+    "/about-8",
+    "/forms/book-a-call"
+  ]
+}

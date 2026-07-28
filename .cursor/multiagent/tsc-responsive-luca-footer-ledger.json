@@ -1,0 +1,237 @@
+{
+  "slug": "tsc-responsive-luca-footer",
+  "goal": "Perfect responsive (mobile/tablet) for all pages without changing desktop; add Luca music-production course page+card+pricing ₹3999+nav; remove Book a Call below footer; improve footer.",
+  "createdAt": "2026-07-27T18:30:00.000Z",
+  "phase": "workers",
+  "baseUrl": "http://127.0.0.1:3000",
+  "constraints": [
+    "DO NOT change desktop design (@media min-width / default desktop styles). Mobile/tablet only via max-width media queries (≤900px or existing breakpoints).",
+    "Preserve brand aesthetic: cream #FFECD1, teal #083D3A / #126D5E, terracotta #B74B02, editorial serif/Signika display.",
+    "Mutually exclusive ownsFiles — never edit another slice's files.",
+    "Completion loop: verifyCommands must pass before status=done."
+  ],
+  "slices": [
+    {
+      "sliceId": "home",
+      "goal": "Perfect responsive mobile/tablet for Home (/) — no desktop changes",
+      "ownsFiles": [
+        "public/css/mobile/home.css"
+      ],
+      "forbiddenFiles": [
+        "public/css/mobile/about.css",
+        "public/css/mobile/work.css",
+        "public/css/mobile/artists.css",
+        "public/css/mobile/films.css",
+        "public/css/mobile/resources.css",
+        "public/css/mobile/learn.css",
+        "public/js/tsc-components.js",
+        "public/js/content-replacements.js",
+        "public/css/tsc-mobile-system.css"
+      ],
+      "verifyCommands": [
+        "node -e \"const fs=require('fs'); const c=fs.readFileSync('public/css/mobile/home.css','utf8'); if(!c.includes('@media')) process.exit(1); if(/@media\\s*\\(\\s*min-width\\s*:\\s*901/.test(c)) { console.error('desktop override found'); process.exit(1);} console.log('home-mobile ok', c.length);\""
+      ],
+      "status": "done",
+      "workerAgentId": "65926ace-adc7-4de5-a834-7de086d37ba9",
+      "evidence": "public/css/mobile/home.css only. Verify: home-mobile ok 25282 (user+ledger, no min-width:901). Hero CTA wrap #comp-mrjlvhv6 stacks full-width 52px; overflow-x clip + no 100vw bleed; 20px phone / 24px tablet gutters; swipe track contained; media object-fit cover; footer local spacing only.",
+      "blockedReason": ""
+    },
+    {
+      "sliceId": "about",
+      "goal": "Perfect responsive for About (/about)",
+      "ownsFiles": [
+        "public/css/mobile/about.css"
+      ],
+      "forbiddenFiles": [
+        "public/css/mobile/home.css",
+        "public/css/mobile/work.css",
+        "public/css/mobile/artists.css",
+        "public/css/mobile/films.css",
+        "public/css/mobile/resources.css",
+        "public/css/mobile/learn.css"
+      ],
+      "verifyCommands": [
+        "node -e \"const fs=require('fs'); const c=fs.readFileSync('public/css/mobile/about.css','utf8'); if(!c.includes('@media (max-width')) process.exit(1); console.log('about-mobile ok', c.length);\""
+      ],
+      "status": "in_progress",
+      "workerAgentId": "f0b05a71-a43e-4f72-9c15-a431e57f9d82",
+      "evidence": "",
+      "blockedReason": ""
+    },
+    {
+      "sliceId": "work",
+      "goal": "Perfect responsive for Work (/work) + case /mba",
+      "ownsFiles": [
+        "public/css/mobile/work.css"
+      ],
+      "forbiddenFiles": [
+        "public/css/mobile/home.css",
+        "public/css/mobile/about.css",
+        "public/css/mobile/artists.css",
+        "public/css/mobile/films.css",
+        "public/css/mobile/resources.css",
+        "public/css/mobile/learn.css"
+      ],
+      "verifyCommands": [
+        "node -e \"const fs=require('fs'); const c=fs.readFileSync('public/css/mobile/work.css','utf8'); if(!c.includes('@media (max-width')) process.exit(1); console.log('work-mobile ok', c.length);\""
+      ],
+      "status": "in_progress",
+      "workerAgentId": "21f73d79-a260-4ebb-9c79-b681761ad80e",
+      "evidence": "",
+      "blockedReason": ""
+    },
+    {
+      "sliceId": "artists",
+      "goal": "Perfect responsive for Artists hub + harshad-duhita + yugm + artist-path + artist form pages mobile",
+      "ownsFiles": [
+        "public/css/mobile/artists.css"
+      ],
+      "forbiddenFiles": [
+        "public/css/mobile/home.css",
+        "public/css/mobile/about.css",
+        "public/css/mobile/work.css",
+        "public/css/mobile/films.css",
+        "public/css/mobile/resources.css",
+        "public/css/mobile/learn.css"
+      ],
+      "verifyCommands": [
+        "node -e \"const fs=require('fs'); const c=fs.readFileSync('public/css/mobile/artists.css','utf8'); if(!c.includes('@media (max-width')) process.exit(1); console.log('artists-mobile ok', c.length);\""
+      ],
+      "status": "done",
+      "workerAgentId": "artists-mobile-worker",
+      "evidence": "public/css/mobile/artists.css expanded for hub stack (What We Do + philosophy + roster), artist-path glance 2-col + market full-width, harshad/yugm profile prose/media, form pages via body[data-page=artists]. Verify: artists-mobile ok 23231. No min-width desktop overrides.",
+      "blockedReason": ""
+    },
+    {
+      "sliceId": "films",
+      "goal": "Perfect responsive for Films + mahavatar-narsimha + hanuman-ansh + mahaprbhu + kalki",
+      "ownsFiles": [
+        "public/css/mobile/films.css"
+      ],
+      "forbiddenFiles": [
+        "public/css/mobile/home.css",
+        "public/css/mobile/about.css",
+        "public/css/mobile/work.css",
+        "public/css/mobile/artists.css",
+        "public/css/mobile/resources.css",
+        "public/css/mobile/learn.css"
+      ],
+      "verifyCommands": [
+        "node -e \"const fs=require('fs'); const c=fs.readFileSync('public/css/mobile/films.css','utf8'); if(!c.includes('@media (max-width')) process.exit(1); console.log('films-mobile ok', c.length);\""
+      ],
+      "status": "in_progress",
+      "workerAgentId": "6d819af0-44b2-4023-ab08-a21d3cbbe6f9",
+      "evidence": "",
+      "blockedReason": ""
+    },
+    {
+      "sliceId": "resources",
+      "goal": "Perfect responsive for Resources + blog articles",
+      "ownsFiles": [
+        "public/css/mobile/resources.css"
+      ],
+      "forbiddenFiles": [
+        "public/css/mobile/home.css",
+        "public/css/mobile/about.css",
+        "public/css/mobile/work.css",
+        "public/css/mobile/artists.css",
+        "public/css/mobile/films.css",
+        "public/css/mobile/learn.css"
+      ],
+      "verifyCommands": [
+        "node -e \"const fs=require('fs'); const c=fs.readFileSync('public/css/mobile/resources.css','utf8'); if(!c.includes('@media (max-width')) process.exit(1); console.log('resources-mobile ok', c.length);\""
+      ],
+      "status": "in_progress",
+      "workerAgentId": "f401ef1d-e2f8-427d-959c-b0301af33ee7",
+      "evidence": "",
+      "blockedReason": ""
+    },
+    {
+      "sliceId": "learn",
+      "goal": "Perfect responsive for academy + learn-with-tsc + heart + roots (CSS only); support 3 course cards + ₹3999 price chips on mobile",
+      "ownsFiles": [
+        "public/css/mobile/learn.css"
+      ],
+      "forbiddenFiles": [
+        "public/css/mobile/home.css",
+        "public/js/content-replacements.js",
+        "public/pages/music-production.html"
+      ],
+      "verifyCommands": [
+        "node -e \"const fs=require('fs'); const c=fs.readFileSync('public/css/mobile/learn.css','utf8'); if(!c.includes('@media (max-width')) process.exit(1); console.log('learn-mobile ok', c.length);\""
+      ],
+      "status": "done",
+      "workerAgentId": "060f679f-c97d-49e1-9dbc-5d490f4de887",
+      "evidence": "public/css/mobile/learn.css ≤900px only: 3 academy course cards (#comp-mpjvjuos/#comp-mpjxmose/#comp-mpjxxeqt) stack + 4:3 media + full-width CTAs; .tsc-course-price / meta chips for ₹3999; .tsc-mobile-course-shell polish for heart/roots/music-production; book-a-call+review form grid; #comp-mrx6fmlb floating chrome hidden (sticky CTA). Verify: learn-mobile ok 24805",
+      "blockedReason": ""
+    },
+    {
+      "sliceId": "luca-course",
+      "goal": "Create /music-production from course template; update content from live Luca page; price all courses ₹3999; wire Luca card links; add to Courses dropdown/nav",
+      "ownsFiles": [
+        "public/pages/music-production.html",
+        "public/css/pages/music-production.css",
+        "public/js/pages/music-production.animations.js",
+        "public/music-production/index.html",
+        "public/site/academy/courses/music-production/**",
+        "public/pages/routes.manifest.json",
+        "public/pages/academy.html",
+        "public/pages/learn-with-tsc.html",
+        "public/pages/the-heart-of-composition.html",
+        "public/pages/roots-of-hindustani-classical.html",
+        "public/js/content-replacements.js",
+        "public/js/forms.js",
+        "public/js/tsc-components.js",
+        "vercel.json",
+        "scripts/build.js",
+        "docs/SITE_STRUCTURE.md",
+        "public/sitemap-pages.xml",
+        "public/sitemap.xml"
+      ],
+      "forbiddenFiles": [
+        "public/css/mobile/home.css",
+        "public/css/mobile/about.css",
+        "public/css/mobile/work.css",
+        "public/css/mobile/artists.css",
+        "public/css/mobile/films.css",
+        "public/css/mobile/resources.css",
+        "public/css/mobile/learn.css",
+        "public/css/tsc-mobile-system.css"
+      ],
+      "verifyCommands": [
+        "node -e \"const fs=require('fs'); if(!fs.existsSync('public/pages/music-production.html')) process.exit(1); const m=JSON.parse(fs.readFileSync('public/pages/routes.manifest.json','utf8')); if(!m.allRoutes.includes('/music-production')) { console.error('route missing'); process.exit(1);} const cr=fs.readFileSync('public/js/content-replacements.js','utf8'); if(!cr.includes('/music-production')) process.exit(1); if(!cr.includes('3999') && !cr.includes('3,999')) { console.error('price missing'); process.exit(1);} const forms=fs.readFileSync('public/js/forms.js','utf8'); if(!/Music Production/i.test(forms)) process.exit(1); console.log('luca-course ok');\""
+      ],
+      "status": "in_progress",
+      "workerAgentId": "0250149b-4bfd-4b04-93ee-454a668a4d20",
+      "evidence": "",
+      "blockedReason": ""
+    }
+  ],
+  "integrationSlice": {
+    "sliceId": "footer-cta",
+    "goal": "Remove Book a Call below/near footer (sticky CTA + floating Close→Book a Call); improve footer arrangement with same fonts/colors + useful page links",
+    "ownsFiles": [
+      "public/css/tsc-mobile-system.css",
+      "public/css/tsc-responsive.css",
+      "public/js/tsc-mobile-system.js",
+      "public/css/mobile/_tokens.css"
+    ],
+    "runsAfter": [
+      "home",
+      "about",
+      "work",
+      "artists",
+      "films",
+      "resources",
+      "learn",
+      "luca-course"
+    ],
+    "status": "pending",
+    "note": "May also patch public/js/tsc-components.js injectStickyCta and public/js/content-replacements.js footer helpers IF luca-course already finished those files — coordinate: prefer CSS hide of .tsc-sticky-cta and #comp-mrx6fmlb; footer layout via mobile-system + responsive CSS. If JS needed, only edit after luca done."
+  },
+  "testAgent": {
+    "status": "pending",
+    "commandsRun": [],
+    "lastFailure": ""
+  }
+}

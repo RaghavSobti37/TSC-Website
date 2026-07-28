@@ -1,0 +1,378 @@
+@import url("./_safe-base.css");
+
+/**
+ * Resources hub + blogs — scale-first.
+ * Keep editorial card chrome; stack only where Wix mesh overlaps.
+ * Article body target: 16px / 1.55.
+ */
+@media (max-width: 900px) {
+  /* —— Shared type / media —— */
+  main [data-testid="richTextElement"] h1 .wixui-rich-text__text,
+  main [data-testid="richTextElement"] h2 .wixui-rich-text__text,
+  main [data-testid="richTextElement"] .font_0,
+  main [data-testid="richTextElement"] .font_2 {
+    line-height: 1.15 !important;
+    overflow-wrap: break-word;
+  }
+
+  main [data-testid="richTextElement"] p .wixui-rich-text__text,
+  main [data-testid="richTextElement"] .font_7,
+  main [data-testid="richTextElement"] .font_8,
+  main [data-testid="richTextElement"] .font_9 {
+    font-size: 16px !important;
+    line-height: 1.55 !important;
+    overflow-wrap: break-word;
+  }
+
+  main img,
+  main .wixui-image,
+  main wow-image,
+  main [data-testid="imageX"] img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  main .wixui-button,
+  main a.wixui-button,
+  main a.PoVCDy {
+    min-height: 44px;
+    max-width: calc(100vw - 40px);
+    box-sizing: border-box;
+  }
+
+  main input[type="search"],
+  main input[type="text"] {
+    min-height: 48px !important;
+    font-size: 16px !important;
+  }
+
+  /* —— Free Tools section: mesh overlays same grid cell —— */
+  #comp-mp2vpkoa,
+  #comp-mp2vpkoa .comp-mp2vpkoa-container {
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+  }
+
+  #comp-mp2vpkoa .comp-mp2vpkoa-container,
+  #comp-mp2vpkoa [data-testid="responsive-container-content"].comp-mp2vpkoa-container {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+    gap: 18px !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 28px 16px 36px !important;
+    grid-template-rows: none !important;
+    grid-template-columns: none !important;
+  }
+
+  #comp-mp2vpkoa .comp-mp2vpkoa-container > [id^="comp-"] {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    place-self: stretch !important;
+    grid-area: auto !important;
+    height: auto !important;
+    min-height: 0 !important;
+    transform: none !important;
+  }
+
+  /* Reading order: title → blurb → tabs/cards */
+  #comp-mrd4o8h8 {
+    order: 1 !important;
+  }
+
+  #comp-mrd4uy36 {
+    order: 2 !important;
+  }
+
+  #comp-mparh5c7 {
+    order: 3 !important;
+  }
+
+  #comp-mrd4o8h8 .wixui-rich-text__text {
+    font-size: clamp(1.45rem, 6.5vw, 2rem) !important;
+    line-height: 1.15 !important;
+  }
+
+  #comp-mrd4uy36 .wixui-rich-text__text {
+    font-size: 16px !important;
+    line-height: 1.55 !important;
+  }
+
+  /* Tab pills: keep design, allow horizontal scroll */
+  #comp-mparh5c7 [role="tablist"],
+  #comp-mparh5c7 .TabsList2027980309__tabsList,
+  #comp-mparh5c7 .wixui-tabs__menu {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    gap: 8px !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+    max-width: 100% !important;
+    scrollbar-width: none;
+  }
+
+  #comp-mparh5c7 [role="tablist"]::-webkit-scrollbar {
+    display: none;
+  }
+
+  #comp-mparh5c7 [role="tab"],
+  #comp-mparh5c7 .wixui-tabs__item {
+    flex: 0 0 auto !important;
+    white-space: nowrap !important;
+    min-height: 40px !important;
+    font-size: 13px !important;
+    padding: 8px 14px !important;
+  }
+
+  /* Tool cards: keep capsule chrome, full-width stack (was 20%) */
+  #comp-mpbfrynb .comp-mpbfrynb-container,
+  #comp-mrd98n472 .comp-mrd98n472-container,
+  #comp-mpckq3o3 .comp-mpckq3o3-container,
+  #comp-mpck0a7u .comp-mpck0a7u-container,
+  #comp-mpcbr1ij .comp-mpcbr1ij-container,
+  [id^="comp-mpbfrynb"] [role="list"],
+  [id^="comp-mrd98n472"] [role="list"] {
+    display: flex !important;
+    flex-direction: column !important;
+    flex-wrap: nowrap !important;
+    align-items: stretch !important;
+    gap: 16px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  [id^="comp-mpbfryng__"],
+  [id^="comp-mrd98n4i__"],
+  [id^="comp-mpckq3oa__"],
+  [id^="comp-mpck0aaa__"],
+  [id^="comp-mpcbr1io__"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    flex: 0 0 auto !important;
+    box-sizing: border-box !important;
+    height: auto !important;
+  }
+
+  /* Card body copy readable */
+  [id^="comp-mpbfryng__"] .wixui-rich-text__text,
+  [id^="comp-mrd98n4i__"] .wixui-rich-text__text,
+  [id^="comp-mpbii8"] .wixui-rich-text__text,
+  [id^="comp-mrd98n"] .wixui-rich-text__text {
+    overflow-wrap: break-word !important;
+    word-break: normal !important;
+  }
+
+  [id^="comp-mpbfryng__"] p .wixui-rich-text__text,
+  [id^="comp-mrd98n4i__"] p .wixui-rich-text__text {
+    font-size: 15px !important;
+    line-height: 1.45 !important;
+  }
+
+  [id^="comp-mpbfryng__"] img,
+  [id^="comp-mrd98n4i__"] img,
+  [id^="comp-mpbii8"] img {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  /* —— From the Blog: stack editorial cards —— */
+  #comp-mrdp2u69,
+  #comp-mrdp2u69 .comp-mrdp2u69-container {
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+  }
+
+  #comp-mrdp2u69 .comp-mrdp2u69-container,
+  #comp-mrdp2u69 [data-testid="responsive-container-content"].comp-mrdp2u69-container {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 20px !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 28px 16px 40px !important;
+    grid-template-rows: none !important;
+    grid-template-columns: none !important;
+  }
+
+  #comp-mrdp2u69 .comp-mrdp2u69-container > [id^="comp-"] {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    grid-area: auto !important;
+    height: auto !important;
+    min-height: 0 !important;
+    transform: none !important;
+  }
+
+  #comp-mrdpc84n .wixui-rich-text__text {
+    font-size: clamp(1.45rem, 6.5vw, 2rem) !important;
+    line-height: 1.15 !important;
+  }
+
+  #comp-mrdpc824 .wixui-rich-text__text {
+    font-size: 16px !important;
+    line-height: 1.55 !important;
+  }
+
+  /* Keep Wix card shells; just full-bleed width */
+  #comp-mrdq81q0,
+  #comp-mrdq85ob,
+  #comp-mrdpew4h,
+  #comp-mrdpqawy,
+  #comp-mrdq8d4s {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  #comp-mrdq81q0 img,
+  #comp-mrdq85ob img,
+  #comp-mrdpew4h img,
+  #comp-mrdq81q63 img {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  /* —— Custom editorial articles —— */
+  .article-body p,
+  .article-body li,
+  .tsc-prose p,
+  .tsc-prose li {
+    font-size: 16px !important;
+    line-height: 1.55 !important;
+  }
+
+  .article-body,
+  .tsc-prose {
+    max-width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .hero,
+  .article-wrap {
+    grid-template-columns: 1fr !important;
+  }
+
+  .hero-media {
+    min-height: 240px;
+    max-height: 48vh;
+  }
+
+  .hero-copy,
+  .article-aside {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  /* —— Legacy Wix blog pages —— */
+  body[data-page="blog-1"] main [data-testid="richTextElement"] p .wixui-rich-text__text,
+  body[data-page="blog-2"] main [data-testid="richTextElement"] p .wixui-rich-text__text,
+  body[data-page="blog-3"] main [data-testid="richTextElement"] p .wixui-rich-text__text {
+    font-size: 16px !important;
+    line-height: 1.55 !important;
+  }
+
+  body[data-page="blog-1"] main img,
+  body[data-page="blog-2"] main img,
+  body[data-page="blog-3"] main img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Blog hero: stack title / meta / art; hide overlapping prev/next */
+  body[data-page="blog-1"] #comp-mreu9zoc,
+  body[data-page="blog-1"] #comp-mrfz1ln9,
+  body[data-page="blog-2"] #comp-mreu9zoc,
+  body[data-page="blog-2"] #comp-mrfz1ln9,
+  body[data-page="blog-3"] #comp-mreu9zoc,
+  body[data-page="blog-3"] #comp-mrfz1ln9 {
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+  }
+
+  body[data-page="blog-1"] #comp-mreu9zoc [data-testid="responsive-container-content"],
+  body[data-page="blog-1"] #comp-mreu9zoc .comp-mreu9zoc-container,
+  body[data-page="blog-1"] #comp-mrfz1ln9,
+  body[data-page="blog-1"] #comp-mrfz1ln9.comp-mrfz1ln9-container {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 10px !important;
+    padding: 16px !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    grid-template-rows: none !important;
+    grid-template-columns: none !important;
+  }
+
+  body[data-page="blog-1"] #comp-mreu9zoc [data-testid="responsive-container-content"] > [id^="comp-"],
+  body[data-page="blog-1"] #comp-mrfz1ln9 > [id^="comp-"] {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    place-self: stretch !important;
+    grid-area: auto !important;
+    height: auto !important;
+    min-height: 0 !important;
+    transform: none !important;
+  }
+
+  body[data-page="blog-1"] #comp-mrfy5yaq { order: 1 !important; }
+  body[data-page="blog-1"] #comp-mrfyt2mz,
+  body[data-page="blog-1"] #comp-mrfyv9z0,
+  body[data-page="blog-1"] #comp-mrfyw2p9 { order: 2 !important; }
+  body[data-page="blog-1"] #comp-mrfy8j45 { order: 3 !important; }
+
+  body[data-page="blog-1"] #comp-mrfy5yaq .wixui-rich-text__text {
+    font-size: clamp(1.25rem, 5.5vw, 1.6rem) !important;
+    line-height: 1.2 !important;
+  }
+
+  body[data-page="blog-1"] #comp-mrfyt2mz .wixui-rich-text__text,
+  body[data-page="blog-1"] #comp-mrfyv9z0 .wixui-rich-text__text,
+  body[data-page="blog-1"] #comp-mrfyw2p9 .wixui-rich-text__text {
+    font-size: 13px !important;
+    line-height: 1.3 !important;
+  }
+
+  body[data-page="blog-1"] #comp-mrg00add,
+  body[data-page="blog-1"] #comp-mrg028qi,
+  body[data-page="blog-1"] #comp-mrsuo79f {
+    display: none !important; /* prev/next + ghost decor */
+  }
+
+  body[data-page="blog-1"] #comp-mrg3qw6u,
+  body[data-page="blog-1"] #comp-mrfzwkwe {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: auto !important;
+    max-width: calc(100% - 40px) !important;
+    margin: 8px 20px !important;
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "page": "mba-impact",
+  "html": "/pages/mba-impact.html",
+  "css": "/css/pages/mba-impact.css",
+  "animations": "/js/pages/mba-impact.animations.js",
+  "generatedAt": "2026-07-28T10:07:32.357Z",
+  "totals": {
+    "assets": 2,
+    "missing": 0
+  },
+  "assetsByType": {
+    "images": [
+      {
+        "type": "images",
+        "url": "/assets/mirror/static.wixstatic.com/media/19f989_54d60cf6fe45451f9a6c467ec19ca7bf~mv2.png/v1/fill/w_641,h_413,fp_0.51_0.34,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/process.png",
+        "local": {
+          "exists": true,
+          "path": "/assets/mirror/static.wixstatic.com/original-media/19f989_54d60cf6fe45451f9a6c467ec19ca7bf~mv2.png",
+          "bytes": 324756
+        }
+      },
+      {
+        "type": "images",
+        "url": "/assets/mirror/static.wixstatic.com/original-media/19f989_32360e683a2e479791df2c167d3295a4~mv2.png",
+        "local": {
+          "exists": true,
+          "path": "/assets/mirror/static.wixstatic.com/original-media/19f989_32360e683a2e479791df2c167d3295a4~mv2.png",
+          "bytes": 769986
+        }
+      }
+    ]
+  }
+}

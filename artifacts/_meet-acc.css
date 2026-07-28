@@ -1,0 +1,244 @@
+  /* —— Meet Our Artists: title + hide Wix peek/hover carousel —— */
+  body[data-page="artists"] #comp-mqtnpars,
+  body[data-page="artists"] #comp-mqtnpars [data-testid="responsive-container-content"],
+  body[data-page="artists"] #comp-mqtnpars .comp-mqtnpars-container {
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+  }
+
+  body[data-page="artists"] #comp-mqtnpars [data-testid="responsive-container-content"],
+  body[data-page="artists"] #comp-mqtnpars .comp-mqtnpars-container {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 18px !important;
+    padding: 28px 16px 40px !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    grid-template-rows: none !important;
+    grid-template-columns: none !important;
+  }
+
+  body[data-page="artists"] #comp-mqutdmng {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    order: 1 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    height: auto !important;
+    transform: none !important;
+    grid-area: auto !important;
+    text-align: center !important;
+  }
+
+  body[data-page="artists"] #comp-mqutdmng .wixui-rich-text__text {
+    font-size: clamp(1.35rem, 6.5vw, 1.85rem) !important;
+    line-height: 1.15 !important;
+    color: #083d3a !important;
+  }
+
+  body[data-page="artists"] #comp-mqutig8q,
+  body[data-page="artists"] #comp-mqutig8q[data-tsc-carousel-hidden-mobile] {
+    display: none !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    height: 0 !important;
+    overflow: hidden !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Accordion list (mounted by tsc-artists-accordion.js) */
+  body[data-page="artists"] .tsc-artists-accordion {
+    order: 2 !important;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  body[data-page="artists"] .tsc-artist-acc {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1.5px solid rgba(8, 61, 58, 0.22);
+    border-radius: 14px;
+    background: #ffecd1;
+    overflow: hidden;
+  }
+
+  /* —— Collapsed row —— */
+  body[data-page="artists"] .tsc-artist-acc__collapsed {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    min-height: 72px;
+    padding: 10px 12px;
+    margin: 0;
+    border: 0;
+    background: transparent;
+    color: #083d3a;
+    text-align: left;
+    cursor: pointer;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body[data-page="artists"] .tsc-artist-acc.is-open > .tsc-artist-acc__collapsed {
+    display: none;
+  }
+
+  body[data-page="artists"] .tsc-artist-acc__thumb-wrap {
+    flex: 0 0 56px;
+    width: 56px;
+    height: 56px;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #083d3a;
+  }
+
+  body[data-page="artists"] .tsc-artist-acc__thumb {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  body[data-page="artists"] .tsc-artist-acc__collapsed-name {
+    flex: 1 1 auto;
+    min-width: 0;
+    font-size: 1.05rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #083d3a;
+    overflow-wrap: break-word;
+  }
+
+  body[data-page="artists"] .tsc-artist-acc__chev {
+    flex: 0 0 36px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #fff;
+    color: #083d3a;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 1px 2px rgba(8, 61, 58, 0.12);
+  }
+
+  body[data-page="artists"] .tsc-artist-acc__chev-icon {
+    display: block;
+  }
+
+  /* —— Expanded card —— */
+  body[data-page="artists"] .tsc-artist-acc__expanded[hidden] {
+    display: none !important;
+  }
+
+  body[data-page="artists"] .tsc-artist-acc.is-open .tsc-artist-acc__expanded {
+    display: block;
+  }
+
+  body[data-page="artists"] .tsc-artist-acc__photo-wrap {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    max-height: min(58vh, 420px);
+    overflow: hidden;
+    background: #083d3a;
+    border-radius: 12px 12px 0 0;
+  }
+
+  body[data-page="artists"] .tsc-artist-acc__photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 30%;
+    display: block;
+  }
+
+  body[data-page="artists"] .tsc-artist-acc__bar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 14px 14px 16px;
+    background: #083d3a;
+    color: #ffecd1;
+  }
+
+  body[data-page="artists"] .tsc-artist-acc__bar-name {
+    flex: 1 1 auto;
+    min-width: 0;
+    margin: 0;
+    font-size: 1.15rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #fff;
+    overflow-wrap: break-word;
+  }
+
+  body[data-page="artists"] .tsc-artist-acc__collapse {
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body[data-page="artists"] .tsc-artist-acc__collapse .tsc-artist-acc__chev {
+    background: #fff;
+    color: #083d3a;
+  }
+
+  body[data-page="artists"] .tsc-artist-acc__body {
+    padding: 16px 16px 20px;
+    background: #ffecd1;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+  }
+
+  body[data-page="artists"] .tsc-artist-acc__bio {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #083d3a;
+    overflow-wrap: break-word;
+  }
+
+  body[data-page="artists"] .tsc-artist-acc__cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    min-height: 44px;
+    padding: 10px 28px;
+    border-radius: 999px;
+    background: #083d3a;
+    color: #fff !important;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none !important;
+    box-sizing: border-box;
+  }
+
+  body[data-page="artists"] .tsc-artist-acc__cta:focus-visible,
+  body[data-page="artists"] .tsc-artist-acc__collapsed:focus-visible,
+  body[data-page="artists"] .tsc-artist-acc__collapse:focus-visible {
+    outline: 2px solid #b74b02;
+    outline-offset: 2px;
+  }
+}

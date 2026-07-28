@@ -1,0 +1,178 @@
+/* B.9 Resources — mobile editorial list (@media max-width 900px) */
+@media (max-width: 900px) {
+  #xk8qq,
+  #PAGE_SECTIONSxk8qq {
+    --tsc-accent-local: var(--tsc-accent, #B74B02);
+    --tsc-ink-local: var(--tsc-ink-primary, #083D3A);
+    --tsc-ink-muted-local: var(--tsc-ink-muted, rgba(8, 61, 58, 0.64));
+    --tsc-cream-local: var(--tsc-cream, #FFECD1);
+    --tsc-hairline-local: var(--tsc-hairline, rgba(8, 61, 58, 0.12));
+    --tsc-gap-section: var(--tsc-space-48, 48px);
+  }
+
+  #PAGE_SECTIONSxk8qq > .wixui-section {
+    padding-block: var(--tsc-gap-section, 48px);
+    padding-inline: var(--tsc-gutter, 20px);
+  }
+
+  /* Editorial list — kill blog-card shadows */
+  #comp-mrdp2u69 .NYfD3h,
+  #comp-mrdp2u69 .inner-box,
+  #comp-mrdp2u69 .wixui-box,
+  #comp-mrdp2u69 [class*="OXEw4D"],
+  #PAGE_SECTIONSxk8qq .tsc-resource-item,
+  #PAGE_SECTIONSxk8qq .tsc-card {
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+  }
+
+  #comp-mrdp2u69-container,
+  #comp-mrdp2u69 .max-width-container,
+  #PAGE_SECTIONSxk8qq .tsc-resource-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  /* Hairline dividers between entries */
+  #comp-mrdp2u69 .wixui-box,
+  #PAGE_SECTIONSxk8qq .tsc-resource-item,
+  #PAGE_SECTIONSxk8qq .tsc-card {
+    border: 0;
+    border-bottom: 1px solid var(--tsc-hairline-local, rgba(8, 61, 58, 0.12));
+    padding-block: 20px;
+    margin: 0;
+  }
+
+  #comp-mrdp2u69 .wixui-box:last-child,
+  #PAGE_SECTIONSxk8qq .tsc-resource-item:last-child {
+    border-bottom: 0;
+  }
+
+  /* Accent category tags */
+  #PAGE_SECTIONSxk8qq .tsc-resource-tag,
+  #PAGE_SECTIONSxk8qq .tsc-category,
+  #PAGE_SECTIONSxk8qq [data-tsc-category] {
+    display: inline-block;
+    color: var(--tsc-accent-local, #B74B02);
+    font-size: clamp(11px, 2.8vw, 13px);
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  /* Filter pills */
+  #PAGE_SECTIONSxk8qq .tsc-filter-pills,
+  #xk8qq .tsc-filter-pills {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 8px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-block: 8px 16px;
+    margin-inline: calc(var(--tsc-gutter, 20px) * -1);
+    padding-inline: var(--tsc-gutter, 20px);
+    scrollbar-width: none;
+  }
+
+  #PAGE_SECTIONSxk8qq .tsc-filter-pills::-webkit-scrollbar {
+    display: none;
+  }
+
+  #PAGE_SECTIONSxk8qq .tsc-filter-pills button,
+  #PAGE_SECTIONSxk8qq .tsc-filter-pills a,
+  #PAGE_SECTIONSxk8qq .tsc-filter-pills [role="button"] {
+    flex: 0 0 auto;
+    min-height: 36px;
+    padding: 8px 14px;
+    border-radius: 999px;
+    border: 1px solid var(--tsc-hairline-local, rgba(8, 61, 58, 0.12));
+    background: transparent;
+    color: var(--tsc-ink-local, #083D3A);
+    font-size: 13px;
+    white-space: nowrap;
+  }
+
+  #PAGE_SECTIONSxk8qq .tsc-filter-pills [aria-pressed="true"],
+  #PAGE_SECTIONSxk8qq .tsc-filter-pills .is-active {
+    background: var(--tsc-accent-local, #B74B02);
+    border-color: var(--tsc-accent-local, #B74B02);
+    color: var(--tsc-cream-local, #FFECD1);
+  }
+
+  /* Search 48px if present */
+  #PAGE_SECTIONSxk8qq input[type="search"],
+  #PAGE_SECTIONSxk8qq input[type="text"][name*="search" i],
+  #PAGE_SECTIONSxk8qq .tsc-search,
+  #PAGE_SECTIONSxk8qq .tsc-search input,
+  #xk8qq .tsc-search input {
+    height: 48px;
+    min-height: 48px;
+    width: 100%;
+    padding-inline: 16px;
+    border: 1px solid var(--tsc-hairline-local, rgba(8, 61, 58, 0.12));
+    border-radius: var(--tsc-radius-btn, 8px);
+    background: var(--tsc-cream-local, #FFECD1);
+    color: var(--tsc-ink-local, #083D3A);
+    font-size: 16px;
+  }
+
+  /* Blog list copy measure */
+  #comp-mrdp2u69 .wixui-rich-text,
+  #comp-mrdpc84n,
+  #comp-mrdpc824 {
+    max-width: 34ch;
+  }
+
+  #comp-mrdp2u69 .wixui-image,
+  #comp-mrdp2u69 [data-testid="imageX"] {
+    width: 100% !important;
+    max-width: 100%;
+    margin-block: 0 12px;
+  }
+
+  #comp-mrdp2u69 .wixui-image img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+  }
+
+  /* Article pages: prose spacing via .tsc-prose */
+  .tsc-prose {
+    max-width: 34ch;
+    margin-inline: auto;
+    padding-inline: var(--tsc-gutter, 20px);
+    padding-block: var(--tsc-gap-section, 48px);
+  }
+
+  .tsc-prose p,
+  .tsc-prose li {
+    font-size: 17px;
+    line-height: 1.55;
+    color: var(--tsc-ink-local, #083D3A);
+    margin-block: 0 1em;
+  }
+
+  .tsc-prose h1,
+  .tsc-prose h2,
+  .tsc-prose h3 {
+    color: var(--tsc-ink-local, #083D3A);
+    margin-block: 1.4em 0.5em;
+    line-height: 1.2;
+  }
+
+  .tsc-prose .tsc-kicker,
+  .tsc-prose .tsc-resource-tag {
+    color: var(--tsc-accent-local, #B74B02);
+  }
+
+  .tsc-prose hr,
+  .tsc-prose .tsc-divider {
+    border: 0;
+    border-top: 1px solid var(--tsc-hairline-local, rgba(8, 61, 58, 0.12));
+    margin-block: 32px;
+  }
+}

@@ -1,0 +1,531 @@
+{
+  "primaryPages": [
+    {
+      "title": "Home",
+      "route": "/",
+      "file": "home.html"
+    },
+    {
+      "title": "About",
+      "route": "/about",
+      "file": "about.html"
+    },
+    {
+      "title": "Work",
+      "route": "/work",
+      "file": "work.html"
+    },
+    {
+      "title": "TSC Artists",
+      "route": "/artists",
+      "file": "artists.html"
+    },
+    {
+      "title": "Artist Path",
+      "route": "/artist-path",
+      "file": "artist-path.html"
+    },
+    {
+      "title": "Learn With TSC",
+      "route": "/learn-with-tsc",
+      "file": "learn-with-tsc.html"
+    },
+    {
+      "title": "Films",
+      "route": "/films",
+      "file": "films.html"
+    },
+    {
+      "title": "Resources",
+      "route": "/resources",
+      "file": "resources.html"
+    },
+    {
+      "title": "TSC Academy",
+      "route": "/academy",
+      "file": "academy.html"
+    }
+  ],
+  "subpages": [
+    {
+      "title": "MBA",
+      "route": "/mba",
+      "aliases": [
+        "/blank-7",
+        "/work/mba"
+      ],
+      "file": "mba.html"
+    },
+    {
+      "title": "Havells mYOUsic",
+      "route": "/havells-myousic",
+      "aliases": [
+        "/work2",
+        "/work/havells-myousic"
+      ],
+      "file": "havells-myousic.html"
+    },
+    {
+      "title": "Insta Music League",
+      "route": "/insta-music-league",
+      "aliases": [
+        "/work3",
+        "/work/insta-music-league"
+      ],
+      "file": "insta-music-league.html"
+    },
+    {
+      "title": "Young Gunns",
+      "route": "/young-gunns",
+      "aliases": [
+        "/work0",
+        "/work/young-gunns"
+      ],
+      "file": "young-gunns.html"
+    },
+    {
+      "title": "Harshad Duhita",
+      "route": "/harshad-duhita",
+      "aliases": [
+        "/blank-10",
+        "/artists/harshad-duhita"
+      ],
+      "file": "harshad-duhita.html"
+    },
+    {
+      "title": "Roots of Hindustani Classical",
+      "route": "/roots-of-hindustani-classical",
+      "aliases": [
+        "/blank-9-1",
+        "/about-9-1",
+        "/academy/roots-of-hindustani-classical"
+      ],
+      "file": "roots-of-hindustani-classical.html"
+    },
+    {
+      "title": "The HeART of Composition",
+      "route": "/the-heart-of-composition",
+      "aliases": [
+        "/blank-9",
+        "/about-9",
+        "/academy/the-heart-of-composition"
+      ],
+      "file": "the-heart-of-composition.html"
+    },
+    {
+      "title": "Blog 1",
+      "route": "/blog-1",
+      "aliases": [
+        "/blank-13",
+        "/resources/blog-1"
+      ],
+      "file": "blog-1.html"
+    },
+    {
+      "title": "YUGM",
+      "route": "/yugm",
+      "aliases": [
+        "/blank-10-1",
+        "/work0-1",
+        "/artists/yugm"
+      ],
+      "file": "yugm.html"
+    },
+    {
+      "title": "Mahaprbhu",
+      "route": "/mahaprbhu",
+      "aliases": [
+        "/blank-12-1-1",
+        "/work2-1-1",
+        "/films/mahaprbhu"
+      ],
+      "file": "mahaprbhu.html"
+    },
+    {
+      "title": "Mahavatar Narsimha",
+      "route": "/mahavatar-narsimha",
+      "aliases": [
+        "/blank-12",
+        "/films/mahavatar-narsimha"
+      ],
+      "file": "mahavatar-narsimha.html"
+    },
+    {
+      "title": "Hanuman ansh",
+      "route": "/hanuman-ansh",
+      "aliases": [
+        "/blank-12-1",
+        "/work2-1",
+        "/films/hanuman-ansh"
+      ],
+      "file": "hanuman-ansh.html"
+    },
+    {
+      "title": "Blog 3",
+      "route": "/blog-3",
+      "aliases": [
+        "/blank-13-1-1",
+        "/work3-1-1",
+        "/resources/blog-3"
+      ],
+      "file": "blog-3.html"
+    },
+    {
+      "title": "Blog 2",
+      "route": "/blog-2",
+      "aliases": [
+        "/blank-13-1",
+        "/work3-1",
+        "/resources/blog-2"
+      ],
+      "file": "blog-2.html"
+    },
+    {
+      "title": "Indian Culture Mainstream Forms",
+      "route": "/from-bhajan-to-clubbing",
+      "aliases": [
+        "/resources/from-bhajan-to-clubbing"
+      ],
+      "file": "from-bhajan-to-clubbing.html"
+    },
+    {
+      "title": "You Released a Song. Now What?",
+      "route": "/you-released-a-song-now-what",
+      "aliases": [
+        "/resources/you-released-a-song-now-what"
+      ],
+      "file": "you-released-a-song-now-what.html"
+    },
+    {
+      "title": "Collab Q",
+      "route": "/collab-query",
+      "aliases": [
+        "/blank-6",
+        "/forms/collab-query"
+      ],
+      "file": "collab-query.html"
+    },
+    {
+      "title": "Kalki",
+      "route": "/kalki",
+      "aliases": [
+        "/blank-12-1-1-1",
+        "/work2-1-1-1",
+        "/films/kalki"
+      ],
+      "file": "kalki.html"
+    },
+    {
+      "title": "Book An Artist",
+      "route": "/book-an-artist",
+      "aliases": [
+        "/blank-8-1",
+        "/about-8-1",
+        "/query",
+        "/forms/book-an-artist"
+      ],
+      "file": "book-an-artist.html"
+    },
+    {
+      "title": "Artist Path Query",
+      "route": "/artist-query",
+      "aliases": [
+        "/blank-8-1-1",
+        "/about-8-1-1",
+        "/forms/artist-query"
+      ],
+      "file": "artist-query.html"
+    },
+    {
+      "title": "Book A Call",
+      "route": "/book-a-call",
+      "aliases": [
+        "/blank-8",
+        "/about-8",
+        "/forms/book-a-call"
+      ],
+      "file": "book-a-call.html"
+    },
+    {
+      "title": "Masterclass Review 01",
+      "route": "/masterclass-review01",
+      "aliases": [
+        "/forms/masterclass-review01"
+      ],
+      "file": "masterclass-review01.html"
+    },
+    {
+      "title": "Classical Review",
+      "route": "/classicalreview",
+      "aliases": [
+        "/forms/classicalreview"
+      ],
+      "file": "classicalreview.html"
+    },
+    {
+      "title": "Masterclass Review 02",
+      "route": "/masterclass-review02",
+      "aliases": [
+        "/forms/masterclass-review02"
+      ],
+      "file": "masterclass-review02.html"
+    }
+  ],
+  "aliases": [
+    {
+      "alias": "/blank-7",
+      "route": "/mba"
+    },
+    {
+      "alias": "/work/mba",
+      "route": "/mba"
+    },
+    {
+      "alias": "/work2",
+      "route": "/havells-myousic"
+    },
+    {
+      "alias": "/work/havells-myousic",
+      "route": "/havells-myousic"
+    },
+    {
+      "alias": "/work3",
+      "route": "/insta-music-league"
+    },
+    {
+      "alias": "/work/insta-music-league",
+      "route": "/insta-music-league"
+    },
+    {
+      "alias": "/work0",
+      "route": "/young-gunns"
+    },
+    {
+      "alias": "/work/young-gunns",
+      "route": "/young-gunns"
+    },
+    {
+      "alias": "/blank-10",
+      "route": "/harshad-duhita"
+    },
+    {
+      "alias": "/artists/harshad-duhita",
+      "route": "/harshad-duhita"
+    },
+    {
+      "alias": "/blank-9-1",
+      "route": "/roots-of-hindustani-classical"
+    },
+    {
+      "alias": "/about-9-1",
+      "route": "/roots-of-hindustani-classical"
+    },
+    {
+      "alias": "/academy/roots-of-hindustani-classical",
+      "route": "/roots-of-hindustani-classical"
+    },
+    {
+      "alias": "/blank-9",
+      "route": "/the-heart-of-composition"
+    },
+    {
+      "alias": "/about-9",
+      "route": "/the-heart-of-composition"
+    },
+    {
+      "alias": "/academy/the-heart-of-composition",
+      "route": "/the-heart-of-composition"
+    },
+    {
+      "alias": "/blank-13",
+      "route": "/blog-1"
+    },
+    {
+      "alias": "/resources/blog-1",
+      "route": "/blog-1"
+    },
+    {
+      "alias": "/blank-10-1",
+      "route": "/yugm"
+    },
+    {
+      "alias": "/work0-1",
+      "route": "/yugm"
+    },
+    {
+      "alias": "/artists/yugm",
+      "route": "/yugm"
+    },
+    {
+      "alias": "/blank-12-1-1",
+      "route": "/mahaprbhu"
+    },
+    {
+      "alias": "/work2-1-1",
+      "route": "/mahaprbhu"
+    },
+    {
+      "alias": "/films/mahaprbhu",
+      "route": "/mahaprbhu"
+    },
+    {
+      "alias": "/blank-12",
+      "route": "/mahavatar-narsimha"
+    },
+    {
+      "alias": "/films/mahavatar-narsimha",
+      "route": "/mahavatar-narsimha"
+    },
+    {
+      "alias": "/blank-12-1",
+      "route": "/hanuman-ansh"
+    },
+    {
+      "alias": "/work2-1",
+      "route": "/hanuman-ansh"
+    },
+    {
+      "alias": "/films/hanuman-ansh",
+      "route": "/hanuman-ansh"
+    },
+    {
+      "alias": "/blank-13-1-1",
+      "route": "/blog-3"
+    },
+    {
+      "alias": "/work3-1-1",
+      "route": "/blog-3"
+    },
+    {
+      "alias": "/resources/blog-3",
+      "route": "/blog-3"
+    },
+    {
+      "alias": "/blank-13-1",
+      "route": "/blog-2"
+    },
+    {
+      "alias": "/work3-1",
+      "route": "/blog-2"
+    },
+    {
+      "alias": "/resources/blog-2",
+      "route": "/blog-2"
+    },
+    {
+      "alias": "/resources/from-bhajan-to-clubbing",
+      "route": "/from-bhajan-to-clubbing"
+    },
+    {
+      "alias": "/resources/you-released-a-song-now-what",
+      "route": "/you-released-a-song-now-what"
+    },
+    {
+      "alias": "/blank-6",
+      "route": "/collab-query"
+    },
+    {
+      "alias": "/forms/collab-query",
+      "route": "/collab-query"
+    },
+    {
+      "alias": "/blank-12-1-1-1",
+      "route": "/kalki"
+    },
+    {
+      "alias": "/work2-1-1-1",
+      "route": "/kalki"
+    },
+    {
+      "alias": "/films/kalki",
+      "route": "/kalki"
+    },
+    {
+      "alias": "/blank-8-1",
+      "route": "/book-an-artist"
+    },
+    {
+      "alias": "/about-8-1",
+      "route": "/book-an-artist"
+    },
+    {
+      "alias": "/query",
+      "route": "/book-an-artist"
+    },
+    {
+      "alias": "/forms/book-an-artist",
+      "route": "/book-an-artist"
+    },
+    {
+      "alias": "/blank-8-1-1",
+      "route": "/artist-query"
+    },
+    {
+      "alias": "/about-8-1-1",
+      "route": "/artist-query"
+    },
+    {
+      "alias": "/forms/artist-query",
+      "route": "/artist-query"
+    },
+    {
+      "alias": "/blank-8",
+      "route": "/book-a-call"
+    },
+    {
+      "alias": "/about-8",
+      "route": "/book-a-call"
+    },
+    {
+      "alias": "/forms/book-a-call",
+      "route": "/book-a-call"
+    },
+    {
+      "alias": "/forms/masterclass-review01",
+      "route": "/masterclass-review01"
+    },
+    {
+      "alias": "/forms/classicalreview",
+      "route": "/classicalreview"
+    },
+    {
+      "alias": "/forms/masterclass-review02",
+      "route": "/masterclass-review02"
+    }
+  ],
+  "allRoutes": [
+    "/",
+    "/about",
+    "/work",
+    "/artists",
+    "/artist-path",
+    "/learn-with-tsc",
+    "/films",
+    "/resources",
+    "/academy",
+    "/mba",
+    "/havells-myousic",
+    "/insta-music-league",
+    "/young-gunns",
+    "/harshad-duhita",
+    "/roots-of-hindustani-classical",
+    "/the-heart-of-composition",
+    "/blog-1",
+    "/yugm",
+    "/mahaprbhu",
+    "/mahavatar-narsimha",
+    "/hanuman-ansh",
+    "/blog-3",
+    "/blog-2",
+    "/from-bhajan-to-clubbing",
+    "/you-released-a-song-now-what",
+    "/collab-query",
+    "/kalki",
+    "/book-an-artist",
+    "/artist-query",
+    "/book-a-call",
+    "/masterclass-review01",
+    "/classicalreview",
+    "/masterclass-review02"
+  ]
+}

@@ -1,0 +1,339 @@
+  /* Floating Book-a-Call chrome — hide on mobile (sticky CTA covers it) */
+  #comp-mrx6fmlb-pinned-layer,
+  #comp-mrx6fmlb,
+  .comp-mrx6fmlb-pinned-layer {
+    display: none !important;
+    pointer-events: none !important;
+    visibility: hidden !important;
+  }
+
+  /* Sticky CTA on Academy also full-width primary (same funnel) */
+  body[data-page="academy"] .tsc-sticky-cta,
+  body[data-tsc-page="academy"] .tsc-sticky-cta,
+  .tsc-page-academy .tsc-sticky-cta,
+  #sq4os ~ .tsc-sticky-cta {
+    position: sticky;
+    bottom: 0;
+    left: 0 !important;
+    right: 0 !important;
+    transform: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: var(--tsc-sticky-h, 56px);
+    border-radius: 0 !important;
+    background: var(--tsc-accent-local, #b74b02);
+    color: var(--tsc-cream-local, #ffecd1);
+    z-index: 900;
+  }
+
+  /* ------------------------------------------------------------------ */
+  /* Course detail shells — Heart / Roots / Music Production            */
+  /* ------------------------------------------------------------------ */
+
+  #ss8cm,
+  #xeev1,
+  #PAGE_SECTIONSss8cm,
+  #PAGE_SECTIONSxeev1,
+  body[data-page="the-heart-of-composition"],
+  body[data-page="roots-of-hindustani-classical"],
+  body[data-page="music-production"],
+  body[data-tsc-page="the-heart-of-composition"],
+  body[data-tsc-page="roots-of-hindustani-classical"],
+  body[data-tsc-page="music-production"],
+  body:has(.tsc-mobile-course-shell) {
+    --tsc-gutter-local: var(--tsc-gutter, 20px);
+    --tsc-accent-local: var(--tsc-accent, #b74b02);
+    --tsc-ink-local: var(--tsc-deep-teal, #083d3a);
+    --tsc-cream-local: var(--tsc-cream, #ffecd1);
+    --tsc-hairline-local: rgba(8, 61, 58, 0.18);
+  }
+
+  .tsc-mobile-course-shell {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: var(--tsc-space-16, 16px);
+    width: 100%;
+    max-width: 100%;
+    min-height: 0;
+    margin: 0;
+    padding: var(--tsc-space-24, 24px) var(--tsc-gutter-local, 20px)
+      calc(var(--tsc-space-64, 64px) + var(--tsc-sticky-h, 56px));
+    position: relative;
+    z-index: 20;
+    background: var(--tsc-cream-local, #ffecd1);
+    color: var(--tsc-ink-local, #083d3a);
+    overflow: visible;
+  }
+
+  body:has(.tsc-mobile-course-shell) .tsc-mobile-hide-course-original {
+    display: none !important;
+  }
+
+  body:has(.tsc-mobile-course-shell) :is(
+    #ss8cm,
+    #xeev1,
+    .ss8cm-container,
+    .ss8cm-overflow-wrapper,
+    .xeev1-container,
+    .xeev1-overflow-wrapper,
+    #SITE_PAGES,
+    #SITE_PAGES_TRANSITION_GROUP
+  ) {
+    min-height: auto !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  .tsc-mobile-course-meta,
+  .tsc-course-mobile-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin: 0 0 var(--tsc-space-8, 8px);
+    padding: 0;
+  }
+
+  .tsc-mobile-course-meta span,
+  .tsc-course-mobile-meta span,
+  .tsc-mobile-course-shell .tsc-course-price,
+  .tsc-course-price {
+    box-sizing: border-box;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+    min-height: 34px;
+    margin: 0;
+    padding: 7px 12px;
+    border: 1.5px solid var(--tsc-ink-local, #083d3a);
+    border-radius: 7px;
+    color: var(--tsc-ink-local, #083d3a);
+    background: transparent;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    line-height: 1.2;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  /* Price chip — ₹3,999 (luca injects .tsc-course-price when present) */
+  .tsc-course-price,
+  .tsc-mobile-course-meta .tsc-course-price,
+  .tsc-course-mobile-meta .tsc-course-price {
+    border-color: var(--tsc-accent-local, #b74b02);
+    color: var(--tsc-accent-local, #b74b02);
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.04em;
+  }
+
+  .tsc-mobile-course-hero {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: var(--tsc-space-16, 16px);
+    width: 100%;
+    margin: 0;
+    padding: var(--tsc-space-24, 24px) var(--tsc-space-16, 16px);
+    border: 1.5px solid var(--tsc-ink-local, #083d3a);
+    border-radius: var(--tsc-btn-radius, 8px);
+    background: var(--tsc-deep-teal, #083d3a);
+    overflow: hidden;
+  }
+
+  .tsc-mobile-course-mark {
+    display: block;
+    width: 72px;
+    height: 72px;
+    margin: 0;
+    object-fit: contain;
+    opacity: 0.95;
+  }
+
+  .tsc-mobile-course-hero h1 {
+    margin: 0;
+    max-width: 12ch;
+    color: var(--tsc-cream-local, #ffecd1);
+    font-family: var(--tsc-font-display, Signika, Georgia, serif);
+    font-size: clamp(1.85rem, 8.5vw, 2.75rem);
+    font-style: italic;
+    font-weight: 800;
+    line-height: 1.08;
+    letter-spacing: -0.01em;
+  }
+
+  .tsc-mobile-course-card {
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
+    padding: var(--tsc-space-16, 16px) var(--tsc-space-16, 16px) var(--tsc-space-24, 24px);
+    border: 1.5px solid var(--tsc-ink-local, #083d3a);
+    border-radius: var(--tsc-btn-radius, 8px);
+    background: var(--tsc-cream-local, #ffecd1);
+    color: var(--tsc-ink-local, #083d3a);
+  }
+
+  .tsc-mobile-course-card p {
+    margin: 0;
+    font-size: var(--tsc-type-body, 16px);
+    font-weight: 600;
+    line-height: 1.5;
+  }
+
+  .tsc-mobile-course-card .tsc-mobile-eyebrow {
+    margin: 0 0 var(--tsc-space-8, 8px);
+    color: var(--tsc-ink-local, #083d3a);
+    font-size: var(--tsc-type-kicker, 12px);
+    font-weight: 700;
+    letter-spacing: var(--tsc-type-kicker-track, 0.1em);
+    line-height: var(--tsc-type-kicker-lh, 1.2);
+    text-transform: uppercase;
+  }
+
+  .tsc-mobile-course-card-dark {
+    background: var(--tsc-deep-teal, #083d3a);
+    color: var(--tsc-cream-local, #ffecd1);
+    border-color: var(--tsc-deep-teal, #083d3a);
+  }
+
+  .tsc-mobile-course-card-dark p {
+    color: var(--tsc-cream-local, #ffecd1);
+  }
+
+  .tsc-mobile-course-card-dark a,
+  .tsc-mobile-course-card a {
+    box-sizing: border-box;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: var(--tsc-btn-h, 52px);
+    margin-top: var(--tsc-space-16, 16px);
+    padding: 0 var(--tsc-space-16, 16px);
+    border: 1.5px solid currentColor;
+    border-radius: var(--tsc-btn-radius, 8px);
+    color: inherit;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  .tsc-mobile-course-card-dark a {
+    border-color: var(--tsc-cream-local, #ffecd1);
+    color: var(--tsc-cream-local, #ffecd1);
+  }
+
+  .tsc-mobile-course-media {
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: 1.5px solid var(--tsc-ink-local, #083d3a);
+    border-radius: var(--tsc-btn-radius, 8px);
+    overflow: hidden;
+  }
+
+  .tsc-mobile-course-media img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+  }
+
+  /* Learn-with-tsc mentor / course preview — room for 3 cards + price */
+  #comp-mrufx9pm .tsc-course-price,
+  #comp-mrufx9qh .tsc-course-price,
+  #comp-mrufx9rd2 .tsc-course-price {
+    display: inline-flex;
+    margin-top: var(--tsc-space-8, 8px);
+  }
+
+  #comp-mrufx9pm [data-testid="imageX"] img,
+  #comp-mrufx9qh [data-testid="imageX"] img,
+  #comp-mrufx9rd2 [data-testid="imageX"] img {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    display: block;
+  }
+
+  #comp-mrufx9pm .wixui-button,
+  #comp-mrufx9qh .wixui-button,
+  #comp-mrufx9rd2 .wixui-button,
+  #comp-mrufx9pm a.wixui-button,
+  #comp-mrufx9qh a.wixui-button,
+  #comp-mrufx9rd2 a.wixui-button {
+    display: flex !important;
+    width: 100% !important;
+    min-height: var(--tsc-btn-h, 52px);
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* ------------------------------------------------------------------ */
+  /* Book-a-call + review forms (learn bucket)                          */
+  /* ------------------------------------------------------------------ */
+
+  body[data-page="book-a-call"] .tsc-local-form,
+  body[data-page="masterclass-review01"] .tsc-local-form,
+  body[data-page="masterclass-review02"] .tsc-local-form,
+  body[data-page="classicalreview"] .tsc-local-form,
+  body[data-tsc-page="book-a-call"] .tsc-local-form,
+  .tsc-page-learn .tsc-local-form {
+    box-sizing: border-box;
+    width: min(100% - 40px, 620px);
+    margin: calc(var(--tsc-space-64, 64px) + 24px) auto
+      calc(var(--tsc-space-48, 48px) + var(--tsc-sticky-h, 56px));
+    padding: var(--tsc-space-24, 24px) var(--tsc-gutter-local, 20px);
+  }
+
+  body[data-page="book-a-call"] .tsc-form-grid,
+  body[data-page="masterclass-review01"] .tsc-form-grid,
+  body[data-page="masterclass-review02"] .tsc-form-grid,
+  body[data-page="classicalreview"] .tsc-form-grid,
+  .tsc-page-learn .tsc-form-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--tsc-space-16, 16px);
+  }
+
+  body[data-page="book-a-call"] .tsc-submit,
+  body[data-page="masterclass-review01"] .tsc-submit,
+  body[data-page="masterclass-review02"] .tsc-submit,
+  body[data-page="classicalreview"] .tsc-submit,
+  .tsc-page-learn .tsc-submit {
+    display: flex;
+    width: 100%;
+    min-height: var(--tsc-btn-h, 52px);
+    align-items: center;
+    justify-content: center;
+  }
+
+  body[data-page="book-a-call"] .tsc-sticky-cta,
+  body[data-page="masterclass-review01"] .tsc-sticky-cta,
+  body[data-page="masterclass-review02"] .tsc-sticky-cta,
+  body[data-page="classicalreview"] .tsc-sticky-cta,
+  body[data-page="the-heart-of-composition"] .tsc-sticky-cta,
+  body[data-page="roots-of-hindustani-classical"] .tsc-sticky-cta,
+  body[data-page="music-production"] .tsc-sticky-cta,
+  body[data-page="learn-with-tsc"] .tsc-sticky-cta {
+    position: sticky;
+    bottom: 0;
+    left: 0 !important;
+    right: 0 !important;
+    transform: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: var(--tsc-sticky-h, 56px);
+    border-radius: 0 !important;
+    background: var(--tsc-accent, #b74b02);
+    color: var(--tsc-cream, #ffecd1);
+    z-index: 900;
+  }
+}

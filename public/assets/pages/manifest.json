@@ -1,0 +1,214 @@
+{
+  "pages": [
+    {
+      "page": "about",
+      "manifest": "/assets/pages/about/manifest.json",
+      "assets": 113,
+      "missing": 0
+    },
+    {
+      "page": "academy",
+      "manifest": "/assets/pages/academy/manifest.json",
+      "assets": 127,
+      "missing": 0
+    },
+    {
+      "page": "artist-path",
+      "manifest": "/assets/pages/artist-path/manifest.json",
+      "assets": 112,
+      "missing": 0
+    },
+    {
+      "page": "artist-query",
+      "manifest": "/assets/pages/artist-query/manifest.json",
+      "assets": 104,
+      "missing": 2
+    },
+    {
+      "page": "artists",
+      "manifest": "/assets/pages/artists/manifest.json",
+      "assets": 103,
+      "missing": 0
+    },
+    {
+      "page": "blog-1",
+      "manifest": "/assets/pages/blog-1/manifest.json",
+      "assets": 97,
+      "missing": 0
+    },
+    {
+      "page": "blog-2",
+      "manifest": "/assets/pages/blog-2/manifest.json",
+      "assets": 97,
+      "missing": 0
+    },
+    {
+      "page": "blog-3",
+      "manifest": "/assets/pages/blog-3/manifest.json",
+      "assets": 97,
+      "missing": 0
+    },
+    {
+      "page": "book-a-call",
+      "manifest": "/assets/pages/book-a-call/manifest.json",
+      "assets": 114,
+      "missing": 6
+    },
+    {
+      "page": "book-an-artist",
+      "manifest": "/assets/pages/book-an-artist/manifest.json",
+      "assets": 115,
+      "missing": 7
+    },
+    {
+      "page": "classicalreview",
+      "manifest": "/assets/pages/classicalreview/manifest.json",
+      "assets": 2,
+      "missing": 0
+    },
+    {
+      "page": "collab-query",
+      "manifest": "/assets/pages/collab-query/manifest.json",
+      "assets": 91,
+      "missing": 0
+    },
+    {
+      "page": "films",
+      "manifest": "/assets/pages/films/manifest.json",
+      "assets": 152,
+      "missing": 0
+    },
+    {
+      "page": "from-bhajan-to-clubbing",
+      "manifest": "/assets/pages/from-bhajan-to-clubbing/manifest.json",
+      "assets": 0,
+      "missing": 0
+    },
+    {
+      "page": "hanuman-ansh",
+      "manifest": "/assets/pages/hanuman-ansh/manifest.json",
+      "assets": 98,
+      "missing": 0
+    },
+    {
+      "page": "harshad-duhita",
+      "manifest": "/assets/pages/harshad-duhita/manifest.json",
+      "assets": 114,
+      "missing": 1
+    },
+    {
+      "page": "havells-myousic",
+      "manifest": "/assets/pages/havells-myousic/manifest.json",
+      "assets": 1,
+      "missing": 0
+    },
+    {
+      "page": "home",
+      "manifest": "/assets/pages/home/manifest.json",
+      "assets": 125,
+      "missing": 0
+    },
+    {
+      "page": "insta-music-league",
+      "manifest": "/assets/pages/insta-music-league/manifest.json",
+      "assets": 1,
+      "missing": 0
+    },
+    {
+      "page": "kalki",
+      "manifest": "/assets/pages/kalki/manifest.json",
+      "assets": 98,
+      "missing": 0
+    },
+    {
+      "page": "learn-with-tsc",
+      "manifest": "/assets/pages/learn-with-tsc/manifest.json",
+      "assets": 126,
+      "missing": 0
+    },
+    {
+      "page": "mahaprbhu",
+      "manifest": "/assets/pages/mahaprbhu/manifest.json",
+      "assets": 104,
+      "missing": 0
+    },
+    {
+      "page": "mahavatar-narsimha",
+      "manifest": "/assets/pages/mahavatar-narsimha/manifest.json",
+      "assets": 98,
+      "missing": 0
+    },
+    {
+      "page": "masterclass-review01",
+      "manifest": "/assets/pages/masterclass-review01/manifest.json",
+      "assets": 2,
+      "missing": 0
+    },
+    {
+      "page": "masterclass-review02",
+      "manifest": "/assets/pages/masterclass-review02/manifest.json",
+      "assets": 2,
+      "missing": 0
+    },
+    {
+      "page": "mba-impact",
+      "manifest": "/assets/pages/mba-impact/manifest.json",
+      "assets": 2,
+      "missing": 0
+    },
+    {
+      "page": "mba",
+      "manifest": "/assets/pages/mba/manifest.json",
+      "assets": 62,
+      "missing": 0
+    },
+    {
+      "page": "music-production",
+      "manifest": "/assets/pages/music-production/manifest.json",
+      "assets": 126,
+      "missing": 1
+    },
+    {
+      "page": "resources",
+      "manifest": "/assets/pages/resources/manifest.json",
+      "assets": 148,
+      "missing": 0
+    },
+    {
+      "page": "roots-of-hindustani-classical",
+      "manifest": "/assets/pages/roots-of-hindustani-classical/manifest.json",
+      "assets": 123,
+      "missing": 1
+    },
+    {
+      "page": "the-heart-of-composition",
+      "manifest": "/assets/pages/the-heart-of-composition/manifest.json",
+      "assets": 126,
+      "missing": 1
+    },
+    {
+      "page": "work",
+      "manifest": "/assets/pages/work/manifest.json",
+      "assets": 104,
+      "missing": 0
+    },
+    {
+      "page": "you-released-a-song-now-what",
+      "manifest": "/assets/pages/you-released-a-song-now-what/manifest.json",
+      "assets": 0,
+      "missing": 0
+    },
+    {
+      "page": "young-gunns",
+      "manifest": "/assets/pages/young-gunns/manifest.json",
+      "assets": 1,
+      "missing": 0
+    },
+    {
+      "page": "yugm",
+      "manifest": "/assets/pages/yugm/manifest.json",
+      "assets": 123,
+      "missing": 1
+    }
+  ]
+}

@@ -1,0 +1,760 @@
+
+================================================================================
+PAGE: Global Navigation, Footer and Forms
+URL / Placement: Site-wide / Header / Footer / Sticky CTAs
+Design note: Replace labels only. Do not alter navigation placement.
+Primary Navigation
+About
+Work
+Artists
+TSC Academy
+Resources
+I Want To Menu
+Learn Music
+Build Stories
+Collaborate with TSC
+Book an Artist
+Footer Quick Links
+About
+Work
+Artists
+TSC Academy
+Resources
+Contact
+WhatsApp Community CTA
+Join the Collective on WhatsApp.
+Newsletter CTA
+Join the Collective for artist opportunities, IP updates, learning resources and cultural insights.
+Contact Prompt
+For artist partnerships, film mounting, brand collaborations, learning programs and culture-first projects, write to us.
+Social Labels
+Instagram
+Spotify
+LinkedIn
+YouTube
+Copyright
+© The Shakti Collective. All rights reserved.
+
+
+================================================================================
+PAGE: Home
+URL / Placement: /
+Design note: Use the same hero slots, grid cards and CTA buttons.
+Hero Headline Series
+Unfolding Possibilities.
+Unfolding Artist Force.
+Unfolding Yourself.
+Unfolding Potential.
+Unfolding Your Journey.
+Hero Subheadline
+A living ecosystem where artists learn, create, collaborate and bring their craft into the world.
+Built for singers, musicians, producers, storytellers and culture-builders seeking meaningful creative growth.
+Hero CTAs
+Learn Music
+Build Stories
+Collaborate with TSC
+Book an Artist
+About Section Headline
+Not just a platform.
+An ecosystem for artistic growth.
+About Section Body
+Today’s creative world rewards visibility faster than foundations.
+At The Shakti Collective, we help artists build both — through mentorship, collaboration, learning, storytelling and culture-first ecosystems.
+We help emerging talent grow sustainably without losing their identity in the process.
+Because the future of culture will not belong to what is loudest.
+It will belong to what connects.
+The Meteor Effect - Headline
+The Meteor Effect
+The Meteor Effect - Subheadline
+Why do so many talented artists disappear too early?
+The Meteor Effect - Body
+Most artists do not fail because they lack talent.
+They struggle because the industry is built for moments, not longevity.
+Without mentorship, systems, direction and support, even gifted artists can burn out chasing visibility.
+We are building an ecosystem designed to change that.
+Meteor Micro-stat / Concept Blocks
+Talent is everywhere. Direction is rare.
+Visibility can create a moment. Systems create a career.
+Careers are not built through flashes. They are built through foundations that compound over time.
+The Roundway - Headline
+The Roundway
+The Roundway - Subheadline
+A human-first ecosystem designed to help artists discover themselves, refine their craft and bring their art into the world sustainably.
+The Roundway - 01 Connection
+Every artistic journey begins with connection.
+Not just with music or performance, but with self-awareness — instincts, emotional voice, curiosity and identity.
+The Roundway - 02 Spark
+Every artist has a spark waiting to be found.
+This stage uncovers natural potential before formulas take over. Artists begin noticing what genuinely moves them.
+The Roundway - 03 Believe
+Belief changes creative energy.
+Confidence is built through support, honest progress and being seen clearly before the world notices.
+The Roundway - 04 Curation / Learning
+Refine your craft through TSC Academy.
+Direction helps artists organize creativity into sustainable growth systems across voice, process, discipline and release readiness.
+The Roundway - 05 Go To Market
+Where your art meets the world.
+Artists learn to release intentionally, position authentically, collaborate meaningfully, build audiences and monetise responsibly.
+What We Build - Headline
+Built around artists.
+What We Build - Grid Cards
+TSC Academy — Mentorship-led learning from world-class musicians and creators.
+Artist Development — Systems that help artists grow with clarity and direction.
+IP Development — Original stories, music ecosystems and culture-first experiences.
+Brand Collaborations — Authentic partnerships between artists, brands and communities.
+Community — A growing network of creators building together.
+Who This Is For - Headline
+For artists who want depth, not just visibility.
+Who This Is For - Body
+For singers finding their voice.
+For producers shaping unfinished ideas.
+For storytellers building identity beyond trends.
+For artists ready to grow with intention.
+Final CTA - Headline
+Your artistry doesn’t need more noise.
+It needs clarity.
+Final CTA - Body
+With the right mentorship, systems and environment, growth starts compounding.
+Whether you want to learn, create, collaborate or build something meaningful, there is space for you here.
+Final CTA Buttons
+Explore TSC Academy
+Discover Artist Paths
+Build With TSC
+Join The Ecosystem
+
+
+================================================================================
+PAGE: About
+URL / Placement: /about
+Design note: Use as final website copy for About page.
+Hero Eyebrow
+ABOUT US
+Hero Title
+The Shakti Collective
+Hero Tagline
+Unfolding Artist Force
+Hero Headline
+Building India’s Culture-Forward Artist Ecosystem
+Hero Body
+The Shakti Collective is a culture-forward artist ecosystem company built to discover, develop and scale artists, stories and cultural movements.
+We work across music, films, learning, live experiences, artist partnerships, original IPs and culture-led collaborations — creating the systems artists need to grow, the stories audiences want to believe in, and the cultural properties that can travel from India to the world.
+Core Belief
+Artists do not need only exposure.
+They need ecosystems.
+Who We Are
+A Music & Story Artists Company
+The Shakti Collective brings together the worlds of music, stories, artists, films, learning, live experiences and culture under one integrated ecosystem.
+We partner with independent artists, musicians, storytellers, filmmakers, brands, institutions and creative communities to build work that is emotionally resonant, culturally relevant and commercially sustainable.
+TSC is not built as a conventional talent management company, production house, academy or agency.
+It is built as a new-age culture company — one that helps artists and stories move from potential to possibility, and from possibility to impact.
+Why We Exist
+Because Talent Needs Direction
+Today, artists have more access than ever before. They can record from home, release independently, build communities online and reach audiences without waiting for traditional gatekeepers.
+But access alone does not build a career. Many artists still struggle with identity, positioning, craft development, audience building, live opportunities, industry access, monetisation and long-term direction.
+Similarly, powerful stories often struggle to find the right audience, cultural positioning and partner ecosystem that can help them travel.
+The Shakti Collective exists to close this gap. We build the bridge between talent and opportunity, stories and audiences, artists and culture, creative expression and sustainable growth.
+Vision
+To Build the World’s Most Trusted Culture Company
+Our vision is to build the world’s most trusted culture company by empowering artists to create cultural movements that enrich millions of lives.
+Our long-term mission is to serve 10 million artists and take 100 stories to the globe.
+We believe India is entering a defining cultural moment. The next wave of global entertainment from India will not come only from content. It will come from artists, stories, communities, values, music, mythology, lived experience and cultural imagination.
+The Shakti Collective is being built for that future.
+Philosophy
+Conscious Entertainment for a New Generation
+We believe entertainment can be powerful without being empty. It can be contemporary and still be rooted. It can be popular and still have depth. It can be commercially successful and still carry meaning. It can travel globally without losing its soul.
+Our work is guided by the journey of:
+Human → Artist → Art → Audience → Community → Culture → Opportunity → Sustainable Career
+Before an artist becomes a performer, they are a human being. Before art becomes content, it is an expression. Before a story becomes a product, it is a living emotion. Before culture becomes business, it is a shared experience.
+This is the foundation of TSC.
+What We Build - Overview
+Interconnected Verticals. One Ecosystem.
+TSC Artists
+Culture-forward artist partnerships
+TSC Artists is our artist partnership platform focused on helping independent artists build long-term creative, cultural and commercial journeys. Our work includes identity, positioning, repertoire, live opportunities, collaborations, brand partnerships, audience development, visibility and career growth.
+TSC Academy
+Learning, mentorship and incubation for serious artists
+TSC Academy is our learning and development platform for artists, musicians, composers, singers, producers and creative professionals. Through structured courses, masterclasses, mentorship, community, resources and industry exposure, we help artists build clarity, confidence and craft.
+The Artist Path
+A curated artist accelerator
+The Artist Path is a selective artist accelerator curated by Rohit Sobti for artists ready to share their craft with audiences and build a serious professional journey. It works across discovery, identity, repertoire, release strategy, live readiness, audience building and long-term roadmap creation.
+TSC Films
+Mounting films. Building audiences. Creating lasting IPs.
+TSC Films works with filmmakers, producers and studios to build audience demand, cultural relevance and commercial opportunities around films. We support stories through film mounting, audience research, positioning, community building, partnerships, release planning, monetisation and long-term IP growth.
+TSC Originals
+Creating cultural IPs and living story worlds
+TSC Originals develops cultural properties across music, live experiences, youth culture, spiritual storytelling, digital formats and community-led entertainment. Our IPs are designed as living ecosystems that can grow across platforms, communities, partnerships and global stages.
+TSC Collaborations
+Brands, institutions, governments and culture partners
+TSC collaborates with brands, institutions, governments and cultural partners to build meaningful creative platforms, artist-led campaigns, community initiatives and culture-first experiences that feel authentic, emotionally resonant and valuable to real communities.
+Ecosystem Model
+Discover — Identify artists, stories, sounds, ideas and cultural opportunities with emotional and audience potential.
+Develop — Shape craft, identity, positioning, confidence, repertoire, storytelling and professional readiness.
+Curate — Bring creative direction, strategic thinking, business understanding and cultural sensitivity into the process.
+Launch — Activate artists, films and IPs through music, live experiences, digital platforms, partnerships, campaigns and communities.
+Scale — Build long-term audience growth, fandom, revenue, cultural relevance and global opportunities.
+Who We Work With
+Artists — We help artists discover identity, sharpen craft, build audiences and create sustainable creative careers.
+Filmmakers & Storytellers — We help stories find their audience, positioning, partnerships, cultural relevance and monetisation pathways.
+Brands — We create meaningful culture-led partnerships that go beyond advertising and connect with real communities.
+Institutions & Governments — We collaborate on learning, incubation, talent development, cultural programming and creative ecosystem building.
+Audiences — We create experiences that entertain, inspire, connect and stay with people.
+Belief System
+Artist-first. Ecosystem-led. Artists need long-term partners, not short-term campaigns.
+Culture-forward. We build work that carries emotional, social and cultural relevance.
+Rooted and global. Indian artists, stories, sounds and philosophies can travel the world with confidence.
+Conscious and contemporary. Depth and scale can co-exist.
+Business with meaning. Creative businesses should create value for artists, audiences, partners and society.
+Founder Bio
+Rohit Sobti
+Founder & Curator, The Shakti Collective
+Rohit Sobti is an entertainment strategist with nearly three decades of experience across music, films, artist development, brand partnerships and cultural IP creation.
+Over the years, he has held leadership roles at Yash Raj Films, Sony Music India and Universal Music India, working with some of India’s most recognised artists, music properties, films and entertainment brands.
+His work has consistently focused on building artist-first ecosystems, creating meaningful partnerships and helping creative talent grow with clarity, purpose and scale.
+With The Shakti Collective, Rohit brings together his experience across the entertainment industry to build a culture-forward company that empowers artists, nurtures original stories and creates opportunities that generate long-term cultural and commercial impact.
+Founder Note
+The future of entertainment will not be shaped by content alone. It will be shaped by artists with a clear identity, stories that carry meaning, communities that believe in them, and ecosystems that help creativity thrive.
+The Shakti Collective was born from a simple belief that extraordinary talent deserves more than visibility. It deserves guidance, opportunity, collaboration and a long-term ecosystem that enables sustainable growth.
+Our vision is to discover artists, nurture stories, build cultural IPs and create experiences that connect deeply with audiences. When artists are empowered with the right support, they do not just build successful careers. They shape conversations, inspire communities and move culture forward.
+Every initiative at TSC — whether in music, films, learning, live experiences, original IPs or collaborations — is driven by this purpose.
+This is our commitment. This is The Shakti Collective.
+Rohit Sobti
+Founder & Curator, The Shakti Collective
+Closing CTA
+The Future Belongs to Artist Forces
+The Shakti Collective is building for a future where artists are not waiting to be discovered — they are being unfolded.
+Where Indian stories travel to the world with emotion, confidence and cultural power.
+Where music, films, learning, live experiences and communities come together to create movements.
+Where entertainment is not only watched or heard, but felt.
+
+
+================================================================================
+PAGE: Work
+URL / Placement: /work
+Design note: Use for portfolio/initiatives landing page.
+Hero Headline
+Building platforms, partnerships and cultural movements that create lasting impact.
+Hero Body
+At The Shakti Collective, every initiative is designed to create meaningful opportunities for artists, stories and communities. Through collaborations with brands, creators, filmmakers and industry leaders, we build platforms that discover talent, nurture creativity and shape the future of India’s cultural ecosystem.
+Work Cards
+Main Bhi Artist — Every Artist Has a Story. A global creator community built for writers, musicians, poets, storytellers and artists to share their work, find their audience and grow together.
+Havells mYOUsic — Discovering India’s Next Musical Voices. A grassroots music movement created to discover, mentor and launch emerging singers, composers, lyricists and instrumentalists.
+Insta Music League — Where Original Music Takes Centre Stage. A digital-first music discovery format built to celebrate originality over popularity metrics.
+Young Gunns — Building the Next Generation of Artists. An artist incubation programme where emerging musicians collaborate with experienced producers and creative mentors.
+TSC Films — Mounting Films. Building Audiences. Creating Lasting IPs. Strategic support for independent films and culture-forward stories.
+
+
+================================================================================
+PAGE: Build Stories
+URL / Placement: /stories
+Design note: Use for stories/IP landing page and cards.
+Hero Headline
+Stories that build culture.
+Hero Subheadline
+Original IPs, artist ecosystems and cultural initiatives designed to create meaningful creative impact.
+IP Cards
+Main Bhi Artist — A global community helping emerging creators showcase work, receive mentorship and grow together.
+Insta Music League — A digital-first music discovery ecosystem where originality matters more than following.
+Havells mYOUsic — A culture-first collaboration discovering and nurturing grassroots musical talent across India.
+Young Gunns — An incubator spotlighting the next generation of emerging creators.
+Initiative Cards
+Kalki — A culture-forward storytelling initiative exploring the story of tomorrow through ancient Indian imagination, strategic positioning and modern audience engagement.
+Mahaavatar Narsimha — A mythology-led animated feature strategy focused on cultural positioning, audience development, monetisation and long-term IP growth.
+Hanuman Ansh — A spiritual entertainment IP inspired by timeless wisdom and designed to connect faith, story, community and contemporary audiences.
+Mahaprabhu Jagannath / Jai Jagannath — A cultural resonance initiative celebrating Lord Jagannath’s living tradition through community, devotion and new-generation storytelling.
+CTA
+Build stories that travel.
+Create IPs that live.
+
+
+================================================================================
+PAGE: Collaborate with TSC
+URL / Placement: /collab
+Design note: Use for brand/institution/government partnership page.
+Hero Headline
+Co-Creating Cultural Currency.
+Hero Subheadline
+Building meaningful collaborations between brands, artists and communities through storytelling-led ecosystems.
+Body
+Most marketing interrupts culture.
+We help brands contribute to it.
+Through music, storytelling, artists and original IPs, The Shakti Collective creates emotionally resonant experiences that connect deeply with modern audiences.
+Services
+IP Development
+Artist Collaborations
+Music-led Campaigns
+Cultural Storytelling
+Creative Strategy
+Community Engagement
+Branded Experiences
+Government & Institutional Talent Programs
+IP Gallery
+Main Bhi Artist — Global community platform for emerging creators to showcase work and find mentorship.
+Insta Music League — Digital-first talent discovery format through social media.
+Havells mYOUsic — Brand IP discovering and developing grassroots music talent across India.
+Young Gunns — Talent incubator and showcase IP for the next generation of breakthrough artists.
+CTA
+Collaborate With TSC
+Build Culture With Us
+
+
+================================================================================
+PAGE: TSC Artists
+URL / Placement: /artists
+Design note: Use for artist ecosystem landing page.
+Hero Headline
+Building India’s Culture-Forward Artist Ecosystem
+Hero Journey
+Human → Artist → Art → Audience → Community → Culture → Opportunity → Sustainable Career
+Hero Subheadline
+A 360° ecosystem helping independent artists build audiences, unlock opportunities and create sustainable careers.
+Hero CTAs
+Explore Artists
+Partner With Us
+Book an Artist
+What We Do
+Artist Development — Helping artists grow creatively, professionally and commercially.
+Audience Building — Growing fan communities through content, storytelling and culture.
+Live Opportunities — Connecting artists with festivals, colleges, brands, venues and events.
+Partnerships & Collaborations — Creating meaningful opportunities across the entertainment ecosystem.
+PR & Visibility — Building awareness, credibility and discoverability.
+Career Management — Supporting artists at every stage of their journey.
+Why TSC Artists
+360° Artist Ecosystem
+Audience-First Approach
+Live Experience Curation
+Industry Partnerships
+Culture-Led Growth
+Long-Term Career Building
+Our Philosophy
+We do not just manage artists.
+We partner with them to transform talent into careers, audiences into communities and performances into cultural moments.
+For
+Artists
+Festivals
+Colleges & Universities
+Brands
+Corporate Events
+Venues & Hospitality
+Cultural Institutions
+Event Organisers
+Closing Line
+Curating Artists. Building Audiences. Creating Culture.
+
+
+================================================================================
+PAGE: Artist Path / Artist Profile Blocks
+URL / Placement: /artists/artist-path and /artists/profile-template
+Design note: Use as section-level replacement copy.
+Artist Path Headline
+Every artist’s journey is different.
+But clarity changes everything.
+Artist Path Body
+A personalised diagnostic experience designed to help artists understand where they are — and what they need next.
+The Artist Path maps growth pathways, mentorship direction, learning recommendations, ecosystem access and community onboarding for artists ready to move with intention.
+Artist Profile Features
+Artist Biography — Detailed creative background, identity and philosophy.
+Media — Video highlights, studio sessions, live performances and reels.
+Experience — Professional credits, city, languages, genres and milestones.
+Song Catalogue — Spotify, YouTube and release links.
+Book Now — Booking inquiry for shows, collaborations, festivals, colleges and brands.
+FAQ — Availability, performance formats, booking process and collaboration details.
+Artist Inquiry Form Fields
+Name
+Email
+Phone
+Role
+City
+Requirement
+Project / Event Date
+Budget Range
+Message
+
+
+================================================================================
+PAGE: TSC Academy
+URL / Placement: /academy
+Design note: Use for Learn Music page.
+Hero Headline
+Learn from the Maestros.
+Hero Subheadline
+Structured mentorship designed to help artists move from uncertainty to artistic clarity.
+Learn directly from world-class composers, musicians and practitioners through practical, artist-first learning systems.
+Why TSC Academy Headline
+Most artists consume endlessly.
+Few develop intentionally.
+Why TSC Academy Body
+Information is everywhere.
+But real growth needs structure, feedback, repetition and mentorship.
+At The Shakti Collective Academy, learning is immersive, practical and deeply connected to artistic identity.
+Not academic. Not overwhelming. Not built around perfection.
+Built for real artistic growth.
+Courses
+The heART of Composition — Sandesh Shandilya. Understand the emotional architecture behind composition. Explore melody, harmony, storytelling, songwriting psychology and advanced compositional thinking.
+Roots of Hindustani Classical — Prasad Khaparde. Explore raag understanding, sur control, voice culture and riyaaz systems designed to deepen musical awareness.
+A–Z of Music Production — Luca Petracca. Learn the complete process of modern music production, from recording and arrangement to mixing, workflow and creative execution.
+Testimonials
+Shradha Mishra — “Sandesh Sir has been my guiding angel… the reason I walk this musical journey with confidence.”
+Deepank Soni — “Pure gold… reveals the true philosophy and inner world of creation.”
+Vasav Vashisht — “Helps a musician bring out emotions perfectly in their compositions.”
+Final CTA
+Foundations change everything.
+When artists understand their craft deeply, creativity stops feeling random.
+Over time, clarity becomes confidence.
+
+
+================================================================================
+PAGE: Academy Course Pages
+URL / Placement: /academy/course-pages
+Design note: Use for individual course pages.
+Course: The heART of Composition
+Mentor: Sandesh Shandilya
+A celebrated music director, composer and arranger, Sandesh Shandilya has created some of Bollywood’s most iconic soundtracks. With decades of experience in the industry, he brings a rare combination of emotional depth, musical intelligence and practical teaching.
+This course explores the emotional and technical architecture of composition — from bhaav and melody to lyrics, collaboration, hooks, motifs, nature, samarpan and final original creation.
+Highlights: Iconic Bollywood Soundtracks | Award-Winning Composer | Decades of Industry Experience
+Sandesh Curriculum
+It All Starts Here
+Aamad: Mentor Introduction
+Bhaav & Emotions
+Learning from Nature
+Samarpan
+Subconscious Mind
+Composing with Artists
+Extension of Melody
+Characteristics of a Good Composition
+Breath of Music
+Writing Melodies with Lyrics
+Collaborations
+Composing a Song Together
+Unfolding Artist Force: Final Capstone
+Course: Roots of Hindustani Classical
+Mentor: Pandit Prasad Khaparde
+A renowned Hindustani classical vocalist of international repute with over 30 years of experience, Pandit Prasad Khaparde belongs to the Rampur Sahaswan gharana. His musical journey began under the guidance of Padma Bhushan Ustad Rashid Khan Sahab.
+This course builds a strong foundation in Hindustani classical music through sur, raag understanding, voice culture, listening, riyaaz and expressive mastery.
+Highlights: Legendary Classical Vocalist | 30+ Years Professional Career | Rampur Sahaswan Gharana
+Prasad Curriculum
+Introduction
+What is Music?
+Classical & Semi-Classical Forms
+History & Gharanas
+Swaar, Thaat & Saptak
+Introduction to Ragas
+Listening Is Learning
+Select Your Sa
+Kanth Saadhna
+Tanpura
+Basic Phrases
+Basic Taal
+Bandish
+Advanced Ragas
+Unfolding Artist Force
+Course: A–Z of Music Production
+Mentor: Luca Petracca
+Luca Petracca is a music producer and composer from Italy. He studied classical guitar at Conservatory S. Cecilia of Rome and classical composition at Conservatorium van Amsterdam. He has taught music for more than 17 years and produced multiple tracks across creative contexts.
+This practical learning program teaches end-to-end music production for artists using a laptop — from idea to finished track.
+Quote: “I believe I have found my answers, but I am not here to share them with you. I am here to help you find the right questions.”
+Luca Curriculum
+Introduction to Music Production
+Melody and Chords
+Harmonic Progressions and Functions
+Music Genres
+Song Forms
+Instruments and Sounds
+Recording Techniques
+Production Techniques
+FXs
+Mixing and Mastering
+
+
+================================================================================
+PAGE: TSC Academy Ambassador Program
+URL / Placement: /academy/ambassador
+Design note: Use for ambassador/referral page.
+Hero Headline
+Become a TSC Academy Ambassador and help more artists discover meaningful music education while earning rewards along the way.
+Hero Subheadline
+Get exclusive discounts on programs, cashback on successful referrals, industry insights and early access to what is unfolding across the TSC ecosystem.
+Win-Win-Win Model
+Learn from the best.
+Earn through referrals.
+Give back to the artist community.
+Why Become an Ambassador
+More Than A Referral Program
+Great opportunities grow through trusted recommendations.
+As a TSC Academy Ambassador, you are not just sharing a course. You are helping artists discover mentorship, structure and a supportive ecosystem that can transform their creative journey.
+Learn / Earn / Return
+Learn — Enjoy ambassador-only benefits, special discounts, early announcements and industry insights.
+Earn — Receive ₹500 cashback for every successful referral made through your unique referral link and discount code. Your referrals receive ₹500 off their enrollment.
+Return — Help independent artists discover mentorship, community and opportunities that can accelerate their growth.
+Who Is This For?
+Current TSC Academy students
+Independent musicians
+Singers and songwriters
+Music producers
+Music educators
+Community builders
+Artist managers
+Creative entrepreneurs
+Anyone passionate about helping artists grow
+How Referrals Work
+Identify artists who may benefit from the program.
+Understand their goals through a genuine conversation.
+Recommend the relevant TSC Academy program.
+Share your unique referral link and discount code.
+They enroll using your link and receive the discount.
+You receive cashback directly in your Ambassador account.
+How to Become an Ambassador
+Register
+Add your details
+Understand the programs
+Access your referral dashboard
+Start sharing
+Start your Win-Win-Win journey
+Final CTA
+The future of independent music will be built through artists helping artists.
+Join the TSC Academy Ambassador Program and become part of that movement.
+
+
+================================================================================
+PAGE: Insights / Resources
+URL / Placement: /insights
+Design note: Use for resources hub and blog cards.
+Hero Headline
+Resources for artists building sustainably.
+Hero Subheadline
+Practical guides, creative systems and tools designed to simplify artistic growth.
+Blog Cards
+Artist Release Playbook — Strategic frameworks for releasing music intentionally.
+Vocal Texture — Practical systems for improving vocal tone and individuality.
+Riyaaz Routine — A sustainable daily practice framework for singers.
+How to Start Making Music — A beginner-friendly guide for artists starting with zero experience.
+You Released a Song. Now What? — A 3-month single release plan for independent artists.
+Free Tools
+Vital Synth
+Spitfire LABS
+Valhalla Supermassive
+Music Contract Templates
+DAW Workflow Templates
+Notion Artist Dashboards
+Smart Link Tools
+Free Distribution Resources
+End CTA
+Need direction for your next creative step?
+Book a call with TSC.
+
+
+================================================================================
+PAGE: TSC Films
+URL / Placement: /work/tsc-films or /stories/films
+Design note: Use as film mounting service page.
+Hero Headline
+Mounting Films. Building Audiences. Creating Lasting IPs.
+Hero Body
+A film deserves more than a successful release.
+It deserves an audience that believes in it, partners that strengthen it and a strategy that allows it to grow long after the opening weekend.
+That is where TSC Films comes in.
+We work with filmmakers, producers and studios to strategically mount films from the early stages of their journey. By combining audience strategy, cultural positioning, partnerships and monetisation, we help transform films into entertainment properties with long-term value.
+What We Build
+Film Mounting — Building the strategic foundation that prepares a film for the market before it reaches the market.
+Audience Development — Creating awareness, anticipation and meaningful engagement long before release.
+Strategic Partnerships — Bringing together brands, institutions, communities and collaborators that add long-term value.
+Monetisation & IP Growth — Unlocking opportunities beyond the theatrical journey.
+Franchise Development — Helping stories evolve into long-term entertainment ecosystems.
+Our Process
+Discover — Understand the story, audience and potential.
+Position — Define the film’s identity, audience and cultural relevance.
+Build — Develop partnerships, communities and audience demand.
+Launch — Support release through integrated audience and partnership strategies.
+Grow — Extend the life of the film through monetisation, community and long-term IP development.
+Why TSC Films
+Most films begin thinking about the audience when marketing begins.
+We believe the audience should be part of the conversation from day one.
+We do not see films as campaigns. We see them as intellectual properties capable of creating communities, partnerships, experiences and long-term cultural impact.
+Our role is simple: to help great stories find the audiences they deserve and create value far beyond the box office.
+
+
+================================================================================
+PAGE: Case Study: Havells mYOUsic
+URL / Placement: /work/havells-myousic
+Design note: Use for Work case study subpage.
+Hero Headline
+Building India’s Next Generation of Independent Artists
+Hero Subheadline
+An impact initiative by Havells, curated and executed by The Shakti Collective.
+Overview / Opportunity
+Talent was never the problem. Opportunity was. Havells mYOUsic was created to discover, mentor and launch emerging musical talent from across India with dignity, access and long-term support.
+The Shakti Collective Role
+TSC led the initiative end to end — from programme strategy, creative direction, artist discovery and mentor partnerships to event design, city operations, artist experience, content, PR, community engagement and long-term artist development.
+What We Built / Impact
+A nationwide grassroots music movement across Greater Noida, Indore and Dumka; thousands of artist entries; knowledge sessions; open mics; mentorship; and a roadmap to create and release 25 original songs with selected artists.
+Looking Ahead
+Havells mYOUsic is evolving from a discovery platform into an artist development ecosystem where potential becomes profession.
+
+
+================================================================================
+PAGE: Case Study: Main Bhi Artist
+URL / Placement: /work/main-bhi-artist
+Design note: Use for Work case study subpage.
+Hero Headline
+Giving Every Artist a Voice
+Hero Subheadline
+A global creator community co-created with Laksh Maheshwari to discover, celebrate and nurture emerging writers, poets, lyricists and storytellers.
+Overview / Opportunity
+Millions of creators write every day, but very few find the confidence or platform to share their work. Main Bhi Artist was built as a safe creative movement where every voice could be seen, heard and encouraged.
+The Shakti Collective Role
+TSC led concept development, positioning, community strategy, creator engagement, digital platform thinking, submission flow, content planning and long-term ecosystem roadmap.
+What We Built / Impact
+A growing creator community with thousands of members, original submissions and a digital platform designed for stories, poems, lyrics and creative expression.
+Looking Ahead
+Main Bhi Artist is being built as a global creator ecosystem connecting emerging voices with collaborators, mentors, opportunities and original creative projects.
+
+
+================================================================================
+PAGE: Case Study: Insta Music League
+URL / Placement: /work/insta-music-league
+Design note: Use for Work case study subpage.
+Hero Headline
+Reimagining Music Discovery for the Digital Generation
+Hero Subheadline
+India’s digital-first reality music competition built to discover original voices, reward creativity and launch the next generation of independent artists.
+Overview / Opportunity
+Social platforms often reward popularity before originality. Insta Music League was built to make talent speak louder than algorithms by allowing artists across India to participate through original Instagram Reel performances.
+The Shakti Collective Role
+TSC conceptualised, designed and executed the initiative across IP strategy, competition design, participant journey, jury framework, platform development, campaign strategy and long-term winner development through TSC Academy.
+What We Built / Impact
+4,000+ original entries, a ₹10 lakh prize pool, 15 winners, scholarships, artist launch opportunities and a digital-first platform for original music discovery.
+Looking Ahead
+Insta Music League is envisioned as an annual digital music property that continues to discover, develop and launch emerging artists from across India.
+
+
+================================================================================
+PAGE: Case Study: Young Gunns
+URL / Placement: /work/young-gunns
+Design note: Use for Work case study subpage.
+Hero Headline
+Building Tomorrow’s Artists Before the World Knows Their Names
+Hero Subheadline
+An artist incubator by The Shakti Collective bringing together emerging musicians, producers and creative mentors to transform original talent into release-ready artists.
+Overview / Opportunity
+India has never lacked musical talent. What it has lacked is structured artist development. Young Gunns was built to bridge this gap and invest in artists at the beginning of their journey.
+The Shakti Collective Role
+TSC led programme conceptualisation, artist selection, creative direction, music curation, production planning, visual identity, campaign strategy, release planning and community building.
+What We Built / Impact
+9 emerging artists, 9 original songs, 1 collaborative season anthem and a multidisciplinary ecosystem of producers, curators, filmmakers and creative collaborators.
+Looking Ahead
+Young Gunns is envisioned as an ongoing artist incubation platform creating a sustainable launchpad for independent talent across the country.
+
+
+================================================================================
+PAGE: Case Study: Mahaavatar Narsimha
+URL / Placement: /work/mahaavatar-narsimha
+Design note: Use for Work case study subpage.
+Hero Headline
+Mounting a Film. Building a Cultural IP.
+Hero Subheadline
+A TSC Films impact story around a mythology-led animated feature with long-term audience and monetisation potential.
+Overview / Opportunity
+Mahavatar Narsimha represented the opportunity to establish the foundations of a mythology-led entertainment property capable of growing across audiences, platforms and experiences.
+The Shakti Collective Role
+TSC supported strategic audience positioning, film mounting strategy, non-theatrical monetisation, partnership development and IP/franchise thinking.
+What We Built / Impact
+The project strengthened the value of thinking beyond release calendars and promotional campaigns, with audience, culture and long-term value at the centre.
+Looking Ahead
+Mahaavatar Narsimha became a key foundation for TSC Films’ approach to culturally rooted film mounting and long-term IP development.
+
+
+================================================================================
+PAGE: Case Study: Hanuman Ansh
+URL / Placement: /work/hanuman-ansh
+Design note: Use for Work case study subpage.
+Hero Headline
+Building an Enduring Spiritual IP for a New Generation
+Hero Subheadline
+A spiritual entertainment IP inspired by timeless wisdom and designed to connect faith, story, community and contemporary audiences.
+Overview / Opportunity
+Stories rooted in spirituality are not experienced only through viewing. They become part of conversations, communities and belief systems. Hanuman Ansh presented the opportunity to build a living IP, not just a film.
+The Shakti Collective Role
+TSC supported audience intelligence, audience growth strategy, community development, monetisation strategy and franchise/IP development.
+What We Built / Impact
+The strategic framework balanced creative vision with audience understanding, authenticity, respect and commercial sustainability.
+Looking Ahead
+Hanuman Ansh reinforces TSC’s belief that stories with purpose deserve strategies with purpose.
+
+
+================================================================================
+PAGE: Case Study: Mahaprabhu Jagannath / Jai Jagannath
+URL / Placement: /work/mahaprabhu-jagannath
+Design note: Use for Work case study subpage.
+Hero Headline
+Building a Cultural Movement Around a Timeless Story
+Hero Subheadline
+A cultural resonance initiative celebrating Lord Jagannath’s living tradition through cinema, community, devotion and new-generation storytelling.
+Overview / Opportunity
+Mahaprabhu Jagannath already has a living audience — devotees, families, communities and cultural institutions. The opportunity was not to introduce the story, but to create new pathways for a new generation to experience it.
+The Shakti Collective Role
+TSC supported audience discovery, cultural relevance mapping, community-led engagement, strategic partnerships, audience growth frameworks and long-term ecosystem thinking.
+What We Built / Impact
+The project established a meaningful foundation for audience engagement rooted in authenticity, participation and long-term cultural relevance.
+Looking Ahead
+The most enduring stories are not simply watched. They become part of people’s lives.
+
+
+================================================================================
+PAGE: Case Study: Kalki
+URL / Placement: /work/kalki
+Design note: Use for Work case study subpage.
+Hero Headline
+Building Anticipation Around the Story of Tomorrow
+Hero Subheadline
+A culture-forward storytelling initiative exploring the story of tomorrow through ancient Indian imagination and modern audience engagement.
+Overview / Opportunity
+Kalki represents transformation, justice and the renewal of dharma. The opportunity was to position it not just as another mythology film, but as a cinematic experience that speaks equally to tradition and the future.
+The Shakti Collective Role
+TSC supported audience positioning, cultural branding, audience development, community engagement, strategic partnerships and growth planning.
+What We Built / Impact
+The strategic direction created clarity around identity, cultural relevance and long-term audience engagement.
+Looking Ahead
+The future of Indian cinema will belong to stories that understand both where they come from and the audiences they are created for.
+
+
+================================================================================
+PAGE: Contact / Book a Call / Community Forms
+URL / Placement: /contact, /book-call, /join-community
+Design note: Use for global contact and conversion pages.
+Contact Hero
+Let’s build what culture remembers.
+Contact Body
+Whether you are an artist, filmmaker, brand, institution or cultural partner, we would love to understand what you are building and where The Shakti Collective can help.
+Contact Options
+For artists — Share your journey, work links and what you want to build next.
+For filmmakers — Tell us about your story, stage of production, release plan and audience challenge.
+For brands — Share the community, culture or artist ecosystem you want to engage with.
+For institutions and governments — Tell us about the talent, learning or cultural program you want to create.
+For bookings — Share the event date, city, audience type, format and budget range.
+Form Fields
+Name
+Email
+Phone
+Role
+Organisation / Artist Name
+City
+I want to…
+Project / Requirement
+Timeline
+Budget Range
+Message
+Links / Attachments
+Final Line
+Tell us what you want to unfold.
+
+
+================================================================================
+PAGE: Implementation Notes for Website Team
+URL / Placement: Internal handoff
+Design note: Do not paste this section on the website.
+Copy Replacement Rules
+Keep the design, section order and block hierarchy unchanged.
+Paste only the copy assigned to each slot.
+Do not reintroduce older language such as “1 million artists” or “Artiste Force.” Use “10 million artists” and “Artist Force.”
+Prefer “TSC Originals” only if the live design still uses that page label; in business language, TSC is also developing TSC Records and original music/IP distribution.
+Keep TSC Academy separate where relevant; Sandesh Shandilya is only a partner in TSC Academy, not all TSC ventures.
+Use “Rohit Sobti” spelling consistently on public website unless a legal/profile-specific spelling is required elsewhere.

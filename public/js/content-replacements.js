@@ -27,19 +27,24 @@
     }
   ];
   var whatsappCommunityUrl = 'https://chat.whatsapp.com/IaS1GaJT7Gp7ufxHIjDkZu?mode=gi_t';
+  var TSC_LOGO_SRC = '/assets/brand/tsc-logo-text.png';
+  var ACADEMY_LOGO_SRC = '/assets/brand/tsc-academy-logo-text.png';
   var brandAssets = {
     main: {
-      logo: '/assets/brand/tsc-logo.png',
+      logo: TSC_LOGO_SRC,
       icon: '/assets/brand/tsc-favicon-32.png',
       touchIcon: '/assets/brand/tsc-apple-touch-icon.png'
     },
     academy: {
-      logo: '/assets/brand/academy-logo.png',
+      logo: ACADEMY_LOGO_SRC,
       icon: '/assets/brand/academy-favicon-32.png',
       touchIcon: '/assets/brand/academy-apple-touch-icon.png'
     }
   };
-  var unifiedLogoSrc = '/assets/brand/tsc-logo.png';
+
+  function logoSrcForPage() {
+    return academyPaths[normalizedPath()] ? ACADEMY_LOGO_SRC : TSC_LOGO_SRC;
+  }
   var mobileCoursePages = {
     '/the-heart-of-composition': {
       course: 'COURSE 001',
@@ -384,7 +389,7 @@
     header.className = 'tsc-mobile-site-header' + (academyMode ? ' tsc-mobile-site-header-academy' : '');
     header.innerHTML = [
       '<a class="tsc-mobile-brand" href="' + (academyMode ? '/academy' : '/') + '" aria-label="' + (academyMode ? 'TSC Academy' : 'The Shakti Collective') + '">',
-        '<img class="tsc-mobile-brand-logo tsc-mobile-brand-logo-unified" src="' + unifiedLogoSrc + '" alt="">',
+        '<img class="tsc-mobile-brand-logo tsc-mobile-brand-logo-unified" src="' + logoSrcForPage() + '" alt="">',
       '</a>',
       '<details class="tsc-mobile-menu">',
         '<summary aria-label="Open navigation"><span></span><span></span><span></span></summary>',
@@ -433,15 +438,45 @@
   function updateHeaderBrandLogos() {
     var path = normalizedPath();
     var academyMode = !!academyPaths[path];
-    Array.prototype.forEach.call(document.querySelectorAll('header .wixui-vector-image a'), function(link) {
-      var rect = link.getBoundingClientRect();
-      if (rect.left > 360 || rect.width < 40 || rect.height < 35) return;
-      link.setAttribute('href', academyMode ? '/academy' : '/');
-      link.setAttribute('aria-label', academyMode ? 'TSC Academy' : 'The Shakti Collective');
+    var logoSrc = logoSrcForPage();
+    var brandLabel = academyMode ? 'TSC Academy' : 'The Shakti Collective';
+    var homeHref = academyMode ? '/academy' : '/';
+
+    Array.prototype.forEach.call(document.querySelectorAll(
+      'header .wixui-vector-image a, header a.tsc-desktop-brand-link, .tsc-mobile-brand, .tsc-desktop-footer-brand, .tsc-mobile-footer-brand a, .tsc-mobile-footer-brand'
+    ), function(link) {
+      if (!link || link.tagName !== 'A') return;
+      var isCustomChrome = link.classList.contains('tsc-mobile-brand') ||
+        link.classList.contains('tsc-desktop-footer-brand') ||
+        !!link.closest('.tsc-mobile-footer-brand, .tsc-desktop-footer');
+      if (!isCustomChrome) {
+        var rect = link.getBoundingClientRect();
+        // Skip tiny decorative vectors; allow zero-size during early layout / hidden mobile header.
+        if (rect.width > 0 && rect.height > 0 && (rect.left > 420 || rect.width < 28 || rect.height < 24)) return;
+      }
+      link.setAttribute('href', homeHref);
+      link.setAttribute('aria-label', brandLabel);
       link.classList.add('tsc-desktop-brand-link');
-      if (link.dataset.tscBrandLogo === 'unified') return;
-      link.innerHTML = '<img class="tsc-desktop-brand-logo tsc-desktop-brand-logo-unified" src="' + unifiedLogoSrc + '" alt="">';
-      link.dataset.tscBrandLogo = 'unified';
+
+      var img = link.querySelector('img.tsc-desktop-brand-logo-unified, img.tsc-mobile-brand-logo-unified, img.tsc-desktop-footer-logo, img.tsc-mobile-footer-logo');
+      if (img) {
+        if (img.getAttribute('src') !== logoSrc) img.setAttribute('src', logoSrc);
+        img.setAttribute('alt', brandLabel);
+        link.dataset.tscBrandLogo = academyMode ? 'academy' : 'main';
+        return;
+      }
+      var cls = isCustomChrome && link.closest('.tsc-mobile-footer, .tsc-mobile-site-header')
+        ? 'tsc-mobile-brand-logo tsc-mobile-brand-logo-unified'
+        : 'tsc-desktop-brand-logo tsc-desktop-brand-logo-unified';
+      link.innerHTML = '<img class="' + cls + '" src="' + logoSrc + '" alt="' + brandLabel + '">';
+      link.dataset.tscBrandLogo = academyMode ? 'academy' : 'main';
+    });
+
+    Array.prototype.forEach.call(document.querySelectorAll(
+      '.tsc-mobile-footer-logo, .tsc-desktop-footer-logo, .tsc-mobile-brand-logo-unified, .tsc-desktop-brand-logo-unified'
+    ), function(img) {
+      if (img.getAttribute('src') !== logoSrc) img.setAttribute('src', logoSrc);
+      img.setAttribute('alt', brandLabel);
     });
   }
 
@@ -916,7 +951,7 @@
     shell.setAttribute('data-tsc-theme', 'dark');
     shell.innerHTML = [
       '<div class="tsc-mobile-footer-brand">',
-        '<img class="tsc-mobile-footer-logo" src="' + ui.escapeHtml(unifiedLogoSrc) + '" alt="The Shakti Collective" width="168" height="56" decoding="async">',
+        '<img class="tsc-mobile-footer-logo" src="' + ui.escapeHtml(logoSrcForPage()) + '" alt="' + (academyPaths[normalizedPath()] ? 'TSC Academy' : 'The Shakti Collective') + '" width="168" height="56" decoding="async">',
       '</div>',
       '<details class="tsc-mobile-footer-acc" open>',
         '<summary>Quick links</summary>',

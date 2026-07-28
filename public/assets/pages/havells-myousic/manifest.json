@@ -1,0 +1,24 @@
+{
+  "page": "havells-myousic",
+  "html": "/pages/havells-myousic.html",
+  "css": "/css/pages/havells-myousic.css",
+  "animations": "/js/pages/havells-myousic.animations.js",
+  "generatedAt": "2026-07-28T10:07:32.307Z",
+  "totals": {
+    "assets": 1,
+    "missing": 0
+  },
+  "assetsByType": {
+    "images": [
+      {
+        "type": "images",
+        "url": "/assets/mirror/static.wixstatic.com/original-media/19f989_31e0c2f0485747acb1a4b9d831588423~mv2.jpg",
+        "local": {
+          "exists": true,
+          "path": "/assets/mirror/static.wixstatic.com/original-media/19f989_31e0c2f0485747acb1a4b9d831588423~mv2.jpg",
+          "bytes": 57545
+        }
+      }
+    ]
+  }
+}

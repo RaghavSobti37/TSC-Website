@@ -1,0 +1,285 @@
+.tsc-local-form {
+  box-sizing: border-box;
+  position: relative;
+  z-index: 20;
+  grid-area: 1 / 1 / 2 / 2;
+  align-self: start;
+  justify-self: center;
+  width: min(820px, calc(100vw - 56px));
+  /* Clear Wix page title in same grid cell (taller on desktop) */
+  margin: clamp(120px, 17vw, 240px) auto clamp(40px, 6vw, 72px);
+  padding: clamp(24px, 4vw, 42px);
+  border: 1px solid rgba(255, 236, 209, 0.85);
+  border-radius: 8px;
+  background: #ffecd1;
+  box-shadow: 0 18px 46px rgba(0, 28, 30, 0.18);
+  color: #053f40;
+  font-family: var(--wix-font-Paragraph, Arial, sans-serif);
+  pointer-events: auto;
+}
+
+.tsc-local-form * {
+  pointer-events: auto;
+}
+
+.tsc-local-form h1,
+.tsc-local-form h2 {
+  margin: 0 0 clamp(22px, 3vw, 32px);
+  color: #00535a;
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 700;
+  line-height: 1.08;
+  text-align: center;
+}
+
+.tsc-required-note {
+  margin: -12px 0 24px;
+  color: #073d3d;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.35;
+  text-align: center;
+}
+
+.tsc-required-mark {
+  color: #c4511c;
+  font-weight: 900;
+}
+
+.tsc-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px 20px;
+  width: 100%;
+}
+
+.tsc-field {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.tsc-field-full {
+  grid-column: 1 / -1;
+}
+
+.tsc-field label,
+.tsc-field legend {
+  margin: 0;
+  color: #073d3d;
+  font-size: 14px;
+  line-height: 1.35;
+  font-weight: 700;
+}
+
+.tsc-field input,
+.tsc-field select,
+.tsc-field textarea {
+  appearance: none;
+  width: 100%;
+  box-sizing: border-box;
+  max-width: 100%;
+  border: 1.5px solid rgba(0, 83, 90, 0.55);
+  border-radius: 7px;
+  background: #fff8ec;
+  color: #053f40;
+  min-height: 48px;
+  padding: 12px 13px;
+  font: inherit;
+  font-size: 15px;
+  line-height: 1.35;
+}
+
+.tsc-field textarea {
+  min-height: 104px;
+  resize: vertical;
+}
+
+.tsc-field select {
+  padding-right: 36px;
+  background-image:
+    linear-gradient(45deg, transparent 50%, #00535a 50%),
+    linear-gradient(135deg, #00535a 50%, transparent 50%);
+  background-position:
+    calc(100% - 18px) 50%,
+    calc(100% - 12px) 50%;
+  background-repeat: no-repeat;
+  background-size: 6px 6px, 6px 6px;
+}
+
+.tsc-field input:focus,
+.tsc-field select:focus,
+.tsc-field textarea:focus {
+  border-color: #00535a;
+  box-shadow: 0 0 0 3px rgba(0, 83, 90, 0.14);
+  outline: 0;
+}
+
+.tsc-phone-row {
+  display: grid;
+  grid-template-columns: minmax(150px, 0.42fr) minmax(0, 1fr);
+  gap: 10px;
+}
+
+.tsc-choice-group {
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.tsc-choices {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tsc-choice {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  padding: 9px 12px;
+  border: 1.5px solid rgba(0, 83, 90, 0.35);
+  border-radius: 7px;
+  background: #fff8ec;
+  color: #053f40;
+  font-size: 14px;
+  line-height: 1.35;
+}
+
+.tsc-choice input {
+  flex: 0 0 auto;
+  width: 16px;
+  height: 16px;
+  min-height: 0;
+  padding: 0;
+  accent-color: #00535a;
+}
+
+.tsc-submit {
+  appearance: none;
+  width: fit-content;
+  min-width: 176px;
+  min-height: 50px;
+  margin: 8px auto 0;
+  padding: 13px 28px;
+  border: 1.5px solid #00535a;
+  border-radius: 8px;
+  background: #00535a;
+  color: #ffecd1;
+  cursor: pointer;
+  font: inherit;
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: 0;
+}
+
+.tsc-submit:hover {
+  background: #053f40;
+}
+
+.tsc-form-note {
+  display: none;
+  margin-top: 12px;
+  color: #053f40;
+  font-size: 14px;
+  text-align: center;
+}
+
+.tsc-form-note[data-visible="true"] {
+  display: block;
+}
+
+/* Collapse oversized Wix form-section rows (were ~0.8–1.2× viewport tall) */
+body:has(.tsc-local-form) :is(
+  .comp-mrxe0t9g-container,
+  .comp-mrxmc0z5-container,
+  .comp-mrxv5lfr-container
+) {
+  grid-template-rows: auto !important;
+}
+
+body:has(.tsc-local-form) :is(
+  #comp-mrxe0t9g,
+  #comp-mrxmc0z5,
+  #comp-mrxv5lfr
+) {
+  min-height: auto !important;
+  height: auto !important;
+}
+
+body:has(.tsc-local-form) main [data-hook^="bgLayers"],
+body:has(.tsc-local-form) main [data-motion-part*="BG_LAYER"],
+body:has(.tsc-local-form) main [data-motion-part*="BG_MEDIA"] {
+  pointer-events: none !important;
+}
+
+.tsc-review-page {
+  min-height: 100vh;
+  background: #f7f3eb;
+  color: #17130f;
+  padding: 48px 20px;
+  box-sizing: border-box;
+}
+
+.tsc-review-shell {
+  width: min(100%, 900px);
+  margin: 0 auto;
+}
+
+.tsc-review-brand {
+  margin-bottom: 34px;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 700px) {
+  .tsc-local-form {
+    width: min(100% - 32px, 620px);
+    margin: 88px auto 28px;
+    padding: 22px 18px;
+  }
+
+  .tsc-local-form h1,
+  .tsc-local-form h2 {
+    font-size: clamp(24px, 8vw, 34px);
+    margin-bottom: 20px;
+  }
+
+  .tsc-form-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .tsc-phone-row {
+    grid-template-columns: 1fr;
+  }
+
+  .tsc-choices {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .tsc-submit {
+    width: 100%;
+  }
+}
+
+@media (max-width: 420px) {
+  .tsc-local-form {
+    width: calc(100vw - 28px);
+    padding: 20px 14px;
+  }
+
+  .tsc-field input,
+  .tsc-field select,
+  .tsc-field textarea {
+    min-height: 46px;
+    padding-left: 11px;
+    padding-right: 11px;
+    font-size: 14px;
+  }
+}

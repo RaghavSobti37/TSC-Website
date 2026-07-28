@@ -1,0 +1,24 @@
+{
+  "page": "insta-music-league",
+  "html": "/pages/insta-music-league.html",
+  "css": "/css/pages/insta-music-league.css",
+  "animations": "/js/pages/insta-music-league.animations.js",
+  "generatedAt": "2026-07-28T10:07:32.318Z",
+  "totals": {
+    "assets": 1,
+    "missing": 0
+  },
+  "assetsByType": {
+    "images": [
+      {
+        "type": "images",
+        "url": "/assets/mirror/static.wixstatic.com/media/11062b_277a34827c9542fca4c9d0e384dfcdac~mv2.jpeg/v1/fill/w_641,h_413,fp_0.58_0.25,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Singer%20In%20Studio.jpeg",
+        "local": {
+          "exists": true,
+          "path": "/assets/mirror/static.wixstatic.com/original-media/11062b_277a34827c9542fca4c9d0e384dfcdac~mv2.jpeg",
+          "bytes": 241739
+        }
+      }
+    ]
+  }
+}

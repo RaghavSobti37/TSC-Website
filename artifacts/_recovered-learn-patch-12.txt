@@ -1,0 +1,144 @@
+  /* Course cards — three stacked full-bleed cards (Heart / Roots / Luca) */
+  #comp-mpjyp1e7,
+  #comp-mpjvjuos,
+  #comp-mpjxmose,
+  #comp-mpjxxeqt {
+    padding-inline: var(--tsc-gutter-local, 20px);
+    padding-block: var(--tsc-space-24, 24px);
+    box-sizing: border-box;
+    overflow: visible !important;
+  }
+
+  #comp-mpjyp1e7 {
+    padding-block-end: var(--tsc-space-8, 8px);
+  }
+
+  #comp-mpjyp5wu .wixui-rich-text__text,
+  #comp-mpjyp5wu h2 {
+    font-size: clamp(2.5rem, 14vw, 4rem) !important;
+    line-height: 0.95 !important;
+    letter-spacing: -0.02em;
+  }
+
+  #comp-mpjyp1e7 .comp-mpjyp1e7-container,
+  #comp-mpjvjuos .comp-mpjvjuos-container,
+  #comp-mpjxmose .comp-mpjxmose-container,
+  #comp-mpjxxeqt .comp-mpjxxeqt-container,
+  #comp-mpjvjuos [class$="-container"],
+  #comp-mpjxmose [class$="-container"],
+  #comp-mpjxxeqt [class$="-container"] {
+    display: flex !important;
+    flex-direction: column !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: var(--tsc-space-16, 16px);
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box;
+  }
+
+  #comp-mpk54qtl,
+  #comp-mpjwnsh1,
+  #comp-mpk52xro,
+  #comp-mpjwxij6,
+  #comp-mpjxmosy,
+  #comp-mpk4u1bh,
+  #comp-mpjxmote,
+  #comp-mpjxxerb1,
+  #comp-mpjxxers6,
+  #comp-mpjvo1xd,
+  #comp-mpk57dp3,
+  #comp-mpk507k4,
+  #comp-mpk4zpst,
+  #comp-mpk4wrdy,
+  #comp-mpk4u9v1,
+  #comp-mpjzwem7,
+  #comp-mpjzvp90,
+  #comp-mpjz6jkk,
+  #comp-mpjz94ph,
+  #comp-mpjvjuos .wixui-box,
+  #comp-mpjxmose .wixui-box,
+  #comp-mpjxxeqt .wixui-box,
+  #comp-mpjvjuos [data-testid="imageX"],
+  #comp-mpjxmose [data-testid="imageX"],
+  #comp-mpjxxeqt [data-testid="imageX"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    left: auto !important;
+    right: auto !important;
+    justify-self: stretch !important;
+    align-self: stretch !important;
+    grid-area: auto !important;
+    box-sizing: border-box;
+  }
+
+  #comp-mpjvjuos .wixui-box,
+  #comp-mpjxmose .wixui-box,
+  #comp-mpjxxeqt .wixui-box,
+  #comp-mpk54qtl,
+  #comp-mpjwnsh1,
+  #comp-mpk4u1bh,
+  #comp-mpjwxij6,
+  #comp-mpjxmote,
+  #comp-mpjxxers6 {
+    box-shadow: none !important;
+    border: 1px solid var(--tsc-hairline-local, rgba(8, 61, 58, 0.12)) !important;
+    border-radius: var(--tsc-btn-radius, 8px);
+    overflow: hidden;
+  }
+
+  /* Course card media — consistent cover crop across all 3 */
+  #comp-mpjvjuos [data-testid="imageX"] img,
+  #comp-mpjxmose [data-testid="imageX"] img,
+  #comp-mpjxxeqt [data-testid="imageX"] img,
+  #comp-mpjvjuos wow-image img,
+  #comp-mpjxmose wow-image img,
+  #comp-mpjxxeqt wow-image img {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Course card CTAs + any injected price chips */
+  #comp-mpjvjuos .wixui-button,
+  #comp-mpjxmose .wixui-button,
+  #comp-mpjxxeqt .wixui-button,
+  #comp-mpjvjuos a[data-testid="linkElement"].wixui-button,
+  #comp-mpjxmose a[data-testid="linkElement"].wixui-button,
+  #comp-mpjxxeqt a[data-testid="linkElement"].wixui-button,
+  #comp-mpjo65qn,
+  #comp-mpjo65qn a,
+  #comp-mpjxmot92,
+  #comp-mpjxmot92 a,
+  #comp-mpjxxert4,
+  #comp-mpjxxert4 a {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: var(--tsc-btn-h, 52px);
+    box-sizing: border-box;
+  }
+
+  #comp-mpjvjuos .tsc-course-price,
+  #comp-mpjxmose .tsc-course-price,
+  #comp-mpjxxeqt .tsc-course-price,
+  #sq4os .tsc-course-price,
+  #g8wij .tsc-course-price {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: var(--tsc-space-8, 8px) 0;
+    padding: 7px 12px;
+    border: 1.5px solid var(--tsc-ink-local, #083d3a);
+    border-radius: 7px;
+    color: var(--tsc-ink-local, #083d3a);
+    background: transparent;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    line-height: 1.2;
+    white-space: nowrap;
+  }

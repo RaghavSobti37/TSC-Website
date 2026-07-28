@@ -1,0 +1,12 @@
+{
+  "page": "you-released-a-song-now-what",
+  "html": "/pages/you-released-a-song-now-what.html",
+  "css": "/css/pages/you-released-a-song-now-what.css",
+  "animations": "/js/pages/you-released-a-song-now-what.animations.js",
+  "generatedAt": "2026-07-28T10:07:32.411Z",
+  "totals": {
+    "assets": 0,
+    "missing": 0
+  },
+  "assetsByType": {}
+}

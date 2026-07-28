@@ -1,0 +1,92 @@
+{
+  "slug": "tsc-mobile-polish",
+  "goal": "Mobile: scale desktop design down first for alignment + readability; home hero keeps UNFOLD word-swap like desktop (smaller). Redesign only when mesh overlaps. No git push.",
+  "createdAt": "2026-07-27T14:40:00.000Z",
+  "updatedAt": "2026-07-28T04:30:00.000Z",
+  "phase": "done",
+  "baseUrl": "http://127.0.0.1:3000",
+  "principles": [
+    "Scale first: fonts, padding, gaps, widths — keep desktop visual language",
+    "Redesign only when necessary (overlap, overflow, unreadable)",
+    "Home hero: swapping words under UNFOLD like desktop, smaller — NOT all 4 lines stacked",
+    "Do not edit other slices' ownsFiles",
+    "No git push / no commit"
+  ],
+  "slices": [
+    {
+      "sliceId": "home",
+      "goal": "Home mobile: restore desktop-style UNFOLD word-swap hero (scaled); aligned body sections; readable type",
+      "ownsFiles": ["public/css/mobile/home.css"],
+      "status": "done",
+      "evidence": "Word-swap slideshow kept (.p9hNc1); letterpress ghosts hidden; scrollW 390; one visible slide.",
+      "blockedReason": ""
+    },
+    {
+      "sliceId": "about",
+      "goal": "About mobile: prefer scale-down; stack only where mesh overlaps; readable Beliefs/Vision/Who-Why",
+      "ownsFiles": ["public/css/mobile/about.css"],
+      "status": "done",
+      "evidence": "Who/Why + Vision/Beliefs stacked; vision opacity 1; scrollW 390.",
+      "blockedReason": ""
+    },
+    {
+      "sliceId": "work",
+      "goal": "Work + MBA mobile: scale case cards/sections; align gutters; readable headlines",
+      "ownsFiles": ["public/css/mobile/work.css"],
+      "status": "done",
+      "evidence": "Case cards stacked full-width; overlaps 0; scrollW 390.",
+      "blockedReason": ""
+    },
+    {
+      "sliceId": "artists",
+      "goal": "Artists hub + Artist Path + artist pages mobile: scale-first alignment + readability",
+      "ownsFiles": ["public/css/mobile/artists.css"],
+      "status": "done",
+      "evidence": "What We Do cards stacked + icons above text; Why/Philosophy/For stacked; Artist Path hero + Program at a Glance repeater stacked (15px); scrollW 390.",
+      "blockedReason": ""
+    },
+    {
+      "sliceId": "learn",
+      "goal": "Learn With TSC / Academy / courses / book-a-call mobile: scale-first, readable forms/cards",
+      "ownsFiles": ["public/css/mobile/learn.css"],
+      "status": "done",
+      "evidence": "Hero/ready/feature stacks; 3 course cards mesh→column; meta chips 2x2; mentor label stacked; scrollW 390.",
+      "blockedReason": ""
+    },
+    {
+      "sliceId": "films",
+      "goal": "Films hub + film pages mobile: scale-first alignment + readability",
+      "ownsFiles": ["public/css/mobile/films.css"],
+      "status": "done",
+      "evidence": "Hero dual headlines stacked; float decor hidden; About Us stacked; scrollW 390.",
+      "blockedReason": ""
+    },
+    {
+      "sliceId": "resources",
+      "goal": "Resources + blog pages mobile: scale-first cards/prose readability",
+      "ownsFiles": ["public/css/mobile/resources.css"],
+      "status": "done",
+      "evidence": "Hub tabs scrollable + 13px; tool cards stacked; blog-1 hero stacked, prev/next hidden; body ~16px; scrollW 390.",
+      "blockedReason": ""
+    }
+  ],
+  "integrationSlice": {
+    "sliceId": "shared-scale",
+    "goal": "Shared mobile scale base (gutters/type/overflow) without breaking page CSS; header readable on phone",
+    "ownsFiles": [
+      "public/css/mobile/_safe-base.css",
+      "public/css/mobile/_tokens.css"
+    ],
+    "runsAfter": ["home", "about", "work", "artists", "learn", "films", "resources"],
+    "status": "done",
+    "evidence": "_safe-base.css present; brace smoke all page CSS ok 2026-07-28."
+  },
+  "testAgent": {
+    "status": "done",
+    "commandsRun": [
+      "node brace/length smoke on home/about/work/artists/learn/films/resources/_safe-base",
+      "browser 390px: home/about/work/artists/artist-path/learn/films/resources/blog-1 scrollW<=390"
+    ],
+    "lastFailure": ""
+  }
+}

@@ -1,0 +1,740 @@
+@import url("./_safe-base.css");
+
+/**
+ * Home mobile — scale desktop hero, keep Wix UNFOLD word-swap.
+ * Slideshow uses grid-area stacking (.p9hNc1); do NOT force all slides visible
+ * or convert the repeater to a flex column.
+ */
+
+@media (max-width: 900px) {
+  #c1dmp,
+  #PAGE_SECTIONSc1dmp {
+    overflow-x: clip;
+    max-width: 100%;
+  }
+
+  #PAGE_SECTIONSc1dmp > section.wixui-section {
+    overflow-x: clip;
+    max-width: 100%;
+  }
+
+  /* Side swirls — faint atmosphere, tucked to corners (ref placement) */
+  #comp-mrgcdx8y,
+  #comp-mrgd8bb6 {
+    display: block !important;
+    visibility: visible !important;
+    position: absolute !important;
+    z-index: 0 !important;
+    height: auto !important;
+    margin: 0 !important;
+    pointer-events: none !important;
+    /* Soft teal atmosphere — present but never loud */
+    opacity: 0.32 !important;
+    filter: saturate(0.85) brightness(0.92) !important;
+  }
+
+  /* Left: larger spiral rising from bottom-left */
+  #comp-mrgcdx8y {
+    left: -6% !important;
+    right: auto !important;
+    top: auto !important;
+    bottom: 18% !important;
+    width: 42% !important;
+    max-width: 168px !important;
+    transform: none !important;
+  }
+
+  /* Right: smaller motif (dot/arch/spiral) near upper-right */
+  #comp-mrgd8bb6 {
+    right: -5% !important;
+    left: auto !important;
+    top: 14% !important;
+    bottom: auto !important;
+    width: 28% !important;
+    max-width: 112px !important;
+    transform: none !important;
+    opacity: 0.28 !important;
+  }
+
+  #comp-mrgcdx8y img,
+  #comp-mrgd8bb6 img,
+  #comp-mrgcdx8y wow-image,
+  #comp-mrgd8bb6 wow-image,
+  #comp-mrgcdx8y picture,
+  #comp-mrgd8bb6 picture {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100% !important;
+    object-fit: contain !important;
+    display: block !important;
+  }
+
+  /* Don't let hero media cover rule squash swirl assets */
+  #comp-mrg6phqn #comp-mrgcdx8y img,
+  #comp-mrg6phqn #comp-mrgd8bb6 img {
+    object-fit: contain !important;
+  }
+
+  /* —— Hero shell: full first viewport under sticky mobile header (72px) —— */
+  #comp-mrg6phqn {
+    position: relative !important;
+    display: flex !important;
+    flex-direction: column !important;
+    min-height: calc(100vh - 72px) !important;
+    min-height: calc(100svh - 72px) !important;
+    min-height: calc(100dvh - 72px) !important;
+    height: auto !important;
+    overflow: hidden !important;
+    /* Cream top edge under sticky header — matches desktop bar cue */
+    border-top: 2px solid #ffecd1 !important;
+  }
+
+  #comp-mrg6phqn [data-hook="bgLayers"],
+  #bgLayers_comp-mrg6phqn,
+  #bgMedia_comp-mrg6phqn {
+    inset: 0 !important;
+  }
+
+  #comp-mrg6phqn img,
+  #comp-mrg6phqn video {
+    object-fit: cover !important;
+  }
+
+  /* Content column: typography stack + CTAs, vertically centered.
+     Only flex top-level hero children — leave slideshow internals alone. */
+  #comp-mrg6phqn .comp-mrg6phqn-container,
+  #comp-mrg6phqn [data-testid="responsive-container-content"].comp-mrg6phqn-container {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: stretch !important;
+    box-sizing: border-box !important;
+    gap: 0 !important;
+    flex: 1 1 auto !important;
+    min-height: calc(100vh - 72px) !important;
+    min-height: calc(100svh - 72px) !important;
+    min-height: calc(100dvh - 72px) !important;
+    height: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 24px 20px 40px !important;
+    position: relative !important;
+    grid-template-rows: none !important;
+    grid-template-columns: none !important;
+  }
+
+  /* Cream UNFOLD kicker — hide on phone; letterpress IS the big UNFOLD (ref) */
+  #comp-mrg8ludo {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+    pointer-events: none !important;
+  }
+
+  /* Large atmospheric letterpress UNFOLD — 1.5× prior visual size, one line */
+  #comp-mrxkm2y2 {
+    display: block !important;
+    visibility: visible !important;
+    position: relative !important;
+    order: 1 !important;
+    z-index: 1 !important;
+    flex: 0 0 auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    left: auto !important;
+    /* Keep layout font that fits one line; scale visual to 1.5× (~93px @390) */
+    transform: scale(1.5) !important;
+    transform-origin: center center !important;
+    top: auto !important;
+    /* Room for scaled overflow so lockup + CTAs stay clear */
+    margin: 1.35rem 0 1.1rem !important;
+    height: auto !important;
+    opacity: 0.42 !important;
+    pointer-events: none !important;
+    overflow: visible !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+  }
+
+  #comp-mrxkm2y2 p,
+  #comp-mrxkm2y2 [data-testid="TextEffectsLetterPress-container"],
+  #comp-mrxkm2y2 [data-testid="TextEffectsLetterPress-text"],
+  #comp-mrxkm2y2 .q2FOjn,
+  #comp-mrxkm2y2 .VZX1DB,
+  #comp-mrxkm2y2 [data-testid="text-effects-shared-pattern-unit"],
+  #comp-mrxkm2y2 [data-text="UNFOLD"] {
+    white-space: nowrap !important;
+    word-break: keep-all !important;
+    overflow-wrap: normal !important;
+  }
+
+  #comp-mrxkm2y2 [data-testid="TextEffectsLetterPress-text"],
+  #comp-mrxkm2y2 .q2FOjn,
+  #comp-mrxkm2y2 .VZX1DB,
+  #comp-mrxkm2y2 [data-testid="text-effects-shared-pattern-unit"] {
+    /* Base size fits one line; visual = this × 1.5 via parent transform */
+    font-size: clamp(2.8rem, 16vw, 4.25rem) !important;
+    line-height: 1 !important;
+    letter-spacing: -0.05em !important;
+    text-transform: uppercase !important;
+    font-weight: 700 !important;
+    font-style: normal !important;
+    color: #c8d5c4 !important;
+    white-space: nowrap !important;
+  }
+
+  /* If cream UNFOLD kicker ever shown — also one line */
+  #comp-mrg8ludo,
+  #comp-mrg8ludo .wixui-rich-text__text {
+    white-space: nowrap !important;
+  }
+
+  /* Word-swap — cream italic over LOWER HALF of scaled UNFOLD */
+  #comp-mrxl8fxe,
+  #comp-mrg8g76o {
+    position: relative !important;
+    order: 2 !important;
+    z-index: 2 !important;
+    flex: 0 0 auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    left: auto !important;
+    top: auto !important;
+    /* Deeper pull to sit on lower half of 1.5× UNFOLD */
+    margin: -4.6rem 0 0 !important;
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+  }
+
+  #comp-mrxl8fxe > .inner-box,
+  #comp-mrxl8fxe > .jdJeEr {
+    display: none !important;
+  }
+
+  /* Keep Wix slideshow overflow + grid stacking intact */
+  #comp-mrg8g76o-overflow-wrapper,
+  #comp-mrg8g76o .comp-mrg8g76o-overflow-wrapper,
+  #comp-mrg8g76o .comp-mrg8g76o-container {
+    position: relative !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: clip !important;
+  }
+
+  #comp-mrg8g774,
+  #comp-mrg8g774 .comp-mrg8g774-container {
+    position: relative !important;
+    display: grid !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    /* Single track so .p9hNc1 grid-area:1/1/2/2 stacks slides */
+    grid-template-columns: 1fr !important;
+    grid-template-rows: auto !important;
+    overflow: clip !important;
+  }
+
+  /* Do NOT force display/visibility/opacity — Wix toggles .xjQkF3 / .fABPvj */
+  #comp-mrg8g774 .p9hNc1 {
+    grid-area: 1 / 1 / 2 / 2 !important;
+    width: 100% !important;
+    min-height: 0 !important;
+  }
+
+  #comp-mrg8g774 [id^="comp-mrg8g77c__item-"] {
+    position: relative !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    left: auto !important;
+    top: auto !important;
+    margin: 0 !important;
+  }
+
+  #comp-mrg8g774 [id^="comp-mrg8g77k6__item-"] {
+    position: relative !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    left: auto !important;
+    top: auto !important;
+    margin: 0 !important;
+  }
+
+  /* Cream italic switching phrase — crisp over atmospheric UNFOLD */
+  #comp-mrg8g774 [data-testid="richTextElement"] .wixui-rich-text__text,
+  #comp-mrg8g77k6__item-mp3ozw9b .wixui-rich-text__text,
+  #comp-mrg8g77k6__item-mrg8jnrt .wixui-rich-text__text,
+  #comp-mrg8g77k6__item-mrg8klt9 .wixui-rich-text__text,
+  #comp-mrg8g77k6__item-mrg8knii1 .wixui-rich-text__text {
+    font-size: clamp(1.9rem, 8.8vw, 2.55rem) !important;
+    line-height: 1.08 !important;
+    letter-spacing: -0.01em !important;
+    font-style: italic !important;
+    font-weight: 700 !important;
+    color: #ffecd1 !important;
+    text-align: center !important;
+    text-shadow: none !important;
+    opacity: 1 !important;
+  }
+
+  /* Hide slideshow chrome arrows on mobile */
+  #comp-mrg8g77p,
+  #comp-mrg8g77t {
+    display: none !important;
+  }
+
+  /* CTA cluster — keep existing mobile layout */
+  #comp-mrjlvhv6 {
+    position: relative !important;
+    order: 3 !important;
+    z-index: 3 !important;
+    flex: 0 0 auto !important;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 8px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    left: auto !important;
+    top: auto !important;
+    margin: 28px 0 0 !important;
+    height: auto !important;
+    min-height: 0 !important;
+    padding: 0 !important;
+    grid-template-rows: none !important;
+  }
+
+  #comp-mrjlvhv6 .inner-box,
+  #comp-mrjlvhv6 .jdJeEr {
+    display: none !important;
+  }
+
+  #comp-mrgdrumi,
+  #comp-mrgdvny2,
+  #comp-mrgdw3uq,
+  #comp-mrgdw3wu {
+    position: relative !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: 44px !important;
+    height: 44px !important;
+    left: auto !important;
+    top: auto !important;
+    margin: 0 !important;
+    flex: 0 0 auto !important;
+  }
+
+  #comp-mrgdrumi a,
+  #comp-mrgdvny2 a,
+  #comp-mrgdw3uq a,
+  #comp-mrgdw3wu a,
+  #comp-mrgdrumi .wixui-button,
+  #comp-mrgdvny2 .wixui-button,
+  #comp-mrgdw3uq .wixui-button,
+  #comp-mrgdw3wu .wixui-button {
+    width: 100% !important;
+    min-height: 44px !important;
+    height: 44px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  #comp-mrgdrumi .wixui-button__label,
+  #comp-mrgdvny2 .wixui-button__label,
+  #comp-mrgdw3uq .wixui-button__label,
+  #comp-mrgdw3wu .wixui-button__label {
+    font-size: 14px !important;
+    letter-spacing: 0.02em !important;
+    white-space: nowrap !important;
+  }
+
+  /* —— Cream body prose (adjacent card, leave readable) —— */
+  #comp-mrjaqh4x .wixui-rich-text__text {
+    font-size: 16px !important;
+    line-height: 1.55 !important;
+  }
+
+  /* —— Orange mission card: full usable width —— */
+  #comp-mrjghajj {
+    box-sizing: border-box !important;
+    width: calc(100% - 32px) !important;
+    max-width: calc(100% - 32px) !important;
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+    padding: 22px 18px 26px !important;
+    left: auto !important;
+    top: auto !important;
+    margin: 8px 16px 16px !important;
+    justify-self: center !important;
+  }
+
+  #comp-mrjghajj .comp-mrjghajj-container,
+  #comp-mrjghajj [data-testid="responsive-container-content"] {
+    box-sizing: border-box !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    padding: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    grid-template-rows: none !important;
+    grid-template-columns: none !important;
+  }
+
+  #comp-mrjf9qo2 {
+    position: relative !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    left: auto !important;
+    top: auto !important;
+    justify-self: stretch !important;
+    align-self: stretch !important;
+    grid-area: auto !important;
+  }
+
+  /* Beat Wix #comp-mrjf9qo2 :is(p,…) font-size !important (spx → ~6px) */
+  #comp-mrjf9qo2 p.wixui-rich-text__text,
+  #comp-mrjf9qo2 .wixui-rich-text__text {
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+    max-width: none !important;
+    width: 100% !important;
+  }
+
+  #comp-mrjf9qo2 p.wixui-rich-text__text {
+    margin: 0 0 0.85em !important;
+  }
+
+  #comp-mrjf9qo2 p.wixui-rich-text__text:last-child {
+    margin-bottom: 0 !important;
+  }
+
+  /* Drop Wix spacer paras — our margins handle rhythm */
+  #comp-mrjf9qo2 p.wixui-rich-text__text:has(.wixGuard) {
+    display: none !important;
+  }
+
+  /* Pull-quote: own block, clear hierarchy from body */
+  #comp-mrjf9qo2 p.wixui-rich-text__text span[style*="italic"],
+  #comp-mrjf9qo2 span[style*="italic"] {
+    display: block !important;
+    margin-top: 1em !important;
+    font-size: 19px !important;
+    line-height: 1.35 !important;
+    font-weight: 600 !important;
+  }
+
+  #PAGE_SECTIONSc1dmp [data-testid="richTextElement"] .wixui-rich-text__text {
+    font-size: 15px;
+    line-height: 1.55;
+  }
+
+  /* —— Hide oversized rust logo / wordmark block (after hero, not hero) —— */
+  #comp-mrjg30g2,
+  #comp-mrjg30g2 .comp-mrjg30g2-container,
+  #comp-mrge27je,
+  #comp-mrjgzlnw {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    min-height: 0 !important;
+    max-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    pointer-events: none !important;
+  }
+
+  /* —— What We Build: kill Wix grid-area:1/1/2/2 overlap —— */
+  #comp-mrjla1pr {
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+  }
+
+  #comp-mrjla1pr .comp-mrjla1pr-container,
+  #comp-mrjla1pr [data-testid="responsive-container-content"].comp-mrjla1pr-container {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 14px !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    height: auto !important;
+    min-height: 0 !important;
+    padding: 28px 20px 36px !important;
+    position: relative !important;
+    grid-template-rows: none !important;
+    grid-template-columns: none !important;
+  }
+
+  #comp-mrjla1pr .comp-mrjla1pr-container > [id^="comp-"],
+  #comp-mrjla1pr [data-testid="responsive-container-content"].comp-mrjla1pr-container > [id^="comp-"] {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    place-self: center !important;
+    grid-area: auto !important;
+    height: auto !important;
+    min-height: 0 !important;
+    transform: none !important;
+    justify-self: center !important;
+    align-self: stretch !important;
+  }
+
+  /* Title first, then cards */
+  #comp-mrlqkj5b { order: 1 !important; }
+  #comp-mrlr0ide { order: 2 !important; } /* TSC Academy */
+  #comp-mrlrorgn { order: 3 !important; } /* Artist Development */
+  #comp-mrlrqzuf { order: 4 !important; } /* IP Development */
+  #comp-mrlrv5ly { order: 5 !important; } /* Community */
+  #comp-mrlrv5on { order: 6 !important; } /* Brand */
+
+  #comp-mrlqkj5b .wixui-rich-text__text {
+    font-size: clamp(1.5rem, 7vw, 2rem) !important;
+    line-height: 1.15 !important;
+    text-align: center !important;
+  }
+
+  /* Each build card: vertical stack, everything centered */
+  #comp-mrlr0ide,
+  #comp-mrlrorgn,
+  #comp-mrlrqzuf,
+  #comp-mrlrv5ly,
+  #comp-mrlrv5on {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    gap: 12px !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    padding: 24px 20px !important;
+    overflow: visible !important;
+    height: auto !important;
+    min-height: 180px !important;
+    grid-template-columns: none !important;
+    grid-template-rows: none !important;
+  }
+
+  #comp-mrlr0ide > .inner-box,
+  #comp-mrlr0ide > .jdJeEr,
+  #comp-mrlrorgn > .inner-box,
+  #comp-mrlrorgn > .jdJeEr,
+  #comp-mrlrqzuf > .inner-box,
+  #comp-mrlrqzuf > .jdJeEr,
+  #comp-mrlrv5ly > .inner-box,
+  #comp-mrlrv5ly > .jdJeEr,
+  #comp-mrlrv5on > .inner-box,
+  #comp-mrlrv5on > .jdJeEr {
+    position: absolute !important;
+    inset: 0 !important;
+    pointer-events: none !important;
+    grid-area: unset !important;
+  }
+
+  #comp-mrlr0ide > [id^="comp-"],
+  #comp-mrlrorgn > [id^="comp-"],
+  #comp-mrlrqzuf > [id^="comp-"],
+  #comp-mrlrv5ly > [id^="comp-"],
+  #comp-mrlrv5on > [id^="comp-"] {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    margin: 0 !important;
+    height: auto !important;
+    min-height: 0 !important;
+    transform: none !important;
+    grid-area: auto !important;
+    grid-column: auto !important;
+    grid-row: auto !important;
+    justify-self: center !important;
+    align-self: center !important;
+    flex: 0 0 auto !important;
+  }
+
+  /* CTAs share flow resets but keep tap-target min-height */
+  #comp-mrlr0ide > .tsc-wwb-cta,
+  #comp-mrlrorgn > .tsc-wwb-cta,
+  #comp-mrlrqzuf > .tsc-wwb-cta,
+  #comp-mrlrv5ly > .tsc-wwb-cta,
+  #comp-mrlrv5on > .tsc-wwb-cta {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    margin: 4px 0 0 !important;
+    height: auto !important;
+    min-height: 44px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    transform: none !important;
+    grid-area: auto !important;
+    grid-column: auto !important;
+    grid-row: auto !important;
+    justify-self: stretch !important;
+    align-self: stretch !important;
+    flex: 0 0 auto !important;
+    order: 4 !important;
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    z-index: 2 !important;
+  }
+
+  /* Icons — above title */
+  #comp-mrlrm6bo,
+  #comp-mrlrorgr,
+  #comp-mrlrqzui,
+  #comp-mrlrv5m1,
+  #comp-mrlrv5or {
+    order: 1 !important;
+    width: 32px !important;
+    max-width: 32px !important;
+    height: 32px !important;
+    aspect-ratio: 1 / 1 !important;
+    margin: 0 0 4px !important;
+  }
+
+  /* Titles */
+  #comp-mrlr5wyx,
+  #comp-mrlrorgt,
+  #comp-mrlrqzuk,
+  #comp-mrlrv5m3,
+  #comp-mrlrv5os5 {
+    order: 2 !important;
+    width: auto !important;
+    max-width: 100% !important;
+  }
+
+  /* Descriptions */
+  #comp-mrlrks9u,
+  #comp-mrlrorgv,
+  #comp-mrlrqzul6,
+  #comp-mrlrv5m5,
+  #comp-mrlrv5ou3 {
+    order: 3 !important;
+    width: 80% !important;
+    max-width: 80% !important;
+  }
+
+  .tsc-wwb-cta {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: 44px !important;
+    padding: 10px 16px !important;
+    margin: 4px 0 0 !important;
+    border: none !important;
+    border-radius: 4px !important;
+    background: var(--tsc-cream, #ffecd1) !important;
+    color: var(--tsc-deep-teal, #083d3a) !important;
+    font-family: "Madefor-Text", "Wix Madefor Text", system-ui, sans-serif !important;
+    font-size: 12.5px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.04em !important;
+    line-height: 1.2 !important;
+    text-align: center !important;
+    text-decoration: none !important;
+    text-transform: uppercase !important;
+    white-space: normal !important;
+    overflow: visible !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    z-index: 2 !important;
+  }
+
+  #comp-mrlr0ide .wixui-rich-text__text,
+  #comp-mrlrorgn .wixui-rich-text__text,
+  #comp-mrlrqzuf .wixui-rich-text__text,
+  #comp-mrlrv5ly .wixui-rich-text__text,
+  #comp-mrlrv5on .wixui-rich-text__text {
+    text-align: center !important;
+    overflow-wrap: break-word !important;
+    word-break: normal !important;
+    margin: 0 !important;
+  }
+
+  #comp-mrlr5wyx .wixui-rich-text__text,
+  #comp-mrlrorgt .wixui-rich-text__text,
+  #comp-mrlrqzuk .wixui-rich-text__text,
+  #comp-mrlrv5m3 .wixui-rich-text__text,
+  #comp-mrlrv5os5 .wixui-rich-text__text {
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    line-height: 1.2 !important;
+    letter-spacing: 0.05em !important;
+    text-transform: uppercase !important;
+    text-align: center !important;
+  }
+
+  #comp-mrlrks9u .wixui-rich-text__text,
+  #comp-mrlrorgv .wixui-rich-text__text,
+  #comp-mrlrqzul6 .wixui-rich-text__text,
+  #comp-mrlrv5m5 .wixui-rich-text__text,
+  #comp-mrlrv5ou3 .wixui-rich-text__text {
+    font-size: 13px !important;
+    line-height: 1.5 !important;
+    font-weight: 400 !important;
+    text-align: center !important;
+  }
+
+  /* Hide cream CTA strip — actions moved into cards */
+  #comp-mrlvc9w0,
+  #comp-mrly0a39,
+  #comp-mrly1hv0,
+  #comp-mrly1u79,
+  #comp-mrly2iho {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    pointer-events: none !important;
+  }
+
+  footer input[type="email"] {
+    font-size: 16px !important;
+    min-height: 48px !important;
+  }
+}
+
+@media (min-width: 391px) and (max-width: 430px) {
+  #comp-mrg6phqn .comp-mrg6phqn-container,
+  #comp-mrg6phqn [data-testid="responsive-container-content"].comp-mrg6phqn-container {
+    padding-inline: 24px !important;
+  }
+}

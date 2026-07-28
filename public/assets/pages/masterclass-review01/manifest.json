@@ -1,0 +1,35 @@
+{
+  "page": "masterclass-review01",
+  "html": "/pages/masterclass-review01.html",
+  "css": "/css/pages/masterclass-review01.css",
+  "animations": "/js/pages/masterclass-review01.animations.js",
+  "generatedAt": "2026-07-28T10:07:32.355Z",
+  "totals": {
+    "assets": 2,
+    "missing": 0
+  },
+  "assetsByType": {
+    "styles": [
+      {
+        "type": "styles",
+        "url": "/css/pages/masterclass-review01.css",
+        "local": {
+          "exists": true,
+          "path": "/css/pages/masterclass-review01.css",
+          "bytes": 31
+        }
+      }
+    ],
+    "scripts": [
+      {
+        "type": "scripts",
+        "url": "/js/pages/masterclass-review01.animations.js",
+        "local": {
+          "exists": true,
+          "path": "/js/pages/masterclass-review01.animations.js",
+          "bytes": 5432
+        }
+      }
+    ]
+  }
+}

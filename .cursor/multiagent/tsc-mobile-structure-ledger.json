@@ -1,0 +1,242 @@
+{
+    "slug":  "tsc-mobile-structure",
+    "goal":  "Apply full-site mobile design spec, restructure cryptic Wix folders into readable site tree, improve sitemap/robots Ã¢â‚¬â€ no git push",
+    "createdAt":  "2026-07-27T12:30:00.000Z",
+    "phase":  "complete",
+    "baseUrl":  "https://wix-site-clone-psi.vercel.app",
+    "slices":  [
+                   {
+                       "sliceId":  "structure",
+                       "goal":  "Restructure public into readable nested site tree; remove blank-/about-N/workN stub folders; keep legacy aliases via vercel redirects",
+                       "persona":  "/software-architect + /minimal-change-engineer",
+                       "ownsFiles":  [
+                                         "public/site/**",
+                                         "public/pages/routes.manifest.json",
+                                         "docs/SITE_STRUCTURE.md",
+                                         "scripts/restructure-site-tree.js",
+                                         "scripts/generate-subpage-shells.js",
+                                         "scripts/serve-mirror.js",
+                                         "scripts/build.js",
+                                         "vercel.json",
+                                         "public/blank-*/**",
+                                         "public/about-*/**",
+                                         "public/work0*/**",
+                                         "public/work2*/**",
+                                         "public/work3*/**",
+                                         "public/query/**",
+                                         "public/*/index.html"
+                                     ],
+                       "forbiddenFiles":  [
+                                              "public/css/mobile/**",
+                                              "public/css/tsc-mobile-system.css",
+                                              "public/js/tsc-mobile-system.js",
+                                              "public/robots.txt",
+                                              "public/sitemap.xml",
+                                              "public/sitemap-*.xml"
+                                          ],
+                       "verifyCommands":  [
+                                              "node -e \"const fs=require(\u0027fs\u0027); const m=JSON.parse(fs.readFileSync(\u0027public/pages/routes.manifest.json\u0027,\u0027utf8\u0027)); console.log(\u0027routes\u0027, m.allRoutes.length);\"",
+                                              "node -e \"const fs=require(\u0027fs\u0027); const bad=[\u0027blank-6\u0027,\u0027blank-7\u0027,\u0027blank-8\u0027,\u0027about-8\u0027,\u0027work0\u0027,\u0027work2\u0027,\u0027work3\u0027]; for (const d of bad){ if(fs.existsSync(\u0027public/\u0027+d)) { console.error(\u0027STILL EXISTS\u0027, d); process.exit(1);} } console.log(\u0027cryptic stubs removed\u0027);\""
+                                          ],
+                       "status":  "done",
+                       "workerAgentId":  "ff5d7920-7164-49e9-9ef0-b4c32bc10a4d",
+                       "evidence":  "public/site/** (30 meta.json + READMEs); cryptic stubs deleted (31 dirs: blank-*, about-8/9*, work0/2/3*, query/); vercel.json 30x301 + nested rewrites; routes.manifest allRoutes=30 aliases=54; serve-mirror resolves primary+subpage aliases; scripts/restructure-site-tree.js; docs/SITE_STRUCTURE.md. Verify: routes 30; cryptic stubs removed; site README lists primaries.",
+                       "blockedReason":  ""
+                   },
+                   {
+                       "sliceId":  "seo",
+                       "goal":  "Expand robots.txt + sitemap(s) to cover every canonical page and nested site routes",
+                       "persona":  "/seo-specialist",
+                       "ownsFiles":  [
+                                         "public/robots.txt",
+                                         "public/sitemap.xml",
+                                         "public/sitemap-pages.xml",
+                                         "public/sitemap-index.xml"
+                                     ],
+                       "forbiddenFiles":  [
+                                              "public/site/**",
+                                              "public/css/**",
+                                              "vercel.json"
+                                          ],
+                       "verifyCommands":  [
+                                              "node -e \"const fs=require(\u0027fs\u0027); const m=JSON.parse(fs.readFileSync(\u0027public/pages/routes.manifest.json\u0027,\u0027utf8\u0027)); const pages=fs.readFileSync(\u0027public/sitemap-pages.xml\u0027,\u0027utf8\u0027); const base=\u0027https://wix-site-clone-psi.vercel.app\u0027; const locs=[...pages.matchAll(/\u003cloc\u003e([^\u003c]+)\u003c\\/loc\u003e/g)].map(x=\u003ex[1]); const listed=new Set(locs.map(u=\u003eu===base+\u0027/\u0027||u===base?\u0027/\u0027:u.replace(base,\u0027\u0027))); const missing=m.allRoutes.filter(r=\u003e!listed.has(r)); console.log(missing.length? \u0027MISSING \u0027+missing.join(\u0027,\u0027):\u0027all routes in sitemap (\u0027+m.allRoutes.length+\u0027)\u0027);\""
+                                          ],
+                       "status":  "done",
+                       "workerAgentId":  "443e9df3-0bc3-4973-b076-780dde7ca9ff",
+                       "evidence":  "robots.txt allows major crawlers + AI bots; Sitemap -\u003e sitemap.xml + sitemap-index.xml. Both indexes point to sitemap-pages.xml. All 30 allRoutes canonical locs present (lastmod 2026-07-27); no blank-/about-N/workN aliases. Verify: allRoutes 30, sitemap locs 30, all routes in sitemap-pages.",
+                       "blockedReason":  ""
+                   },
+                   {
+                       "sliceId":  "global-ds",
+                       "goal":  "Ship Part A global mobile design system: tokens, kicker, buttons, card, nav takeover, sticky CTA, progress rail",
+                       "persona":  "/ux-architect + /frontend-developer",
+                       "ownsFiles":  [
+                                         "public/css/tsc-mobile-system.css",
+                                         "public/js/tsc-mobile-system.js",
+                                         "public/css/mobile/_tokens.css"
+                                     ],
+                       "forbiddenFiles":  [
+                                              "public/css/mobile/home.css",
+                                              "public/css/mobile/about.css",
+                                              "public/css/mobile/work.css",
+                                              "public/css/mobile/artists.css",
+                                              "public/css/mobile/films.css",
+                                              "public/css/mobile/resources.css",
+                                              "public/css/mobile/learn.css",
+                                              "public/robots.txt",
+                                              "vercel.json"
+                                          ],
+                       "verifyCommands":  [
+                                              "node -e \"const fs=require(\u0027fs\u0027); for (const f of [\u0027public/css/tsc-mobile-system.css\u0027,\u0027public/js/tsc-mobile-system.js\u0027]) { if(!fs.existsSync(f)) process.exit(1); } const c=fs.readFileSync(\u0027public/css/tsc-mobile-system.css\u0027,\u0027utf8\u0027); for (const t of [\u0027--tsc-gutter\u0027,\u0027tsc-kicker\u0027,\u0027tsc-btn-primary\u0027,\u0027tsc-nav-takeover\u0027,\u0027tsc-sticky-cta\u0027,\u0027tsc-progress-rail\u0027]) { if(!c.includes(t)) { console.error(\u0027missing\u0027,t); process.exit(1);} } console.log(\u0027global-ds ok\u0027);\""
+                                          ],
+                       "status":  "done",
+                       "workerAgentId":  "c30567e1-0acc-43a9-9ef1-4ac542a09c50",
+                       "evidence":  "Created public/css/mobile/_tokens.css, public/css/tsc-mobile-system.css, public/js/tsc-mobile-system.js. Verify: global-ds ok.",
+                       "blockedReason":  ""
+                   },
+                   {
+                       "sliceId":  "home-mobile",
+                       "goal":  "Part B.1 Home mobile CSS per spec",
+                       "persona":  "/frontend-developer",
+                       "ownsFiles":  [
+                                         "public/css/mobile/home.css"
+                                     ],
+                       "forbiddenFiles":  [
+                                              "public/css/tsc-mobile-system.css",
+                                              "public/css/mobile/about.css",
+                                              "public/css/mobile/work.css",
+                                              "public/css/mobile/artists.css",
+                                              "public/css/mobile/films.css",
+                                              "public/css/mobile/resources.css",
+                                              "public/css/mobile/learn.css"
+                                          ],
+                       "verifyCommands":  [
+                                              "node -e \"const fs=require(\u0027fs\u0027); const c=fs.readFileSync(\u0027public/css/mobile/home.css\u0027,\u0027utf8\u0027); if(!c.includes(\u0027@media\u0027)||c.length\u003c500) process.exit(1); console.log(\u0027home-mobile ok\u0027, c.length);\""
+                                          ],
+                       "status":  "done",
+                       "workerAgentId":  "b9d47db9-6f07-4095-b169-43ee1565d897",
+                       "evidence":  "public/css/mobile/home.css len=20028 has @media",
+                       "blockedReason":  ""
+                   },
+                   {
+                       "sliceId":  "artists-mobile",
+                       "goal":  "Parts B.4Ã¢â‚¬â€œB.6 Artists hub, TSC Artists, Artist Path mobile CSS",
+                       "persona":  "/frontend-developer",
+                       "ownsFiles":  [
+                                         "public/css/mobile/artists.css"
+                                     ],
+                       "forbiddenFiles":  [
+                                              "public/css/mobile/home.css",
+                                              "public/css/mobile/learn.css",
+                                              "public/css/tsc-mobile-system.css"
+                                          ],
+                       "verifyCommands":  [
+                                              "node -e \"const fs=require(\u0027fs\u0027); const c=fs.readFileSync(\u0027public/css/mobile/artists.css\u0027,\u0027utf8\u0027); if(!c.includes(\u0027@media\u0027)||c.length\u003c400) process.exit(1); console.log(\u0027artists-mobile ok\u0027, c.length);\""
+                                          ],
+                       "status":  "done",
+                       "workerAgentId":  "7864e436-5b6c-4ba1-bd8f-bd565feac788",
+                       "evidence":  "public/css/mobile/artists.css created (B.4 hub route blocks, B.5 roster, B.6 path 85vh snap). verify: artists-mobile ok 11166",
+                       "blockedReason":  ""
+                   },
+                   {
+                       "sliceId":  "learn-mobile",
+                       "goal":  "Parts B.7 Learn With TSC + Academy conversion mobile CSS (full-width sticky CTA override)",
+                       "persona":  "/frontend-developer",
+                       "ownsFiles":  [
+                                         "public/css/mobile/learn.css"
+                                     ],
+                       "forbiddenFiles":  [
+                                              "public/css/mobile/home.css",
+                                              "public/css/mobile/artists.css",
+                                              "public/css/tsc-mobile-system.css"
+                                          ],
+                       "verifyCommands":  [
+                                              "node -e \"const fs=require(\u0027fs\u0027); const c=fs.readFileSync(\u0027public/css/mobile/learn.css\u0027,\u0027utf8\u0027); if(!c.includes(\u0027sticky\u0027)\u0026\u0026!c.includes(\u0027tsc-sticky\u0027)) { console.error(\u0027need sticky CTA override\u0027); process.exit(1);} console.log(\u0027learn-mobile ok\u0027, c.length);\""
+                                          ],
+                       "status":  "done",
+                       "workerAgentId":  "5ca59a65-8563-4961-9f6e-3231e4f288b7",
+                       "evidence":  "public/css/mobile/learn.css created; verify: learn-mobile ok 14719 (sticky + tsc-sticky-cta full-width primary selectors present)",
+                       "blockedReason":  ""
+                   },
+                   {
+                       "sliceId":  "portfolio-mobile",
+                       "goal":  "Parts B.3 Work + B.8 Films mobile list/card/filter pattern",
+                       "persona":  "/frontend-developer",
+                       "ownsFiles":  [
+                                         "public/css/mobile/work.css",
+                                         "public/css/mobile/films.css"
+                                     ],
+                       "forbiddenFiles":  [
+                                              "public/css/mobile/home.css",
+                                              "public/css/mobile/resources.css",
+                                              "public/css/tsc-mobile-system.css"
+                                          ],
+                       "verifyCommands":  [
+                                              "node -e \"const fs=require(\u0027fs\u0027); for (const f of [\u0027public/css/mobile/work.css\u0027,\u0027public/css/mobile/films.css\u0027]) { const c=fs.readFileSync(f,\u0027utf8\u0027); if(c.length\u003c300) process.exit(1);} console.log(\u0027portfolio-mobile ok\u0027);\""
+                                          ],
+                       "status":  "done",
+                       "workerAgentId":  "acd90fea-ea94-445c-b445-f25f8b91a051",
+                       "evidence":  "work.css + films.css created; verify \u003e300 chars passed",
+                       "blockedReason":  ""
+                   },
+                   {
+                       "sliceId":  "content-mobile",
+                       "goal":  "Parts B.2 About + B.9 Resources mobile editorial list pattern",
+                       "persona":  "/frontend-developer",
+                       "ownsFiles":  [
+                                         "public/css/mobile/about.css",
+                                         "public/css/mobile/resources.css"
+                                     ],
+                       "forbiddenFiles":  [
+                                              "public/css/mobile/work.css",
+                                              "public/css/mobile/films.css",
+                                              "public/css/tsc-mobile-system.css"
+                                          ],
+                       "verifyCommands":  [
+                                              "node -e \"const fs=require(\u0027fs\u0027); for (const f of [\u0027public/css/mobile/about.css\u0027,\u0027public/css/mobile/resources.css\u0027]) { const c=fs.readFileSync(f,\u0027utf8\u0027); if(c.length\u003c300) process.exit(1);} console.log(\u0027content-mobile ok\u0027);\""
+                                          ],
+                       "status":  "done",
+                       "workerAgentId":  "87e13715-0750-4e01-a584-e7e351b88eab",
+                       "evidence":  "about.css 3756 chars; resources.css 4845 chars; verify: content-mobile ok",
+                       "blockedReason":  ""
+                   }
+               ],
+    "integrationSlice":  {
+                             "sliceId":  "wire-mobile-and-tree",
+                             "goal":  "Inject mobile system + page CSS into page HTML shells; align nested routes; ensure alias redirects work; no push",
+                             "ownsFiles":  [
+                                               "scripts/inject-mobile-assets.js",
+                                               "public/pages/*.html",
+                                               "public/js/content-data.js",
+                                               "docs/SITE_STRUCTURE.md"
+                                           ],
+                             "runsAfter":  [
+                                               "structure",
+                                               "seo",
+                                               "global-ds",
+                                               "home-mobile",
+                                               "artists-mobile",
+                                               "learn-mobile",
+                                               "portfolio-mobile",
+                                               "content-mobile"
+                                           ],
+                             "status":  "done",
+                             "workerAgentId":  "wire-mobile-and-tree",
+                             "evidence":  "Runtime wire in public/js/tsc-components.js wireMobileAssets(): loads tsc-mobile-system.css (+tokens via @import), page css/mobile/*.css by pathname, tsc-mobile-system.js once; sets body[data-page] (learn/courses→learn-with-tsc); injects .tsc-sticky-cta (--full+/book-a-call on learn paths). No inject-mobile-assets.js (YAGNI). docs/SITE_STRUCTURE.md Mobile CSS map added. Sitemap left at 30 canonicals (nested vercel rewrites are aliases). Verify: wire present; integration assets wired; node scripts/build.js → Static build verified: 60 HTML pages."
+                         },
+    "testAgent":  {
+                      "status":  "pass",
+                      "commandsRun":  [
+                                          "node scripts/build.js → exit 0; Static build verified: 60 HTML pages",
+                                          "stub dirs blank-6/7/8, about-8*, work0/2/3, query → PASS cryptic stubs removed",
+                                          "required files (site README, SITE_STRUCTURE, robots/sitemaps, tsc-mobile-system, css/mobile/*) → PASS",
+                                          "tsc-components.js wireMobileAssets + tsc-mobile-system.css/js + css/mobile/ → PASS",
+                                          "allRoutes 30 vs sitemap-pages.xml locs 30 → PASS all routes in sitemap",
+                                          "global-ds token strings + slice CSS verifies (home/artists/learn/portfolio/content) → PASS",
+                                          "serve-mirror :3456 smoke: /, /about, /work, /artists, /artist-path, /learn-with-tsc, /films, /resources, /academy → 200",
+                                          "/blank-8 + /about-8 → 200 via serve-mirror alias to /book-a-call (vercel.json permanent:true 301 to /book-a-call)",
+                                          "HTML chain: each primary loads /js/pages/*.animations.js which injects /js/tsc-components.js; assets /css/tsc-mobile-system.css /js/tsc-mobile-system.js /css/mobile/home.css /js/tsc-components.js → 200"
+                                      ],
+                      "lastFailure":  ""
+                  }
+}

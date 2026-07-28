@@ -1,0 +1,127 @@
+/**
+ * TSC mobile design tokens (Part A)
+ * Brand: cream #FFECD1, deep teal #083D3A, forest #126D5E,
+ *        oxblood #3A1212, terracotta #B74B02, clay #B64D26
+ */
+
+:root {
+  /* Raw brand */
+  --tsc-cream: #ffecd1;
+  --tsc-deep-teal: #083d3a;
+  --tsc-forest: #126d5e;
+  --tsc-oxblood: #3a1212;
+  --tsc-terracotta: #b74b02;
+  --tsc-clay: #b64d26;
+
+  /* Roles — dark editorial default (nav takeover / cinematic pages) */
+  --tsc-bg-primary: #083d3a;
+  --tsc-bg-elevated: #0e4f4b;
+  --tsc-ink-primary: #ffecd1;
+  --tsc-ink-muted: rgba(255, 236, 209, 0.68);
+  --tsc-accent: #b74b02;
+  --tsc-hairline: rgba(255, 236, 209, 0.12);
+
+  /* Spacing scale (4–96) */
+  --tsc-space-4: 4px;
+  --tsc-space-8: 8px;
+  --tsc-space-12: 12px;
+  --tsc-space-16: 16px;
+  --tsc-space-24: 24px;
+  --tsc-space-32: 32px;
+  --tsc-space-48: 48px;
+  --tsc-space-64: 64px;
+  --tsc-space-96: 96px;
+
+  /* Gutters: 20 on ≤390px, 24 on 391–430+ (within mobile) */
+  --tsc-gutter: 20px;
+  --tsc-section-pad-y: 64px;
+
+  /* Type clamps / sizes */
+  --tsc-type-display: clamp(2.25rem, 9vw, 3rem);
+  --tsc-type-display-lh: 1.05;
+  --tsc-type-display-track: -0.01em;
+
+  --tsc-type-stage: clamp(1.75rem, 7vw, 2.25rem);
+  --tsc-type-stage-lh: 1.1;
+  --tsc-type-stage-track: -0.005em;
+
+  --tsc-type-kicker: 12px;
+  --tsc-type-kicker-lh: 1.2;
+  --tsc-type-kicker-track: 0.1em;
+
+  --tsc-type-lede: 18px;
+  --tsc-type-lede-lh: 1.45;
+
+  --tsc-type-body: 16px;
+  --tsc-type-body-lh: 1.6;
+
+  --tsc-type-meta: 13px;
+  --tsc-type-meta-lh: 1.4;
+  --tsc-type-meta-track: 0.02em;
+
+  --tsc-type-nav: 28px;
+  --tsc-type-nav-lh: 1.15;
+  --tsc-type-nav-track: 0.01em;
+
+  --tsc-type-nav-sub: 20px;
+
+  --tsc-prose-max: 34ch;
+
+  /* Font slots — existing site faces */
+  --tsc-font-display: signika, "Signika", Georgia, serif;
+  --tsc-font-body: "Madefor-Text", "Wix Madefor Text", system-ui, sans-serif;
+  --tsc-font-alan: wfont_834fa9_d08c6fe9ca9b47ccb21ecdcb74412010, wf_d08c6fe9ca9b47ccb21ecdcb7, orig_alan_sans_light, "Alan Sans", sans-serif;
+
+  /*
+   * Breakpoints — documentation + JS-friendly tokens.
+   * CSS media queries cannot use custom props in all browsers — keep px
+   * literals in @media, but ONLY use this documented set:
+   *   xs 480 / sm 600 / md 700 / lg 900 / xl 1000 / 2xl 1120 / 3xl 1500
+   * Adjacent pairs (no gap, no overlap):
+   *   max-width:900 ↔ min-width:901  (--tsc-bp-lg)
+   *   max-width:1000 ↔ min-width:1001 (--tsc-bp-xl)
+   */
+  --tsc-bp-xs: 480px;
+  --tsc-bp-sm: 600px;
+  --tsc-bp-md: 700px;
+  --tsc-bp-lg: 900px;
+  --tsc-bp-xl: 1000px;
+  --tsc-bp-2xl: 1120px;
+  --tsc-bp-3xl: 1500px;
+
+  /* Component measures */
+  --tsc-btn-h: 52px;
+  --tsc-btn-radius: 8px;
+  --tsc-sticky-h: 56px;
+  --tsc-tap: 44px;
+  --tsc-progress-w: 2px;
+  --tsc-progress-inset: 16px;
+}
+
+/* Light editorial pages (cream base) */
+[data-tsc-theme="light"],
+.tsc-theme-light {
+  --tsc-bg-primary: #ffecd1;
+  --tsc-bg-elevated: #fff4e3;
+  --tsc-ink-primary: #083d3a;
+  --tsc-ink-muted: rgba(8, 61, 58, 0.68);
+  --tsc-accent: #b74b02;
+  --tsc-hairline: rgba(8, 61, 58, 0.12);
+}
+
+/* Oxblood dark variant when needed */
+[data-tsc-theme="oxblood"],
+.tsc-theme-oxblood {
+  --tsc-bg-primary: #3a1212;
+  --tsc-bg-elevated: #4a1a1a;
+  --tsc-ink-primary: #ffecd1;
+  --tsc-ink-muted: rgba(255, 236, 209, 0.68);
+  --tsc-accent: #b74b02;
+  --tsc-hairline: rgba(255, 236, 209, 0.12);
+}
+
+@media (min-width: 391px) {
+  :root {
+    --tsc-gutter: 24px;
+  }
+}

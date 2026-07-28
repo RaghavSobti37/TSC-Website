@@ -1,0 +1,529 @@
+@import url("./_safe-base.css");
+
+/**
+ * Learn / Academy / courses / book-a-call — scale-first.
+ * Floating sticky CTA is disabled; page buttons remain in normal content flow.
+ */
+@media (max-width: 900px) {
+  main,
+  #SITE_PAGES {
+    overflow-x: clip;
+    max-width: 100%;
+  }
+
+  main section.wixui-section {
+    overflow-x: clip;
+    max-width: 100%;
+  }
+
+  body[data-page="learn-with-tsc"] .tsc-sticky-cta,
+  body[data-page="academy"] .tsc-sticky-cta,
+  body[data-page="roots-of-hindustani-classical"] .tsc-sticky-cta,
+  body[data-page="the-heart-of-composition"] .tsc-sticky-cta,
+  body[data-page="book-a-call"] .tsc-sticky-cta,
+  .tsc-page-learn .tsc-sticky-cta {
+    display: none !important;
+  }
+
+  main img,
+  main .wixui-image img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  main [data-testid="richTextElement"] .wixui-rich-text__text {
+    font-size: 15px;
+    line-height: 1.55;
+    overflow-wrap: break-word;
+  }
+
+  main [data-testid="richTextElement"] h1 .wixui-rich-text__text,
+  main [data-testid="richTextElement"] .font_0 {
+    font-size: clamp(1.35rem, 6.5vw, 1.85rem);
+    line-height: 1.15;
+  }
+
+  main [data-testid="richTextElement"] h2 .wixui-rich-text__text,
+  main [data-testid="richTextElement"] .font_2 {
+    font-size: clamp(1.1rem, 4.5vw, 1.4rem);
+    line-height: 1.2;
+  }
+
+  main .wixui-button,
+  main a.wixui-button,
+  main a.PoVCDy {
+    min-height: 48px;
+    max-width: calc(100vw - 40px);
+  }
+
+  main input,
+  main select,
+  main textarea {
+    font-size: 16px !important;
+    min-height: 48px;
+    max-width: calc(100vw - 40px);
+  }
+
+  /* Decorative vectors that collide with copy */
+  main [class*="wixui-vector-image"] {
+    max-width: min(100%, 120px);
+  }
+
+  footer input[type="email"] {
+    font-size: 16px !important;
+    min-height: 48px !important;
+  }
+
+  /* —— Learn hub: hero mesh overlap —— */
+  #comp-mrufx9ld2,
+  #comp-mrufx9ld2 [data-testid="responsive-container-content"],
+  #comp-mrufx9ld2 .comp-mrufx9ld2-container {
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+  }
+
+  #comp-mrufx9ld2 [data-testid="responsive-container-content"],
+  #comp-mrufx9ld2 .comp-mrufx9ld2-container {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 14px !important;
+    padding: 28px 20px 36px !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+    grid-template-rows: none !important;
+    grid-template-columns: none !important;
+  }
+
+  #comp-mrufx9ld2 [data-testid="responsive-container-content"] > [id^="comp-"],
+  #comp-mrufx9ld2 .comp-mrufx9ld2-container > [id^="comp-"] {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    place-self: stretch !important;
+    grid-area: auto !important;
+    height: auto !important;
+    min-height: 0 !important;
+    transform: none !important;
+  }
+
+  #comp-mrufx9lk3 {
+    display: none !important; /* hairline spacer */
+  }
+
+  #comp-mrufx9lm2 {
+    display: none !important; /* hero swirl — overlaps / eats vertical space */
+  }
+
+  #comp-mrufx9mf6 { order: 1 !important; } /* WELCOME */
+  #comp-mrufx9mh1 { order: 2 !important; } /* Unfolding Artist Force */
+  #comp-mrufx9md2 { order: 3 !important; } /* body */
+  #comp-mrufx9mj { order: 4 !important; } /* Explore Courses */
+
+  #comp-mrufx9mf6 .wixui-rich-text__text {
+    font-size: 13px !important;
+    letter-spacing: 0.06em !important;
+    line-height: 1.3 !important;
+  }
+
+  #comp-mrufx9mh1 .wixui-rich-text__text {
+    font-size: clamp(1.5rem, 7vw, 2rem) !important;
+    line-height: 1.12 !important;
+  }
+
+  #comp-mrufx9md2 .wixui-rich-text__text {
+    font-size: 15px !important;
+    line-height: 1.5 !important;
+  }
+
+  #comp-mrufx9mj,
+  #comp-mrufx9mj a,
+  #comp-mrufx9mj .wixui-button {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 48px !important;
+    max-height: none !important;
+  }
+
+  #comp-mrufx9mj .wixui-button__label,
+  #comp-mrufx9mj a,
+  #comp-mrufx9mj span {
+    font-size: 15px !important;
+    line-height: 1.2 !important;
+  }
+
+  #comp-mrufx9md2 {
+    padding-right: 56px !important; /* clear WhatsApp float */
+    box-sizing: border-box !important;
+  }
+
+  /* Course detail curriculum accordions: desktop mesh sits off-canvas on phone. */
+  #comp-mrf1e0hg3,
+  #comp-mpqy3lne,
+  #comp-mrf1e0hg3 [data-testid="responsive-container-content"],
+  #comp-mpqy3lne [data-testid="responsive-container-content"],
+  #comp-mrf1e0hg3 .comp-mrf1e0hg3-container,
+  #comp-mpqy3lne .comp-mpqy3lne-container {
+    box-sizing: border-box !important;
+    height: auto !important;
+    min-height: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    overflow: visible !important;
+  }
+
+  #comp-mrf1e0hg3 [data-testid="responsive-container-content"],
+  #comp-mpqy3lne [data-testid="responsive-container-content"],
+  #comp-mrf1e0hg3 .comp-mrf1e0hg3-container,
+  #comp-mpqy3lne .comp-mpqy3lne-container {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 14px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 24px 20px 36px !important;
+    box-sizing: border-box !important;
+    grid-template-rows: none !important;
+    grid-template-columns: none !important;
+  }
+
+  #comp-mrf1e0hg3 [data-testid="responsive-container-content"] > [id^="comp-"],
+  #comp-mpqy3lne [data-testid="responsive-container-content"] > [id^="comp-"],
+  #comp-mrf1e0hg3 .comp-mrf1e0hg3-container > [id^="comp-"],
+  #comp-mpqy3lne .comp-mpqy3lne-container > [id^="comp-"] {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    transform: none !important;
+    grid-area: auto !important;
+    place-self: stretch !important;
+  }
+
+  #comp-mrf1e0hk,
+  #comp-mpnvvkdi,
+  #comp-mrf1e0hk .AccordionContainer1266025101__container,
+  #comp-mpnvvkdi .AccordionContainer1266025101__container,
+  #comp-mrf1e0hk .AccordionContainer1266025101__root,
+  #comp-mpnvvkdi .AccordionContainer1266025101__root {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    left: auto !important;
+    transform: none !important;
+  }
+
+  #comp-mrf1e0hk .AccordionContainer1266025101__accordionHeader,
+  #comp-mpnvvkdi .AccordionContainer1266025101__accordionHeader {
+    box-sizing: border-box !important;
+    width: 100% !important;
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+  }
+
+  /* Academy home: mentor/media blocks still inherit desktop offsets. */
+  body[data-page="academy"] :is(#comp-mqwhzev1, #comp-mpjwvo70) {
+    box-sizing: border-box !important;
+    left: auto !important;
+    right: auto !important;
+    width: 100% !important;
+    max-width: calc(100vw - 72px) !important;
+    transform: none !important;
+  }
+
+  /* —— Are You Ready twin boxes —— */
+  #comp-mrufx9mo2,
+  #comp-mrufx9mo2 [data-testid="responsive-container-content"],
+  #comp-mrufx9mo2 .comp-mrufx9mo2-container {
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+  }
+
+  #comp-mrufx9mo2 [data-testid="responsive-container-content"],
+  #comp-mrufx9mo2 .comp-mrufx9mo2-container {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 16px !important;
+    padding: 24px 20px !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+    grid-template-rows: none !important;
+    grid-template-columns: none !important;
+  }
+
+  #comp-mrufx9mo2 [data-testid="responsive-container-content"] > [id^="comp-"],
+  #comp-mrufx9mr,
+  #comp-mrufx9mz {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    place-self: stretch !important;
+    grid-area: auto !important;
+    height: auto !important;
+    min-height: 0 !important;
+    transform: none !important;
+  }
+
+  #comp-mrufx9mr { order: 1 !important; }
+  #comp-mrufx9mz { order: 2 !important; }
+
+  #comp-mrufx9mo2 [data-testid="richTextElement"] .wixui-rich-text__text {
+    font-size: 15px !important;
+    line-height: 1.5 !important;
+  }
+
+  /* —— Feature cards 3×2 → stacked —— */
+  #comp-mrufx9n35,
+  #comp-mrufx9n35 [data-testid="responsive-container-content"],
+  #comp-mrufx9n35 .comp-mrufx9n35-container {
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+  }
+
+  #comp-mrufx9n35 [data-testid="responsive-container-content"],
+  #comp-mrufx9n35 .comp-mrufx9n35-container {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 12px !important;
+    padding: 20px 20px 32px !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+    grid-template-rows: none !important;
+    grid-template-columns: none !important;
+  }
+
+  #comp-mrufx9n35 [data-testid="responsive-container-content"] > [id^="comp-"],
+  #comp-mrufx9n75,
+  #comp-mrufx9nj,
+  #comp-mrufx9nv,
+  #comp-mrufx9o8,
+  #comp-mrufx9ol1,
+  #comp-mrufx9oy {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    place-self: stretch !important;
+    grid-area: auto !important;
+    height: auto !important;
+    min-height: 0 !important;
+    transform: none !important;
+  }
+
+  #comp-mrufx9n75 { order: 1 !important; }
+  #comp-mrufx9nj { order: 2 !important; }
+  #comp-mrufx9nv { order: 3 !important; }
+  #comp-mrufx9o8 { order: 4 !important; }
+  #comp-mrufx9ol1 { order: 5 !important; }
+  #comp-mrufx9oy { order: 6 !important; }
+
+  #comp-mrufx9n35 [data-testid="richTextElement"] .wixui-rich-text__text {
+    font-size: 15px !important;
+    line-height: 1.45 !important;
+  }
+
+  /* —— Course cards: mesh → column stack —— */
+  #comp-mrufx9pm,
+  #comp-mrufx9qh,
+  #comp-mrufx9rd2,
+  #comp-mrufx9pp4,
+  #comp-mrufx9qk,
+  #comp-mrufx9rg4 {
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+  }
+
+  #comp-mrufx9pp4 [data-testid="responsive-container-content"],
+  #comp-mrufx9pp4 .comp-mrufx9pp4-container,
+  #comp-mrufx9qk [data-testid="responsive-container-content"],
+  #comp-mrufx9qk .comp-mrufx9qk-container,
+  #comp-mrufx9rg4 [data-testid="responsive-container-content"],
+  #comp-mrufx9rg4 .comp-mrufx9rg4-container,
+  #comp-mrufx9pr5 [data-testid="responsive-container-content"],
+  #comp-mrufx9pr5 .comp-mrufx9pr5-container,
+  #comp-mrufx9q33 [data-testid="responsive-container-content"],
+  #comp-mrufx9q33 .comp-mrufx9q33-container,
+  #comp-mrufx9py5 [data-testid="responsive-container-content"],
+  #comp-mrufx9py5 .comp-mrufx9py5-container,
+  #comp-mrufx9qb1,
+  #comp-mrufx9qb1.comp-mrufx9qb1-container,
+  #comp-mrufx9r8,
+  #comp-mrufx9r8.comp-mrufx9r8-container,
+  #comp-mrufx9rp,
+  #comp-mrufx9rp.comp-mrufx9rp-container,
+  #comp-mrufx9qt3 [data-testid="responsive-container-content"],
+  #comp-mrufx9qt3 .comp-mrufx9qt3-container,
+  #comp-mrufx9qn4 [data-testid="responsive-container-content"],
+  #comp-mrufx9qn4 .comp-mrufx9qn4-container,
+  #comp-mrufx9r03 [data-testid="responsive-container-content"],
+  #comp-mrufx9r03 .comp-mrufx9r03-container,
+  #comp-mrufx9rx1 [data-testid="responsive-container-content"],
+  #comp-mrufx9rx1 .comp-mrufx9rx1-container,
+  #comp-mrufx9rt2 [data-testid="responsive-container-content"],
+  #comp-mrufx9rt2 .comp-mrufx9rt2-container,
+  #comp-mrufx9rj1 [data-testid="responsive-container-content"],
+  #comp-mrufx9rj1 .comp-mrufx9rj1-container {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 10px !important;
+    padding: 12px !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    grid-template-rows: none !important;
+    grid-template-columns: none !important;
+  }
+
+  /* meta chips: 2×2 wrap instead of crushed 4-col */
+  #comp-mrufx9pr5 [data-testid="responsive-container-content"],
+  #comp-mrufx9pr5 .comp-mrufx9pr5-container,
+  #comp-mrufx9qt3 [data-testid="responsive-container-content"],
+  #comp-mrufx9qt3 .comp-mrufx9qt3-container,
+  #comp-mrufx9rx1 [data-testid="responsive-container-content"],
+  #comp-mrufx9rx1 .comp-mrufx9rx1-container {
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+  }
+
+  #comp-mrufx9pp4 [data-testid="responsive-container-content"] > [id^="comp-"],
+  #comp-mrufx9pp4 .comp-mrufx9pp4-container > [id^="comp-"],
+  #comp-mrufx9qk [data-testid="responsive-container-content"] > [id^="comp-"],
+  #comp-mrufx9qk .comp-mrufx9qk-container > [id^="comp-"],
+  #comp-mrufx9rg4 [data-testid="responsive-container-content"] > [id^="comp-"],
+  #comp-mrufx9rg4 .comp-mrufx9rg4-container > [id^="comp-"],
+  #comp-mrufx9pr5 [data-testid="responsive-container-content"] > [id^="comp-"],
+  #comp-mrufx9q33 [data-testid="responsive-container-content"] > [id^="comp-"],
+  #comp-mrufx9qt3 [data-testid="responsive-container-content"] > [id^="comp-"],
+  #comp-mrufx9qn4 [data-testid="responsive-container-content"] > [id^="comp-"],
+  #comp-mrufx9rx1 [data-testid="responsive-container-content"] > [id^="comp-"],
+  #comp-mrufx9rj1 [data-testid="responsive-container-content"] > [id^="comp-"],
+  #comp-mrufx9qb1 > [id^="comp-"],
+  #comp-mrufx9r8 > [id^="comp-"],
+  #comp-mrufx9rp > [id^="comp-"] {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    place-self: stretch !important;
+    grid-area: auto !important;
+    height: auto !important;
+    min-height: 0 !important;
+    transform: none !important;
+  }
+
+  #comp-mrufx9pr5 [data-testid="responsive-container-content"] > [id^="comp-"],
+  #comp-mrufx9qt3 [data-testid="responsive-container-content"] > [id^="comp-"],
+  #comp-mrufx9rx1 [data-testid="responsive-container-content"] > [id^="comp-"] {
+    width: calc(50% - 4px) !important;
+    max-width: calc(50% - 4px) !important;
+    flex: 1 1 calc(50% - 4px) !important;
+    box-sizing: border-box !important;
+    text-align: center !important;
+  }
+
+  /* Course 1 order */
+  #comp-mrufx9py5 { order: 1 !important; }
+  #comp-mrufx9qb1 { order: 2 !important; }
+  #comp-mrufx9q74 { order: 3 !important; } /* photo */
+  #comp-mrufx9q33 { order: 4 !important; }
+  #comp-mrufx9pr5 { order: 5 !important; }
+  #comp-mrufx9qf1 { order: 6 !important; }
+  #comp-mrufx9q86 { display: none !important; } /* empty vector */
+
+  #comp-mrufx9qc4 { order: 1 !important; }
+  #comp-mrufx9qe { order: 2 !important; }
+
+  /* Course 2 order */
+  #comp-mrufx9r03 { order: 1 !important; }
+  #comp-mrufx9r8 { order: 2 !important; }
+  #comp-mrufx9r5 { order: 3 !important; }
+  #comp-mrufx9qn4 { order: 4 !important; }
+  #comp-mrufx9qt3 { order: 5 !important; }
+  #comp-mrufx9rb5 { order: 6 !important; }
+  #comp-mrufx9qm3 { order: 0 !important; pointer-events: none !important; }
+
+  /* Course 3 order */
+  #comp-mrufx9rt2 { order: 1 !important; }
+  #comp-mrufx9rp { order: 2 !important; }
+  #comp-mrufx9s5 { order: 3 !important; }
+  #comp-mrufx9rj1 { order: 4 !important; }
+  #comp-mrufx9rx1 { order: 5 !important; }
+  #comp-mrufx9si { order: 6 !important; }
+  #comp-mrufx9s8 { order: 0 !important; pointer-events: none !important; }
+  #comp-mrufx9sa { order: 7 !important; }
+
+  #comp-mrufx9pp4 [data-testid="richTextElement"] .wixui-rich-text__text,
+  #comp-mrufx9qk [data-testid="richTextElement"] .wixui-rich-text__text,
+  #comp-mrufx9rg4 [data-testid="richTextElement"] .wixui-rich-text__text {
+    font-size: 14px !important;
+    line-height: 1.4 !important;
+    overflow-wrap: break-word !important;
+  }
+
+  #comp-mrufx9q2 .wixui-rich-text__text,
+  #comp-mrufx9r03 .wixui-rich-text__text,
+  #comp-mrufx9rt2 .wixui-rich-text__text,
+  #comp-mrufx9sa .wixui-rich-text__text {
+    font-size: clamp(1.15rem, 5vw, 1.45rem) !important;
+    line-height: 1.15 !important;
+  }
+
+  #comp-mrufx9qf1,
+  #comp-mrufx9qf1 a,
+  #comp-mrufx9rb5,
+  #comp-mrufx9rb5 a,
+  #comp-mrufx9si,
+  #comp-mrufx9si a {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: 44px !important;
+  }
+
+  #comp-mrufx9qf1 .wixui-button__label,
+  #comp-mrufx9rb5 .wixui-button__label,
+  #comp-mrufx9si .wixui-button__label {
+    font-size: 14px !important;
+  }
+
+  #comp-mrufx9q86 img,
+  #comp-mrufx9q74 img,
+  #comp-mrufx9r5 img,
+  #comp-mrufx9s5 img {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100% !important;
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "page": "from-bhajan-to-clubbing",
+  "html": "/pages/from-bhajan-to-clubbing.html",
+  "css": "/css/pages/from-bhajan-to-clubbing.css",
+  "animations": "/js/pages/from-bhajan-to-clubbing.animations.js",
+  "generatedAt": "2026-07-28T10:07:32.288Z",
+  "totals": {
+    "assets": 0,
+    "missing": 0
+  },
+  "assetsByType": {}
+}

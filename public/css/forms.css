@@ -283,3 +283,38 @@ body:has(.tsc-local-form) main [data-motion-part*="BG_MEDIA"] {
     font-size: 14px;
   }
 }
+
+/* ===== TSC forms mobile extend (max-width: 1024px) — subpages-mobile ===== */
+@media (max-width: 1024px) {
+  .tsc-local-form {
+    width: min(100% - 32px, 620px);
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+  }
+
+  .tsc-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tsc-phone-row {
+    grid-template-columns: 1fr;
+  }
+
+  .tsc-choices {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .tsc-submit {
+    width: 100%;
+    min-height: 48px;
+  }
+
+  .tsc-field input,
+  .tsc-field select,
+  .tsc-field textarea {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+}

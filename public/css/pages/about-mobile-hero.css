@@ -1,3 +1,8 @@
+/**
+ * About mobile hero — kept in sync with public/css/mobile/about.css hero rules.
+ * Note: currently not linked by the mobile loader; mobile/about.css is the live source.
+ * Safe to link later via media="(max-width: 1024px)" without HTML content edits.
+ */
 @media (min-width: 901px) {
   body.responsive #comp-mp2vlkbh2 {
     height: 684px !important;
@@ -82,18 +87,21 @@
 
 @media (max-width: 900px) {
   body.responsive #comp-mp2vlkbh2 {
-    height: 75vh !important;
+    height: auto !important;
     min-height: 560px !important;
-    max-height: 760px !important;
-    overflow: hidden !important;
+    max-height: none !important;
+    overflow: visible !important;
   }
 
   body.responsive #comp-mp2vlkbh2 [data-testid="responsive-container-content"],
   body.responsive #comp-mp2vlkbh2 [class*="comp-mp2vlkbh2-container"] {
-    height: 75vh !important;
+    height: auto !important;
     min-height: 560px !important;
-    max-height: 760px !important;
+    max-height: none !important;
     position: relative !important;
+    padding-bottom: 48px !important;
+    box-sizing: border-box !important;
+    overflow: visible !important;
   }
 
   body.responsive #comp-mp2vlkbh2 #comp-mr1ttkgk.comp-mr1ttkgk {
@@ -167,6 +175,7 @@
   body.responsive #comp-mp2vlkbh2 [data-testid="responsive-container-content"],
   body.responsive #comp-mp2vlkbh2 [class*="comp-mp2vlkbh2-container"] {
     min-height: 520px !important;
+    padding-bottom: 36px !important;
   }
 
   body.responsive #comp-mp2vlkbh2 #comp-mr1ttkgk.comp-mr1ttkgk {
@@ -176,14 +185,34 @@
   }
 
   body.responsive #comp-mp2vlkbh2 #comp-mr1vbgc2.comp-mr1vbgc2 {
-    top: 41% !important;
+    top: 36% !important;
     width: min(86vw, 330px) !important;
   }
 
   body.responsive #comp-mp2vlkbh2 #comp-mr1tv44l.comp-mr1tv44l .wixui-rich-text__text,
   body.responsive #comp-mp2vlkbh2 #comp-mr1tv44l.comp-mr1tv44l h1,
   body.responsive #comp-mp2vlkbh2 #comp-mr1tv44l.comp-mr1tv44l p {
-    font-size: clamp(18px, 5.7vw, 24px) !important;
-    line-height: 1.05 !important;
+    font-size: clamp(17px, 5.2vw, 22px) !important;
+    line-height: 1.12 !important;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+  body.responsive #comp-mp2vlkbh2 #comp-mr1ttkgk.comp-mr1ttkgk {
+    top: 10% !important;
+    width: min(48vw, 340px) !important;
+    height: min(48vw, 340px) !important;
+  }
+
+  body.responsive #comp-mp2vlkbh2 #comp-mr1vbgc2.comp-mr1vbgc2 {
+    top: 42% !important;
+    width: min(70vw, 480px) !important;
+  }
+
+  body.responsive #comp-mp2vlkbh2 #comp-mr1tv44l.comp-mr1tv44l .wixui-rich-text__text,
+  body.responsive #comp-mp2vlkbh2 #comp-mr1tv44l.comp-mr1tv44l h1,
+  body.responsive #comp-mp2vlkbh2 #comp-mr1tv44l.comp-mr1tv44l p {
+    font-size: clamp(22px, 3.4vw, 30px) !important;
+    line-height: 1.12 !important;
   }
 }

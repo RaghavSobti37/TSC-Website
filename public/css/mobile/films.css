@@ -1,7 +1,7 @@
-﻿@import url("./_safe-base.css");
+@import url("./_safe-base.css");
 
 /**
- * Films hub — mobile: stack Wix mesh bands that crush/overlap on phone.
+ * Films hub ? mobile: stack Wix mesh bands that crush/overlap on phone.
  * Scale-first type; redesign only where mesh forces overlaps.
  */
 
@@ -11,7 +11,7 @@
   display: none !important;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   main,
   #SITE_PAGES {
     overflow-x: clip;
@@ -69,7 +69,7 @@
     font-size: 15px !important;
   }
 
-  /* â€”â€” Shared flatten helper targets â€”â€” */
+  /* ?? Shared flatten helper targets ?? */
   #comp-mql25lfk [data-testid="responsive-container-content"],
   #comp-mql25lfk .comp-mql25lfk-container,
   #comp-mqksjwhn [data-testid="responsive-container-content"],
@@ -116,7 +116,7 @@
     transform: none !important;
   }
 
-  /* â€”â€” Hero â€”â€” */
+  /* ?? Hero ?? */
   #comp-mql25lfk {
     height: auto !important;
     min-height: 0 !important;
@@ -151,7 +151,7 @@
     padding-top: 12px !important;
   }
 
-  /* â€”â€” About Us â€”â€” */
+  /* ?? About Us ?? */
   #comp-mqksjwhn {
     height: auto !important;
     overflow: visible !important;
@@ -167,20 +167,84 @@
   #comp-mqkt1dhr { order: 2 !important; }
   #comp-mqkt0pl5 { order: 3 !important; max-width: 120px !important; }
 
-  /* letterpress / nested ghost layers â€” cause tall empty-looking stacks */
+  /* post-rollback: these hold the ONLY copies of the About Us copy now.
+     The old mobile skin hid them expecting JS shells that no longer mount. */
   #comp-mqksu27c,
   #comp-mqksqdxe,
   #comp-mqkt94ql {
-    display: none !important;
+    display: block !important;
+    position: relative !important;
+    inset: auto !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    transform: none !important;
+    margin: 0 !important;
+  }
+
+  /* collapse the nested pill wrappers so text sits in one clean box each */
+  #comp-mqkt0pl5 .comp-mqkt0pl5-container,
+  #comp-mqkt0pln .comp-mqkt0pln-container,
+  #comp-mqkt1dhr .comp-mqkt1dhr-container,
+  #comp-mqktaucr .comp-mqktaucr-container,
+  #comp-mqktbh9q .comp-mqktbh9q-container,
+  #comp-mqkt0pl5 .HFEOE3,
+  #comp-mqkt0pln .HFEOE3,
+  #comp-mqkt1dhr .HFEOE3 {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    padding: 0 !important;
+  }
+
+  #comp-mqkt0pl5,
+  #comp-mqktaucr,
+  #comp-mqktbh9q {
+    height: auto !important;
+    min-height: 0 !important;
+  }
+
+  /* body copy: keep clear of the right edge */
+  #comp-mqkssiry {
+    width: calc(100% - 16px) !important;
+    padding-right: 8px !important;
+    box-sizing: border-box !important;
+  }
+
+  #comp-mqkssiry .wixui-rich-text__text {
+    width: 100% !important;
   }
 
   #comp-mqkt0pln,
   #comp-mqkt1dhr {
-    padding: 14px !important;
+    padding: 14px 16px !important;
     box-sizing: border-box !important;
     height: auto !important;
     min-height: 0 !important;
+    max-height: none !important;
     overflow: visible !important;
+  }
+
+  #comp-mqkt0pln .comp-mqkt0pln-container,
+  #comp-mqkt1dhr .comp-mqkt1dhr-container,
+  #comp-mqktaucr,
+  #comp-mqktbh9q,
+  #comp-mqktaucr .comp-mqktaucr-container,
+  #comp-mqktbh9q .comp-mqktbh9q-container,
+  #comp-mqksu27c,
+  #comp-mqksqdxe {
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+  }
+
+  #comp-mqkt0pln > .inner-box,
+  #comp-mqkt1dhr > .inner-box,
+  #comp-mqktaucr > .inner-box,
+  #comp-mqktbh9q > .inner-box {
+    display: none !important;
   }
 
   #comp-mqkt1dhr [data-testid="richTextElement"],
@@ -205,7 +269,7 @@
     line-height: 1.45 !important;
   }
 
-  /* â€”â€” Mid: video + body side-by-side â†’ stack â€”â€” */
+  /* ?? Mid: video + body side-by-side ? stack ?? */
   #comp-mqmh352i {
     height: auto !important;
     min-height: 0 !important;
@@ -342,18 +406,39 @@
   #comp-mql45ec4 {
     width: 100% !important;
     max-width: 100% !important;
-    height: auto !important;
-    min-height: 0 !important;
-    overflow: visible !important;
   }
 
-  #comp-mqktgh65 > *,
-  #comp-mql45ec4 > *,
-  #comp-mqktgh65 [class*="container"],
-  #comp-mql45ec4 [class*="container"] {
+  /* Mid video: host box + nested player both grow to 16:9 */
+  #comp-mqktgh65,
+  #comp-mql45ec4 {
+    display: block !important;
+    position: relative !important;
+    width: 100% !important;
+    max-width: 100% !important;
     height: auto !important;
     min-height: 0 !important;
-    overflow: visible !important;
+    aspect-ratio: 16 / 9 !important;
+    overflow: hidden !important;
+    border-radius: 4px;
+  }
+
+  #comp-mqktgh65 .comp-mqktgh65-overflow-wrapper,
+  #comp-mqktgh65 .comp-mqktgh65-container,
+  #comp-mqktgh65 > .inner-box,
+  #comp-mql45ec4 > *,
+  #comp-mql45ec4 [class*="container"],
+  #comp-mqktgh65 [data-testid="videoPlayer"],
+  #comp-mql45ec4 [data-testid="videoPlayer"],
+  #comp-mqktgh65 .vuYVuU,
+  #comp-mql45ec4 .vuYVuU {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    aspect-ratio: auto !important;
+    overflow: hidden !important;
   }
 
   #comp-mqktgh65 video,
@@ -361,23 +446,11 @@
   #comp-mqktgh65 img,
   #comp-mql45ec4 img {
     width: 100% !important;
-    height: auto !important;
+    height: 100% !important;
     max-height: none !important;
-    aspect-ratio: 16 / 9;
     object-fit: cover !important;
     border-radius: 4px;
     display: block !important;
-  }
-
-  #comp-mqktgh65 [data-testid="videoPlayer"],
-  #comp-mql45ec4 [data-testid="videoPlayer"],
-  #comp-mqktgh65 .vuYVuU,
-  #comp-mql45ec4 .vuYVuU {
-    width: 100% !important;
-    height: auto !important;
-    min-height: 0 !important;
-    aspect-ratio: 16 / 9;
-    overflow: visible !important;
   }
 
   #comp-mqktsjdh,
@@ -391,7 +464,7 @@
     font-size: clamp(1.4rem, 6vw, 1.8rem) !important;
   }
 
-  /* —— What We Do cards —— */
+  /* ?? What We Do cards ?? */
   #comp-mqktx0nc {
     height: auto !important;
     overflow: visible !important;
@@ -407,8 +480,10 @@
     line-height: 1.45 !important;
   }
 
-  /* Wix duplicate Partnerships pair (second 03) — mobile only */
-  #comp-mqmhowf1 {
+  /* Wix duplicate Partnerships pair (second 03 + orphaned list) ? mobile only */
+  #comp-mqmhowf1,
+  #comp-mqmhp1sq,
+  #comp-mqmhpx0p {
     display: none !important;
     height: 0 !important;
     min-height: 0 !important;
@@ -454,7 +529,7 @@
     overflow: visible !important;
   }
 
-  /* —— Film project cards (learn-style mesh crush) —— */
+  /* ?? Film project cards (learn-style mesh crush) ?? */
   #comp-mqmhuw20,
   #comp-mqmi6yn5,
   #comp-mqmi8cwy,
@@ -501,7 +576,7 @@
     grid-template-columns: none !important;
   }
 
-  /* Film cards â€” hide leftover course meta / mentor paste (wrong copy) */
+  /* Film cards ? hide leftover course meta / mentor paste (wrong academy copy) */
   #comp-mqmi3w3u,
   #comp-mqmi6ynw2,
   #comp-mqmi8cxq,
@@ -509,8 +584,77 @@
   #comp-mqmi3w4i1,
   #comp-mqmi6yok,
   #comp-mqmi8cyd1,
-  #comp-mqmi8sv4 {
+  #comp-mqmi8sv4,
+  #comp-mqmi3w473,
+  #comp-mqmi6yo84,
+  #comp-mqmi8cy26,
+  #comp-mqmi8sux1,
+  #comp-mraofnyq,
+  #comp-mrbyabuw,
+  #comp-mrbzj9mg,
+  #comp-mrbzmekx {
     display: none !important;
+    height: 0 !important;
+    min-height: 0 !important;
+    overflow: hidden !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+  }
+
+  /* Restore film poster images ? Wix wrappers collapse to h=0; force stack height */
+  #comp-mqmi3w4b3,
+  #comp-mqmi6yoc4,
+  #comp-mqmi8cy66,
+  #comp-mqmi8sv12 {
+    display: block !important;
+    position: relative !important;
+    inset: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    aspect-ratio: 16 / 10 !important;
+    margin: 0 !important;
+    transform: none !important;
+    visibility: visible !important;
+    overflow: hidden !important;
+    border-radius: 4px;
+  }
+
+  #comp-mqmi3w4b3 a,
+  #comp-mqmi6yoc4 a,
+  #comp-mqmi8cy66 a,
+  #comp-mqmi8sv12 a,
+  #comp-mqmi3w4b3 .XWKVT7,
+  #comp-mqmi6yoc4 .XWKVT7,
+  #comp-mqmi8cy66 .XWKVT7,
+  #comp-mqmi8sv12 .XWKVT7,
+  #comp-mqmi3w4b3 [data-motion-part],
+  #comp-mqmi6yoc4 [data-motion-part],
+  #comp-mqmi8cy66 [data-motion-part],
+  #comp-mqmi8sv12 [data-motion-part],
+  #comp-mqmi3w4b3 wow-image,
+  #comp-mqmi6yoc4 wow-image,
+  #comp-mqmi8cy66 wow-image,
+  #comp-mqmi8sv12 wow-image {
+    display: block !important;
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 100% !important;
+    min-height: 0 !important;
+  }
+
+  #comp-mqmi3w4b3 img,
+  #comp-mqmi6yoc4 img,
+  #comp-mqmi8cy66 img,
+  #comp-mqmi8sv12 img {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
   }
 
   #comp-mqmi3w3o [data-testid="responsive-container-content"],
@@ -564,41 +708,22 @@
     text-align: center !important;
   }
 
-  /* Card 1 order */
+  /* Card order: title ? poster ? Know More */
   #comp-mqmi3w424 { order: 1 !important; }
-  #comp-mqmi3w4i1 { order: 2 !important; }
-  #comp-mraofnyq { order: 3 !important; }
-  #comp-mqmi3w4b3 { display: none !important; }
-  #comp-mqmi3w473 { order: 4 !important; }
-  #comp-mqmi3w3u { order: 5 !important; }
-  #comp-mqmi3w4m5 { order: 6 !important; }
+  #comp-mqmi3w4b3 { order: 2 !important; }
+  #comp-mqmi3w4m5 { order: 3 !important; }
 
-  /* Card 2 */
   #comp-mqmi6yo34 { order: 1 !important; }
-  #comp-mqmi6yok { order: 2 !important; }
-  #comp-mrbyabuw { order: 3 !important; }
-  #comp-mqmi6yoc4 { display: none !important; }
-  #comp-mqmi6yo84 { order: 4 !important; }
-  #comp-mqmi6ynw2 { order: 5 !important; }
-  #comp-mqmi6yoo { order: 6 !important; }
+  #comp-mqmi6yoc4 { order: 2 !important; }
+  #comp-mqmi6yoo { order: 3 !important; }
 
-  /* Card 3 */
   #comp-mqmi8cxx5 { order: 1 !important; }
-  #comp-mqmi8cyd1 { order: 2 !important; }
-  #comp-mrbzj9mg { order: 3 !important; }
-  #comp-mqmi8cy66 { display: none !important; }
-  #comp-mqmi8cy26 { order: 4 !important; }
-  #comp-mqmi8cxq { order: 5 !important; }
-  #comp-mqmi8cyh4 { order: 6 !important; }
+  #comp-mqmi8cy66 { order: 2 !important; }
+  #comp-mqmi8cyh4 { order: 3 !important; }
 
-  /* Card 4 */
   #comp-mqmi8sur5 { order: 1 !important; }
-  #comp-mqmi8sv4 { order: 2 !important; }
-  #comp-mrbzmekx { order: 3 !important; }
-  #comp-mqmi8sv12 { display: none !important; }
-  #comp-mqmi8sux1 { order: 4 !important; }
-  #comp-mqmi8suk2 { order: 5 !important; }
-  #comp-mqmi8sv77 { order: 6 !important; }
+  #comp-mqmi8sv12 { order: 2 !important; }
+  #comp-mqmi8sv77 { order: 3 !important; }
 
   #comp-mqmi3w3o [data-testid="richTextElement"] .wixui-rich-text__text,
   #comp-mqmi6ynt2 [data-testid="richTextElement"] .wixui-rich-text__text,
@@ -621,7 +746,7 @@
     max-width: 100% !important;
   }
 
-  /* â€”â€” Our Approach â€”â€” */
+  /* ?? Our Approach ?? */
   #comp-mqku1yx4 {
     height: auto !important;
     overflow: visible !important;
@@ -639,7 +764,7 @@
     line-height: 1.45 !important;
   }
 
-  /* â€”â€” Why TSC Films â€”â€” */
+  /* ?? Why TSC Films ?? */
   #comp-mqktywoc {
     height: auto !important;
     overflow: visible !important;
@@ -661,6 +786,139 @@
     line-height: 1.25 !important;
   }
 
+  /* post-rollback: flatten the pinned headline grid (heading / because / they
+     need / rotating words / we help) into a clean column */
+  #comp-mqml20ge {
+    height: auto !important;
+    min-height: 0 !important;
+  }
+
+  #comp-mqml20ge > .jdJeEr { display: none !important; }
+
+  #comp-mqml20ge,
+  #comp-mqml20ge.HFEOE3 {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 14px !important;
+    padding: 8px 2px !important;
+    box-sizing: border-box !important;
+    grid-template-rows: none !important;
+    grid-template-columns: none !important;
+  }
+
+  #comp-mqml20ge > [id^="comp-"] {
+    position: relative !important;
+    inset: auto !important;
+    grid-area: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    transform: none !important;
+    margin: 0 !important;
+  }
+
+  #comp-mqkunbyi { order: 1 !important; }
+  #comp-mqmejhhq { order: 2 !important; }
+  #comp-mqkuppqp { order: 3 !important; }
+  #comp-mqmfx7o2 { order: 4 !important; }
+  #comp-mqmejf06 { order: 5 !important; }
+
+  #comp-mqmejhhq .wixui-rich-text__text,
+  #comp-mqkuppqp .wixui-rich-text__text,
+  #comp-mqmejf06 .wixui-rich-text__text {
+    font-size: 17px !important;
+    line-height: 1.4 !important;
+    width: 100% !important;
+    height: auto !important;
+    white-space: normal !important;
+  }
+
+  /* rotating-words slideshow ? static readable stack (no empty gap) */
+  #comp-mqmfx7o2 {
+    height: auto !important;
+    max-height: none !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+    display: block !important;
+  }
+
+  #comp-mqmfx7o2 .comp-mqmfx7o2-container,
+  #comp-mqmfx7o2 .comp-mqmfx7o2-overflow-wrapper {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    gap: 0 !important;
+    grid-template-rows: none !important;
+    grid-template-columns: none !important;
+  }
+
+  #comp-mqmfx7on {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 2px !important;
+    height: auto !important;
+    min-height: 0 !important;
+    width: 100% !important;
+    grid-template-rows: none !important;
+    grid-template-columns: none !important;
+  }
+
+  #comp-mqmfx7on .comp-mqmfx7on-container {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 2px !important;
+    height: auto !important;
+    min-height: 0 !important;
+    width: 100% !important;
+    padding: 0 !important;
+  }
+
+  #comp-mqmfx7on .p9hNc1 {
+    position: relative !important;
+    inset: auto !important;
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    transform: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: 17px !important;
+    line-height: 1.35 !important;
+    color: #f5ebe0 !important;
+  }
+
+  /* kill leftover slideshow chrome / spacer rows */
+  #comp-mqmfx7qf,
+  #comp-mqmfx7qq2,
+  #comp-mqmfx7o2 [data-testid="slidesNavButton"],
+  #comp-mqmfx7o2 .SlideshowButton2197735472__root {
+    display: none !important;
+    height: 0 !important;
+    min-height: 0 !important;
+    max-height: 0 !important;
+    overflow: hidden !important;
+    pointer-events: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* the pinned headline grid sits right under the torn-paper band */
+  #comp-mqktywoc .comp-mqktywoc-container {
+    padding-top: 64px !important;
+  }
+
   #comp-mqmkrjnm,
   #comp-mqmkth8f {
     width: 100% !important;
@@ -675,12 +933,62 @@
     min-height: 48px !important;
   }
 
+  /* post-rollback: buttons were pinned to tall Wix grid rows */
+  #comp-mqmkrjnm,
+  #comp-mqmkth8f {
+    display: block !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    grid-template-rows: none !important;
+  }
+
+  #comp-mqmkrjnm > .inner-box,
+  #comp-mqmkth8f > .inner-box {
+    display: none !important;
+  }
+
+  #comp-mqmkrjnm .wixui-button,
+  #comp-mqmkth8f .wixui-button,
+  #comp-mqmkrjnm a,
+  #comp-mqmkth8f a {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    height: 52px !important;
+    min-height: 52px !important;
+    max-height: 52px !important;
+    box-sizing: border-box !important;
+  }
+
+  #comp-mqktywoc .comp-mqktywoc-container {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+    height: auto !important;
+    padding: 72px 16px 36px !important;
+    box-sizing: border-box !important;
+  }
+
+  #comp-mqktywoc .comp-mqktywoc-container > [id^="comp-"] {
+    position: relative !important;
+    inset: auto !important;
+    grid-area: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    transform: none !important;
+    margin: 0 !important;
+  }
+
   #comp-mqmkrjnm .wixui-button__label,
   #comp-mqmkth8f .wixui-button__label {
     font-size: 15px !important;
   }
 
-  /* —— Mobile shells: What We Do + film cards (mounted inside Wix hosts) —— */
+  /* ?? Mobile shells: What We Do + film cards (mounted inside Wix hosts) ?? */
   .tsc-mobile-films-hide {
     display: none !important;
     height: 0 !important;
@@ -743,7 +1051,7 @@
     gap: 12px;
   }
 
-  /* Cream step cards — large numbers stay inside padding (no absolute escape) */
+  /* Cream step cards ? large numbers stay inside padding (no absolute escape) */
   .tsc-mobile-films-feat-card {
     position: relative;
     box-sizing: border-box;
@@ -768,7 +1076,7 @@
     font-weight: 800;
     line-height: 1;
     letter-spacing: -0.03em;
-    /* solid fill — avoids -webkit-text-stroke painting outside and getting clipped */
+    /* solid fill ? avoids -webkit-text-stroke painting outside and getting clipped */
     color: rgba(75, 22, 39, 0.22);
   }
 

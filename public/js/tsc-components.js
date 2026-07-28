@@ -269,7 +269,31 @@
     document.body.setAttribute('data-page', page);
   }
 
+  function hideWixMobileNavChrome() {
+    if (!document.body) return;
+    var hasTsc = !!document.querySelector('.tsc-mobile-site-header');
+    document.body.classList.toggle('tsc-has-mobile-chrome', hasTsc);
+    if (!hasTsc) return;
+    // Wix Menu buttons + overlay chrome — hide so only TSC hamburger remains.
+    var nodes = document.querySelectorAll([
+      'header button[aria-label="Menu"]',
+      'header button[aria-label*="menu" i]',
+      '#SITE_HEADER button[aria-label="Menu"]',
+      '[data-hook="hamburger-overlay-root"]',
+      '[data-hook="menu-overlay-root"]',
+      '[id$="-pinned-layer"]:has(.wixui-vertical-menu)',
+      '[id$="-pinned-layer"]:has([data-hook="menu-root"])',
+      '[id$="-pinned-layer"]:has([data-hook="hamburger-overlay-root"])'
+    ].join(','));
+    Array.prototype.forEach.call(nodes, function(node) {
+      node.setAttribute('data-tsc-wix-nav-hidden', 'true');
+      node.style.setProperty('display', 'none', 'important');
+      node.style.setProperty('pointer-events', 'none', 'important');
+    });
+  }
+
   function wireMobileAssets() {
+    if (!(window.matchMedia && window.matchMedia('(max-width: 1024px)').matches)) return;
     if (window.__tscMobileWired) return;
     window.__tscMobileWired = true;
     var path = canonicalPathname();
@@ -288,6 +312,11 @@
       mountDesktopFooter({ path: path });
       mountMobileHeader({ path: path });
       mountMobileFooter({ path: path });
+      hideWixMobileNavChrome();
+      // Re-assert after Thunderbolt hydration may re-show Wix menu.
+      [400, 1200, 2500].forEach(function(delay) {
+        window.setTimeout(hideWixMobileNavChrome, delay);
+      });
     } else {
       unmountCustomMobileChrome();
     }
@@ -300,6 +329,9 @@
       }
       normalizeInternalProtocolRelativeLinks();
     });
+    // Page *.animations.js not inlined on locked primary HTML — load mesh/content
+    // replacements here so Work/Films/Home mobile shells still mount under mobile-only loader.
+    ensureScript('/js/content-replacements.js');
     if (path === '/artists') {
       ensureScript('/js/tsc-artists-accordion.js', function() {
         if (window.TSCArtistsAccordion && window.TSCArtistsAccordion.init) {
@@ -313,7 +345,7 @@
     document.querySelectorAll('.tsc-mobile-site-header, .tsc-mobile-footer, .tsc-desktop-footer').forEach(function(node) {
       if (node && node.parentNode) node.parentNode.removeChild(node);
     });
-    document.body.classList.remove('tsc-has-mobile-footer', 'tsc-has-desktop-footer');
+    document.body.classList.remove('tsc-has-mobile-footer', 'tsc-has-desktop-footer', 'tsc-has-mobile-chrome');
   }
 
   function optionMarkup(options, selected) {
@@ -543,7 +575,10 @@
 
     var config = componentOptions(opts);
     var variant = config.academy ? 'academy' : 'main';
-    if (existing && existing.dataset.tscVariant === variant) return existing;
+    if (existing && existing.dataset.tscVariant === variant) {
+      hideWixMobileNavChrome();
+      return existing;
+    }
     if (existing && existing.parentNode) existing.parentNode.removeChild(existing);
 
     var brandName = config.brand.name || (config.academy ? 'TSC Academy' : 'The Shakti Collective');
@@ -565,6 +600,7 @@
       '<a class="tsc-mobile-header-cta" href="' + (config.academy ? '/' : '/academy') + '">' + (config.academy ? 'Main Website' : 'TSC Academy') + '</a>'
     ].join('');
     document.body.insertBefore(header, document.getElementById('SITE_CONTAINER') || document.body.firstChild);
+    hideWixMobileNavChrome();
 
     var menu = header.querySelector('.tsc-mobile-menu');
     if (menu) {

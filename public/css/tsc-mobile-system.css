@@ -389,3 +389,26 @@
     overflow: hidden;
   }
 }
+
+/* Dual-hamburger guard (shared chrome). TSC header mounts at <=700px. */
+@media (max-width: 700px) {
+  body.tsc-has-mobile-chrome header,
+  body:has(.tsc-mobile-site-header) header,
+  body.tsc-has-mobile-chrome #SITE_HEADER,
+  body:has(.tsc-mobile-site-header) #SITE_HEADER {
+    display: none !important;
+  }
+
+  body.tsc-has-mobile-chrome button[aria-label="Menu"],
+  body:has(.tsc-mobile-site-header) button[aria-label="Menu"],
+  body.tsc-has-mobile-chrome [data-hook="hamburger-overlay-root"],
+  body:has(.tsc-mobile-site-header) [data-hook="hamburger-overlay-root"],
+  body.tsc-has-mobile-chrome [id$="-pinned-layer"]:has(.wixui-vertical-menu),
+  body:has(.tsc-mobile-site-header) [id$="-pinned-layer"]:has(.wixui-vertical-menu),
+  body.tsc-has-mobile-chrome [data-tsc-wix-nav-hidden="true"],
+  body:has(.tsc-mobile-site-header) [data-tsc-wix-nav-hidden="true"] {
+    display: none !important;
+    pointer-events: none !important;
+    visibility: hidden !important;
+  }
+}

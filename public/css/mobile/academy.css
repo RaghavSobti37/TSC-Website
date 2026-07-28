@@ -1,0 +1,822 @@
+/*
+ * DESKTOP DESIGN LOCK — PERMANENT. Desktop (>=1025px) is locked to commit faf9dea.
+ * Academy page mobile layout. Loaded only via learn.css (mobile bucket), which is
+ * only mounted by the <=1024px loader. All rules stay inside max-width media queries.
+ */
+
+@media (max-width: 900px) {
+  /* ---------- Hero: stack welcome / title / body / CTA ---------- */
+  body[data-page="academy"] .comp-mqwcognj-container {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 14px !important;
+    padding: 32px 22px 40px !important;
+    box-sizing: border-box !important;
+    height: auto !important;
+    min-height: 0 !important;
+    grid-template-rows: none !important;
+    grid-template-columns: none !important;
+  }
+
+  body[data-page="academy"] .comp-mqwcognj-container > [id^="comp-"] {
+    position: relative !important;
+    inset: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    grid-area: auto !important;
+    place-self: stretch !important;
+    height: auto !important;
+    min-height: 0 !important;
+    transform: none !important;
+  }
+
+  body[data-page="academy"] #comp-mqz7149p { display: none !important; } /* hairline spacer */
+  body[data-page="academy"] #comp-mqwe8zdd { order: 1 !important; } /* WELCOME TO TSC ACADEMY */
+  body[data-page="academy"] #comp-mqwcozxs { order: 2 !important; } /* Unfolding Artist Force */
+  body[data-page="academy"] #comp-mqwdnovu { order: 3 !important; } /* body copy */
+  body[data-page="academy"] #comp-mqwe17k6 { order: 4 !important; align-self: flex-start !important; width: auto !important; }
+
+  body[data-page="academy"] .comp-mqwcognj-overflow-wrapper {
+    height: auto !important;
+    min-height: 0 !important;
+  }
+
+  body[data-page="academy"] #comp-mqwcognj {
+    height: auto !important;
+    min-height: 0 !important;
+  }
+
+  /* ---------- Shared course-row flattening ---------- */
+  body[data-page="academy"] .comp-mpjvo1xd-container,
+  body[data-page="academy"] .comp-mpjxmosy-container,
+  body[data-page="academy"] .comp-mpjxxerb1-container {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 16px !important;
+    padding: 22px 18px 26px !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    grid-template-rows: none !important;
+    grid-template-columns: none !important;
+    border: 1px solid rgba(255, 236, 209, 0.55) !important;
+    border-radius: 14px !important;
+  }
+
+  body[data-page="academy"] .comp-mpjvo1xd-container > [id^="comp-"],
+  body[data-page="academy"] .comp-mpjxmosy-container > [id^="comp-"],
+  body[data-page="academy"] .comp-mpjxxerb1-container > [id^="comp-"] {
+    position: relative !important;
+    inset: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    grid-area: auto !important;
+    place-self: stretch !important;
+    height: auto !important;
+    min-height: 0 !important;
+    transform: none !important;
+  }
+
+  /* wrappers above the inner grids grow naturally */
+  body[data-page="academy"] #comp-mpjvo1xd,
+  body[data-page="academy"] #comp-mpjxmosy,
+  body[data-page="academy"] #comp-mpjxxerb1,
+  body[data-page="academy"] #comp-mpjvjuos,
+  body[data-page="academy"] #comp-mpjxmose,
+  body[data-page="academy"] #comp-mpjxxeqt {
+    height: auto !important;
+    min-height: 0 !important;
+  }
+
+  /* decorative frames replaced by the container border above */
+  body[data-page="academy"] #comp-mqwdfgsa,
+  body[data-page="academy"] #comp-mrf47cuv,
+  body[data-page="academy"] #comp-mrg43yyg,
+  body[data-page="academy"] #comp-mpjxxere2 {
+    display: none !important;
+  }
+
+  /* ---------- Course 1: The heART of Composition ---------- */
+  body[data-page="academy"] #comp-mpk54qtl { order: 1 !important; }
+  body[data-page="academy"] #comp-mpjo65q32 { order: 2 !important; }
+  body[data-page="academy"] #comp-mpjwxij6 { order: 3 !important; }
+  body[data-page="academy"] #comp-mpk52xro { order: 4 !important; }
+  body[data-page="academy"] #comp-mpk57dp3 { order: 5 !important; }
+  body[data-page="academy"] #comp-mpjo65qn { order: 6 !important; }
+
+  /* ---------- Course 2: Roots of Hindustani Classical ---------- */
+  body[data-page="academy"] #comp-mpk4u9v1 { order: 1 !important; }
+  body[data-page="academy"] #comp-mpjxmot0 { order: 2 !important; }
+  body[data-page="academy"] #comp-mpjxmote { order: 3 !important; }
+  body[data-page="academy"] #comp-mpk507k4 { order: 4 !important; }
+  body[data-page="academy"] #comp-mpk4wrdy { order: 5 !important; }
+  body[data-page="academy"] #comp-mpjxmotk { order: 6 !important; }
+
+  /* ---------- Course 3: A-Z of Music Production (Coming Soon) ---------- */
+  body[data-page="academy"] #comp-mpjz6jkk { order: 1 !important; }
+  body[data-page="academy"] #comp-mrg3xrfp { order: 2 !important; }
+  body[data-page="academy"] #comp-mpjxxers6 { order: 3 !important; }
+  body[data-page="academy"] #comp-mpjzwem7 { order: 4 !important; }
+  body[data-page="academy"] #comp-mpjz94ph { order: 5 !important; }
+  body[data-page="academy"] #comp-mpjxxery4 { order: 6 !important; }
+
+  /* course images: full-width, contained height */
+  body[data-page="academy"] #comp-mpjo65q32,
+  body[data-page="academy"] #comp-mpjxmot0 {
+    height: 300px !important;
+    overflow: hidden !important;
+    border-radius: 10px !important;
+  }
+
+  body[data-page="academy"] #comp-mpjo65q32 > a,
+  body[data-page="academy"] #comp-mpjxmot0 > a,
+  body[data-page="academy"] #comp-mpjo65q32 > a > div,
+  body[data-page="academy"] #comp-mpjxmot0 > a > div {
+    width: 100% !important;
+    height: 100% !important;
+    inset: 0 !important;
+  }
+
+  body[data-page="academy"] #comp-mpjo65q32 img,
+  body[data-page="academy"] #comp-mpjxmot0 img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: top center !important;
+  }
+
+  /* title rows: keep number + name on one readable line */
+  body[data-page="academy"] .comp-mpk54qtl-container,
+  body[data-page="academy"] .comp-mpjz6jkk-container,
+  body[data-page="academy"] .comp-mpk4u9v1-container {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: baseline !important;
+    gap: 10px !important;
+    height: auto !important;
+    width: 100% !important;
+  }
+
+  body[data-page="academy"] .comp-mpk54qtl-container > [id^="comp-"],
+  body[data-page="academy"] .comp-mpjz6jkk-container > [id^="comp-"],
+  body[data-page="academy"] .comp-mpk4u9v1-container > [id^="comp-"] {
+    position: relative !important;
+    inset: auto !important;
+    width: auto !important;
+    max-width: 100% !important;
+    grid-area: auto !important;
+    height: auto !important;
+    transform: none !important;
+  }
+
+  /* inner header grid: number + name side by side, natural widths */
+  body[data-page="academy"] .comp-mpk54qtl-container .HFEOE3,
+  body[data-page="academy"] .comp-mpjz6jkk-container .HFEOE3,
+  body[data-page="academy"] .comp-mpk4u9v1-container .HFEOE3 {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: baseline !important;
+    gap: 10px !important;
+    width: 100% !important;
+    height: auto !important;
+    grid-template-rows: none !important;
+    grid-template-columns: none !important;
+  }
+
+  body[data-page="academy"] .comp-mpk54qtl-container .HFEOE3 > [id^="comp-"],
+  body[data-page="academy"] .comp-mpjz6jkk-container .HFEOE3 > [id^="comp-"],
+  body[data-page="academy"] .comp-mpk4u9v1-container .HFEOE3 > [id^="comp-"] {
+    position: relative !important;
+    inset: auto !important;
+    width: auto !important;
+    flex: 0 1 auto !important;
+    grid-area: auto !important;
+    height: auto !important;
+    transform: none !important;
+  }
+
+  body[data-page="academy"] .comp-mpk54qtl-container .HFEOE3 .wixui-rich-text__text,
+  body[data-page="academy"] .comp-mpjz6jkk-container .HFEOE3 .wixui-rich-text__text,
+  body[data-page="academy"] .comp-mpk4u9v1-container .HFEOE3 .wixui-rich-text__text {
+    width: auto !important;
+    white-space: normal !important;
+    font-size: 18px !important;
+    line-height: 1.25 !important;
+  }
+
+  /* the two-digit course number must never wrap vertically */
+  body[data-page="academy"] #comp-mpjo65q93 .wixui-rich-text__text,
+  body[data-page="academy"] #comp-mpjxmot64 .wixui-rich-text__text,
+  body[data-page="academy"] #comp-mpjxxerk .wixui-rich-text__text {
+    white-space: nowrap !important;
+  }
+
+  /* description / creds columns become full-width stacks */
+  body[data-page="academy"] .comp-mpk52xro-container,
+  body[data-page="academy"] .comp-mpk507k4-container,
+  body[data-page="academy"] .comp-mpjzwem7-container {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 10px !important;
+    height: auto !important;
+    width: 100% !important;
+    grid-template-rows: none !important;
+    grid-template-columns: none !important;
+  }
+
+  body[data-page="academy"] .comp-mpk52xro-container > [id^="comp-"],
+  body[data-page="academy"] .comp-mpk507k4-container > [id^="comp-"],
+  body[data-page="academy"] .comp-mpjzwem7-container > [id^="comp-"] {
+    position: relative !important;
+    inset: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    grid-area: auto !important;
+    height: auto !important;
+    min-height: 0 !important;
+    transform: none !important;
+  }
+
+  /* nested creds/desc wrappers (flex columns of rich text) */
+  body[data-page="academy"] #comp-mpk4zpst,
+  body[data-page="academy"] #comp-mpjzvp90,
+  body[data-page="academy"] #comp-mpjo65ql3,
+  body[data-page="academy"] #comp-mpjxmoth2,
+  body[data-page="academy"] #comp-mpjxxerw {
+    position: relative !important;
+    inset: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+  }
+
+  /* creds bullet lists + descriptions: readable type (desktop grid crushed them) */
+  body[data-page="academy"] .comp-mpk52xro-container .wixui-rich-text__text,
+  body[data-page="academy"] .comp-mpk507k4-container .wixui-rich-text__text,
+  body[data-page="academy"] .comp-mpjzwem7-container .wixui-rich-text__text {
+    font-size: 14px !important;
+    line-height: 1.5 !important;
+    height: auto !important;
+    white-space: normal !important;
+  }
+
+  body[data-page="academy"] .comp-mpk52xro-container li.wixui-rich-text__text,
+  body[data-page="academy"] .comp-mpk507k4-container li.wixui-rich-text__text,
+  body[data-page="academy"] .comp-mpjzwem7-container li.wixui-rich-text__text {
+    margin-bottom: 6px !important;
+  }
+
+  /* mentor label + name: force stacked order (label first) */
+  body[data-page="academy"] .comp-mpjxxers6-container {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 4px !important;
+    height: auto !important;
+    grid-template-rows: none !important;
+    grid-template-columns: none !important;
+  }
+
+  body[data-page="academy"] .comp-mpjxxers6-container > [id^="comp-"] {
+    position: relative !important;
+    inset: auto !important;
+    grid-area: auto !important;
+    width: 100% !important;
+    height: auto !important;
+    transform: none !important;
+    margin: 0 !important;
+  }
+
+  body[data-page="academy"] #comp-mpjxxert4 { order: 1 !important; } /* "Mentor" label */
+  body[data-page="academy"] #comp-mpjxxerv { order: 2 !important; } /* mentor name */
+
+  /* stats: 2x2 tile grid */
+  body[data-page="academy"] .comp-mpk57dp3-container,
+  body[data-page="academy"] .comp-mpk4wrdy-container,
+  body[data-page="academy"] .comp-mpjz94ph-container {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    grid-template-rows: none !important;
+    gap: 10px !important;
+    height: auto !important;
+    width: 100% !important;
+  }
+
+  body[data-page="academy"] .comp-mpk57dp3-container > [id^="comp-"],
+  body[data-page="academy"] .comp-mpk4wrdy-container > [id^="comp-"],
+  body[data-page="academy"] .comp-mpjz94ph-container > [id^="comp-"] {
+    position: relative !important;
+    inset: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    grid-area: auto !important;
+    height: auto !important;
+    min-height: 0 !important;
+    transform: none !important;
+    border: 1px solid rgba(255, 236, 209, 0.35) !important;
+    border-radius: 8px !important;
+    padding: 10px 8px !important;
+    box-sizing: border-box !important;
+    text-align: center !important;
+  }
+
+  body[data-page="academy"] #comp-mpk57dp3,
+  body[data-page="academy"] #comp-mpk4wrdy,
+  body[data-page="academy"] #comp-mpjz94ph {
+    height: auto !important;
+  }
+
+  /* mentor: name under label, left aligned */
+  body[data-page="academy"] #comp-mpjwxij6,
+  body[data-page="academy"] #comp-mpjxmote,
+  body[data-page="academy"] .comp-mpjxxers6-container {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 4px !important;
+    height: auto !important;
+    width: 100% !important;
+    grid-template-rows: none !important;
+    grid-template-columns: none !important;
+  }
+
+  body[data-page="academy"] #comp-mpjwxij6 > [id^="comp-"],
+  body[data-page="academy"] #comp-mpjxmote > [id^="comp-"],
+  body[data-page="academy"] .comp-mpjxxers6-container > [id^="comp-"] {
+    position: relative !important;
+    inset: auto !important;
+    width: 100% !important;
+    grid-area: auto !important;
+    height: auto !important;
+    transform: none !important;
+  }
+
+  body[data-page="academy"] #comp-mpjxxers6 { height: auto !important; }
+
+  /* Know More buttons: comfortable tap target */
+  body[data-page="academy"] #comp-mpjo65qn,
+  body[data-page="academy"] #comp-mpjxmotk,
+  body[data-page="academy"] #comp-mpjxxery4 {
+    width: 100% !important;
+    max-width: 320px !important;
+    align-self: center !important;
+  }
+
+  body[data-page="academy"] #comp-mpjo65qn .wixui-button,
+  body[data-page="academy"] #comp-mpjxmotk .wixui-button,
+  body[data-page="academy"] #comp-mpjxxery4 .wixui-button {
+    width: 100% !important;
+    min-height: 48px !important;
+  }
+
+  /* Coming Soon banner (course 3) */
+  body[data-page="academy"] #comp-mrg3xrfp {
+    border: 1px dashed rgba(255, 236, 209, 0.5) !important;
+    border-radius: 10px !important;
+    padding: 14px !important;
+  }
+
+  body[data-page="academy"] .comp-mrg3xrfp-container {
+    display: flex !important;
+    justify-content: center !important;
+    height: auto !important;
+  }
+
+  body[data-page="academy"] .comp-mrg3xrfp-container > [id^="comp-"] {
+    position: relative !important;
+    inset: auto !important;
+    width: auto !important;
+    height: auto !important;
+    transform: none !important;
+  }
+
+  /* ---------- Typography and text-offset repairs ---------- */
+  /* Wix pins rich text with pixel offsets; relax them inside flattened blocks. */
+  body[data-page="academy"] .comp-mpjvo1xd-container .wixui-rich-text__text,
+  body[data-page="academy"] .comp-mpjxmosy-container .wixui-rich-text__text,
+  body[data-page="academy"] .comp-mpjxxerb1-container .wixui-rich-text__text {
+    white-space: normal !important;
+    overflow-wrap: break-word !important;
+  }
+
+  /* stat tiles: two-column wrap, no pixel pinning */
+  body[data-page="academy"] .comp-mpk57dp3-container,
+  body[data-page="academy"] .comp-mpk4wrdy-container,
+  body[data-page="academy"] .comp-mpjz94ph-container {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 10px !important;
+    height: auto !important;
+    justify-content: center !important;
+    grid-template-rows: none !important;
+    grid-template-columns: none !important;
+  }
+
+  body[data-page="academy"] .comp-mpk57dp3-container > [id^="comp-"],
+  body[data-page="academy"] .comp-mpk4wrdy-container > [id^="comp-"],
+  body[data-page="academy"] .comp-mpjz94ph-container > [id^="comp-"] {
+    position: relative !important;
+    inset: auto !important;
+    grid-area: auto !important;
+    transform: none !important;
+    width: calc(50% - 5px) !important;
+    height: auto !important;
+    min-height: 44px !important;
+    margin: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 8px 6px !important;
+    box-sizing: border-box !important;
+  }
+
+  body[data-page="academy"] .comp-mpk57dp3-container .wixui-rich-text__text,
+  body[data-page="academy"] .comp-mpk4wrdy-container .wixui-rich-text__text,
+  body[data-page="academy"] .comp-mpjz94ph-container .wixui-rich-text__text {
+    font-size: 13px !important;
+    line-height: 1.35 !important;
+    text-align: center !important;
+    width: 100% !important;
+    margin: 0 !important;
+  }
+
+  /* course titles readable */
+  body[data-page="academy"] .comp-mpk54qtl-container .wixui-rich-text__text,
+  body[data-page="academy"] .comp-mpk4u9v1-container .wixui-rich-text__text,
+  body[data-page="academy"] .comp-mpjz6jkk-container .wixui-rich-text__text {
+    font-size: 18px !important;
+    line-height: 1.25 !important;
+  }
+
+  /* mentor label + name readable */
+  body[data-page="academy"] #comp-mpjwxij6 .wixui-rich-text__text,
+  body[data-page="academy"] #comp-mpjxmote .wixui-rich-text__text,
+  body[data-page="academy"] .comp-mpjxxers6-container .wixui-rich-text__text {
+    font-size: 15px !important;
+    line-height: 1.3 !important;
+  }
+
+  /* Know More label readable */
+  body[data-page="academy"] #comp-mpjo65qn .wixui-button__label,
+  body[data-page="academy"] #comp-mpjxmotk .wixui-button__label,
+  body[data-page="academy"] #comp-mpjxxery4 .wixui-button__label {
+    font-size: 14px !important;
+  }
+
+  /* hero CTA button: natural size */
+  body[data-page="academy"] #comp-mqwe17k6 .wixui-button {
+    width: auto !important;
+    min-width: 190px !important;
+    min-height: 48px !important;
+    padding: 0 22px !important;
+  }
+
+  body[data-page="academy"] #comp-mqwe17k6 .wixui-button__label {
+    font-size: 14px !important;
+    white-space: nowrap !important;
+  }
+
+  /* ---------- Testimonials: stack quotes vertically, hide arrows ---------- */
+  body[data-page="academy"] #comp-mpl384rr,
+  body[data-page="academy"] #comp-mqwl0xfw,
+  body[data-page="academy"] .comp-mqwl0xfw-overflow-wrapper,
+  body[data-page="academy"] #comp-mqwl0xfz {
+    height: auto !important;
+    min-height: 0 !important;
+  }
+
+  body[data-page="academy"] .comp-mpl384rr-container {
+    display: flex !important;
+    flex-direction: column !important;
+    height: auto !important;
+    padding: 26px 18px !important;
+    box-sizing: border-box !important;
+  }
+
+  body[data-page="academy"] .comp-mpl384rr-container > [id^="comp-"] {
+    position: relative !important;
+    inset: auto !important;
+    width: 100% !important;
+    grid-area: auto !important;
+    height: auto !important;
+    transform: none !important;
+  }
+
+  body[data-page="academy"] .comp-mqwl0xfz-container {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 18px !important;
+    height: auto !important;
+    grid-template-rows: none !important;
+    grid-template-columns: none !important;
+  }
+
+  body[data-page="academy"] .comp-mqwl0xfz-container > .p9hNc1 {
+    position: relative !important;
+    inset: auto !important;
+    grid-area: auto !important;
+    height: auto !important;
+    min-height: 0 !important;
+    border: 1px solid rgba(255, 236, 209, 0.35) !important;
+    border-radius: 12px !important;
+    overflow: hidden !important;
+  }
+
+  /* flatten each slide's inner grid: icon, quote, name, role, photo */
+  body[data-page="academy"] .comp-mqwl0xfz-container .HFEOE3 {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+    height: auto !important;
+    padding: 22px 20px !important;
+    box-sizing: border-box !important;
+    grid-template-rows: none !important;
+    grid-template-columns: none !important;
+  }
+
+  body[data-page="academy"] .comp-mqwl0xfz-container .HFEOE3 > [id^="comp-"] {
+    position: relative !important;
+    inset: auto !important;
+    grid-area: auto !important;
+    width: 100% !important;
+    height: auto !important;
+    transform: none !important;
+    margin: 0 !important;
+  }
+
+  body[data-page="academy"] .comp-mqwl0xfz-container .HFEOE3 > [id^="comp-mqwn76zz"] {
+    order: 1 !important;
+    width: 28px !important;
+    max-width: 28px !important;
+    height: 28px !important;
+  }
+
+  body[data-page="academy"] .comp-mqwl0xfz-container .HFEOE3 > [id^="comp-mqwm5vfv"] { order: 2 !important; }
+  body[data-page="academy"] .comp-mqwl0xfz-container .HFEOE3 > [id^="comp-mqwm596c"] { order: 3 !important; }
+  body[data-page="academy"] .comp-mqwl0xfz-container .HFEOE3 > [id^="comp-mqwmrdzh"] { order: 4 !important; }
+
+  body[data-page="academy"] .comp-mqwl0xfz-container .HFEOE3 > [id^="comp-mqwmac0q"] {
+    order: 5 !important;
+    width: 200px !important;
+    max-width: 70% !important;
+    height: auto !important;
+    aspect-ratio: auto !important;
+    align-self: center !important;
+  }
+
+  body[data-page="academy"] .comp-mqwl0xfz-container .HFEOE3 > [id^="comp-mqwmac0q"] .YX2qkL,
+  body[data-page="academy"] .comp-mqwl0xfz-container .HFEOE3 > [id^="comp-mqwmac0q"] wow-image,
+  body[data-page="academy"] .comp-mqwl0xfz-container .HFEOE3 > [id^="comp-mqwmac0q"] img {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100% !important;
+    position: relative !important;
+  }
+
+  body[data-page="academy"] .comp-mqwl0xfz-container .HFEOE3 [id^="comp-mqwm5vfv"] .wixui-rich-text__text {
+    width: 100% !important;
+    font-size: 14px !important;
+    line-height: 1.5 !important;
+    height: auto !important;
+  }
+
+  body[data-page="academy"] .comp-mqwl0xfz-container .HFEOE3 [id^="comp-mqwm596c"] .wixui-rich-text__text {
+    width: 100% !important;
+    font-size: 17px !important;
+    line-height: 1.3 !important;
+  }
+
+  body[data-page="academy"] .comp-mqwl0xfz-container .HFEOE3 [id^="comp-mqwmrdzh"] .wixui-rich-text__text {
+    width: 100% !important;
+    font-size: 12px !important;
+    line-height: 1.4 !important;
+    height: auto !important;
+  }
+
+  /* hide slideshow arrows: all slides are visible now */
+  body[data-page="academy"] #comp-mqwl0xg3,
+  body[data-page="academy"] #comp-mqwl0xg5 {
+    display: none !important;
+  }
+
+  /* ---------- Mentor Sessions: heading above stacked cards ---------- */
+  body[data-page="academy"] #comp-mpl387ie { height: auto !important; }
+
+  body[data-page="academy"] .comp-mpl387ie-container {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 18px !important;
+    height: auto !important;
+    padding: 26px 20px !important;
+    box-sizing: border-box !important;
+  }
+
+  body[data-page="academy"] .comp-mpl387ie-container > [id^="comp-"] {
+    position: relative !important;
+    inset: auto !important;
+    width: 100% !important;
+    grid-area: auto !important;
+    height: auto !important;
+    transform: none !important;
+  }
+
+  body[data-page="academy"] #comp-mqz5dswe {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+  }
+
+  body[data-page="academy"] #comp-mqz5dswe > .jdJeEr { display: none !important; }
+
+  body[data-page="academy"] #comp-mqz4dqr7,
+  body[data-page="academy"] #comp-mqz53v1n {
+    position: relative !important;
+    inset: auto !important;
+    width: 100% !important;
+    grid-area: auto !important;
+    height: auto !important;
+    min-height: 0 !important;
+    transform: none !important;
+    border: 1px solid rgba(8, 82, 95, 0.25) !important;
+    border-radius: 12px !important;
+    padding: 16px 14px !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+  }
+
+  body[data-page="academy"] #comp-mqz4dqr7 > .jdJeEr,
+  body[data-page="academy"] #comp-mqz53v1n > .jdJeEr { display: none !important; }
+
+  body[data-page="academy"] #comp-mqz4dqr7 > [id^="comp-"],
+  body[data-page="academy"] #comp-mqz53v1n > [id^="comp-"] {
+    position: relative !important;
+    inset: auto !important;
+    grid-area: auto !important;
+    width: 100% !important;
+    height: auto !important;
+    transform: none !important;
+    margin: 0 !important;
+  }
+
+  body[data-page="academy"] #comp-mqz4dqr7 .wixui-rich-text__text,
+  body[data-page="academy"] #comp-mqz53v1n .wixui-rich-text__text {
+    width: 100% !important;
+    height: auto !important;
+    white-space: normal !important;
+  }
+
+  body[data-page="academy"] #comp-mqz4dqr7 h1.wixui-rich-text__text,
+  body[data-page="academy"] #comp-mqz53v1n h1.wixui-rich-text__text {
+    font-size: 19px !important;
+    line-height: 1.25 !important;
+  }
+
+  body[data-page="academy"] #comp-mqz4dqr7 p.wixui-rich-text__text,
+  body[data-page="academy"] #comp-mqz53v1n p.wixui-rich-text__text {
+    font-size: 13px !important;
+    line-height: 1.45 !important;
+  }
+
+  /* mentor photo: natural block */
+  body[data-page="academy"] #comp-mqz4oryu,
+  body[data-page="academy"] #comp-mqz4dqr7 wow-image img,
+  body[data-page="academy"] #comp-mqz53v1n wow-image img {
+    height: auto !important;
+  }
+
+  /* marquee svg bleeds outside its card */
+  body[data-page="academy"] #comp-mqz4i5o3 svg.preview-svg,
+  body[data-page="academy"] #comp-mqz53v1z8 svg.preview-svg {
+    display: none !important;
+  }
+
+  /* ---------- Final CTA (Personal guidance): stack ---------- */
+  body[data-page="academy"] #comp-mqz5bgg8 { height: auto !important; }
+
+  body[data-page="academy"] .comp-mqz5bgg8-container {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 14px !important;
+    height: auto !important;
+    padding: 28px 22px !important;
+    box-sizing: border-box !important;
+    grid-template-rows: none !important;
+    grid-template-columns: none !important;
+  }
+
+  body[data-page="academy"] .comp-mqz5bgg8-container > [id^="comp-"] {
+    position: relative !important;
+    inset: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    grid-area: auto !important;
+    height: auto !important;
+    min-height: 0 !important;
+    transform: none !important;
+    margin: 0 !important;
+    left: auto !important;
+  }
+
+  /* tile inner texts: kill leftover pixel pins */
+  body[data-page="academy"] #comp-mqz65olf [id^="comp-"],
+  body[data-page="academy"] #comp-mqz6s6cn [id^="comp-"],
+  body[data-page="academy"] #comp-mqz6saz5 [id^="comp-"],
+  body[data-page="academy"] #comp-mqz6sh3u [id^="comp-"] {
+    margin: 0 !important;
+    left: auto !important;
+  }
+
+  body[data-page="academy"] #comp-mqz5v8l2 { order: 1 !important; }
+  body[data-page="academy"] #comp-mqz5tdw3 { order: 2 !important; }
+  body[data-page="academy"] #comp-mqz5w5p4 { order: 3 !important; }
+  body[data-page="academy"] #comp-mqz5xh42 { order: 4 !important; }
+  body[data-page="academy"] #comp-mqz65olf { order: 5 !important; }
+  body[data-page="academy"] #comp-mqz6s6cn { order: 6 !important; }
+  body[data-page="academy"] #comp-mqz6saz5 { order: 7 !important; }
+  body[data-page="academy"] #comp-mqz6sh3u { order: 8 !important; }
+  body[data-page="academy"] #comp-mr0g6wg2 { order: 9 !important; }
+  body[data-page="academy"] #comp-mr0g77kb { order: 10 !important; }
+
+  /* CTA image: natural aspect */
+  body[data-page="academy"] #comp-mqz5xh42 img {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  /* CTA info tiles: label + copy stacked cards */
+  body[data-page="academy"] #comp-mqz65olf,
+  body[data-page="academy"] #comp-mqz6s6cn,
+  body[data-page="academy"] #comp-mqz6saz5,
+  body[data-page="academy"] #comp-mqz6sh3u {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 6px !important;
+    border: 1px solid rgba(255, 236, 209, 0.35) !important;
+    border-radius: 10px !important;
+    padding: 12px 14px !important;
+    box-sizing: border-box !important;
+  }
+
+  body[data-page="academy"] #comp-mqz65olf > [id^="comp-"],
+  body[data-page="academy"] #comp-mqz6s6cn > [id^="comp-"],
+  body[data-page="academy"] #comp-mqz6saz5 > [id^="comp-"],
+  body[data-page="academy"] #comp-mqz6sh3u > [id^="comp-"] {
+    position: relative !important;
+    inset: auto !important;
+    width: 100% !important;
+    grid-area: auto !important;
+    height: auto !important;
+    transform: none !important;
+  }
+
+  body[data-page="academy"] #comp-mqz65olf > .jdJeEr,
+  body[data-page="academy"] #comp-mqz6s6cn > .jdJeEr,
+  body[data-page="academy"] #comp-mqz6saz5 > .jdJeEr,
+  body[data-page="academy"] #comp-mqz6sh3u > .jdJeEr { display: none !important; }
+
+  body[data-page="academy"] .comp-mqz5bgg8-container .wixui-rich-text__text {
+    font-size: 14px !important;
+    line-height: 1.45 !important;
+    white-space: normal !important;
+    height: auto !important;
+    min-height: 0 !important;
+  }
+
+  body[data-page="academy"] .comp-mqz5bgg8-container [id^="comp-"] {
+    height: auto !important;
+  }
+
+  body[data-page="academy"] #comp-mqz5tdw3 .wixui-rich-text__text {
+    font-size: 26px !important;
+    line-height: 1.2 !important;
+    height: auto !important;
+  }
+
+  /* image keeps its aspect box */
+  body[data-page="academy"] #comp-mqz5xh42,
+  body[data-page="academy"] #comp-mqz5xh42 .YX2qkL,
+  body[data-page="academy"] #comp-mqz5xh42 wow-image {
+    height: auto !important;
+  }
+
+  /* CTA buttons */
+  body[data-page="academy"] #comp-mr0g6wg2 .wixui-button,
+  body[data-page="academy"] #comp-mr0g77kb .wixui-button {
+    width: 100% !important;
+    min-height: 48px !important;
+  }
+
+  body[data-page="academy"] #comp-mr0g6wg2 .wixui-button__label,
+  body[data-page="academy"] #comp-mr0g77kb .wixui-button__label {
+    font-size: 14px !important;
+  }
+}

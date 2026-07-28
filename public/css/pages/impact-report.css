@@ -734,3 +734,32 @@ a {
     font-size: 36px;
   }
 }
+
+/* ===== TSC MBA/impact mobile polish — subpages-mobile ===== */
+@media (max-width: 1024px) {
+  .report-hero h1 {
+    font-size: clamp(2rem, 9vw, 2.7rem);
+    line-height: 1.08;
+  }
+
+  .report-subtitle {
+    font-size: clamp(1rem, 3.8vw, 1.15rem);
+    line-height: 1.45;
+  }
+
+  .report-copy h2 {
+    font-size: clamp(1.35rem, 5.5vw, 1.85rem);
+  }
+
+  .stat-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .report-case-nav {
+    grid-template-columns: 1fr;
+  }
+
+  .report-process {
+    grid-template-columns: 1fr;
+  }
+}

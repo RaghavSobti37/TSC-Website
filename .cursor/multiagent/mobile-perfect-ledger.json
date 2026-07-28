@@ -1,0 +1,241 @@
+﻿{
+    "slug":  "mobile-perfect",
+    "goal":  "Perfect mobile design (390/768) for all routes; desktop \u003e=1025px locked to faf9dea; then build, push, Vercel deploy",
+    "createdAt":  "2026-07-28T13:00:00.000Z",
+    "phase":  "test",
+    "slices":  [
+                   {
+                       "sliceId":  "films-mobile",
+                       "goal":  "Perfect Films page mobile: restore About Us text, fix Why TSC Films overlap, film cards readable, no empty shells",
+                       "ownsFiles":  [
+                                         "public/css/mobile/films.css",
+                                         "public/css/pages/films.css"
+                                     ],
+                       "forbiddenFiles":  [
+                                              "public/css/mobile/learn.css",
+                                              "public/css/mobile/academy.css",
+                                              "public/css/mobile/artists.css",
+                                              "public/css/mobile/about.css",
+                                              "public/css/mobile/home.css",
+                                              "public/css/mobile/work.css",
+                                              "public/css/mobile/resources.css",
+                                              "public/js/tsc-components.js"
+                                          ],
+                       "verifyCommands":  [
+                                              "node artifacts/rollback/shot3.js http://127.0.0.1:3000 mf 390 /films",
+                                              "node artifacts/rollback/pixdiff.js artifacts/rollback/ref-films.png artifacts/rollback/d1280chk-films.png"
+                                          ],
+                       "status":  "done",
+                       "workerAgentId":  "8cb81b07-1904-4fa6-9702-b7b74d37771d",
+                       "evidence":  "mf8-films.png (+s0..s3); mf8t-films.png; mf8-crop-about.png. public/css/mobile/films.css only (@media max-width:1024px): About Us text restored; Why TSC slideshow flattened to word stack; academy paste hidden + film posters shown; no overflow 390/768.",
+                       "blockedReason":  ""
+                   },
+                   {
+                       "sliceId":  "learn-mobile",
+                       "goal":  "Perfect Learn With TSC + Academy mobile: fix mid-word title breaks, testimonials, mentor stack, course headers",
+                       "ownsFiles":  [
+                                         "public/css/mobile/learn.css",
+                                         "public/css/mobile/academy.css",
+                                         "public/css/pages/learn-with-tsc.css",
+                                         "public/css/pages/academy.css"
+                                     ],
+                       "forbiddenFiles":  [
+                                              "public/css/mobile/films.css",
+                                              "public/css/mobile/artists.css",
+                                              "public/css/mobile/about.css",
+                                              "public/css/mobile/home.css",
+                                              "public/css/mobile/work.css",
+                                              "public/css/mobile/resources.css",
+                                              "public/js/tsc-components.js"
+                                          ],
+                       "verifyCommands":  [
+                                              "node artifacts/rollback/shot3.js http://127.0.0.1:3000 ml 390 /learn-with-tsc,/academy"
+                                          ],
+                       "status":  "done",
+                       "workerAgentId":  "76f4346f-51e3-4675-a8d7-2b2ce311a151",
+                       "evidence":  "public/css/mobile/learn.css + academy.css only (@media max-width:900px). Feature titles: icon-above-title stack, 17px, overflow-wrap:normal (no mid-word). Course 01/02/03 headers flex-row + nowrap numbers (course3 had no nested HFEOE3). Testimonials flattened (quote 28px, photo 200px, 3 relative slides). Mentor Sessions stacked. Academy: course nums nowrap IDs fixed; mentors stacked. Verify: ml/ml768 shots 390+768; probe titles h=1line, nums w=15 nowrap row, mentorsStacked true.",
+                       "blockedReason":  ""
+                   },
+                   {
+                       "sliceId":  "artists-path-mobile",
+                       "goal":  "Perfect Artists + Artist Path mobile: fix Program at a Glance wrapping, overlapping origin cards, empty whitespace, stack cramped columns",
+                       "ownsFiles":  [
+                                         "public/css/mobile/artists.css",
+                                         "public/css/pages/artists.css",
+                                         "public/css/pages/artist-path.css"
+                                     ],
+                       "forbiddenFiles":  [
+                                              "public/css/mobile/films.css",
+                                              "public/css/mobile/learn.css",
+                                              "public/css/mobile/academy.css",
+                                              "public/css/mobile/about.css",
+                                              "public/css/mobile/home.css",
+                                              "public/css/mobile/work.css",
+                                              "public/css/mobile/resources.css",
+                                              "public/js/tsc-components.js"
+                                          ],
+                       "verifyCommands":  [
+                                              "node artifacts/rollback/shot3.js http://127.0.0.1:3000 ma 390 /artists,/artist-path"
+                                          ],
+                       "status":  "done",
+                       "workerAgentId":  "bcb54c78-9026-4586-a03d-7373b2ae4872",
+                       "evidence":  "public/css/mobile/artists.css only (@media max-width:900px). Glance: single-level 2-col grid (was nested 67px), icons 40px, STARTS/August 1-line. What Is + Why cards stacked flex, overlaps=0. Receive: unstick + kill 844px rows (2532Ã¢â€ â€™874), benefit tiles full-width stack. Framework steps stacked, hide empty 358px decor. Artists hub prior stacks OK. Verify ma5 shots 390; probe startsLines=1 augustLines=1 pathOverlaps=0 whyOverlaps=0 leafW=358 scrollW=390.",
+                       "blockedReason":  ""
+                   },
+                   {
+                       "sliceId":  "about-mobile",
+                       "goal":  "Perfect About mobile: polish mid-page overlaps, ecosystem/sections spacing, readable type",
+                       "ownsFiles":  [
+                                         "public/css/mobile/about.css",
+                                         "public/css/pages/about.css",
+                                         "public/css/pages/about-mobile-hero.css"
+                                     ],
+                       "forbiddenFiles":  [
+                                              "public/css/mobile/films.css",
+                                              "public/css/mobile/learn.css",
+                                              "public/css/mobile/artists.css",
+                                              "public/css/mobile/home.css",
+                                              "public/css/mobile/work.css",
+                                              "public/css/mobile/resources.css",
+                                              "public/js/tsc-components.js"
+                                          ],
+                       "verifyCommands":  [
+                                              "node artifacts/rollback/shot3.js http://127.0.0.1:3000 mab 390 /about"
+                                          ],
+                       "status":  "done",
+                       "workerAgentId":  "65ddd0b4-4faa-4752-b2e1-aa1205f79911",
+                       "evidence":  "about 390/768 polish; dual hamburger noted for integration",
+                       "blockedReason":  ""
+                   },
+                   {
+                       "sliceId":  "home-work-mobile",
+                       "goal":  "Perfect Home + Work mobile: overflow, type scale, CTAs, grids",
+                       "ownsFiles":  [
+                                         "public/css/mobile/home.css",
+                                         "public/css/mobile/work.css",
+                                         "public/css/pages/home.css",
+                                         "public/css/pages/work.css"
+                                     ],
+                       "forbiddenFiles":  [
+                                              "public/css/mobile/films.css",
+                                              "public/css/mobile/learn.css",
+                                              "public/css/mobile/artists.css",
+                                              "public/css/mobile/about.css",
+                                              "public/css/mobile/resources.css",
+                                              "public/js/tsc-components.js"
+                                          ],
+                       "verifyCommands":  [
+                                              "node artifacts/rollback/shot3.js http://127.0.0.1:3000 mhw 390 /,/work"
+                                          ],
+                       "status":  "done",
+                       "workerAgentId":  "e30fdd11-1296-4f15-a43c-37f19c118b68",
+                       "evidence":  "390/768 shots mhw-*.png mhw768-*.png. Home: CTA 13-14px/48px, WWB stack (+2col tablet), no overflow. Work: mesh 2col-\u003e1col (overflow-wrapper relative), card gaps 28px, quote single cream+pad, Partner CTA 15px/52px. content-replacements/work.animations not loading â€” CSS mesh fallback.",
+                       "blockedReason":  ""
+                   },
+                   {
+                       "sliceId":  "resources-mobile",
+                       "goal":  "Perfect Resources mobile + resource blog subpages CSS",
+                       "ownsFiles":  [
+                                         "public/css/mobile/resources.css",
+                                         "public/css/pages/resources.css",
+                                         "public/css/pages/blog-1.css",
+                                         "public/css/pages/blog-2.css",
+                                         "public/css/pages/blog-3.css",
+                                         "public/css/pages/editorial-blog.css"
+                                     ],
+                       "forbiddenFiles":  [
+                                              "public/css/mobile/films.css",
+                                              "public/css/mobile/learn.css",
+                                              "public/css/mobile/artists.css",
+                                              "public/css/mobile/about.css",
+                                              "public/css/mobile/home.css",
+                                              "public/css/mobile/work.css",
+                                              "public/js/tsc-components.js"
+                                          ],
+                       "verifyCommands":  [
+                                              "node artifacts/rollback/shot3.js http://127.0.0.1:3000 mres 390 /resources"
+                                          ],
+                       "status":  "done",
+                       "workerAgentId":  "b70d26d6-945e-4fb4-b3b9-4253703e7751",
+                       "evidence":  "mresok-resources.png 4102px blog cards stacked; mresok-blog-1.png; pinned-layers display:none blog-1/2/3; MOBILE overlaps=[]; desktop 1280 mobileCss=false flexDir=row w=1132; edited public/css/mobile/resources.css + editorial-blog.css (@media max-width only)",
+                       "blockedReason":  ""
+                   },
+                   {
+                       "sliceId":  "subpages-mobile",
+                       "goal":  "Perfect remaining subpages mobile: film cases, courses, artist profiles, forms",
+                       "ownsFiles":  [
+                                         "public/css/pages/mba.css",
+                                         "public/css/pages/mahavatar-narsimha.css",
+                                         "public/css/pages/hanuman-ansh.css",
+                                         "public/css/pages/mahaprbhu.css",
+                                         "public/css/pages/kalki.css",
+                                         "public/css/pages/the-heart-of-composition.css",
+                                         "public/css/pages/roots-of-hindustani-classical.css",
+                                         "public/css/pages/music-production.css",
+                                         "public/css/pages/harshad-duhita.css",
+                                         "public/css/pages/yugm.css",
+                                         "public/css/pages/book-a-call.css",
+                                         "public/css/pages/book-an-artist.css",
+                                         "public/css/pages/artist-query.css",
+                                         "public/css/pages/collab-query.css",
+                                         "public/css/pages/masterclass-review01.css",
+                                         "public/css/pages/masterclass-review02.css",
+                                         "public/css/pages/classicalreview.css",
+                                         "public/css/pages/impact-report.css",
+                                         "public/css/forms.css"
+                                     ],
+                       "forbiddenFiles":  [
+                                              "public/css/mobile/films.css",
+                                              "public/css/mobile/learn.css",
+                                              "public/css/mobile/academy.css",
+                                              "public/css/mobile/artists.css",
+                                              "public/css/mobile/about.css",
+                                              "public/css/mobile/home.css",
+                                              "public/css/mobile/work.css",
+                                              "public/css/mobile/resources.css",
+                                              "public/js/tsc-components.js"
+                                          ],
+                       "verifyCommands":  [
+                                              "node artifacts/rollback/shot3.js http://127.0.0.1:3000 msub 390 /mba,/mahavatar-narsimha,/book-a-call,/harshad-duhita"
+                                          ],
+                       "status":  "done",
+                       "workerAgentId":  "subpages-mobile-worker",
+                       "evidence":  "shot3 msub 390: mba/mn/book-a-call/harshad-duhita ok; overlaps=0 on harshad+yugm after @media(max-width:1024px) flatten; safety CSS on remaining ownsFiles; desktop MQ false at 1280",
+                       "blockedReason":  ""
+                   }
+               ],
+    "integrationSlice":  {
+                             "sliceId":  "shared-mobile-wiring",
+                             "ownsFiles":  [
+                                               "public/js/tsc-components.js",
+                                               "public/css/tsc-mobile-system.css",
+                                               "public/css/mobile/_safe-base.css",
+                                               "public/css/mobile/_tokens.css",
+                                               "scripts/add-mobile-loader.js"
+                                           ],
+                             "runsAfter":  [
+                                               "films-mobile",
+                                               "learn-mobile",
+                                               "artists-path-mobile",
+                                               "about-mobile",
+                                               "home-work-mobile",
+                                               "resources-mobile",
+                                               "subpages-mobile"
+                                           ],
+                             "status":  "done",
+                             "workerAgentId":  "shared-mobile-wiring",
+                             "evidence":  "about@390: single TSC hamburger (Open navigation); Wix Menu+pinned vertical-menu hidden via body.tsc-has-mobile-chrome CSS/JS; content-replacements.js loads from wireMobileAssets; work@390 tsc-has-mobile-work-cases=true; about@1280: no tsc scripts/chrome (mq false). shot3 intwire-about.png.",
+                             "blockedReason":  ""
+                         },
+    "testAgent":  {
+                      "status":  "pass",
+                      "commandsRun":  [
+                                         "node artifacts/rollback/shot3.js http://127.0.0.1:3000 mtest 390 /,/about,/work,/artists,/artist-path,/learn-with-tsc,/films,/resources,/academy",
+                                         "probe overflow+chrome @390 all 9 routes (scrollWidth===390 overflow=false)",
+                                         "probe /about @1280 body.tsc-has-mobile-chrome=false",
+                                         "npm run build (exit 0)"
+                                      ],
+                      "lastFailure":  "",
+                      "evidence":  "mtest-*.png 390 all 9 primary routes; scrollWidth=390 overflow=false each; desktop /about@1280 no tsc-has-mobile-chrome; BUILD_OK; pixdiff skipped (ref full-page vs viewport height mismatch)"
+                  }
+}

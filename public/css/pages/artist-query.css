@@ -958,3 +958,40 @@ url("/assets/mirror/static.wixstatic.com/ufonts/834fa9_d08c6fe9ca9b47ccb21ecdcb7
 
 /* style 30 */
 #comp-mrxwaolt_r_comp-mrxw0sqb2 svg [data-color="1"] {fill: #FFECD1;}
+
+/* ===== TSC mobile safety (max-width: 1024px) — subpages-mobile ===== */
+@media (max-width: 1024px) {
+  main,
+  #SITE_PAGES {
+    overflow-x: clip;
+    max-width: 100%;
+  }
+
+  main section.wixui-section {
+    overflow-x: clip;
+    max-width: 100%;
+    height: auto !important;
+    min-height: 0 !important;
+  }
+
+  main img,
+  main .wixui-image img,
+  main wow-image img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  main [data-testid="richTextElement"] .wixui-rich-text__text,
+  main [data-testid="richTextElement"] p,
+  main [data-testid="richTextElement"] span {
+    overflow-wrap: anywhere;
+    word-break: normal;
+  }
+
+  main .wixui-button,
+  main a.wixui-button,
+  main a.PoVCDy {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+}

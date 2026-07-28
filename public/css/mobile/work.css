@@ -561,6 +561,484 @@
     position: relative !important;
     grid-area: auto !important;
   }
+
+  /* —— Selected Work mesh (when JS shell absent): stack 2-col → 1-col ——
+     Beat tsc-responsive fixed 1040/1240 heights with higher specificity. */
+  body:not(.tsc-has-mobile-work-cases):has(#comp-mr69hwoy) #comp-mr69hwoy {
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+  }
+
+  body:not(.tsc-has-mobile-work-cases):has(#comp-mr69hwoy) :is(
+    #comp-mr69hwsy,
+    .comp-mr69hwsy-overflow-wrapper,
+    .comp-mr69hwvm1-overflow-wrapper,
+    .comp-mr69hwt41-overflow-wrapper,
+    #comp-mr69hwvm1,
+    #comp-mr69hwt41
+  ) {
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+
+  body:not(.tsc-has-mobile-work-cases) #comp-mr69hwoy .comp-mr69hwoy-container,
+  body:not(.tsc-has-mobile-work-cases) #comp-mr69hwoy [data-testid="responsive-container-content"] {
+    display: flex !important;
+    flex-direction: column !important;
+    height: auto !important;
+    min-height: 0 !important;
+    padding: 16px 14px 32px !important;
+    gap: 0 !important;
+    grid-template-columns: none !important;
+    grid-template-rows: none !important;
+    overflow: visible !important;
+  }
+
+  body:not(.tsc-has-mobile-work-cases) #comp-mr69hwsy {
+    width: 100% !important;
+    max-width: 100% !important;
+    display: block !important;
+  }
+
+  body:not(.tsc-has-mobile-work-cases) #comp-mr69hwsy > .inner-box,
+  body:not(.tsc-has-mobile-work-cases) #comp-mr69hwsy > .jdJeEr {
+    position: absolute !important;
+    inset: 0 !important;
+    pointer-events: none !important;
+    height: auto !important;
+  }
+
+  body:not(.tsc-has-mobile-work-cases) .comp-mr69hwsy-overflow-wrapper,
+  body:not(.tsc-has-mobile-work-cases) .comp-mr69hwsy-container {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 28px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    grid-template-columns: none !important;
+    grid-template-rows: none !important;
+    overflow: visible !important;
+    /* Wix pins overflow-wrappers absolute — that collapses parent height */
+    position: relative !important;
+    inset: auto !important;
+    left: auto !important;
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+  }
+
+  body:not(.tsc-has-mobile-work-cases) #comp-mr69hwvm1,
+  body:not(.tsc-has-mobile-work-cases) #comp-mr69hwt41 {
+    position: relative !important;
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    left: auto !important;
+    top: auto !important;
+    margin: 0 !important;
+    grid-area: auto !important;
+    overflow: visible !important;
+    flex: 0 0 auto !important;
+    height: auto !important;
+    min-height: 0 !important;
+  }
+
+  body:not(.tsc-has-mobile-work-cases) #comp-mr69hwvm1 .comp-mr69hwvm1-container,
+  body:not(.tsc-has-mobile-work-cases) #comp-mr69hwt41 .comp-mr69hwt41-container,
+  body:not(.tsc-has-mobile-work-cases) #comp-mr69hwvm1 [data-testid="responsive-container-content"],
+  body:not(.tsc-has-mobile-work-cases) #comp-mr69hwt41 [data-testid="responsive-container-content"],
+  body:not(.tsc-has-mobile-work-cases) .comp-mr69hwvq-container,
+  body:not(.tsc-has-mobile-work-cases) .comp-mr69hwu81-container,
+  body:not(.tsc-has-mobile-work-cases) .comp-mr69hwvq-overflow-wrapper,
+  body:not(.tsc-has-mobile-work-cases) .comp-mr69hwu81-overflow-wrapper,
+  body:not(.tsc-has-mobile-work-cases) .comp-mr69hwvm1-overflow-wrapper,
+  body:not(.tsc-has-mobile-work-cases) .comp-mr69hwt41-overflow-wrapper {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 28px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    grid-template-columns: none !important;
+    grid-template-rows: none !important;
+    overflow: visible !important;
+    position: relative !important;
+    inset: auto !important;
+    left: auto !important;
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+  }
+
+  /* Hide orphaned mesh arrow chips — shell would replace these */
+  body:not(.tsc-has-mobile-work-cases) #comp-mr69hwul,
+  body:not(.tsc-has-mobile-work-cases) #comp-mr69hwvv4,
+  body:not(.tsc-has-mobile-work-cases) #comp-mr69hwoy button.KSh0Yl {
+    display: none !important;
+  }
+
+  /* Flatten nested text/stat wrappers so they stay inside card boxes */
+  body:not(.tsc-has-mobile-work-cases) :is(
+    #comp-mr69hwuu1,
+    #comp-mr69hwux,
+    #comp-mrucdjtx,
+    #comp-mr6by9ei,
+    #comp-mr6by9ek3,
+    #comp-mr6by9ep,
+    #comp-mruporeg,
+    #comp-mr69hwvx,
+    #comp-mr69hww1,
+    #comp-mruphxpm,
+    #comp-mr6b08we,
+    #comp-mr6b08wh3,
+    #comp-mr6b08ww3,
+    #comp-mrupljhl
+  ) {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    transform: none !important;
+    grid-area: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+    overflow: visible !important;
+  }
+
+  body:not(.tsc-has-mobile-work-cases) #comp-mr69hwvq,
+  body:not(.tsc-has-mobile-work-cases) #comp-mr69hwu81,
+  body:not(.tsc-has-mobile-work-cases) #comp-mr69hwub,
+  body:not(.tsc-has-mobile-work-cases) #comp-mr69hwvs2,
+  body:not(.tsc-has-mobile-work-cases) #comp-mr69hww9,
+  body:not(.tsc-has-mobile-work-cases) #comp-mr69hwvf5,
+  body:not(.tsc-has-mobile-work-cases) #comp-mr69hwud,
+  body:not(.tsc-has-mobile-work-cases) #comp-mr69hwvu1,
+  body:not(.tsc-has-mobile-work-cases) #comp-mr69hwwa4,
+  body:not(.tsc-has-mobile-work-cases) #comp-mr69hwvh,
+  body:not(.tsc-has-mobile-work-cases) #comp-mr6b08we,
+  body:not(.tsc-has-mobile-work-cases) #comp-mr6by9ei,
+  body:not(.tsc-has-mobile-work-cases) #comp-mr69hwuu1,
+  body:not(.tsc-has-mobile-work-cases) #comp-mr69hwvx {
+    position: relative !important;
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    left: auto !important;
+    top: auto !important;
+    margin: 0 !important;
+    grid-area: auto !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    aspect-ratio: auto !important;
+    overflow: visible !important;
+    gap: 10px !important;
+  }
+
+  /* Case card media — full-bleed image, fixed readable height */
+  body:not(.tsc-has-mobile-work-cases):has(#comp-mr69hwoy) :is(
+    #comp-mr69hwvu1,
+    #comp-mr69hwud,
+    #comp-mr69hwwa4,
+    #comp-mr69hwvh
+  ) {
+    border-radius: 12px !important;
+    overflow: hidden !important;
+    min-height: 240px !important;
+    height: 300px !important;
+    max-height: 340px !important;
+    aspect-ratio: auto !important;
+    order: 2 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    align-self: stretch !important;
+  }
+
+  body:not(.tsc-has-mobile-work-cases):has(#comp-mr69hwoy) :is(
+    #comp-mr69hwvu1,
+    #comp-mr69hwud,
+    #comp-mr69hwwa4,
+    #comp-mr69hwvh
+  ) :is(wow-image, img, picture) {
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 240px !important;
+    max-height: 320px !important;
+    object-fit: cover !important;
+    display: block !important;
+  }
+
+  /* Text blocks sit ABOVE images in flow — no absolute overlay collisions */
+  body:not(.tsc-has-mobile-work-cases) #comp-mr69hwoy [data-testid="richTextElement"],
+  body:not(.tsc-has-mobile-work-cases) #comp-mr69hwoy [id^="comp-mr69hww"],
+  body:not(.tsc-has-mobile-work-cases) #comp-mr69hwoy [id^="comp-mr6b"],
+  body:not(.tsc-has-mobile-work-cases) #comp-mr69hwoy [id^="comp-mrup"],
+  body:not(.tsc-has-mobile-work-cases) #comp-mr69hwoy [id^="comp-mruc"] {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    grid-area: auto !important;
+    transform: none !important;
+    opacity: 1 !important;
+    overflow: visible !important;
+    order: 1 !important;
+  }
+
+  body:not(.tsc-has-mobile-work-cases) #comp-mr69hwoy [data-testid="richTextElement"] .wixui-rich-text__text {
+    font-size: 16px !important;
+    line-height: 1.35 !important;
+    overflow-wrap: break-word !important;
+  }
+
+  body:not(.tsc-has-mobile-work-cases) #comp-mruphxpt1,
+  body:not(.tsc-has-mobile-work-cases) #comp-mrum0w6f,
+  body:not(.tsc-has-mobile-work-cases) #comp-mruporej,
+  body:not(.tsc-has-mobile-work-cases) #comp-mrupljhn3,
+  body:not(.tsc-has-mobile-work-cases) #comp-mrucdjtx,
+  body:not(.tsc-has-mobile-work-cases) #comp-mruporeg,
+  body:not(.tsc-has-mobile-work-cases) #comp-mruphxpm,
+  body:not(.tsc-has-mobile-work-cases) #comp-mrupljhl {
+    order: 3 !important;
+    width: fit-content !important;
+    max-width: 100% !important;
+    min-height: 44px !important;
+    height: auto !important;
+    background: #ffecd1 !important;
+    border-radius: 8px !important;
+    padding: 10px 12px !important;
+    box-sizing: border-box !important;
+    margin: 4px 0 0 !important;
+  }
+
+  body:not(.tsc-has-mobile-work-cases) #comp-mruphxpt1 .wixui-rich-text__text,
+  body:not(.tsc-has-mobile-work-cases) #comp-mrum0w6f .wixui-rich-text__text,
+  body:not(.tsc-has-mobile-work-cases) #comp-mruporej .wixui-rich-text__text,
+  body:not(.tsc-has-mobile-work-cases) #comp-mrupljhn3 .wixui-rich-text__text,
+  body:not(.tsc-has-mobile-work-cases) #comp-mrucdjtx .wixui-rich-text__text {
+    font-size: 12px !important;
+    line-height: 1.35 !important;
+    letter-spacing: 0.02em !important;
+    color: #083d3a !important;
+  }
+
+  /* Kill absolute decorative inner boxes that steal layout */
+  body:not(.tsc-has-mobile-work-cases) #comp-mr69hwoy .inner-box.jdJeEr {
+    position: absolute !important;
+    inset: 0 !important;
+    width: auto !important;
+    height: auto !important;
+    pointer-events: none !important;
+    z-index: 0 !important;
+  }
+
+  /* —— Reach Out CTA band —— */
+  #comp-mruek03p {
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+  }
+
+  #comp-mruek03p .comp-mruek03p-container,
+  #comp-mruek03p [data-testid="responsive-container-content"] {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 14px !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 28px 20px 36px !important;
+    height: auto !important;
+    min-height: 0 !important;
+    grid-template-columns: none !important;
+    grid-template-rows: none !important;
+  }
+
+  #comp-mruek03p .comp-mruek03p-container > [id^="comp-"],
+  #comp-mruek03p [data-testid="responsive-container-content"] > [id^="comp-"] {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    grid-area: auto !important;
+    height: auto !important;
+    min-height: 0 !important;
+  }
+
+  #comp-mruencm4 {
+    text-align: center !important;
+  }
+
+  #comp-mruencm4 .wixui-rich-text__text {
+    font-size: clamp(1.25rem, 5.5vw, 1.65rem) !important;
+    line-height: 1.2 !important;
+    font-weight: 700 !important;
+    text-align: center !important;
+  }
+
+  #comp-mruem86b {
+    width: min(100%, 320px) !important;
+    max-width: 100% !important;
+    min-height: 52px !important;
+    height: auto !important;
+    margin: 0 auto !important;
+    aspect-ratio: auto !important;
+    --aspect-ratio: auto !important;
+  }
+
+  #comp-mruem86b a,
+  #comp-mruem86b .wixui-button,
+  #comp-mruem86b [class*="StylableButton"],
+  #comp-mruem86b [class*="label"],
+  #comp-mruem86b span {
+    font-size: 15px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.02em !important;
+    line-height: 1.2 !important;
+  }
+
+  #comp-mruem86b a,
+  #comp-mruem86b .wixui-button,
+  #comp-mruem86b [class*="StylableButton"] {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    min-height: 52px !important;
+    height: 52px !important;
+    box-sizing: border-box !important;
+    padding: 0 18px !important;
+  }
+
+  /* Shell polish (when content-replacements mounts) */
+  .tsc-mobile-work-cases {
+    box-sizing: border-box !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 28px 18px 42px !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+  }
+
+  .tsc-mobile-work-list {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 18px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+  }
+
+  .tsc-mobile-work-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    aspect-ratio: 4 / 5 !important;
+    min-height: 280px !important;
+  }
+
+  .tsc-mobile-work-copy {
+    left: 16px !important;
+    right: 16px !important;
+    bottom: 16px !important;
+    gap: 8px !important;
+  }
+
+  .tsc-mobile-work-copy strong {
+    font-size: clamp(1.55rem, 7.5vw, 2.1rem) !important;
+    line-height: 1.05 !important;
+  }
+
+  .tsc-mobile-work-copy em {
+    font-size: 12px !important;
+    line-height: 1.3 !important;
+    padding: 8px 10px !important;
+    max-width: 100% !important;
+    white-space: normal !important;
+  }
+
+  /* Quote card — single cream panel, text inside with padding */
+  #comp-mr68f97q {
+    background: #ffecd1 !important;
+    overflow: visible !important;
+    border-radius: 10px !important;
+  }
+
+  #comp-mr68f97q > .inner-box,
+  #comp-mr68f97q > .jdJeEr {
+    display: none !important;
+  }
+
+  #comp-mr68f97q [data-testid="responsive-container-content"],
+  #comp-mr68f97q .comp-mr68f97q-container,
+  #comp-mr68f97q > div:not(.inner-box):not(.jdJeEr) {
+    position: relative !important;
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    padding: 18px 18px 20px !important;
+    box-sizing: border-box !important;
+    background: transparent !important;
+  }
+
+  #comp-mr4pwv07 {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 18px !important;
+    box-sizing: border-box !important;
+    grid-area: auto !important;
+  }
+
+  #comp-mr4pwv07,
+  #comp-mr4pwv07 .wixui-rich-text__text {
+    color: #083d3a !important;
+  }
+
+  #comp-mr4pwv07 .wixui-rich-text__text {
+    font-size: 15px !important;
+    line-height: 1.5 !important;
+  }
+
+  #comp-mr4pwv07 p:last-child .wixui-rich-text__text,
+  #comp-mr4pwv07 [style*="italic"] {
+    font-size: clamp(1.1rem, 4.8vw, 1.35rem) !important;
+  }
+
+  /* Hide empty duplicate cream shells in hero */
+  #comp-mp3okkrk .tsc-work-hero-cta:empty {
+    display: none !important;
+  }
 }
 
 @media (max-width: 900px) {
@@ -599,9 +1077,9 @@
   }
 
   #comp-mp3okkrk.tsc-work-hero-redesign {
-    min-height: calc(100svh - 96px) !important;
+    min-height: 0 !important;
     height: auto !important;
-    overflow: hidden !important;
+    overflow: visible !important;
     isolation: isolate !important;
     background:
       radial-gradient(circle at 102% 84%, rgba(173, 101, 23, 0.9) 0 18%, rgba(173, 101, 23, 0) 42%),
@@ -630,10 +1108,10 @@
   #comp-mp3okkrk.tsc-work-hero-redesign .comp-mp3okkrk-container {
     position: relative !important;
     z-index: 1 !important;
-    min-height: calc(100svh - 96px) !important;
-    padding: clamp(68px, 11vh, 110px) 32px 74px !important;
+    min-height: 0 !important;
+    padding: 28px 20px 40px !important;
     gap: 0 !important;
-    overflow: hidden !important;
+    overflow: visible !important;
   }
 
   #comp-mp3okkrk.tsc-work-hero-redesign #comp-mr67cfit {
@@ -666,9 +1144,9 @@
   #comp-mp3okkrk.tsc-work-hero-redesign #comp-mr4ozdiu {
     color: #ffecd1 !important;
     font-family: signika, system-ui, sans-serif !important;
-    font-size: clamp(4.25rem, 16.4vw, 6.25rem) !important;
+    font-size: clamp(1.7rem, 7.2vw, 2.35rem) !important;
     font-weight: 800 !important;
-    line-height: 0.94 !important;
+    line-height: 1.12 !important;
     letter-spacing: 0 !important;
   }
 
@@ -694,8 +1172,8 @@
   #comp-mp3okkrk.tsc-work-hero-redesign #comp-mr4pwv07,
   #comp-mp3okkrk.tsc-work-hero-redesign #comp-mr4pwv07 .wixui-rich-text__text {
     color: #083d3a !important;
-    font-size: clamp(1.55rem, 5.8vw, 2.35rem) !important;
-    font-weight: 700 !important;
+    font-size: clamp(1rem, 4.2vw, 1.2rem) !important;
+    font-weight: 600 !important;
     line-height: 1.45 !important;
     letter-spacing: 0 !important;
   }
@@ -717,22 +1195,22 @@
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
-    gap: 18px !important;
+    gap: 12px !important;
     width: fit-content !important;
     max-width: 100% !important;
-    min-height: 52px !important;
-    margin-top: 22px !important;
-    padding: 0 25px !important;
-    border-radius: 9px !important;
+    min-height: 48px !important;
+    margin-top: 18px !important;
+    padding: 0 20px !important;
+    border-radius: 8px !important;
     background: #d96f17 !important;
     color: #ffecd1 !important;
     font-family: system-ui, sans-serif !important;
-    font-size: clamp(1.25rem, 5.2vw, 1.85rem) !important;
+    font-size: clamp(1rem, 4vw, 1.2rem) !important;
     font-weight: 800 !important;
     line-height: 1 !important;
     white-space: nowrap !important;
     text-decoration: none !important;
-    box-shadow: 0 16px 30px rgba(57, 29, 4, 0.18) !important;
+    box-shadow: 0 12px 24px rgba(57, 29, 4, 0.16) !important;
   }
 
   #comp-mp3okkrk.tsc-work-hero-redesign .tsc-work-hero-cta span:last-child {
@@ -743,11 +1221,11 @@
   #comp-mp3okkrk.tsc-work-hero-redesign #comp-mr68qf6k {
     position: absolute !important;
     z-index: 1 !important;
-    right: -190px !important;
-    bottom: -80px !important;
-    width: min(660px, 128vw) !important;
-    max-width: none !important;
-    opacity: 0.43 !important;
+    right: -80px !important;
+    bottom: -40px !important;
+    width: min(280px, 72vw) !important;
+    max-width: 72vw !important;
+    opacity: 0.32 !important;
     margin: 0 !important;
     transform: rotate(-8deg) !important;
   }

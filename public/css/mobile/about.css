@@ -88,22 +88,57 @@
     max-width: none !important;
   }
 
-  /* Vision twin boxes — mockup side-by-side stats on wider phones; stack on narrow */
+  /* Vision twin boxes — stack on phone; twin row only on tablet (≥641) */
   #comp-mr1xvn1d,
   #comp-mr1y8j13 {
-    width: calc(50% - 6px) !important;
-    max-width: calc(50% - 6px) !important;
-    flex: 0 0 calc(50% - 6px) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    justify-content: center !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 auto !important;
     height: auto !important;
     min-height: 0 !important;
-    padding: 14px 12px !important;
+    max-height: none !important;
+    padding: 18px 16px !important;
     box-sizing: border-box !important;
+    overflow: visible !important;
+    grid-template-rows: none !important;
+    grid-template-columns: none !important;
+    grid-auto-rows: auto !important;
+  }
+
+  #comp-mr1xvn1d > .inner-box,
+  #comp-mr1y8j13 > .inner-box,
+  #comp-mr1xvn1d > .jdJeEr,
+  #comp-mr1y8j13 > .jdJeEr {
+    position: absolute !important;
+    inset: 0 !important;
+    height: auto !important;
+    min-height: 100% !important;
+    max-height: none !important;
+  }
+
+  #comp-mr1wnsbb,
+  #comp-mr1y8j13 [id^="comp-"],
+  #comp-mr1xvn1d [id^="comp-"] {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    height: auto !important;
+    min-height: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    grid-area: auto !important;
   }
 
   #comp-mr1whees [data-testid="responsive-container-content"],
   #comp-mr1whees .comp-mr1whees-container {
-    flex-direction: row !important;
-    flex-wrap: wrap !important;
+    flex-direction: column !important;
+    flex-wrap: nowrap !important;
     gap: 12px !important;
     padding: 20px 16px 24px !important;
   }
@@ -120,8 +155,11 @@
   #comp-mr1y8j13 > .inner-box,
   #comp-mr1xvn1d > .jdJeEr,
   #comp-mr1y8j13 > .jdJeEr {
-    height: 100% !important;
+    position: absolute !important;
+    inset: 0 !important;
+    height: auto !important;
     min-height: 100% !important;
+    max-height: none !important;
   }
 
   #comp-mr1wnsbb,
@@ -130,8 +168,13 @@
     height: auto !important;
     min-height: 0 !important;
     width: 100% !important;
+    max-width: 100% !important;
     opacity: 1 !important;
     visibility: visible !important;
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    grid-area: auto !important;
   }
 
   #comp-mr1xvn1d h1,
@@ -158,10 +201,21 @@
     color: #ffecd1 !important;
     display: block !important;
     height: auto !important;
-    min-height: 28px !important;
+    min-height: 0 !important;
+    max-height: none !important;
     overflow: visible !important;
     position: relative !important;
     z-index: 5 !important;
+    grid-template-rows: none !important;
+    grid-auto-rows: auto !important;
+    flex: 0 0 auto !important;
+    align-self: stretch !important;
+  }
+
+  #comp-mr1wm4n4 [data-testid="richTextElement"],
+  #comp-mr1wpwmx [data-testid="richTextElement"] {
+    height: auto !important;
+    min-height: 0 !important;
   }
 
   #comp-mr1wm4n4 .wixui-rich-text__text,
@@ -193,7 +247,12 @@
     width: 100% !important;
     max-width: 100% !important;
     height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
     margin: 8px 0 0 !important;
+    flex: 0 0 auto !important;
+    grid-template-rows: none !important;
+    overflow: visible !important;
   }
 
   #comp-mr1ybwmh > [id^="comp-"],
@@ -657,9 +716,30 @@
     align-self: stretch !important;
   }
 
-  /* Kill sticky / unfold / pulse motion on this block only */
+  /* Kill sticky / unfold / pulse motion — sticky parents stack-overlap on scroll */
   #comp-mr38xqqo,
-  #comp-mr38xqqo * {
+  #comp-mr3axlwa,
+  #comp-mr3hvomh,
+  #comp-mr3fzsjq,
+  #comp-mr3hkny1 {
+    position: relative !important;
+    top: auto !important;
+    bottom: auto !important;
+    --is-sticky: 0 !important;
+    --force-auto: auto !important;
+    z-index: auto !important;
+  }
+
+  #comp-mr38xqqo,
+  #comp-mr38xqqo *,
+  #comp-mr3axlwa,
+  #comp-mr3axlwa *,
+  #comp-mr3hvomh,
+  #comp-mr3hvomh *,
+  #comp-mr3fzsjq,
+  #comp-mr3fzsjq *,
+  #comp-mr3hkny1,
+  #comp-mr3hkny1 * {
     animation: none !important;
     transition: none !important;
   }
@@ -1925,3 +2005,365 @@
     overflow: visible !important;
   }
 }
+
+/* —— Full-scroll polish pass (390 + 768) —— */
+@media (max-width: 900px) {
+  /* Belief cards: hug content, stop bottom text clipping + title overflow */
+  #comp-mr1wvwvr,
+  #comp-mr1wvwym,
+  #comp-mr1wvwst,
+  #comp-mr1wvwpv {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 10px !important;
+    box-sizing: border-box !important;
+    padding: 22px 18px 24px !important;
+    overflow: visible !important;
+    height: auto !important;
+    min-height: 0 !important;
+  }
+
+  /* Belief icons were 322px mesh squares — shrink to mark size */
+  #comp-mr1wvwvx2,
+  #comp-mr1wvwys2,
+  #comp-mr1wvwt1,
+  #comp-mr1wvwqh,
+  #comp-mr1wvwvx2 svg,
+  #comp-mr1wvwys2 svg,
+  #comp-mr1wvwt1 svg,
+  #comp-mr1wvwqh svg {
+    width: 72px !important;
+    height: 72px !important;
+    max-width: 72px !important;
+    max-height: 72px !important;
+    margin: 0 auto !important;
+    flex: 0 0 auto !important;
+  }
+
+  #comp-mr1wvwvv5,
+  #comp-mr1wvwyq3,
+  #comp-mr1wvwsy2,
+  #comp-mr1wvwqf {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 8px !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+  }
+
+  #comp-mr1wvww1,
+  #comp-mr1wvww3,
+  #comp-mr1wvwyy1,
+  #comp-mr1wvwt64,
+  #comp-mr1wvwqp,
+  #comp-mr1wvwqm1 {
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* Icon wrappers — keep mark-sized (do not inherit 100% from text siblings) */
+  #comp-mr1wvwvv5 > #comp-mr1wvwvx2,
+  #comp-mr1wvwyq3 > #comp-mr1wvwys2,
+  #comp-mr1wvwsy2 > #comp-mr1wvwt1,
+  #comp-mr1wvwqf > #comp-mr1wvwqh,
+  #comp-mr1wvwvx2,
+  #comp-mr1wvwys2,
+  #comp-mr1wvwt1,
+  #comp-mr1wvwqh {
+    width: 72px !important;
+    max-width: 72px !important;
+    height: 72px !important;
+    max-height: 72px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  #comp-mr1wvwvr [id^="comp-"],
+  #comp-mr1wvwym [id^="comp-"],
+  #comp-mr1wvwst [id^="comp-"],
+  #comp-mr1wvwpv [id^="comp-"],
+  #comp-mr1wvww3,
+  #comp-mr1wvwyy1,
+  #comp-mr1wvwt64,
+  #comp-mr1wvwqp,
+  #comp-mr1wvwvv5,
+  #comp-mr1wvwyq3,
+  #comp-mr1wvwsy2,
+  #comp-mr1wvwqf,
+  #comp-mr1wvwqm1 {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    height: auto !important;
+    min-height: 0 !important;
+    transform: none !important;
+    grid-area: auto !important;
+    box-sizing: border-box !important;
+  }
+
+  #comp-mr1wvwvr .wixui-rich-text__text,
+  #comp-mr1wvwym .wixui-rich-text__text,
+  #comp-mr1wvwst .wixui-rich-text__text,
+  #comp-mr1wvwpv .wixui-rich-text__text {
+    max-width: 100% !important;
+    overflow-wrap: break-word !important;
+  }
+
+  /* Vision copy: readable size once stacked / twin */
+  #comp-mr1xvn1d h1,
+  #comp-mr1y8j13 h1,
+  #comp-mr1xvn1d .wixui-rich-text__text,
+  #comp-mr1y8j13 .wixui-rich-text__text {
+    font-size: 15px !important;
+    line-height: 1.5 !important;
+  }
+
+  #comp-mr1xvn1d,
+  #comp-mr1y8j13 {
+    --section-height: auto !important;
+    align-content: center !important;
+  }
+
+  /* Kill leftover Wix mesh heights on Vision/Beliefs headings + stack */
+  body[data-page="about"] #comp-mr1wm4n4,
+  body[data-page="about"] #comp-mr1wpwmx,
+  body[data-page="about"] #comp-mr1ybwmh,
+  body[data-page="about"] #comp-mr1whees {
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    --section-height: auto !important;
+  }
+
+  body[data-page="about"] #comp-mr1wm4n4 .wixui-rich-text__text,
+  body[data-page="about"] #comp-mr1wpwmx .wixui-rich-text__text {
+    min-height: 0 !important;
+  }
+
+  /* Audience cards — more side air */
+  #comp-mr3si7ip2,
+  #comp-mr3si7jh,
+  #comp-mr3si7jv1,
+  #comp-mr3sl540,
+  #comp-mr3t0ceh {
+    padding: 22px 20px !important;
+  }
+
+  #comp-mr3tcilz,
+  #comp-mr3si7jj5,
+  #comp-mr3si7jy,
+  #comp-mr3sldhg,
+  #comp-mr3t0ifj {
+    padding: 4px 6px !important;
+  }
+
+  /* Brand tag chips — wrap with breathing room */
+  body[data-page="about"] .tsc-brand-card__tags [data-testid="responsive-container-content"],
+  body[data-page="about"] .tsc-brand-card__tags [class*="-container"] {
+    gap: 8px !important;
+    row-gap: 8px !important;
+  }
+
+  body[data-page="about"] .tsc-brand-card__tags [data-testid="responsive-container-content"] > [id^="comp-"],
+  body[data-page="about"] .tsc-brand-card__tags [class*="-container"] > [id^="comp-"] {
+    flex: 0 1 auto !important;
+    max-width: calc(50% - 6px) !important;
+  }
+
+  body[data-page="about"] .tsc-brand-card__tags .wixui-rich-text__text,
+  body[data-page="about"] .tsc-brand-card__tags h2,
+  body[data-page="about"] .tsc-brand-card__pill .wixui-rich-text__text {
+    white-space: normal !important;
+    overflow-wrap: break-word !important;
+  }
+
+  /* Who/Why title pills — don’t clip descenders */
+  #comp-mr1w88dl,
+  #comp-mr1wdo6d {
+    height: auto !important;
+    min-height: 36px !important;
+    padding: 6px 14px !important;
+    overflow: visible !important;
+  }
+
+  #comp-mr1w88dl .wixui-rich-text__text,
+  #comp-mr1wdo6d .wixui-rich-text__text {
+    line-height: 1.2 !important;
+  }
+
+  /* Who/Why body boxes — pad for readability */
+  #comp-mr1wb3oc,
+  #comp-mr1wdahh {
+    padding: 18px 16px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Journey step labels — less cramped stack */
+  #comp-mr22200q,
+  #comp-mr224lmj,
+  #comp-mr224td1,
+  #comp-mr224yhj,
+  #comp-mr225543,
+  #comp-mr225awb,
+  #comp-mr225fky,
+  #comp-mr225jy2 {
+    margin: 0 0 14px !important;
+    gap: 6px !important;
+  }
+}
+
+/* Tablet: vision twins side-by-side once wide enough */
+@media (min-width: 641px) and (max-width: 900px) {
+  #comp-mr1whees [data-testid="responsive-container-content"],
+  #comp-mr1whees .comp-mr1whees-container {
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    align-items: stretch !important;
+    gap: 14px !important;
+  }
+
+  #comp-mr1xvn1d,
+  #comp-mr1y8j13 {
+    width: calc(50% - 7px) !important;
+    max-width: calc(50% - 7px) !important;
+    flex: 1 1 calc(50% - 7px) !important;
+    padding: 20px 18px !important;
+    min-height: 0 !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  #comp-mr1wm4n4,
+  #comp-mr1wpwmx,
+  #comp-mr1ybwmh {
+    flex: 1 1 100% !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  #comp-mr1xvn1d .wixui-rich-text__text,
+  #comp-mr1y8j13 .wixui-rich-text__text {
+    font-size: 16px !important;
+    line-height: 1.5 !important;
+  }
+}
+
+/* Phone hero: beat tsc-responsive 75svh clip (needs body[data-page] specificity) */
+@media (max-width: 600px) {
+  body[data-page="about"] #comp-mp2vlkbh2,
+  body[data-page="about"] #comp-mp2vlkbh2 .comp-mp2vlkbh2-overflow-wrapper {
+    height: auto !important;
+    min-height: 560px !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+
+  body[data-page="about"] #comp-mp2vlkbh2 .comp-mp2vlkbh2-container,
+  body[data-page="about"] #comp-mp2vlkbh2 [data-testid="responsive-container-content"] {
+    height: auto !important;
+    min-height: 560px !important;
+    max-height: none !important;
+    padding: 28px 20px 40px !important;
+    box-sizing: border-box !important;
+    justify-content: flex-start !important;
+    gap: 18px !important;
+  }
+
+  body[data-page="about"] #comp-mp2vlkbh2 #comp-mr1ttkgk,
+  body[data-page="about"] #comp-mp2vlkbh2 #comp-mr1vbgc2,
+  body[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tvuqc,
+  body[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tv44l {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+    margin: 0 auto !important;
+    align-self: center !important;
+  }
+
+  body[data-page="about"] #comp-mp2vlkbh2 #comp-mr1ttkgk {
+    width: min(78vw, 300px) !important;
+    height: min(78vw, 300px) !important;
+    margin-top: 12px !important;
+  }
+
+  body[data-page="about"] #comp-mp2vlkbh2 #comp-mr1vbgc2 {
+    width: min(90vw, 340px) !important;
+    height: auto !important;
+  }
+
+  body[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tv44l .wixui-rich-text__text,
+  body[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tv44l h1,
+  body[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tv44l p {
+    font-size: clamp(17px, 5.2vw, 22px) !important;
+    line-height: 1.12 !important;
+    text-align: center !important;
+  }
+}
+
+/* Tablet hero: full tagline, no 75svh clip */
+@media (min-width: 601px) and (max-width: 900px) {
+  body[data-page="about"] #comp-mp2vlkbh2,
+  body[data-page="about"] #comp-mp2vlkbh2 .comp-mp2vlkbh2-overflow-wrapper {
+    height: auto !important;
+    min-height: 600px !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+
+  body[data-page="about"] #comp-mp2vlkbh2 .comp-mp2vlkbh2-container,
+  body[data-page="about"] #comp-mp2vlkbh2 [data-testid="responsive-container-content"] {
+    height: auto !important;
+    min-height: 600px !important;
+    max-height: none !important;
+    padding: 40px 32px 52px !important;
+    box-sizing: border-box !important;
+    justify-content: flex-start !important;
+    gap: 22px !important;
+  }
+
+  body[data-page="about"] #comp-mp2vlkbh2 #comp-mr1ttkgk,
+  body[data-page="about"] #comp-mp2vlkbh2 #comp-mr1vbgc2,
+  body[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tvuqc,
+  body[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tv44l {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+    margin: 0 auto !important;
+    align-self: center !important;
+  }
+
+  body[data-page="about"] #comp-mp2vlkbh2 #comp-mr1ttkgk {
+    width: min(42vw, 280px) !important;
+    height: min(42vw, 280px) !important;
+  }
+
+  body[data-page="about"] #comp-mp2vlkbh2 #comp-mr1vbgc2 {
+    width: min(70vw, 480px) !important;
+    height: auto !important;
+  }
+
+  body[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tv44l .wixui-rich-text__text,
+  body[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tv44l h1,
+  body[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tv44l p {
+    font-size: clamp(22px, 3.4vw, 30px) !important;
+    line-height: 1.12 !important;
+    text-align: center !important;
+  }
+}
+
+

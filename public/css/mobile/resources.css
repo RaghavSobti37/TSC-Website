@@ -146,7 +146,7 @@
     flex-direction: column !important;
     flex-wrap: nowrap !important;
     align-items: stretch !important;
-    gap: 16px !important;
+    gap: 20px !important;
     width: 100% !important;
     max-width: 100% !important;
   }
@@ -162,6 +162,7 @@
     flex: 0 0 auto !important;
     box-sizing: border-box !important;
     height: auto !important;
+    min-height: 0 !important;
   }
 
   /* Card body copy readable */
@@ -231,24 +232,186 @@
     line-height: 1.55 !important;
   }
 
-  /* Keep Wix card shells; just full-bleed width */
-  #comp-mrdq81q0,
-  #comp-mrdq85ob,
-  #comp-mrdpew4h,
-  #comp-mrdpqawy,
-  #comp-mrdq8d4s {
+  /* Blog cards: was flex-row 115px columns — stack full-bleed */
+  #comp-mrdq8d4s,
+  #comp-mrdq8d4s.comp-mrdq8d4s-container {
+    display: flex !important;
+    flex-direction: column !important;
+    flex-wrap: nowrap !important;
+    align-items: stretch !important;
+    gap: 18px !important;
     width: 100% !important;
     max-width: 100% !important;
     height: auto !important;
+    min-height: 0 !important;
+  }
+
+  #comp-mrdq8d4s > [id^="comp-"] {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    flex: 0 0 auto !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    transform: none !important;
+    grid-area: auto !important;
+  }
+
+  #comp-mrdq81q0,
+  #comp-mrdq85ob,
+  #comp-mrdpew4h,
+  #comp-mrdpqawy {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+    padding: 12px !important;
+    box-sizing: border-box !important;
+    grid-template-columns: none !important;
+    grid-template-rows: none !important;
+  }
+
+  #comp-mrdq81q0 > [id^="comp-"],
+  #comp-mrdq85ob > [id^="comp-"],
+  #comp-mrdpew4h > [id^="comp-"] {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    margin: 0 !important;
+    grid-area: auto !important;
+    transform: none !important;
+  }
+
+  /* Tiny decorative bars in card corners — hide on phone */
+  #comp-mrdq81qb2,
+  #comp-mrdq81qc8,
+  #comp-mrdq85ok,
+  #comp-mrdq85ol7,
+  #comp-mrdpwwps,
+  #comp-mrdpxd14 {
+    display: none !important;
   }
 
   #comp-mrdq81q0 img,
   #comp-mrdq85ob img,
   #comp-mrdpew4h img,
+  #comp-mrdpqawy img,
   #comp-mrdq81q63 img {
     width: 100% !important;
     max-width: 100% !important;
     height: auto !important;
+  }
+
+  #comp-mrdq81q0 .wixui-rich-text__text,
+  #comp-mrdq85ob .wixui-rich-text__text,
+  #comp-mrdpew4h .wixui-rich-text__text {
+    font-size: 15px !important;
+    line-height: 1.4 !important;
+  }
+
+  /* Card CTAs side-by-side row */
+  #comp-mrdq81qe1,
+  #comp-mrdq81qf4,
+  #comp-mrdq85on2,
+  #comp-mrdq85oo5,
+  #comp-mrdpzaj6,
+  #comp-mrdq16ht {
+    width: auto !important;
+    max-width: calc(50% - 6px) !important;
+    display: inline-flex !important;
+  }
+
+  #comp-mrdq81q0 > [id^="comp-"]:has(.wixui-button),
+  #comp-mrdq85ob > [id^="comp-"]:has(.wixui-button),
+  #comp-mrdpew4h > [id^="comp-"]:has(.wixui-button) {
+    display: inline-flex !important;
+    width: auto !important;
+    max-width: calc(50% - 4px) !important;
+  }
+
+  /* Instagram band: title + View Profile on one row; clip off-canvas slides */
+  #comp-mrd4xija,
+  #comp-mrd4xija .comp-mrd4xija-container {
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: hidden !important;
+  }
+
+  #comp-mrd4xija [data-testid="responsive-container-content"],
+  #comp-mrd4xija .comp-mrd4xija-container {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 12px !important;
+    padding: 24px 16px 28px !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    grid-template-rows: none !important;
+    grid-template-columns: none !important;
+  }
+
+  #comp-mrd4xija [data-testid="responsive-container-content"] > [id^="comp-"] {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    margin: 0 !important;
+    grid-area: auto !important;
+    transform: none !important;
+    max-width: 100% !important;
+  }
+
+  #comp-mrd9rxqm {
+    order: 1 !important;
+    width: calc(100% - 110px) !important;
+    max-width: calc(100% - 110px) !important;
+  }
+
+  #comp-mrdoyv1r {
+    order: 1 !important;
+    width: auto !important;
+    max-width: 110px !important;
+    align-self: flex-start !important;
+    margin-left: auto !important;
+    margin-top: -28px !important;
+  }
+
+  #comp-mrdo9glj,
+  #comp-mrdkhv1s,
+  #comp-mrdo9lqu {
+    order: 3 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  /* Hide duplicate/off-canvas carousel clones; keep first slide shell */
+  #comp-mrdkhv1s,
+  #comp-mrdo9lqu {
+    display: none !important;
+  }
+
+  #comp-mrdo9glj {
+    display: block !important;
+    overflow: hidden !important;
+  }
+
+  #comp-mrdo9glj img,
+  #comp-mrdojbvs img {
+    width: 100% !important;
+    height: auto !important;
+    max-height: 420px !important;
+    object-fit: cover !important;
   }
 
   /* —— Custom editorial articles —— */
@@ -283,12 +446,39 @@
     padding-right: 20px;
   }
 
-  /* —— Legacy Wix blog pages —— */
+  /* —— Legacy Wix blog pages (blog-1/2/3) —— */
+  body[data-page="blog-1"] main,
+  body[data-page="blog-2"] main,
+  body[data-page="blog-3"] main {
+    overflow-x: clip;
+  }
+
+  body[data-page="blog-1"] main section.wixui-section,
+  body[data-page="blog-2"] main section.wixui-section,
+  body[data-page="blog-3"] main section.wixui-section {
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+  }
+
   body[data-page="blog-1"] main [data-testid="richTextElement"] p .wixui-rich-text__text,
   body[data-page="blog-2"] main [data-testid="richTextElement"] p .wixui-rich-text__text,
-  body[data-page="blog-3"] main [data-testid="richTextElement"] p .wixui-rich-text__text {
+  body[data-page="blog-3"] main [data-testid="richTextElement"] p .wixui-rich-text__text,
+  body[data-page="blog-1"] main [data-testid="richTextElement"] li .wixui-rich-text__text,
+  body[data-page="blog-2"] main [data-testid="richTextElement"] li .wixui-rich-text__text,
+  body[data-page="blog-3"] main [data-testid="richTextElement"] li .wixui-rich-text__text {
     font-size: 16px !important;
     line-height: 1.55 !important;
+  }
+
+  body[data-page="blog-1"] main [data-testid="richTextElement"] h1 .wixui-rich-text__text,
+  body[data-page="blog-1"] main [data-testid="richTextElement"] h2 .wixui-rich-text__text,
+  body[data-page="blog-2"] main [data-testid="richTextElement"] h1 .wixui-rich-text__text,
+  body[data-page="blog-2"] main [data-testid="richTextElement"] h2 .wixui-rich-text__text,
+  body[data-page="blog-3"] main [data-testid="richTextElement"] h1 .wixui-rich-text__text,
+  body[data-page="blog-3"] main [data-testid="richTextElement"] h2 .wixui-rich-text__text {
+    font-size: clamp(1.2rem, 5vw, 1.55rem) !important;
+    line-height: 1.25 !important;
   }
 
   body[data-page="blog-1"] main img,
@@ -298,40 +488,33 @@
     height: auto;
   }
 
-  /* Blog hero: stack title / meta / art; hide overlapping prev/next */
-  body[data-page="blog-1"] #comp-mreu9zoc,
-  body[data-page="blog-1"] #comp-mrfz1ln9,
-  body[data-page="blog-2"] #comp-mreu9zoc,
-  body[data-page="blog-2"] #comp-mrfz1ln9,
-  body[data-page="blog-3"] #comp-mreu9zoc,
-  body[data-page="blog-3"] #comp-mrfz1ln9 {
-    height: auto !important;
-    min-height: 0 !important;
-    overflow: visible !important;
-  }
-
-  body[data-page="blog-1"] #comp-mreu9zoc [data-testid="responsive-container-content"],
-  body[data-page="blog-1"] #comp-mreu9zoc .comp-mreu9zoc-container,
-  body[data-page="blog-1"] #comp-mrfz1ln9,
-  body[data-page="blog-1"] #comp-mrfz1ln9.comp-mrfz1ln9-container {
+  /* Flatten every Wix mesh container — same-cell absolute margins → column stack */
+  body[data-page="blog-1"] main [class*="-container"].max-width-container,
+  body[data-page="blog-2"] main [class*="-container"].max-width-container,
+  body[data-page="blog-3"] main [class*="-container"].max-width-container {
     display: flex !important;
     flex-direction: column !important;
     align-items: stretch !important;
-    gap: 10px !important;
-    padding: 16px !important;
+    gap: 14px !important;
+    padding: 20px 16px 28px !important;
     box-sizing: border-box !important;
     width: 100% !important;
     max-width: 100% !important;
     height: auto !important;
+    min-height: 0 !important;
     grid-template-rows: none !important;
     grid-template-columns: none !important;
+    grid-template-areas: none !important;
   }
 
-  body[data-page="blog-1"] #comp-mreu9zoc [data-testid="responsive-container-content"] > [id^="comp-"],
-  body[data-page="blog-1"] #comp-mrfz1ln9 > [id^="comp-"] {
+  body[data-page="blog-1"] main [class*="-container"].max-width-container > [id^="comp-"],
+  body[data-page="blog-2"] main [class*="-container"].max-width-container > [id^="comp-"],
+  body[data-page="blog-3"] main [class*="-container"].max-width-container > [id^="comp-"] {
     position: relative !important;
     left: auto !important;
     top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
     width: 100% !important;
     max-width: 100% !important;
     margin: 0 !important;
@@ -340,8 +523,22 @@
     height: auto !important;
     min-height: 0 !important;
     transform: none !important;
+    overflow: visible !important;
   }
 
+  /* Blog-1: duplicate mesh heading overlays full article body */
+  body[data-page="blog-1"] #comp-mrfzl2q9 {
+    display: none !important;
+  }
+
+  /* Ghost CTA echo text (READY) */
+  body[data-page="blog-1"] #comp-mrfznxkz [id^="comp-"]:last-child,
+  body[data-page="blog-2"] #comp-mrg0d19m,
+  body[data-page="blog-3"] #comp-mrg0d7rt1 {
+    display: none !important;
+  }
+
+  /* Blog-1 hero: title → meta → art; hide prev/next ghosts */
   body[data-page="blog-1"] #comp-mrfy5yaq { order: 1 !important; }
   body[data-page="blog-1"] #comp-mrfyt2mz,
   body[data-page="blog-1"] #comp-mrfyv9z0,
@@ -360,19 +557,64 @@
     line-height: 1.3 !important;
   }
 
-  body[data-page="blog-1"] #comp-mrg00add,
-  body[data-page="blog-1"] #comp-mrg028qi,
-  body[data-page="blog-1"] #comp-mrsuo79f {
-    display: none !important; /* prev/next + ghost decor */
+  /* Wix pinned overlays (Back + arrows) — hide on phone; hamburger covers nav */
+  body[data-page="blog-1"] [id*="pinned-layer"],
+  body[data-page="blog-2"] [id*="pinned-layer"],
+  body[data-page="blog-3"] [id*="pinned-layer"] {
+    display: none !important;
   }
 
   body[data-page="blog-1"] #comp-mrg3qw6u,
   body[data-page="blog-1"] #comp-mrfzwkwe {
-    position: relative !important;
-    left: auto !important;
-    top: auto !important;
-    width: auto !important;
-    max-width: calc(100% - 40px) !important;
-    margin: 8px 20px !important;
+    display: none !important;
+  }
+
+  /* Prev/next article arrows — hide on phone (overlap body) */
+  body[data-page="blog-1"] #comp-mrg00add,
+  body[data-page="blog-1"] #comp-mrg028qi,
+  body[data-page="blog-1"] #comp-mrsuo79f {
+    display: none !important;
+  }
+
+  /* Blog section cream fill (Wix sets transparent → white seams) */
+  body[data-page="blog-1"] main section.wixui-section,
+  body[data-page="blog-2"] main section.wixui-section,
+  body[data-page="blog-3"] main section.wixui-section {
+    background-color: #ffecd1 !important;
+  }
+
+  body[data-page="blog-1"] #comp-mreu9zoc,
+  body[data-page="blog-2"] #comp-mrg0d18i,
+  body[data-page="blog-3"] #comp-mrg0d7qw {
+    background-color: transparent !important;
+  }
+
+  /* CTA button readable */
+  body[data-page="blog-1"] #comp-mrfzvao0 .wixui-button__label,
+  body[data-page="blog-1"] #comp-mrfzvao0 .Gf1CuA,
+  body[data-page="blog-1"] #comp-mrfzvao0 .nb2UT3,
+  body[data-page="blog-2"] #comp-mrg0d19k7 .wixui-button__label,
+  body[data-page="blog-2"] #comp-mrg0d19k7 .Gf1CuA,
+  body[data-page="blog-2"] #comp-mrg0d19k7 .nb2UT3,
+  body[data-page="blog-3"] #comp-mrg0d7rr8 .wixui-button__label,
+  body[data-page="blog-3"] #comp-mrg0d7rr8 .Gf1CuA,
+  body[data-page="blog-3"] #comp-mrg0d7rr8 .nb2UT3 {
+    font-size: 15px !important;
+  }
+
+  /* Resources hub blog-card CTA labels */
+  #comp-mrdq8d4s .wixui-button__label,
+  #comp-mrdq8d4s .Gf1CuA,
+  #comp-mrdq8d4s .nb2UT3 {
+    font-size: 13px !important;
+  }
+
+  #comp-mrdpzaj6,
+  #comp-mrdq16ht,
+  #comp-mrdq81qe1,
+  #comp-mrdq81qf4,
+  #comp-mrdq85on2,
+  #comp-mrdq85oo5 {
+    min-height: 44px !important;
   }
 }

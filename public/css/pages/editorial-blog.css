@@ -248,7 +248,7 @@ h1 {
   color: var(--warm-cream);
 }
 
-@media (max-width: 860px) {
+@media (max-width: 1024px) {
   .site-header {
     align-items: flex-start;
     flex-direction: column;
@@ -257,6 +257,12 @@ h1 {
 
   .nav {
     justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .nav a {
+    font-size: 13px;
   }
 
   .hero,
@@ -270,20 +276,13 @@ h1 {
 
   .hero-copy {
     padding-top: 48px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
   .hero-media {
-    min-height: 320px;
-  }
-}
-
-@media (max-width: 560px) {
-  .nav {
-    gap: 12px;
-  }
-
-  .nav a {
-    font-size: 13px;
+    min-height: 240px;
+    max-height: 48vh;
   }
 
   .article-aside,
@@ -291,5 +290,16 @@ h1 {
   .related {
     padding-left: 20px;
     padding-right: 20px;
+    max-width: 100%;
+  }
+
+  .article-body p,
+  .article-body li {
+    font-size: 16px;
+    line-height: 1.55;
+  }
+
+  .related-grid {
+    grid-template-columns: 1fr;
   }
 }

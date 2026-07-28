@@ -1,0 +1,15 @@
+{
+  "title": "Blog 3",
+  "canonicalRoute": "/artist-release-playbook",
+  "pageFile": "pages/artist-release-playbook.html",
+  "css": "css/pages/artist-release-playbook.css",
+  "js": "js/pages/artist-release-playbook.animations.js",
+  "section": "resources",
+  "aliases": [
+    "/blog-3",
+    "/resources/blog-3",
+    "/resources/artist-release-playbook",
+    "/blank-13-1-1",
+    "/work3-1-1"
+  ]
+}

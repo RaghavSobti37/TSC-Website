@@ -1,0 +1,15 @@
+{
+  "title": "Blog 2",
+  "canonicalRoute": "/online-music-course-worth-it",
+  "pageFile": "pages/online-music-course-worth-it.html",
+  "css": "css/pages/online-music-course-worth-it.css",
+  "js": "js/pages/online-music-course-worth-it.animations.js",
+  "section": "resources",
+  "aliases": [
+    "/blog-2",
+    "/resources/blog-2",
+    "/resources/online-music-course-worth-it",
+    "/blank-13-1",
+    "/work3-1"
+  ]
+}

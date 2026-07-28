@@ -60,7 +60,10 @@ const HEAD_BOOT = `<script data-tsc-mobile-boot>/* DESKTOP LOCK: early mobile CS
     resources: '/css/mobile/resources.css',
     'blog-1': '/css/mobile/resources.css',
     'blog-2': '/css/mobile/resources.css',
-    'blog-3': '/css/mobile/resources.css'
+    'blog-3': '/css/mobile/resources.css',
+    'start-making-music': '/css/mobile/resources.css',
+    'online-music-course-worth-it': '/css/mobile/resources.css',
+    'artist-release-playbook': '/css/mobile/resources.css'
   };
   if (map[seg]) link(map[seg]);
   else link('/css/mobile/home.css');

@@ -120,18 +120,6 @@
       "destination": "/pages/book-a-call.html"
     },
     {
-      "source": "/resources/blog-1",
-      "destination": "/pages/blog-1.html"
-    },
-    {
-      "source": "/resources/blog-2",
-      "destination": "/pages/blog-2.html"
-    },
-    {
-      "source": "/resources/blog-3",
-      "destination": "/pages/blog-3.html"
-    },
-    {
       "source": "/classicalreview",
       "destination": "/pages/classicalreview.html"
     },
@@ -200,18 +188,6 @@
       "destination": "/pages/artists.html"
     },
     {
-      "source": "/blog-1",
-      "destination": "/pages/blog-1.html"
-    },
-    {
-      "source": "/blog-2",
-      "destination": "/pages/blog-2.html"
-    },
-    {
-      "source": "/blog-3",
-      "destination": "/pages/blog-3.html"
-    },
-    {
       "source": "/about",
       "destination": "/pages/about.html"
     },
@@ -246,6 +222,54 @@
     {
       "source": "/assets/mirror/disabled-telemetry",
       "destination": "/api/disabled-telemetry"
+    },
+    {
+      "source": "/start-making-music",
+      "destination": "/pages/start-making-music.html"
+    },
+    {
+      "source": "/resources/start-making-music",
+      "destination": "/pages/start-making-music.html"
+    },
+    {
+      "source": "/online-music-course-worth-it",
+      "destination": "/pages/online-music-course-worth-it.html"
+    },
+    {
+      "source": "/resources/online-music-course-worth-it",
+      "destination": "/pages/online-music-course-worth-it.html"
+    },
+    {
+      "source": "/artist-release-playbook",
+      "destination": "/pages/artist-release-playbook.html"
+    },
+    {
+      "source": "/resources/artist-release-playbook",
+      "destination": "/pages/artist-release-playbook.html"
+    },
+    {
+      "source": "/music-production",
+      "destination": "/pages/music-production.html"
+    },
+    {
+      "source": "/academy/music-production",
+      "destination": "/pages/music-production.html"
+    },
+    {
+      "source": "/courses/music-production",
+      "destination": "/pages/music-production.html"
+    },
+    {
+      "source": "/mba-impact",
+      "destination": "/pages/mba-impact.html"
+    },
+    {
+      "source": "/impact-report",
+      "destination": "/pages/mba-impact.html"
+    },
+    {
+      "source": "/work/mba-impact",
+      "destination": "/pages/mba-impact.html"
     },
     {
       "source": "/_api/:path*",
@@ -517,17 +541,17 @@
     },
     {
       "source": "/blank-13",
-      "destination": "/blog-1",
+      "destination": "/start-making-music",
       "permanent": true
     },
     {
       "source": "/blank-13-1",
-      "destination": "/blog-2",
+      "destination": "/online-music-course-worth-it",
       "permanent": true
     },
     {
       "source": "/blank-13-1-1",
-      "destination": "/blog-3",
+      "destination": "/artist-release-playbook",
       "permanent": true
     },
     {
@@ -602,12 +626,42 @@
     },
     {
       "source": "/work3-1",
-      "destination": "/blog-2",
+      "destination": "/online-music-course-worth-it",
       "permanent": true
     },
     {
       "source": "/work3-1-1",
-      "destination": "/blog-3",
+      "destination": "/artist-release-playbook",
+      "permanent": true
+    },
+    {
+      "source": "/blog-1",
+      "destination": "/start-making-music",
+      "permanent": true
+    },
+    {
+      "source": "/resources/blog-1",
+      "destination": "/start-making-music",
+      "permanent": true
+    },
+    {
+      "source": "/blog-2",
+      "destination": "/online-music-course-worth-it",
+      "permanent": true
+    },
+    {
+      "source": "/resources/blog-2",
+      "destination": "/online-music-course-worth-it",
+      "permanent": true
+    },
+    {
+      "source": "/blog-3",
+      "destination": "/artist-release-playbook",
+      "permanent": true
+    },
+    {
+      "source": "/resources/blog-3",
+      "destination": "/artist-release-playbook",
       "permanent": true
     }
   ]

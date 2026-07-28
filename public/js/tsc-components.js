@@ -73,9 +73,12 @@
       '/blank-12-1': '/hanuman-ansh',
       '/blank-12-1-1': '/mahaprbhu',
       '/blank-12-1-1-1': '/kalki',
-      '/blank-13': '/blog-1',
-      '/blank-13-1': '/blog-2',
-      '/blank-13-1-1': '/blog-3',
+      '/blank-13': '/start-making-music',
+      '/blank-13-1': '/online-music-course-worth-it',
+      '/blank-13-1-1': '/artist-release-playbook',
+      '/blog-1': '/start-making-music',
+      '/blog-2': '/online-music-course-worth-it',
+      '/blog-3': '/artist-release-playbook',
       '/about-8': '/book-a-call',
       '/about-8-1': '/book-an-artist',
       '/about-8-1-1': '/artist-query',
@@ -88,8 +91,8 @@
       '/work2-1-1': '/mahaprbhu',
       '/work2-1-1-1': '/kalki',
       '/work3': '/insta-music-league',
-      '/work3-1': '/blog-2',
-      '/work3-1-1': '/blog-3',
+      '/work3-1': '/online-music-course-worth-it',
+      '/work3-1-1': '/artist-release-playbook',
       '/forms/book-a-call': '/book-a-call',
       '/forms/book-an-artist': '/book-an-artist',
       '/forms/artist-query': '/artist-query',
@@ -170,7 +173,7 @@
     '/collab-query': true
   };
 
-  var WORK_PATHS = { '/work': true, '/mba': true };
+  var WORK_PATHS = { '/work': true, '/mba': true, '/mba-impact': true, '/impact-report': true };
   var FILMS_PATHS = {
     '/films': true,
     '/mahavatar-narsimha': true,
@@ -183,6 +186,9 @@
     '/blog-1': true,
     '/blog-2': true,
     '/blog-3': true,
+    '/start-making-music': true,
+    '/online-music-course-worth-it': true,
+    '/artist-release-playbook': true,
     '/from-bhajan-to-clubbing': true,
     '/you-released-a-song-now-what': true
   };

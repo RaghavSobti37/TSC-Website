@@ -113,13 +113,15 @@
       "file": "the-heart-of-composition.html"
     },
     {
-      "title": "Blog 1",
-      "route": "/blog-1",
+      "title": "How Do I Start Making Music If I Have No Experience?",
+      "route": "/start-making-music",
       "aliases": [
+        "/blog-1",
         "/blank-13",
-        "/resources/blog-1"
+        "/resources/blog-1",
+        "/resources/start-making-music"
       ],
-      "file": "blog-1.html"
+      "file": "start-making-music.html"
     },
     {
       "title": "YUGM",
@@ -161,24 +163,28 @@
       "file": "hanuman-ansh.html"
     },
     {
-      "title": "Blog 3",
-      "route": "/blog-3",
+      "title": "The Artist Release Playbook",
+      "route": "/artist-release-playbook",
       "aliases": [
+        "/blog-3",
         "/blank-13-1-1",
         "/work3-1-1",
-        "/resources/blog-3"
+        "/resources/blog-3",
+        "/resources/artist-release-playbook"
       ],
-      "file": "blog-3.html"
+      "file": "artist-release-playbook.html"
     },
     {
-      "title": "Blog 2",
-      "route": "/blog-2",
+      "title": "Is an Online Music Course Worth It for Beginners?",
+      "route": "/online-music-course-worth-it",
       "aliases": [
+        "/blog-2",
         "/blank-13-1",
         "/work3-1",
-        "/resources/blog-2"
+        "/resources/blog-2",
+        "/resources/online-music-course-worth-it"
       ],
-      "file": "blog-2.html"
+      "file": "online-music-course-worth-it.html"
     },
     {
       "title": "Indian Culture Mainstream Forms",
@@ -269,6 +275,24 @@
         "/forms/masterclass-review02"
       ],
       "file": "masterclass-review02.html"
+    },
+    {
+      "title": "A-Z of Music Production",
+      "route": "/music-production",
+      "aliases": [
+        "/academy/music-production",
+        "/courses/music-production"
+      ],
+      "file": "music-production.html"
+    },
+    {
+      "title": "MBA Impact Report",
+      "route": "/mba-impact",
+      "aliases": [
+        "/impact-report",
+        "/work/mba-impact"
+      ],
+      "file": "mba-impact.html"
     }
   ],
   "aliases": [
@@ -338,11 +362,11 @@
     },
     {
       "alias": "/blank-13",
-      "route": "/blog-1"
+      "route": "/start-making-music"
     },
     {
       "alias": "/resources/blog-1",
-      "route": "/blog-1"
+      "route": "/start-making-music"
     },
     {
       "alias": "/blank-10-1",
@@ -390,27 +414,27 @@
     },
     {
       "alias": "/blank-13-1-1",
-      "route": "/blog-3"
+      "route": "/artist-release-playbook"
     },
     {
       "alias": "/work3-1-1",
-      "route": "/blog-3"
+      "route": "/artist-release-playbook"
     },
     {
       "alias": "/resources/blog-3",
-      "route": "/blog-3"
+      "route": "/artist-release-playbook"
     },
     {
       "alias": "/blank-13-1",
-      "route": "/blog-2"
+      "route": "/online-music-course-worth-it"
     },
     {
       "alias": "/work3-1",
-      "route": "/blog-2"
+      "route": "/online-music-course-worth-it"
     },
     {
       "alias": "/resources/blog-2",
-      "route": "/blog-2"
+      "route": "/online-music-course-worth-it"
     },
     {
       "alias": "/resources/from-bhajan-to-clubbing",
@@ -510,13 +534,13 @@
     "/harshad-duhita",
     "/roots-of-hindustani-classical",
     "/the-heart-of-composition",
-    "/blog-1",
+    "/start-making-music",
     "/yugm",
     "/mahaprbhu",
     "/mahavatar-narsimha",
     "/hanuman-ansh",
-    "/blog-3",
-    "/blog-2",
+    "/artist-release-playbook",
+    "/online-music-course-worth-it",
     "/from-bhajan-to-clubbing",
     "/you-released-a-song-now-what",
     "/collab-query",
@@ -526,6 +550,8 @@
     "/book-a-call",
     "/masterclass-review01",
     "/classicalreview",
-    "/masterclass-review02"
+    "/masterclass-review02",
+    "/music-production",
+    "/mba-impact"
   ]
 }

@@ -78,13 +78,13 @@
    * literals in @media, but ONLY use this documented set:
    *   xs 480 / sm 600 / md 700 / lg 900 / xl 1000 / 2xl 1120 / 3xl 1500
    * Adjacent pairs (no gap, no overlap):
-   *   max-width:900 ↔ min-width:901  (--tsc-bp-lg)
+   *   max-width:1024 / min-width:1025  (--tsc-bp-lg)
    *   max-width:1000 ↔ min-width:1001 (--tsc-bp-xl)
    */
   --tsc-bp-xs: 480px;
   --tsc-bp-sm: 600px;
   --tsc-bp-md: 700px;
-  --tsc-bp-lg: 900px;
+  --tsc-bp-lg: 1024px;
   --tsc-bp-xl: 1000px;
   --tsc-bp-2xl: 1120px;
   --tsc-bp-3xl: 1500px;

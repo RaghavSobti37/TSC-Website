@@ -663,6 +663,46 @@
       "source": "/resources/blog-3",
       "destination": "/artist-release-playbook",
       "permanent": true
+    },
+    {
+      "source": "/blank",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/blank-1",
+      "destination": "/work",
+      "permanent": true
+    },
+    {
+      "source": "/blank-2",
+      "destination": "/artists",
+      "permanent": true
+    },
+    {
+      "source": "/blank-3",
+      "destination": "/academy",
+      "permanent": true
+    },
+    {
+      "source": "/blank-3-1",
+      "destination": "/learn-with-tsc",
+      "permanent": true
+    },
+    {
+      "source": "/blank-4",
+      "destination": "/artist-path",
+      "permanent": true
+    },
+    {
+      "source": "/blank-5",
+      "destination": "/resources",
+      "permanent": true
+    },
+    {
+      "source": "/blank-11",
+      "destination": "/films",
+      "permanent": true
     }
   ]
 }

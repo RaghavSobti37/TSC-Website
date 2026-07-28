@@ -3,7 +3,7 @@
   "html": "/pages/the-heart-of-composition.html",
   "css": "/css/pages/the-heart-of-composition.css",
   "animations": "/js/pages/the-heart-of-composition.animations.js",
-  "generatedAt": "2026-07-28T10:07:32.401Z",
+  "generatedAt": "2026-07-28T14:50:29.913Z",
   "totals": {
     "assets": 126,
     "missing": 1
@@ -847,7 +847,7 @@
         "local": {
           "exists": true,
           "path": "/css/pages/the-heart-of-composition.css",
-          "bytes": 1196367
+          "bytes": 1197137
         }
       }
     ],

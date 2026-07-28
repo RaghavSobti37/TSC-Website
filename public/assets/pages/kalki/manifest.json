@@ -3,7 +3,7 @@
   "html": "/pages/kalki.html",
   "css": "/css/pages/kalki.css",
   "animations": "/js/pages/kalki.animations.js",
-  "generatedAt": "2026-07-28T10:07:32.326Z",
+  "generatedAt": "2026-07-28T14:50:29.813Z",
   "totals": {
     "assets": 98,
     "missing": 0
@@ -614,7 +614,7 @@
         "local": {
           "exists": true,
           "path": "/css/pages/kalki.css",
-          "bytes": 981794
+          "bytes": 983305
         }
       }
     ],

@@ -675,3 +675,29 @@ url("/assets/mirror/static.wixstatic.com/ufonts/834fa9_d08c6fe9ca9b47ccb21ecdcb7
     fill: #ffecd1 !important;
   }
 }
+
+/* ===== TSC mobile safety (max-width: 1024px) — work ===== */
+@media (max-width: 1024px) {
+  main,
+  #SITE_PAGES {
+    overflow-x: clip;
+    max-width: 100%;
+  }
+
+  main section.wixui-section {
+    overflow-x: clip;
+    max-width: 100%;
+    height: auto !important;
+    min-height: 0 !important;
+  }
+
+  main img,
+  main .wixui-image img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  main [data-testid="richTextElement"] .wixui-rich-text__text {
+    overflow-wrap: break-word;
+  }
+}

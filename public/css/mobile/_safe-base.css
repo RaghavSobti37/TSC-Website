@@ -135,10 +135,15 @@
   }
 
   .tsc-mobile-footer-brand {
-    display: flex;
-    align-items: center;
-    gap: 0;
-    margin: 0 0 18px;
+    display: block;
+    position: relative;
+    width: var(--tsc-footer-logo-w, 132px);
+    height: var(--tsc-footer-logo-h, 44px);
+    margin: 0 0 16px;
+    padding: 0;
+    overflow: hidden;
+    flex: 0 0 auto;
+    background: transparent;
   }
 
   .tsc-mobile-footer-logo-svg {
@@ -189,14 +194,37 @@
   }
 
   .tsc-mobile-footer-logo {
-    flex: 0 0 auto;
-    width: clamp(148px, 48vw, 220px);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    /* Asset has large black pad — zoom so mark fills ~132×44 */
+    width: 200px;
     height: auto;
-    max-height: 64px;
-    object-fit: contain;
+    max-width: none;
+    max-height: none;
+    margin: 0;
+    padding: 0;
+    transform: translate(-50%, -50%);
+    object-fit: fill;
     border-radius: 0;
-    /* logo PNGs ship on black — lift mark on dark green */
-    mix-blend-mode: lighten;
+    /* logo PNGs ship on black — screen lifts cream mark; keep visible */
+    mix-blend-mode: screen;
+    filter: brightness(1.35) contrast(1.15);
+    opacity: 1;
+    visibility: visible;
+    display: block;
+  }
+
+  /* Hide leftover Wix footer marks once TSC accordion footer mounts */
+  body.tsc-has-mobile-footer footer .wixui-vector-image,
+  body.tsc-has-mobile-footer #SITE_FOOTER .wixui-vector-image,
+  body.tsc-has-mobile-footer footer img:not(.tsc-mobile-footer-logo):not(.tsc-mobile-footer-wordmark-mark),
+  body.tsc-has-mobile-footer #SITE_FOOTER img:not(.tsc-mobile-footer-logo):not(.tsc-mobile-footer-wordmark-mark),
+  body.tsc-has-mobile-footer .tsc-legacy-footer,
+  body.tsc-has-mobile-footer .tsc-legacy-footer-host {
+    display: none !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
   }
 
   .tsc-mobile-footer-tagline {
@@ -380,8 +408,13 @@
     background: #ffecd1 !important;
   }
 
+  .tsc-mobile-footer-academy .tsc-mobile-footer-brand {
+    background: #083d3a;
+    border-radius: 8px;
+  }
+
   .tsc-mobile-footer-academy .tsc-mobile-footer-logo {
-    mix-blend-mode: normal;
+    mix-blend-mode: lighten;
   }
 
   .tsc-mobile-footer-academy .tsc-mobile-footer-tagline,

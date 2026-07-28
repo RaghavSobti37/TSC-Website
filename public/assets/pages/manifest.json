@@ -9,7 +9,7 @@
     {
       "page": "academy",
       "manifest": "/assets/pages/academy/manifest.json",
-      "assets": 127,
+      "assets": 129,
       "missing": 0
     },
     {
@@ -123,7 +123,7 @@
     {
       "page": "learn-with-tsc",
       "manifest": "/assets/pages/learn-with-tsc/manifest.json",
-      "assets": 126,
+      "assets": 128,
       "missing": 0
     },
     {

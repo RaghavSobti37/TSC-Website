@@ -3,7 +3,7 @@
   "html": "/pages/roots-of-hindustani-classical.html",
   "css": "/css/pages/roots-of-hindustani-classical.css",
   "animations": "/js/pages/roots-of-hindustani-classical.animations.js",
-  "generatedAt": "2026-07-28T10:07:32.391Z",
+  "generatedAt": "2026-07-28T14:50:29.901Z",
   "totals": {
     "assets": 123,
     "missing": 1
@@ -847,7 +847,7 @@
         "local": {
           "exists": true,
           "path": "/css/pages/roots-of-hindustani-classical.css",
-          "bytes": 1192866
+          "bytes": 1193636
         }
       }
     ],

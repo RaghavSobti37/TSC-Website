@@ -6,8 +6,8 @@
   align-self: start;
   justify-self: center;
   width: min(820px, calc(100vw - 56px));
-  /* Clear Wix page title in same grid cell (taller on desktop) */
-  margin: clamp(120px, 17vw, 240px) auto clamp(40px, 6vw, 72px);
+  /* Title sits above in red-box zone; form starts closer */
+  margin: clamp(28px, 5vw, 56px) auto clamp(40px, 6vw, 72px);
   padding: clamp(24px, 4vw, 42px);
   border: 1px solid rgba(255, 236, 209, 0.85);
   border-radius: 8px;
@@ -24,21 +24,19 @@
 
 .tsc-local-form h1,
 .tsc-local-form h2 {
-  margin: 0 0 clamp(22px, 3vw, 32px);
-  color: #00535a;
-  font-size: clamp(28px, 4vw, 44px);
-  font-weight: 700;
-  line-height: 1.08;
-  text-align: center;
+  /* Title lives outside the cream box (page hero). Hide duplicate inside. */
+  display: none !important;
+  margin: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
+  font-size: 0 !important;
 }
 
 .tsc-required-note {
-  margin: -12px 0 24px;
-  color: #073d3d;
-  font-size: 13px;
-  font-weight: 700;
-  line-height: 1.35;
-  text-align: center;
+  display: none !important;
+  margin: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
 }
 
 .tsc-required-mark {
@@ -68,8 +66,8 @@
 .tsc-field legend {
   margin: 0;
   color: #073d3d;
-  font-size: 14px;
-  line-height: 1.35;
+  font-size: 17px;
+  line-height: 1.4;
   font-weight: 700;
 }
 
@@ -286,11 +284,106 @@ body:has(.tsc-local-form) main [data-motion-part*="BG_MEDIA"] {
 
 /* ===== TSC forms mobile extend (max-width: 1024px) — subpages-mobile ===== */
 @media (max-width: 1024px) {
+  /* Kill Wix ad strip → white/cream bars above+below sticky header */
+  body:has(.tsc-local-form),
+  body[data-page="book-a-call"],
+  body[data-page="book-an-artist"],
+  body[data-page="artist-query"],
+  body[data-page="collab-query"],
+  body[data-page="masterclass-review01"],
+  body[data-page="masterclass-review02"],
+  body[data-page="classicalreview"] {
+    --wix-ads-height: 0px !important;
+    --wix-ads-top-height: 0px !important;
+    --sticky-offset: 0px !important;
+  }
+
+  body:has(.tsc-local-form) #WIX_ADS,
+  body[data-page="book-a-call"] #WIX_ADS,
+  body[data-page="book-an-artist"] #WIX_ADS,
+  body[data-page="artist-query"] #WIX_ADS,
+  body[data-page="collab-query"] #WIX_ADS,
+  body:has(.tsc-local-form) a[href*="wix.com/studio"],
+  body[data-page="book-a-call"] a[href*="wix.com/studio"],
+  body[data-page="book-an-artist"] a[href*="wix.com/studio"],
+  body[data-page="artist-query"] a[href*="wix.com/studio"],
+  body[data-page="collab-query"] a[href*="wix.com/studio"] {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    min-height: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    pointer-events: none !important;
+  }
+
+  body:has(.tsc-local-form) #site-root,
+  body[data-page="book-a-call"] #site-root,
+  body[data-page="book-an-artist"] #site-root,
+  body[data-page="artist-query"] #site-root,
+  body[data-page="collab-query"] #site-root {
+    top: 0 !important;
+  }
+
   .tsc-local-form {
     width: min(100% - 32px, 620px);
     margin-left: auto;
     margin-right: auto;
     box-sizing: border-box;
+  }
+
+  /* Outer Wix page title → same width as cream form box */
+  body:has(.tsc-local-form) main [data-testid="richTextElement"]:has(h1.font_0),
+  #comp-mrxjb3tn,
+  #comp-mrxmc0za1,
+  #comp-mrxv5lfw {
+    width: min(100% - 32px, 620px) !important;
+    max-width: min(100% - 32px, 620px) !important;
+    box-sizing: border-box !important;
+    justify-self: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  body:has(.tsc-local-form) main [data-testid="richTextElement"]:has(h1.font_0) h1,
+  #comp-mrxjb3tn h1,
+  #comp-mrxmc0za1 h1,
+  #comp-mrxv5lfw h1 {
+    width: 100% !important;
+    max-width: 100% !important;
+    text-align: center !important;
+    font-size: clamp(34px, 9vw, 48px) !important;
+    line-height: 1.05 !important;
+    font-weight: 800 !important;
+    white-space: nowrap !important;
+  }
+
+  /* Standalone review shell title tracks cream box */
+  .tsc-review-page .tsc-review-shell {
+    width: min(100% - 32px, 620px);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Hide duplicate title + * Required inside cream box when outer Wix H1 exists */
+  body:has(main h1.font_0) .tsc-local-form > h1,
+  body:has(main h1.font_0) .tsc-local-form > h2,
+  body:has(main h1.font_0) .tsc-local-form > .tsc-required-note {
+    display: none !important;
+  }
+
+  /* Always drop redundant * Required note on mobile forms */
+  .tsc-local-form > .tsc-required-note {
+    display: none !important;
+  }
+
+  /* Question labels ≥16px (beat Wix/page shrink rules) */
+  .tsc-field label,
+  .tsc-field legend,
+  .tsc-label-text,
+  .tsc-choice {
+    font-size: 16px !important;
+    line-height: 1.4 !important;
   }
 
   .tsc-form-grid {
@@ -316,5 +409,6 @@ body:has(.tsc-local-form) main [data-motion-part*="BG_MEDIA"] {
   .tsc-field textarea {
     max-width: 100%;
     box-sizing: border-box;
+    font-size: 16px;
   }
 }

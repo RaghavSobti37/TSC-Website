@@ -76,6 +76,7 @@
   };
   var mobileWorkCards = [
     {
+      num: '01',
       title: 'Main Bhi Artist',
       eyebrow: 'Every Artist Has a Story',
       stat: '4,000+ artists connected',
@@ -84,6 +85,7 @@
       fallbackImage: '/assets/mirror/static.wixstatic.com/media/19f989_54d60cf6fe45451f9a6c467ec19ca7bf~mv2.png/v1/fill/w_608,h_540,fp_0.51_0.34,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/process.png'
     },
     {
+      num: '02',
       title: 'Havells mYOUsic',
       eyebrow: "Discovering India's Next Musical Voices",
       stat: '2500+ artist entries',
@@ -92,6 +94,7 @@
       fallbackImage: '/assets/mirror/static.wixstatic.com/media/19f989_31e0c2f0485747acb1a4b9d831588423~mv2.jpg/v1/fill/w_608,h_497,fp_0.50_0.43,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/4.jpg'
     },
     {
+      num: '03',
       title: 'Insta Music League',
       eyebrow: 'Where Original Music Takes Centre Stage',
       stat: '4,000+ original entries',
@@ -100,6 +103,7 @@
       fallbackImage: '/assets/mirror/static.wixstatic.com/media/11062b_277a34827c9542fca4c9d0e384dfcdac~mv2.jpeg/v1/fill/w_608,h_480,fp_0.58_0.25,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Singer%20In%20Studio.jpeg'
     },
     {
+      num: '04',
       title: 'Young Gunns',
       eyebrow: 'Building the Next Generation of Artists',
       stat: '9 emerging artists',
@@ -114,6 +118,8 @@
       title: 'Mahaavatar Narsimha',
       blurb: 'Mythology-led animated feature — cultural positioning, audience development, monetisation and long-term IP growth.',
       href: '/mahavatar-narsimha',
+      titleSelector: '#comp-mqmi3w46',
+      blurbSelector: '#comp-mqmi3w4a',
       imageSelector: '#comp-mqmi3w4b3 img',
       fallbackImage: '/assets/mirror/static.wixstatic.com/media/19f989_a9399d943c794787aa9a5a4babaa82b7~mv2.jpg/v1/fill/w_720,h_720,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/9_edited_edited.jpg'
     },
@@ -122,6 +128,8 @@
       title: 'Hanuman Ansh',
       blurb: 'Spiritual entertainment IP connecting faith, story, community and contemporary audiences.',
       href: '/hanuman-ansh',
+      titleSelector: '#comp-mqmi6yo71',
+      blurbSelector: '#comp-mqmi6yob',
       imageSelector: '#comp-mqmi6yoc4 img',
       fallbackImage: '/assets/mirror/static.wixstatic.com/media/19f989_ca20c3bfe20b447fb264a2d00c44069e~mv2.png/v1/fill/w_720,h_720,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/11_edited_edited.png'
     },
@@ -130,6 +138,8 @@
       title: 'Mahaprabhu Jagannath',
       blurb: 'Cultural resonance initiative for Lord Jagannath’s living tradition — community, devotion, new-generation storytelling.',
       href: '/mahaprbhu',
+      titleSelector: '#comp-mqmi8cy13',
+      blurbSelector: '#comp-mqmi8cy52',
       imageSelector: '#comp-mqmi8cy66 img',
       fallbackImage: '/assets/mirror/static.wixstatic.com/media/19f989_3f14ef87c77647c6bac92fc2415274ad~mv2.png/v1/fill/w_720,h_720,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/12_edited.png'
     },
@@ -138,6 +148,8 @@
       title: 'Kalki',
       blurb: 'Culture-forward storytelling — tradition and the future, strategic positioning and modern audience engagement.',
       href: '/kalki',
+      titleSelector: '#comp-mqmi8suv6',
+      blurbSelector: '#comp-mqmi8sv0',
       imageSelector: '#comp-mqmi8sv12 img',
       fallbackImage: '/assets/mirror/static.wixstatic.com/media/19f989_f84950fe51a84d3baf15f59a5c864731~mv2.jpg/v1/fill/w_720,h_720,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/kalki.jpg'
     }
@@ -634,7 +646,16 @@
       teardownMobileWorkCases();
       return;
     }
-    if (host.querySelector('.tsc-mobile-work-cases')) return;
+
+    var existing = host.querySelector('.tsc-mobile-work-cases');
+    // Rebuild if legacy image-overlay shell (no title bar)
+    if (existing && !existing.querySelector('.tsc-mobile-work-bar')) {
+      teardownMobileWorkCases();
+      host = document.querySelector('#comp-mr69hwoy');
+      if (!host) return;
+      existing = null;
+    }
+    if (existing) return;
 
     // Wix mesh uses explicit grid-row per section. Sibling shells with
     // grid-area:auto steal row 1 and bury the Work hero — mount inside host.
@@ -652,12 +673,15 @@
         mobileWorkCards.map(function(card) {
           return [
             '<a class="tsc-mobile-work-card" href="' + ui.escapeHtml(card.href) + '">',
-              '<img src="' + ui.escapeHtml(localImageSrc(card.imageSelector, card.fallbackImage)) + '" alt="">',
-              '<span class="tsc-mobile-work-arrow" aria-hidden="true">&nearr;</span>',
-              '<span class="tsc-mobile-work-copy">',
-                '<small>' + ui.escapeHtml(card.eyebrow) + '</small>',
+              '<span class="tsc-mobile-work-bar">',
+                '<small>' + ui.escapeHtml(card.num) + '</small>',
                 '<strong>' + ui.escapeHtml(card.title) + '</strong>',
+              '</span>',
+              '<img src="' + ui.escapeHtml(localImageSrc(card.imageSelector, card.fallbackImage)) + '" alt="">',
+              '<span class="tsc-mobile-work-body">',
+                '<p>' + ui.escapeHtml(card.eyebrow) + '</p>',
                 '<em>' + ui.escapeHtml(card.stat) + '</em>',
+                '<span class="tsc-mobile-work-cta">Know More</span>',
               '</span>',
             '</a>'
           ].join('');
@@ -669,6 +693,15 @@
     host.style.setProperty('min-height', '0', 'important');
     host.style.setProperty('overflow', 'visible', 'important');
     document.body.classList.add('tsc-has-mobile-work-cases');
+  }
+
+  function updateDesktopFilmCards() {
+    var path = normalizedPath();
+    if (path !== '/films') return;
+    mobileFilmCards.forEach(function(card) {
+      if (card.titleSelector) ui.setText(card.titleSelector, card.title);
+      if (card.blurbSelector) ui.setText(card.blurbSelector, card.blurb);
+    });
   }
 
   function upscaleMirrorImage(src, size) {
@@ -808,6 +841,15 @@
     }
 
     var cardHost = document.getElementById('comp-mqmhuw20');
+    if (cardHost) {
+      var existingCases = cardHost.querySelector('.tsc-mobile-films-cases');
+      // Rebuild if legacy layout (num/title inside copy, no title bar)
+      if (existingCases && !existingCases.querySelector('.tsc-mobile-films-bar')) {
+        existingCases.parentNode.removeChild(existingCases);
+        existingCases = null;
+        document.body.classList.remove('tsc-has-mobile-films-cases');
+      }
+    }
     if (cardHost && !document.querySelector('.tsc-mobile-films-cases')) {
       cardHost.classList.add('tsc-mobile-films-host');
       Array.prototype.forEach.call(cardHost.children, function(child) {
@@ -831,10 +873,12 @@
             var src = upscaleMirrorImage(localImageSrc(card.imageSelector, card.fallbackImage), 720);
             return [
               '<a class="tsc-mobile-films-card" href="' + ui.escapeHtml(card.href) + '">',
-                '<img src="' + ui.escapeHtml(src) + '" alt="">',
-                '<span class="tsc-mobile-films-card-copy">',
+                '<span class="tsc-mobile-films-bar">',
                   '<small>' + ui.escapeHtml(card.num) + '</small>',
                   '<strong>' + ui.escapeHtml(card.title) + '</strong>',
+                '</span>',
+                '<img src="' + ui.escapeHtml(src) + '" alt="">',
+                '<span class="tsc-mobile-films-card-copy">',
                   '<p>' + ui.escapeHtml(card.blurb) + '</p>',
                   '<em>Know More</em>',
                 '</span>',
@@ -1162,6 +1206,43 @@
     });
   }
 
+  /* Roster Learn More buttons: Wix still points Harshad at /young-gunns. */
+  var ARTIST_ROSTER_HREFS = {
+    'comp-mqtpn27z': '/harshad-duhita',
+    'comp-mqtq8rt66': '/yugm',
+    'comp-mqutenqm': '/young-gunns'
+  };
+
+  function repairArtistsRosterLinks() {
+    if (normalizedPath() !== '/artists') return;
+    Object.keys(ARTIST_ROSTER_HREFS).forEach(function(btnId) {
+      var href = ARTIST_ROSTER_HREFS[btnId];
+      var host = document.getElementById(btnId);
+      if (!host) return;
+      setButtonLink(host, href);
+      var anchor = host.tagName === 'A' ? host : host.querySelector('a[href], [data-testid="linkElement"]');
+      if (anchor) {
+        anchor.setAttribute('href', href);
+        anchor.setAttribute('target', '_self');
+        anchor.removeAttribute('rel');
+      }
+    });
+    document.querySelectorAll('.tsc-artist-acc').forEach(function(card) {
+      var name = (card.querySelector('.tsc-artist-acc__bar-name, .tsc-artist-acc__collapsed-name') || {}).textContent || '';
+      name = String(name).replace(/\s+/g, ' ').trim();
+      var href = null;
+      if (/harshad|duhita/i.test(name)) href = '/harshad-duhita';
+      else if (/yugm/i.test(name)) href = '/yugm';
+      else if (/mohit/i.test(name)) href = '/young-gunns';
+      if (!href) return;
+      var cta = card.querySelector('.tsc-artist-acc__cta');
+      if (cta) {
+        cta.setAttribute('href', href);
+        cta.setAttribute('target', '_self');
+      }
+    });
+  }
+
   function scheduleResponsiveAlignment() {
     [60, 250, 700, 1400, 2400].forEach(function(delay) {
       window.setTimeout(function() {
@@ -1169,6 +1250,7 @@
         syncResponsiveHeaderMenuCta();
         alignResponsiveElements();
         repairArtistPages();
+        repairArtistsRosterLinks();
         centerArtistsHeroButtons();
       }, delay);
     });
@@ -1185,6 +1267,7 @@
     addMobileCourseMeta();
     buildMobileCourseExperience();
     buildMobileWorkCases();
+    updateDesktopFilmCards();
     buildMobileFilmsShells();
     if (ui.mountDesktopFooter) {
       ui.mountDesktopFooter({
@@ -1200,6 +1283,7 @@
     buildMobileFooter();
     alignResponsiveElements();
     repairArtistPages();
+    repairArtistsRosterLinks();
     centerArtistsHeroButtons();
     scheduleResponsiveAlignment();
     updateResourcesBlogSection();

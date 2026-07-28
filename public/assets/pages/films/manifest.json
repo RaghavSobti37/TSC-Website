@@ -3,7 +3,7 @@
   "html": "/pages/films.html",
   "css": "/css/pages/films.css",
   "animations": "/js/pages/films.animations.js",
-  "generatedAt": "2026-07-28T10:07:32.287Z",
+  "generatedAt": "2026-07-28T14:50:29.758Z",
   "totals": {
     "assets": 152,
     "missing": 0
@@ -1275,7 +1275,7 @@
         "local": {
           "exists": true,
           "path": "/css/pages/films.css",
-          "bytes": 1359859
+          "bytes": 1360347
         }
       }
     ],

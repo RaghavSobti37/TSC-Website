@@ -961,6 +961,54 @@ url("/assets/mirror/static.wixstatic.com/ufonts/834fa9_d08c6fe9ca9b47ccb21ecdcb7
 
 /* ===== TSC mobile safety (max-width: 1024px) — subpages-mobile ===== */
 @media (max-width: 1024px) {
+  :root,
+  body {
+    --wix-ads-height: 0px !important;
+    --wix-ads-top-height: 0px !important;
+    --sticky-offset: 0px !important;
+  }
+
+  #WIX_ADS,
+  a[href*="wix.com/studio"] {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    min-height: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    pointer-events: none !important;
+  }
+
+  #site-root {
+    top: 0 !important;
+  }
+
+  #comp-mrxv5lfw {
+    width: min(100% - 32px, 620px) !important;
+    max-width: min(100% - 32px, 620px) !important;
+    box-sizing: border-box !important;
+    justify-self: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  #comp-mrxv5lfw h1 {
+    width: 100% !important;
+    text-align: center !important;
+    font-size: clamp(28px, 8vw, 40px) !important;
+    line-height: 1.1 !important;
+  }
+
+  footer > :not(.tsc-mobile-footer),
+  .tsc-legacy-footer,
+  .tsc-desktop-footer {
+    display: none !important;
+  }
+
+  .tsc-mobile-footer {
+    display: block !important;
+  }
+
   main,
   #SITE_PAGES {
     overflow-x: clip;

@@ -96,6 +96,14 @@
   --tsc-tap: 44px;
   --tsc-progress-w: 2px;
   --tsc-progress-inset: 16px;
+
+  /* Mobile chrome logos (PNG has ~19%/27% black pad) */
+  --tsc-nav-logo-h: 36px;
+  --tsc-nav-logo-w: 148px;
+  --tsc-nav-bar-h: 56px;
+  --tsc-footer-logo-w: 168px;
+  --tsc-footer-logo-h: 56px;
+  --tsc-phone-fab-size: 56px;
 }
 
 /* Light editorial pages (cream base) */

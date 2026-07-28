@@ -3,7 +3,7 @@
   "html": "/pages/mahaprbhu.html",
   "css": "/css/pages/mahaprbhu.css",
   "animations": "/js/pages/mahaprbhu.animations.js",
-  "generatedAt": "2026-07-28T10:07:32.344Z",
+  "generatedAt": "2026-07-28T14:50:29.838Z",
   "totals": {
     "assets": 104,
     "missing": 0
@@ -632,7 +632,7 @@
         "local": {
           "exists": true,
           "path": "/css/pages/mahaprbhu.css",
-          "bytes": 998339
+          "bytes": 999850
         }
       }
     ],

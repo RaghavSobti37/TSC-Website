@@ -3,7 +3,7 @@
   "html": "/pages/book-an-artist.html",
   "css": "/css/pages/book-an-artist.css",
   "animations": "/js/pages/book-an-artist.animations.js",
-  "generatedAt": "2026-07-28T10:07:32.269Z",
+  "generatedAt": "2026-07-28T14:50:29.732Z",
   "totals": {
     "assets": 115,
     "missing": 7
@@ -652,7 +652,7 @@
         "local": {
           "exists": true,
           "path": "/css/pages/book-an-artist.css",
-          "bytes": 1041805
+          "bytes": 1044265
         }
       }
     ],

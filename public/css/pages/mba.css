@@ -454,3 +454,42 @@ url("/assets/mirror/static.wixstatic.com/ufonts/834fa9_d08c6fe9ca9b47ccb21ecdcb7
     box-sizing: border-box !important;
   }
 }
+
+/* ===== TSC impact/case mobile readability boost ===== */
+@media (max-width: 1024px) {
+  main,
+  #SITE_PAGES,
+  .report-page,
+  .impact-report {
+    overflow-x: clip;
+    max-width: 100%;
+  }
+
+  main section.wixui-section {
+    overflow-x: clip;
+    max-width: 100%;
+    height: auto !important;
+    min-height: 0 !important;
+  }
+
+  main img,
+  main .wixui-image img,
+  .report-page img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  main [data-testid="richTextElement"] .wixui-rich-text__text,
+  .report-copy p,
+  .report-body p {
+    overflow-wrap: break-word;
+    word-break: normal;
+    line-height: 1.5;
+  }
+
+  main .wixui-button,
+  main a.wixui-button {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+}

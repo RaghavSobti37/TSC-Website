@@ -1,0 +1,27 @@
+/*
+ * DESKTOP LOCK: mobile boot only. Prevents desktop-jumbled FOUC on phones.
+ * Linked with media="(max-width: 1024px)" from the early head boot script.
+ */
+@media (max-width: 1024px) {
+  html.tsc-boot-mobile {
+    overflow-x: hidden !important;
+  }
+
+  /* Hide until mobile chrome/CSS wired — avoid desktop mesh flash */
+  html.tsc-boot-mobile:not(.tsc-mobile-ready) body {
+    opacity: 0 !important;
+    visibility: hidden !important;
+  }
+
+  html.tsc-boot-mobile.tsc-mobile-ready body {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transition: opacity 0.12s ease-out;
+  }
+
+  html.tsc-boot-mobile,
+  html.tsc-boot-mobile body {
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+  }
+}

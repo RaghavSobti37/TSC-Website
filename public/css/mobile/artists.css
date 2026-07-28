@@ -1350,6 +1350,24 @@
     outline: 2px solid #b74b02;
     outline-offset: 2px;
   }
+
+  /* —— Profile pages: reinforce readable type + clip —— */
+  body[data-page="harshad-duhita"] main section.wixui-section,
+  body[data-page="yugm"] main section.wixui-section {
+    overflow-x: clip !important;
+    max-width: 100% !important;
+  }
+
+  body[data-page="harshad-duhita"] .lnrwl-container,
+  body[data-page="yugm"] .q5942-container {
+    grid-template-rows: auto !important;
+  }
+
+  body[data-page="harshad-duhita"] #comp-mq6h99jp,
+  body[data-page="yugm"] #comp-mqhqa6vo {
+    --l_display: flex !important;
+    display: flex !important;
+  }
 }
 
 @media (max-width: 420px) {

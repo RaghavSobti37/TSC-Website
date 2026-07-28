@@ -14,21 +14,24 @@
       img: 'comp-mqtpn27o',
       name: 'comp-mqtpn2877',
       bio: 'comp-mqtpn2854',
-      btn: 'comp-mqtpn27z'
+      btn: 'comp-mqtpn27z',
+      href: '/harshad-duhita'
     },
     {
       root: 'comp-mqtq8rsp',
       img: 'comp-mqtq8rsv',
       name: 'comp-mqtq8rt23',
       bio: 'comp-mqtq8rt44',
-      btn: 'comp-mqtq8rt66'
+      btn: 'comp-mqtq8rt66',
+      href: '/yugm'
     },
     {
       root: 'comp-mqutenq5',
       img: 'comp-mqutenqa',
       name: 'comp-mqutenqi',
       bio: 'comp-mqutenqk',
-      btn: 'comp-mqutenqm'
+      btn: 'comp-mqutenqm',
+      href: '/young-gunns'
     }
   ];
 
@@ -72,8 +75,9 @@
     };
   }
 
-  function hrefOf(btnId) {
-    var btn = document.getElementById(btnId);
+  function hrefOf(spec) {
+    if (spec.href) return spec.href;
+    var btn = document.getElementById(spec.btn);
     if (!btn) return '#';
     var a = btn.tagName === 'A' ? btn : btn.querySelector('a[href]');
     return (a && a.getAttribute('href')) || '#';
@@ -84,7 +88,7 @@
       var img = imgOf(spec.img);
       var name = textOf(spec.name) || 'Artist ' + (index + 1);
       var bio = shortBio(textOf(spec.bio));
-      var href = hrefOf(spec.btn);
+      var href = hrefOf(spec);
       return {
         id: 'tsc-artist-' + index,
         name: name,

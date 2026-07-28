@@ -3,9 +3,9 @@
   "html": "/pages/learn-with-tsc.html",
   "css": "/css/pages/learn-with-tsc.css",
   "animations": "/js/pages/learn-with-tsc.animations.js",
-  "generatedAt": "2026-07-28T10:07:32.335Z",
+  "generatedAt": "2026-07-28T14:50:29.827Z",
   "totals": {
-    "assets": 126,
+    "assets": 128,
     "missing": 0
   },
   "assetsByType": {
@@ -1057,6 +1057,15 @@
     "images": [
       {
         "type": "images",
+        "url": "/assets/mirror/static.wixstatic.com/media/11062b_c5853adb7d234cdf8d55952b5af7758e~mv2.jpg/v1/crop/x_0,y_825,w_5000,h_2508/fill/w_147,h_74,al_c,q_80,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/Musical%20Instruments%20Close-Up.jpg",
+        "local": {
+          "exists": true,
+          "path": "/assets/mirror/static.wixstatic.com/original-media/11062b_c5853adb7d234cdf8d55952b5af7758e~mv2.jpg",
+          "bytes": 132180
+        }
+      },
+      {
+        "type": "images",
         "url": "/assets/mirror/static.wixstatic.com/media/19f989_15a7702e55de4a888027490b1ec26193~mv2.jpg/v1/fill/w_147,h_147,al_c,q_80,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/p4.jpg",
         "local": {
           "exists": true,
@@ -1143,6 +1152,15 @@
           "exists": true,
           "path": "/assets/mirror/static.wixstatic.com/original-media/19f989_de650661cdd649e8b08d1c365e9ab667~mv2.jpg",
           "bytes": 207376
+        }
+      },
+      {
+        "type": "images",
+        "url": "/assets/mirror/static.wixstatic.com/media/486b7ae000594130a8a60088b5604c24.jpg/v1/fill/w_147,h_98,al_c,q_80,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/Hands%20Playing%20Keyboard.jpg",
+        "local": {
+          "exists": true,
+          "path": "/assets/mirror/static.wixstatic.com/original-media/486b7ae000594130a8a60088b5604c24.jpg",
+          "bytes": 101852
         }
       },
       {

@@ -2,6 +2,31 @@
 
 /* ===== TSC mobile safety (max-width: 1024px) — subpages-mobile ===== */
 @media (max-width: 1024px) {
+  .tsc-review-page {
+    padding: 28px 16px 40px;
+  }
+
+  .tsc-review-shell {
+    width: min(100% - 32px, 620px);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .tsc-review-brand {
+    width: 100%;
+    text-align: center;
+  }
+
+  .tsc-local-form > .tsc-required-note {
+    display: none !important;
+  }
+
+  .tsc-field label,
+  .tsc-field legend,
+  .tsc-label-text {
+    font-size: 16px !important;
+  }
+
   main,
   #SITE_PAGES {
     overflow-x: clip;

@@ -133,7 +133,7 @@
     pointer-events: none !important;
   }
 
-  /* Large atmospheric letterpress UNFOLD — one line, no horizontal bleed */
+  /* Large atmospheric letterpress UNFOLD — fit width, no scale overflow */
   #comp-mrxkm2y2 {
     display: block !important;
     visibility: visible !important;
@@ -141,18 +141,19 @@
     order: 1 !important;
     z-index: 1 !important;
     flex: 0 0 auto !important;
+    box-sizing: border-box !important;
     width: 100% !important;
     max-width: 100% !important;
     left: auto !important;
-    /* Scale kept ≤1.2 so 390vw never spills past clip */
-    transform: scale(1.2) !important;
-    transform-origin: center center !important;
+    right: auto !important;
+    transform: none !important;
     top: auto !important;
-    margin: 0.85rem 0 0.65rem !important;
+    margin: 0.55rem 0 0.35rem !important;
+    padding: 0 4px !important;
     height: auto !important;
-    opacity: 0.42 !important;
+    opacity: 0.5 !important;
     pointer-events: none !important;
-    overflow: hidden !important;
+    overflow: visible !important;
     text-align: center !important;
     white-space: nowrap !important;
   }
@@ -167,20 +168,21 @@
     white-space: nowrap !important;
     word-break: keep-all !important;
     overflow-wrap: normal !important;
+    max-width: 100% !important;
   }
 
   #comp-mrxkm2y2 [data-testid="TextEffectsLetterPress-text"],
   #comp-mrxkm2y2 .q2FOjn,
   #comp-mrxkm2y2 .VZX1DB,
   #comp-mrxkm2y2 [data-testid="text-effects-shared-pattern-unit"] {
-    /* Base size fits one line; visual = this × 1.2 via parent transform */
-    font-size: clamp(3.1rem, 17vw, 4.5rem) !important;
-    line-height: 1 !important;
+    /* 50% bigger than prior mobile size; still one line at 390 */
+    font-size: clamp(4.1rem, 21.3vw, 6rem) !important;
+    line-height: 0.95 !important;
     letter-spacing: -0.05em !important;
     text-transform: uppercase !important;
     font-weight: 700 !important;
     font-style: normal !important;
-    color: #c8d5c4 !important;
+    color: #d5e0d2 !important;
     white-space: nowrap !important;
   }
 
@@ -190,7 +192,7 @@
     white-space: nowrap !important;
   }
 
-  /* Word-swap — cream italic over LOWER HALF of scaled UNFOLD */
+  /* Word-swap — cream italic over LOWER HALF of UNFOLD */
   #comp-mrxl8fxe,
   #comp-mrg8g76o {
     position: relative !important;
@@ -201,8 +203,8 @@
     max-width: 100% !important;
     left: auto !important;
     top: auto !important;
-    /* Pull onto lower half of scaled UNFOLD */
-    margin: -3.6rem 0 0 !important;
+    /* Pull onto lower half of larger UNFOLD */
+    margin: -3.5rem 0 0 !important;
     height: auto !important;
     min-height: 0 !important;
     overflow: visible !important;
@@ -270,14 +272,14 @@
   #comp-mrg8g77k6__item-mrg8jnrt .wixui-rich-text__text,
   #comp-mrg8g77k6__item-mrg8klt9 .wixui-rich-text__text,
   #comp-mrg8g77k6__item-mrg8knii1 .wixui-rich-text__text {
-    font-size: clamp(1.9rem, 8.8vw, 2.55rem) !important;
+    font-size: clamp(2.4rem, 11vw, 3.2rem) !important;
     line-height: 1.08 !important;
     letter-spacing: -0.01em !important;
     font-style: italic !important;
     font-weight: 700 !important;
     color: #ffecd1 !important;
     text-align: center !important;
-    text-shadow: none !important;
+    text-shadow: 0 1px 10px rgba(0, 40, 36, 0.35) !important;
     opacity: 1 !important;
   }
 

@@ -10,6 +10,7 @@
  */
 
 @import url("./mobile/_tokens.css");
+@import url("./mobile/_safe-base.css");
 
 @media (max-width: 900px) {
   /* —— Section Label / Kicker —— */
@@ -242,8 +243,8 @@
     width: 100%;
   }
 
-  /* —— Sticky CTA —— */
-  .tsc-sticky-cta {
+  /* —— Sticky CTA (full bar disabled; phone FAB uses .tsc-phone-fab) —— */
+  .tsc-sticky-cta:not(.tsc-phone-fab) {
     display: none !important;
     visibility: hidden !important;
     pointer-events: none !important;
@@ -252,9 +253,6 @@
     bottom: 0;
     left: 0;
     z-index: 9000;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
     box-sizing: border-box;
     height: var(--tsc-sticky-h, 56px);
     padding:
@@ -264,20 +262,17 @@
     background: var(--tsc-bg-elevated, #0e4f4b);
     transform: translateY(100%);
     opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    transition: transform 0.25s ease, opacity 0.25s ease, visibility 0.25s ease;
   }
 
-  .tsc-sticky-cta.is-visible,
-  .tsc-sticky-cta[data-visible="true"] {
+  .tsc-sticky-cta.is-visible:not(.tsc-phone-fab),
+  .tsc-sticky-cta[data-visible="true"]:not(.tsc-phone-fab) {
     transform: translateY(0);
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
   }
 
-  .tsc-sticky-cta.is-hidden-down {
+  .tsc-sticky-cta.is-hidden-down:not(.tsc-phone-fab) {
     transform: translateY(100%);
     opacity: 0;
     visibility: hidden;
@@ -308,6 +303,53 @@
     height: 44px;
     border-radius: var(--tsc-btn-radius, 8px);
     font-size: var(--tsc-type-body, 16px);
+  }
+
+  /* —— Academy phone FAB (bottom-right) —— */
+  .tsc-phone-fab {
+    position: fixed !important;
+    right: 16px !important;
+    bottom: calc(20px + env(safe-area-inset-bottom, 0px)) !important;
+    left: auto !important;
+    top: auto !important;
+    z-index: 9500 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: var(--tsc-phone-fab-size, 56px) !important;
+    height: var(--tsc-phone-fab-size, 56px) !important;
+    min-width: var(--tsc-phone-fab-size, 56px) !important;
+    min-height: var(--tsc-phone-fab-size, 56px) !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    border-radius: 50% !important;
+    background: var(--tsc-terracotta, #b74b02) !important;
+    color: var(--tsc-cream, #ffecd1) !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28) !important;
+    text-decoration: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+  }
+
+  .tsc-phone-fab svg {
+    display: block;
+    width: 26px;
+    height: 26px;
+    fill: currentColor;
+  }
+
+  /* Wix academy pinned call/whatsapp — mid-page; replace with .tsc-phone-fab */
+  body[data-page="academy"] #comp-mrx6fmlb-pinned-layer,
+  body[data-page="academy"] #comp-mqwk4qml-pinned-layer,
+  body[data-page="academy"] #comp-mrx6fmlb,
+  body[data-page="academy"] #comp-mqwk4qml {
+    display: none !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    opacity: 0 !important;
   }
 
   /* —— Filter pills —— */
@@ -397,6 +439,37 @@
   body.tsc-has-mobile-chrome #SITE_HEADER,
   body:has(.tsc-mobile-site-header) #SITE_HEADER {
     display: none !important;
+    height: 0 !important;
+    min-height: 0 !important;
+    max-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    border: 0 !important;
+    background: transparent !important;
+  }
+
+  /* Kill cream / freemium strips above the teal header band on forms */
+  body.tsc-has-mobile-chrome #WIX_ADS,
+  body:has(.tsc-mobile-site-header) #WIX_ADS,
+  body.tsc-has-mobile-chrome [id^="WIX_ADS"],
+  body:has(.tsc-mobile-site-header) [data-testid="mesh-container-content"] > header {
+    display: none !important;
+    height: 0 !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  body.tsc-has-mobile-chrome,
+  body:has(.tsc-mobile-site-header) {
+    background: transparent !important;
+  }
+
+  body.tsc-has-mobile-chrome #SITE_CONTAINER,
+  body:has(.tsc-mobile-site-header) #SITE_CONTAINER {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
   }
 
   body.tsc-has-mobile-chrome button[aria-label="Menu"],
@@ -410,5 +483,110 @@
     display: none !important;
     pointer-events: none !important;
     visibility: hidden !important;
+  }
+
+  /* —— Nav logo: ~36px mark, left-padded, vertically centered w/ hamburger —— */
+  .tsc-mobile-site-header {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 12px !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+    min-height: var(--tsc-nav-bar-h, 56px) !important;
+    height: var(--tsc-nav-bar-h, 56px) !important;
+    margin: 0 !important;
+    padding: 0 16px !important;
+    border: 0 !important;
+    border-bottom: 0 !important;
+    background:
+      radial-gradient(circle at 9% 50%, rgba(190, 86, 0, 0.95) 0 17%, rgba(150, 96, 24, 0.62) 37%, transparent 66%),
+      linear-gradient(100deg, #b94f00 0%, #8b6820 35%, #005b53 72%, #00423d 100%) !important;
+    color: var(--tsc-cream, #ffecd1) !important;
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 800 !important;
+    grid-template-columns: none !important;
+  }
+
+  .tsc-mobile-site-header::before,
+  .tsc-mobile-site-header::after {
+    display: none !important;
+    content: none !important;
+  }
+
+  .tsc-mobile-site-header-academy {
+    background: var(--tsc-deep-teal, #083d3a) !important;
+    color: var(--tsc-cream, #ffecd1) !important;
+  }
+
+  .tsc-mobile-brand,
+  .tsc-mobile-brand.tsc-desktop-brand-link {
+    position: relative !important;
+    display: block !important;
+    flex: 0 0 auto !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    width: var(--tsc-nav-logo-w, 112px) !important;
+    height: var(--tsc-nav-logo-h, 28px) !important;
+    max-width: 42vw !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    grid-column: auto !important;
+    grid-row: auto !important;
+    text-decoration: none !important;
+  }
+
+  .tsc-mobile-brand-logo,
+  .tsc-mobile-brand-logo-unified,
+  .tsc-mobile-brand img {
+    position: absolute !important;
+    left: 50% !important;
+    top: 50% !important;
+    /* Crop black pad — smaller mark (~28px tall) */
+    width: 172px !important;
+    height: 96px !important;
+    max-width: none !important;
+    max-height: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    transform: translate(-50%, -50%) !important;
+    object-fit: fill !important;
+    mix-blend-mode: screen !important;
+    filter: brightness(1.55) contrast(1.2) saturate(0.55) !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  .tsc-mobile-header-tagline {
+    display: none !important;
+  }
+
+  .tsc-mobile-menu {
+    position: relative !important;
+    flex: 0 0 auto !important;
+    align-self: center !important;
+    grid-column: auto !important;
+    justify-self: auto !important;
+    margin: 0 !important;
+    z-index: 900 !important;
+  }
+
+  .tsc-mobile-menu summary {
+    display: grid !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 5px !important;
+    width: 44px !important;
+    min-width: 44px !important;
+    height: 44px !important;
+    margin: 0 !important;
+    cursor: pointer !important;
+    list-style: none !important;
+  }
+
+  .tsc-mobile-header-cta {
+    display: none !important;
   }
 }

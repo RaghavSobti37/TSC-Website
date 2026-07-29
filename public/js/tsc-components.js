@@ -147,13 +147,13 @@
     work: '/css/mobile/work.css',
     artists: '/css/mobile/artists.css',
     learn: '/css/mobile/learn.css',
+    academy: '/css/mobile/academy.css',
     films: '/css/mobile/films.css',
     resources: '/css/mobile/resources.css'
   };
 
   var LEARN_PATHS = {
     '/learn-with-tsc': true,
-    '/academy': true,
     '/roots-of-hindustani-classical': true,
     '/the-heart-of-composition': true,
     '/music-production': true,
@@ -246,6 +246,7 @@
   function mobileCssBucket(path) {
     if (path === '/' || path === '/home') return 'home';
     if (path === '/about') return 'about';
+    if (path === '/academy') return 'academy';
     if (WORK_PATHS[path]) return 'work';
     if (ARTISTS_PATHS[path]) return 'artists';
     if (LEARN_PATHS[path]) return 'learn';
@@ -268,7 +269,7 @@
   }
 
   function isLearnStickyPage(path) {
-    return !!LEARN_PATHS[path];
+    return !!LEARN_PATHS[path] || path === '/academy';
   }
 
   function injectStickyCta(path) {
@@ -330,7 +331,7 @@
     setBodyPage(path);
     normalizeInternalProtocolRelativeLinks();
     // tsc-mobile-system.css @imports ./mobile/_tokens.css — no separate tokens link
-    ensureStylesheet('/css/tsc-mobile-system.css?v=no-mentor-1');
+    ensureStylesheet('/css/tsc-mobile-system.css?v=testi-center-1');
     var bucket = mobileCssBucket(path);
     if (bucket && MOBILE_PAGE_CSS[bucket]) {
       ensureStylesheet(MOBILE_PAGE_CSS[bucket]);
@@ -1063,12 +1064,12 @@
     });
   }
 
-  ensureStylesheet('/css/tsc-responsive.css?v=no-mentor-1');
+  ensureStylesheet('/css/tsc-responsive.css?v=testi-center-1');
   ensureStylesheet('/css/tsc-brand-card.css');
   ensureScript('/js/tsc-brand-cards.js');
   // Play paused Wix enter/loop motions + slideshow word-swap (all viewports).
-  ensureStylesheet('/css/tsc-wix-motion.css?v=no-mentor-1');
-  ensureScript('/js/tsc-wix-motion.js?v=no-mentor-1');
+  ensureStylesheet('/css/tsc-wix-motion.css?v=testi-center-1');
+  ensureScript('/js/tsc-wix-motion.js?v=testi-center-1');
   function bootUi() {
     wireMobileAssets();
     wireCourseAccordions();

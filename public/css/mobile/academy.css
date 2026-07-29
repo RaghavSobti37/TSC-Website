@@ -859,47 +859,72 @@
     white-space: nowrap !important;
   }
 
-  /* ---------- Testimonials: stack quotes vertically, hide arrows ---------- */
+  /* ---------- Testimonials: stack quotes, center to page ---------- */
   body[data-page="academy"] #comp-mpl384rr,
   body[data-page="academy"] #comp-mqwl0xfw,
   body[data-page="academy"] .comp-mqwl0xfw-overflow-wrapper,
   body[data-page="academy"] #comp-mqwl0xfz {
     height: auto !important;
     min-height: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    left: auto !important;
+    right: auto !important;
+    transform: none !important;
+    box-sizing: border-box !important;
   }
 
   body[data-page="academy"] .comp-mpl384rr-container {
     display: flex !important;
     flex-direction: column !important;
+    align-items: center !important;
     height: auto !important;
     padding: 26px 18px !important;
     box-sizing: border-box !important;
+    width: 100% !important;
+    max-width: 100% !important;
   }
 
   body[data-page="academy"] .comp-mpl384rr-container > [id^="comp-"] {
     position: relative !important;
     inset: auto !important;
+    left: auto !important;
+    right: auto !important;
     width: 100% !important;
+    max-width: 100% !important;
     grid-area: auto !important;
     height: auto !important;
     transform: none !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
 
   body[data-page="academy"] #comp-mqwl0xfz,
   body[data-page="academy"] .comp-mqwl0xfz-container {
     display: flex !important;
     flex-direction: column !important;
+    align-items: stretch !important;
     gap: 18px !important;
     height: auto !important;
     min-height: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    left: auto !important;
+    right: auto !important;
+    transform: none !important;
     grid-template-rows: none !important;
     grid-template-columns: none !important;
+    box-sizing: border-box !important;
   }
 
   body[data-page="academy"] #comp-mqwl0xfz > .p9hNc1,
   body[data-page="academy"] .comp-mqwl0xfz-container > .p9hNc1 {
     position: relative !important;
     inset: auto !important;
+    left: auto !important;
+    right: auto !important;
     grid-area: auto !important;
     height: auto !important;
     min-height: 0 !important;
@@ -914,6 +939,18 @@
     opacity: 1 !important;
     display: block !important;
     pointer-events: auto !important;
+    box-sizing: border-box !important;
+    transform: none !important;
+  }
+
+  body[data-page="academy"] #comp-mqwl0xfz .HFEOE3,
+  body[data-page="academy"] .comp-mqwl0xfz-container .HFEOE3 {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    left: auto !important;
+    right: auto !important;
     box-sizing: border-box !important;
   }
 

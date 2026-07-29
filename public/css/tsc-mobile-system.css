@@ -495,6 +495,9 @@
     width: 100% !important;
     min-height: var(--tsc-nav-bar-h, 56px) !important;
     height: var(--tsc-nav-bar-h, 56px) !important;
+    max-height: var(--tsc-nav-bar-h, 56px) !important;
+    overflow: visible !important;
+    flex-wrap: nowrap !important;
     margin: 0 !important;
     padding: 0 14px !important;
     border: 0 !important;
@@ -564,18 +567,28 @@
     display: none !important;
   }
 
+  /* Fixed 44×44 slot — open <details> must not grow and shove summary to top */
   .tsc-mobile-menu {
     position: relative !important;
-    flex: 0 0 auto !important;
+    flex: 0 0 44px !important;
     align-self: center !important;
     grid-column: auto !important;
     justify-self: auto !important;
+    width: 44px !important;
+    min-width: 44px !important;
+    height: 44px !important;
+    max-height: 44px !important;
     margin: 0 0 0 auto !important;
+    overflow: visible !important;
     z-index: 900 !important;
   }
 
   .tsc-mobile-menu summary {
+    position: absolute !important;
+    top: 0 !important;
+    right: 0 !important;
     display: grid !important;
+    place-content: center !important;
     align-items: center !important;
     justify-content: center !important;
     gap: 5px !important;
@@ -583,16 +596,29 @@
     min-width: 44px !important;
     height: 44px !important;
     margin: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
     cursor: pointer !important;
     list-style: none !important;
   }
 
-  /* Dropdown: left-aligned to screen (same gutter as logo) */
+  .tsc-mobile-menu summary::-webkit-details-marker {
+    display: none !important;
+  }
+
+  /* Dropdown: left-aligned to screen (same gutter as logo); fixed = out of header flow */
   .tsc-mobile-menu nav {
+    position: fixed !important;
     left: 14px !important;
     right: auto !important;
     top: calc(var(--tsc-nav-bar-h, 56px) + 8px) !important;
     width: min(280px, calc(100vw - 28px)) !important;
+    z-index: 950 !important;
+  }
+
+  .tsc-mobile-menu[open] {
+    height: 44px !important;
+    max-height: 44px !important;
   }
 
   .tsc-mobile-header-cta {

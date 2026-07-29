@@ -1481,18 +1481,31 @@ body.tsc-has-mobile-footer .tsc-legacy-footer-host:not(:has(.tsc-mobile-footer))
     position: relative;
     z-index: 900;
     margin-left: auto;
+    flex: 0 0 44px;
+    width: 44px;
+    min-width: 44px;
+    height: 44px;
+    max-height: 44px;
+    overflow: visible;
   }
 
   .tsc-mobile-menu summary {
+    position: absolute;
+    top: 0;
+    right: 0;
     align-items: center;
     cursor: pointer;
     display: grid;
+    place-content: center;
     gap: 5px;
     height: 44px;
     justify-content: center;
     list-style: none;
     min-width: 44px;
     width: 44px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
   }
 
   .tsc-mobile-menu summary::-webkit-details-marker {
@@ -1527,6 +1540,11 @@ body.tsc-has-mobile-footer .tsc-legacy-footer-host:not(:has(.tsc-mobile-footer))
     top: 64px;
     width: min(280px, calc(100vw - 28px));
     z-index: 950;
+  }
+
+  .tsc-mobile-menu[open] {
+    height: 44px;
+    max-height: 44px;
   }
 
   .tsc-mobile-menu[open] nav {

@@ -16,44 +16,44 @@
     l.setAttribute('data-tsc-boot', '1');
     (document.head || document.documentElement).appendChild(l);
   }
-  link('/css/mobile/boot.css?v=hero-anim-2');
-  link('/css/tsc-mobile-system.css?v=hero-anim-2');
+  link('/css/mobile/boot.css?v=nav-burger-1');
+  link('/css/tsc-mobile-system.css?v=nav-burger-1');
   var p = (location.pathname || '/').replace(/\/$/, '') || '/';
   if (p.indexOf('/pages/') === 0) p = p.replace('/pages', '').replace(/\.html$/, '') || '/';
   var seg = p === '/' ? 'home' : p.replace(/^\//, '').split('/')[0];
   var map = {
-    home: '/css/mobile/home.css?v=hero-anim-2',
-    about: '/css/mobile/about.css?v=hero-anim-2',
-    work: '/css/mobile/work.css?v=hero-anim-2',
-    mba: '/css/mobile/work.css?v=hero-anim-2',
-    artists: '/css/mobile/artists.css?v=hero-anim-2',
-    'artist-path': '/css/mobile/artists.css?v=hero-anim-2',
-    'harshad-duhita': '/css/mobile/artists.css?v=hero-anim-2',
-    yugm: '/css/mobile/artists.css?v=hero-anim-2',
-    'book-an-artist': '/css/mobile/artists.css?v=hero-anim-2',
-    'artist-query': '/css/mobile/artists.css?v=hero-anim-2',
-    'collab-query': '/css/mobile/artists.css?v=hero-anim-2',
-    'learn-with-tsc': '/css/mobile/learn.css?v=hero-anim-2',
-    academy: '/css/mobile/learn.css?v=hero-anim-2',
-    'the-heart-of-composition': '/css/mobile/learn.css?v=hero-anim-2',
-    'roots-of-hindustani-classical': '/css/mobile/learn.css?v=hero-anim-2',
-    'music-production': '/css/mobile/learn.css?v=hero-anim-2',
-    'book-a-call': '/css/mobile/learn.css?v=hero-anim-2',
-    films: '/css/mobile/films.css?v=hero-anim-2',
-    'mahavatar-narsimha': '/css/mobile/films.css?v=hero-anim-2',
-    'hanuman-ansh': '/css/mobile/films.css?v=hero-anim-2',
-    mahaprbhu: '/css/mobile/films.css?v=hero-anim-2',
-    kalki: '/css/mobile/films.css?v=hero-anim-2',
-    resources: '/css/mobile/resources.css?v=hero-anim-2',
-    'blog-1': '/css/mobile/resources.css?v=hero-anim-2',
-    'blog-2': '/css/mobile/resources.css?v=hero-anim-2',
-    'blog-3': '/css/mobile/resources.css?v=hero-anim-2',
-    'start-making-music': '/css/mobile/resources.css?v=hero-anim-2',
-    'online-music-course-worth-it': '/css/mobile/resources.css?v=hero-anim-2',
-    'artist-release-playbook': '/css/mobile/resources.css?v=hero-anim-2'
+    home: '/css/mobile/home.css?v=nav-burger-1',
+    about: '/css/mobile/about.css?v=nav-burger-1',
+    work: '/css/mobile/work.css?v=nav-burger-1',
+    mba: '/css/mobile/work.css?v=nav-burger-1',
+    artists: '/css/mobile/artists.css?v=nav-burger-1',
+    'artist-path': '/css/mobile/artists.css?v=nav-burger-1',
+    'harshad-duhita': '/css/mobile/artists.css?v=nav-burger-1',
+    yugm: '/css/mobile/artists.css?v=nav-burger-1',
+    'book-an-artist': '/css/mobile/artists.css?v=nav-burger-1',
+    'artist-query': '/css/mobile/artists.css?v=nav-burger-1',
+    'collab-query': '/css/mobile/artists.css?v=nav-burger-1',
+    'learn-with-tsc': '/css/mobile/learn.css?v=nav-burger-1',
+    academy: '/css/mobile/learn.css?v=nav-burger-1',
+    'the-heart-of-composition': '/css/mobile/learn.css?v=nav-burger-1',
+    'roots-of-hindustani-classical': '/css/mobile/learn.css?v=nav-burger-1',
+    'music-production': '/css/mobile/learn.css?v=nav-burger-1',
+    'book-a-call': '/css/mobile/learn.css?v=nav-burger-1',
+    films: '/css/mobile/films.css?v=nav-burger-1',
+    'mahavatar-narsimha': '/css/mobile/films.css?v=nav-burger-1',
+    'hanuman-ansh': '/css/mobile/films.css?v=nav-burger-1',
+    mahaprbhu: '/css/mobile/films.css?v=nav-burger-1',
+    kalki: '/css/mobile/films.css?v=nav-burger-1',
+    resources: '/css/mobile/resources.css?v=nav-burger-1',
+    'blog-1': '/css/mobile/resources.css?v=nav-burger-1',
+    'blog-2': '/css/mobile/resources.css?v=nav-burger-1',
+    'blog-3': '/css/mobile/resources.css?v=nav-burger-1',
+    'start-making-music': '/css/mobile/resources.css?v=nav-burger-1',
+    'online-music-course-worth-it': '/css/mobile/resources.css?v=nav-burger-1',
+    'artist-release-playbook': '/css/mobile/resources.css?v=nav-burger-1'
   };
   if (map[seg]) link(map[seg]);
-  else link('/css/mobile/home.css?v=hero-anim-2');
+  else link('/css/mobile/home.css?v=nav-burger-1');
   /* safety: never leave page invisible */
   setTimeout(function () { html.classList.add('tsc-mobile-ready'); }, 4000);
 })();
@@ -2025,7 +2025,7 @@ url("/assets/mirror/static.wixstatic.com/ufonts/834fa9_d08c6fe9ca9b47ccb21ecdcb7
   (function injectTscWixMotion() {
     if (document.querySelector('script[data-tsc-wix-motion]')) return;
     var m = document.createElement('script');
-    m.src = '/js/tsc-wix-motion.js?v=hero-anim-2';
+    m.src = '/js/tsc-wix-motion.js?v=nav-burger-1';
     m.defer = true;
     m.setAttribute('data-tsc-wix-motion', '1');
     (document.head || document.documentElement).appendChild(m);

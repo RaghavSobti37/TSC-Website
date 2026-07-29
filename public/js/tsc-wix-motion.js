@@ -10,7 +10,7 @@
   if (!document.querySelector('link[data-tsc-wix-motion-css]')) {
     var css = document.createElement('link');
     css.rel = 'stylesheet';
-    css.href = '/css/tsc-wix-motion.css?v=9254a72';
+    css.href = '/css/tsc-wix-motion.css?v=hero-anim-2';
     css.setAttribute('data-tsc-wix-motion-css', '1');
     (document.head || document.documentElement).appendChild(css);
   }
@@ -35,8 +35,12 @@
 
   function finalizeEnter(el, played) {
     if (!el) return;
+    if (el.dataset.motionEnter === 'done') return;
     el.dataset.motionEnter = 'done';
-    el.style.removeProperty('animation-play-state');
+    // Clear pause only — do not touch animation-name (avoids mid-flight restarts).
+    if (el.style.getPropertyValue('animation-play-state')) {
+      el.style.removeProperty('animation-play-state');
+    }
     if (el.id && played) {
       played[el.id] = true;
       writePlayed(played);
@@ -47,13 +51,25 @@
     return !!(el && el.id && el.id.indexOf('__item-') !== -1);
   }
 
+  /** Hero letterpress — force crisp end state on every viewport. */
+  function settleHeroUnfold() {
+    var el = document.getElementById('comp-mrxkm2y2');
+    if (!el) return;
+    el.dataset.motionEnter = 'done';
+    el.style.setProperty('filter', 'none', 'important');
+    el.style.setProperty('--motion-blur', '0px', 'important');
+    el.style.setProperty('opacity', '0.9', 'important');
+  }
+
   function releaseEnterAndLoops() {
+    settleHeroUnfold();
     var played = readPlayed();
     var nodes = document.querySelectorAll('[id^="comp-"]');
     for (var i = 0; i < nodes.length; i++) {
       var el = nodes[i];
       if (!el || !el.id) continue;
       if (isSlideshowItem(el)) continue;
+      if (el.id === 'comp-mrxkm2y2') continue;
 
       if (played[el.id] || reduceMotion) {
         finalizeEnter(el, played);
@@ -64,6 +80,8 @@
       var names = String(cs.animationName || '');
       var playState = String(cs.animationPlayState || '');
       if (!names || names === 'none') continue;
+      // Only Wix motion-* names — skip custom CSS animations.
+      if (names.indexOf('motion-') === -1) continue;
 
       var isEnter = ENTER_RE.test(names);
       var isLoop = LOOP_RE.test(names);

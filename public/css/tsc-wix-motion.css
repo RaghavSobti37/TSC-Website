@@ -1,4 +1,12 @@
 /* Safety for paused Wix enter motions once JS marks them done (all viewports). */
 [data-motion-enter="done"] {
-  --motion-blur: 0px;
+  --motion-blur: 0px !important;
+  filter: none !important;
+}
+
+/* Home hero UNFOLD — never leave mid enter-blur / mid custom fade. */
+#comp-mrxkm2y2[data-motion-enter="done"],
+#comp-mrxkm2y2 {
+  --motion-blur: 0px !important;
+  filter: none !important;
 }

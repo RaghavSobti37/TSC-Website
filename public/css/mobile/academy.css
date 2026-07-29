@@ -1028,98 +1028,18 @@
     display: none !important;
   }
 
-  /* ---------- Mentor Sessions: heading above stacked cards ---------- */
-  body[data-page="academy"] #comp-mpl387ie { height: auto !important; }
-
-  body[data-page="academy"] .comp-mpl387ie-container {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 18px !important;
-    height: auto !important;
-    padding: 26px 20px !important;
-    box-sizing: border-box !important;
-  }
-
-  body[data-page="academy"] .comp-mpl387ie-container > [id^="comp-"] {
-    position: relative !important;
-    inset: auto !important;
-    width: 100% !important;
-    grid-area: auto !important;
-    height: auto !important;
-    transform: none !important;
-  }
-
-  body[data-page="academy"] #comp-mqz5dswe {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 16px !important;
-  }
-
-  body[data-page="academy"] #comp-mqz5dswe > .jdJeEr { display: none !important; }
-
-  body[data-page="academy"] #comp-mqz4dqr7,
-  body[data-page="academy"] #comp-mqz53v1n {
-    position: relative !important;
-    inset: auto !important;
-    width: 100% !important;
-    grid-area: auto !important;
-    height: auto !important;
-    min-height: 0 !important;
-    transform: none !important;
-    border: 1px solid rgba(8, 82, 95, 0.25) !important;
-    border-radius: 12px !important;
-    padding: 16px 14px !important;
-    box-sizing: border-box !important;
-    overflow: hidden !important;
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 10px !important;
-  }
-
-  body[data-page="academy"] #comp-mqz4dqr7 > .jdJeEr,
-  body[data-page="academy"] #comp-mqz53v1n > .jdJeEr { display: none !important; }
-
-  body[data-page="academy"] #comp-mqz4dqr7 > [id^="comp-"],
-  body[data-page="academy"] #comp-mqz53v1n > [id^="comp-"] {
-    position: relative !important;
-    inset: auto !important;
-    grid-area: auto !important;
-    width: 100% !important;
-    height: auto !important;
-    transform: none !important;
-    margin: 0 !important;
-  }
-
-  body[data-page="academy"] #comp-mqz4dqr7 .wixui-rich-text__text,
-  body[data-page="academy"] #comp-mqz53v1n .wixui-rich-text__text {
-    width: 100% !important;
-    height: auto !important;
-    white-space: normal !important;
-  }
-
-  body[data-page="academy"] #comp-mqz4dqr7 h1.wixui-rich-text__text,
-  body[data-page="academy"] #comp-mqz53v1n h1.wixui-rich-text__text {
-    font-size: 19px !important;
-    line-height: 1.25 !important;
-  }
-
-  body[data-page="academy"] #comp-mqz4dqr7 p.wixui-rich-text__text,
-  body[data-page="academy"] #comp-mqz53v1n p.wixui-rich-text__text {
-    font-size: 13px !important;
-    line-height: 1.45 !important;
-  }
-
-  /* mentor photo: natural block */
-  body[data-page="academy"] #comp-mqz4oryu,
-  body[data-page="academy"] #comp-mqz4dqr7 wow-image img,
-  body[data-page="academy"] #comp-mqz53v1n wow-image img {
-    height: auto !important;
-  }
-
-  /* marquee svg bleeds outside its card */
-  body[data-page="academy"] #comp-mqz4i5o3 svg.preview-svg,
-  body[data-page="academy"] #comp-mqz53v1z8 svg.preview-svg {
+  /* ---------- Mentor Sessions: removed all devices ---------- */
+  body[data-page="academy"] #comp-mpl387ie,
+  body[data-page="academy"] #comp-mpjxxeqt {
     display: none !important;
+    height: 0 !important;
+    min-height: 0 !important;
+    max-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
   }
 
   /* ---------- Final CTA (Personal guidance): stack ---------- */

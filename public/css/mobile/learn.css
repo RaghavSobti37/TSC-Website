@@ -1227,127 +1227,18 @@
     display: none !important;
   }
 
-  /* —— Mentor Sessions: heading above stacked cards —— */
-  #comp-mrufx9ud { height: auto !important; min-height: 0 !important; }
-
-  .comp-mrufx9ud-container {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 18px !important;
-    height: auto !important;
-    padding: 26px 20px !important;
-    box-sizing: border-box !important;
-  }
-
-  .comp-mrufx9ud-container > [id^="comp-"] {
-    position: relative !important;
-    inset: auto !important;
-    width: 100% !important;
-    grid-area: auto !important;
-    height: auto !important;
-    min-height: 0 !important;
-    transform: none !important;
-    margin: 0 !important;
-  }
-
-  #comp-mrufx9uh .wixui-rich-text__text {
-    font-size: 24px !important;
-    line-height: 1.2 !important;
-    width: 100% !important;
-    height: auto !important;
-  }
-
-  #comp-mrufx9uj .wixui-rich-text__text {
-    font-size: 13px !important;
-    line-height: 1.4 !important;
-    width: 100% !important;
-    height: auto !important;
-  }
-
-  #comp-mrufx9uf4 {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 6px !important;
-  }
-
-  #comp-mrufx9uf4 > [id^="comp-"] {
-    position: relative !important;
-    inset: auto !important;
-    width: 100% !important;
-    height: auto !important;
-    margin: 0 !important;
-  }
-
-  #comp-mrufx9ul {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 16px !important;
-    height: auto !important;
-  }
-
-  #comp-mrufx9ul > .jdJeEr { display: none !important; }
-
-  #comp-mrufx9un,
-  #comp-mrufx9vb {
-    position: relative !important;
-    inset: auto !important;
-    width: 100% !important;
-    grid-area: auto !important;
-    height: auto !important;
-    min-height: 0 !important;
-    transform: none !important;
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 10px !important;
-    border: 1px solid rgba(8, 82, 95, 0.25) !important;
-    border-radius: 12px !important;
-    padding: 16px 14px !important;
-    box-sizing: border-box !important;
-    overflow: hidden !important;
-  }
-
-  #comp-mrufx9un > .jdJeEr,
-  #comp-mrufx9vb > .jdJeEr { display: none !important; }
-
-  #comp-mrufx9un > [id^="comp-"],
-  #comp-mrufx9vb > [id^="comp-"] {
-    position: relative !important;
-    inset: auto !important;
-    grid-area: auto !important;
-    width: 100% !important;
-    height: auto !important;
-    transform: none !important;
-    margin: 0 !important;
-  }
-
-  #comp-mrufx9un h1.wixui-rich-text__text,
-  #comp-mrufx9vb h1.wixui-rich-text__text {
-    font-size: 19px !important;
-    line-height: 1.25 !important;
-    width: 100% !important;
-    height: auto !important;
-  }
-
-  #comp-mrufx9un p.wixui-rich-text__text,
-  #comp-mrufx9vb p.wixui-rich-text__text {
-    font-size: 13px !important;
-    line-height: 1.45 !important;
-    width: 100% !important;
-    height: auto !important;
-    white-space: normal !important;
-  }
-
-  #comp-mrufx9uo5,
-  #comp-mrufx9vc5,
-  #comp-mrufx9uo5 img,
-  #comp-mrufx9vc5 img {
-    height: auto !important;
-  }
-
-  /* runaway Coming Soon marquee svg */
-  #comp-mrufx9uw5 svg.preview-svg,
-  #comp-mrufx9vl svg.preview-svg {
+  /* —— Mentor Sessions: removed all devices —— */
+  #comp-mrufx9ud,
+  #comp-mrufx9rd2 {
     display: none !important;
+    height: 0 !important;
+    min-height: 0 !important;
+    max-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
   }
 
   /* —— Personal Guidance CTA: flatten pinned grid —— */

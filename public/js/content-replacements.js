@@ -242,14 +242,15 @@
   }
 
   function removeMentorSessions() {
-    if (location.pathname !== '/academy' && location.pathname !== '/learn-with-tsc') return;
+    var path = normalizedPath();
+    if (path !== '/academy' && path !== '/learn-with-tsc') return;
     ['#comp-mpl387ie', '#comp-mrufx9ud', '#comp-mpjxxeqt', '#comp-mrufx9rd2'].forEach(function(selector) {
       var section = document.querySelector(selector);
       if (section) section.remove();
     });
-    document.querySelectorAll('main section').forEach(function(section) {
+    document.querySelectorAll('main section, section[data-testid="section-container"]').forEach(function(section) {
       var text = (section.textContent || '').replace(/\s+/g, ' ');
-      if ((/Mentor Sessions/i.test(text) && /Upcoming courses with industry experts/i.test(text)) || (/Luca Petracca/i.test(text) && /Geet Sagar/i.test(text))) {
+      if ((/Mentor Sessions/i.test(text) && /Upcoming courses with industry experts/i.test(text)) || (/Luca Petracca/i.test(text) && /Geet Sagar/i.test(text) && /COMING SOON/i.test(text))) {
         section.remove();
       }
     });

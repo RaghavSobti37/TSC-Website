@@ -10,3 +10,19 @@
   --motion-blur: 0px !important;
   filter: none !important;
 }
+
+/* Mentor Sessions — removed all viewports (Academy + Learn With TSC) */
+#comp-mpl387ie,
+#comp-mrufx9ud,
+#comp-mpjxxeqt,
+#comp-mrufx9rd2 {
+  display: none !important;
+  height: 0 !important;
+  min-height: 0 !important;
+  max-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  pointer-events: none !important;
+  visibility: hidden !important;
+}

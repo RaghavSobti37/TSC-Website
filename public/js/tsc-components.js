@@ -330,7 +330,7 @@
     setBodyPage(path);
     normalizeInternalProtocolRelativeLinks();
     // tsc-mobile-system.css @imports ./mobile/_tokens.css — no separate tokens link
-    ensureStylesheet('/css/tsc-mobile-system.css?v=nav-burger-1');
+    ensureStylesheet('/css/tsc-mobile-system.css?v=no-mentor-1');
     var bucket = mobileCssBucket(path);
     if (bucket && MOBILE_PAGE_CSS[bucket]) {
       ensureStylesheet(MOBILE_PAGE_CSS[bucket]);
@@ -1063,12 +1063,12 @@
     });
   }
 
-  ensureStylesheet('/css/tsc-responsive.css?v=nav-burger-1');
+  ensureStylesheet('/css/tsc-responsive.css?v=no-mentor-1');
   ensureStylesheet('/css/tsc-brand-card.css');
   ensureScript('/js/tsc-brand-cards.js');
   // Play paused Wix enter/loop motions + slideshow word-swap (all viewports).
-  ensureStylesheet('/css/tsc-wix-motion.css?v=nav-burger-1');
-  ensureScript('/js/tsc-wix-motion.js?v=nav-burger-1');
+  ensureStylesheet('/css/tsc-wix-motion.css?v=no-mentor-1');
+  ensureScript('/js/tsc-wix-motion.js?v=no-mentor-1');
   function bootUi() {
     wireMobileAssets();
     wireCourseAccordions();

@@ -10,7 +10,7 @@
   if (!document.querySelector('link[data-tsc-wix-motion-css]')) {
     var css = document.createElement('link');
     css.rel = 'stylesheet';
-    css.href = '/css/tsc-wix-motion.css?v=nav-burger-1';
+    css.href = '/css/tsc-wix-motion.css?v=no-mentor-1';
     css.setAttribute('data-tsc-wix-motion-css', '1');
     (document.head || document.documentElement).appendChild(css);
   }
@@ -165,11 +165,32 @@
     }
   }
 
+  function removeMentorSessions() {
+    var ids = ['comp-mpl387ie', 'comp-mrufx9ud', 'comp-mpjxxeqt', 'comp-mrufx9rd2'];
+    for (var i = 0; i < ids.length; i++) {
+      var el = document.getElementById(ids[i]);
+      if (el && el.parentNode) el.parentNode.removeChild(el);
+    }
+    var sections = document.querySelectorAll('section[data-testid="section-container"], main section');
+    for (var s = 0; s < sections.length; s++) {
+      var section = sections[s];
+      var text = (section.textContent || '').replace(/\s+/g, ' ');
+      if (
+        (/Mentor Sessions/i.test(text) && /Upcoming courses with industry experts/i.test(text)) ||
+        (/Luca Petracca/i.test(text) && /Geet Sagar/i.test(text) && /COMING SOON/i.test(text))
+      ) {
+        if (section.parentNode) section.parentNode.removeChild(section);
+      }
+    }
+  }
+
   function boot() {
+    removeMentorSessions();
     releaseEnterAndLoops();
     runSlideshows();
     [100, 500, 1500, 3000].forEach(function (ms) {
       window.setTimeout(function () {
+        removeMentorSessions();
         releaseEnterAndLoops();
         runSlideshows();
       }, ms);
@@ -182,6 +203,7 @@
     boot();
   }
   window.addEventListener('load', function () {
+    removeMentorSessions();
     releaseEnterAndLoops();
     runSlideshows();
   });

@@ -67,6 +67,14 @@
 </head>
 <body><a href="/pages/the-heart-of-composition.html">Open /the-heart-of-composition</a><script data-tsc-mobile-loader>/* DESKTOP LOCK: mobile-only enhancements, never at >=1025px */
 (function () {
+  (function injectTscWixMotion() {
+    if (document.querySelector('script[data-tsc-wix-motion]')) return;
+    var m = document.createElement('script');
+    m.src = '/js/tsc-wix-motion.js';
+    m.defer = true;
+    m.setAttribute('data-tsc-wix-motion', '1');
+    (document.head || document.documentElement).appendChild(m);
+  })();
   var mq = window.matchMedia && window.matchMedia('(max-width: 1024px)');
   if (!mq) return;
   var up = window.matchMedia('(min-width: 1025px)');

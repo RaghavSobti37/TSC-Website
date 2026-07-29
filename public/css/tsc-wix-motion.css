@@ -1,0 +1,4 @@
+/* Safety for paused Wix enter motions once JS marks them done (all viewports). */
+[data-motion-enter="done"] {
+  --motion-blur: 0px;
+}

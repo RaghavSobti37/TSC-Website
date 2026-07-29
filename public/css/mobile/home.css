@@ -151,12 +151,27 @@
     margin: 0.55rem 0 0.35rem !important;
     padding: 0 4px !important;
     height: auto !important;
-    opacity: 0.5 !important;
+    /* Wix enter blur stuck without Thunderbolt — own fade, readable opacity */
+    filter: none !important;
+    --motion-blur: 0px !important;
+    animation: tscHeroUnfold 1.15s ease both !important;
+    opacity: 0.9 !important;
     pointer-events: none !important;
     overflow: visible !important;
     text-align: left !important;
     white-space: nowrap !important;
     padding-left: 16px !important;
+  }
+
+  @keyframes tscHeroUnfold {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 0.9;
+      transform: none;
+    }
   }
 
   #comp-mrxkm2y2 p,
@@ -183,7 +198,10 @@
     text-transform: uppercase !important;
     font-weight: 700 !important;
     font-style: normal !important;
-    color: #d5e0d2 !important;
+    /* darker sage — cream bg + 0.5 opacity made UNFOLD look "stuck blurry" */
+    color: #8f9f8a !important;
+    -webkit-text-fill-color: #8f9f8a !important;
+    filter: none !important;
     white-space: nowrap !important;
   }
 

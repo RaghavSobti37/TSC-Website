@@ -41,6 +41,46 @@ body {
   display: none;
 }
 
+.tsc-phone-fab {
+  position: fixed !important;
+  right: clamp(16px, 2vw, 28px) !important;
+  bottom: calc(clamp(18px, 2vw, 28px) + env(safe-area-inset-bottom, 0px)) !important;
+  left: auto !important;
+  top: auto !important;
+  z-index: 9500 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 58px !important;
+  height: 58px !important;
+  min-width: 58px !important;
+  min-height: 58px !important;
+  max-width: 58px !important;
+  max-height: 58px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 1px solid rgba(255, 236, 209, 0.5) !important;
+  border-radius: 50% !important;
+  background: #005a5a !important;
+  color: #ffecd1 !important;
+  box-shadow: 0 12px 30px rgba(0, 46, 46, 0.34) !important;
+  text-decoration: none !important;
+  transform: none !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+}
+
+.tsc-phone-fab svg {
+  display: block !important;
+  width: 26px !important;
+  height: 26px !important;
+  max-width: 26px !important;
+  max-height: 26px !important;
+  fill: currentColor !important;
+  flex: 0 0 26px !important;
+}
+
 .tsc-desktop-brand-link {
   align-items: center !important;
   display: flex !important;
@@ -108,6 +148,23 @@ a[data-testid="linkElement"] {
 main [class*="AccordionContainer"][class*="__container"],
 main .wixui-accordion {
   opacity: 1 !important;
+}
+
+main .AccordionContainer1266025101__accordion {
+  overflow: visible !important;
+}
+
+main .AccordionContainer1266025101--isOpened .AccordionContainer1266025101__animationBox,
+main .AccordionContainer1266025101--isOpened .AccordionContainer1266025101__accordionContent {
+  height: auto !important;
+  min-height: 0 !important;
+  overflow: visible !important;
+}
+
+main .AccordionContainer1266025101__accordionContent :is(p, h1, h2, h3, h4, li),
+main .AccordionContainer1266025101__accordionHeader :is(p, h1, h2, h3, h4, span) {
+  line-height: 1.35 !important;
+  white-space: normal !important;
 }
 
 .wixui-text-marquee [data-testid="marquee-unit"],
@@ -1127,9 +1184,9 @@ body.tsc-has-mobile-footer .tsc-legacy-footer-host:not(:has(.tsc-mobile-footer))
 
   body[data-page="about"] #comp-mp2vlkbh2,
   body[data-page="about"] #comp-mp2vlkbh2 .comp-mp2vlkbh2-overflow-wrapper {
-    height: 75svh !important;
-    min-height: 480px !important;
-    max-height: 720px !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
     overflow: hidden !important;
   }
 
@@ -1138,23 +1195,46 @@ body.tsc-has-mobile-footer .tsc-legacy-footer-host:not(:has(.tsc-mobile-footer))
     box-sizing: border-box !important;
     display: flex !important;
     flex-direction: column !important;
-    gap: clamp(14px, 4vh, 28px) !important;
-    height: 100% !important;
+    gap: clamp(10px, 2.5vh, 18px) !important;
+    height: auto !important;
     justify-content: center !important;
-    padding: 34px 20px 42px !important;
+    padding: 28px 20px 36px !important;
   }
 
-  body[data-page="about"] #comp-mp2vlkbh2 #bgLayers_comp-mp2vlkbh2,
-  body[data-page="about"] #comp-mp2vlkbh2 #bgMedia_comp-mp2vlkbh2,
+  /* Keep terracotta underlay full-bleed; shrink portrait artboard to a small center motif */
+  body[data-page="about"] #comp-mp2vlkbh2 #bgLayers_comp-mp2vlkbh2 {
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  body[data-page="about"] #comp-mp2vlkbh2 #bgMedia_comp-mp2vlkbh2 {
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    overflow: hidden !important;
+  }
+
   body[data-page="about"] #comp-mp2vlkbh2 wix-media-canvas,
   body[data-page="about"] #comp-mp2vlkbh2 wow-image,
-  body[data-page="about"] #comp-mp2vlkbh2 #img_comp-mp2vlkbh2 img {
-    height: 100% !important;
-    width: 100% !important;
-  }
-
-  body[data-page="about"] #comp-mp2vlkbh2 #img_comp-mp2vlkbh2 img {
-    object-fit: cover !important;
+  body[data-page="about"] #comp-mp2vlkbh2 #img_comp-mp2vlkbh2,
+  body[data-page="about"] #comp-mp2vlkbh2 #img_comp-mp2vlkbh2 img,
+  body[data-page="about"] #comp-mp2vlkbh2 canvas.webglcanvas {
+    position: absolute !important;
+    left: 50% !important;
+    top: 50% !important;
+    right: auto !important;
+    bottom: auto !important;
+    width: min(38vw, 132px) !important;
+    max-width: min(38vw, 132px) !important;
+    height: auto !important;
+    max-height: min(28vh, 160px) !important;
+    transform: translate(-50%, -50%) !important;
+    object-fit: contain !important;
+    object-position: center !important;
   }
 
   body[data-page="about"] #comp-mp2vlkbh2 #comp-mr1ttkgk,
@@ -1176,8 +1256,12 @@ body.tsc-has-mobile-footer .tsc-legacy-footer-host:not(:has(.tsc-mobile-footer))
   }
 
   body[data-page="about"] #comp-mp2vlkbh2 #comp-mr1ttkgk {
-    height: clamp(210px, 58vw, 304px) !important;
-    width: clamp(210px, 58vw, 304px) !important;
+    height: 48px !important;
+    width: 48px !important;
+    min-width: 48px !important;
+    min-height: 48px !important;
+    max-width: 48px !important;
+    max-height: 48px !important;
   }
 
   body[data-page="about"] #comp-mp2vlkbh2 #comp-mr1ttkgk svg {
@@ -1240,7 +1324,72 @@ body.tsc-has-mobile-footer .tsc-legacy-footer-host:not(:has(.tsc-mobile-footer))
   .tsc-local-form {
     margin-left: auto;
     margin-right: auto;
-    max-width: min(92vw, 720px);
+    width: calc(100vw - 8px);
+    max-width: calc(100vw - 8px);
+  }
+
+  /* Form pages: widen Wix widgets + stack TAGS (course) options */
+  #comp-mrxe1crw,
+  #comp-mrxmc0z9,
+  #comp-mrxv5lfu2 {
+    width: calc(100vw - 8px) !important;
+    max-width: calc(100vw - 8px) !important;
+    min-width: 0 !important;
+    height: auto !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    justify-self: center !important;
+  }
+
+  #comp-mrxjb3tn,
+  #comp-mrxmc0za1,
+  #comp-mrxv5lfw {
+    width: calc(100vw - 8px) !important;
+    max-width: calc(100vw - 8px) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    justify-self: center !important;
+  }
+
+  #comp-mrxjb3tn h1,
+  #comp-mrxmc0za1 h1,
+  #comp-mrxv5lfw h1,
+  #comp-mrxjb3tn .font_0,
+  #comp-mrxmc0za1 .font_0,
+  #comp-mrxv5lfw .font_0,
+  #comp-mrxjb3tn h1.font_0.wixui-rich-text__text,
+  #comp-mrxmc0za1 h1.font_0.wixui-rich-text__text,
+  #comp-mrxv5lfw h1.font_0.wixui-rich-text__text,
+  #comp-mrxjb3tn :is(h1, h2, .font_0, .wixui-rich-text__text),
+  #comp-mrxmc0za1 :is(h1, h2, .font_0, .wixui-rich-text__text),
+  #comp-mrxv5lfw :is(h1, h2, .font_0, .wixui-rich-text__text) {
+    font-size: clamp(48px, 13vw, 64px) !important;
+    line-height: 1.05 !important;
+    font-weight: 800 !important;
+    text-align: center !important;
+    white-space: normal !important;
+  }
+
+  .PODJy5,
+  .H21YCb,
+  .AOdmvk {
+    grid-template-columns: 1fr !important;
+  }
+
+  [data-hook="box-selection-option-wrapper"],
+  .s__8RFeV0 {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 1 1 100% !important;
+  }
+
+  [data-hook="box-selection-option"],
+  [data-hook="box-selection-option"] .s_Jh7Ip,
+  .sltdxLr {
+    white-space: normal !important;
+    overflow: visible !important;
+    text-overflow: clip !important;
+    overflow-wrap: anywhere;
   }
 
   footer [class*="wixui-horizontal-line"] {
@@ -1286,9 +1435,10 @@ body.tsc-has-mobile-footer .tsc-legacy-footer-host:not(:has(.tsc-mobile-footer))
   }
 
   .tsc-local-form {
-    max-width: calc(100vw - 24px);
-    padding-left: 18px;
-    padding-right: 18px;
+    width: calc(100vw - 8px);
+    max-width: calc(100vw - 8px);
+    padding-left: 16px;
+    padding-right: 16px;
   }
 
   .tsc-form-grid,
@@ -1296,8 +1446,15 @@ body.tsc-has-mobile-footer .tsc-legacy-footer-host:not(:has(.tsc-mobile-footer))
     grid-template-columns: 1fr;
   }
 
+  .tsc-choices {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
   .tsc-choice {
     min-width: 0;
+    width: 100%;
+    white-space: normal;
   }
 
   .wixui-button,
@@ -1717,6 +1874,49 @@ body.tsc-has-mobile-footer .tsc-legacy-footer-host:not(:has(.tsc-mobile-footer))
     font-size: 12px;
     margin: 0 0 8px;
     text-transform: uppercase;
+  }
+
+  .tsc-mobile-course-mentor-card {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+
+  .tsc-mobile-course-mentor-card h2 {
+    color: var(--tsc-deep-teal);
+    font: normal normal 800 25px/1.1 var(--tsc-font-display);
+    margin: 0;
+    text-align: center;
+  }
+
+  .tsc-mobile-course-mentor-card p:not(.tsc-mobile-eyebrow) {
+    font-size: 15px;
+    line-height: 1.55;
+    max-width: 30rem;
+    text-align: center;
+  }
+
+  .tsc-mobile-course-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    margin-top: 2px;
+    width: 100%;
+  }
+
+  .tsc-mobile-course-badges span {
+    align-items: center;
+    border: 1px solid rgba(0, 90, 90, 0.35);
+    border-radius: 999px;
+    color: var(--tsc-deep-teal);
+    display: inline-flex;
+    font: normal normal 800 11px/1.25 Arial, sans-serif;
+    min-height: 30px;
+    padding: 6px 10px;
+    text-align: center;
   }
 
   .tsc-mobile-course-card-dark {

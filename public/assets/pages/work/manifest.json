@@ -3,7 +3,7 @@
   "html": "/pages/work.html",
   "css": "/css/pages/work.css",
   "animations": "/js/pages/work.animations.js",
-  "generatedAt": "2026-07-28T14:50:29.931Z",
+  "generatedAt": "2026-07-29T16:33:52.171Z",
   "totals": {
     "assets": 104,
     "missing": 0
@@ -16,7 +16,7 @@
         "local": {
           "exists": true,
           "path": "/assets/mirror/browser.sentry-cdn.com/7.120.3/modulemetadata.es5.min.js",
-          "bytes": 3323
+          "bytes": 3326
         }
       },
       {
@@ -25,7 +25,7 @@
         "local": {
           "exists": true,
           "path": "/assets/mirror/static.parastorage.com/services/tag-manager-client/1.1066.0/siteTags.bundle.min.js",
-          "bytes": 9414
+          "bytes": 9415
         }
       },
       {
@@ -34,7 +34,7 @@
         "local": {
           "exists": true,
           "path": "/assets/mirror/static.parastorage.com/services/wix-thunderbolt/dist/bi-common.inline.24faadf6.bundle.min.js",
-          "bytes": 7140
+          "bytes": 7141
         }
       },
       {
@@ -43,7 +43,7 @@
         "local": {
           "exists": true,
           "path": "/assets/mirror/static.parastorage.com/services/wix-thunderbolt/dist/bi.inline.ae93e7f6.bundle.min.js",
-          "bytes": 4390
+          "bytes": 4391
         }
       },
       {
@@ -61,7 +61,7 @@
         "local": {
           "exists": true,
           "path": "/assets/mirror/static.parastorage.com/services/wix-thunderbolt/dist/createPlatformWorker.inline.a9bb4739.bundle.min.js",
-          "bytes": 1734
+          "bytes": 1735
         }
       },
       {
@@ -70,7 +70,7 @@
         "local": {
           "exists": true,
           "path": "/assets/mirror/static.parastorage.com/services/wix-thunderbolt/dist/custom-element-utils.inline.bec24b26.bundle.min.js",
-          "bytes": 55241
+          "bytes": 55242
         }
       },
       {
@@ -79,7 +79,7 @@
         "local": {
           "exists": true,
           "path": "/assets/mirror/static.parastorage.com/services/wix-thunderbolt/dist/externals-registry.inline.c335b0f1.bundle.min.js",
-          "bytes": 1080
+          "bytes": 1081
         }
       },
       {
@@ -88,7 +88,7 @@
         "local": {
           "exists": true,
           "path": "/assets/mirror/static.parastorage.com/services/wix-thunderbolt/dist/fastdom.inline.48a8bd4b.bundle.min.js",
-          "bytes": 1634
+          "bytes": 1635
         }
       },
       {
@@ -97,7 +97,7 @@
         "local": {
           "exists": true,
           "path": "/assets/mirror/static.parastorage.com/services/wix-thunderbolt/dist/handleAccessTokens.inline.3250797b.bundle.min.js",
-          "bytes": 7171
+          "bytes": 7172
         }
       },
       {
@@ -106,7 +106,7 @@
         "local": {
           "exists": true,
           "path": "/assets/mirror/static.parastorage.com/services/wix-thunderbolt/dist/initCustomElements.inline.51cbd1b6.bundle.min.js",
-          "bytes": 10275
+          "bytes": 10276
         }
       },
       {
@@ -115,7 +115,7 @@
         "local": {
           "exists": true,
           "path": "/assets/mirror/static.parastorage.com/services/wix-thunderbolt/dist/lazyCustomElementWrapper.inline.eefbcea5.bundle.min.js",
-          "bytes": 493
+          "bytes": 494
         }
       },
       {
@@ -124,7 +124,7 @@
         "local": {
           "exists": true,
           "path": "/assets/mirror/static.parastorage.com/services/wix-thunderbolt/dist/main.419556fe.bundle.min.js",
-          "bytes": 224035
+          "bytes": 224038
         }
       },
       {
@@ -142,7 +142,7 @@
         "local": {
           "exists": true,
           "path": "/assets/mirror/static.parastorage.com/services/wix-thunderbolt/dist/overrideGlobals.inline.b271af7d.bundle.min.js",
-          "bytes": 7628
+          "bytes": 7629
         }
       },
       {
@@ -151,7 +151,7 @@
         "local": {
           "exists": true,
           "path": "/assets/mirror/static.parastorage.com/services/wix-thunderbolt/dist/sendBeat12.inline.995b241c.bundle.min.js",
-          "bytes": 4519
+          "bytes": 4520
         }
       },
       {
@@ -160,7 +160,7 @@
         "local": {
           "exists": true,
           "path": "/assets/mirror/static.parastorage.com/services/wix-thunderbolt/dist/sendFedopsLoadStarted.inline.ed1ed98a.bundle.min.js",
-          "bytes": 6509
+          "bytes": 6510
         }
       },
       {
@@ -169,7 +169,7 @@
         "local": {
           "exists": true,
           "path": "/assets/mirror/static.parastorage.com/services/wix-thunderbolt/dist/thunderbolt-commons.dd63d9c5.bundle.min.js",
-          "bytes": 152056
+          "bytes": 152092
         }
       },
       {
@@ -178,7 +178,7 @@
         "local": {
           "exists": true,
           "path": "/assets/mirror/static.parastorage.com/services/wix-thunderbolt/dist/webpack-runtime.75a9d16a.bundle.min.js",
-          "bytes": 15900
+          "bytes": 15901
         }
       },
       {
@@ -187,7 +187,7 @@
         "local": {
           "exists": true,
           "path": "/assets/mirror/static.parastorage.com/services/wix-thunderbolt/dist/windowMessageRegister.inline.5cd174ec.bundle.min.js",
-          "bytes": 646
+          "bytes": 647
         }
       },
       {
@@ -196,7 +196,7 @@
         "local": {
           "exists": true,
           "path": "/assets/mirror/static.parastorage.com/unpkg/@formatjs/intl-segmenter@11.7.10/polyfill.iife.js",
-          "bytes": 432253
+          "bytes": 440944
         }
       },
       {
@@ -205,7 +205,7 @@
         "local": {
           "exists": true,
           "path": "/assets/mirror/static.parastorage.com/unpkg/core-js-bundle@3.2.1/minified.js",
-          "bytes": 137771
+          "bytes": 137782
         }
       },
       {
@@ -214,7 +214,7 @@
         "local": {
           "exists": true,
           "path": "/assets/mirror/static.parastorage.com/unpkg/focus-within-polyfill@5.0.9/dist/focus-within-polyfill.js",
-          "bytes": 1171
+          "bytes": 1175
         }
       },
       {
@@ -223,7 +223,7 @@
         "local": {
           "exists": true,
           "path": "/assets/mirror/static.parastorage.com/unpkg/lodash@4.17.23/lodash.min.js",
-          "bytes": 73320
+          "bytes": 73459
         }
       },
       {
@@ -232,7 +232,7 @@
         "local": {
           "exists": true,
           "path": "/assets/mirror/static.parastorage.com/unpkg/react-dom@18.3.1/umd/react-dom.production.min.js",
-          "bytes": 131835
+          "bytes": 132102
         }
       },
       {
@@ -241,7 +241,7 @@
         "local": {
           "exists": true,
           "path": "/assets/mirror/static.parastorage.com/unpkg/react@18.3.1/umd/react.production.min.js",
-          "bytes": 10751
+          "bytes": 10782
         }
       },
       {
@@ -250,7 +250,7 @@
         "local": {
           "exists": true,
           "path": "/js/pages/work.animations.js",
-          "bytes": 6266
+          "bytes": 6861
         }
       }
     ],
@@ -753,7 +753,7 @@
         "local": {
           "exists": true,
           "path": "/assets/mirror/static.parastorage.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.thunderbolt[ImageX].cb16f202.min.css",
-          "bytes": 2078
+          "bytes": 2079
         }
       },
       {
@@ -888,7 +888,7 @@
         "local": {
           "exists": true,
           "path": "/assets/mirror/static.parastorage.com/services/wix-thunderbolt/dist/group_7.c472a333.chunk.min.css",
-          "bytes": 188
+          "bytes": 189
         }
       },
       {
@@ -897,7 +897,7 @@
         "local": {
           "exists": true,
           "path": "/assets/mirror/static.parastorage.com/services/wix-thunderbolt/dist/main.744ea815.min.css",
-          "bytes": 3721
+          "bytes": 3722
         }
       },
       {
@@ -906,7 +906,7 @@
         "local": {
           "exists": true,
           "path": "/assets/mirror/static.parastorage.com/services/wix-thunderbolt/dist/main.renderer.c1b1af7e.min.css",
-          "bytes": 9804
+          "bytes": 9805
         }
       },
       {
@@ -915,7 +915,7 @@
         "local": {
           "exists": true,
           "path": "/css/pages/work.css",
-          "bytes": 850501
+          "bytes": 851203
         }
       }
     ],

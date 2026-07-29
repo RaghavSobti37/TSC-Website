@@ -13,6 +13,12 @@
       "missing": 0
     },
     {
+      "page": "affiliate",
+      "manifest": "/assets/pages/affiliate/manifest.json",
+      "assets": 3,
+      "missing": 0
+    },
+    {
       "page": "artist-path",
       "manifest": "/assets/pages/artist-path/manifest.json",
       "assets": 112,
@@ -23,6 +29,12 @@
       "manifest": "/assets/pages/artist-query/manifest.json",
       "assets": 104,
       "missing": 2
+    },
+    {
+      "page": "artist-release-playbook",
+      "manifest": "/assets/pages/artist-release-playbook/manifest.json",
+      "assets": 97,
+      "missing": 0
     },
     {
       "page": "artists",
@@ -109,6 +121,12 @@
       "missing": 0
     },
     {
+      "page": "how-i-curate-music-with-independent-artists",
+      "manifest": "/assets/pages/how-i-curate-music-with-independent-artists/manifest.json",
+      "assets": 0,
+      "missing": 0
+    },
+    {
       "page": "insta-music-league",
       "manifest": "/assets/pages/insta-music-league/manifest.json",
       "assets": 1,
@@ -169,6 +187,12 @@
       "missing": 1
     },
     {
+      "page": "online-music-course-worth-it",
+      "manifest": "/assets/pages/online-music-course-worth-it/manifest.json",
+      "assets": 97,
+      "missing": 0
+    },
+    {
       "page": "resources",
       "manifest": "/assets/pages/resources/manifest.json",
       "assets": 148,
@@ -179,6 +203,12 @@
       "manifest": "/assets/pages/roots-of-hindustani-classical/manifest.json",
       "assets": 123,
       "missing": 1
+    },
+    {
+      "page": "start-making-music",
+      "manifest": "/assets/pages/start-making-music/manifest.json",
+      "assets": 97,
+      "missing": 0
     },
     {
       "page": "the-heart-of-composition",

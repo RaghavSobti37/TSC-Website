@@ -14,6 +14,7 @@ const pageRoutes = new Map([
   ['/films', '/pages/films.html'],
   ['/resources', '/pages/resources.html'],
   ['/academy', '/pages/academy.html'],
+  ['/affiliate', '/pages/affiliate.html'],
 ]);
 
 const routeManifestPath = path.join(publicDir, 'pages', 'routes.manifest.json');

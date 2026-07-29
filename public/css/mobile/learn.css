@@ -17,12 +17,12 @@
     max-width: 100%;
   }
 
-  body[data-page="learn-with-tsc"] .tsc-sticky-cta,
-  body[data-page="academy"] .tsc-sticky-cta,
-  body[data-page="roots-of-hindustani-classical"] .tsc-sticky-cta,
-  body[data-page="the-heart-of-composition"] .tsc-sticky-cta,
-  body[data-page="book-a-call"] .tsc-sticky-cta,
-  .tsc-page-learn .tsc-sticky-cta {
+  body[data-page="learn-with-tsc"] .tsc-sticky-cta:not(.tsc-phone-fab),
+  body[data-page="academy"] .tsc-sticky-cta:not(.tsc-phone-fab),
+  body[data-page="roots-of-hindustani-classical"] .tsc-sticky-cta:not(.tsc-phone-fab),
+  body[data-page="the-heart-of-composition"] .tsc-sticky-cta:not(.tsc-phone-fab),
+  body[data-page="book-a-call"] .tsc-sticky-cta:not(.tsc-phone-fab),
+  .tsc-page-learn .tsc-sticky-cta:not(.tsc-phone-fab) {
     display: none !important;
   }
 
@@ -1384,5 +1384,24 @@
     font-size: 14px !important;
     width: auto !important;
     height: auto !important;
+  }
+}
+
+@media (max-width: 1024px) {
+  body[data-page="academy"] main :is(a, button, [role="button"], .wixui-button, .lIkFMb):has(:is(.wixui-button__label, .Gf1CuA, .nb2UT3)),
+  body[data-page="learn-with-tsc"] main :is(a, button, [role="button"], .wixui-button, .lIkFMb):has(:is(.wixui-button__label, .Gf1CuA, .nb2UT3)) {
+    min-height: 44px !important;
+  }
+
+  body[data-page="academy"] main [data-testid="linkElement"],
+  body[data-page="learn-with-tsc"] main [data-testid="linkElement"] {
+    min-height: 44px !important;
+  }
+
+  body[data-page="academy"] .tsc-affiliate-cta,
+  body[data-page="learn-with-tsc"] .tsc-luca-cta {
+    min-height: 44px !important;
+    align-items: center !important;
+    box-sizing: border-box !important;
   }
 }

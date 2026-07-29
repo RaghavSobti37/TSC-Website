@@ -481,14 +481,19 @@ body:has(#comp-mrsu5g8j) {
   }
 
   #PAGE_SECTIONSsq4os {
+    display: contents !important;
+  }
+
+  /* Legacy shell retired — keep real Wix page visible */
+  .tsc-academy-mobile-redesign {
     display: none !important;
   }
 
-  .tsc-academy-mobile-redesign {
+  .tsc-academy-mobile-redesign-DISABLED {
     --tsc-teal: #08525f;
     --tsc-cream: #ffecd1;
     --tsc-rust: #c64a12;
-    display: block;
+    display: none !important;
     width: 100%;
     overflow: hidden;
     background: var(--tsc-cream);

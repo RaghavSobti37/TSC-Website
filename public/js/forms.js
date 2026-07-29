@@ -2,7 +2,7 @@
   var ui = window.TSCComponents;
   if (!ui) return;
 
-  ui.ensureStylesheet('/css/forms.css');
+  ui.ensureStylesheet('/css/forms.css?v=form-pickers-1');
 
   var shared = {
     defaultCountryCode: '+91 India',
@@ -78,12 +78,12 @@
       mount: '#comp-mrxe1crw',
       routes: ['/book-a-call'],
       fields: [
-        { label: 'Which course are you interested in?', type: 'select', options: options.courses, required: true, full: true },
+        { label: 'Which course are you interested in?', type: 'radios', options: options.courses, required: true, full: true },
         { label: "What's your name?", type: 'text', required: true },
         { label: 'Phone / WhatsApp Number', type: 'phoneCountry', required: true },
         { label: 'Email Address', type: 'email', required: true },
-        { label: 'Pick a Date', type: 'date', required: true },
-        { label: 'Pick a Time', type: 'select', options: options.timeSlots, required: true }
+        { label: 'Select a Date', name: 'pick-a-date', type: 'date', required: true },
+        { label: 'Select The Time', name: 'pick-a-time', type: 'timeSelect', options: options.timeSlots, required: true }
       ]
     },
     bookArtist: {

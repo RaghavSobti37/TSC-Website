@@ -16,46 +16,57 @@
     l.setAttribute('data-tsc-boot', '1');
     (document.head || document.documentElement).appendChild(l);
   }
-  link('/css/mobile/boot.css?v=testi-center-1');
-  link('/css/tsc-mobile-system.css?v=testi-center-1');
+  link('/css/mobile/boot.css?v=academy-one-2');
+  link('/css/tsc-mobile-system.css?v=academy-one-2');
   var p = (location.pathname || '/').replace(/\/$/, '') || '/';
   if (p.indexOf('/pages/') === 0) p = p.replace('/pages', '').replace(/\.html$/, '') || '/';
   var seg = p === '/' ? 'home' : p.replace(/^\//, '').split('/')[0];
   var map = {
-    home: '/css/mobile/home.css?v=testi-center-1',
-    about: '/css/mobile/about.css?v=testi-center-1',
-    work: '/css/mobile/work.css?v=testi-center-1',
-    mba: '/css/mobile/work.css?v=testi-center-1',
-    artists: '/css/mobile/artists.css?v=testi-center-1',
-    'artist-path': '/css/mobile/artists.css?v=testi-center-1',
-    'harshad-duhita': '/css/mobile/artists.css?v=testi-center-1',
-    yugm: '/css/mobile/artists.css?v=testi-center-1',
-    'book-an-artist': '/css/mobile/artists.css?v=testi-center-1',
-    'artist-query': '/css/mobile/artists.css?v=testi-center-1',
-    'collab-query': '/css/mobile/artists.css?v=testi-center-1',
-    'learn-with-tsc': '/css/mobile/learn.css?v=testi-center-1',
-    academy: '/css/mobile/academy.css?v=testi-center-1',
-    'the-heart-of-composition': '/css/mobile/learn.css?v=testi-center-1',
-    'roots-of-hindustani-classical': '/css/mobile/learn.css?v=testi-center-1',
-    'music-production': '/css/mobile/learn.css?v=testi-center-1',
-    'book-a-call': '/css/mobile/learn.css?v=testi-center-1',
-    films: '/css/mobile/films.css?v=testi-center-1',
-    'mahavatar-narsimha': '/css/mobile/films.css?v=testi-center-1',
-    'hanuman-ansh': '/css/mobile/films.css?v=testi-center-1',
-    mahaprbhu: '/css/mobile/films.css?v=testi-center-1',
-    kalki: '/css/mobile/films.css?v=testi-center-1',
-    resources: '/css/mobile/resources.css?v=testi-center-1',
-    'blog-1': '/css/mobile/resources.css?v=testi-center-1',
-    'blog-2': '/css/mobile/resources.css?v=testi-center-1',
-    'blog-3': '/css/mobile/resources.css?v=testi-center-1',
-    'start-making-music': '/css/mobile/resources.css?v=testi-center-1',
-    'online-music-course-worth-it': '/css/mobile/resources.css?v=testi-center-1',
-    'artist-release-playbook': '/css/mobile/resources.css?v=testi-center-1'
+    home: '/css/mobile/home.css?v=mission-quote-even-1',
+    about: '/css/mobile/about.css?v=academy-one-2',
+    work: '/css/mobile/work.css?v=academy-one-2',
+    mba: '/css/mobile/impact-report.css?v=academy-one-2',
+    'mba-impact': '/css/mobile/impact-report.css?v=academy-one-2',
+    'havells-myousic': '/css/mobile/impact-report.css?v=academy-one-2',
+    'insta-music-league': '/css/mobile/work.css?v=academy-one-2',
+    'young-gunns': '/css/mobile/work.css?v=academy-one-2',
+    artists: '/css/mobile/artists.css?v=academy-one-2',
+    'artist-path': '/css/mobile/artists.css?v=academy-one-2',
+    'harshad-duhita': '/css/mobile/artists.css?v=academy-one-2',
+    yugm: '/css/mobile/artists.css?v=academy-one-2',
+    'book-an-artist': '/css/mobile/artists.css?v=academy-one-2',
+    'artist-query': '/css/mobile/artists.css?v=academy-one-2',
+    'collab-query': '/css/mobile/artists.css?v=academy-one-2',
+    'learn-with-tsc': '/css/mobile/learn.css?v=academy-one-2',
+    academy: '/css/mobile/academy.css?v=academy-one-2',
+    affiliate: '/css/mobile/academy.css?v=academy-one-2',
+    'the-heart-of-composition': '/css/mobile/learn.css?v=academy-one-2',
+    'roots-of-hindustani-classical': '/css/mobile/learn.css?v=academy-one-2',
+    'music-production': '/css/mobile/learn.css?v=academy-one-2',
+    'book-a-call': '/css/mobile/learn.css?v=academy-one-2',
+    films: '/css/mobile/films.css?v=academy-one-2',
+    'mahavatar-narsimha': '/css/mobile/films.css?v=academy-one-2',
+    'hanuman-ansh': '/css/mobile/films.css?v=academy-one-2',
+    mahaprbhu: '/css/mobile/films.css?v=academy-one-2',
+    kalki: '/css/mobile/films.css?v=academy-one-2',
+    resources: '/css/mobile/resources.css?v=academy-one-2',
+    'blog-1': '/css/mobile/resources.css?v=academy-one-2',
+    'blog-2': '/css/mobile/resources.css?v=academy-one-2',
+    'blog-3': '/css/mobile/resources.css?v=academy-one-2',
+    'start-making-music': '/css/mobile/resources.css?v=academy-one-2',
+    'online-music-course-worth-it': '/css/mobile/resources.css?v=academy-one-2',
+    'artist-release-playbook': '/css/mobile/resources.css?v=academy-one-2',
+    'from-bhajan-to-clubbing': '/css/mobile/resources.css?v=academy-one-2',
+    'you-released-a-song-now-what': '/css/mobile/resources.css?v=academy-one-2',
+    'how-i-curate-music-with-independent-artists': '/css/mobile/resources.css?v=academy-one-2'
   };
   if (map[seg]) link(map[seg]);
-  else link('/css/mobile/home.css?v=testi-center-1');
+  else link('/css/mobile/home.css?v=academy-one-2');
   /* safety: never leave page invisible */
-  setTimeout(function () { html.classList.add('tsc-mobile-ready'); }, 4000);
+  setTimeout(function () {
+    html.classList.add('tsc-mobile-ready');
+    html.classList.add('tsc-skel-revealed');
+  }, 1500);
 })();
 </script>
 <style data-tsc-standalone-runtime>
@@ -1024,7 +1035,7 @@ waiting to unfold.</h1></div><!--/$--></div><!--/$--></div></div><!--/$--></div>
         <path d="M22.578 44.5l.215.125 68.173 43.111a16.917 16.917 0 0 0 18.069 0l68.173-43.111.215-.125H22.578z"/>
     </g>
 </svg>
-</div></a></div><!--/$--></div><!--/$--></div><!--/$--><!--$--><div id="comp-mrsu3d73_r_comp-mrstm9lf1" class="N8MGzv _v6ohL PO9MfV comp-mrsu3d73_r_comp-mrstm9lf1 wixui-rich-text" data-testid="richTextElement"><p class="font_7 wixui-rich-text__text"><span style="text-decoration:underline;" class="wixui-rich-text__text"><a href="/work" target="_self" class="wixui-rich-text__text">Work</a></span></p></div><!--/$--><!--$--><div id="comp-mrsu3d73_r_comp-mrstm9lh1" class="N8MGzv _v6ohL PO9MfV comp-mrsu3d73_r_comp-mrstm9lh1 wixui-rich-text" data-testid="richTextElement"><p class="font_7 wixui-rich-text__text">Unfolding artist force.</p></div><!--/$--><!--$--><div id="comp-mrsu3d73_r_comp-mrstm9lj1" class="N8MGzv _v6ohL PO9MfV comp-mrsu3d73_r_comp-mrstm9lj1 wixui-rich-text" data-testid="richTextElement"><p class="font_7 wixui-rich-text__text"><span style="text-decoration:underline;" class="wixui-rich-text__text"><a href="/artists" target="_self" class="wixui-rich-text__text">Artists</a></span></p></div><!--/$--><!--$--><div id="comp-mrsu3d73_r_comp-mrstm9ll" class="N8MGzv _v6ohL PO9MfV comp-mrsu3d73_r_comp-mrstm9ll wixui-rich-text" data-testid="richTextElement"><p class="font_7 wixui-rich-text__text">&copy;&nbsp;2026&nbsp;The Shakti Collective. All rights reserved.</p></div><!--/$--><!--$--><div id="comp-mrsu3d73_r_comp-mrstm9lm8" class="N8MGzv _v6ohL PO9MfV comp-mrsu3d73_r_comp-mrstm9lm8 wixui-rich-text" data-testid="richTextElement"><p class="font_7 wixui-rich-text__text"><span style="text-decoration:underline;" class="wixui-rich-text__text"><a href="/academy" target="_self" class="wixui-rich-text__text">TSC Academy</a></span></p></div><!--/$--><!--$--><div id="comp-mrsu3d73_r_comp-mrstm9lo5" class="N8MGzv _v6ohL PO9MfV comp-mrsu3d73_r_comp-mrstm9lo5 wixui-rich-text" data-testid="richTextElement"><p class="font_7 wixui-rich-text__text"><span style="text-decoration:underline;" class="wixui-rich-text__text"><a href="/films" target="_self" class="wixui-rich-text__text">Films</a></span></p></div><!--/$--></section><!--/$--></footer><!--$--><div id="comp-mp2vm9r5-pinned-layer" class="comp-mp2vm9r5-pinned-layer QED8q1"><div id="comp-mp2vm9r5" class="comp-mp2vm9r5 S829f_ comp-mp2vm9r5-container" slots="[object Object]" wix="[object Object]"><!--$--><div id="comp-mp2vm9r5_r_comp-kd5px9hr" class="vO4l6e"><div id="overlay-comp-mp2vm9r5_r_comp-kd5px9hr" class="KyTZlx"></div><div id="container-comp-mp2vm9r5_r_comp-kd5px9hr" class="V1WvhC" data-block-level-container="MenuContainer"><div class="qINwWP"></div><div id="inlineContentParent-comp-mp2vm9r5_r_comp-kd5px9hr" class="dz6k8U"><div class="comp-mp2vm9r5_r_comp-kd5px9hr-overflow-wrapper dz6k8U wixui-mobile-menu ku1hVK" data-testid="responsive-container-overflow"><div data-testid="responsive-container-content" tabindex="-1" role="dialog" aria-label="Site navigation" class="comp-mp2vm9r5_r_comp-kd5px9hr-container"><!--$--><nav id="comp-mp2vm9r5_r_comp-kd5px9kk" aria-label="Site" class="d2V6sy comp-mp2vm9r5_r_comp-kd5px9kk wixui-vertical-menu"><ul class="OXEw4D"><li data-testid="comp-mp2vm9r5_r_comp-kd5px9kk-0" class="Onlmt7 GrMktH WIf5uD wixui-vertical-menu__item"><div data-testid="itemWrapper" class="keDKhi"><span data-testid="linkWrapper" class="j945c8"><a data-testid="linkElement" href="/about" target="_self" class="G7GdaI wixui-vertical-menu__item-label">About</a></span></div></li><li data-testid="comp-mp2vm9r5_r_comp-kd5px9kk-1" class="Onlmt7 GrMktH WIf5uD wixui-vertical-menu__item"><div data-testid="itemWrapper" class="keDKhi"><span data-testid="linkWrapper" class="j945c8"><a data-testid="linkElement" href="/work" target="_self" class="G7GdaI wixui-vertical-menu__item-label">Work</a></span></div></li><li data-testid="comp-mp2vm9r5_r_comp-kd5px9kk-2" class="Onlmt7 GrMktH WIf5uD Hp2waC wixui-vertical-menu__item"><div data-testid="itemWrapper" class="keDKhi"><span data-testid="linkWrapper" class="j945c8"><a data-testid="linkElement" data-anchor="SCROLL_TO_TOP" href="/artists" target="_self" class="G7GdaI wixui-vertical-menu__item-label">Artists</a></span><button aria-expanded="false" aria-haspopup="true" aria-label="Artists" class="NUCS6n" data-testid="expandablemenu-toggle"><div class="jIDNF8 wixui-vertical-menu__arrow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9.2828 4.89817"><path d="M4.64116,4.89817a.5001.5001,0,0,1-.34277-.13574L.15727.86448A.50018.50018,0,0,1,.84282.136L4.64116,3.71165,8.44.136a.50018.50018,0,0,1,.68555.72852L4.98393,4.76243A.5001.5001,0,0,1,4.64116,4.89817Z"></path></svg></div></button></div><ul class="tFexI9 wixui-vertical-menu__submenu"><li data-testid="comp-mp2vm9r5_r_comp-kd5px9kk-2-0" class="Onlmt7 GrMktH jieHoL wixui-vertical-menu__item"><div data-testid="itemWrapper" class="keDKhi"><span data-testid="linkWrapper" class="j945c8"><a data-testid="linkElement" href="/artists" target="_self" class="G7GdaI wixui-vertical-menu__item-label">TSC Artists</a></span></div></li><li data-testid="comp-mp2vm9r5_r_comp-kd5px9kk-2-1" class="Onlmt7 GrMktH jieHoL wixui-vertical-menu__item"><div data-testid="itemWrapper" class="keDKhi"><span data-testid="linkWrapper" class="j945c8"><a data-testid="linkElement" href="/artist-path" target="_self" class="G7GdaI wixui-vertical-menu__item-label">Artist Path</a></span></div></li><li data-testid="comp-mp2vm9r5_r_comp-kd5px9kk-2-2" class="Onlmt7 GrMktH jieHoL wixui-vertical-menu__item"><div data-testid="itemWrapper" class="keDKhi"><span data-testid="linkWrapper" class="j945c8"><a data-testid="linkElement" href="/learn-with-tsc" target="_self" class="G7GdaI wixui-vertical-menu__item-label">Learn With TSC</a></span></div></li></ul></li><li data-testid="comp-mp2vm9r5_r_comp-kd5px9kk-3" class="Onlmt7 GrMktH WIf5uD wixui-vertical-menu__item"><div data-testid="itemWrapper" class="keDKhi"><span data-testid="linkWrapper" class="j945c8"><a data-testid="linkElement" href="/films" target="_self" class="G7GdaI wixui-vertical-menu__item-label">Films</a></span></div></li><li data-testid="comp-mp2vm9r5_r_comp-kd5px9kk-4" class="Onlmt7 GrMktH WIf5uD wixui-vertical-menu__item"><div data-testid="itemWrapper" class="keDKhi"><span data-testid="linkWrapper" class="j945c8"><a data-testid="linkElement" href="/resources" target="_self" class="G7GdaI wixui-vertical-menu__item-label">Resources</a></span></div></li></ul></nav><!--/$--><!--$--><button id="comp-mp2vm9r5_r_comp-kkmqi5tc" class="comp-mp2vm9r5_r_comp-kkmqi5tc wixui-vector-image"><div data-testid="svgRoot-comp-mp2vm9r5_r_comp-kkmqi5tc" class="iL7Pq5 gx51wo LXgYyC"><?xml version="1.0" encoding="UTF-8"?>
+</div></a></div><!--/$--></div><!--/$--></div><!--/$--><!--$--><div id="comp-mrsu3d73_r_comp-mrstm9lf1" class="N8MGzv _v6ohL PO9MfV comp-mrsu3d73_r_comp-mrstm9lf1 wixui-rich-text" data-testid="richTextElement"><p class="font_7 wixui-rich-text__text"><span style="text-decoration:underline;" class="wixui-rich-text__text"><a href="/work" target="_self" class="wixui-rich-text__text">Work</a></span></p></div><!--/$--><!--$--><div id="comp-mrsu3d73_r_comp-mrstm9lh1" class="N8MGzv _v6ohL PO9MfV comp-mrsu3d73_r_comp-mrstm9lh1 wixui-rich-text" data-testid="richTextElement"><p class="font_7 wixui-rich-text__text">Unfolding artist force.</p></div><!--/$--><!--$--><div id="comp-mrsu3d73_r_comp-mrstm9lj1" class="N8MGzv _v6ohL PO9MfV comp-mrsu3d73_r_comp-mrstm9lj1 wixui-rich-text" data-testid="richTextElement"><p class="font_7 wixui-rich-text__text"><span style="text-decoration:underline;" class="wixui-rich-text__text"><a href="/artists" target="_self" class="wixui-rich-text__text">Artists</a></span></p></div><!--/$--><!--$--><div id="comp-mrsu3d73_r_comp-mrstm9ll" class="N8MGzv _v6ohL PO9MfV comp-mrsu3d73_r_comp-mrstm9ll wixui-rich-text" data-testid="richTextElement"><p class="font_7 wixui-rich-text__text">&copy;&nbsp;2026&nbsp;The Shakti Collective. All rights reserved.</p></div><!--/$--><!--$--><div id="comp-mrsu3d73_r_comp-mrstm9lm8" class="N8MGzv _v6ohL PO9MfV comp-mrsu3d73_r_comp-mrstm9lm8 wixui-rich-text" data-testid="richTextElement"><p class="font_7 wixui-rich-text__text"><span style="text-decoration:underline;" class="wixui-rich-text__text"><a href="/academy" target="_self" class="wixui-rich-text__text">TSC Academy</a></span></p></div><!--/$--><!--$--><div id="comp-mrsu3d73_r_comp-mrstm9lo5" class="N8MGzv _v6ohL PO9MfV comp-mrsu3d73_r_comp-mrstm9lo5 wixui-rich-text" data-testid="richTextElement"><p class="font_7 wixui-rich-text__text"><span style="text-decoration:underline;" class="wixui-rich-text__text"><a href="/films" target="_self" class="wixui-rich-text__text">Films</a></span></p></div><!--/$--></section><!--/$--></footer><!--$--><div id="comp-mp2vm9r5-pinned-layer" class="comp-mp2vm9r5-pinned-layer QED8q1"><div id="comp-mp2vm9r5" class="comp-mp2vm9r5 S829f_ comp-mp2vm9r5-container" slots="[object Object]" wix="[object Object]"><!--$--><div id="comp-mp2vm9r5_r_comp-kd5px9hr" class="vO4l6e"><div id="overlay-comp-mp2vm9r5_r_comp-kd5px9hr" class="KyTZlx"></div><div id="container-comp-mp2vm9r5_r_comp-kd5px9hr" class="V1WvhC" data-block-level-container="MenuContainer"><div class="qINwWP"></div><div id="inlineContentParent-comp-mp2vm9r5_r_comp-kd5px9hr" class="dz6k8U"><div class="comp-mp2vm9r5_r_comp-kd5px9hr-overflow-wrapper dz6k8U wixui-mobile-menu ku1hVK" data-testid="responsive-container-overflow"><div data-testid="responsive-container-content" tabindex="-1" role="dialog" aria-label="Site navigation" class="comp-mp2vm9r5_r_comp-kd5px9hr-container"><!--$--><nav id="comp-mp2vm9r5_r_comp-kd5px9kk" aria-label="Site" class="d2V6sy comp-mp2vm9r5_r_comp-kd5px9kk wixui-vertical-menu"><ul class="OXEw4D"><li data-testid="comp-mp2vm9r5_r_comp-kd5px9kk-0" class="Onlmt7 GrMktH WIf5uD wixui-vertical-menu__item"><div data-testid="itemWrapper" class="keDKhi"><span data-testid="linkWrapper" class="j945c8"><a data-testid="linkElement" href="/about" target="_self" class="G7GdaI wixui-vertical-menu__item-label">About</a></span></div></li><li data-testid="comp-mp2vm9r5_r_comp-kd5px9kk-1" class="Onlmt7 GrMktH WIf5uD wixui-vertical-menu__item"><div data-testid="itemWrapper" class="keDKhi"><span data-testid="linkWrapper" class="j945c8"><a data-testid="linkElement" href="/work" target="_self" class="G7GdaI wixui-vertical-menu__item-label">Work</a></span></div></li><li data-testid="comp-mp2vm9r5_r_comp-kd5px9kk-2" class="Onlmt7 GrMktH WIf5uD Hp2waC wixui-vertical-menu__item"><div data-testid="itemWrapper" class="keDKhi"><span data-testid="linkWrapper" class="j945c8"><a data-testid="linkElement" data-anchor="SCROLL_TO_TOP" href="/artists" target="_self" class="G7GdaI wixui-vertical-menu__item-label">Artists</a></span><button aria-expanded="false" aria-haspopup="true" aria-label="Artists" class="NUCS6n" data-testid="expandablemenu-toggle"><div class="jIDNF8 wixui-vertical-menu__arrow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9.2828 4.89817"><path d="M4.64116,4.89817a.5001.5001,0,0,1-.34277-.13574L.15727.86448A.50018.50018,0,0,1,.84282.136L4.64116,3.71165,8.44.136a.50018.50018,0,0,1,.68555.72852L4.98393,4.76243A.5001.5001,0,0,1,4.64116,4.89817Z"></path></svg></div></button></div><ul class="tFexI9 wixui-vertical-menu__submenu"><li data-testid="comp-mp2vm9r5_r_comp-kd5px9kk-2-0" class="Onlmt7 GrMktH jieHoL wixui-vertical-menu__item"><div data-testid="itemWrapper" class="keDKhi"><span data-testid="linkWrapper" class="j945c8"><a data-testid="linkElement" href="/artists" target="_self" class="G7GdaI wixui-vertical-menu__item-label">TSC Artists</a></span></div></li><li data-testid="comp-mp2vm9r5_r_comp-kd5px9kk-2-1" class="Onlmt7 GrMktH jieHoL wixui-vertical-menu__item"><div data-testid="itemWrapper" class="keDKhi"><span data-testid="linkWrapper" class="j945c8"><a data-testid="linkElement" href="/artist-path" target="_self" class="G7GdaI wixui-vertical-menu__item-label">Artist Path</a></span></div></li><li data-testid="comp-mp2vm9r5_r_comp-kd5px9kk-2-2" class="Onlmt7 GrMktH jieHoL wixui-vertical-menu__item"><div data-testid="itemWrapper" class="keDKhi"><span data-testid="linkWrapper" class="j945c8"><a data-testid="linkElement" href="/academy" target="_self" class="G7GdaI wixui-vertical-menu__item-label">Learn With TSC</a></span></div></li></ul></li><li data-testid="comp-mp2vm9r5_r_comp-kd5px9kk-3" class="Onlmt7 GrMktH WIf5uD wixui-vertical-menu__item"><div data-testid="itemWrapper" class="keDKhi"><span data-testid="linkWrapper" class="j945c8"><a data-testid="linkElement" href="/films" target="_self" class="G7GdaI wixui-vertical-menu__item-label">Films</a></span></div></li><li data-testid="comp-mp2vm9r5_r_comp-kd5px9kk-4" class="Onlmt7 GrMktH WIf5uD wixui-vertical-menu__item"><div data-testid="itemWrapper" class="keDKhi"><span data-testid="linkWrapper" class="j945c8"><a data-testid="linkElement" href="/resources" target="_self" class="G7GdaI wixui-vertical-menu__item-label">Resources</a></span></div></li></ul></nav><!--/$--><!--$--><button id="comp-mp2vm9r5_r_comp-kkmqi5tc" class="comp-mp2vm9r5_r_comp-kkmqi5tc wixui-vector-image"><div data-testid="svgRoot-comp-mp2vm9r5_r_comp-kkmqi5tc" class="iL7Pq5 gx51wo LXgYyC"><?xml version="1.0" encoding="UTF-8"?>
 <svg preserveAspectRatio="none" data-bbox="65.35 65.35 69.3 69.3" viewBox="65.35 65.35 69.3 69.3" xmlns="http://www.w3.org/2000/svg" data-type="shape" role="img" aria-label="Close Site Navigation">
     <g>
         <path d="M134.65 128.99L105.66 100l28.99-28.99-5.66-5.66L100 94.34 71.01 65.35l-5.66 5.66L94.34 100l-28.99 28.99 5.66 5.66L100 105.66l28.99 28.99 5.66-5.66z"/>
@@ -1297,7 +1308,7 @@ waiting to unfold.</h1></div><!--/$--></div><!--/$--></div></div><!--/$--></div>
   (function injectTscWixMotion() {
     if (document.querySelector('script[data-tsc-wix-motion]')) return;
     var m = document.createElement('script');
-    m.src = '/js/tsc-wix-motion.js?v=testi-center-1';
+    m.src = '/js/tsc-wix-motion.js?v=academy-one-2';
     m.defer = true;
     m.setAttribute('data-tsc-wix-motion', '1');
     (document.head || document.documentElement).appendChild(m);

@@ -676,8 +676,10 @@ a {
 @media (max-width: 560px) {
   .report-hero,
   .report-section,
-  .report-case-nav {
-    width: min(100% - 28px, var(--report-max));
+  .report-case-nav,
+  .report-support,
+  .report-cta-inner {
+    width: min(100% - 40px, var(--report-max));
   }
 
   .report-logo-lockup {
@@ -691,54 +693,101 @@ a {
   }
 
   .report-panel {
-    padding: 18px;
+    padding: 20px 18px;
+    box-shadow: 10px 10px 0 rgba(183, 75, 2, 0.16);
   }
 
   .case-wordmark {
     font-size: 22px;
+    min-width: 0;
+    width: 100%;
+  }
+
+  .case-logo-img {
+    width: min(220px, 78vw);
+    max-height: 112px;
   }
 
   .report-hero h1 {
-    font-size: 43px;
+    font-size: clamp(1.85rem, 9vw, 2.35rem);
+    line-height: 1.05;
   }
 
   .report-subtitle {
-    font-size: 18px;
+    font-size: 17px;
+    line-height: 1.45;
+  }
+
+  .stat {
+    min-height: 96px;
+    padding: 14px;
   }
 
   .stat strong {
-    font-size: 30px;
+    font-size: 28px;
   }
 
   .report-copy h2 {
-    font-size: 32px;
+    font-size: clamp(1.5rem, 7vw, 1.85rem);
   }
 
   .report-copy h3 {
-    font-size: 22px;
+    font-size: 20px;
   }
 
   .report-copy p {
     font-size: 16px;
+    line-height: 1.55;
+  }
+
+  .report-list li {
+    padding: 14px 14px;
+    font-size: 15px;
   }
 
   .quote-card p {
-    font-size: 24px;
+    font-size: clamp(1.15rem, 5.5vw, 1.4rem);
+  }
+
+  .proof-item {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 16px;
+  }
+
+  .proof-item strong {
+    font-size: 20px;
+  }
+
+  .report-media {
+    min-height: 220px;
   }
 
   .report-media figcaption {
-    font-size: 24px;
+    font-size: clamp(1.15rem, 5vw, 1.4rem);
   }
 
   .report-cta-inner h2 {
-    font-size: 36px;
+    font-size: clamp(1.55rem, 8vw, 2rem);
+  }
+
+  .report-cta-inner a {
+    width: 100%;
+  }
+
+  .process-step {
+    padding: 16px;
+  }
+
+  .process-step strong {
+    font-size: 18px;
   }
 }
 
 /* ===== TSC MBA/impact mobile polish — subpages-mobile ===== */
 @media (max-width: 1024px) {
   .report-hero h1 {
-    font-size: clamp(2rem, 9vw, 2.7rem);
+    font-size: clamp(1.85rem, 8vw, 2.35rem);
     line-height: 1.08;
   }
 
@@ -761,6 +810,13 @@ a {
 
   .report-process {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .report-hero h1 {
+    font-size: clamp(1.7rem, 8.5vw, 2.1rem);
+    line-height: 1.05;
   }
 }
 

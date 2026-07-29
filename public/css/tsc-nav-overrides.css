@@ -17,6 +17,18 @@ body,
   top: 0 !important;
 }
 
+@media (min-width: 1025px) {
+  header,
+  [id$="-pinned-layer"]:has(header) {
+    top: 0 !important;
+  }
+
+  header .wixui-horizontal-menu__item-label,
+  header .wixui-dropdown-menu__item-label {
+    font-size: 1.25vw !important;
+  }
+}
+
 #WIX_ADS,
 a[href*="wix.com/studio"] {
   display: none !important;

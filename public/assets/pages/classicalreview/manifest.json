@@ -3,7 +3,7 @@
   "html": "/pages/classicalreview.html",
   "css": "/css/pages/classicalreview.css",
   "animations": "/js/pages/classicalreview.animations.js",
-  "generatedAt": "2026-07-28T14:50:29.734Z",
+  "generatedAt": "2026-07-29T16:33:51.894Z",
   "totals": {
     "assets": 2,
     "missing": 0
@@ -16,7 +16,7 @@
         "local": {
           "exists": true,
           "path": "/css/pages/classicalreview.css",
-          "bytes": 1207
+          "bytes": 1270
         }
       }
     ],
@@ -27,7 +27,7 @@
         "local": {
           "exists": true,
           "path": "/js/pages/classicalreview.animations.js",
-          "bytes": 5430
+          "bytes": 6006
         }
       }
     ]

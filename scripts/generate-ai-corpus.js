@@ -32,6 +32,7 @@ const DETAIL = new Set([
 const EDITORIAL = new Set([
   '/blog-1', '/blog-2', '/blog-3', '/from-bhajan-to-clubbing',
   '/you-released-a-song-now-what',
+  '/how-i-curate-music-with-independent-artists',
 ]);
 const FORM = new Set([
   '/collab-query', '/book-an-artist', '/artist-query', '/book-a-call',

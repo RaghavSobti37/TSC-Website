@@ -3,7 +3,7 @@
   "html": "/pages/book-an-artist.html",
   "css": "/css/pages/book-an-artist.css",
   "animations": "/js/pages/book-an-artist.animations.js",
-  "generatedAt": "2026-07-28T14:50:29.732Z",
+  "generatedAt": "2026-07-29T16:33:51.892Z",
   "totals": {
     "assets": 115,
     "missing": 7
@@ -625,7 +625,7 @@
         "local": {
           "exists": true,
           "path": "/assets/mirror/static.parastorage.com/services/wix-thunderbolt/dist/group_7.c472a333.chunk.min.css",
-          "bytes": 188
+          "bytes": 189
         }
       },
       {
@@ -634,7 +634,7 @@
         "local": {
           "exists": true,
           "path": "/assets/mirror/static.parastorage.com/services/wix-thunderbolt/dist/main.744ea815.min.css",
-          "bytes": 3721
+          "bytes": 3722
         }
       },
       {
@@ -643,7 +643,7 @@
         "local": {
           "exists": true,
           "path": "/assets/mirror/static.parastorage.com/services/wix-thunderbolt/dist/main.renderer.c1b1af7e.min.css",
-          "bytes": 9804
+          "bytes": 9805
         }
       },
       {
@@ -652,7 +652,7 @@
         "local": {
           "exists": true,
           "path": "/css/pages/book-an-artist.css",
-          "bytes": 1044265
+          "bytes": 1045344
         }
       }
     ],
@@ -663,7 +663,7 @@
         "local": {
           "exists": true,
           "path": "/assets/mirror/static.parastorage.com/services/form-app/1.2864.0/FormViewerWidgetNoCss.bundle.min.js",
-          "bytes": 885504
+          "bytes": 885539
         }
       },
       {
@@ -672,7 +672,7 @@
         "local": {
           "exists": true,
           "path": "/assets/mirror/static.parastorage.com/services/form-app/1.2864.0/client-viewer/1816.chunk.min.js",
-          "bytes": 18624
+          "bytes": 18625
         }
       },
       {
@@ -681,7 +681,7 @@
         "local": {
           "exists": true,
           "path": "/assets/mirror/static.parastorage.com/services/form-app/1.2864.0/client-viewer/4660.chunk.min.js",
-          "bytes": 5607
+          "bytes": 5611
         }
       },
       {
@@ -690,7 +690,7 @@
         "local": {
           "exists": true,
           "path": "/assets/mirror/static.parastorage.com/services/form-app/1.2864.0/client-viewer/5796.chunk.min.js",
-          "bytes": 22396
+          "bytes": 22397
         }
       },
       {
@@ -699,7 +699,7 @@
         "local": {
           "exists": true,
           "path": "/assets/mirror/static.parastorage.com/services/form-app/1.2864.0/client-viewer/5995.chunk.min.js",
-          "bytes": 11142
+          "bytes": 11147
         }
       },
       {
@@ -708,7 +708,7 @@
         "local": {
           "exists": true,
           "path": "/assets/mirror/static.parastorage.com/services/form-app/1.2864.0/client-viewer/7757.chunk.min.js",
-          "bytes": 14228
+          "bytes": 14229
         }
       },
       {
@@ -717,7 +717,7 @@
         "local": {
           "exists": true,
           "path": "/assets/mirror/static.parastorage.com/services/form-app/1.2864.0/client-viewer/7957.chunk.min.js",
-          "bytes": 125433
+          "bytes": 125441
         }
       },
       {
@@ -726,7 +726,7 @@
         "local": {
           "exists": true,
           "path": "/assets/mirror/static.parastorage.com/services/form-app/1.2864.0/client-viewer/8174.chunk.min.js",
-          "bytes": 36502
+          "bytes": 36509
         }
       },
       {
@@ -735,7 +735,7 @@
         "local": {
           "exists": true,
           "path": "/assets/mirror/static.parastorage.com/services/form-app/1.2864.0/client-viewer/9907.chunk.min.js",
-          "bytes": 29978
+          "bytes": 29979
         }
       },
       {
@@ -744,7 +744,7 @@
         "local": {
           "exists": true,
           "path": "/assets/mirror/static.parastorage.com/services/form-app/1.2864.0/client-viewer/form-app-checkbox-group.chunk.min.js",
-          "bytes": 396
+          "bytes": 397
         }
       },
       {
@@ -753,7 +753,7 @@
         "local": {
           "exists": true,
           "path": "/assets/mirror/static.parastorage.com/services/form-app/1.2864.0/client-viewer/form-app-contacts-phone.chunk.min.js",
-          "bytes": 384
+          "bytes": 385
         }
       },
       {
@@ -762,7 +762,7 @@
         "local": {
           "exists": true,
           "path": "/assets/mirror/static.parastorage.com/services/form-app/1.2864.0/client-viewer/form-app-date-input.chunk.min.js",
-          "bytes": 5132
+          "bytes": 5133
         }
       },
       {
@@ -771,7 +771,7 @@
         "local": {
           "exists": true,
           "path": "/assets/mirror/static.parastorage.com/services/form-app/1.2864.0/client-viewer/form-app-dropdown.chunk.min.js",
-          "bytes": 2770
+          "bytes": 2771
         }
       },
       {
@@ -780,7 +780,7 @@
         "local": {
           "exists": true,
           "path": "/assets/mirror/static.parastorage.com/services/form-app/1.2864.0/client-viewer/form-app-radio-group.chunk.min.js",
-          "bytes": 13683
+          "bytes": 13684
         }
       },
       {
@@ -789,7 +789,7 @@
         "local": {
           "exists": true,
           "path": "/assets/mirror/static.parastorage.com/services/tag-manager-client/1.1066.0/siteTags.bundle.min.js",
-          "bytes": 9414
+          "bytes": 9415
         }
       },
       {
@@ -798,7 +798,7 @@
         "local": {
           "exists": true,
           "path": "/assets/mirror/static.parastorage.com/services/wix-thunderbolt/dist/bi-common.inline.24faadf6.bundle.min.js",
-          "bytes": 7140
+          "bytes": 7141
         }
       },
       {
@@ -807,7 +807,7 @@
         "local": {
           "exists": true,
           "path": "/assets/mirror/static.parastorage.com/services/wix-thunderbolt/dist/bi.inline.ae93e7f6.bundle.min.js",
-          "bytes": 4390
+          "bytes": 4391
         }
       },
       {
@@ -825,7 +825,7 @@
         "local": {
           "exists": true,
           "path": "/assets/mirror/static.parastorage.com/services/wix-thunderbolt/dist/createPlatformWorker.inline.a9bb4739.bundle.min.js",
-          "bytes": 1734
+          "bytes": 1735
         }
       },
       {
@@ -834,7 +834,7 @@
         "local": {
           "exists": true,
           "path": "/assets/mirror/static.parastorage.com/services/wix-thunderbolt/dist/custom-element-utils.inline.bec24b26.bundle.min.js",
-          "bytes": 55241
+          "bytes": 55242
         }
       },
       {
@@ -843,7 +843,7 @@
         "local": {
           "exists": true,
           "path": "/assets/mirror/static.parastorage.com/services/wix-thunderbolt/dist/externals-registry.inline.c335b0f1.bundle.min.js",
-          "bytes": 1080
+          "bytes": 1081
         }
       },
       {
@@ -852,7 +852,7 @@
         "local": {
           "exists": true,
           "path": "/assets/mirror/static.parastorage.com/services/wix-thunderbolt/dist/fastdom.inline.48a8bd4b.bundle.min.js",
-          "bytes": 1634
+          "bytes": 1635
         }
       },
       {
@@ -861,7 +861,7 @@
         "local": {
           "exists": true,
           "path": "/assets/mirror/static.parastorage.com/services/wix-thunderbolt/dist/handleAccessTokens.inline.3250797b.bundle.min.js",
-          "bytes": 7171
+          "bytes": 7172
         }
       },
       {
@@ -870,7 +870,7 @@
         "local": {
           "exists": true,
           "path": "/assets/mirror/static.parastorage.com/services/wix-thunderbolt/dist/initCustomElements.inline.51cbd1b6.bundle.min.js",
-          "bytes": 10275
+          "bytes": 10276
         }
       },
       {
@@ -879,7 +879,7 @@
         "local": {
           "exists": true,
           "path": "/assets/mirror/static.parastorage.com/services/wix-thunderbolt/dist/lazyCustomElementWrapper.inline.eefbcea5.bundle.min.js",
-          "bytes": 493
+          "bytes": 494
         }
       },
       {
@@ -888,7 +888,7 @@
         "local": {
           "exists": true,
           "path": "/assets/mirror/static.parastorage.com/services/wix-thunderbolt/dist/main.5749709b.bundle.min.js",
-          "bytes": 224034
+          "bytes": 224037
         }
       },
       {
@@ -906,7 +906,7 @@
         "local": {
           "exists": true,
           "path": "/assets/mirror/static.parastorage.com/services/wix-thunderbolt/dist/overrideGlobals.inline.b271af7d.bundle.min.js",
-          "bytes": 7628
+          "bytes": 7629
         }
       },
       {
@@ -915,7 +915,7 @@
         "local": {
           "exists": true,
           "path": "/assets/mirror/static.parastorage.com/services/wix-thunderbolt/dist/sendBeat12.inline.995b241c.bundle.min.js",
-          "bytes": 4519
+          "bytes": 4520
         }
       },
       {
@@ -924,7 +924,7 @@
         "local": {
           "exists": true,
           "path": "/assets/mirror/static.parastorage.com/services/wix-thunderbolt/dist/sendFedopsLoadStarted.inline.ed1ed98a.bundle.min.js",
-          "bytes": 6509
+          "bytes": 6510
         }
       },
       {
@@ -933,7 +933,7 @@
         "local": {
           "exists": true,
           "path": "/assets/mirror/static.parastorage.com/services/wix-thunderbolt/dist/thunderbolt-commons.29a549a6.bundle.min.js",
-          "bytes": 152056
+          "bytes": 152092
         }
       },
       {
@@ -942,7 +942,7 @@
         "local": {
           "exists": true,
           "path": "/assets/mirror/static.parastorage.com/services/wix-thunderbolt/dist/webpack-runtime.1fa9abf5.bundle.min.js",
-          "bytes": 15905
+          "bytes": 15906
         }
       },
       {
@@ -951,7 +951,7 @@
         "local": {
           "exists": true,
           "path": "/assets/mirror/static.parastorage.com/services/wix-thunderbolt/dist/windowMessageRegister.inline.5cd174ec.bundle.min.js",
-          "bytes": 646
+          "bytes": 647
         }
       },
       {
@@ -960,7 +960,7 @@
         "local": {
           "exists": true,
           "path": "/assets/mirror/static.parastorage.com/unpkg/@formatjs/intl-segmenter@11.7.10/polyfill.iife.js",
-          "bytes": 432253
+          "bytes": 440944
         }
       },
       {
@@ -969,7 +969,7 @@
         "local": {
           "exists": true,
           "path": "/assets/mirror/static.parastorage.com/unpkg/core-js-bundle@3.2.1/minified.js",
-          "bytes": 137771
+          "bytes": 137782
         }
       },
       {
@@ -978,7 +978,7 @@
         "local": {
           "exists": true,
           "path": "/assets/mirror/static.parastorage.com/unpkg/focus-within-polyfill@5.0.9/dist/focus-within-polyfill.js",
-          "bytes": 1171
+          "bytes": 1175
         }
       },
       {
@@ -987,7 +987,7 @@
         "local": {
           "exists": true,
           "path": "/assets/mirror/static.parastorage.com/unpkg/lodash@4.17.23/lodash.min.js",
-          "bytes": 73320
+          "bytes": 73459
         }
       },
       {
@@ -996,7 +996,7 @@
         "local": {
           "exists": true,
           "path": "/assets/mirror/static.parastorage.com/unpkg/react-dom@18.3.1/umd/react-dom.production.min.js",
-          "bytes": 131835
+          "bytes": 132102
         }
       },
       {
@@ -1005,7 +1005,7 @@
         "local": {
           "exists": true,
           "path": "/assets/mirror/static.parastorage.com/unpkg/react@18.3.1/umd/react.production.min.js",
-          "bytes": 10751
+          "bytes": 10782
         }
       },
       {
@@ -1014,7 +1014,7 @@
         "local": {
           "exists": true,
           "path": "/js/pages/book-an-artist.animations.js",
-          "bytes": 6166
+          "bytes": 6760
         }
       }
     ],

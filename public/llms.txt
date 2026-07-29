@@ -43,6 +43,7 @@ Full corpus for LLMs: [llms-full.txt](https://wix-site-clone-psi.vercel.app/llms
 
 - [From Bhajan to Clubbing, From Mythology to Cinema](https://wix-site-clone-psi.vercel.app/from-bhajan-to-clubbing): Rohit Sobti essay on Indian culture finding mainstream forms
 - [You Released a Song. Now What?](https://wix-site-clone-psi.vercel.app/you-released-a-song-now-what): Independent artist post-release playbook
+- [How I Curate Music With Independent Artists](https://wix-site-clone-psi.vercel.app/how-i-curate-music-with-independent-artists): Lessons from Lost;Found with Faheem Abdullah
 
 ## Contact & forms
 

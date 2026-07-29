@@ -9,14 +9,47 @@
 
   var resourcesBlogCards = [
     {
-      title: 'From Bhajan to Clubbing, From Mythology to Cinema',
-      description: 'How Indian culture is finding new mainstream forms across music, film, and shared spaces.',
+      title: 'How I Curate Music With Independent Artists',
+      description: 'Lessons from Lost;Found with Faheem Abdullah — curation that reveals the artist.',
+      date: 'JUL 29',
+      readTime: '14 mins',
+      href: '/how-i-curate-music-with-independent-artists',
+      image: {
+        src: '/assets/blogs/curate-music-independent-artists.jpeg',
+        alt: 'Lost;Found curation essay editorial visual'
+      }
+    },
+    {
+      title: 'How Do I Make Music If I Have No Experience?',
+      description: 'A beginner-friendly path into making music without waiting for perfect conditions.',
       date: 'JUL 26',
-      readTime: '5 mins',
-      href: '/from-bhajan-to-clubbing',
+      readTime: '3 mins',
+      href: '/start-making-music',
       image: {
         src: '/assets/blogs/indian-culture-mainstream.jpeg',
-        alt: 'Culture essay editorial visual'
+        alt: 'Beginner music guide visual'
+      }
+    },
+    {
+      title: 'Is an Online Music Course Worth It for Beginners?',
+      description: 'When structured learning helps — and when practice alone is enough.',
+      date: 'JUN 26',
+      readTime: '7 mins',
+      href: '/online-music-course-worth-it',
+      image: {
+        src: '/assets/blogs/song-release-now-what.jpeg',
+        alt: 'Online music course guide visual'
+      }
+    },
+    {
+      title: 'The Artist Release Playbook',
+      description: 'How to release your music without it getting lost. Pre-release, release day, and post-release strategies.',
+      date: 'MAY 26',
+      readTime: '6 mins',
+      href: '/artist-release-playbook',
+      image: {
+        src: '/assets/mirror/static.wixstatic.com/media/19f989_455089248e404ce8a8410dc7c2db5331~mv2.png/v1/fill/w_640,h_360,al_c,q_85,enc_avif,quality_auto/The%20Artist%20Release%20Playbook.png',
+        alt: 'Artist release playbook editorial visual'
       }
     },
     {
@@ -28,6 +61,17 @@
       image: {
         src: '/assets/blogs/song-release-now-what.jpeg',
         alt: 'Artist release playbook editorial visual'
+      }
+    },
+    {
+      title: 'From Bhajan to Clubbing, From Mythology to Cinema',
+      description: 'How Indian culture is finding new mainstream forms across music, film, and shared spaces.',
+      date: 'JUL 26',
+      readTime: '5 mins',
+      href: '/from-bhajan-to-clubbing',
+      image: {
+        src: '/assets/blogs/indian-culture-mainstream.jpeg',
+        alt: 'Culture essay editorial visual'
       }
     }
   ];
@@ -64,6 +108,9 @@
       eyebrow: 'Course Overview',
       description: 'Dive deeper into advanced composition techniques with a comprehensive program designed for artists ready to master the heART of music composition.',
       details: 'Learn directly from Sandesh Shandilya through 3 exclusive live interactive sessions, personalized feedback, recorded learning content, lifetime community access, and direct mentorship.',
+      mentorName: 'Sandesh Shandilya',
+      mentorBio: 'A celebrated music director, composer, and arranger whose work spans Bollywood, sonic branding, and artist mentorship. This course brings his composition process into a practical, guided format for serious learners.',
+      mentorBadges: ['Bollywood Soundtracks', 'Industry Experience', 'Award-Winning Composer'],
       imageSelector: '#img-comp-mpmj3doh img',
       fallbackImage: '/assets/mirror/static.wixstatic.com/media/19f989_3583e149066b4ebf9a6f37cc7d80382a~mv2.jpg/v1/crop/x_0,y_7,w_677,h_461/fill/w_640,h_480,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/sandesh_edited.jpg',
       href: '/book-a-call'
@@ -75,8 +122,25 @@
       eyebrow: 'Course Overview',
       description: 'Immerse yourself in the timeless art of Hindustani classical music through a structured program designed for vocalists of all levels.',
       details: 'Learn directly from Pandit Prasad Khaparde through 5+ exclusive live sessions, focused feedback, recorded learning content, quality assessments, and a community-led learning rhythm.',
+      mentorName: 'Pt. Prasad Khaparde',
+      mentorBio: 'A Rampur Sahaswan Gharana master with 30+ years of performance and teaching experience, known for rigorous classical training and expressive vocal development.',
+      mentorBadges: ['Rampur Sahaswan Gharana', '30+ Years Experience', 'Legendary Classical Vocalist'],
       imageSelector: '#img-comp-mrf1e0gi img',
       fallbackImage: '/assets/mirror/static.wixstatic.com/media/19f989_07c6e896e4a54fcc99b08a98ceccaff4~mv2.jpg/v1/fill/w_640,h_640,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/prasad-hero.jpg',
+      href: '/book-a-call'
+    },
+    '/music-production': {
+      course: 'COURSE 003',
+      mentor: 'Mentor: Luca Petracca',
+      title: 'A-Z of Music Production',
+      eyebrow: 'Course Overview',
+      description: 'Practical end-to-end music production for artists using only a laptop - from idea to finished track.',
+      details: 'International practical masterclass with Luca Petracca. Learn melody and chords, harmonic functions, virtual instruments, recording, production, mixing and mastering through hands-on projects.',
+      mentorName: 'Luca Petracca',
+      mentorBio: 'An international music producer, composer, and educator focused on practical production workflows. Luca teaches artists how to shape ideas into polished, release-ready music using accessible tools.',
+      mentorBadges: ['International Producer', 'Hands-On Production', 'Mixing & Mastering'],
+      imageSelector: '#img-comp-mqz5xh42 img, img[alt*="f205ff385c2272184580fd45"], img[src*="19f989_72c26b9f755948e59217c0f217c9af16"]',
+      fallbackImage: '/assets/mirror/static.wixstatic.com/media/19f989_72c26b9f755948e59217c0f217c9af16~mv2.jpeg/v1/fill/w_640,h_517,fp_0.50_0.30,q_80,enc_avif,quality_auto/ab6761610000e5ebf205ff385c2272184580fd45.jpeg',
       href: '/book-a-call'
     }
   };
@@ -88,7 +152,7 @@
       stat: '4,000+ artists connected',
       href: '/mba',
       imageSelector: '#comp-mr69hwvu1 img',
-      fallbackImage: '/assets/mirror/static.wixstatic.com/media/19f989_54d60cf6fe45451f9a6c467ec19ca7bf~mv2.png/v1/fill/w_608,h_540,fp_0.51_0.34,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/process.png'
+      fallbackImage: '/assets/mirror/static.wixstatic.com/media/19f989_54d60cf6fe45451f9a6c467ec19ca7bf~mv2.png/v1/fill/w_960,h_600,fp_0.51_0.34,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/process.png'
     },
     {
       num: '02',
@@ -97,7 +161,7 @@
       stat: '2500+ artist entries',
       href: '/havells-myousic',
       imageSelector: '#comp-mr69hwud img',
-      fallbackImage: '/assets/mirror/static.wixstatic.com/media/19f989_31e0c2f0485747acb1a4b9d831588423~mv2.jpg/v1/fill/w_608,h_497,fp_0.50_0.43,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/4.jpg'
+      fallbackImage: '/assets/mirror/static.wixstatic.com/media/19f989_31e0c2f0485747acb1a4b9d831588423~mv2.jpg/v1/fill/w_960,h_600,fp_0.50_0.43,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/4.jpg'
     },
     {
       num: '03',
@@ -106,7 +170,7 @@
       stat: '4,000+ original entries',
       href: '/insta-music-league',
       imageSelector: '#comp-mr69hwwa4 img',
-      fallbackImage: '/assets/mirror/static.wixstatic.com/media/11062b_277a34827c9542fca4c9d0e384dfcdac~mv2.jpeg/v1/fill/w_608,h_480,fp_0.58_0.25,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Singer%20In%20Studio.jpeg'
+      fallbackImage: '/assets/mirror/static.wixstatic.com/media/11062b_277a34827c9542fca4c9d0e384dfcdac~mv2.jpeg/v1/fill/w_960,h_600,fp_0.58_0.25,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/Singer%20In%20Studio.jpeg'
     },
     {
       num: '04',
@@ -115,7 +179,7 @@
       stat: '9 emerging artists',
       href: '/young-gunns',
       imageSelector: '#comp-mr69hwvh img',
-      fallbackImage: '/assets/mirror/static.wixstatic.com/media/nsplsh_5b5a3fc5c58a46f384bd44052dad52f8~mv2.jpg/v1/fill/w_608,h_523,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Image%20by%20Neel%20Patel.jpg'
+      fallbackImage: '/assets/mirror/static.wixstatic.com/media/nsplsh_5b5a3fc5c58a46f384bd44052dad52f8~mv2.jpg/v1/fill/w_960,h_600,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/Image%20by%20Neel%20Patel.jpg'
     }
   ];
   var mobileFilmCards = [
@@ -215,10 +279,20 @@
       button: '#comp-mrdq81qe1 a',
       mediumButton: '#comp-mrdq81qf4',
       image: '#comp-mrdq81q63 img'
+    },
+    {
+      title: '#comp-mrdq85og5',
+      description: '#comp-mrdq85oi3',
+      date: '#comp-mrdq85ok',
+      readTime: '#comp-mrdq85ol7',
+      button: '#comp-mrdq85on2 a',
+      mediumButton: '#comp-mrdq85oo5',
+      image: '#comp-mrdq85of5 img'
     }
   ];
 
   function updateBlogCard(slot, card) {
+    if (!card) return;
     ui.setText(slot.title, card.title);
     ui.setText(slot.description, card.description);
     ui.setText(slot.date, card.date);
@@ -228,31 +302,308 @@
     ui.hideElement(slot.mediumButton);
   }
 
+  function injectExtraResourceBlogs() {
+    if (location.pathname !== '/resources' && location.pathname !== '/pages/resources.html') return;
+    if (document.querySelector('.tsc-extra-blog-band')) return;
+    var anchor = document.querySelector('#comp-mrdp2u69') || document.querySelector('main');
+    if (!anchor) return;
+    var extras = resourcesBlogCards.slice(3);
+    if (!extras.length) return;
+    var band = document.createElement('section');
+    band.className = 'tsc-extra-blog-band';
+    band.innerHTML =
+      '<div class="tsc-extra-blog-inner">' +
+      extras
+        .map(function(card) {
+          return (
+            '<article class="tsc-extra-blog-card">' +
+            '<img src="' +
+            card.image.src +
+            '" alt="' +
+            card.image.alt +
+            '" loading="lazy">' +
+            '<h3>' +
+            card.title +
+            '</h3>' +
+            '<p>' +
+            card.description +
+            '</p>' +
+            '<a href="' +
+            card.href +
+            '">Read Blog</a>' +
+            '</article>'
+          );
+        })
+        .join('') +
+      '</div>';
+    anchor.parentNode.insertBefore(band, anchor.nextSibling);
+  }
+
+  function blogPathForCurrentPage() {
+    var path = normalizedPath();
+    var aliases = {
+      '/blog-1': '/start-making-music',
+      '/blog-2': '/online-music-course-worth-it',
+      '/blog-3': '/artist-release-playbook'
+    };
+    if (path.indexOf('/resources/') === 0) {
+      path = '/' + path.split('/').filter(Boolean).pop();
+    }
+    return aliases[path] || path;
+  }
+
+  function currentBlogIndex() {
+    var path = blogPathForCurrentPage();
+    for (var i = 0; i < resourcesBlogCards.length; i += 1) {
+      if (resourcesBlogCards[i].href === path) return i;
+    }
+    return -1;
+  }
+
+  function syncBlogArticleNavigation(prev, next) {
+    document.querySelectorAll('a[href]').forEach(function(anchor) {
+      var text = (anchor.textContent || anchor.getAttribute('aria-label') || '').replace(/\s+/g, ' ').trim();
+      if (/^previous article$/i.test(text)) {
+        anchor.setAttribute('href', prev.href);
+        anchor.setAttribute('target', '_self');
+      } else if (/^next article$/i.test(text)) {
+        anchor.setAttribute('href', next.href);
+        anchor.setAttribute('target', '_self');
+      } else if (/^(back to resources|all blogs)$/i.test(text)) {
+        anchor.setAttribute('href', '/resources');
+        anchor.setAttribute('target', '_self');
+      }
+    });
+  }
+
+  function injectBlogArticleDirectory() {
+    var currentIndex = currentBlogIndex();
+    if (currentIndex < 0) return;
+    var current = resourcesBlogCards[currentIndex];
+    var prev = resourcesBlogCards[(currentIndex - 1 + resourcesBlogCards.length) % resourcesBlogCards.length];
+    var next = resourcesBlogCards[(currentIndex + 1) % resourcesBlogCards.length];
+    syncBlogArticleNavigation(prev, next);
+    if (document.querySelector('.tsc-blog-directory')) return;
+    var section = document.createElement('section');
+    section.className = 'tsc-blog-directory';
+    section.setAttribute('aria-label', 'More blog articles');
+    section.innerHTML = [
+      '<div class="tsc-blog-directory__inner">',
+        '<div class="tsc-blog-directory__nav">',
+          '<a class="tsc-blog-directory__navlink" href="' + ui.escapeHtml(prev.href) + '">Previous article</a>',
+          '<a class="tsc-blog-directory__back" href="/resources">All blogs</a>',
+          '<a class="tsc-blog-directory__navlink" href="' + ui.escapeHtml(next.href) + '">Next article</a>',
+        '</div>',
+        '<h2>More From the Blog</h2>',
+        '<div class="tsc-blog-directory__grid">',
+          resourcesBlogCards.map(function(card) {
+            var active = card.href === current.href;
+            return [
+              '<article class="tsc-blog-directory__card' + (active ? ' is-current' : '') + '">',
+                '<img src="' + ui.escapeHtml(card.image.src) + '" alt="' + ui.escapeHtml(card.image.alt) + '" loading="lazy">',
+                '<div class="tsc-blog-directory__meta">' + ui.escapeHtml(card.date) + ' / ' + ui.escapeHtml(card.readTime) + '</div>',
+                '<h3>' + ui.escapeHtml(card.title) + '</h3>',
+                '<p>' + ui.escapeHtml(card.description) + '</p>',
+                '<a href="' + ui.escapeHtml(card.href) + '"' + (active ? ' aria-current="page"' : '') + '>' + (active ? 'Current Blog' : 'Read Blog') + '</a>',
+              '</article>'
+            ].join('');
+          }).join(''),
+        '</div>',
+      '</div>'
+    ].join('');
+    var footer = document.querySelector('footer#SITE_FOOTER, footer[data-testid="siteFooter"], footer');
+    var main = document.querySelector('main') || document.getElementById('PAGES_CONTAINER') || document.body;
+    if (footer && footer.parentNode) footer.parentNode.insertBefore(section, footer);
+    else main.appendChild(section);
+  }
+
   function updateResourcesBlogSection() {
     if (location.pathname !== '/resources' && location.pathname !== '/pages/resources.html') return;
     document.querySelectorAll('.tsc-medium-blog-band').forEach(function(section) {
       section.remove();
     });
     ui.setText('#comp-mrdpc84n', 'From the Blog');
-    ui.setText('#comp-mrdpc824', 'New essays for culture-first artists');
+    ui.setText('#comp-mrdpc824', 'Guides and insights from TSC');
     resourcesCardSlots.forEach(function(slot, index) {
       updateBlogCard(slot, resourcesBlogCards[index]);
     });
-    ui.hideElement('#comp-mrdq85ob');
+    // Unhide third card host if previously hidden
+    var third = document.querySelector('#comp-mrdq85ob');
+    if (third) third.style.removeProperty('display');
+    injectExtraResourceBlogs();
+  }
+
+  function repairResourcesCourseLinks() {
+    if (location.pathname !== '/resources' && location.pathname !== '/pages/resources.html') return;
+    var courseMap = {
+      '/about-9': '/the-heart-of-composition',
+      '/blank-9': '/the-heart-of-composition',
+      '/about-9-1': '/roots-of-hindustani-classical',
+      '/blank-9-1': '/roots-of-hindustani-classical'
+    };
+    document.querySelectorAll('a[href]').forEach(function(anchor) {
+      try {
+        var url = new URL(anchor.getAttribute('href'), location.origin);
+        var cleanPath = url.pathname.replace(/\/+$/, '') || '/';
+        var mapped = courseMap[cleanPath];
+        if (!mapped) return;
+        anchor.setAttribute('href', mapped + url.search + url.hash);
+        anchor.setAttribute('target', '_self');
+      } catch (e) {}
+    });
+  }
+
+  function ensureLucaCourseCardLinks() {
+    if (normalizedPath() !== '/academy') return;
+    if (document.documentElement.dataset.tscLucaWired === '1') return;
+    document.documentElement.dataset.tscLucaWired = '1';
+
+    // Soft link fix only — never replaceChild (breaks Wix React hydration).
+    try {
+      document.querySelectorAll('#comp-mpjxxeqt a[href], #comp-mpjxxery4 a[href]').forEach(function(a) {
+        a.setAttribute('href', '/music-production');
+        a.setAttribute('target', '_self');
+      });
+    } catch (e) {}
+
+    // If Wix failed to mount course 3, inject a lightweight mirror card.
+    var live = document.querySelector('#comp-mpjxxeqt');
+    var visible = false;
+    try {
+      visible =
+        !!live &&
+        getComputedStyle(live).display !== 'none' &&
+        live.getBoundingClientRect().height > 40;
+    } catch (e) {}
+
+    if (!visible && !document.querySelector('.tsc-luca-course-card')) {
+      var mount = document.querySelector('main') || document.body;
+      if (mount) {
+        var card = document.createElement('article');
+        card.className = 'tsc-luca-course-card';
+        card.setAttribute('aria-label', 'A-Z of Music Production');
+        card.setAttribute(
+          'style',
+          'display:block;margin:20px 16px;padding:22px 18px;border:1px solid rgba(255,236,209,.28);border-radius:12px;background:rgba(8,61,58,.55);color:#ffecd1;box-sizing:border-box;max-width:720px'
+        );
+        card.innerHTML =
+          '<p class="tsc-luca-kicker" style="margin:0;font-size:12px;letter-spacing:.08em;opacity:.75">03</p>' +
+          '<h2 style="margin:6px 0 8px;font-size:22px;line-height:1.25;color:#ffecd1">A-Z of Music Production</h2>' +
+          '<p class="tsc-luca-mentor" style="margin:0 0 10px;font-size:14px;opacity:.9">Luca Petracca</p>' +
+          '<p style="margin:0;line-height:1.45">Master recording, arrangement, mixing, and mastering for your songs — end to end.</p>' +
+          '<a class="tsc-luca-cta" href="/music-production" style="display:inline-flex;margin-top:14px;padding:10px 16px;border-radius:999px;background:#b74b02;color:#fff;text-decoration:none;font-size:14px;font-weight:600">Know More</a>';
+        mount.appendChild(card);
+      }
+    }
+
+    if (!document.querySelector('.tsc-affiliate-cta')) {
+      var host = document.querySelector('main') || document.body;
+      if (host) {
+        var cta = document.createElement('a');
+        cta.className = 'tsc-affiliate-cta';
+        cta.href = '/affiliate';
+        cta.textContent = 'Affiliate Program';
+        cta.setAttribute('aria-label', 'TSC Academy Affiliate Program');
+        host.appendChild(cta);
+      }
+    }
+  }
+
+  function polishMobileAcademyCourseCards() {
+    if (normalizedPath() !== '/academy') return;
+    if (!window.matchMedia || !window.matchMedia('(max-width: 1024px)').matches) return;
+
+    function setRichHtml(selector, html) {
+      var el = document.querySelector(selector);
+      if (!el || el.dataset.tscCoursePolished === '1') return;
+      el.innerHTML = html;
+      el.dataset.tscCoursePolished = '1';
+    }
+
+    setRichHtml(
+      '#comp-mpjxmoth2',
+      '<p class="font_2 wixui-rich-text__text">Rampur Sahaswan Gharana Master</p>' +
+      '<p class="font_2 wixui-rich-text__text">30+ Years Experience</p>' +
+      '<p class="font_2 wixui-rich-text__text">Legendary Classical Vocalist</p>'
+    );
+    setRichHtml(
+      '#comp-mpjxxerw',
+      '<p class="font_2 wixui-rich-text__text">International Practical Masterclass</p>' +
+      '<p class="font_2 wixui-rich-text__text">Laptop-Based Production</p>' +
+      '<p class="font_2 wixui-rich-text__text">17+ Years Teaching</p>'
+    );
+    setRichHtml(
+      '#comp-mpjxxerx1',
+      '<h2 class="font_2 wixui-rich-text__text">Master the end-to-end process of producing professional music using only a laptop. From melody and chords to recording, production, mixing and mastering, Luca Petracca guides you through hands-on projects.</h2>'
+    );
+    setRichHtml(
+      '#comp-mrg3zuhs',
+      '<img class="tsc-luca-course-thumb" src="/assets/mirror/static.wixstatic.com/media/11062b_46a37418aaba4ce4a3fe8203a997003c~mv2.jpg/v1/fill/w_224,h_327,fp_0.52_0.73,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Music%20Studio%20Setup.jpg" alt="Music production studio setup">'
+    );
+  }
+
+  function polishMobileMusicProductionPage() {
+    if (normalizedPath() !== '/music-production') return;
+    if (!window.matchMedia || !window.matchMedia('(max-width: 1024px)').matches) return;
+
+    function setRichHtml(selector, html) {
+      var el = document.querySelector(selector);
+      if (!el || el.dataset.tscMusicProductionPolished === '1') return;
+      el.innerHTML = html;
+      el.dataset.tscMusicProductionPolished = '1';
+    }
+
+    setRichHtml('#comp-mpu7z3t2', '<p class="font_8 wixui-rich-text__text">LUCA PETRACCA</p>');
+    setRichHtml(
+      '#comp-mpu7u82h',
+      '<p class="font_8 wixui-rich-text__text">International practical masterclass with Luca Petracca - 17+ years teaching laptop-based production. Learn melody and chords, harmonic functions, virtual instruments, recording, production, mixing and mastering through hands-on projects.</p>'
+    );
+    setRichHtml('#comp-mpmizynh', '<h3 class="font_5 wixui-rich-text__text">Melody and Chords</h3>');
+    setRichHtml('#comp-mpmizynl', '<p class="font_8 wixui-rich-text__text">Build musical ideas with melody, chords and harmonic functions.</p>');
+    setRichHtml('#comp-mpmizyo2', '<h3 class="font_5 wixui-rich-text__text">Harmonic Progressions</h3>');
+    setRichHtml('#comp-mpmizyo4', '<p class="font_8 wixui-rich-text__text">Understand progressions, genre movement and song forms for stronger arrangements.</p>');
+    setRichHtml('#comp-mpmizyok5', '<h3 class="font_5 wixui-rich-text__text">Recording and Production</h3>');
+    setRichHtml('#comp-mpmizyom4', '<p class="font_8 wixui-rich-text__text">Record clean parts, shape virtual instruments and build a complete laptop-based production.</p>');
+    setRichHtml('#comp-mpmizyp2', '<h3 class="font_5 wixui-rich-text__text">Mixing and Mastering</h3>');
+    setRichHtml('#comp-mpmizyp39', '<p class="font_8 wixui-rich-text__text">Balance, polish and prepare finished tracks with FXs, mixing and mastering workflows.</p>');
+    setRichHtml('#comp-mpny86eb', '<p class="font_8 wixui-rich-text__text">Start with practical production foundations for modern laptop-based music-making.</p>');
+
+    var mentorImg = document.querySelector('#img-comp-mpu7qgfn img');
+    if (mentorImg && mentorImg.dataset.tscMusicProductionPolished !== '1') {
+      mentorImg.src = '/assets/mirror/static.wixstatic.com/media/19f989_72c26b9f755948e59217c0f217c9af16~mv2.jpeg/v1/fill/w_640,h_517,fp_0.50_0.30,q_80,enc_avif,quality_auto/ab6761610000e5ebf205ff385c2272184580fd45.jpeg';
+      mentorImg.alt = 'Luca Petracca';
+      mentorImg.dataset.tscMusicProductionPolished = '1';
+    }
+
+    var seenMixing = false;
+    document.querySelectorAll('.AccordionContainer1266025101__accordionHeader').forEach(function(button) {
+      var label = (button.textContent || '').replace(/\s+/g, ' ').trim();
+      if (label !== '10 : Mixing and Mastering') return;
+      if (!seenMixing) {
+        seenMixing = true;
+        return;
+      }
+      button.style.setProperty('display', 'none', 'important');
+      button.setAttribute('aria-hidden', 'true');
+      var content = button.nextElementSibling;
+      if (content) {
+        content.style.setProperty('display', 'none', 'important');
+        content.setAttribute('aria-hidden', 'true');
+      }
+    });
   }
 
   function removeMentorSessions() {
     var path = normalizedPath();
     if (path !== '/academy' && path !== '/learn-with-tsc') return;
-    ['#comp-mpl387ie', '#comp-mrufx9ud', '#comp-mpjxxeqt', '#comp-mrufx9rd2'].forEach(function(selector) {
+    if (document.documentElement.dataset.tscMentorCleaned === '1') return;
+    document.documentElement.dataset.tscMentorCleaned = '1';
+    // Prefer CSS hide over DOM remove — DOM remove fights Wix React and can hang the page.
+    ['#comp-mpl387ie', '#comp-mrufx9ud'].forEach(function(selector) {
       var section = document.querySelector(selector);
-      if (section) section.remove();
-    });
-    document.querySelectorAll('main section, section[data-testid="section-container"]').forEach(function(section) {
-      var text = (section.textContent || '').replace(/\s+/g, ' ');
-      if ((/Mentor Sessions/i.test(text) && /Upcoming courses with industry experts/i.test(text)) || (/Luca Petracca/i.test(text) && /Geet Sagar/i.test(text) && /COMING SOON/i.test(text))) {
-        section.remove();
-      }
+      if (!section) return;
+      section.style.setProperty('display', 'none', 'important');
+      section.setAttribute('aria-hidden', 'true');
     });
   }
 
@@ -545,6 +896,7 @@
   }
 
   function buildMobileCourseExperience() {
+    if (!window.matchMedia || !window.matchMedia('(max-width: 1024px)').matches) return;
     var path = normalizedPath();
     var config = mobileCoursePages[path] || mobileCoursePages[path.replace('/pages', '').replace('.html', '')];
     var main = document.querySelector('main');
@@ -568,6 +920,14 @@
       '<figure class="tsc-mobile-course-media">',
         '<img src="' + ui.escapeHtml(localImageSrc(config.imageSelector, config.fallbackImage)) + '" alt="">',
       '</figure>',
+      '<div class="tsc-mobile-course-card tsc-mobile-course-mentor-card">',
+        '<p class="tsc-mobile-eyebrow">Course Mentor</p>',
+        '<h2>' + ui.escapeHtml(config.mentorName || config.mentor.replace(/^Mentor:\\s*/i, '')) + '</h2>',
+        '<p>' + ui.escapeHtml(config.mentorBio || config.details) + '</p>',
+        '<div class="tsc-mobile-course-badges">' + (config.mentorBadges || []).map(function(badge) {
+          return '<span>' + ui.escapeHtml(badge) + '</span>';
+        }).join('') + '</div>',
+      '</div>',
       '<div class="tsc-mobile-course-card tsc-mobile-course-card-dark">',
         '<p>' + ui.escapeHtml(config.details) + '</p>',
         '<a href="' + ui.escapeHtml(config.href) + '">Book A Call</a>',
@@ -690,7 +1050,7 @@
                 '<small>' + ui.escapeHtml(card.num) + '</small>',
                 '<strong>' + ui.escapeHtml(card.title) + '</strong>',
               '</span>',
-              '<img src="' + ui.escapeHtml(localImageSrc(card.imageSelector, card.fallbackImage)) + '" alt="">',
+              '<img src="' + ui.escapeHtml(upscaleMirrorImage(localImageSrc(card.imageSelector, card.fallbackImage), 960)) + '" alt="" loading="lazy" decoding="async">',
               '<span class="tsc-mobile-work-body">',
                 '<p>' + ui.escapeHtml(card.eyebrow) + '</p>',
                 '<em>' + ui.escapeHtml(card.stat) + '</em>',
@@ -974,7 +1334,9 @@
   function scrapeFooterSocialHref(footer, needle, fallback) {
     if (!footer) return fallback;
     var link = footer.querySelector('a[href*="' + needle + '"]');
-    return (link && link.getAttribute('href')) || fallback;
+    var href = (link && link.getAttribute('href')) || fallback;
+    if (/^(?:https?:|mailto:|tel:)/i.test(href)) return href;
+    return fallback;
   }
 
   function buildMobileFooter() {
@@ -1030,7 +1392,7 @@
         '<summary>Explore</summary>',
         '<div class="tsc-mobile-footer-links">',
           '<a href="/artist-path">Artist Path</a>',
-          '<a href="/learn-with-tsc">Learn With TSC</a>',
+          '<a href="/academy">Learn With TSC</a>',
           '<a href="/resources">Resources</a>',
         '</div>',
       '</details>',
@@ -1228,6 +1590,8 @@
 
   function repairArtistsRosterLinks() {
     if (normalizedPath() !== '/artists') return;
+    var mohitShell = document.getElementById('comp-mqutenq5');
+    if (mohitShell) mohitShell.style.setProperty('display', 'none', 'important');
     Object.keys(ARTIST_ROSTER_HREFS).forEach(function(btnId) {
       var href = ARTIST_ROSTER_HREFS[btnId];
       var host = document.getElementById(btnId);
@@ -1300,7 +1664,21 @@
     centerArtistsHeroButtons();
     scheduleResponsiveAlignment();
     updateResourcesBlogSection();
-    removeMentorSessions();
+    injectBlogArticleDirectory();
+    repairResourcesCourseLinks();
+    // After Wix hydrate: hide mentor promo + ensure Luca card (once).
+    function afterHydrate() {
+      removeMentorSessions();
+      ensureLucaCourseCardLinks();
+      polishMobileAcademyCourseCards();
+      polishMobileMusicProductionPage();
+      injectBlogArticleDirectory();
+      repairResourcesCourseLinks();
+    }
+    window.setTimeout(afterHydrate, 800);
+    window.addEventListener('load', function() {
+      window.setTimeout(afterHydrate, 600);
+    });
     linkHomeEcosystemCta();
     injectHomeWhatWeBuildCardCtas();
   }
@@ -1334,6 +1712,8 @@
         syncResponsiveHeaderMenuCta();
         alignResponsiveElements();
         injectHomeWhatWeBuildCardCtas();
+        injectBlogArticleDirectory();
+        repairResourcesCourseLinks();
       }, 80);
     });
     observer.observe(document.documentElement, { childList: true, subtree: true });

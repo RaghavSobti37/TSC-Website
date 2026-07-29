@@ -65,7 +65,7 @@
     border: 0 !important;
   }
 
-  /* Hide cloned Wix footer mesh on mobile; keep only the intentional mobile shell. */
+  /* Hide cloned Wix footer mesh only after TSC mobile footer mounts. */
   footer,
   #SITE_FOOTER {
     height: auto !important;
@@ -73,10 +73,14 @@
     overflow: visible !important;
   }
 
-  footer > :not(.tsc-mobile-footer),
-  #SITE_FOOTER > :not(.tsc-mobile-footer),
   .tsc-desktop-footer {
     display: none !important;
+  }
+
+  /* Until JS mounts .tsc-mobile-footer, keep Wix footer visible (newsletter fallback). */
+  body:not(.tsc-has-mobile-footer) footer > :not(.tsc-mobile-footer),
+  body:not(.tsc-has-mobile-footer) #SITE_FOOTER > :not(.tsc-mobile-footer) {
+    display: revert !important;
   }
 
   footer:not(:has(.tsc-mobile-footer)),
@@ -95,11 +99,6 @@
 
   body.tsc-has-mobile-footer footer > *:not(.tsc-mobile-footer),
   body.tsc-has-mobile-footer #SITE_FOOTER > *:not(.tsc-mobile-footer) {
-    display: none !important;
-  }
-
-  body.tsc-has-mobile-footer footer:not(:has(.tsc-mobile-footer)),
-  body.tsc-has-mobile-footer #SITE_FOOTER:not(:has(.tsc-mobile-footer)) {
     display: none !important;
   }
 
@@ -285,7 +284,7 @@
     text-decoration: none;
     font-size: 14px;
     line-height: 1.3;
-    min-height: 40px;
+    min-height: 44px;
     display: flex;
     align-items: center;
   }
@@ -365,9 +364,9 @@
   }
 
   .tsc-mobile-footer-icon {
-    width: 40px;
-    height: 40px;
-    min-width: 40px;
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
     border: 1.5px solid #ffecd1;
     border-radius: 50%;
     display: inline-flex;
@@ -382,6 +381,13 @@
     width: 18px;
     height: 18px;
     display: block;
+  }
+
+  .tsc-mobile-menu nav a {
+    box-sizing: border-box;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
   }
 
   .tsc-mobile-footer-bottom {

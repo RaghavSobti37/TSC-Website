@@ -1,0 +1,466 @@
+:root {
+  --affiliate-teal: #005a5a;
+  --affiliate-teal-deep: #003f3d;
+  --affiliate-cream: #ffecd1;
+  --affiliate-terracotta: #b74b02;
+  --affiliate-ink: #321615;
+  --affiliate-hairline: rgba(0, 90, 90, 0.2);
+  --affiliate-display: Georgia, "Times New Roman", serif;
+  --affiliate-sans: Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+body.affiliate-page {
+  background: var(--affiliate-cream);
+  color: var(--affiliate-teal-deep);
+  font-family: var(--affiliate-sans);
+}
+
+.affiliate-nav {
+  align-items: center;
+  background: var(--affiliate-teal);
+  border-bottom: 1px solid rgba(255, 236, 209, 0.42);
+  display: flex;
+  gap: 28px;
+  min-height: 78px;
+  padding: 0 clamp(22px, 5vw, 72px);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.affiliate-brand {
+  align-items: center;
+  display: inline-flex;
+  flex: 0 0 auto;
+  min-height: 56px;
+}
+
+.affiliate-brand img {
+  display: block;
+  height: auto;
+  max-height: 58px;
+  object-fit: contain;
+  width: clamp(210px, 18vw, 330px);
+}
+
+.affiliate-nav-links {
+  align-items: center;
+  display: flex;
+  flex: 1 1 auto;
+  gap: clamp(16px, 2.4vw, 32px);
+  justify-content: flex-end;
+}
+
+.affiliate-nav a {
+  color: var(--affiliate-cream);
+  font-size: 15px;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.affiliate-nav a:hover {
+  color: #ffffff;
+}
+
+.affiliate-main {
+  background: var(--affiliate-cream);
+}
+
+.affiliate-hero {
+  background:
+    linear-gradient(180deg, rgba(0, 90, 90, 0.18), rgba(255, 236, 209, 0) 78%),
+    var(--affiliate-teal);
+  min-height: calc(100svh - 78px);
+  overflow: hidden;
+  padding: clamp(52px, 6vw, 86px) clamp(24px, 8vw, 118px) clamp(58px, 8vw, 96px);
+  position: relative;
+}
+
+.affiliate-hero-bg {
+  background-image:
+    linear-gradient(90deg, rgba(0, 90, 90, 0.95) 0%, rgba(0, 90, 90, 0.8) 42%, rgba(0, 90, 90, 0.28) 72%, rgba(0, 90, 90, 0.56) 100%),
+    url("/assets/mirror/static.wixstatic.com/media/19f989_af2aef4555f948bf86d9b8ec43f9f4d1~mv2.png/v1/fill/w_360,h_203,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/19f989_af2aef4555f948bf86d9b8ec43f9f4d1~mv2.png");
+  background-position: center;
+  background-repeat: repeat;
+  background-size: auto, 260px auto;
+  inset: 0;
+  opacity: 0.72;
+  position: absolute;
+}
+
+.affiliate-hero::after {
+  background: linear-gradient(180deg, rgba(255, 236, 209, 0) 0%, rgba(255, 236, 209, 0.84) 72%, var(--affiliate-cream) 100%);
+  bottom: 0;
+  content: "";
+  height: 33%;
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  z-index: 3;
+}
+
+.affiliate-hero-copy {
+  color: var(--affiliate-cream);
+  max-width: 620px;
+  position: relative;
+  z-index: 5;
+}
+
+.affiliate-eyebrow,
+.affiliate-section-heading p,
+.affiliate-band p {
+  color: var(--affiliate-cream);
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 1.25;
+  margin: 0 0 22px;
+  text-transform: uppercase;
+}
+
+.affiliate-hero h1 {
+  color: var(--affiliate-cream);
+  font-family: var(--affiliate-display);
+  font-size: clamp(58px, 7.2vw, 100px);
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 1.02;
+  margin: 0;
+  max-width: 9ch;
+}
+
+.affiliate-dek {
+  color: var(--affiliate-cream);
+  font-size: clamp(19px, 1.7vw, 25px);
+  font-weight: 700;
+  line-height: 1.55;
+  margin: 28px 0 38px;
+  max-width: 610px;
+}
+
+.affiliate-primary-cta,
+.affiliate-band a {
+  align-items: center;
+  background: var(--affiliate-teal);
+  border: 2px solid var(--affiliate-cream);
+  border-radius: 8px;
+  color: var(--affiliate-cream);
+  display: inline-flex;
+  font-size: 22px;
+  font-weight: 800;
+  justify-content: center;
+  min-height: 72px;
+  min-width: 266px;
+  padding: 0 34px;
+  text-decoration: none;
+}
+
+.affiliate-primary-cta:hover,
+.affiliate-band a:hover {
+  background: var(--affiliate-cream);
+  color: var(--affiliate-teal);
+}
+
+.affiliate-hero-image {
+  bottom: -8px;
+  margin: 0;
+  max-width: min(53vw, 790px);
+  pointer-events: none;
+  position: absolute;
+  right: clamp(12px, 3.6vw, 64px);
+  top: 28px;
+  width: 52vw;
+  z-index: 4;
+}
+
+.affiliate-hero-image::before {
+  background: radial-gradient(circle at 42% 45%, rgba(255, 236, 209, 0.22), rgba(0, 90, 90, 0) 62%);
+  content: "";
+  inset: -8% -10% -12%;
+  position: absolute;
+  z-index: -1;
+}
+
+.affiliate-hero-image img {
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  object-position: 42% 42%;
+  opacity: 0.88;
+  width: 100%;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 18%, #000 76%, transparent 100%), linear-gradient(180deg, #000 0, #000 72%, transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0, #000 18%, #000 76%, transparent 100%), linear-gradient(180deg, #000 0, #000 72%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
+}
+
+.affiliate-intro {
+  padding: clamp(54px, 7vw, 88px) clamp(22px, 5vw, 72px);
+}
+
+.affiliate-section-heading {
+  margin: 0 auto 30px;
+  max-width: 1120px;
+}
+
+.affiliate-section-heading p {
+  color: var(--affiliate-terracotta);
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.affiliate-section-heading h2,
+.affiliate-band h2 {
+  color: var(--affiliate-teal);
+  font-family: var(--affiliate-display);
+  font-size: clamp(34px, 5.4vw, 72px);
+  line-height: 1.02;
+  margin: 0;
+  max-width: 760px;
+}
+
+.affiliate-card-grid {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 0 auto;
+  max-width: 1120px;
+}
+
+.affiliate-card {
+  background: #fff8ec;
+  border: 1.5px solid var(--affiliate-hairline);
+  border-radius: 8px;
+  color: var(--affiliate-teal-deep);
+  min-height: 260px;
+  padding: 24px 22px 26px;
+}
+
+.affiliate-icon {
+  align-items: center;
+  background: var(--affiliate-teal);
+  border-radius: 50%;
+  color: var(--affiliate-cream);
+  display: inline-flex;
+  height: 52px;
+  justify-content: center;
+  margin-bottom: 22px;
+  width: 52px;
+}
+
+.affiliate-icon svg {
+  fill: none;
+  height: 30px;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+  width: 30px;
+}
+
+.affiliate-card h3 {
+  color: var(--affiliate-teal);
+  font-family: var(--affiliate-display);
+  font-size: 28px;
+  line-height: 1.08;
+  margin: 0 0 14px;
+}
+
+.affiliate-card p {
+  font-size: 16px;
+  line-height: 1.58;
+  margin: 0;
+}
+
+.affiliate-band {
+  align-items: center;
+  background:
+    linear-gradient(90deg, rgba(183, 75, 2, 0.95), rgba(0, 90, 90, 0.94)),
+    url("/assets/mirror/static.wixstatic.com/media/19f989_af2aef4555f948bf86d9b8ec43f9f4d1~mv2.png/v1/fill/w_360,h_203,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/19f989_af2aef4555f948bf86d9b8ec43f9f4d1~mv2.png");
+  display: flex;
+  gap: 28px;
+  justify-content: space-between;
+  margin: 0 clamp(22px, 5vw, 72px) clamp(54px, 7vw, 86px);
+  padding: clamp(34px, 5vw, 58px);
+}
+
+.affiliate-band p {
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.affiliate-band h2 {
+  color: var(--affiliate-cream);
+  max-width: 760px;
+}
+
+.affiliate-footer {
+  background:
+    linear-gradient(90deg, rgba(183, 75, 2, 0.96), rgba(0, 90, 90, 0.96)),
+    url("/assets/mirror/static.wixstatic.com/media/19f989_af2aef4555f948bf86d9b8ec43f9f4d1~mv2.png/v1/fill/w_360,h_203,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/19f989_af2aef4555f948bf86d9b8ec43f9f4d1~mv2.png");
+  color: var(--affiliate-cream);
+  display: grid;
+  gap: clamp(28px, 5vw, 74px);
+  grid-template-columns: minmax(260px, 1.3fr) repeat(2, minmax(180px, 0.7fr));
+  padding: clamp(42px, 6vw, 70px) clamp(24px, 6vw, 88px);
+}
+
+.affiliate-footer-brand img {
+  display: block;
+  max-width: 280px;
+  width: 100%;
+}
+
+.affiliate-footer p {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.55;
+  margin: 24px 0 0;
+  max-width: 390px;
+}
+
+.affiliate-footer h2 {
+  color: var(--affiliate-cream);
+  font-family: var(--affiliate-display);
+  font-size: 28px;
+  margin: 0 0 18px;
+}
+
+.affiliate-footer nav {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.affiliate-footer a {
+  color: var(--affiliate-cream);
+  font-size: 16px;
+  font-weight: 800;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+
+@media (max-width: 1024px) {
+  .affiliate-nav {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+    min-height: 0;
+    padding: 16px 20px 18px;
+    position: relative;
+  }
+
+  .affiliate-brand img {
+    max-height: 48px;
+    width: 210px;
+  }
+
+  .affiliate-nav-links {
+    gap: 14px;
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding-bottom: 2px;
+    width: 100%;
+  }
+
+  .affiliate-nav-links a {
+    flex: 0 0 auto;
+    font-size: 14px;
+    min-height: 32px;
+  }
+
+  .affiliate-hero {
+    min-height: 0;
+    padding: 42px 20px 0;
+  }
+
+  .affiliate-hero-copy {
+    max-width: 100%;
+  }
+
+  .affiliate-eyebrow {
+    font-size: 14px;
+    margin-bottom: 14px;
+  }
+
+  .affiliate-hero h1 {
+    font-size: clamp(46px, 15vw, 68px);
+    max-width: 8.5ch;
+  }
+
+  .affiliate-dek {
+    font-size: 17px;
+    margin: 24px 0 30px;
+  }
+
+  .affiliate-primary-cta,
+  .affiliate-band a {
+    font-size: 18px;
+    min-height: 58px;
+    min-width: 0;
+    width: 100%;
+  }
+
+  .affiliate-hero-image {
+    height: 360px;
+    margin: 30px -20px 0;
+    max-width: none;
+    position: relative;
+    right: auto;
+    top: auto;
+    width: calc(100% + 40px);
+  }
+
+  .affiliate-hero-image img {
+    object-position: 50% 34%;
+  }
+
+  .affiliate-card-grid,
+  .affiliate-footer {
+    grid-template-columns: 1fr;
+  }
+
+  .affiliate-card {
+    min-height: 0;
+  }
+
+  .affiliate-band {
+    align-items: stretch;
+    flex-direction: column;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
+
+@media (max-width: 560px) {
+  .affiliate-hero h1 {
+    font-size: clamp(42px, 14vw, 58px);
+  }
+
+  .affiliate-hero-image {
+    height: 300px;
+  }
+
+  .affiliate-intro {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .affiliate-section-heading h2,
+  .affiliate-band h2 {
+    font-size: 34px;
+  }
+}

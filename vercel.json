@@ -72,8 +72,12 @@
       "destination": "/pages/from-bhajan-to-clubbing.html"
     },
     {
-      "source": "/academy/learn-with-tsc",
-      "destination": "/pages/learn-with-tsc.html"
+      "source": "/how-i-curate-music-with-independent-artists",
+      "destination": "/pages/how-i-curate-music-with-independent-artists.html"
+    },
+    {
+      "source": "/resources/how-i-curate-music-with-independent-artists",
+      "destination": "/pages/how-i-curate-music-with-independent-artists.html"
     },
     {
       "source": "/artists/harshad-duhita",
@@ -136,10 +140,6 @@
       "destination": "/pages/harshad-duhita.html"
     },
     {
-      "source": "/learn-with-tsc",
-      "destination": "/pages/learn-with-tsc.html"
-    },
-    {
       "source": "/artist-query",
       "destination": "/pages/artist-query.html"
     },
@@ -182,6 +182,14 @@
     {
       "source": "/academy",
       "destination": "/pages/academy.html"
+    },
+    {
+      "source": "/affiliate",
+      "destination": "/pages/affiliate.html"
+    },
+    {
+      "source": "/academy/affiliate",
+      "destination": "/pages/affiliate.html"
     },
     {
       "source": "/artists",
@@ -704,7 +712,22 @@
     },
     {
       "source": "/blank-3-1",
-      "destination": "/learn-with-tsc",
+      "destination": "/academy",
+      "permanent": true
+    },
+    {
+      "source": "/learn-with-tsc",
+      "destination": "/academy",
+      "permanent": true
+    },
+    {
+      "source": "/academy/learn-with-tsc",
+      "destination": "/academy",
+      "permanent": true
+    },
+    {
+      "source": "/pages/learn-with-tsc.html",
+      "destination": "/academy",
       "permanent": true
     },
     {

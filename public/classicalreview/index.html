@@ -1,63 +1,6 @@
 <!doctype html>
 <html lang="en">
 <head>
-<script data-tsc-mobile-boot>/* DESKTOP LOCK: early mobile CSS — no desktop FOUC */
-(function () {
-  var mq = window.matchMedia && window.matchMedia('(max-width: 1024px)');
-  if (!mq || !mq.matches) return;
-  var html = document.documentElement;
-  html.classList.add('tsc-boot-mobile');
-  function link(href) {
-    if (document.querySelector('link[data-tsc-boot][href="' + href + '"]')) return;
-    var l = document.createElement('link');
-    l.rel = 'stylesheet';
-    l.href = href;
-    l.media = '(max-width: 1024px)';
-    l.setAttribute('data-tsc-boot', '1');
-    (document.head || document.documentElement).appendChild(l);
-  }
-  link('/css/mobile/boot.css?v=testi-center-1');
-  link('/css/tsc-mobile-system.css?v=testi-center-1');
-  var p = (location.pathname || '/').replace(/\/$/, '') || '/';
-  if (p.indexOf('/pages/') === 0) p = p.replace('/pages', '').replace(/\.html$/, '') || '/';
-  var seg = p === '/' ? 'home' : p.replace(/^\//, '').split('/')[0];
-  var map = {
-    home: '/css/mobile/home.css?v=testi-center-1',
-    about: '/css/mobile/about.css?v=testi-center-1',
-    work: '/css/mobile/work.css?v=testi-center-1',
-    mba: '/css/mobile/work.css?v=testi-center-1',
-    artists: '/css/mobile/artists.css?v=testi-center-1',
-    'artist-path': '/css/mobile/artists.css?v=testi-center-1',
-    'harshad-duhita': '/css/mobile/artists.css?v=testi-center-1',
-    yugm: '/css/mobile/artists.css?v=testi-center-1',
-    'book-an-artist': '/css/mobile/artists.css?v=testi-center-1',
-    'artist-query': '/css/mobile/artists.css?v=testi-center-1',
-    'collab-query': '/css/mobile/artists.css?v=testi-center-1',
-    'learn-with-tsc': '/css/mobile/learn.css?v=testi-center-1',
-    academy: '/css/mobile/academy.css?v=testi-center-1',
-    'the-heart-of-composition': '/css/mobile/learn.css?v=testi-center-1',
-    'roots-of-hindustani-classical': '/css/mobile/learn.css?v=testi-center-1',
-    'music-production': '/css/mobile/learn.css?v=testi-center-1',
-    'book-a-call': '/css/mobile/learn.css?v=testi-center-1',
-    films: '/css/mobile/films.css?v=testi-center-1',
-    'mahavatar-narsimha': '/css/mobile/films.css?v=testi-center-1',
-    'hanuman-ansh': '/css/mobile/films.css?v=testi-center-1',
-    mahaprbhu: '/css/mobile/films.css?v=testi-center-1',
-    kalki: '/css/mobile/films.css?v=testi-center-1',
-    resources: '/css/mobile/resources.css?v=testi-center-1',
-    'blog-1': '/css/mobile/resources.css?v=testi-center-1',
-    'blog-2': '/css/mobile/resources.css?v=testi-center-1',
-    'blog-3': '/css/mobile/resources.css?v=testi-center-1',
-    'start-making-music': '/css/mobile/resources.css?v=testi-center-1',
-    'online-music-course-worth-it': '/css/mobile/resources.css?v=testi-center-1',
-    'artist-release-playbook': '/css/mobile/resources.css?v=testi-center-1'
-  };
-  if (map[seg]) link(map[seg]);
-  else link('/css/mobile/home.css?v=testi-center-1');
-  /* safety: never leave page invisible */
-  setTimeout(function () { html.classList.add('tsc-mobile-ready'); }, 4000);
-})();
-</script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="refresh" content="0; url=/pages/classicalreview.html">
@@ -65,42 +8,5 @@
   <link rel="icon" href="/assets/brand/academy-favicon-32.png" type="image/png" sizes="32x32">
   <link rel="apple-touch-icon" href="/assets/brand/academy-apple-touch-icon.png" sizes="180x180">
 </head>
-<body><a href="/pages/classicalreview.html">Open /classicalreview</a><script data-tsc-mobile-loader>/* DESKTOP LOCK: mobile-only enhancements, never at >=1025px */
-(function () {
-  (function injectTscWixMotion() {
-    if (document.querySelector('script[data-tsc-wix-motion]')) return;
-    var m = document.createElement('script');
-    m.src = '/js/tsc-wix-motion.js?v=testi-center-1';
-    m.defer = true;
-    m.setAttribute('data-tsc-wix-motion', '1');
-    (document.head || document.documentElement).appendChild(m);
-  })();
-  var mq = window.matchMedia && window.matchMedia('(max-width: 1024px)');
-  if (!mq) return;
-  var up = window.matchMedia('(min-width: 1025px)');
-  var onUp = function (e) { if (e.matches) location.reload(); };
-  if (up.addEventListener) up.addEventListener('change', onUp); else if (up.addListener) up.addListener(onUp);
-  if (!mq.matches) return;
-  var markReady = function () {
-    document.documentElement.classList.add('tsc-mobile-ready');
-  };
-  var inject = function () {
-    if (document.querySelector('script[data-tsc-components-boot]')) return;
-    var s = document.createElement('script');
-    s.src = '/js/tsc-components.js';
-    s.defer = true;
-    s.setAttribute('data-tsc-components-boot', '1');
-    s.onload = markReady;
-    s.onerror = markReady;
-    document.head.appendChild(s);
-  };
-  /* Inject ASAP after DOM — no artificial delay (local FOUC felt like hung load) */
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', inject, { once: true });
-  } else {
-    inject();
-  }
-})();
-</script>
-</body>
+<body><a href="/pages/classicalreview.html">Open /classicalreview</a></body>
 </html>

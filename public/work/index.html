@@ -16,46 +16,57 @@
     l.setAttribute('data-tsc-boot', '1');
     (document.head || document.documentElement).appendChild(l);
   }
-  link('/css/mobile/boot.css?v=testi-center-1');
-  link('/css/tsc-mobile-system.css?v=testi-center-1');
+  link('/css/mobile/boot.css?v=academy-one-2');
+  link('/css/tsc-mobile-system.css?v=academy-one-2');
   var p = (location.pathname || '/').replace(/\/$/, '') || '/';
   if (p.indexOf('/pages/') === 0) p = p.replace('/pages', '').replace(/\.html$/, '') || '/';
   var seg = p === '/' ? 'home' : p.replace(/^\//, '').split('/')[0];
   var map = {
-    home: '/css/mobile/home.css?v=testi-center-1',
-    about: '/css/mobile/about.css?v=testi-center-1',
-    work: '/css/mobile/work.css?v=testi-center-1',
-    mba: '/css/mobile/work.css?v=testi-center-1',
-    artists: '/css/mobile/artists.css?v=testi-center-1',
-    'artist-path': '/css/mobile/artists.css?v=testi-center-1',
-    'harshad-duhita': '/css/mobile/artists.css?v=testi-center-1',
-    yugm: '/css/mobile/artists.css?v=testi-center-1',
-    'book-an-artist': '/css/mobile/artists.css?v=testi-center-1',
-    'artist-query': '/css/mobile/artists.css?v=testi-center-1',
-    'collab-query': '/css/mobile/artists.css?v=testi-center-1',
-    'learn-with-tsc': '/css/mobile/learn.css?v=testi-center-1',
-    academy: '/css/mobile/academy.css?v=testi-center-1',
-    'the-heart-of-composition': '/css/mobile/learn.css?v=testi-center-1',
-    'roots-of-hindustani-classical': '/css/mobile/learn.css?v=testi-center-1',
-    'music-production': '/css/mobile/learn.css?v=testi-center-1',
-    'book-a-call': '/css/mobile/learn.css?v=testi-center-1',
-    films: '/css/mobile/films.css?v=testi-center-1',
-    'mahavatar-narsimha': '/css/mobile/films.css?v=testi-center-1',
-    'hanuman-ansh': '/css/mobile/films.css?v=testi-center-1',
-    mahaprbhu: '/css/mobile/films.css?v=testi-center-1',
-    kalki: '/css/mobile/films.css?v=testi-center-1',
-    resources: '/css/mobile/resources.css?v=testi-center-1',
-    'blog-1': '/css/mobile/resources.css?v=testi-center-1',
-    'blog-2': '/css/mobile/resources.css?v=testi-center-1',
-    'blog-3': '/css/mobile/resources.css?v=testi-center-1',
-    'start-making-music': '/css/mobile/resources.css?v=testi-center-1',
-    'online-music-course-worth-it': '/css/mobile/resources.css?v=testi-center-1',
-    'artist-release-playbook': '/css/mobile/resources.css?v=testi-center-1'
+    home: '/css/mobile/home.css?v=mission-quote-even-1',
+    about: '/css/mobile/about.css?v=academy-one-2',
+    work: '/css/mobile/work.css?v=academy-one-2',
+    mba: '/css/mobile/impact-report.css?v=academy-one-2',
+    'mba-impact': '/css/mobile/impact-report.css?v=academy-one-2',
+    'havells-myousic': '/css/mobile/impact-report.css?v=academy-one-2',
+    'insta-music-league': '/css/mobile/work.css?v=academy-one-2',
+    'young-gunns': '/css/mobile/work.css?v=academy-one-2',
+    artists: '/css/mobile/artists.css?v=academy-one-2',
+    'artist-path': '/css/mobile/artists.css?v=academy-one-2',
+    'harshad-duhita': '/css/mobile/artists.css?v=academy-one-2',
+    yugm: '/css/mobile/artists.css?v=academy-one-2',
+    'book-an-artist': '/css/mobile/artists.css?v=academy-one-2',
+    'artist-query': '/css/mobile/artists.css?v=academy-one-2',
+    'collab-query': '/css/mobile/artists.css?v=academy-one-2',
+    'learn-with-tsc': '/css/mobile/learn.css?v=academy-one-2',
+    academy: '/css/mobile/academy.css?v=academy-one-2',
+    affiliate: '/css/mobile/academy.css?v=academy-one-2',
+    'the-heart-of-composition': '/css/mobile/learn.css?v=academy-one-2',
+    'roots-of-hindustani-classical': '/css/mobile/learn.css?v=academy-one-2',
+    'music-production': '/css/mobile/learn.css?v=academy-one-2',
+    'book-a-call': '/css/mobile/learn.css?v=academy-one-2',
+    films: '/css/mobile/films.css?v=academy-one-2',
+    'mahavatar-narsimha': '/css/mobile/films.css?v=academy-one-2',
+    'hanuman-ansh': '/css/mobile/films.css?v=academy-one-2',
+    mahaprbhu: '/css/mobile/films.css?v=academy-one-2',
+    kalki: '/css/mobile/films.css?v=academy-one-2',
+    resources: '/css/mobile/resources.css?v=academy-one-2',
+    'blog-1': '/css/mobile/resources.css?v=academy-one-2',
+    'blog-2': '/css/mobile/resources.css?v=academy-one-2',
+    'blog-3': '/css/mobile/resources.css?v=academy-one-2',
+    'start-making-music': '/css/mobile/resources.css?v=academy-one-2',
+    'online-music-course-worth-it': '/css/mobile/resources.css?v=academy-one-2',
+    'artist-release-playbook': '/css/mobile/resources.css?v=academy-one-2',
+    'from-bhajan-to-clubbing': '/css/mobile/resources.css?v=academy-one-2',
+    'you-released-a-song-now-what': '/css/mobile/resources.css?v=academy-one-2',
+    'how-i-curate-music-with-independent-artists': '/css/mobile/resources.css?v=academy-one-2'
   };
   if (map[seg]) link(map[seg]);
-  else link('/css/mobile/home.css?v=testi-center-1');
+  else link('/css/mobile/home.css?v=academy-one-2');
   /* safety: never leave page invisible */
-  setTimeout(function () { html.classList.add('tsc-mobile-ready'); }, 4000);
+  setTimeout(function () {
+    html.classList.add('tsc-mobile-ready');
+    html.classList.add('tsc-skel-revealed');
+  }, 1500);
 })();
 </script>
   <meta charset="utf-8">
@@ -74,7 +85,7 @@
   (function injectTscWixMotion() {
     if (document.querySelector('script[data-tsc-wix-motion]')) return;
     var m = document.createElement('script');
-    m.src = '/js/tsc-wix-motion.js?v=testi-center-1';
+    m.src = '/js/tsc-wix-motion.js?v=academy-one-2';
     m.defer = true;
     m.setAttribute('data-tsc-wix-motion', '1');
     (document.head || document.documentElement).appendChild(m);

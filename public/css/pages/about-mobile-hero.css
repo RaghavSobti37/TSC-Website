@@ -10,7 +10,7 @@
     height: auto !important;
     min-height: 0 !important;
     max-height: none !important;
-    overflow: visible !important;
+    overflow: hidden !important;
   }
 
   html body.responsive[data-page="about"] #comp-mp2vlkbh2 .comp-mp2vlkbh2-container,
@@ -27,6 +27,36 @@
     padding: 36px 24px 44px !important;
     box-sizing: border-box !important;
     gap: 10px !important;
+  }
+
+  html body.responsive[data-page="about"] #comp-mp2vlkbh2 #bgMedia_comp-mp2vlkbh2,
+  body.responsive #comp-mp2vlkbh2 #bgMedia_comp-mp2vlkbh2 {
+    inset: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    overflow: hidden !important;
+  }
+
+  html body.responsive[data-page="about"] #comp-mp2vlkbh2 wix-media-canvas,
+  html body.responsive[data-page="about"] #comp-mp2vlkbh2 wow-image,
+  html body.responsive[data-page="about"] #comp-mp2vlkbh2 #img_comp-mp2vlkbh2,
+  html body.responsive[data-page="about"] #comp-mp2vlkbh2 #img_comp-mp2vlkbh2 img,
+  html body.responsive[data-page="about"] #comp-mp2vlkbh2 canvas.webglcanvas,
+  body.responsive #comp-mp2vlkbh2 wix-media-canvas,
+  body.responsive #comp-mp2vlkbh2 wow-image,
+  body.responsive #comp-mp2vlkbh2 #img_comp-mp2vlkbh2,
+  body.responsive #comp-mp2vlkbh2 #img_comp-mp2vlkbh2 img,
+  body.responsive #comp-mp2vlkbh2 canvas.webglcanvas {
+    position: absolute !important;
+    left: 50% !important;
+    top: 50% !important;
+    width: min(38vw, 132px) !important;
+    max-width: min(38vw, 132px) !important;
+    height: auto !important;
+    max-height: min(28vh, 160px) !important;
+    transform: translate(-50%, -50%) !important;
+    object-fit: contain !important;
   }
 
   html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1ttkgk.comp-mr1ttkgk,

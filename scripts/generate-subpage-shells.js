@@ -26,6 +26,7 @@ const subpages = [
   { title: 'Is an Online Music Course Worth It for Beginners?', route: '/online-music-course-worth-it', aliases: ['/blog-2', '/blank-13-1', '/work3-1', '/resources/blog-2', '/resources/online-music-course-worth-it'] },
   { title: 'Indian Culture Mainstream Forms', route: '/from-bhajan-to-clubbing', aliases: ['/resources/from-bhajan-to-clubbing'] },
   { title: 'You Released a Song. Now What?', route: '/you-released-a-song-now-what', aliases: ['/resources/you-released-a-song-now-what'] },
+  { title: 'How I Curate Music With Independent Artists', route: '/how-i-curate-music-with-independent-artists', aliases: ['/resources/how-i-curate-music-with-independent-artists'] },
   { title: 'Collab Q', route: '/collab-query', aliases: ['/blank-6', '/forms/collab-query'] },
   { title: 'Kalki', route: '/kalki', aliases: ['/blank-12-1-1-1', '/work2-1-1-1', '/films/kalki'] },
   { title: 'Book An Artist', route: '/book-an-artist', aliases: ['/blank-8-1', '/about-8-1', '/query', '/forms/book-an-artist'] },

@@ -21,78 +21,29 @@ window.__pageRevealPromise && window.__pageRevealPromise.then(function() {
 
 // academy-mobile-redesign-start
 (function() {
-  function injectAcademyMobile() {
-    if (document.querySelector('.tsc-academy-mobile-redesign')) return;
-    var header = document.getElementById('comp-mrsu5g8j');
-    if (!header) return;
-    header.insertAdjacentHTML('afterend', [
-      '<main class="tsc-academy-mobile-redesign" aria-label="TSC Academy mobile layout">',
-      '  <section class="tsc-am-hero">',
-      '    <div class="tsc-am-hero__copy">',
-      '      <p>WELCOME TO TSC</p>',
-      '      <h1>Unfolding<br>Artist Force</h1>',
-      '      <span>Learning, guidance and incubation for artists ready to grow.</span>',
-      '      <div class="tsc-am-actions"><a href="#tsc-mobile-courses">Explore Courses</a><a class="tsc-am-call" href="/book-a-call" aria-label="Book a call">Call</a></div>',
-      '    </div>',
-      '  </section>',
-      '  <section class="tsc-am-intro">',
-      '    <p class="tsc-am-kicker">ARE YOU READY?</p>',
-      '    <h2>Every artist has a story waiting to unfold.</h2>',
-      '    <p>TSC Academy is a learning ecosystem led by industry professionals. We help artists grow with the right learning, guidance, and opportunities.</p>',
-      '    <div class="tsc-am-feature-grid">',
-      '      <article><span>01</span><h3>Courses for Your Journey</h3><p>Learn through carefully curated learning paths.</p></article>',
-      '      <article><span>02</span><h3>Learn from Industry Mentors</h3><p>Learn from leading professionals with real industry experience.</p></article>',
-      '      <article><span>03</span><h3>Audition & Practice Area</h3><p>Build your skills and confidence.</p></article>',
-      '      <article><span>04</span><h3>Scholarships for Artists</h3><p>We reward potential and passion.</p></article>',
-      '      <article><span>05</span><h3>Unconditional Support</h3><p>We understand your journey and support you at every step.</p></article>',
-      '      <article><span>06</span><h3>Serving the Community</h3><p>Built for artists, by artists.</p></article>',
-      '    </div>',
-      '  </section>',
-      '  <section class="tsc-am-courses" id="tsc-mobile-courses">',
-      '    <h2>Courses</h2>',
-      '    <a class="tsc-am-course" href="/music-production"><img src="/assets/mirror/static.wixstatic.com/media/19f989_9c70d1615227488dbbf761995637df24~mv2.jpg/v1/fill/w_420,h_220,al_c,q_80,enc_avif,quality_auto/2.jpg" alt=""><span><small>MUSIC PRODUCTION</small><strong>Foundations of Music Production</strong><em>Build your sound. From idea to your first track.</em></span><b aria-hidden="true">→</b></a>',
-      '    <a class="tsc-am-course" href="/roots-of-hindustani-classical"><img src="/assets/mirror/static.wixstatic.com/media/19f989_de650661cdd649e8b08d1c365e9ab667~mv2.jpg/v1/crop/x_0,y_231,w_3936,h_1981/fill/w_420,h_220,al_c,q_80,enc_avif,quality_auto/BLU01769.jpg" alt=""><span><small>VOCALS</small><strong>Voice Culture</strong><em>Strengthen your voice with technique and expression.</em></span><b aria-hidden="true">→</b></a>',
-      '  </section>',
-      '  <section class="tsc-am-stories">',
-      '    <h2>Artist Stories</h2>',
-      '    <article><p>Attending a session with Sandesh ji was a turning point. This program helped me craft my imagination and translate it into music.</p><strong>Vamsi Vaidah!</strong><span>TSC Student</span><b aria-hidden="true">→</b></article>',
-      '  </section>',
-      '  <section class="tsc-am-guidance">',
-      '    <h2>Still unsure where to start? Let’s talk.</h2>',
-      '    <p>Personalised guidance to help you begin with clarity and confidence.</p>',
-      '    <img src="/assets/mirror/static.wixstatic.com/media/19f989_de650661cdd649e8b08d1c365e9ab667~mv2.jpg/v1/crop/x_0,y_231,w_3936,h_1981/fill/w_660,h_210,al_c,q_80,enc_avif,quality_auto/BLU01769.jpg" alt="TSC Academy mentors and artists">',
-      '    <div class="tsc-am-mini-grid"><span>Personalised Roadmap</span><span>Curriculum Support</span><span>Mentorship Access</span><span>Scholarship Guidance</span></div>',
-      '    <div class="tsc-am-cta-row"><a href="/book-a-call">Book a Call</a><a href="#tsc-mobile-courses">Find Your Course</a></div>',
-      '  </section>',
-      '</main>'
-    ].join(''));
+  // ponytail: one Academy design = Wix DOM + /css/mobile/academy.css
+  function removeLegacyAcademyMobileRedesign() {
+    document.querySelectorAll('.tsc-academy-mobile-redesign').forEach(function(node) {
+      if (node.parentNode) node.parentNode.removeChild(node);
+    });
   }
-
   function cleanAcademyTicker() {
     document.querySelectorAll('body *').forEach(function(el) {
-      if (!el.children.length && /(?:₹|Rs\.?)\s*3,?999/i.test(el.textContent || '')) {
-        el.textContent = el.textContent.replace(/(?:₹|Rs\.?)\s*3,?999\s*/ig, '');
+      if (!el.children.length && /(?:\u20B9|Rs\.?)\s*3,?999/i.test(el.textContent || '')) {
+        el.textContent = el.textContent.replace(/(?:\u20B9|Rs\.?)\s*3,?999\s*/ig, '');
       }
     });
   }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', function() {
-      injectAcademyMobile();
-      cleanAcademyTicker();
-    });
-  } else {
-    injectAcademyMobile();
+  function boot() {
+    removeLegacyAcademyMobileRedesign();
     cleanAcademyTicker();
   }
-  window.addEventListener('load', function() {
-    injectAcademyMobile();
-    cleanAcademyTicker();
-  });
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
+  else boot();
+  window.addEventListener('load', boot);
   [250, 1000, 2500].forEach(function(delay) {
     window.setTimeout(cleanAcademyTicker, delay);
   });
-  new MutationObserver(cleanAcademyTicker).observe(document.documentElement, { childList: true, subtree: true, characterData: true });
 })();
 // academy-mobile-redesign-end
 
@@ -115,8 +66,10 @@ window.__pageRevealPromise && window.__pageRevealPromise.then(function() {
   "/blank-9": "/the-heart-of-composition",
   "/about-9": "/the-heart-of-composition",
   "/academy/the-heart-of-composition": "/the-heart-of-composition",
-  "/blank-13": "/blog-1",
-  "/resources/blog-1": "/blog-1",
+  "/blog-1": "/start-making-music",
+  "/blank-13": "/start-making-music",
+  "/resources/blog-1": "/start-making-music",
+  "/resources/start-making-music": "/start-making-music",
   "/blank-10-1": "/yugm",
   "/work0-1": "/yugm",
   "/artists/yugm": "/yugm",
@@ -128,14 +81,19 @@ window.__pageRevealPromise && window.__pageRevealPromise.then(function() {
   "/blank-12-1": "/hanuman-ansh",
   "/work2-1": "/hanuman-ansh",
   "/films/hanuman-ansh": "/hanuman-ansh",
-  "/blank-13-1-1": "/blog-3",
-  "/work3-1-1": "/blog-3",
-  "/resources/blog-3": "/blog-3",
-  "/blank-13-1": "/blog-2",
-  "/work3-1": "/blog-2",
-  "/resources/blog-2": "/blog-2",
+  "/blog-3": "/artist-release-playbook",
+  "/blank-13-1-1": "/artist-release-playbook",
+  "/work3-1-1": "/artist-release-playbook",
+  "/resources/blog-3": "/artist-release-playbook",
+  "/resources/artist-release-playbook": "/artist-release-playbook",
+  "/blog-2": "/online-music-course-worth-it",
+  "/blank-13-1": "/online-music-course-worth-it",
+  "/work3-1": "/online-music-course-worth-it",
+  "/resources/blog-2": "/online-music-course-worth-it",
+  "/resources/online-music-course-worth-it": "/online-music-course-worth-it",
   "/resources/from-bhajan-to-clubbing": "/from-bhajan-to-clubbing",
   "/resources/you-released-a-song-now-what": "/you-released-a-song-now-what",
+  "/resources/how-i-curate-music-with-independent-artists": "/how-i-curate-music-with-independent-artists",
   "/blank-6": "/collab-query",
   "/forms/collab-query": "/collab-query",
   "/blank-12-1-1-1": "/kalki",

@@ -1,6 +1,7 @@
 /* Safety for paused Wix enter motions once JS marks them done (all viewports). */
 [data-motion-enter="done"] {
   --motion-blur: 0px !important;
+  animation-play-state: running !important;
   filter: none !important;
 }
 
@@ -11,10 +12,25 @@
   filter: none !important;
 }
 
+/* Always center UNFOLD on the phrase below (Artist Force / word-swap). */
+#comp-mrxkm2y2 {
+  justify-self: center !important;
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+#comp-mrxkm2y2 p,
+#comp-mrxkm2y2 [data-testid="TextEffectsLetterPress-container"],
+#comp-mrxkm2y2 [data-testid="TextEffectsLetterPress-text"] {
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
 /* Mentor Sessions — removed all viewports (Academy + Learn With TSC) */
 #comp-mpl387ie,
 #comp-mrufx9ud,
-#comp-mpjxxeqt,
 #comp-mrufx9rd2 {
   display: none !important;
   height: 0 !important;

@@ -5,6 +5,15 @@
  * Who/Why, Vision boxes, Beliefs cards overlap on phone without this.
  */
 @media (max-width: 1024px) {
+  /* H1 / rich text must not spill past viewport */
+  main [data-testid="richTextElement"],
+  main .N8MGzv,
+  main .font_0 {
+    max-width: 100% !important;
+    overflow-wrap: break-word !important;
+    box-sizing: border-box !important;
+  }
+
   /* Sections must grow when mesh children stack */
   #comp-mr1u2p4j,
   #comp-mr1whees,
@@ -250,6 +259,8 @@
     min-height: 0 !important;
     max-height: none !important;
     margin: 8px 0 0 !important;
+    padding: 0 16px !important;
+    box-sizing: border-box !important;
     flex: 0 0 auto !important;
     grid-template-rows: none !important;
     overflow: visible !important;
@@ -2263,16 +2274,17 @@
 
 /*
  * About hero mobile — vertical desktop composition.
- * Stack: tiny shell → THE SHAKTI COLLECTIVE → tagline.
+ * Desktop stack scaled: shell → THE SHAKTI COLLECTIVE → tagline, centered on a stage.
  * Specificity must beat tsc-responsive (loads after mobile/about.css).
+ * Portrait artboard stays a small center motif — never full-bleed cover.
  */
 @media (max-width: 1024px) {
   html body.responsive[data-page="about"] #comp-mp2vlkbh2,
   html body.responsive[data-page="about"] #comp-mp2vlkbh2 .comp-mp2vlkbh2-overflow-wrapper {
-    height: auto !important;
-    min-height: 0 !important;
+    height: clamp(420px, calc(100svh - 72px), 620px) !important;
+    min-height: clamp(420px, calc(100svh - 72px), 620px) !important;
     max-height: none !important;
-    overflow: visible !important;
+    overflow: hidden !important;
   }
 
   html body.responsive[data-page="about"] #comp-mp2vlkbh2 .comp-mp2vlkbh2-container,
@@ -2281,12 +2293,50 @@
     flex-direction: column !important;
     align-items: center !important;
     justify-content: center !important;
-    height: auto !important;
-    min-height: 0 !important;
+    height: 100% !important;
+    min-height: 100% !important;
     max-height: none !important;
-    padding: 36px 24px 44px !important;
+    padding: clamp(40px, 7vh, 64px) 24px clamp(52px, 9vh, 72px) !important;
     box-sizing: border-box !important;
-    gap: 10px !important;
+    gap: clamp(12px, 2.6vh, 20px) !important;
+  }
+
+  html body.responsive[data-page="about"] #comp-mp2vlkbh2 #bgLayers_comp-mp2vlkbh2 {
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  html body.responsive[data-page="about"] #comp-mp2vlkbh2 #bgMedia_comp-mp2vlkbh2 {
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    overflow: hidden !important;
+  }
+
+  html body.responsive[data-page="about"] #comp-mp2vlkbh2 wix-media-canvas,
+  html body.responsive[data-page="about"] #comp-mp2vlkbh2 wow-image,
+  html body.responsive[data-page="about"] #comp-mp2vlkbh2 #img_comp-mp2vlkbh2,
+  html body.responsive[data-page="about"] #comp-mp2vlkbh2 #img_comp-mp2vlkbh2 img,
+  html body.responsive[data-page="about"] #comp-mp2vlkbh2 canvas.webglcanvas {
+    position: absolute !important;
+    left: 50% !important;
+    top: 50% !important;
+    right: auto !important;
+    bottom: auto !important;
+    width: min(42vw, 148px) !important;
+    max-width: min(42vw, 148px) !important;
+    height: auto !important;
+    max-height: min(30vh, 180px) !important;
+    transform: translate(-50%, -50%) !important;
+    object-fit: contain !important;
+    object-position: center !important;
+    pointer-events: none !important;
+    opacity: 0.22 !important;
+    z-index: 0 !important;
   }
 
   html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1ttkgk.comp-mr1ttkgk,
@@ -2305,31 +2355,32 @@
     z-index: 2 !important;
   }
 
+  /* Shell — desktop ~130–150px scaled for phone */
   html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1ttkgk.comp-mr1ttkgk {
     order: 1 !important;
-    width: 56px !important;
-    height: 56px !important;
-    min-width: 56px !important;
-    min-height: 56px !important;
-    max-width: 56px !important;
-    max-height: 56px !important;
-    flex: 0 0 56px !important;
-    margin: 0 auto 4px !important;
+    width: clamp(88px, 24vw, 120px) !important;
+    height: clamp(88px, 24vw, 120px) !important;
+    min-width: clamp(88px, 24vw, 120px) !important;
+    min-height: clamp(88px, 24vw, 120px) !important;
+    max-width: clamp(88px, 24vw, 120px) !important;
+    max-height: clamp(88px, 24vw, 120px) !important;
+    flex: 0 0 auto !important;
   }
 
   html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1ttkgk.comp-mr1ttkgk svg {
-    width: 56px !important;
-    height: 56px !important;
-    max-width: 56px !important;
-    max-height: 56px !important;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
     display: block !important;
   }
 
+  /* Brand wordmark — hero-level signal */
   html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1vbgc2.comp-mr1vbgc2 {
     order: 2 !important;
     display: block !important;
-    width: min(72vw, 280px) !important;
-    max-width: min(72vw, 280px) !important;
+    width: min(84vw, 320px) !important;
+    max-width: min(84vw, 320px) !important;
     height: auto !important;
     overflow: visible !important;
     grid-template-columns: none !important;
@@ -2347,22 +2398,25 @@
     grid-area: auto !important;
   }
 
+  /* Tagline — supporting line under brand */
   html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tv44l.comp-mr1tv44l {
     order: 3 !important;
-    width: min(86vw, 340px) !important;
-    max-width: min(86vw, 340px) !important;
+    width: min(88vw, 340px) !important;
+    max-width: min(88vw, 340px) !important;
     height: auto !important;
-    margin-top: 4px !important;
+    margin-top: 2px !important;
   }
 
   html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tv44l.comp-mr1tv44l .wixui-rich-text__text,
   html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tv44l.comp-mr1tv44l h1,
   html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tv44l.comp-mr1tv44l p {
-    font-size: clamp(16px, 4.4vw, 20px) !important;
-    line-height: 1.2 !important;
+    font-size: clamp(15px, 4vw, 18px) !important;
+    line-height: 1.25 !important;
+    letter-spacing: 0.01em !important;
     text-align: center !important;
     white-space: normal !important;
     max-width: 100% !important;
+    margin: 0 !important;
   }
 
   html body.responsive[data-page="about"] #comp-mp2vlkbh2,
@@ -2375,78 +2429,130 @@
 }
 
 @media (max-width: 600px) {
-  html body.responsive[data-page="about"] #comp-mp2vlkbh2 .comp-mp2vlkbh2-container,
-  html body.responsive[data-page="about"] #comp-mp2vlkbh2 [data-testid="responsive-container-content"] {
-    padding: 28px 20px 36px !important;
-    gap: 8px !important;
+  html body.responsive[data-page="about"] #comp-mp2vlkbh2,
+  html body.responsive[data-page="about"] #comp-mp2vlkbh2 .comp-mp2vlkbh2-overflow-wrapper {
+    height: clamp(400px, calc(100svh - 64px), 560px) !important;
+    min-height: clamp(400px, calc(100svh - 64px), 560px) !important;
   }
 
-  html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1vbgc2.comp-mr1vbgc2 {
-    width: min(78vw, 260px) !important;
-    max-width: min(78vw, 260px) !important;
+  html body.responsive[data-page="about"] #comp-mp2vlkbh2 .comp-mp2vlkbh2-container,
+  html body.responsive[data-page="about"] #comp-mp2vlkbh2 [data-testid="responsive-container-content"] {
+    padding: clamp(36px, 6vh, 52px) 20px clamp(48px, 8vh, 64px) !important;
+    gap: clamp(10px, 2.2vh, 16px) !important;
   }
 
   html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1ttkgk.comp-mr1ttkgk {
-    width: 48px !important;
-    height: 48px !important;
-    min-width: 48px !important;
-    min-height: 48px !important;
-    max-width: 48px !important;
-    max-height: 48px !important;
-    flex: 0 0 48px !important;
+    width: clamp(80px, 22vw, 104px) !important;
+    height: clamp(80px, 22vw, 104px) !important;
+    min-width: clamp(80px, 22vw, 104px) !important;
+    min-height: clamp(80px, 22vw, 104px) !important;
+    max-width: clamp(80px, 22vw, 104px) !important;
+    max-height: clamp(80px, 22vw, 104px) !important;
   }
 
-  html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1ttkgk.comp-mr1ttkgk svg {
-    width: 48px !important;
-    height: 48px !important;
-    max-width: 48px !important;
-    max-height: 48px !important;
+  html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1vbgc2.comp-mr1vbgc2 {
+    width: min(86vw, 300px) !important;
+    max-width: min(86vw, 300px) !important;
+  }
+
+  html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tv44l.comp-mr1tv44l {
+    width: min(90vw, 320px) !important;
+    max-width: min(90vw, 320px) !important;
   }
 
   html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tv44l.comp-mr1tv44l .wixui-rich-text__text,
   html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tv44l.comp-mr1tv44l h1,
   html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tv44l.comp-mr1tv44l p {
-    font-size: clamp(15px, 4.2vw, 18px) !important;
+    font-size: clamp(14px, 3.9vw, 17px) !important;
   }
 }
 
 @media (min-width: 601px) and (max-width: 1024px) {
-  html body.responsive[data-page="about"] #comp-mp2vlkbh2 .comp-mp2vlkbh2-container,
-  html body.responsive[data-page="about"] #comp-mp2vlkbh2 [data-testid="responsive-container-content"] {
-    padding: 48px 40px 56px !important;
-    gap: 14px !important;
+  html body.responsive[data-page="about"] #comp-mp2vlkbh2,
+  html body.responsive[data-page="about"] #comp-mp2vlkbh2 .comp-mp2vlkbh2-overflow-wrapper {
+    height: clamp(480px, calc(100svh - 80px), 680px) !important;
+    min-height: clamp(480px, calc(100svh - 80px), 680px) !important;
   }
 
-  html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1vbgc2.comp-mr1vbgc2 {
-    width: min(48vw, 340px) !important;
-    max-width: min(48vw, 340px) !important;
+  html body.responsive[data-page="about"] #comp-mp2vlkbh2 .comp-mp2vlkbh2-container,
+  html body.responsive[data-page="about"] #comp-mp2vlkbh2 [data-testid="responsive-container-content"] {
+    padding: clamp(48px, 8vh, 72px) 40px clamp(56px, 9vh, 80px) !important;
+    gap: clamp(14px, 2.8vh, 22px) !important;
   }
 
   html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1ttkgk.comp-mr1ttkgk {
-    width: 56px !important;
-    height: 56px !important;
-    min-width: 56px !important;
-    min-height: 56px !important;
-    max-width: 56px !important;
-    max-height: 56px !important;
-    flex: 0 0 56px !important;
+    width: clamp(100px, 14vw, 128px) !important;
+    height: clamp(100px, 14vw, 128px) !important;
+    min-width: clamp(100px, 14vw, 128px) !important;
+    min-height: clamp(100px, 14vw, 128px) !important;
+    max-width: clamp(100px, 14vw, 128px) !important;
+    max-height: clamp(100px, 14vw, 128px) !important;
   }
 
-  html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1ttkgk.comp-mr1ttkgk svg {
-    width: 56px !important;
-    height: 56px !important;
-    max-width: 56px !important;
-    max-height: 56px !important;
+  html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1vbgc2.comp-mr1vbgc2 {
+    width: min(52vw, 360px) !important;
+    max-width: min(52vw, 360px) !important;
   }
 
   html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tv44l.comp-mr1tv44l {
-    width: min(70vw, 480px) !important;
-    max-width: min(70vw, 480px) !important;
+    width: min(64vw, 400px) !important;
+    max-width: min(64vw, 400px) !important;
   }
 
   html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tv44l.comp-mr1tv44l .wixui-rich-text__text,
   html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tv44l.comp-mr1tv44l h1,
   html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tv44l.comp-mr1tv44l p {
-    font-size: clamp(18px, 2.8vw, 24px) !important;
+    font-size: clamp(17px, 2.6vw, 22px) !important;
+  }
+}
+
+/* Final mobile hero guard: keep subtitle below wordmark, never over it. */
+@media (max-width: 1024px) {
+  html body.responsive[data-page="about"] main a.wixui-button,
+  html body.responsive[data-page="about"] main .wixui-button {
+    box-sizing: border-box !important;
+    min-height: 46px !important;
+  }
+
+  html body.responsive[data-page="about"] #comp-mp2vlkbh2 .comp-mp2vlkbh2-container,
+  html body.responsive[data-page="about"] #comp-mp2vlkbh2 [data-testid="responsive-container-content"] {
+    justify-content: center !important;
+    gap: clamp(18px, 3.4vh, 30px) !important;
+  }
+
+  html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1vbgc2.comp-mr1vbgc2,
+  html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tvuqc.comp-mr1tvuqc,
+  html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tv44l.comp-mr1tv44l {
+    flex: 0 0 auto !important;
+    display: block !important;
+    overflow: visible !important;
+  }
+
+  html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tv44l.comp-mr1tv44l {
+    margin-top: clamp(6px, 1.6vh, 16px) !important;
+    padding: 0 10px !important;
+    box-sizing: border-box !important;
+    background: transparent !important;
+  }
+
+  html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tv44l.comp-mr1tv44l .wixui-rich-text__text,
+  html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tv44l.comp-mr1tv44l h1,
+  html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tv44l.comp-mr1tv44l p {
+    display: block !important;
+    font-size: clamp(13px, 3.4vw, 17px) !important;
+    line-height: 1.35 !important;
+    text-align: center !important;
+    white-space: normal !important;
+    overflow-wrap: normal !important;
+    word-break: normal !important;
+    text-wrap: balance !important;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+  html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tv44l.comp-mr1tv44l .wixui-rich-text__text,
+  html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tv44l.comp-mr1tv44l h1,
+  html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tv44l.comp-mr1tv44l p {
+    font-size: clamp(15px, 2.3vw, 20px) !important;
   }
 }

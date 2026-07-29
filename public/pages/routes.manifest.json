@@ -203,6 +203,14 @@
       "file": "you-released-a-song-now-what.html"
     },
     {
+      "title": "How I Curate Music With Independent Artists",
+      "route": "/how-i-curate-music-with-independent-artists",
+      "aliases": [
+        "/resources/how-i-curate-music-with-independent-artists"
+      ],
+      "file": "how-i-curate-music-with-independent-artists.html"
+    },
+    {
       "title": "Collab Q",
       "route": "/collab-query",
       "aliases": [
@@ -275,24 +283,6 @@
         "/forms/masterclass-review02"
       ],
       "file": "masterclass-review02.html"
-    },
-    {
-      "title": "A-Z of Music Production",
-      "route": "/music-production",
-      "aliases": [
-        "/academy/music-production",
-        "/courses/music-production"
-      ],
-      "file": "music-production.html"
-    },
-    {
-      "title": "MBA Impact Report",
-      "route": "/mba-impact",
-      "aliases": [
-        "/impact-report",
-        "/work/mba-impact"
-      ],
-      "file": "mba-impact.html"
     }
   ],
   "aliases": [
@@ -361,11 +351,19 @@
       "route": "/the-heart-of-composition"
     },
     {
+      "alias": "/blog-1",
+      "route": "/start-making-music"
+    },
+    {
       "alias": "/blank-13",
       "route": "/start-making-music"
     },
     {
       "alias": "/resources/blog-1",
+      "route": "/start-making-music"
+    },
+    {
+      "alias": "/resources/start-making-music",
       "route": "/start-making-music"
     },
     {
@@ -413,6 +411,10 @@
       "route": "/hanuman-ansh"
     },
     {
+      "alias": "/blog-3",
+      "route": "/artist-release-playbook"
+    },
+    {
       "alias": "/blank-13-1-1",
       "route": "/artist-release-playbook"
     },
@@ -423,6 +425,14 @@
     {
       "alias": "/resources/blog-3",
       "route": "/artist-release-playbook"
+    },
+    {
+      "alias": "/resources/artist-release-playbook",
+      "route": "/artist-release-playbook"
+    },
+    {
+      "alias": "/blog-2",
+      "route": "/online-music-course-worth-it"
     },
     {
       "alias": "/blank-13-1",
@@ -437,12 +447,20 @@
       "route": "/online-music-course-worth-it"
     },
     {
+      "alias": "/resources/online-music-course-worth-it",
+      "route": "/online-music-course-worth-it"
+    },
+    {
       "alias": "/resources/from-bhajan-to-clubbing",
       "route": "/from-bhajan-to-clubbing"
     },
     {
       "alias": "/resources/you-released-a-song-now-what",
       "route": "/you-released-a-song-now-what"
+    },
+    {
+      "alias": "/resources/how-i-curate-music-with-independent-artists",
+      "route": "/how-i-curate-music-with-independent-artists"
     },
     {
       "alias": "/blank-6",
@@ -543,6 +561,7 @@
     "/online-music-course-worth-it",
     "/from-bhajan-to-clubbing",
     "/you-released-a-song-now-what",
+    "/how-i-curate-music-with-independent-artists",
     "/collab-query",
     "/kalki",
     "/book-an-artist",
@@ -550,8 +569,6 @@
     "/book-a-call",
     "/masterclass-review01",
     "/classicalreview",
-    "/masterclass-review02",
-    "/music-production",
-    "/mba-impact"
+    "/masterclass-review02"
   ]
 }

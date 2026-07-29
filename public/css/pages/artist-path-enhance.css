@@ -1,0 +1,183 @@
+/**
+ * Artist Path enhancements — benefits horizontal scroll, Coming Soon badge,
+ * Framework scroll-scrub animation.
+ */
+@media (max-width: 1024px) {
+  body[data-page="artist-path"] #comp-mqp9cbq4 {
+    --height: 52px !important;
+    --min-height: 52px !important;
+    --padding-top: 11px !important;
+    --padding-bottom: 11px !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-height: 52px !important;
+    height: 52px !important;
+  }
+
+  body[data-page="artist-path"] #y3oad .y3oad-overflow-wrapper,
+  body[data-page="artist-path"] #comp-mqqulorc,
+  body[data-page="artist-path"] #comp-mqqulorc .comp-mqqulorc-container {
+    overflow-x: visible !important;
+  }
+
+  /* Benefits strip: enable horizontal swipe */
+  body[data-page="artist-path"] #comp-mqqulorc {
+    width: 100% !important;
+    max-width: 100vw !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    overscroll-behavior-x: contain;
+    padding-bottom: 8px !important;
+  }
+
+  body[data-page="artist-path"] #comp-mqquif9s,
+  body[data-page="artist-path"] #comp-mqquif9s-container,
+  body[data-page="artist-path"] .comp-mqquif9s-container {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    width: max-content !important;
+    max-width: none !important;
+    gap: 14px !important;
+    padding: 0 16px !important;
+  }
+
+  body[data-page="artist-path"] #comp-mqquif9s > [id^="comp-"],
+  body[data-page="artist-path"] .comp-mqquif9s-container > [id^="comp-"] {
+    flex: 0 0 min(78vw, 280px) !important;
+    width: min(78vw, 280px) !important;
+    max-width: min(78vw, 280px) !important;
+    scroll-snap-align: start;
+    position: relative !important;
+    inset: auto !important;
+    transform: none !important;
+  }
+
+  /* Coming soon badge */
+  body[data-page="artist-path"] .tsc-coming-soon-badge {
+    display: inline-block !important;
+    margin-top: 10px !important;
+    padding: 8px 14px !important;
+    border-radius: 999px !important;
+    background: rgba(8, 61, 58, 0.92) !important;
+    color: #ffecd1 !important;
+    font-size: 13px !important;
+    font-style: normal !important;
+    text-decoration: none !important;
+    letter-spacing: 0.02em !important;
+    line-height: 1.35 !important;
+  }
+
+  body[data-page="artist-path"] #comp-mqp9hnbx {
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+  }
+
+  body[data-page="artist-path"] #comp-mqp9hnbx p.wixui-rich-text__text {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    color: #92261b !important;
+    font-size: 14px !important;
+    font-style: normal !important;
+    text-decoration: none !important;
+    letter-spacing: 0.01em !important;
+    line-height: 1.35 !important;
+  }
+
+  body[data-page="artist-path"] #comp-mqp9hnbx p.wixui-rich-text__text > span {
+    display: inline-flex !important;
+    align-items: center !important;
+    min-height: 30px !important;
+    padding: 6px 12px !important;
+    border-radius: 999px !important;
+    background: rgba(8, 61, 58, 0.92) !important;
+    color: #ffecd1 !important;
+    font-style: normal !important;
+    text-decoration: none !important;
+    font-weight: 500 !important;
+  }
+
+  /* Framework scroll stage */
+  body[data-page="artist-path"] #comp-mqqnrbhw,
+  body[data-page="artist-path"] [id^="comp-mqqq"],
+  body[data-page="artist-path"] #comp-mqqf5d56,
+  body[data-page="artist-path"] #comp-mqqf5d25,
+  body[data-page="artist-path"] #comp-mqqjhqqf {
+    will-change: transform, opacity;
+  }
+
+  body[data-page="artist-path"] .tsc-framework-stage {
+    position: relative;
+  }
+
+  body[data-page="artist-path"].tsc-framework-scrubbing #comp-mqqf5d56 .wixui-rich-text__text,
+  body[data-page="artist-path"].tsc-framework-scrubbing #comp-mqqf5d25 .wixui-rich-text__text {
+    opacity: calc(0.35 + var(--tsc-fw-p, 0) * 0.65) !important;
+    transform: translateY(calc((1 - var(--tsc-fw-p, 0)) * 18px)) !important;
+  }
+
+  body[data-page="artist-path"].tsc-framework-scrubbing #comp-mqqq7zp5,
+  body[data-page="artist-path"].tsc-framework-scrubbing #comp-mqqqamul,
+  body[data-page="artist-path"].tsc-framework-scrubbing #comp-mqqqbjuk,
+  body[data-page="artist-path"].tsc-framework-scrubbing [id^="comp-mqqq"] {
+    opacity: calc(0.15 + var(--tsc-fw-p, 0) * 0.55) !important;
+  }
+
+  body[data-page="artist-path"].tsc-framework-done #comp-mqqf5d56,
+  body[data-page="artist-path"].tsc-framework-done #comp-mqqf5d25,
+  body[data-page="artist-path"].tsc-framework-done #comp-mqqjhqqf {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  body[data-page="artist-path"] #comp-mqphxnu3,
+  body[data-page="artist-path"] #comp-mqphxnu3 *,
+  body[data-page="artist-path"].tsc-framework-scrubbing #comp-mqphxnu3,
+  body[data-page="artist-path"].tsc-framework-scrubbing #comp-mqphxnu3 * {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* Desktop too: benefits scroll + framework scrub */
+@media (min-width: 1025px) {
+  body[data-page="artist-path"] #comp-mqqulorc {
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  body[data-page="artist-path"] #comp-mqquif9s,
+  body[data-page="artist-path"] .comp-mqquif9s-container {
+    display: flex !important;
+    flex-direction: row !important;
+    width: max-content !important;
+    gap: 18px !important;
+  }
+
+  body[data-page="artist-path"].tsc-framework-scrubbing #comp-mqqf5d56 .wixui-rich-text__text,
+  body[data-page="artist-path"].tsc-framework-scrubbing #comp-mqqf5d25 .wixui-rich-text__text {
+    opacity: calc(0.35 + var(--tsc-fw-p, 0) * 0.65) !important;
+    transform: translateY(calc((1 - var(--tsc-fw-p, 0)) * 24px)) !important;
+  }
+
+  body[data-page="artist-path"].tsc-framework-done #comp-mqqf5d56,
+  body[data-page="artist-path"].tsc-framework-done #comp-mqqf5d25,
+  body[data-page="artist-path"].tsc-framework-done #comp-mqqjhqqf {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

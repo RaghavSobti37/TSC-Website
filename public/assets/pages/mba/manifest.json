@@ -3,7 +3,7 @@
   "html": "/pages/mba.html",
   "css": "/css/pages/mba.css",
   "animations": "/js/pages/mba.animations.js",
-  "generatedAt": "2026-07-28T14:50:29.859Z",
+  "generatedAt": "2026-07-29T16:33:52.059Z",
   "totals": {
     "assets": 62,
     "missing": 0
@@ -387,7 +387,7 @@
         "local": {
           "exists": true,
           "path": "/assets/mirror/static.parastorage.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.thunderbolt[ImageX].cb16f202.min.css",
-          "bytes": 2078
+          "bytes": 2079
         }
       },
       {
@@ -513,7 +513,7 @@
         "local": {
           "exists": true,
           "path": "/assets/mirror/static.parastorage.com/services/wix-thunderbolt/dist/group_7.c472a333.chunk.min.css",
-          "bytes": 188
+          "bytes": 189
         }
       },
       {
@@ -522,7 +522,7 @@
         "local": {
           "exists": true,
           "path": "/assets/mirror/static.parastorage.com/services/wix-thunderbolt/dist/main.744ea815.min.css",
-          "bytes": 3721
+          "bytes": 3722
         }
       },
       {
@@ -531,7 +531,7 @@
         "local": {
           "exists": true,
           "path": "/assets/mirror/static.parastorage.com/services/wix-thunderbolt/dist/main.renderer.c1b1af7e.min.css",
-          "bytes": 9804
+          "bytes": 9805
         }
       },
       {
@@ -540,7 +540,7 @@
         "local": {
           "exists": true,
           "path": "/css/pages/mba.css",
-          "bytes": 630322
+          "bytes": 630815
         }
       }
     ],
@@ -571,7 +571,7 @@
         "local": {
           "exists": true,
           "path": "/js/pages/mba.animations.js",
-          "bytes": 6155
+          "bytes": 6749
         }
       }
     ]

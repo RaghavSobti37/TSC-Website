@@ -17,37 +17,40 @@
     (document.head || document.documentElement).appendChild(l);
   }
   link('/css/mobile/boot.css?v=62cb976');
-  link('/css/tsc-mobile-system.css');
+  link('/css/tsc-mobile-system.css?v=62cb976');
   var p = (location.pathname || '/').replace(/\/$/, '') || '/';
   if (p.indexOf('/pages/') === 0) p = p.replace('/pages', '').replace(/\.html$/, '') || '/';
   var seg = p === '/' ? 'home' : p.replace(/^\//, '').split('/')[0];
   var map = {
-    home: '=62cb976',
-    about: '=62cb976',
-    work: '=62cb976',
-    mba: '=62cb976',
-    artists: '=62cb976',
-    'artist-path': '=62cb976',
-    'harshad-duhita': '=62cb976',
-    yugm: '=62cb976',
-    'book-an-artist': '=62cb976',
-    'artist-query': '=62cb976',
-    'collab-query': '=62cb976',
-    'learn-with-tsc': '=62cb976',
-    academy: '=62cb976',
-    'the-heart-of-composition': '=62cb976',
-    'roots-of-hindustani-classical': '=62cb976',
-    'music-production': '=62cb976',
-    'book-a-call': '=62cb976',
-    films: '=62cb976',
-    'mahavatar-narsimha': '=62cb976',
-    'hanuman-ansh': '=62cb976',
-    mahaprbhu: '=62cb976',
-    kalki: '=62cb976',
-    resources: '=62cb976',
-    'blog-1': '=62cb976',
-    'blog-2': '=62cb976',
-    'blog-3': '=62cb976'
+    home: '/css/mobile/home.css?v=62cb976',
+    about: '/css/mobile/about.css?v=62cb976',
+    work: '/css/mobile/work.css?v=62cb976',
+    mba: '/css/mobile/work.css?v=62cb976',
+    artists: '/css/mobile/artists.css?v=62cb976',
+    'artist-path': '/css/mobile/artists.css?v=62cb976',
+    'harshad-duhita': '/css/mobile/artists.css?v=62cb976',
+    yugm: '/css/mobile/artists.css?v=62cb976',
+    'book-an-artist': '/css/mobile/artists.css?v=62cb976',
+    'artist-query': '/css/mobile/artists.css?v=62cb976',
+    'collab-query': '/css/mobile/artists.css?v=62cb976',
+    'learn-with-tsc': '/css/mobile/learn.css?v=62cb976',
+    academy: '/css/mobile/learn.css?v=62cb976',
+    'the-heart-of-composition': '/css/mobile/learn.css?v=62cb976',
+    'roots-of-hindustani-classical': '/css/mobile/learn.css?v=62cb976',
+    'music-production': '/css/mobile/learn.css?v=62cb976',
+    'book-a-call': '/css/mobile/learn.css?v=62cb976',
+    films: '/css/mobile/films.css?v=62cb976',
+    'mahavatar-narsimha': '/css/mobile/films.css?v=62cb976',
+    'hanuman-ansh': '/css/mobile/films.css?v=62cb976',
+    mahaprbhu: '/css/mobile/films.css?v=62cb976',
+    kalki: '/css/mobile/films.css?v=62cb976',
+    resources: '/css/mobile/resources.css?v=62cb976',
+    'blog-1': '/css/mobile/resources.css?v=62cb976',
+    'blog-2': '/css/mobile/resources.css?v=62cb976',
+    'blog-3': '/css/mobile/resources.css?v=62cb976',
+    'start-making-music': '/css/mobile/resources.css?v=62cb976',
+    'online-music-course-worth-it': '/css/mobile/resources.css?v=62cb976',
+    'artist-release-playbook': '/css/mobile/resources.css?v=62cb976'
   };
   if (map[seg]) link(map[seg]);
   else link('/css/mobile/home.css?v=62cb976');

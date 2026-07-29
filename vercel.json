@@ -308,6 +308,24 @@
   ],
   "headers": [
     {
+      "source": "/css/mobile/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
+      ]
+    },
+    {
+      "source": "/js/tsc-wix-motion.js",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
+      ]
+    },
+    {
       "source": "/llms.txt",
       "headers": [
         {

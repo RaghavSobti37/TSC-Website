@@ -16,7 +16,7 @@
     l.setAttribute('data-tsc-boot', '1');
     (document.head || document.documentElement).appendChild(l);
   }
-  link('/css/mobile/boot.css');
+  link('/css/mobile/boot.css?v=62cb976');
   link('/css/tsc-mobile-system.css');
   var p = (location.pathname || '/').replace(/\/$/, '') || '/';
   if (p.indexOf('/pages/') === 0) p = p.replace('/pages', '').replace(/\.html$/, '') || '/';
@@ -53,7 +53,7 @@
     'artist-release-playbook': '/css/mobile/resources.css'
   };
   if (map[seg]) link(map[seg]);
-  else link('/css/mobile/home.css');
+  else link('/css/mobile/home.css?v=62cb976');
   /* safety: never leave page invisible */
   setTimeout(function () { html.classList.add('tsc-mobile-ready'); }, 4000);
 })();
@@ -70,7 +70,7 @@
   (function injectTscWixMotion() {
     if (document.querySelector('script[data-tsc-wix-motion]')) return;
     var m = document.createElement('script');
-    m.src = '/js/tsc-wix-motion.js';
+    m.src = '/js/tsc-wix-motion.js?v=62cb976';
     m.defer = true;
     m.setAttribute('data-tsc-wix-motion', '1');
     (document.head || document.documentElement).appendChild(m);

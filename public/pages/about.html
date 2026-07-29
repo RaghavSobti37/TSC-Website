@@ -16,44 +16,44 @@
     l.setAttribute('data-tsc-boot', '1');
     (document.head || document.documentElement).appendChild(l);
   }
-  link('/css/mobile/boot.css?v=62cb976');
-  link('/css/tsc-mobile-system.css?v=62cb976');
+  link('/css/mobile/boot.css?v=9254a72');
+  link('/css/tsc-mobile-system.css?v=9254a72');
   var p = (location.pathname || '/').replace(/\/$/, '') || '/';
   if (p.indexOf('/pages/') === 0) p = p.replace('/pages', '').replace(/\.html$/, '') || '/';
   var seg = p === '/' ? 'home' : p.replace(/^\//, '').split('/')[0];
   var map = {
-    home: '/css/mobile/home.css?v=62cb976',
-    about: '/css/mobile/about.css?v=62cb976',
-    work: '/css/mobile/work.css?v=62cb976',
-    mba: '/css/mobile/work.css?v=62cb976',
-    artists: '/css/mobile/artists.css?v=62cb976',
-    'artist-path': '/css/mobile/artists.css?v=62cb976',
-    'harshad-duhita': '/css/mobile/artists.css?v=62cb976',
-    yugm: '/css/mobile/artists.css?v=62cb976',
-    'book-an-artist': '/css/mobile/artists.css?v=62cb976',
-    'artist-query': '/css/mobile/artists.css?v=62cb976',
-    'collab-query': '/css/mobile/artists.css?v=62cb976',
-    'learn-with-tsc': '/css/mobile/learn.css?v=62cb976',
-    academy: '/css/mobile/learn.css?v=62cb976',
-    'the-heart-of-composition': '/css/mobile/learn.css?v=62cb976',
-    'roots-of-hindustani-classical': '/css/mobile/learn.css?v=62cb976',
-    'music-production': '/css/mobile/learn.css?v=62cb976',
-    'book-a-call': '/css/mobile/learn.css?v=62cb976',
-    films: '/css/mobile/films.css?v=62cb976',
-    'mahavatar-narsimha': '/css/mobile/films.css?v=62cb976',
-    'hanuman-ansh': '/css/mobile/films.css?v=62cb976',
-    mahaprbhu: '/css/mobile/films.css?v=62cb976',
-    kalki: '/css/mobile/films.css?v=62cb976',
-    resources: '/css/mobile/resources.css?v=62cb976',
-    'blog-1': '/css/mobile/resources.css?v=62cb976',
-    'blog-2': '/css/mobile/resources.css?v=62cb976',
-    'blog-3': '/css/mobile/resources.css?v=62cb976',
-    'start-making-music': '/css/mobile/resources.css?v=62cb976',
-    'online-music-course-worth-it': '/css/mobile/resources.css?v=62cb976',
-    'artist-release-playbook': '/css/mobile/resources.css?v=62cb976'
+    home: '/css/mobile/home.css?v=9254a72',
+    about: '/css/mobile/about.css?v=9254a72',
+    work: '/css/mobile/work.css?v=9254a72',
+    mba: '/css/mobile/work.css?v=9254a72',
+    artists: '/css/mobile/artists.css?v=9254a72',
+    'artist-path': '/css/mobile/artists.css?v=9254a72',
+    'harshad-duhita': '/css/mobile/artists.css?v=9254a72',
+    yugm: '/css/mobile/artists.css?v=9254a72',
+    'book-an-artist': '/css/mobile/artists.css?v=9254a72',
+    'artist-query': '/css/mobile/artists.css?v=9254a72',
+    'collab-query': '/css/mobile/artists.css?v=9254a72',
+    'learn-with-tsc': '/css/mobile/learn.css?v=9254a72',
+    academy: '/css/mobile/learn.css?v=9254a72',
+    'the-heart-of-composition': '/css/mobile/learn.css?v=9254a72',
+    'roots-of-hindustani-classical': '/css/mobile/learn.css?v=9254a72',
+    'music-production': '/css/mobile/learn.css?v=9254a72',
+    'book-a-call': '/css/mobile/learn.css?v=9254a72',
+    films: '/css/mobile/films.css?v=9254a72',
+    'mahavatar-narsimha': '/css/mobile/films.css?v=9254a72',
+    'hanuman-ansh': '/css/mobile/films.css?v=9254a72',
+    mahaprbhu: '/css/mobile/films.css?v=9254a72',
+    kalki: '/css/mobile/films.css?v=9254a72',
+    resources: '/css/mobile/resources.css?v=9254a72',
+    'blog-1': '/css/mobile/resources.css?v=9254a72',
+    'blog-2': '/css/mobile/resources.css?v=9254a72',
+    'blog-3': '/css/mobile/resources.css?v=9254a72',
+    'start-making-music': '/css/mobile/resources.css?v=9254a72',
+    'online-music-course-worth-it': '/css/mobile/resources.css?v=9254a72',
+    'artist-release-playbook': '/css/mobile/resources.css?v=9254a72'
   };
   if (map[seg]) link(map[seg]);
-  else link('/css/mobile/home.css?v=62cb976');
+  else link('/css/mobile/home.css?v=9254a72');
   /* safety: never leave page invisible */
   setTimeout(function () { html.classList.add('tsc-mobile-ready'); }, 4000);
 })();
@@ -1479,7 +1479,7 @@ Our focus is on helping stories create lasting impact beyond the box office.</h2
   (function injectTscWixMotion() {
     if (document.querySelector('script[data-tsc-wix-motion]')) return;
     var m = document.createElement('script');
-    m.src = '/js/tsc-wix-motion.js?v=62cb976';
+    m.src = '/js/tsc-wix-motion.js?v=9254a72';
     m.defer = true;
     m.setAttribute('data-tsc-wix-motion', '1');
     (document.head || document.documentElement).appendChild(m);

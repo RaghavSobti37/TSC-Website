@@ -1068,7 +1068,7 @@
   ensureScript('/js/tsc-brand-cards.js');
   // Play paused Wix enter/loop motions + slideshow word-swap (all viewports).
   ensureStylesheet('/css/tsc-wix-motion.css');
-  ensureScript('/js/tsc-wix-motion.js?v=62cb976');
+  ensureScript('/js/tsc-wix-motion.js?v=9254a72');
   function bootUi() {
     wireMobileAssets();
     wireCourseAccordions();

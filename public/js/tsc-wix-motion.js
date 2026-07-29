@@ -10,7 +10,7 @@
   if (!document.querySelector('link[data-tsc-wix-motion-css]')) {
     var css = document.createElement('link');
     css.rel = 'stylesheet';
-    css.href = '/css/tsc-wix-motion.css?v=62cb976';
+    css.href = '/css/tsc-wix-motion.css?v=9254a72';
     css.setAttribute('data-tsc-wix-motion-css', '1');
     (document.head || document.documentElement).appendChild(css);
   }

@@ -345,7 +345,8 @@
     var cards = resourcesBlogCards.filter(function(card) {
       return (
         card.href === '/how-i-curate-music-with-independent-artists' ||
-        card.href === '/you-released-a-song-now-what'
+        card.href === '/you-released-a-song-now-what' ||
+        card.href === '/from-bhajan-to-clubbing'
       );
     });
     if (!cards.length) return;
@@ -357,14 +358,15 @@
         '.tsc-featured-blog-inner{max-width:1180px;margin:0 auto}' +
         '.tsc-featured-blog-band h2{font-family:Signika,"Madefor Text",sans-serif;font-size:clamp(34px,4vw,58px);line-height:1;margin:0 0 12px;letter-spacing:0}' +
         '.tsc-featured-blog-band p{font-size:17px;line-height:1.55;margin:0;color:#111}' +
-        '.tsc-featured-blog-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin-top:28px}' +
+        '.tsc-featured-blog-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-top:28px}' +
         '.tsc-featured-blog-card{background:#fff9ef;border:1px solid rgba(58,18,18,.18);display:grid;grid-template-columns:180px 1fr;min-height:220px;overflow:hidden}' +
         '.tsc-featured-blog-card img{width:100%;height:100%;object-fit:cover}' +
         '.tsc-featured-blog-copy{padding:22px;display:flex;flex-direction:column;gap:12px}' +
         '.tsc-featured-blog-meta{color:#b74b02;font-size:12px;font-weight:700;text-transform:uppercase}' +
         '.tsc-featured-blog-card h3{font-family:Signika,"Madefor Text",sans-serif;font-size:26px;line-height:1.05;margin:0;letter-spacing:0;color:#083d3a}' +
         '.tsc-featured-blog-card a{align-self:flex-start;background:#b74b02;color:#fff;font-weight:700;min-height:42px;padding:11px 16px;text-decoration:none}' +
-        '@media(max-width:820px){.tsc-featured-blog-band{padding:40px 18px}.tsc-featured-blog-grid{grid-template-columns:1fr}.tsc-featured-blog-card{grid-template-columns:1fr}.tsc-featured-blog-card img{height:190px}.tsc-featured-blog-card h3{font-size:24px}}';
+        '@media(max-width:1100px){.tsc-featured-blog-grid{grid-template-columns:1fr}.tsc-featured-blog-card{grid-template-columns:180px 1fr}}' +
+        '@media(max-width:820px){.tsc-featured-blog-band{padding:40px 18px}.tsc-featured-blog-card{grid-template-columns:1fr}.tsc-featured-blog-card img{height:190px}.tsc-featured-blog-card h3{font-size:24px}}';
       document.head.appendChild(style);
     }
     var band = document.createElement('section');

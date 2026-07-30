@@ -1,9 +1,9 @@
 # Indian Culture Mainstream Forms
 
-> Machine-readable page summary for AI agents. Live HTML: https://wix-site-clone-psi.vercel.app/from-bhajan-to-clubbing
+> Machine-readable page summary for AI agents. Live HTML: https://theshakticollective.in/from-bhajan-to-clubbing
 
 - **Canonical URL:** `/from-bhajan-to-clubbing`
-- **Absolute URL:** https://wix-site-clone-psi.vercel.app/from-bhajan-to-clubbing
+- **Absolute URL:** https://theshakticollective.in/from-bhajan-to-clubbing
 - **HTML:** `pages/from-bhajan-to-clubbing.html`
 - **CSS:** `css/pages/editorial-blog.css`
 - **Section:** `resources`
@@ -15,7 +15,7 @@
 
 Editorial essay by Rohit Sobti (TSC) on how Indian culture is finding contemporary mainstream forms across music, film, and community spaces.
 
-Canonical: https://wix-site-clone-psi.vercel.app/from-bhajan-to-clubbing  
+Canonical: https://theshakticollective.in/from-bhajan-to-clubbing  
 Alias: `/resources/from-bhajan-to-clubbing`
 
 ## Discovery

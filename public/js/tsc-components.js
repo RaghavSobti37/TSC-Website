@@ -124,7 +124,7 @@
       '/reel/DZCpHlVT9Yg': 'https://www.instagram.com/reel/DZCpHlVT9Yg/',
       '/reel/DZ4UycmTY9X': 'https://www.instagram.com/reel/DZ4UycmTY9X/',
       '/entertainment/movies/mahaprabhu-jagannath-trailer-launch-10000-devotees-indias-biggest-animation-film-event-1852094': 'https://www.timesnownews.com/entertainment/movies/mahaprabhu-jagannath-trailer-launch-10000-devotees-indias-biggest-animation-film-event-1852094',
-      '/@rohitsobti1/from-bhajan-to-clubbing-from-mythology-to-cinema-how-indian-culture-is-finding-new-mainstream-bf88b28fb865': 'https://medium.com/@rohitsobti1/from-bhajan-to-clubbing-from-mythology-to-cinema-how-indian-culture-is-finding-new-mainstream-bf88b28fb865',
+      '/@rohitsobti1/from-bhajan-to-clubbing-from-mythology-to-cinema-how-indian-culture-is-finding-new-mainstream-161432be0966': 'https://rohitsobti1.medium.com/from-bhajan-to-clubbing-from-mythology-to-cinema-how-indian-culture-is-finding-new-mainstream-161432be0966',
       '/@rohitsobti1/you-released-a-song-now-what-1bc33923ee1c': 'https://medium.com/@rohitsobti1/you-released-a-song-now-what-1bc33923ee1c',
       '/how-i-curate-music-with-independent-artists-lessons-from-lost-found-with-faheem-abdullah-9d2c76cb8418': 'https://medium.com/@rohitsobti1/how-i-curate-music-with-independent-artists-lessons-from-lost-found-with-faheem-abdullah-9d2c76cb8418'
     };

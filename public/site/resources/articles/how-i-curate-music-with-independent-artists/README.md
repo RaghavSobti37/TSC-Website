@@ -1,9 +1,9 @@
 # How I Curate Music With Independent Artists
 
-> Machine-readable page summary for AI agents. Live HTML: https://wix-site-clone-psi.vercel.app/how-i-curate-music-with-independent-artists
+> Machine-readable page summary for AI agents. Live HTML: https://theshakticollective.in/how-i-curate-music-with-independent-artists
 
 - **Canonical URL:** `/how-i-curate-music-with-independent-artists`
-- **Absolute URL:** https://wix-site-clone-psi.vercel.app/how-i-curate-music-with-independent-artists
+- **Absolute URL:** https://theshakticollective.in/how-i-curate-music-with-independent-artists
 - **HTML:** `pages/how-i-curate-music-with-independent-artists.html`
 - **CSS:** `css/pages/editorial-blog.css`
 - **Section:** `resources`
@@ -15,7 +15,7 @@
 
 Editorial essay by Rohit Sobti (TSC) on lessons from Lost;Found with Faheem Abdullah — curation that reveals the artist.
 
-Canonical: https://wix-site-clone-psi.vercel.app/how-i-curate-music-with-independent-artists  
+Canonical: https://theshakticollective.in/how-i-curate-music-with-independent-artists  
 Alias: `/resources/how-i-curate-music-with-independent-artists`
 
 ## Discovery

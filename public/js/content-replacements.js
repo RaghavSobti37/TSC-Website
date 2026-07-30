@@ -339,6 +339,64 @@
     anchor.parentNode.insertBefore(band, anchor.nextSibling);
   }
 
+  function injectFeaturedResourceBlogs() {
+    if (location.pathname !== '/resources' && location.pathname !== '/pages/resources.html') return;
+    if (document.querySelector('.tsc-featured-blog-band')) return;
+    var cards = resourcesBlogCards.filter(function(card) {
+      return (
+        card.href === '/how-i-curate-music-with-independent-artists' ||
+        card.href === '/you-released-a-song-now-what'
+      );
+    });
+    if (!cards.length) return;
+    if (!document.getElementById('tsc-featured-blog-style')) {
+      var style = document.createElement('style');
+      style.id = 'tsc-featured-blog-style';
+      style.textContent =
+        '.tsc-featured-blog-band{background:#ffecd1;color:#3a1212;padding:56px clamp(18px,5vw,72px);font-family:"Madefor Text","Helvetica Neue",Arial,sans-serif}' +
+        '.tsc-featured-blog-inner{max-width:1180px;margin:0 auto}' +
+        '.tsc-featured-blog-band h2{font-family:Signika,"Madefor Text",sans-serif;font-size:clamp(34px,4vw,58px);line-height:1;margin:0 0 12px;letter-spacing:0}' +
+        '.tsc-featured-blog-band p{font-size:17px;line-height:1.55;margin:0;color:#111}' +
+        '.tsc-featured-blog-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin-top:28px}' +
+        '.tsc-featured-blog-card{background:#fff9ef;border:1px solid rgba(58,18,18,.18);display:grid;grid-template-columns:180px 1fr;min-height:220px;overflow:hidden}' +
+        '.tsc-featured-blog-card img{width:100%;height:100%;object-fit:cover}' +
+        '.tsc-featured-blog-copy{padding:22px;display:flex;flex-direction:column;gap:12px}' +
+        '.tsc-featured-blog-meta{color:#b74b02;font-size:12px;font-weight:700;text-transform:uppercase}' +
+        '.tsc-featured-blog-card h3{font-family:Signika,"Madefor Text",sans-serif;font-size:26px;line-height:1.05;margin:0;letter-spacing:0;color:#083d3a}' +
+        '.tsc-featured-blog-card a{align-self:flex-start;background:#b74b02;color:#fff;font-weight:700;min-height:42px;padding:11px 16px;text-decoration:none}' +
+        '@media(max-width:820px){.tsc-featured-blog-band{padding:40px 18px}.tsc-featured-blog-grid{grid-template-columns:1fr}.tsc-featured-blog-card{grid-template-columns:1fr}.tsc-featured-blog-card img{height:190px}.tsc-featured-blog-card h3{font-size:24px}}';
+      document.head.appendChild(style);
+    }
+    var band = document.createElement('section');
+    band.className = 'tsc-featured-blog-band';
+    band.setAttribute('aria-label', 'Latest blog posts');
+    band.innerHTML = [
+      '<div class="tsc-featured-blog-inner">',
+        '<h2>Latest From the Blog</h2>',
+        '<p>Rohit Sobti essays now live on The Shakti Collective.</p>',
+        '<div class="tsc-featured-blog-grid">',
+          cards.map(function(card) {
+            return [
+              '<article class="tsc-featured-blog-card">',
+                '<img src="' + ui.escapeHtml(card.image.src) + '" alt="' + ui.escapeHtml(card.image.alt) + '" loading="lazy">',
+                '<div class="tsc-featured-blog-copy">',
+                  '<div class="tsc-featured-blog-meta">' + ui.escapeHtml(card.date) + ' / ' + ui.escapeHtml(card.readTime) + '</div>',
+                  '<h3>' + ui.escapeHtml(card.title) + '</h3>',
+                  '<p>' + ui.escapeHtml(card.description) + '</p>',
+                  '<a href="' + ui.escapeHtml(card.href) + '">Read Blog</a>',
+                '</div>',
+              '</article>'
+            ].join('');
+          }).join(''),
+        '</div>',
+      '</div>'
+    ].join('');
+    var footer = document.querySelector('footer#SITE_FOOTER, footer[data-testid="siteFooter"], footer');
+    var main = document.querySelector('main') || document.getElementById('PAGES_CONTAINER') || document.body;
+    if (footer && footer.parentNode) footer.parentNode.insertBefore(band, footer);
+    else main.appendChild(band);
+  }
+
   function blogPathForCurrentPage() {
     var path = normalizedPath();
     var aliases = {
@@ -431,6 +489,7 @@
     var third = document.querySelector('#comp-mrdq85ob');
     if (third) third.style.removeProperty('display');
     injectExtraResourceBlogs();
+    injectFeaturedResourceBlogs();
   }
 
   function repairResourcesCourseLinks() {
@@ -1664,6 +1723,7 @@
     centerArtistsHeroButtons();
     scheduleResponsiveAlignment();
     updateResourcesBlogSection();
+    injectFeaturedResourceBlogs();
     injectBlogArticleDirectory();
     repairResourcesCourseLinks();
     // After Wix hydrate: hide mentor promo + ensure Luca card (once).
@@ -1673,6 +1733,7 @@
       polishMobileAcademyCourseCards();
       polishMobileMusicProductionPage();
       injectBlogArticleDirectory();
+      injectFeaturedResourceBlogs();
       repairResourcesCourseLinks();
     }
     window.setTimeout(afterHydrate, 800);
@@ -1713,6 +1774,7 @@
         alignResponsiveElements();
         injectHomeWhatWeBuildCardCtas();
         injectBlogArticleDirectory();
+        injectFeaturedResourceBlogs();
         repairResourcesCourseLinks();
       }, 80);
     });

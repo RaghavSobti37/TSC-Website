@@ -1,9 +1,9 @@
 # You Released a Song. Now What?
 
-> Machine-readable page summary for AI agents. Live HTML: https://wix-site-clone-psi.vercel.app/you-released-a-song-now-what
+> Machine-readable page summary for AI agents. Live HTML: https://theshakticollective.in/you-released-a-song-now-what
 
 - **Canonical URL:** `/you-released-a-song-now-what`
-- **Absolute URL:** https://wix-site-clone-psi.vercel.app/you-released-a-song-now-what
+- **Absolute URL:** https://theshakticollective.in/you-released-a-song-now-what
 - **HTML:** `pages/you-released-a-song-now-what.html`
 - **CSS:** `css/pages/editorial-blog.css`
 - **Section:** `resources`
@@ -15,7 +15,7 @@
 
 Editorial playbook for independent artists after a release — intentional follow-through across audience, content, and career systems.
 
-Canonical: https://wix-site-clone-psi.vercel.app/you-released-a-song-now-what  
+Canonical: https://theshakticollective.in/you-released-a-song-now-what  
 Alias: `/resources/you-released-a-song-now-what`
 
 ## Discovery

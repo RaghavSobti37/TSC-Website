@@ -63,6 +63,7 @@ This tree co-locates metadata only — canonical URLs stay flat (`/mba`, `/about
 
 - [Resources](./resources/) — `/resources`
 - [Indian Culture Mainstream Forms](./resources/articles/from-bhajan-to-clubbing/) — `/from-bhajan-to-clubbing`
+- [How I Curate Music With Independent Artists](./resources/articles/how-i-curate-music-with-independent-artists/) — `/how-i-curate-music-with-independent-artists`
 - [You Released a Song. Now What?](./resources/articles/you-released-a-song-now-what/) — `/you-released-a-song-now-what`
 - [Blog 1](./resources/articles/blog-1/) — `/blog-1`
 - [Blog 2](./resources/articles/blog-2/) — `/blog-2`

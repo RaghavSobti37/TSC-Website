@@ -2693,7 +2693,8 @@ body.tsc-has-mobile-footer .tsc-legacy-footer-host:not(:has(.tsc-mobile-footer))
     margin-top: 26px !important;
   }
 
-  .tsc-desktop-footer-icon {
+  .tsc-desktop-footer-icon,
+  body[data-page] .tsc-desktop-footer .tsc-desktop-footer-icon {
     align-items: center !important;
     background: var(--tsc-footer-icon-bg) !important;
     border: 0 !important;
@@ -2706,9 +2707,19 @@ body.tsc-has-mobile-footer .tsc-legacy-footer-host:not(:has(.tsc-mobile-footer))
     width: 38px !important;
   }
 
-  .tsc-desktop-footer-icon svg {
-    color: inherit !important;
+  .tsc-desktop-footer-icon svg,
+  body[data-page] .tsc-desktop-footer .tsc-desktop-footer-icon svg {
+    color: var(--tsc-footer-icon-fg) !important;
+    fill: var(--tsc-footer-icon-fg) !important;
     height: 18px !important;
+    stroke: none !important;
     width: 18px !important;
+  }
+
+  .tsc-desktop-footer-icon svg *,
+  body[data-page] .tsc-desktop-footer .tsc-desktop-footer-icon svg * {
+    color: var(--tsc-footer-icon-fg) !important;
+    fill: var(--tsc-footer-icon-fg) !important;
+    stroke: none !important;
   }
 }

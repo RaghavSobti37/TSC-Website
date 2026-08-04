@@ -434,14 +434,30 @@ main .AccordionContainer1266025101__accordionHeader :is(p, h1, h2, h3, h4, span)
 }
 
 body:has(#comp-mrly2iho) #comp-mrly2iho {
-  min-height: unset !important;
-  --aspect-ratio: 0.24593685114913724 !important;
-  aspect-ratio: 1 / var(--aspect-ratio) !important;
+  height: clamp(58px, 4.8vw, 76px) !important;
+  min-height: clamp(58px, 4.8vw, 76px) !important;
+  --aspect-ratio: auto !important;
+  aspect-ratio: auto !important;
   --rd: max(0.5px, 0.0117188 * (var(--scaling-factor) - var(--scrollbar-width))) max(0.5px, 0.0117188 * (var(--scaling-factor) - var(--scrollbar-width))) max(0.5px, 0.0117188 * (var(--scaling-factor) - var(--scrollbar-width))) max(0.5px, 0.0117188 * (var(--scaling-factor) - var(--scrollbar-width))) !important;
   --horizontalPadding: max(0.5px, 0.0117188 * (var(--scaling-factor) - var(--scrollbar-width))) !important;
   --verticalPadding: max(0.5px, 0.00625 * (var(--scaling-factor) - var(--scrollbar-width))) !important;
-  --fnt: normal normal normal max(0.5px, 0.0132812 * (var(--scaling-factor) - var(--scrollbar-width))) / 1.6em var(--tsc-font-alan) !important;
+  --fnt: normal normal normal clamp(20px, 1.55vw, 26px) / 1.1 var(--tsc-font-alan) !important;
   --brw: max(0.5px, 0.0015625 * (var(--scaling-factor) - var(--scrollbar-width))) !important;
+}
+
+body:has(#comp-mrly2iho) #comp-mrly2iho :is(.PoVCDy, .wixui-button) {
+  align-items: center !important;
+  display: inline-flex !important;
+  height: 100% !important;
+  justify-content: center !important;
+  min-height: inherit !important;
+  width: 100% !important;
+}
+
+body:has(#comp-mrly2iho) #comp-mrly2iho .wixui-button__label {
+  font-size: clamp(20px, 1.55vw, 26px) !important;
+  line-height: 1.1 !important;
+  white-space: nowrap !important;
 }
 
 body:has(#comp-mr69hwoy) :is(#comp-mr69hww9, #comp-mr69hwwa4, #comp-mr69hwvf5, #comp-mr69hwvh) {

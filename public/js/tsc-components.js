@@ -276,7 +276,7 @@
   };
 
   var TSC_LOGO_SRC = '/assets/brand/tsc-logo-trim-nav.png';
-  var ACADEMY_LOGO_SRC = '/assets/brand/tsc-academy-logo-text-trim-nav.png';
+  var ACADEMY_LOGO_SRC = '/assets/brand/tsc-academy-logo-trim-nav.png';
   var TSC_FOOTER_LOGO_SRC = '/assets/brand/tsc-logo-trim-footer.png';
   var ACADEMY_FOOTER_LOGO_SRC = '/assets/brand/tsc-academy-logo-trim-footer.png';
   var DEFAULT_BRAND_ASSETS = {

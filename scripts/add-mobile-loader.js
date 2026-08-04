@@ -16,23 +16,21 @@ const primaryFiles = [
 
 const HEAD_BOOT = `<script data-tsc-mobile-boot>/* DESKTOP LOCK: early mobile CSS — no desktop FOUC */
 (function () {
-  function link(href, media) {
-    if (document.querySelector('link[data-tsc-boot][href="' + href + '"]')) return;
-    var l = document.createElement('link');
-    l.rel = 'stylesheet';
-    l.href = href;
-    if (media) l.media = media;
-    l.setAttribute('data-tsc-boot', '1');
-    (document.head || document.documentElement).appendChild(l);
-  }
-  link('/css/tsc-nav-overrides.css', '(min-width: 1025px)');
-  link('/css/tsc-responsive.css?v=academy-chrome-2', '(min-width: 1025px)');
   var mq = window.matchMedia && window.matchMedia('(max-width: 1024px)');
   if (!mq || !mq.matches) return;
   var html = document.documentElement;
   html.classList.add('tsc-boot-mobile');
-  link('/css/mobile/boot.css', '(max-width: 1024px)');
-  link('/css/tsc-mobile-system.css', '(max-width: 1024px)');
+  function link(href) {
+    if (document.querySelector('link[data-tsc-boot][href="' + href + '"]')) return;
+    var l = document.createElement('link');
+    l.rel = 'stylesheet';
+    l.href = href;
+    l.media = '(max-width: 1024px)';
+    l.setAttribute('data-tsc-boot', '1');
+    (document.head || document.documentElement).appendChild(l);
+  }
+  link('/css/mobile/boot.css');
+  link('/css/tsc-mobile-system.css');
   var p = (location.pathname || '/').replace(/\\/$/, '') || '/';
   if (p.indexOf('/pages/') === 0) p = p.replace('/pages', '').replace(/\\.html$/, '') || '/';
   var seg = p === '/' ? 'home' : p.replace(/^\\//, '').split('/')[0];
@@ -67,8 +65,8 @@ const HEAD_BOOT = `<script data-tsc-mobile-boot>/* DESKTOP LOCK: early mobile CS
     'online-music-course-worth-it': '/css/mobile/resources.css',
     'artist-release-playbook': '/css/mobile/resources.css'
   };
-  if (map[seg]) link(map[seg], '(max-width: 1024px)');
-  else link('/css/mobile/home.css', '(max-width: 1024px)');
+  if (map[seg]) link(map[seg]);
+  else link('/css/mobile/home.css');
   /* safety: never leave page invisible */
   setTimeout(function () { html.classList.add('tsc-mobile-ready'); }, 4000);
 })();
@@ -81,6 +79,7 @@ const BODY_LOADER = `<script data-tsc-mobile-loader>/* DESKTOP LOCK: mobile-only
   var up = window.matchMedia('(min-width: 1025px)');
   var onUp = function (e) { if (e.matches) location.reload(); };
   if (up.addEventListener) up.addEventListener('change', onUp); else if (up.addListener) up.addListener(onUp);
+  if (!mq.matches) return;
   var markReady = function () {
     document.documentElement.classList.add('tsc-mobile-ready');
   };

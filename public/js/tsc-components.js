@@ -324,6 +324,41 @@
     });
   }
 
+  function wireLockedArtistsDropdownClickGuard() {
+    if (window.__tscArtistsDropdownClickGuard) return;
+    window.__tscArtistsDropdownClickGuard = true;
+    var targets = {
+      'TSC Artists': '/artists',
+      'Artist Path': '/artist-path',
+      'Learn With TSC': '/academy'
+    };
+    function dropdownTarget(event) {
+      var node = event.target && event.target.closest && event.target.closest('a, [role="menuitem"], .wixui-dropdown-menu__item, .wixui-vertical-menu__item-label');
+      if (!node) return null;
+      var label = (node.textContent || '').trim().replace(/\s+/g, ' ');
+      var href = targets[label];
+      if (!href) return null;
+      var rect = node.getBoundingClientRect && node.getBoundingClientRect();
+      if (!rect || rect.width < 2 || rect.height < 2) return null;
+      return href;
+    }
+    document.addEventListener('click', function(event) {
+      var href = dropdownTarget(event);
+      if (!href) return;
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      window.location.assign(href);
+    }, true);
+    document.addEventListener('keydown', function(event) {
+      if (event.key !== 'Enter' && event.key !== ' ') return;
+      var href = dropdownTarget(event);
+      if (!href) return;
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      window.location.assign(href);
+    }, true);
+  }
+
   function watchLinkNormalization() {
     if (window.__tscLinkNormalizationObserver || !window.MutationObserver || !document.body) return;
     window.__tscLinkNormalizationObserver = true;
@@ -1880,6 +1915,7 @@
       mountMobileFooter({ path: path });
     };
     wireLearnHubClickGuard();
+    wireLockedArtistsDropdownClickGuard();
     normalizeInternalProtocolRelativeLinks();
     forceLearnHubLinksToAcademy();
     ensureAcademyCoursesAnchor();

@@ -9,69 +9,58 @@
 
   var resourcesBlogCards = [
     {
-      title: 'How I Curate Music With Independent Artists',
-      description: 'Lessons from Lost;Found with Faheem Abdullah — curation that reveals the artist.',
-      date: 'JUL 29',
-      readTime: '14 mins',
-      href: '/how-i-curate-music-with-independent-artists',
-      image: {
-        src: '/assets/blogs/curate-music-independent-artists.jpeg',
-        alt: 'Lost;Found curation essay editorial visual'
-      }
-    },
-    {
-      title: 'How Do I Make Music If I Have No Experience?',
-      description: 'A beginner-friendly path into making music without waiting for perfect conditions.',
+      title: 'From Bhajan to Clubbing, From Mythology to Cinema',
+      description: 'Indian culture is not suddenly becoming relevant.',
       date: 'JUL 26',
-      readTime: '3 mins',
-      href: '/start-making-music',
+      readTime: '5 mins',
+      href: 'https://rohitsobti1.medium.com/from-bhajan-to-clubbing-from-mythology-to-cinema-how-indian-culture-is-finding-new-mainstream-161432be0966',
       image: {
-        src: '/assets/blogs/indian-culture-mainstream.jpeg',
-        alt: 'Beginner music guide visual'
-      }
-    },
-    {
-      title: 'Is an Online Music Course Worth It for Beginners?',
-      description: 'When structured learning helps — and when practice alone is enough.',
-      date: 'JUN 26',
-      readTime: '7 mins',
-      href: '/online-music-course-worth-it',
-      image: {
-        src: '/assets/blogs/song-release-now-what.jpeg',
-        alt: 'Online music course guide visual'
-      }
-    },
-    {
-      title: 'The Artist Release Playbook',
-      description: 'How to release your music without it getting lost. Pre-release, release day, and post-release strategies.',
-      date: 'MAY 26',
-      readTime: '6 mins',
-      href: '/artist-release-playbook',
-      image: {
-        src: '/assets/mirror/static.wixstatic.com/media/19f989_455089248e404ce8a8410dc7c2db5331~mv2.png/v1/fill/w_640,h_360,al_c,q_85,enc_avif,quality_auto/The%20Artist%20Release%20Playbook.png',
-        alt: 'Artist release playbook editorial visual'
+        src: '/assets/blogs/from-bhajan-to-clubbing-medium.png',
+        alt: 'From Bhajan to Clubbing Medium article visual'
       }
     },
     {
       title: 'You Released a Song. Now What?',
-      description: 'A practical release guide for independent artists building listeners, fans, and momentum.',
+      description: 'A practical guide for independent artists to build listeners, fans and momentum.',
       date: 'JUL 27',
       readTime: '12 mins',
-      href: '/you-released-a-song-now-what',
+      href: 'https://rohitsobti1.medium.com/you-released-a-song-now-what-1bc33923ee1c',
       image: {
-        src: '/assets/blogs/song-release-now-what.jpeg',
-        alt: 'Artist release playbook editorial visual'
+        src: '/assets/blogs/you-released-a-song-medium.png',
+        alt: 'You Released a Song Medium article visual'
       }
     },
     {
-      title: 'From Bhajan to Clubbing, From Mythology to Cinema',
-      description: 'How Indian culture is finding new mainstream forms across music, film, and shared spaces.',
+      title: 'How Do I Start Making Music if I Have No Experience?',
+      description: 'A lot of people feel drawn to music but do not know where to begin.',
       date: 'JUL 26',
-      readTime: '5 mins',
-      href: '/from-bhajan-to-clubbing',
+      readTime: '3 mins',
+      href: 'https://rohitsobti1.medium.com/how-do-i-start-making-music-if-i-have-no-experience-9c42a7409cd5',
       image: {
-        src: '/assets/blogs/indian-culture-mainstream.jpeg',
-        alt: 'Culture essay editorial visual'
+        src: '/assets/blogs/start-making-music-medium.png',
+        alt: 'Start Making Music Medium article visual'
+      }
+    },
+    {
+      title: 'The Independent Film Growth Playbook',
+      description: '10 principles every Indian producer should know before releasing a film.',
+      date: 'JUL 29',
+      readTime: '8 mins',
+      href: 'https://rohitsobti1.medium.com/the-independent-film-growth-playbook-ac5765bec3a7',
+      image: {
+        src: '/assets/blogs/independent-film-growth-playbook-medium.png',
+        alt: 'Independent Film Growth Playbook Medium article visual'
+      }
+    },
+    {
+      title: 'The Artist Path',
+      description: 'A journey of self-discovery, exposure, fandom and monetisation.',
+      date: 'JUL 29',
+      readTime: '8 mins',
+      href: 'https://rohitsobti1.medium.com/the-artist-path-a-journey-of-self-discovery-exposure-fandom-and-monetisation-c130b58b2e0e',
+      image: {
+        src: '/assets/blogs/artist-path-medium.png',
+        alt: 'Artist Path Medium article visual'
       }
     }
   ];

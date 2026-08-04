@@ -2153,7 +2153,7 @@
       window.__tscSharedChromeObserver.observe(document.body, { childList: true, subtree: true });
     }
     if (path === '/resources') {
-      ensureScript('/js/content-replacements.js?v=resources-all-blogs-1');
+      ensureScript('/js/content-replacements.js?v=resources-medium-blogs-1');
     }
     if (path === '/academy' || path === '/learn-with-tsc') {
       ensureScript('/js/content-replacements.js?v=academy-chrome-1');

@@ -1241,22 +1241,6 @@ body:has(#comp-mr69hwoy) :is(#comp-mr69hwvf5, #comp-mr69hwvh) {
 
   /* --- desktop page fixes (was 3rd min-width:901 block) --- */
 
-  body[data-page="home"] #comp-mrqgho75 {
-    height: 104px !important;
-    min-height: 104px !important;
-    overflow: hidden !important;
-    position: relative !important;
-    top: auto !important;
-  }
-
-  body[data-page="home"] #comp-mrqgho75_r_comp-mrqgho3a,
-  body[data-page="home"] #comp-mrqgho75_r_comp-mrqgho3a > div,
-  body[data-page="home"] #comp-mrqgho75_r_comp-mrqgho3a [data-testid="responsive-container-content"] {
-    height: 104px !important;
-    min-height: 104px !important;
-    overflow: hidden !important;
-  }
-
   body[data-page="home"] #comp-mrqgho75_r_comp-mrqgho3a {
     --scrolled-transform: none !important;
     --transition-property: none !important;

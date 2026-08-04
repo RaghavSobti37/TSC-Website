@@ -173,6 +173,27 @@
     });
   }
 
+  function mountHarshadDigitalPresenceLinks(path) {
+    if (path !== '/harshad-duhita') return;
+    var section = document.getElementById('comp-mq84m6ve');
+    var container = section && section.querySelector('.comp-mq84m6ve-container');
+    if (!section || !container || container.querySelector('.tsc-hd-social-extra-grid')) return;
+    var grid = document.createElement('div');
+    grid.className = 'tsc-hd-social-extra-grid';
+    grid.setAttribute('aria-label', 'Harshaduhita additional social links');
+    grid.innerHTML = [
+      '<a class="tsc-hd-social-card" href="https://youtube.com/@theHarshaduhitacollective" target="_blank" rel="noreferrer noopener" aria-label="Harshaduhita Collective on YouTube">',
+        '<span>YouTube</span>',
+        SOCIAL_SVGS.youtube,
+      '</a>',
+      '<a class="tsc-hd-social-card" href="https://www.facebook.com/harshad.golesar/" target="_blank" rel="noreferrer noopener" aria-label="Harshaduhita Golesar on Facebook">',
+        '<span>Facebook</span>',
+        SOCIAL_SVGS.facebook,
+      '</a>'
+    ].join('');
+    container.appendChild(grid);
+  }
+
   function watchLinkNormalization() {
     if (window.__tscLinkNormalizationObserver || !window.MutationObserver || !document.body) return;
     window.__tscLinkNormalizationObserver = true;
@@ -1747,8 +1768,12 @@
       ensureStylesheet('/css/forms.css?v=form-pickers-1');
     }
     mountSharedChrome();
+    mountHarshadDigitalPresenceLinks(path);
     [250, 900, 1800, 3200].forEach(function(delay) {
-      window.setTimeout(mountSharedChrome, delay);
+      window.setTimeout(function() {
+        mountSharedChrome();
+        mountHarshadDigitalPresenceLinks(path);
+      }, delay);
     });
     if ('MutationObserver' in window && !window.__tscSharedChromeObserver) {
       window.__tscSharedChromeObserver = new MutationObserver(function() {

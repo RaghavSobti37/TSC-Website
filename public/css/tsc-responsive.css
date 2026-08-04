@@ -212,6 +212,15 @@ footer.site-footer:has(.tsc-mobile-footer) {
     white-space: nowrap;
   }
 
+  .tsc-desktop-site-header-academy .tsc-desktop-site-nav > a.is-active,
+  .tsc-desktop-site-header-academy .tsc-academy-courses-menu.is-active > summary {
+    background: var(--tsc-cream);
+    border-radius: 9px;
+    color: var(--tsc-deep-teal);
+    min-height: 44px;
+    padding: 0 22px;
+  }
+
   .tsc-academy-courses-menu {
     position: relative;
   }
@@ -252,6 +261,12 @@ footer.site-footer:has(.tsc-mobile-footer) {
   .tsc-academy-courses-dropdown a {
     min-height: 0;
     padding: 12px;
+  }
+
+  .tsc-academy-courses-dropdown a.is-active {
+    background: var(--tsc-cream);
+    border-radius: 6px;
+    color: var(--tsc-deep-teal) !important;
   }
 
   .tsc-desktop-site-header-academy .tsc-academy-main-site-link {
@@ -1960,6 +1975,13 @@ body.tsc-has-mobile-footer .tsc-legacy-footer-host:not(:has(.tsc-mobile-footer))
     font: normal normal 700 15px/1.2 Arial, sans-serif;
     padding: 11px 8px;
     text-decoration: none;
+  }
+
+  .tsc-mobile-menu nav a.is-active,
+  .tsc-mobile-academy-courses.is-active > summary {
+    background: var(--tsc-cream);
+    border-radius: 7px;
+    color: var(--tsc-deep-teal);
   }
 
   .tsc-mobile-menu nav a:last-child {

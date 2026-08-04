@@ -952,6 +952,68 @@
     ];
   }
 
+  function academyActivePage(path, hash) {
+    path = path || canonicalPathname();
+    hash = hash || location.hash || '';
+    if (path === '/resources' || RESOURCES_PATHS[path]) return 'resources';
+    if (hash === '#testimonials') return 'testimonials';
+    if (hash === '#know-more') return 'know-more';
+    if (path === '/book-a-call' || path === '/artist-query' || path === '/masterclass-review01' || path === '/masterclass-review02' || path === '/classicalreview') return 'know-more';
+    if (LEARN_PATHS[path] || path === '/academy' || path === '/learn-with-tsc') return 'courses';
+    return '';
+  }
+
+  function academyNavItemMarkup(item, activePage) {
+    var active = item.key && item.key === activePage;
+    var attrs = [
+      'href="' + escapeHtml(item.href) + '"',
+      'data-tsc-nav-key="' + escapeHtml(item.key || '') + '"'
+    ];
+    if (item.className) attrs.push('class="' + escapeHtml(item.className + (active ? ' is-active' : '')) + '"');
+    else if (active) attrs.push('class="is-active"');
+    if (active) attrs.push('aria-current="page"');
+    return '<a ' + attrs.join(' ') + '>' + escapeHtml(item.label) + '</a>';
+  }
+
+  function renderAcademyNav(activePage, mobile) {
+    activePage = activePage || academyActivePage();
+    var courseActive = activePage === 'courses';
+    var courseItems = [
+      { href: '/music-production', label: 'A-Z of Music Production' },
+      { href: '/the-heart-of-composition', label: 'The HeART of Composition' },
+      { href: '/roots-of-hindustani-classical', label: 'Roots of Hindustani Classical' }
+    ].map(function(item) {
+      var active = item.href === canonicalPathname();
+      return '<a href="' + escapeHtml(item.href) + '"' + (active ? ' class="is-active" aria-current="page"' : '') + '>' + escapeHtml(item.label) + '</a>';
+    }).join('');
+    if (mobile) {
+      return [
+        academyNavItemMarkup({ href: '/resources', key: 'resources', label: 'Resources' }, activePage),
+        '<details class="tsc-mobile-academy-courses' + (courseActive ? ' is-active' : '') + '">',
+          '<summary' + (courseActive ? ' aria-current="page"' : '') + '>Courses</summary>',
+          '<div>',
+            courseItems,
+          '</div>',
+        '</details>',
+        academyNavItemMarkup({ href: '/academy#testimonials', key: 'testimonials', label: 'Testimonials' }, activePage),
+        academyNavItemMarkup({ href: '/academy#know-more', key: 'know-more', label: 'Know More' }, activePage),
+        academyNavItemMarkup({ href: '/', key: 'main-site', label: 'MAIN WEBSITE' }, activePage)
+      ].join('');
+    }
+    return [
+      academyNavItemMarkup({ href: '/resources', key: 'resources', label: 'Resources' }, activePage),
+      '<details class="tsc-academy-courses-menu' + (courseActive ? ' is-active' : '') + '">',
+        '<summary' + (courseActive ? ' aria-current="page"' : '') + '>Courses</summary>',
+        '<div class="tsc-academy-courses-dropdown">',
+          courseItems,
+        '</div>',
+      '</details>',
+      academyNavItemMarkup({ href: '/academy#testimonials', key: 'testimonials', label: 'Testimonials' }, activePage),
+      academyNavItemMarkup({ href: '/academy#know-more', key: 'know-more', label: 'Know More' }, activePage),
+      academyNavItemMarkup({ href: '/', key: 'main-site', label: 'MAIN WEBSITE', className: 'tsc-academy-main-site-link' }, activePage)
+    ].join('');
+  }
+
   function markLegacyHeaders() {
     document.querySelectorAll('header, #SITE_HEADER, [data-testid="siteHeader"]').forEach(function(header) {
       if (header.classList && header.classList.contains('tsc-desktop-site-header')) return;
@@ -1000,12 +1062,19 @@
     }
     var config = componentOptions(opts);
     var variant = config.academy ? 'academy' : 'main';
-    var locked = activateLockedDesktopHeader();
-    if (locked) {
-      if (existing && existing.parentNode) existing.parentNode.removeChild(existing);
-      return locked;
+    var activePage = opts && opts.activePage || academyActivePage(config.path);
+    if (!config.academy) {
+      var locked = activateLockedDesktopHeader();
+      if (locked) {
+        if (existing && existing.parentNode) existing.parentNode.removeChild(existing);
+        return locked;
+      }
     }
-    if (existing && existing.dataset.tscVariant === variant) {
+    if (
+      existing &&
+      existing.dataset.tscVariant === variant &&
+      (!config.academy || existing.dataset.tscActivePage === activePage)
+    ) {
       markLegacyHeaders();
       return existing;
     }
@@ -1013,25 +1082,13 @@
     markLegacyHeaders();
 
     var brandName = config.brand.name || (config.academy ? 'TSC Academy' : 'The Shakti Collective');
-    var navMarkup = config.academy ? [
-      '<a href="/resources">Resources</a>',
-      '<details class="tsc-academy-courses-menu">',
-        '<summary>Courses</summary>',
-        '<div class="tsc-academy-courses-dropdown">',
-          '<a href="/music-production">A-Z of Music Production</a>',
-          '<a href="/the-heart-of-composition">The HeART of Composition</a>',
-          '<a href="/roots-of-hindustani-classical">Roots of Hindustani Classical</a>',
-        '</div>',
-      '</details>',
-      '<a href="/academy#testimonials">Testimonials</a>',
-      '<a href="/academy#know-more">Know More</a>',
-      '<a class="tsc-academy-main-site-link" href="/">MAIN WEBSITE</a>'
-    ].join('') : navLinksFor(false).map(function(item) {
+    var navMarkup = config.academy ? renderAcademyNav(activePage, false) : navLinksFor(false).map(function(item) {
       return '<a href="' + escapeHtml(item[0]) + '">' + escapeHtml(item[1]) + '</a>';
     }).join('');
     var header = document.createElement('header');
     header.className = 'tsc-desktop-site-header' + (config.academy ? ' tsc-desktop-site-header-academy' : '');
     header.dataset.tscVariant = variant;
+    if (config.academy) header.dataset.tscActivePage = activePage;
     header.setAttribute('data-tsc-theme', config.academy ? 'academy' : 'main');
     header.innerHTML = [
       '<a class="tsc-desktop-site-brand" href="' + (config.academy ? '/academy' : '/') + '" aria-label="' + escapeHtml(brandName) + '">',
@@ -1109,7 +1166,12 @@
 
     var config = componentOptions(opts);
     var variant = config.academy ? 'academy' : 'main';
-    if (existing && existing.dataset.tscVariant === variant) {
+    var activePage = opts && opts.activePage || academyActivePage(config.path);
+    if (
+      existing &&
+      existing.dataset.tscVariant === variant &&
+      (!config.academy || existing.dataset.tscActivePage === activePage)
+    ) {
       hideWixMobileNavChrome();
       return existing;
     }
@@ -1117,25 +1179,13 @@
     markLegacyHeaders();
 
     var brandName = config.brand.name || (config.academy ? 'TSC Academy' : 'The Shakti Collective');
-    var mobileNavMarkup = config.academy ? [
-      '<a href="/resources">Resources</a>',
-      '<details class="tsc-mobile-academy-courses">',
-        '<summary>Courses</summary>',
-        '<div>',
-          '<a href="/music-production">A-Z of Music Production</a>',
-          '<a href="/the-heart-of-composition">The HeART of Composition</a>',
-          '<a href="/roots-of-hindustani-classical">Roots of Hindustani Classical</a>',
-        '</div>',
-      '</details>',
-      '<a href="/academy#testimonials">Testimonials</a>',
-      '<a href="/academy#know-more">Know More</a>',
-      '<a href="/">MAIN WEBSITE</a>'
-    ].join('') : navLinksFor(false).map(function(item) {
+    var mobileNavMarkup = config.academy ? renderAcademyNav(activePage, true) : navLinksFor(false).map(function(item) {
       return '<a href="' + escapeHtml(item[0]) + '">' + escapeHtml(item[1]) + '</a>';
     }).join('');
     var header = document.createElement('div');
     header.className = 'tsc-mobile-site-header' + (config.academy ? ' tsc-mobile-site-header-academy' : '');
     header.dataset.tscVariant = variant;
+    if (config.academy) header.dataset.tscActivePage = activePage;
     header.innerHTML = [
       '<a class="tsc-mobile-brand" href="' + (config.academy ? '/academy' : '/') + '" aria-label="' + escapeHtml(brandName) + '">',
         mobileHeaderLogoMarkup(config),
@@ -1575,6 +1625,7 @@
     normalizeArtistLinks: normalizeArtistLinks,
     normalizeNewsletter: normalizeNewsletter,
     patchMutedPlay: patchMutedPlay,
+    renderAcademyNav: renderAcademyNav,
     setImage: setImage,
     setText: setText,
     slug: slug,

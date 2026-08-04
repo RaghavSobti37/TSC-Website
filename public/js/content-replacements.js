@@ -318,6 +318,8 @@
       var style = document.createElement('style');
       style.id = 'tsc-resources-blog-style';
       style.textContent =
+        '#comp-mpgmnan2{grid-area:2/1/3/2!important}' +
+        '#comp-mrdp2u69{grid-area:3/1/4/2!important}' +
         '#comp-mrdp2u69,#comp-mrdp2u69 .comp-mrdp2u69-container{height:auto!important;min-height:0!important;overflow:visible!important}' +
         '#comp-mrdp2u69 .comp-mrdp2u69-container{position:relative!important;z-index:1!important;display:grid!important;grid-template-columns:1fr 1fr!important;grid-template-rows:auto auto!important;gap:24px!important;padding:64px max(7vw,24px)!important;box-sizing:border-box!important;pointer-events:auto!important}' +
         '#comp-mrdpc84n,#comp-mrdpc824{position:relative!important;left:auto!important;top:auto!important;width:100%!important;height:auto!important;margin:0!important;grid-area:auto!important;transform:none!important}' +

@@ -633,6 +633,16 @@
   var DEFAULT_ACADEMY_PATHS = {
     '/academy': true,
     '/learn-with-tsc': true,
+    '/resources': true,
+    '/blog-1': true,
+    '/blog-2': true,
+    '/blog-3': true,
+    '/start-making-music': true,
+    '/online-music-course-worth-it': true,
+    '/artist-release-playbook': true,
+    '/from-bhajan-to-clubbing': true,
+    '/you-released-a-song-now-what': true,
+    '/how-i-curate-music-with-independent-artists': true,
     '/the-heart-of-composition': true,
     '/roots-of-hindustani-classical': true,
     '/music-production': true,
@@ -1387,6 +1397,26 @@
     return expected;
   }
 
+  function syncLockedDesktopHeaderBrand(header, config) {
+    if (!header || !config) return;
+    var brandName = config.brand.name || (config.academy ? 'TSC Academy' : 'The Shakti Collective');
+    var logoSrc = logoSrcForConfig(config);
+    var homeHref = config.academy ? '/academy' : '/';
+    var candidates = Array.prototype.filter.call(header.querySelectorAll('a'), function(link) {
+      var rect = link.getBoundingClientRect();
+      if (rect.width > 0 && rect.height > 0 && rect.left > 430) return false;
+      return !!link.querySelector('img, svg, wix-vector-image, .wixui-vector-image') ||
+        /shakti|academy|logo|brand/i.test(link.getAttribute('aria-label') || link.textContent || '');
+    });
+    var brandLink = candidates[0];
+    if (!brandLink) return;
+    brandLink.href = homeHref;
+    brandLink.setAttribute('aria-label', brandName);
+    brandLink.classList.add('tsc-desktop-brand-link');
+    brandLink.dataset.tscBrandLogo = config.academy ? 'academy' : 'main';
+    brandLink.innerHTML = '<img class="tsc-desktop-brand-logo tsc-desktop-brand-logo-unified" src="' + logoSrc + '" alt="' + escapeHtml(brandName) + '" width="' + (config.academy ? '270' : '205') + '" height="' + (config.academy ? '86' : '51') + '" decoding="async">';
+  }
+
   function mountDesktopHeader(opts) {
     var desktop = !window.matchMedia || window.matchMedia('(min-width: 1025px)').matches;
     var existing = document.querySelector('.tsc-desktop-site-header');
@@ -1399,6 +1429,7 @@
     var activePage = opts && opts.activePage || academyActivePage(config.path);
     var locked = activateLockedDesktopHeader();
     if (locked) {
+      syncLockedDesktopHeaderBrand(locked, config);
       if (existing && existing.parentNode) existing.parentNode.removeChild(existing);
       return locked;
     }

@@ -349,6 +349,33 @@ footer.site-footer:has(.tsc-mobile-footer) {
     display: grid !important;
   }
 
+  body[data-page="yugm"] #comp-mqhqa6vo {
+    --l_display: flex !important;
+    display: flex !important;
+    min-height: clamp(640px, 54vw, 790px) !important;
+    visibility: visible !important;
+  }
+
+  body[data-page="yugm"] .q5942-container {
+    grid-template-rows:
+      0
+      minmax(clamp(640px, 54vw, 790px), auto)
+      28px
+      auto
+      auto
+      auto
+      auto
+      auto
+      0
+      0 !important;
+  }
+
+  body[data-page="yugm"] #comp-mqhqa6vo .comp-mqhqa6vo-container,
+  body[data-page="yugm"] #comp-mqhqa6vo > [data-testid="responsive-container-content"] {
+    --l_display: grid !important;
+    display: grid !important;
+  }
+
   .tsc-desktop-site-header-academy .tsc-desktop-site-nav {
     flex-wrap: nowrap;
     gap: clamp(22px, 2.7vw, 40px);

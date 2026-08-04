@@ -1451,7 +1451,7 @@
     var config = componentOptions(opts);
     var variant = config.academy ? 'academy' : 'main';
     var activePage = opts && opts.activePage || academyActivePage(config.path);
-    var forceCustomHeader = !!(opts && opts.forceCustomHeader) || !!IMPACT_PATHS[config.path] || config.path === '/harshad-duhita';
+    var forceCustomHeader = !!(opts && opts.forceCustomHeader) || !!IMPACT_PATHS[config.path] || config.path === '/harshad-duhita' || config.path === '/yugm';
     var locked = forceCustomHeader ? null : activateLockedDesktopHeader();
     if (locked) {
       syncLockedDesktopHeaderBrand(locked, config);

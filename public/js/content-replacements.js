@@ -134,11 +134,11 @@
       mentor: 'Mentor: Luca Petracca',
       title: 'A-Z of Music Production',
       eyebrow: 'Course Overview',
-      description: 'Practical end-to-end music production for artists using only a laptop - from idea to finished track.',
-      details: 'International practical masterclass with Luca Petracca. Learn melody and chords, harmonic functions, virtual instruments, recording, production, mixing and mastering through hands-on projects.',
+      description: 'A practical international masterclass teaching end-to-end music production for artists using only a laptop.',
+      details: 'Take an idea to a finished track: melodies, chords, harmonic progressions, song forms, virtual instruments, recording, FX, production, mixing and mastering through hands-on projects.',
       mentorName: 'Luca Petracca',
-      mentorBio: 'An international music producer, composer, and educator focused on practical production workflows. Luca teaches artists how to shape ideas into polished, release-ready music using accessible tools.',
-      mentorBadges: ['International Producer', 'Hands-On Production', 'Mixing & Mastering'],
+      mentorBio: 'Luca Petracca is a music producer and composer from Italy. He studied classical guitar at Conservatory S. Cecilia of Rome, classical composition at the Conservatorium van Amsterdam, and has taught music globally for more than 17 years.',
+      mentorBadges: ['Music Producer & Composer', '17+ Years Teaching', 'Laptop-Based Production'],
       imageSelector: '#img-comp-mqz5xh42 img, img[alt*="f205ff385c2272184580fd45"], img[src*="19f989_72c26b9f755948e59217c0f217c9af16"]',
       fallbackImage: '/assets/mirror/static.wixstatic.com/media/19f989_72c26b9f755948e59217c0f217c9af16~mv2.jpeg/v1/fill/w_640,h_517,fp_0.50_0.30,q_80,enc_avif,quality_auto/ab6761610000e5ebf205ff385c2272184580fd45.jpeg',
       href: '/book-a-call'
@@ -559,8 +559,8 @@
   }
 
   function polishMobileMusicProductionPage() {
-    if (normalizedPath() !== '/music-production') return;
-    if (!window.matchMedia || !window.matchMedia('(max-width: 1024px)').matches) return;
+    var path = normalizedPath();
+    if (path !== '/music-production' && path !== '/pages/music-production.html') return;
 
     function setRichHtml(selector, html) {
       var el = document.querySelector(selector);
@@ -569,20 +569,33 @@
       el.dataset.tscMusicProductionPolished = '1';
     }
 
+    setRichHtml('#comp-mpmj3dm7', '<h1 class="font_2 wixui-rich-text__text">A-Z of Music Production</h1>');
+    setRichHtml('#comp-mpmj3dno8', '<p class="font_8 wixui-rich-text__text">A practical international masterclass teaching end-to-end music production for artists using only a laptop.</p>');
+    setRichHtml(
+      '#comp-mpmvpcgf',
+      '<p class="font_8 wixui-rich-text__text">This practical learning program by Luca Petracca teaches you how to take an idea to a finished track: crafting melodies, understanding chord progressions and harmonic functions, shaping sounds with virtual instruments, arranging song forms across genres, recording clean takes with laptop-friendly gear, applying production, mixing and mastering techniques.</p>'
+    );
+    setRichHtml(
+      '#comp-mpmvpezz',
+      '<p class="font_8 wixui-rich-text__text">Modules cover essential topics with hands-on projects so you can produce professional-sounding songs without expensive studio gear.</p>'
+    );
     setRichHtml('#comp-mpu7z3t2', '<p class="font_8 wixui-rich-text__text">LUCA PETRACCA</p>');
     setRichHtml(
       '#comp-mpu7u82h',
-      '<p class="font_8 wixui-rich-text__text">International practical masterclass with Luca Petracca - 17+ years teaching laptop-based production. Learn melody and chords, harmonic functions, virtual instruments, recording, production, mixing and mastering through hands-on projects.</p>'
+      '<p class="font_8 wixui-rich-text__text">Hi, I am Luca Petracca, a music producer and composer from Italy. I learned classical guitar from the Conservatory S. Cecilia of Rome before moving to the Netherlands to study classical composition at the Conservatorium van Amsterdam. Traveling across the globe, I have been teaching music for more than 17 years and have produced multiple tracks. I am here to help you find the right questions. With this, let us dive into the A-Z of Music Production.</p>'
     );
-    setRichHtml('#comp-mpmizynh', '<h3 class="font_5 wixui-rich-text__text">Melody and Chords</h3>');
-    setRichHtml('#comp-mpmizynl', '<p class="font_8 wixui-rich-text__text">Build musical ideas with melody, chords and harmonic functions.</p>');
-    setRichHtml('#comp-mpmizyo2', '<h3 class="font_5 wixui-rich-text__text">Harmonic Progressions</h3>');
-    setRichHtml('#comp-mpmizyo4', '<p class="font_8 wixui-rich-text__text">Understand progressions, genre movement and song forms for stronger arrangements.</p>');
+    setRichHtml('#comp-mpu80o0a', '<p class="font_8 wixui-rich-text__text">Music Producer & Composer</p>');
+    setRichHtml('#comp-mpu8628h', '<p class="font_8 wixui-rich-text__text">Classical Guitar & Composition</p>');
+    setRichHtml('#comp-mpu86yn7', '<p class="font_8 wixui-rich-text__text">17+ Years Teaching</p>');
+    setRichHtml('#comp-mpmizynh', '<h3 class="font_5 wixui-rich-text__text">Melody, Chords and Harmony</h3>');
+    setRichHtml('#comp-mpmizynl', '<p class="font_8 wixui-rich-text__text">Craft melodies, understand chord progressions, and use harmonic functions with purpose.</p>');
+    setRichHtml('#comp-mpmizyo2', '<h3 class="font_5 wixui-rich-text__text">Genres, Song Forms and Sounds</h3>');
+    setRichHtml('#comp-mpmizyo4', '<p class="font_8 wixui-rich-text__text">Arrange common song forms across genres and shape sounds with virtual instruments.</p>');
     setRichHtml('#comp-mpmizyok5', '<h3 class="font_5 wixui-rich-text__text">Recording and Production</h3>');
-    setRichHtml('#comp-mpmizyom4', '<p class="font_8 wixui-rich-text__text">Record clean parts, shape virtual instruments and build a complete laptop-based production.</p>');
-    setRichHtml('#comp-mpmizyp2', '<h3 class="font_5 wixui-rich-text__text">Mixing and Mastering</h3>');
-    setRichHtml('#comp-mpmizyp39', '<p class="font_8 wixui-rich-text__text">Balance, polish and prepare finished tracks with FXs, mixing and mastering workflows.</p>');
-    setRichHtml('#comp-mpny86eb', '<p class="font_8 wixui-rich-text__text">Start with practical production foundations for modern laptop-based music-making.</p>');
+    setRichHtml('#comp-mpmizyom4', '<p class="font_8 wixui-rich-text__text">Record clean takes with laptop-friendly gear and build complete productions.</p>');
+    setRichHtml('#comp-mpmizyp2', '<h3 class="font_5 wixui-rich-text__text">FX, Mixing and Mastering</h3>');
+    setRichHtml('#comp-mpmizyp39', '<p class="font_8 wixui-rich-text__text">Apply effects processing, balance mixes, and master finished tracks for release.</p>');
+    setRichHtml('#comp-mpny86eb', '<p class="font_8 wixui-rich-text__text">Create professional-sounding songs without expensive studio gear.</p>');
 
     var mentorImg = document.querySelector('#img-comp-mpu7qgfn img');
     if (mentorImg && mentorImg.dataset.tscMusicProductionPolished !== '1') {
@@ -591,14 +604,23 @@
       mentorImg.dataset.tscMusicProductionPolished = '1';
     }
 
-    var seenMixing = false;
-    document.querySelectorAll('.AccordionContainer1266025101__accordionHeader').forEach(function(button) {
-      var label = (button.textContent || '').replace(/\s+/g, ' ').trim();
-      if (label !== '10 : Mixing and Mastering') return;
-      if (!seenMixing) {
-        seenMixing = true;
-        return;
-      }
+    [
+      '01 : Introduction to Music Production',
+      '02 : Melody and Chords',
+      '03 : Harmonic Progressions and Functions',
+      '04 : Music Genres',
+      '05 : Song Forms',
+      '06 : Instruments and Sounds',
+      '07 : Recording Techniques',
+      '08 : Production Techniques',
+      '09 : FXs (Effects Processing)',
+      '10 : Mixing and Mastering'
+    ].forEach(function(label, index) {
+      var button = document.querySelectorAll('.AccordionContainer1266025101__accordionHeader')[index];
+      if (button) button.innerHTML = button.innerHTML.replace(/(?:\d{2}|00)\s*:\s*[^<]+/, label);
+    });
+    document.querySelectorAll('.AccordionContainer1266025101__accordionHeader').forEach(function(button, index) {
+      if (index < 10) return;
       button.style.setProperty('display', 'none', 'important');
       button.setAttribute('aria-hidden', 'true');
       var content = button.nextElementSibling;

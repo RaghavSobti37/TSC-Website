@@ -1063,12 +1063,10 @@
     var config = componentOptions(opts);
     var variant = config.academy ? 'academy' : 'main';
     var activePage = opts && opts.activePage || academyActivePage(config.path);
-    if (!config.academy) {
-      var locked = activateLockedDesktopHeader();
-      if (locked) {
-        if (existing && existing.parentNode) existing.parentNode.removeChild(existing);
-        return locked;
-      }
+    var locked = activateLockedDesktopHeader();
+    if (locked) {
+      if (existing && existing.parentNode) existing.parentNode.removeChild(existing);
+      return locked;
     }
     if (
       existing &&

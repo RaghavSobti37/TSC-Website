@@ -960,10 +960,12 @@ body:has(#comp-mr69hwoy) :is(#comp-mr69hwvf5, #comp-mr69hwvh) {
   }
 
   .tsc-desktop-footer-brandblock {
-    align-self: stretch;
+    align-content: start;
+    align-self: start;
     display: grid;
-    grid-template-rows: auto 1fr auto;
-    min-height: 230px;
+    gap: clamp(42px, 6vw, 116px);
+    grid-template-rows: auto auto auto;
+    min-height: 0;
   }
 
   .tsc-desktop-footer-brand {
@@ -1052,12 +1054,23 @@ body:has(#comp-mr69hwoy) :is(#comp-mr69hwvf5, #comp-mr69hwvh) {
 
   .tsc-desktop-footer-nav {
     align-content: start;
-    border-right: 1px solid var(--tsc-footer-rule);
+    border-right: 0;
     column-gap: clamp(26px, 2.6vw, 44px);
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     padding-right: clamp(30px, 3.2vw, 60px);
+    position: relative;
     row-gap: 24px;
+  }
+
+  .tsc-desktop-footer-nav::after {
+    background: var(--tsc-footer-rule);
+    content: "";
+    position: absolute;
+    bottom: 4px;
+    right: 0;
+    top: 0;
+    width: 1px;
   }
 
   .tsc-desktop-footer-group {

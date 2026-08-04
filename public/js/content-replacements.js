@@ -224,6 +224,64 @@
       fallbackImage: '/assets/mirror/static.wixstatic.com/media/19f989_f84950fe51a84d3baf15f59a5c864731~mv2.jpg/v1/fill/w_720,h_720,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/kalki.jpg'
     }
   ];
+  var desktopFilmCards = [
+    {
+      root: '#comp-mqmi3w3o',
+      href: '/mahavatar-narsimha',
+      title: 'Mahaavatar Narsimha',
+      titleSelector: '#comp-mqmi3w46',
+      badgesSelector: '#comp-mqmi3w484',
+      blurbSelector: '#comp-mqmi3w4a',
+      labelSelector: '#comp-mqmi3w4k',
+      nameSelector: '#comp-mqmi3w4l3',
+      meta: ['Animated Feature', 'Cultural Positioning', 'Audience Building', 'Long-Term IP Growth'],
+      metaSelectors: ['#comp-mqmi3w3v3', '#comp-mqmi3w3x2', '#comp-mqmi3w3z', '#comp-mqmi3w41'],
+      badges: 'Mythology-Led Storytelling | Film Mounting | IP Strategy',
+      blurb: 'A culturally rooted animated feature strategy built around audience development, mythology-led positioning, partnerships, monetisation and long-term IP growth.'
+    },
+    {
+      root: '#comp-mqmi6ynt2',
+      href: '/hanuman-ansh',
+      title: 'Hanuman Ansh',
+      titleSelector: '#comp-mqmi6yo71',
+      badgesSelector: '#comp-mqmi6yo94',
+      blurbSelector: '#comp-mqmi6yob',
+      labelSelector: '#comp-mqmi6yol3',
+      nameSelector: '#comp-mqmi6yom7',
+      meta: ['Spiritual IP', 'Community Building', 'Faith-Led Story', 'Modern Audiences'],
+      metaSelectors: ['#comp-mqmi6yny', '#comp-mqmi6ynz5', '#comp-mqmi6yo1', '#comp-mqmi6yo2'],
+      badges: 'Spiritual Entertainment | Community Strategy | Cultural IP',
+      blurb: 'A spiritual entertainment IP shaped to connect faith, story, community and contemporary audiences through culture-first positioning.'
+    },
+    {
+      root: '#comp-mqmi8cxm2',
+      href: '/mahaprbhu',
+      title: 'Mahaprabhu Jagannath',
+      titleSelector: '#comp-mqmi8cy13',
+      badgesSelector: '#comp-mqmi8cy4',
+      blurbSelector: '#comp-mqmi8cy52',
+      labelSelector: '#comp-mqmi8cyf',
+      nameSelector: '#comp-mqmi8cyg2',
+      meta: ['Living Tradition', 'Devotional Story', 'Cultural Resonance', 'New-Gen Reach'],
+      metaSelectors: ['#comp-mqmi8cxr2', '#comp-mqmi8cxt', '#comp-mqmi8cxu6', '#comp-mqmi8cxw'],
+      badges: 'Devotional Culture | Community Context | Story Positioning',
+      blurb: "A cultural resonance initiative for Lord Jagannath's living tradition, built around devotion, community and new-generation storytelling."
+    },
+    {
+      root: '#comp-mqmi8sui',
+      href: '/kalki',
+      title: 'Kalki',
+      titleSelector: '#comp-mqmi8suv6',
+      badgesSelector: '#comp-mqmi8suy3',
+      blurbSelector: '#comp-mqmi8sv0',
+      labelSelector: '#comp-mqmi8sv51',
+      nameSelector: '#comp-mqmi8sv66',
+      meta: ['Future Mythology', 'Audience Strategy', 'Cultural Positioning', 'Franchise Potential'],
+      metaSelectors: ['#comp-mqmi8sul4', '#comp-mqmi8sun1', '#comp-mqmi8suo6', '#comp-mqmi8suq'],
+      badges: 'Ancient Imagination | Future Story | Strategic Positioning',
+      blurb: 'A culture-forward storytelling initiative connecting ancient Indian imagination with modern audience engagement and franchise potential.'
+    }
+  ];
   var mobileFilmsWhatWeDo = [
     ['Film mounting', 'Getting projects production-ready.'],
     ['Audience building', 'Growing a real audience pre-release.'],
@@ -1145,6 +1203,39 @@
       if (card.titleSelector) ui.setText(card.titleSelector, card.title);
       if (card.blurbSelector) ui.setText(card.blurbSelector, card.blurb);
     });
+    desktopFilmCards.forEach(function(card) {
+      var root = document.querySelector(card.root);
+      if (!root) return;
+      ui.setText(card.titleSelector, card.title);
+      ui.setText(card.badgesSelector, card.badges);
+      ui.setText(card.blurbSelector, card.blurb);
+      ui.setText(card.labelSelector, 'Focus');
+      ui.setText(card.nameSelector, 'IMPACT REPORT');
+      card.metaSelectors.forEach(function(selector, i) {
+        ui.setText(selector, card.meta[i]);
+      });
+      root.classList.add('tsc-film-report-card');
+      root.setAttribute('role', 'link');
+      root.setAttribute('tabindex', '0');
+      root.setAttribute('aria-label', 'Open ' + card.title + ' impact report');
+      root.setAttribute('data-tsc-film-report-link', card.href);
+      Array.prototype.forEach.call(root.querySelectorAll('a'), function(anchor) {
+        anchor.setAttribute('href', card.href);
+        anchor.setAttribute('target', '_self');
+        anchor.removeAttribute('rel');
+      });
+      if (root.getAttribute('data-tsc-film-report-wired') === 'true') return;
+      root.setAttribute('data-tsc-film-report-wired', 'true');
+      root.addEventListener('click', function(event) {
+        if (event.defaultPrevented) return;
+        window.location.assign(card.href);
+      });
+      root.addEventListener('keydown', function(event) {
+        if (event.key !== 'Enter' && event.key !== ' ') return;
+        event.preventDefault();
+        window.location.assign(card.href);
+      });
+    });
   }
 
   function upscaleMirrorImage(src, size) {
@@ -1740,6 +1831,7 @@
     // After Wix hydrate: hide mentor promo + ensure Luca card (once).
     function afterHydrate() {
       removeMentorSessions();
+      updateDesktopFilmCards();
       ensureLucaCourseCardLinks();
       polishMobileAcademyCourseCards();
       polishMobileMusicProductionPage();
@@ -1787,6 +1879,7 @@
         updateHeaderBrandLogos();
         syncResponsiveHeaderMenuCta();
         alignResponsiveElements();
+        updateDesktopFilmCards();
         injectHomeWhatWeBuildCardCtas();
         linkFindYourCourseCta();
         injectBlogArticleDirectory();

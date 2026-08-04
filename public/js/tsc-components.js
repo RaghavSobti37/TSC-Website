@@ -324,6 +324,117 @@
     });
   }
 
+  function mountFilmReportCards(path) {
+    if (path !== '/films') return;
+    var cards = [
+      {
+        root: '#comp-mqmi3w3o',
+        href: '/mahavatar-narsimha',
+        title: 'Mahaavatar Narsimha',
+        titleSelector: '#comp-mqmi3w46',
+        badgesSelector: '#comp-mqmi3w484',
+        blurbSelector: '#comp-mqmi3w4a',
+        labelSelector: '#comp-mqmi3w4k',
+        nameSelector: '#comp-mqmi3w4l3',
+        meta: ['Animated Feature', 'Cultural Positioning', 'Audience Building', 'Long-Term IP Growth'],
+        metaSelectors: ['#comp-mqmi3w3v3', '#comp-mqmi3w3x2', '#comp-mqmi3w3z', '#comp-mqmi3w41'],
+        badges: 'Mythology-Led Storytelling | Film Mounting | IP Strategy',
+        blurb: 'A culturally rooted animated feature strategy built around audience development, mythology-led positioning, partnerships, monetisation and long-term IP growth.'
+      },
+      {
+        root: '#comp-mqmi6ynt2',
+        href: '/hanuman-ansh',
+        title: 'Hanuman Ansh',
+        titleSelector: '#comp-mqmi6yo71',
+        badgesSelector: '#comp-mqmi6yo94',
+        blurbSelector: '#comp-mqmi6yob',
+        labelSelector: '#comp-mqmi6yol3',
+        nameSelector: '#comp-mqmi6yom7',
+        meta: ['Spiritual IP', 'Community Building', 'Faith-Led Story', 'Modern Audiences'],
+        metaSelectors: ['#comp-mqmi6yny', '#comp-mqmi6ynz5', '#comp-mqmi6yo1', '#comp-mqmi6yo2'],
+        badges: 'Spiritual Entertainment | Community Strategy | Cultural IP',
+        blurb: 'A spiritual entertainment IP shaped to connect faith, story, community and contemporary audiences through culture-first positioning.'
+      },
+      {
+        root: '#comp-mqmi8cxm2',
+        href: '/mahaprbhu',
+        title: 'Mahaprabhu Jagannath',
+        titleSelector: '#comp-mqmi8cy13',
+        badgesSelector: '#comp-mqmi8cy4',
+        blurbSelector: '#comp-mqmi8cy52',
+        labelSelector: '#comp-mqmi8cyf',
+        nameSelector: '#comp-mqmi8cyg2',
+        meta: ['Living Tradition', 'Devotional Story', 'Cultural Resonance', 'New-Gen Reach'],
+        metaSelectors: ['#comp-mqmi8cxr2', '#comp-mqmi8cxt', '#comp-mqmi8cxu6', '#comp-mqmi8cxw'],
+        badges: 'Devotional Culture | Community Context | Story Positioning',
+        blurb: "A cultural resonance initiative for Lord Jagannath's living tradition, built around devotion, community and new-generation storytelling."
+      },
+      {
+        root: '#comp-mqmi8sui',
+        href: '/kalki',
+        title: 'Kalki',
+        titleSelector: '#comp-mqmi8suv6',
+        badgesSelector: '#comp-mqmi8suy3',
+        blurbSelector: '#comp-mqmi8sv0',
+        labelSelector: '#comp-mqmi8sv51',
+        nameSelector: '#comp-mqmi8sv66',
+        meta: ['Future Mythology', 'Audience Strategy', 'Cultural Positioning', 'Franchise Potential'],
+        metaSelectors: ['#comp-mqmi8sul4', '#comp-mqmi8sun1', '#comp-mqmi8suo6', '#comp-mqmi8suq'],
+        badges: 'Ancient Imagination | Future Story | Strategic Positioning',
+        blurb: 'A culture-forward storytelling initiative connecting ancient Indian imagination with modern audience engagement and franchise potential.'
+      }
+    ];
+
+    function setText(selector, value) {
+      var node = document.querySelector(selector);
+      if (!node) return;
+      var textNode = node.querySelector('.wixui-rich-text__text') || node;
+      textNode.textContent = value;
+    }
+
+    cards.forEach(function(card) {
+      var root = document.querySelector(card.root);
+      if (!root) return;
+      setText(card.titleSelector, card.title);
+      setText(card.badgesSelector, card.badges);
+      setText(card.blurbSelector, card.blurb);
+      setText(card.labelSelector, 'Focus');
+      setText(card.nameSelector, 'IMPACT REPORT');
+      card.metaSelectors.forEach(function(selector, i) {
+        setText(selector, card.meta[i]);
+      });
+      root.classList.add('tsc-film-report-card');
+      root.setAttribute('role', 'link');
+      root.setAttribute('tabindex', '0');
+      root.setAttribute('aria-label', 'Open ' + card.title + ' impact report');
+      root.setAttribute('data-tsc-film-report-link', card.href);
+      Array.prototype.forEach.call(root.querySelectorAll('a'), function(anchor) {
+        anchor.setAttribute('href', card.href);
+        anchor.setAttribute('target', '_self');
+        anchor.removeAttribute('rel');
+      });
+      if (!root.querySelector('.tsc-film-report-hitarea')) {
+        var hitarea = document.createElement('a');
+        hitarea.className = 'tsc-film-report-hitarea';
+        hitarea.href = card.href;
+        hitarea.setAttribute('aria-label', 'Open ' + card.title + ' impact report');
+        hitarea.textContent = 'Open ' + card.title + ' impact report';
+        root.appendChild(hitarea);
+      }
+      if (root.getAttribute('data-tsc-film-report-wired') === 'true') return;
+      root.setAttribute('data-tsc-film-report-wired', 'true');
+      root.addEventListener('click', function(event) {
+        if (event.defaultPrevented) return;
+        window.location.assign(card.href);
+      });
+      root.addEventListener('keydown', function(event) {
+        if (event.key !== 'Enter' && event.key !== ' ') return;
+        event.preventDefault();
+        window.location.assign(card.href);
+      });
+    });
+  }
+
   function wireLockedArtistsDropdownClickGuard() {
     if (window.__tscArtistsDropdownClickGuard) return;
     window.__tscArtistsDropdownClickGuard = true;
@@ -1937,24 +2048,35 @@
     mountHarshadDigitalPresenceLinks(path);
     mountYugmIplYearFix(path);
     mountWorkImpactLinks(path);
-    [250, 900, 1800, 3200].forEach(function(delay) {
+    mountFilmReportCards(path);
+    [250, 900, 1800, 3200, 6000, 9000].forEach(function(delay) {
       window.setTimeout(function() {
         mountSharedChrome();
         mountHarshadDigitalPresenceLinks(path);
         mountYugmIplYearFix(path);
         mountWorkImpactLinks(path);
+        mountFilmReportCards(path);
       }, delay);
     });
     if ('MutationObserver' in window && !window.__tscSharedChromeObserver) {
       window.__tscSharedChromeObserver = new MutationObserver(function() {
         var compact = window.matchMedia && window.matchMedia('(max-width: 1024px)').matches;
+        if (path === '/films') {
+          window.clearTimeout(window.__tscFilmReportRepairTimer);
+          window.__tscFilmReportRepairTimer = window.setTimeout(function() {
+            mountFilmReportCards(path);
+          }, 80);
+        }
         var missing = compact
           ? !document.querySelector('.tsc-mobile-site-header') || !document.querySelector('.tsc-mobile-footer')
           : !document.querySelector('[data-tsc-locked-desktop-header="true"], .tsc-desktop-site-header') ||
             !document.querySelector('.tsc-desktop-footer');
         if (!missing) return;
         window.clearTimeout(window.__tscSharedChromeRepairTimer);
-        window.__tscSharedChromeRepairTimer = window.setTimeout(mountSharedChrome, 40);
+        window.__tscSharedChromeRepairTimer = window.setTimeout(function() {
+          mountSharedChrome();
+          mountFilmReportCards(path);
+        }, 40);
       });
       window.__tscSharedChromeObserver.observe(document.body, { childList: true, subtree: true });
     }

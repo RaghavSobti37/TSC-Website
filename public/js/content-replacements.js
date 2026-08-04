@@ -368,7 +368,31 @@
     ui.setText(slot.readTime, card.readTime);
     ui.setImage(slot.image, card.image);
     ui.updateButton(slot.button, { href: card.href, target: '_self', label: 'Read Blog' });
+    var button = document.querySelector(slot.button);
+    if (button) {
+      button.setAttribute('data-blog-href', card.href);
+      button.addEventListener('click', function(event) {
+        event.preventDefault();
+        event.stopPropagation();
+        window.location.assign(card.href);
+      }, true);
+    }
     ui.hideElement(slot.mediumButton);
+  }
+
+  function wireResourcesBlogClicks() {
+    if (location.pathname !== '/resources' && location.pathname !== '/pages/resources.html') return;
+    if (window.__tscResourcesBlogClickGuard) return;
+    window.__tscResourcesBlogClickGuard = true;
+    document.addEventListener('click', function(event) {
+      var target = event.target && event.target.closest && event.target.closest('.tsc-resources-blog-card a[data-blog-href], .tsc-resources-blog-card[data-blog-href]');
+      if (!target) return;
+      var href = target.getAttribute('data-blog-href') || (target.closest('.tsc-resources-blog-card') && target.closest('.tsc-resources-blog-card').getAttribute('data-blog-href'));
+      if (!href) return;
+      event.preventDefault();
+      event.stopPropagation();
+      window.location.assign(href);
+    }, true);
   }
 
   function injectResourcesBlogGrid() {
@@ -415,16 +439,17 @@
     grid.setAttribute('aria-label', 'All blog posts');
     grid.innerHTML = resourcesBlogCards.map(function(card) {
       return [
-        '<article class="tsc-resources-blog-card">',
+        '<article class="tsc-resources-blog-card" data-blog-href="' + ui.escapeHtml(card.href) + '">',
           '<img src="' + ui.escapeHtml(card.image.src) + '" alt="' + ui.escapeHtml(card.image.alt) + '">',
           '<div class="tsc-resources-blog-meta"><span>' + ui.escapeHtml(card.date) + '</span><span>' + ui.escapeHtml(card.readTime) + '</span></div>',
           '<h3>' + ui.escapeHtml(card.title) + '</h3>',
           '<p>' + ui.escapeHtml(card.description) + '</p>',
-          '<a href="' + ui.escapeHtml(card.href) + '">Read Blog</a>',
+          '<a href="' + ui.escapeHtml(card.href) + '" data-blog-href="' + ui.escapeHtml(card.href) + '">Read Blog</a>',
         '</article>'
       ].join('');
     }).join('');
     container.appendChild(grid);
+    wireResourcesBlogClicks();
   }
 
   function blogPathForCurrentPage() {
@@ -519,6 +544,7 @@
     var third = document.querySelector('#comp-mrdq85ob');
     if (third) third.style.removeProperty('display');
     injectResourcesBlogGrid();
+    wireResourcesBlogClicks();
   }
 
   function repairResourcesCourseLinks() {
@@ -1896,6 +1922,7 @@
         linkFindYourCourseCta();
         injectBlogArticleDirectory();
         injectResourcesBlogGrid();
+        wireResourcesBlogClicks();
         repairResourcesCourseLinks();
       }, 80);
     });

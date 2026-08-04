@@ -2723,3 +2723,12 @@ body.tsc-has-mobile-footer .tsc-legacy-footer-host:not(:has(.tsc-mobile-footer))
     stroke: none !important;
   }
 }
+
+@media (min-width: 1025px) {
+  body[data-page="home"] #comp-mrjf9qo2 .tsc-mission-quote,
+  body[data-page="home"] #comp-mrjf9qo2 .tsc-mission-quote .wixui-rich-text__text {
+    font-size: clamp(16px, 1.05vw, 19px) !important;
+    line-height: 1.35 !important;
+    white-space: nowrap !important;
+  }
+}

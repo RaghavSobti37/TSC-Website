@@ -52,7 +52,13 @@ body[data-page="films"] .tsc-film-report-card {
   position: relative !important;
 }
 
-body[data-page="films"] .tsc-film-report-hitarea {
+body[data-page="films"] .tsc-film-bottom-cta {
+  cursor: pointer !important;
+  position: relative !important;
+}
+
+body[data-page="films"] .tsc-film-report-hitarea,
+body[data-page="films"] .tsc-film-bottom-cta-hitarea {
   background: transparent !important;
   color: transparent !important;
   display: block !important;

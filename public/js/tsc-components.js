@@ -435,6 +435,43 @@
     });
   }
 
+  function mountFilmBottomCtas(path) {
+    if (path !== '/films') return;
+    var ctas = [
+      { id: 'comp-mqmkrjnm', href: '/resources', label: 'Resources' },
+      { id: 'comp-mqmkth8f', href: 'mailto:' + CONTACT_EMAIL, label: 'Email Us' }
+    ];
+    ctas.forEach(function(cta) {
+      var node = document.getElementById(cta.id);
+      if (!node) return;
+      node.classList.add('tsc-film-bottom-cta');
+      node.setAttribute('role', 'link');
+      node.setAttribute('tabindex', '0');
+      node.setAttribute('aria-label', cta.label);
+      node.setAttribute('data-tsc-film-bottom-cta', cta.href);
+      var existing = node.querySelector('.tsc-film-bottom-cta-hitarea');
+      if (!existing) {
+        existing = document.createElement('a');
+        existing.className = 'tsc-film-bottom-cta-hitarea';
+        existing.textContent = cta.label;
+        node.appendChild(existing);
+      }
+      existing.href = cta.href;
+      existing.setAttribute('aria-label', cta.label);
+      if (node.getAttribute('data-tsc-film-bottom-cta-wired') === 'true') return;
+      node.setAttribute('data-tsc-film-bottom-cta-wired', 'true');
+      node.addEventListener('click', function(event) {
+        if (event.defaultPrevented) return;
+        window.location.assign(cta.href);
+      });
+      node.addEventListener('keydown', function(event) {
+        if (event.key !== 'Enter' && event.key !== ' ') return;
+        event.preventDefault();
+        window.location.assign(cta.href);
+      });
+    });
+  }
+
   function wireLockedArtistsDropdownClickGuard() {
     if (window.__tscArtistsDropdownClickGuard) return;
     window.__tscArtistsDropdownClickGuard = true;
@@ -2049,6 +2086,7 @@
     mountYugmIplYearFix(path);
     mountWorkImpactLinks(path);
     mountFilmReportCards(path);
+    mountFilmBottomCtas(path);
     [250, 900, 1800, 3200, 6000, 9000].forEach(function(delay) {
       window.setTimeout(function() {
         mountSharedChrome();
@@ -2056,6 +2094,7 @@
         mountYugmIplYearFix(path);
         mountWorkImpactLinks(path);
         mountFilmReportCards(path);
+        mountFilmBottomCtas(path);
       }, delay);
     });
     if ('MutationObserver' in window && !window.__tscSharedChromeObserver) {
@@ -2065,6 +2104,7 @@
           window.clearTimeout(window.__tscFilmReportRepairTimer);
           window.__tscFilmReportRepairTimer = window.setTimeout(function() {
             mountFilmReportCards(path);
+            mountFilmBottomCtas(path);
           }, 80);
         }
         var missing = compact
@@ -2076,6 +2116,7 @@
         window.__tscSharedChromeRepairTimer = window.setTimeout(function() {
           mountSharedChrome();
           mountFilmReportCards(path);
+          mountFilmBottomCtas(path);
         }, 40);
       });
       window.__tscSharedChromeObserver.observe(document.body, { childList: true, subtree: true });

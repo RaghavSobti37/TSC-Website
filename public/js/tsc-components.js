@@ -194,6 +194,14 @@
     container.appendChild(grid);
   }
 
+  function mountYugmIplYearFix(path) {
+    if (path !== '/yugm') return;
+    var year = document.querySelector('#comp-mqhqa70a .wixui-rich-text__text');
+    if (year && /2024/.test(year.textContent || '')) {
+      year.textContent = '2025';
+    }
+  }
+
   function watchLinkNormalization() {
     if (window.__tscLinkNormalizationObserver || !window.MutationObserver || !document.body) return;
     window.__tscLinkNormalizationObserver = true;
@@ -1769,10 +1777,12 @@
     }
     mountSharedChrome();
     mountHarshadDigitalPresenceLinks(path);
+    mountYugmIplYearFix(path);
     [250, 900, 1800, 3200].forEach(function(delay) {
       window.setTimeout(function() {
         mountSharedChrome();
         mountHarshadDigitalPresenceLinks(path);
+        mountYugmIplYearFix(path);
       }, delay);
     });
     if ('MutationObserver' in window && !window.__tscSharedChromeObserver) {

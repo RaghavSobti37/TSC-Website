@@ -79,7 +79,6 @@ const BODY_LOADER = `<script data-tsc-mobile-loader>/* DESKTOP LOCK: mobile-only
   var up = window.matchMedia('(min-width: 1025px)');
   var onUp = function (e) { if (e.matches) location.reload(); };
   if (up.addEventListener) up.addEventListener('change', onUp); else if (up.addListener) up.addListener(onUp);
-  if (!mq.matches) return;
   var markReady = function () {
     document.documentElement.classList.add('tsc-mobile-ready');
   };

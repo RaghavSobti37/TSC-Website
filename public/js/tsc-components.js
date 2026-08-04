@@ -213,6 +213,38 @@
         if (/Filmfare Recognition/i.test(title)) node.textContent = '2023';
       }
     });
+    if (window.matchMedia && !window.matchMedia('(min-width: 1025px)').matches) return;
+    var timelineItems = [
+      { key: 'filmfare', group: '#comp-mqhqa70f5', image: '#comp-mqhqa70z5' },
+      { key: 'netflix', group: '#comp-mqhqa70m2', image: '#comp-mqhqa7052' },
+      { key: 'best-band', group: '#comp-mqjlruby', image: '#comp-mqjlrudj' },
+      { key: 'ipl', group: '#comp-mqhqa7081', image: '#comp-mqhqa707' }
+    ].map(function(item) {
+      return {
+        key: item.key,
+        group: document.querySelector(item.group),
+        image: document.querySelector(item.image)
+      };
+    });
+    if (timelineItems.some(function(item) { return !item.group || !item.image; })) return;
+    timelineItems.forEach(function(item) {
+      item.group.style.removeProperty('translate');
+      item.image.style.removeProperty('translate');
+    });
+    var textSlots = timelineItems.map(function(item) {
+      return item.group.getBoundingClientRect().top;
+    }).sort(function(a, b) { return a - b; });
+    var imageSlots = timelineItems.map(function(item) {
+      return item.image.getBoundingClientRect().top;
+    }).sort(function(a, b) { return a - b; });
+    timelineItems.forEach(function(item, index) {
+      var textDelta = Math.round(textSlots[index] - item.group.getBoundingClientRect().top);
+      var imageDelta = Math.round(imageSlots[index] - item.image.getBoundingClientRect().top);
+      item.group.style.setProperty('translate', '0 ' + textDelta + 'px', 'important');
+      item.image.style.setProperty('translate', '0 ' + imageDelta + 'px', 'important');
+      item.group.setAttribute('data-tsc-yugm-timeline-order', String(index + 1));
+      item.image.setAttribute('data-tsc-yugm-timeline-order', String(index + 1));
+    });
   }
 
   function watchLinkNormalization() {

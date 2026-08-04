@@ -558,8 +558,6 @@
 
   function ensureLucaCourseCardLinks() {
     if (normalizedPath() !== '/academy') return;
-    if (document.documentElement.dataset.tscLucaWired === '1') return;
-    document.documentElement.dataset.tscLucaWired = '1';
 
     // Soft link fix only — never replaceChild (breaks Wix React hydration).
     try {
@@ -567,6 +565,52 @@
         a.setAttribute('href', '/music-production');
         a.setAttribute('target', '_self');
       });
+      var lucaButton = document.querySelector('#comp-mpjxxery4');
+      if (lucaButton) {
+        lucaButton.setAttribute('role', 'link');
+        lucaButton.setAttribute('tabindex', '0');
+        lucaButton.setAttribute('aria-label', 'Open A-Z of Music Production course');
+        lucaButton.style.cursor = 'pointer';
+        lucaButton.style.position = 'relative';
+        if (!lucaButton.querySelector('.tsc-luca-course-hitarea')) {
+          var hitarea = document.createElement('a');
+          hitarea.className = 'tsc-luca-course-hitarea';
+          hitarea.href = '/music-production';
+          hitarea.target = '_self';
+          hitarea.setAttribute('aria-label', 'Open A-Z of Music Production course');
+          hitarea.setAttribute(
+            'style',
+            'position:absolute;inset:0;z-index:30;border-radius:inherit;text-indent:-9999px;overflow:hidden;background:transparent'
+          );
+          hitarea.textContent = 'Open A-Z of Music Production course';
+          lucaButton.appendChild(hitarea);
+        }
+        if (lucaButton.dataset.tscLucaLinkWired !== '1') {
+          lucaButton.dataset.tscLucaLinkWired = '1';
+          lucaButton.addEventListener('click', function(event) {
+            event.preventDefault();
+            event.stopPropagation();
+            window.location.assign('/music-production');
+          }, true);
+          lucaButton.addEventListener('keydown', function(event) {
+            if (event.key !== 'Enter' && event.key !== ' ') return;
+            event.preventDefault();
+            event.stopPropagation();
+            window.location.assign('/music-production');
+          }, true);
+        }
+      }
+      var lucaCard = document.querySelector('#comp-mpjxxeqt');
+      if (lucaCard) {
+        lucaCard.style.cursor = 'pointer';
+        if (lucaCard.dataset.tscLucaCardWired !== '1') {
+          lucaCard.dataset.tscLucaCardWired = '1';
+          lucaCard.addEventListener('click', function(event) {
+            if (event.target && event.target.closest && event.target.closest('a, button, input, textarea, select')) return;
+            window.location.assign('/music-production');
+          });
+        }
+      }
     } catch (e) {}
 
     // If Wix failed to mount course 3, inject a lightweight mirror card.
@@ -1913,6 +1957,7 @@
         injectResourcesBlogGrid();
         wireResourcesBlogClicks();
         repairResourcesCourseLinks();
+        ensureLucaCourseCardLinks();
       }, 80);
     });
     observer.observe(document.documentElement, { childList: true, subtree: true });

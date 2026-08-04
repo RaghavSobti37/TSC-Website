@@ -1108,6 +1108,11 @@
   function footerGroupsFor(academy, whatsappUrl) {
     if (academy) {
       return [
+        ['Start Here', [
+          ['/book-a-call', 'Book a Call'],
+          ['/artist-query', 'Apply for Artist Path'],
+          ['/book-an-artist', 'Book an Artist']
+        ]],
         ['Academy', [
           ['/academy', 'Academy Home'],
           ['/academy#courses', 'Courses'],
@@ -1121,16 +1126,16 @@
           ['/about', 'About'],
           ['/artists', 'Artists'],
           ['/resources', 'Resources']
-        ]],
-        ['Get Started', [
-          ['/book-a-call', 'Book a Call'],
-          [whatsappUrl, 'WhatsApp community', true],
-          ['mailto:' + CONTACT_EMAIL, CONTACT_EMAIL]
         ]]
       ];
     }
     return [
-      ['Quick links', [
+      ['Start Here', [
+        ['/book-a-call', 'Book a Call'],
+        ['/book-an-artist', 'Book an Artist'],
+        ['/artist-query', 'Apply for Artist Path']
+      ]],
+      ['Quick Links', [
         ['/', 'Home'],
         ['/about', 'About'],
         ['/work', 'Work'],
@@ -1337,15 +1342,6 @@
     var navGroups = baseGroups.filter(function(group) {
       return !/join our community|get started/i.test(group[0]);
     });
-    var actionGroup = ['Start Here', config.academy ? [
-      ['/book-a-call', 'Book a Call'],
-      ['/artist-query', 'Apply for Artist Path'],
-      ['/book-an-artist', 'Book an Artist']
-    ] : [
-      ['/book-a-call', 'Book a Call'],
-      ['/book-an-artist', 'Book an Artist'],
-      ['/artist-query', 'Apply for Artist Path']
-    ]];
     var emailId = 'tsc-desktop-footer-email-' + variant;
     var shell = document.createElement('div');
     shell.className = 'tsc-desktop-footer' + (config.academy ? ' tsc-desktop-footer-academy' : '');
@@ -1362,7 +1358,7 @@
           '<p class="tsc-desktop-footer-copy">&copy; 2026 ' + escapeHtml(brandName) + '. All rights reserved.</p>',
         '</div>',
         '<nav class="tsc-desktop-footer-nav" aria-label="Footer navigation">',
-          [actionGroup].concat(navGroups).map(buildFooterLinks).join(''),
+          navGroups.map(buildFooterLinks).join(''),
         '</nav>',
         '<div class="tsc-desktop-footer-news">',
           '<h2>' + (config.academy ? 'Join Our Community' : 'Join Our Community') + '</h2>',

@@ -247,6 +247,83 @@
     });
   }
 
+  function mountWorkImpactLinks(path) {
+    if (path !== '/work') return;
+    var reports = [
+      { label: 'Mai Bhi Artist', href: '/mba' },
+      { label: 'Havells mYOUsic', href: '/havells-myousic' },
+      { label: 'Insta Music League', href: '/insta-music-league' },
+      { label: 'Young Gunns', href: '/young-gunns' }
+    ];
+    var textNodes = Array.prototype.slice.call(document.querySelectorAll('.wixui-rich-text, [data-testid="richTextElement"], h1, h2, h3, p'));
+
+    function visibleRect(node) {
+      var rect = node && node.getBoundingClientRect && node.getBoundingClientRect();
+      return rect && rect.width > 1 && rect.height > 1 ? rect : null;
+    }
+
+    function findTitle(label) {
+      return textNodes.filter(function(node) {
+        return (node.textContent || '').indexOf(label) !== -1 && visibleRect(node);
+      }).sort(function(a, b) {
+        var ar = visibleRect(a);
+        var br = visibleRect(b);
+        return (ar.width * ar.height) - (br.width * br.height);
+      })[0] || null;
+    }
+
+    function findCard(title, label) {
+      var candidates = [];
+      var node = title;
+      while (node && node !== document.body) {
+        if (node.classList && node.classList.contains('wixui-box')) {
+          var rect = visibleRect(node);
+          var text = node.textContent || '';
+          if (rect && rect.width >= 300 && rect.width <= 900 && rect.height >= 220 && rect.height <= 750 && text.indexOf(label) !== -1) {
+            candidates.push({ node: node, area: rect.width * rect.height, hasButton: !!node.querySelector('button, [role="button"]') });
+          }
+        }
+        node = node.parentElement;
+      }
+      candidates.sort(function(a, b) {
+        if (a.hasButton !== b.hasButton) return a.hasButton ? -1 : 1;
+        return a.area - b.area;
+      });
+      return candidates[0] && candidates[0].node;
+    }
+
+    reports.forEach(function(report) {
+      var title = findTitle(report.label);
+      var card = title && findCard(title, report.label);
+      if (!card) return;
+      card.classList.add('tsc-work-report-link');
+      card.setAttribute('role', 'link');
+      card.setAttribute('tabindex', '0');
+      card.setAttribute('aria-label', 'Open ' + report.label + ' impact report');
+      card.setAttribute('data-tsc-work-report-link', report.href);
+      if (!card.querySelector('.tsc-work-report-anchor')) {
+        var anchor = document.createElement('a');
+        anchor.className = 'tsc-work-report-anchor';
+        anchor.href = report.href;
+        anchor.setAttribute('aria-label', 'Open ' + report.label + ' impact report');
+        anchor.textContent = 'Open ' + report.label + ' impact report';
+        card.appendChild(anchor);
+      }
+      if (card.getAttribute('data-tsc-work-report-wired') === 'true') return;
+      card.setAttribute('data-tsc-work-report-wired', 'true');
+      card.addEventListener('click', function(event) {
+        if (event.defaultPrevented) return;
+        if (event.target && event.target.closest && event.target.closest('a[href]')) return;
+        window.location.assign(report.href);
+      });
+      card.addEventListener('keydown', function(event) {
+        if (event.key !== 'Enter' && event.key !== ' ') return;
+        event.preventDefault();
+        window.location.assign(report.href);
+      });
+    });
+  }
+
   function watchLinkNormalization() {
     if (window.__tscLinkNormalizationObserver || !window.MutationObserver || !document.body) return;
     window.__tscLinkNormalizationObserver = true;
@@ -1823,11 +1900,13 @@
     mountSharedChrome();
     mountHarshadDigitalPresenceLinks(path);
     mountYugmIplYearFix(path);
+    mountWorkImpactLinks(path);
     [250, 900, 1800, 3200].forEach(function(delay) {
       window.setTimeout(function() {
         mountSharedChrome();
         mountHarshadDigitalPresenceLinks(path);
         mountYugmIplYearFix(path);
+        mountWorkImpactLinks(path);
       }, delay);
     });
     if ('MutationObserver' in window && !window.__tscSharedChromeObserver) {

@@ -241,6 +241,7 @@
     '/roots-of-hindustani-classical': true,
     '/blank-9-1': true,
     '/about-9-1': true,
+    '/affiliate': true,
     '/book-a-call': true,
     '/blank-8': true,
     '/about-8': true,
@@ -302,101 +303,52 @@
     ui.hideElement(slot.mediumButton);
   }
 
-  function injectExtraResourceBlogs() {
+  function injectResourcesBlogGrid() {
     if (location.pathname !== '/resources' && location.pathname !== '/pages/resources.html') return;
-    if (document.querySelector('.tsc-extra-blog-band')) return;
-    var anchor = document.querySelector('#comp-mrdp2u69') || document.querySelector('main');
-    if (!anchor) return;
-    var extras = resourcesBlogCards.slice(3);
-    if (!extras.length) return;
-    var band = document.createElement('section');
-    band.className = 'tsc-extra-blog-band';
-    band.innerHTML =
-      '<div class="tsc-extra-blog-inner">' +
-      extras
-        .map(function(card) {
-          return (
-            '<article class="tsc-extra-blog-card">' +
-            '<img src="' +
-            card.image.src +
-            '" alt="' +
-            card.image.alt +
-            '" loading="lazy">' +
-            '<h3>' +
-            card.title +
-            '</h3>' +
-            '<p>' +
-            card.description +
-            '</p>' +
-            '<a href="' +
-            card.href +
-            '">Read Blog</a>' +
-            '</article>'
-          );
-        })
-        .join('') +
-      '</div>';
-    anchor.parentNode.insertBefore(band, anchor.nextSibling);
-  }
-
-  function injectFeaturedResourceBlogs() {
-    if (location.pathname !== '/resources' && location.pathname !== '/pages/resources.html') return;
-    if (document.querySelector('.tsc-featured-blog-band')) return;
-    var cards = resourcesBlogCards.filter(function(card) {
-      return (
-        card.href === '/how-i-curate-music-with-independent-artists' ||
-        card.href === '/you-released-a-song-now-what' ||
-        card.href === '/from-bhajan-to-clubbing'
-      );
-    });
-    if (!cards.length) return;
-    if (!document.getElementById('tsc-featured-blog-style')) {
+    var section = document.querySelector('#comp-mrdp2u69');
+    var container = section && section.querySelector('.comp-mrdp2u69-container');
+    if (!container) return;
+    var nativeGrid = container.querySelector('#comp-mrdq8d4s');
+    if (nativeGrid) nativeGrid.remove();
+    if (!document.getElementById('tsc-resources-blog-style')) {
       var style = document.createElement('style');
-      style.id = 'tsc-featured-blog-style';
+      style.id = 'tsc-resources-blog-style';
       style.textContent =
-        '.tsc-featured-blog-band{background:#ffecd1;color:#3a1212;padding:56px clamp(18px,5vw,72px);font-family:"Madefor Text","Helvetica Neue",Arial,sans-serif}' +
-        '.tsc-featured-blog-inner{max-width:1180px;margin:0 auto}' +
-        '.tsc-featured-blog-band h2{font-family:Signika,"Madefor Text",sans-serif;font-size:clamp(34px,4vw,58px);line-height:1;margin:0 0 12px;letter-spacing:0}' +
-        '.tsc-featured-blog-band p{font-size:17px;line-height:1.55;margin:0;color:#111}' +
-        '.tsc-featured-blog-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-top:28px}' +
-        '.tsc-featured-blog-card{background:#fff9ef;border:1px solid rgba(58,18,18,.18);display:grid;grid-template-columns:180px 1fr;min-height:220px;overflow:hidden}' +
-        '.tsc-featured-blog-card img{width:100%;height:100%;object-fit:cover}' +
-        '.tsc-featured-blog-copy{padding:22px;display:flex;flex-direction:column;gap:12px}' +
-        '.tsc-featured-blog-meta{color:#b74b02;font-size:12px;font-weight:700;text-transform:uppercase}' +
-        '.tsc-featured-blog-card h3{font-family:Signika,"Madefor Text",sans-serif;font-size:26px;line-height:1.05;margin:0;letter-spacing:0;color:#083d3a}' +
-        '.tsc-featured-blog-card a{align-self:flex-start;background:#b74b02;color:#fff;font-weight:700;min-height:42px;padding:11px 16px;text-decoration:none}' +
-        '@media(max-width:1100px){.tsc-featured-blog-grid{grid-template-columns:1fr}.tsc-featured-blog-card{grid-template-columns:180px 1fr}}' +
-        '@media(max-width:820px){.tsc-featured-blog-band{padding:40px 18px}.tsc-featured-blog-card{grid-template-columns:1fr}.tsc-featured-blog-card img{height:190px}.tsc-featured-blog-card h3{font-size:24px}}';
+        '#comp-mrdp2u69,#comp-mrdp2u69 .comp-mrdp2u69-container{height:auto!important;min-height:0!important;overflow:visible!important}' +
+        '#comp-mrdp2u69 .comp-mrdp2u69-container{position:relative!important;z-index:1!important;display:grid!important;grid-template-columns:1fr 1fr!important;grid-template-rows:auto auto!important;gap:24px!important;padding:64px max(7vw,24px)!important;box-sizing:border-box!important;pointer-events:auto!important}' +
+        '#comp-mrdpc84n,#comp-mrdpc824{position:relative!important;left:auto!important;top:auto!important;width:100%!important;height:auto!important;margin:0!important;grid-area:auto!important;transform:none!important}' +
+        '#comp-mrdpc84n{grid-column:1!important;grid-row:1!important}' +
+        '#comp-mrdpc824{grid-column:2!important;grid-row:1!important}' +
+        '#comp-mrdpc84n,#comp-mrdpc824,#comp-mrdpc84n .wixui-rich-text__text,#comp-mrdpc824 .wixui-rich-text__text{color:#ffecd1!important}' +
+        '#comp-mrdq8d4s{display:none!important}' +
+        '.tsc-resources-blog-grid{grid-column:1/-1!important;grid-row:2!important;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;width:100%;margin-top:24px}' +
+        '.tsc-resources-blog-card{display:flex;flex-direction:column;min-width:0;padding:14px;border:1px solid #b74b02;border-radius:8px;background:#ffecd1;color:#083d3a;box-sizing:border-box;overflow:hidden}' +
+        '.tsc-resources-blog-card img{display:block;width:100%;aspect-ratio:16/9;border:1px solid #126d5e;border-radius:6px;object-fit:cover;box-sizing:border-box}' +
+        '.tsc-resources-blog-meta{display:flex;justify-content:space-between;gap:12px;margin:10px 0;color:#126d5e;font-size:11px;font-weight:700;text-transform:uppercase}' +
+        '.tsc-resources-blog-card h3{margin:0;color:#083d3a;font-family:Signika,"Madefor Text",sans-serif;font-size:20px;line-height:1.15}' +
+        '.tsc-resources-blog-card p{flex:1;margin:10px 0 16px;color:#083d3a;font-size:14px;line-height:1.45}' +
+        '.tsc-resources-blog-card a{align-self:center;display:inline-flex;align-items:center;justify-content:center;min-width:132px;min-height:40px;padding:9px 16px;border-radius:8px;background:#126d5e;color:#ffecd1;font-size:12px;font-weight:800;text-decoration:none;box-sizing:border-box}' +
+        '@media(max-width:1024px){#comp-mrdp2u69 .comp-mrdp2u69-container{display:flex!important;flex-direction:column!important;gap:20px!important;padding:28px 16px 40px!important}#comp-mrdpc84n,#comp-mrdpc824{order:initial!important}.tsc-resources-blog-grid{grid-template-columns:repeat(2,minmax(0,1fr));margin-top:4px}.tsc-resources-blog-card h3{font-size:18px}}' +
+        '@media(max-width:640px){.tsc-resources-blog-grid{grid-template-columns:1fr;gap:18px}}';
       document.head.appendChild(style);
     }
-    var band = document.createElement('section');
-    band.className = 'tsc-featured-blog-band';
-    band.setAttribute('aria-label', 'Latest blog posts');
-    band.innerHTML = [
-      '<div class="tsc-featured-blog-inner">',
-        '<h2>Latest From the Blog</h2>',
-        '<p>Rohit Sobti essays now live on The Shakti Collective.</p>',
-        '<div class="tsc-featured-blog-grid">',
-          cards.map(function(card) {
-            return [
-              '<article class="tsc-featured-blog-card">',
-                '<img src="' + ui.escapeHtml(card.image.src) + '" alt="' + ui.escapeHtml(card.image.alt) + '" loading="lazy">',
-                '<div class="tsc-featured-blog-copy">',
-                  '<div class="tsc-featured-blog-meta">' + ui.escapeHtml(card.date) + ' / ' + ui.escapeHtml(card.readTime) + '</div>',
-                  '<h3>' + ui.escapeHtml(card.title) + '</h3>',
-                  '<p>' + ui.escapeHtml(card.description) + '</p>',
-                  '<a href="' + ui.escapeHtml(card.href) + '">Read Blog</a>',
-                '</div>',
-              '</article>'
-            ].join('');
-          }).join(''),
-        '</div>',
-      '</div>'
-    ].join('');
-    var footer = document.querySelector('footer#SITE_FOOTER, footer[data-testid="siteFooter"], footer');
-    var main = document.querySelector('main') || document.getElementById('PAGES_CONTAINER') || document.body;
-    if (footer && footer.parentNode) footer.parentNode.insertBefore(band, footer);
-    else main.appendChild(band);
+    var existing = container.querySelector('.tsc-resources-blog-grid');
+    if (existing) existing.remove();
+    var grid = document.createElement('div');
+    grid.className = 'tsc-resources-blog-grid';
+    grid.setAttribute('aria-label', 'All blog posts');
+    grid.innerHTML = resourcesBlogCards.map(function(card) {
+      return [
+        '<article class="tsc-resources-blog-card">',
+          '<img src="' + ui.escapeHtml(card.image.src) + '" alt="' + ui.escapeHtml(card.image.alt) + '">',
+          '<div class="tsc-resources-blog-meta"><span>' + ui.escapeHtml(card.date) + '</span><span>' + ui.escapeHtml(card.readTime) + '</span></div>',
+          '<h3>' + ui.escapeHtml(card.title) + '</h3>',
+          '<p>' + ui.escapeHtml(card.description) + '</p>',
+          '<a href="' + ui.escapeHtml(card.href) + '">Read Blog</a>',
+        '</article>'
+      ].join('');
+    }).join('');
+    container.appendChild(grid);
   }
 
   function blogPathForCurrentPage() {
@@ -490,8 +442,7 @@
     // Unhide third card host if previously hidden
     var third = document.querySelector('#comp-mrdq85ob');
     if (third) third.style.removeProperty('display');
-    injectExtraResourceBlogs();
-    injectFeaturedResourceBlogs();
+    injectResourcesBlogGrid();
   }
 
   function repairResourcesCourseLinks() {
@@ -668,38 +619,69 @@
     });
   }
 
-  function linkHomeEcosystemCta() {
-    if (location.pathname !== '/' && location.pathname !== '/pages/home.html') return;
-    var wrapper = document.querySelector('#comp-mrly2iho');
-    if (!wrapper) return;
-
+  function promoteButtonToLink(wrapper, href, ariaLabel, opts) {
+    if (!wrapper) return null;
+    opts = opts || {};
     wrapper.removeAttribute('role');
     wrapper.removeAttribute('tabindex');
 
-    var control = wrapper.querySelector('[data-testid="linkElement"]');
-    if (!control) return;
+    var control = wrapper.querySelector('[data-testid="linkElement"]') || wrapper;
+    if (!control) return null;
 
     if (control.tagName.toLowerCase() !== 'a') {
       var anchor = document.createElement('a');
       Array.prototype.slice.call(control.attributes).forEach(function(attribute) {
+        if (attribute.name === 'role' || attribute.name === 'tabindex') return;
         anchor.setAttribute(attribute.name, attribute.value);
       });
       while (control.firstChild) {
         anchor.appendChild(control.firstChild);
       }
-      control.parentNode.replaceChild(anchor, control);
+      if (control.parentNode) {
+        control.parentNode.replaceChild(anchor, control);
+      }
       control = anchor;
     }
 
-    control.setAttribute('href', whatsappCommunityUrl);
-    control.setAttribute('target', '_blank');
-    control.setAttribute('rel', 'noreferrer noopener');
-    control.setAttribute('aria-label', 'Join The Ecosystem');
+    control.setAttribute('href', href);
+    control.setAttribute('aria-label', ariaLabel);
+    if (opts.external) {
+      control.setAttribute('target', '_blank');
+      control.setAttribute('rel', 'noreferrer noopener');
+    } else {
+      control.setAttribute('target', '_self');
+      control.removeAttribute('rel');
+    }
+    return control;
+  }
 
+  function linkHomeEcosystemCta() {
+    if (location.pathname !== '/' && location.pathname !== '/pages/home.html') return;
+    var wrapper = document.querySelector('#comp-mrly2iho');
+    var control = promoteButtonToLink(wrapper, whatsappCommunityUrl, 'Join The Ecosystem', { external: true });
+    if (!control) return;
     var label = control.querySelector('.wixui-button__label, span');
     if (label) {
       label.textContent = 'Join The Ecosystem';
     }
+  }
+
+  /* Academy / Learn: Find Your Course → artist-path apply form (course recommend after submit). */
+  function linkFindYourCourseCta() {
+    var path = normalizedPath();
+    if (path !== '/academy' && path !== '/learn-with-tsc') return;
+    ['#comp-mr0g77kb', '#comp-mrufx9wm5'].forEach(function(selector) {
+      var wrapper = document.querySelector(selector);
+      if (!wrapper) return;
+      var existing = wrapper.querySelector('a[href="/artist-query"]');
+      if (existing) {
+        if (wrapper.dataset) wrapper.dataset.tscFindCourseLinked = '1';
+        return;
+      }
+      var control = promoteButtonToLink(wrapper, '/artist-query', 'Find Your Course');
+      if (!control) return;
+      if (wrapper.dataset) wrapper.dataset.tscFindCourseLinked = '1';
+    });
   }
 
   /* In-card CTAs for What We Build (SSR may already include them; reinject after Wix hydrates). */
@@ -788,7 +770,6 @@
     if (ui.mountMobileHeader) {
       return ui.mountMobileHeader({
         path: normalizedPath(),
-        academyPaths: academyPaths,
         brandAssets: brandAssets,
         whatsappCommunityUrl: whatsappCommunityUrl
       });
@@ -1404,7 +1385,6 @@
     if (ui.mountMobileFooter) {
       return ui.mountMobileFooter({
         path: normalizedPath(),
-        academyPaths: academyPaths,
         brandAssets: {
           main: Object.assign({ name: 'The Shakti Collective', tagline: 'Unfolding artist force.' }, brandAssets.main),
           academy: Object.assign({ name: 'TSC Academy', tagline: 'Mentorship-led learning for serious artists.' }, brandAssets.academy)
@@ -1699,6 +1679,9 @@
     ui.patchMutedPlay();
     ui.muteVideos();
     buildMobileHeader();
+    if (ui.mountDesktopHeader) {
+      ui.mountDesktopHeader({ path: normalizedPath(), brandAssets: brandAssets });
+    }
     updateHeaderBrandLogos();
     syncResponsiveHeaderMenuCta();
     updateWorkHero();
@@ -1710,7 +1693,6 @@
     if (ui.mountDesktopFooter) {
       ui.mountDesktopFooter({
         path: normalizedPath(),
-        academyPaths: academyPaths,
         brandAssets: {
           main: Object.assign({ name: 'The Shakti Collective', tagline: 'Unfolding artist force.' }, brandAssets.main),
           academy: Object.assign({ name: 'TSC Academy', tagline: 'Mentorship-led learning for serious artists.' }, brandAssets.academy)
@@ -1725,7 +1707,6 @@
     centerArtistsHeroButtons();
     scheduleResponsiveAlignment();
     updateResourcesBlogSection();
-    injectFeaturedResourceBlogs();
     injectBlogArticleDirectory();
     repairResourcesCourseLinks();
     // After Wix hydrate: hide mentor promo + ensure Luca card (once).
@@ -1735,24 +1716,28 @@
       polishMobileAcademyCourseCards();
       polishMobileMusicProductionPage();
       injectBlogArticleDirectory();
-      injectFeaturedResourceBlogs();
+      injectResourcesBlogGrid();
       repairResourcesCourseLinks();
+      linkFindYourCourseCta();
     }
     window.setTimeout(afterHydrate, 800);
     window.addEventListener('load', function() {
       window.setTimeout(afterHydrate, 600);
     });
     linkHomeEcosystemCta();
+    linkFindYourCourseCta();
     injectHomeWhatWeBuildCardCtas();
   }
 
   ui.applyOnSchedule(boot);
   window.addEventListener('resize', function() {
     buildMobileHeader();
+    if (ui.mountDesktopHeader) {
+      ui.mountDesktopHeader({ path: normalizedPath(), brandAssets: brandAssets });
+    }
     if (ui.mountDesktopFooter) {
       ui.mountDesktopFooter({
         path: normalizedPath(),
-        academyPaths: academyPaths,
         brandAssets: {
           main: Object.assign({ name: 'The Shakti Collective', tagline: 'Unfolding artist force.' }, brandAssets.main),
           academy: Object.assign({ name: 'TSC Academy', tagline: 'Mentorship-led learning for serious artists.' }, brandAssets.academy)
@@ -1775,8 +1760,9 @@
         syncResponsiveHeaderMenuCta();
         alignResponsiveElements();
         injectHomeWhatWeBuildCardCtas();
+        linkFindYourCourseCta();
         injectBlogArticleDirectory();
-        injectFeaturedResourceBlogs();
+        injectResourcesBlogGrid();
         repairResourcesCourseLinks();
       }, 80);
     });

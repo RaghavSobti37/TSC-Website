@@ -342,10 +342,10 @@
   }
 
   /* Wix academy pinned call/whatsapp — mid-page; replace with .tsc-phone-fab */
-  body[data-page="academy"] #comp-mrx6fmlb-pinned-layer,
-  body[data-page="academy"] #comp-mqwk4qml-pinned-layer,
-  body[data-page="academy"] #comp-mrx6fmlb,
-  body[data-page="academy"] #comp-mqwk4qml {
+  #comp-mrx6fmlb-pinned-layer,
+  #comp-mqwk4qml-pinned-layer,
+  #comp-mrx6fmlb,
+  #comp-mqwk4qml {
     display: none !important;
     visibility: hidden !important;
     pointer-events: none !important;

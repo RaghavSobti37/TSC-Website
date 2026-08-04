@@ -302,11 +302,23 @@
     '/the-heart-of-composition': true,
     '/roots-of-hindustani-classical': true,
     '/music-production': true,
+    '/affiliate': true,
     '/book-a-call': true,
+    '/artist-query': true,
     '/masterclass-review01': true,
     '/masterclass-review02': true,
-    '/classicalreview': true
+    '/classicalreview': true,
+    '/blank-9': true,
+    '/about-9': true,
+    '/blank-9-1': true,
+    '/about-9-1': true,
+    '/blank-8': true,
+    '/about-8': true
   };
+
+  function isAcademyPath(path) {
+    return !!DEFAULT_ACADEMY_PATHS[path || canonicalPathname()];
+  }
 
   var SOCIAL_SVGS = {
     instagram: '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 7.2A4.8 4.8 0 1 0 12 16.8 4.8 4.8 0 0 0 12 7.2zm0 7.92A3.12 3.12 0 1 1 12 8.88a3.12 3.12 0 0 1 0 6.24zm6.3-8.1a1.12 1.12 0 1 1-2.24 0 1.12 1.12 0 0 1 2.24 0zM12 4.32c-2.1 0-2.36.01-3.19.05-.82.04-1.39.17-1.88.36a3.8 3.8 0 0 0-1.37.89 3.8 3.8 0 0 0-.89 1.37c-.19.49-.32 1.06-.36 1.88-.04.83-.05 1.09-.05 3.19s.01 2.36.05 3.19c.04.82.17 1.39.36 1.88.2.51.46.95.89 1.37.42.43.86.69 1.37.89.49.19 1.06.32 1.88.36.83.04 1.09.05 3.19.05s2.36-.01 3.19-.05c.82-.04 1.39-.17 1.88-.36a3.8 3.8 0 0 0 1.37-.89 3.8 3.8 0 0 0 .89-1.37c.19-.49.32-1.06.36-1.88.04-.83.05-1.09.05-3.19s-.01-2.36-.05-3.19c-.04-.82-.17-1.39-.36-1.88a3.8 3.8 0 0 0-.89-1.37 3.8 3.8 0 0 0-1.37-.89c-.49-.19-1.06-.32-1.88-.36C14.36 4.33 14.1 4.32 12 4.32zm0 1.52c2.06 0 2.31.01 3.12.05.75.03 1.16.16 1.43.26.36.14.62.31.89.58.27.27.44.53.58.89.1.27.23.68.26 1.43.04.81.05 1.06.05 3.12s-.01 2.31-.05 3.12c-.03.75-.16 1.16-.26 1.43-.14.36-.31.62-.58.89a2.4 2.4 0 0 1-.89.58c-.27.1-.68.23-1.43.26-.81.04-1.06.05-3.12.05s-2.31-.01-3.12-.05c-.75-.03-1.16-.16-1.43-.26a2.4 2.4 0 0 1-.89-.58 2.4 2.4 0 0 1-.58-.89c-.1-.27-.23-.68-.26-1.43-.04-.81-.05-1.06-.05-3.12s.01-2.31.05-3.12c.03-.75.16-1.16.26-1.43.14-.36.31-.62.58-.89.27-.27.53-.44.89-.58.27-.1.68-.23 1.43-.26.81-.04 1.06-.05 3.12-.05z"/></svg>',
@@ -441,8 +453,12 @@
         mountMobileFooter({ path: path });
         hideWixMobileNavChrome();
         // Re-assert after Thunderbolt hydration may re-show Wix menu.
-        [400, 1200, 2500].forEach(function(delay) {
-          window.setTimeout(hideWixMobileNavChrome, delay);
+        [400, 1200, 2500, 5000, 8000].forEach(function(delay) {
+          window.setTimeout(function() {
+            mountMobileHeader({ path: path });
+            mountMobileFooter({ path: path });
+            hideWixMobileNavChrome();
+          }, delay);
         });
       } else {
         unmountCustomMobileChrome();
@@ -664,6 +680,95 @@
     note.dataset.state = state || '';
   }
 
+  // ponytail: keyword score from archived Next.js artist-path.tsx
+  var ARTIST_PATH_COURSES = [
+    {
+      id: 'composition',
+      title: 'The heART of Composition',
+      mentor: 'Sandesh Shandilya',
+      banner: '/assets/mirror/static.wixstatic.com/media/19f989_3583e149066b4ebf9a6f37cc7d80382a~mv2.jpg/v1/crop/x_0,y_7,w_677,h_461/fill/w_640,h_480,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/sandesh_edited.jpg',
+      url: '/the-heart-of-composition',
+      keywords: ['imagination', 'emotion', 'expression', 'songwriting', 'composer', 'lyrics', 'writing', 'mainstream']
+    },
+    {
+      id: 'classical',
+      title: 'Roots of Hindustani Classical',
+      mentor: 'Prasad Khaparde',
+      banner: '/assets/mirror/static.wixstatic.com/media/19f989_07c6e896e4a54fcc99b08a98ceccaff4~mv2.jpg/v1/fill/w_640,h_640,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/prasad-hero.jpg',
+      url: '/roots-of-hindustani-classical',
+      keywords: ['classical', 'riyaaz', 'vocal', 'guruji', 'raag', 'hindustani', 'gharanas', 'singing']
+    },
+    {
+      id: 'production',
+      title: 'A to Z of Music Production',
+      mentor: 'Luca Petracca',
+      banner: '/assets/mirror/static.wixstatic.com/media/19f989_72c26b9f755948e59217c0f217c9af16~mv2.jpeg/v1/fill/w_640,h_517,fp_0.50_0.30,q_80,enc_avif,quality_auto/ab6761610000e5ebf205ff385c2272184580fd45.jpeg',
+      url: '/music-production',
+      keywords: ['daw', 'ableton', 'logic', 'fl studio', 'production', 'mixing', 'mastering', 'tech', 'studio', 'beat', 'orchestration']
+    }
+  ];
+
+  var ARTIST_PATH_WHATSAPP = 'https://chat.whatsapp.com/IaS1GaJT7Gp7ufxHIjDkZu?mode=gi_t';
+
+  function getRecommendedCourse(data) {
+    var text = [
+      data && data.artistIdentity,
+      data && data.trainingDetails,
+      data && data.coreSkills,
+      data && data.mentorshipNeeds,
+      data && data.learningNeeds,
+      data && data.currentSetup,
+      data && data.currentlyWorkingOn
+    ].join(' ').toLowerCase();
+    var scores = { composition: 0, classical: 0, production: 0 };
+    ARTIST_PATH_COURSES.forEach(function(course) {
+      course.keywords.forEach(function(kw) {
+        if (text.indexOf(kw) !== -1) scores[course.id] += 1;
+      });
+    });
+    if (scores.classical > 0 && scores.classical >= scores.production && scores.classical >= scores.composition) {
+      return ARTIST_PATH_COURSES[1];
+    }
+    if (scores.production > scores.composition && scores.production > scores.classical) {
+      return ARTIST_PATH_COURSES[2];
+    }
+    return ARTIST_PATH_COURSES[0];
+  }
+
+  function renderArtistPathSuccess(form, payload) {
+    if (!form) return;
+    var course = getRecommendedCourse(payload || {});
+    var panel = document.createElement('div');
+    panel.className = 'tsc-artist-path-result';
+    panel.setAttribute('role', 'status');
+    panel.innerHTML =
+      '<div class="tsc-artist-path-thanks">' +
+        '<p class="tsc-artist-path-check" aria-hidden="true">✓</p>' +
+        '<h2>Thank You!</h2>' +
+        '<p>Your artist journey has been recorded. We&apos;ve recommended a course that matches your path.</p>' +
+        '<a class="tsc-artist-path-whatsapp" href="' + ARTIST_PATH_WHATSAPP + '" target="_blank" rel="noreferrer noopener">Join the Community</a>' +
+      '</div>' +
+      '<div class="tsc-artist-path-recommend">' +
+        '<p class="tsc-artist-path-kicker">Recommended for your growth</p>' +
+        '<article class="tsc-artist-path-card">' +
+          '<div class="tsc-artist-path-banner">' +
+            '<img src="' + escapeHtml(course.banner) + '" alt="' + escapeHtml(course.title) + '">' +
+            '<span class="tsc-artist-path-badge">Personalized Recommendation</span>' +
+          '</div>' +
+          '<div class="tsc-artist-path-card-body">' +
+            '<h3>' + escapeHtml(course.title) + '</h3>' +
+            '<p class="tsc-artist-path-mentor">Mentor: ' + escapeHtml(course.mentor) + '</p>' +
+            '<a class="tsc-artist-path-explore" href="' + escapeHtml(course.url) + '">Explore Course Details</a>' +
+            '<a class="tsc-artist-path-book" href="/book-a-call">Book a Call</a>' +
+          '</div>' +
+        '</article>' +
+      '</div>';
+    form.replaceWith(panel);
+    try {
+      panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } catch (e) {}
+  }
+
   function bindLocalSubmit(form) {
     if (!form || form.dataset.bound) return;
     form.dataset.bound = 'true';
@@ -682,20 +787,25 @@
         button.textContent = 'Submitting...';
       }
       setFormStatus(form, 'Submitting...', 'pending');
+      var payload = payloadForForm(name, readFormValues(form));
       try {
         var response = await fetch(endpoint, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-          body: JSON.stringify(payloadForForm(name, readFormValues(form)))
+          body: JSON.stringify(payload)
         });
         var body = await response.json().catch(function() { return {}; });
         if (!response.ok || body.success !== true) throw new Error(body.error || body.message || 'Submission failed');
+        if (name === 'artistPath') {
+          renderArtistPathSuccess(form, payload);
+          return;
+        }
         setFormStatus(form, body.message || 'Successfully submitted. We will follow up soon.', 'success');
         form.reset();
       } catch (error) {
         setFormStatus(form, (error && error.message) || 'Could not submit. Please try again.', 'error');
       } finally {
-        if (button) {
+        if (button && form.isConnected) {
           button.disabled = false;
           button.textContent = button.dataset.originalText || 'Submit';
         }
@@ -824,14 +934,10 @@
   function navLinksFor(academy) {
     if (academy) {
       return [
-        ['/academy', 'Academy Home'],
-        ['/academy#courses', 'Courses'],
-        ['/music-production', 'A-Z of Music Production'],
-        ['/the-heart-of-composition', 'The HeART of Composition'],
-        ['/roots-of-hindustani-classical', 'Roots of Hindustani Classical'],
         ['/resources', 'Resources'],
-        ['/book-a-call', 'Book a Call'],
-        ['/', 'The Shakti Collective']
+        ['/academy#courses', 'Courses'],
+        ['/academy', 'Testimonials'],
+        ['/academy', 'Know More']
       ];
     }
     return [
@@ -844,6 +950,99 @@
       ['/resources', 'Resources'],
       ['/academy', 'TSC Academy']
     ];
+  }
+
+  function markLegacyHeaders() {
+    document.querySelectorAll('header, #SITE_HEADER, [data-testid="siteHeader"]').forEach(function(header) {
+      if (header.classList && header.classList.contains('tsc-desktop-site-header')) return;
+      if (header.classList && header.classList.contains('tsc-mobile-site-header')) return;
+      header.classList.add('tsc-legacy-header');
+      header.setAttribute('aria-hidden', 'true');
+    });
+  }
+
+  function activateLockedDesktopHeader() {
+    var headers = Array.prototype.filter.call(
+      document.querySelectorAll('header, #SITE_HEADER, [data-testid="siteHeader"]'),
+      function(header) {
+        return !header.classList.contains('tsc-desktop-site-header') &&
+          !header.classList.contains('tsc-mobile-site-header');
+      }
+    );
+    var expected = headers.find(function(header) {
+      var style = window.getComputedStyle(header);
+      var rect = header.getBoundingClientRect();
+      return style.display !== 'none' && rect.width > 0 && rect.height > 0;
+    }) || headers[0];
+    if (!expected) return null;
+
+    headers.forEach(function(header) {
+      var active = header === expected;
+      header.classList.toggle('tsc-locked-desktop-header-hidden', !active);
+      header.classList.toggle('tsc-legacy-header', !active);
+      if (active) {
+        header.setAttribute('data-tsc-locked-desktop-header', 'true');
+        header.removeAttribute('aria-hidden');
+      } else {
+        header.removeAttribute('data-tsc-locked-desktop-header');
+        header.setAttribute('aria-hidden', 'true');
+      }
+    });
+    return expected;
+  }
+
+  function mountDesktopHeader(opts) {
+    var desktop = !window.matchMedia || window.matchMedia('(min-width: 1025px)').matches;
+    var existing = document.querySelector('.tsc-desktop-site-header');
+    if (!desktop) {
+      if (existing && existing.parentNode) existing.parentNode.removeChild(existing);
+      return null;
+    }
+    var config = componentOptions(opts);
+    var variant = config.academy ? 'academy' : 'main';
+    var locked = activateLockedDesktopHeader();
+    if (locked) {
+      if (existing && existing.parentNode) existing.parentNode.removeChild(existing);
+      return locked;
+    }
+    if (existing && existing.dataset.tscVariant === variant) {
+      markLegacyHeaders();
+      return existing;
+    }
+    if (existing && existing.parentNode) existing.parentNode.removeChild(existing);
+    markLegacyHeaders();
+
+    var brandName = config.brand.name || (config.academy ? 'TSC Academy' : 'The Shakti Collective');
+    var navMarkup = config.academy ? [
+      '<a href="/resources">Resources</a>',
+      '<details class="tsc-academy-courses-menu">',
+        '<summary>Courses</summary>',
+        '<div class="tsc-academy-courses-dropdown">',
+          '<a href="/music-production">A-Z of Music Production</a>',
+          '<a href="/the-heart-of-composition">The HeART of Composition</a>',
+          '<a href="/roots-of-hindustani-classical">Roots of Hindustani Classical</a>',
+        '</div>',
+      '</details>',
+      '<a href="/academy#testimonials">Testimonials</a>',
+      '<a href="/academy#know-more">Know More</a>',
+      '<a class="tsc-academy-main-site-link" href="/">MAIN WEBSITE</a>'
+    ].join('') : navLinksFor(false).map(function(item) {
+      return '<a href="' + escapeHtml(item[0]) + '">' + escapeHtml(item[1]) + '</a>';
+    }).join('');
+    var header = document.createElement('header');
+    header.className = 'tsc-desktop-site-header' + (config.academy ? ' tsc-desktop-site-header-academy' : '');
+    header.dataset.tscVariant = variant;
+    header.setAttribute('data-tsc-theme', config.academy ? 'academy' : 'main');
+    header.innerHTML = [
+      '<a class="tsc-desktop-site-brand" href="' + (config.academy ? '/academy' : '/') + '" aria-label="' + escapeHtml(brandName) + '">',
+        '<img src="' + logoSrcForConfig(config) + '" alt="" width="205" height="51" decoding="async">',
+      '</a>',
+      '<nav class="tsc-desktop-site-nav" aria-label="' + (config.academy ? 'TSC Academy' : 'The Shakti Collective') + ' navigation">',
+        navMarkup,
+      '</nav>'
+    ].join('');
+    document.body.insertBefore(header, document.body.firstChild);
+    return header;
   }
 
   var CONTACT_EMAIL = 'artist@theshakticollective.in';
@@ -915,8 +1114,25 @@
       return existing;
     }
     if (existing && existing.parentNode) existing.parentNode.removeChild(existing);
+    markLegacyHeaders();
 
     var brandName = config.brand.name || (config.academy ? 'TSC Academy' : 'The Shakti Collective');
+    var mobileNavMarkup = config.academy ? [
+      '<a href="/resources">Resources</a>',
+      '<details class="tsc-mobile-academy-courses">',
+        '<summary>Courses</summary>',
+        '<div>',
+          '<a href="/music-production">A-Z of Music Production</a>',
+          '<a href="/the-heart-of-composition">The HeART of Composition</a>',
+          '<a href="/roots-of-hindustani-classical">Roots of Hindustani Classical</a>',
+        '</div>',
+      '</details>',
+      '<a href="/academy#testimonials">Testimonials</a>',
+      '<a href="/academy#know-more">Know More</a>',
+      '<a href="/">MAIN WEBSITE</a>'
+    ].join('') : navLinksFor(false).map(function(item) {
+      return '<a href="' + escapeHtml(item[0]) + '">' + escapeHtml(item[1]) + '</a>';
+    }).join('');
     var header = document.createElement('div');
     header.className = 'tsc-mobile-site-header' + (config.academy ? ' tsc-mobile-site-header-academy' : '');
     header.dataset.tscVariant = variant;
@@ -927,9 +1143,7 @@
       '<details class="tsc-mobile-menu">',
         '<summary aria-label="Open navigation"><span></span><span></span><span></span></summary>',
         '<nav aria-label="' + (config.academy ? 'TSC Academy mobile' : 'TSC mobile') + '">',
-          navLinksFor(config.academy).map(function(item) {
-            return '<a href="' + escapeHtml(item[0]) + '">' + escapeHtml(item[1]) + '</a>';
-          }).join(''),
+          mobileNavMarkup,
         '</nav>',
       '</details>',
       '<a class="tsc-mobile-header-cta" href="' + (config.academy ? '/' : '/academy') + '">' + (config.academy ? 'Main Website' : 'TSC Academy') + '</a>'
@@ -955,8 +1169,18 @@
   function findSiteFooter() {
     return document.querySelector('footer#SITE_FOOTER') ||
       document.querySelector('footer[data-testid="siteFooter"]') ||
-      document.querySelector('footer') ||
+      document.querySelector('footer:not(.tsc-shared-footer-host)') ||
       document.getElementById('SITE_FOOTER');
+  }
+
+  function ensureSharedFooterHost() {
+    var host = document.querySelector('footer.tsc-shared-footer-host');
+    if (host) return host;
+    host = document.createElement('footer');
+    host.className = 'tsc-shared-footer-host';
+    host.setAttribute('aria-label', 'Site footer');
+    document.body.appendChild(host);
+    return host;
   }
 
   function scrapeFooterSocialHref(footer, needle, fallback) {
@@ -1034,12 +1258,8 @@
     if (existing && existing.dataset.tscVariant === variant) return existing;
     if (existing && existing.parentNode) existing.parentNode.removeChild(existing);
 
-    var footer = findSiteFooter();
-    if (!footer) {
-      footer = document.createElement('footer');
-      footer.id = 'SITE_FOOTER';
-      document.body.appendChild(footer);
-    }
+    var sourceFooter = findSiteFooter();
+    var footer = ensureSharedFooterHost();
     footer.classList.remove('tsc-legacy-footer-host');
 
     var socials = [
@@ -1050,7 +1270,7 @@
       { id: 'linkedin', aria: 'LinkedIn', href: LINKEDIN_URL, needle: 'linkedin' },
       { id: 'email', aria: 'Email', href: 'mailto:' + CONTACT_EMAIL, needle: 'mailto:' }
     ].map(function(s) {
-      var scraped = scrapeFooterSocialHref(footer, s.needle, s.href);
+      var scraped = scrapeFooterSocialHref(sourceFooter, s.needle, s.href);
       // Prefer canonical LinkedIn / contact email over stale Wix scraped URLs.
       var href = s.id === 'linkedin' ? LINKEDIN_URL
         : s.id === 'email' ? ('mailto:' + CONTACT_EMAIL)
@@ -1143,12 +1363,8 @@
     if (existing && existing.dataset.tscVariant === variant) return existing;
     if (existing && existing.parentNode) existing.parentNode.removeChild(existing);
 
-    var footer = findSiteFooter();
-    if (!footer) {
-      footer = document.createElement('footer');
-      footer.id = 'SITE_FOOTER';
-      document.body.appendChild(footer);
-    }
+    var sourceFooter = findSiteFooter();
+    var footer = ensureSharedFooterHost();
     footer.classList.remove('tsc-legacy-footer-host');
 
     var socials = [
@@ -1159,7 +1375,7 @@
       { id: 'linkedin', aria: 'LinkedIn', href: LINKEDIN_URL, needle: 'linkedin' },
       { id: 'email', aria: 'Email', href: 'mailto:' + CONTACT_EMAIL, needle: 'mailto:' }
     ].map(function(s) {
-      var scraped = scrapeFooterSocialHref(footer, s.needle, s.href);
+      var scraped = scrapeFooterSocialHref(sourceFooter, s.needle, s.href);
       var href = s.id === 'linkedin' ? LINKEDIN_URL
         : s.id === 'email' ? ('mailto:' + CONTACT_EMAIL)
         : scraped;
@@ -1339,14 +1555,17 @@
   window.TSCComponents = {
     applyOnSchedule: applyOnSchedule,
     bindLocalSubmit: bindLocalSubmit,
+    getRecommendedCourse: getRecommendedCourse,
     normalizeInternalProtocolRelativeLinks: normalizeInternalProtocolRelativeLinks,
     ensureScript: ensureScript,
     ensureStylesheet: ensureStylesheet,
     escapeHtml: escapeHtml,
     formMarkup: formMarkup,
     hideElement: hideElement,
+    isAcademyPath: isAcademyPath,
     mountFormInto: mountFormInto,
     mountDesktopFooter: mountDesktopFooter,
+    mountDesktopHeader: mountDesktopHeader,
     mountMobileFooter: mountMobileFooter,
     mountMobileHeader: mountMobileHeader,
     mountStandaloneForm: mountStandaloneForm,
@@ -1448,7 +1667,7 @@
   }
 
   ensureStylesheet('/css/tsc-nav-overrides.css?v=desktop-top-1');
-  ensureStylesheet('/css/tsc-responsive.css?v=form-mobile-3');
+  ensureStylesheet('/css/tsc-responsive.css?v=academy-chrome-1');
   ensureStylesheet('/css/tsc-brand-card.css');
   ensureScript('/js/tsc-brand-cards.js');
   // Play paused Wix enter/loop motions + slideshow word-swap (all viewports).
@@ -1456,6 +1675,14 @@
   ensureScript('/js/tsc-wix-motion.js?v=academy-one-2');
   function bootUi() {
     if (redirectLegacyLearnHub()) return;
+    var path = canonicalPathname();
+    setBodyPage(path);
+    var mountSharedChrome = function() {
+      mountDesktopHeader({ path: path });
+      mountDesktopFooter({ path: path });
+      mountMobileHeader({ path: path });
+      mountMobileFooter({ path: path });
+    };
     wireLearnHubClickGuard();
     normalizeInternalProtocolRelativeLinks();
     forceLearnHubLinksToAcademy();
@@ -1471,11 +1698,34 @@
       '/masterclass-review02': true,
       '/classicalreview': true
     };
-    if (formPages[canonicalPathname()]) {
+    if (formPages[path]) {
       ensureStylesheet('/css/forms.css?v=form-pickers-1');
     }
+    mountSharedChrome();
+    [250, 900, 1800, 3200].forEach(function(delay) {
+      window.setTimeout(mountSharedChrome, delay);
+    });
+    if ('MutationObserver' in window && !window.__tscSharedChromeObserver) {
+      window.__tscSharedChromeObserver = new MutationObserver(function() {
+        var compact = window.matchMedia && window.matchMedia('(max-width: 1024px)').matches;
+        var missing = compact
+          ? !document.querySelector('.tsc-mobile-site-header') || !document.querySelector('.tsc-mobile-footer')
+          : !document.querySelector('[data-tsc-locked-desktop-header="true"], .tsc-desktop-site-header') ||
+            !document.querySelector('.tsc-desktop-footer');
+        if (!missing) return;
+        window.clearTimeout(window.__tscSharedChromeRepairTimer);
+        window.__tscSharedChromeRepairTimer = window.setTimeout(mountSharedChrome, 40);
+      });
+      window.__tscSharedChromeObserver.observe(document.body, { childList: true, subtree: true });
+    }
+    if (path === '/resources') {
+      ensureScript('/js/content-replacements.js?v=resources-all-blogs-1');
+    }
+    if (path === '/academy' || path === '/learn-with-tsc') {
+      ensureScript('/js/content-replacements.js?v=academy-chrome-1');
+    }
     wireMobileAssets();
-    if (canonicalPathname() === '/artist-path') {
+    if (path === '/artist-path') {
       mountDesktopFooter({ path: '/artist-path' });
     }
     wireCourseAccordions();

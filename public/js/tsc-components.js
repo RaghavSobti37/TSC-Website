@@ -1302,6 +1302,24 @@
     ];
   }
 
+  function renderMainNav() {
+    return [
+      '<a href="/about">About</a>',
+      '<a href="/work">Work</a>',
+      '<details class="tsc-main-artists-menu">',
+        '<summary>Artists</summary>',
+        '<div class="tsc-main-artists-dropdown">',
+          '<a href="/artists">TSC Artists</a>',
+          '<a href="/artist-path">Artist Path</a>',
+          '<a href="/learn-with-tsc">Learn With TSC</a>',
+        '</div>',
+      '</details>',
+      '<a href="/films">Films</a>',
+      '<a href="/resources">Resources</a>',
+      '<a class="tsc-main-academy-link" href="/academy">TSC Academy</a>'
+    ].join('');
+  }
+
   function academyActivePage(path, hash) {
     path = path || canonicalPathname();
     hash = hash || location.hash || '';
@@ -1433,7 +1451,7 @@
     var config = componentOptions(opts);
     var variant = config.academy ? 'academy' : 'main';
     var activePage = opts && opts.activePage || academyActivePage(config.path);
-    var forceCustomHeader = !!(opts && opts.forceCustomHeader) || !!IMPACT_PATHS[config.path];
+    var forceCustomHeader = !!(opts && opts.forceCustomHeader) || !!IMPACT_PATHS[config.path] || config.path === '/harshad-duhita';
     var locked = forceCustomHeader ? null : activateLockedDesktopHeader();
     if (locked) {
       syncLockedDesktopHeaderBrand(locked, config);
@@ -1455,6 +1473,7 @@
     var navMarkup = config.academy ? renderAcademyNav(activePage, false) : navLinksFor(false).map(function(item) {
       return '<a href="' + escapeHtml(item[0]) + '">' + escapeHtml(item[1]) + '</a>';
     }).join('');
+    if (!config.academy) navMarkup = renderMainNav();
     var header = document.createElement('header');
     header.className = 'tsc-desktop-site-header' + (config.academy ? ' tsc-desktop-site-header-academy' : '');
     header.dataset.tscVariant = variant;

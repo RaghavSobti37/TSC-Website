@@ -196,10 +196,23 @@
 
   function mountYugmIplYearFix(path) {
     if (path !== '/yugm') return;
-    var year = document.querySelector('#comp-mqhqa70a .wixui-rich-text__text');
-    if (year && /2024/.test(year.textContent || '')) {
-      year.textContent = '2025';
-    }
+    var timelineYears = [
+      ['#comp-mqhqa70a .wixui-rich-text__text', '2025'],
+      ['#comp-mqhqa70h3 .wixui-rich-text__text', '2023']
+    ];
+    timelineYears.forEach(function(item) {
+      var year = document.querySelector(item[0]);
+      if (year && year.textContent !== item[1]) {
+        year.textContent = item[1];
+      }
+    });
+    document.querySelectorAll('#comp-mqhqa7081 .wixui-rich-text__text, #comp-mqhqa70f5 .wixui-rich-text__text').forEach(function(node) {
+      if (/^\s*(?:2024|2026)\s*$/.test(node.textContent || '')) {
+        var title = node.parentElement && node.parentElement.parentElement && node.parentElement.parentElement.textContent || '';
+        if (/IPL 2025/i.test(title)) node.textContent = '2025';
+        if (/Filmfare Recognition/i.test(title)) node.textContent = '2023';
+      }
+    });
   }
 
   function watchLinkNormalization() {

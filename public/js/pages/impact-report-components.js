@@ -4,7 +4,11 @@
     '/mba-impact': true,
     '/havells-myousic': true,
     '/insta-music-league': true,
-    '/young-gunns': true
+    '/young-gunns': true,
+    '/mahavatar-narsimha': true,
+    '/hanuman-ansh': true,
+    '/mahaprbhu': true,
+    '/kalki': true
   };
 
   function canonicalPathname() {
@@ -41,9 +45,10 @@
       whatsappCommunityUrl: 'https://chat.whatsapp.com/IaS1GaJT7Gp7ufxHIjDkZu?mode=gi_t'
     };
 
-    document.body.dataset.page = 'work';
-    document.body.setAttribute('data-page', 'work');
+    document.body.dataset.page = path.replace(/^\//, '') || 'home';
+    document.body.setAttribute('data-page', document.body.dataset.page);
 
+    if (window.TSCComponents.mountDesktopHeader) window.TSCComponents.mountDesktopHeader(Object.assign({}, opts, { forceCustomHeader: true }));
     if (window.TSCComponents.mountMobileHeader) window.TSCComponents.mountMobileHeader(opts);
     if (window.TSCComponents.mountDesktopFooter) window.TSCComponents.mountDesktopFooter(opts);
     if (window.TSCComponents.mountMobileFooter) window.TSCComponents.mountMobileFooter(opts);

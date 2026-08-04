@@ -309,13 +309,19 @@
         anchor.textContent = 'Open ' + report.label + ' impact report';
         card.appendChild(anchor);
       }
+      Array.prototype.forEach.call(card.querySelectorAll('a[href]'), function(anchor) {
+        anchor.setAttribute('href', report.href);
+        anchor.setAttribute('target', '_self');
+        anchor.removeAttribute('rel');
+      });
       if (card.getAttribute('data-tsc-work-report-wired') === 'true') return;
       card.setAttribute('data-tsc-work-report-wired', 'true');
       card.addEventListener('click', function(event) {
         if (event.defaultPrevented) return;
-        if (event.target && event.target.closest && event.target.closest('a[href]')) return;
+        event.preventDefault();
+        event.stopPropagation();
         window.location.assign(report.href);
-      });
+      }, true);
       card.addEventListener('keydown', function(event) {
         if (event.key !== 'Enter' && event.key !== ' ') return;
         event.preventDefault();
@@ -587,6 +593,8 @@
     '/mba': true,
     '/mba-impact': true,
     '/havells-myousic': true,
+    '/insta-music-league': true,
+    '/young-gunns': true,
     '/impact-report': true
   };
   var FILMS_PATHS = {
@@ -1288,8 +1296,6 @@
       ['/about', 'About'],
       ['/work', 'Work'],
       ['/artists', 'Artists'],
-      ['/artist-path', 'Artist Path'],
-      ['/academy', 'Learn With TSC'],
       ['/films', 'Films'],
       ['/resources', 'Resources'],
       ['/academy', 'TSC Academy']
@@ -1427,7 +1433,8 @@
     var config = componentOptions(opts);
     var variant = config.academy ? 'academy' : 'main';
     var activePage = opts && opts.activePage || academyActivePage(config.path);
-    var locked = activateLockedDesktopHeader();
+    var forceCustomHeader = !!(opts && opts.forceCustomHeader) || !!IMPACT_PATHS[config.path];
+    var locked = forceCustomHeader ? null : activateLockedDesktopHeader();
     if (locked) {
       syncLockedDesktopHeaderBrand(locked, config);
       if (existing && existing.parentNode) existing.parentNode.removeChild(existing);
@@ -1451,6 +1458,7 @@
     var header = document.createElement('header');
     header.className = 'tsc-desktop-site-header' + (config.academy ? ' tsc-desktop-site-header-academy' : '');
     header.dataset.tscVariant = variant;
+    if (forceCustomHeader) header.dataset.tscForcedHeader = 'true';
     if (config.academy) header.dataset.tscActivePage = activePage;
     header.setAttribute('data-tsc-theme', config.academy ? 'academy' : 'main');
     header.innerHTML = [

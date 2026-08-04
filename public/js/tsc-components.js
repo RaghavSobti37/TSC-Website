@@ -237,11 +237,27 @@
     var imageSlots = timelineItems.map(function(item) {
       return item.image.getBoundingClientRect().top;
     }).sort(function(a, b) { return a - b; });
+    var textXs = timelineItems.map(function(item) {
+      return item.group.getBoundingClientRect().left;
+    }).sort(function(a, b) { return a - b; });
+    var imageXs = timelineItems.map(function(item) {
+      return item.image.getBoundingClientRect().left;
+    }).sort(function(a, b) { return a - b; });
+    var textLeftX = (textXs[0] + textXs[1]) / 2;
+    var textRightX = (textXs[textXs.length - 2] + textXs[textXs.length - 1]) / 2;
+    var imageLeftX = (imageXs[0] + imageXs[1]) / 2;
+    var imageRightX = (imageXs[imageXs.length - 2] + imageXs[imageXs.length - 1]) / 2;
     timelineItems.forEach(function(item, index) {
-      var textDelta = Math.round(textSlots[index] - item.group.getBoundingClientRect().top);
-      var imageDelta = Math.round(imageSlots[index] - item.image.getBoundingClientRect().top);
-      item.group.style.setProperty('translate', '0 ' + textDelta + 'px', 'important');
-      item.image.style.setProperty('translate', '0 ' + imageDelta + 'px', 'important');
+      var groupRect = item.group.getBoundingClientRect();
+      var imageRect = item.image.getBoundingClientRect();
+      var textTargetX = index % 2 === 0 ? textLeftX : textRightX;
+      var imageTargetX = index % 2 === 0 ? imageRightX : imageLeftX;
+      var textXDelta = Math.round(textTargetX - groupRect.left);
+      var imageXDelta = Math.round(imageTargetX - imageRect.left);
+      var textYDelta = Math.round(textSlots[index] - groupRect.top);
+      var imageYDelta = Math.round(imageSlots[index] - imageRect.top);
+      item.group.style.setProperty('translate', textXDelta + 'px ' + textYDelta + 'px', 'important');
+      item.image.style.setProperty('translate', imageXDelta + 'px ' + imageYDelta + 'px', 'important');
       item.group.setAttribute('data-tsc-yugm-timeline-order', String(index + 1));
       item.image.setAttribute('data-tsc-yugm-timeline-order', String(index + 1));
     });

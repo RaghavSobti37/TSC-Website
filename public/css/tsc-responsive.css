@@ -441,6 +441,52 @@ main .AccordionContainer1266025101__accordionHeader :is(p, h1, h2, h3, h4, span)
   display: block !important;
 }
 
+body[data-page="harshad-duhita"] #comp-mq7r4iw7 :is(
+  #comp-mq7xqmjp,
+  #comp-mq7xyzzb,
+  #comp-mq7y1z9q,
+  #comp-mq7y0jn7,
+  #comp-mq7y11q7,
+  #comp-mq7xwwm2,
+  #comp-mq7xuxza,
+  #comp-mq7xxqkk,
+  #comp-mq7xvqmm,
+  #comp-mq7y1i3v
+) {
+  align-items: center !important;
+  justify-items: center !important;
+}
+
+body[data-page="harshad-duhita"] #comp-mq7r4iw7 :is(
+  #comp-mq7s4r01,
+  #comp-mq7xyzze1,
+  #comp-mq7y1z9t1,
+  #comp-mq7y0jn93,
+  #comp-mq7y11qa,
+  #comp-mq7xwwm5,
+  #comp-mq7xuxzh,
+  #comp-mq7xxqkn,
+  #comp-mq7xvqmr,
+  #comp-mq7y1i3y
+),
+body[data-page="harshad-duhita"] #comp-mq7r4iw7 :is(
+  #comp-mq7s4r01,
+  #comp-mq7xyzze1,
+  #comp-mq7y1z9t1,
+  #comp-mq7y0jn93,
+  #comp-mq7y11qa,
+  #comp-mq7xwwm5,
+  #comp-mq7xuxzh,
+  #comp-mq7xxqkn,
+  #comp-mq7xvqmr,
+  #comp-mq7y1i3y
+) .wixui-rich-text__text {
+  box-sizing: border-box !important;
+  max-width: 100% !important;
+  text-align: center !important;
+  width: 100% !important;
+}
+
 body:has(#comp-mrly2iho) #comp-mrly2iho {
   height: clamp(58px, 4.2vw, 67.1px) !important;
   min-height: clamp(58px, 4.2vw, 67.1px) !important;

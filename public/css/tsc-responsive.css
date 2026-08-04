@@ -434,14 +434,14 @@ main .AccordionContainer1266025101__accordionHeader :is(p, h1, h2, h3, h4, span)
 }
 
 body:has(#comp-mrly2iho) #comp-mrly2iho {
-  height: clamp(58px, 4.8vw, 76px) !important;
-  min-height: clamp(58px, 4.8vw, 76px) !important;
+  height: clamp(58px, 4.2vw, 67.1px) !important;
+  min-height: clamp(58px, 4.2vw, 67.1px) !important;
   --aspect-ratio: auto !important;
   aspect-ratio: auto !important;
   --rd: max(0.5px, 0.0117188 * (var(--scaling-factor) - var(--scrollbar-width))) max(0.5px, 0.0117188 * (var(--scaling-factor) - var(--scrollbar-width))) max(0.5px, 0.0117188 * (var(--scaling-factor) - var(--scrollbar-width))) max(0.5px, 0.0117188 * (var(--scaling-factor) - var(--scrollbar-width))) !important;
   --horizontalPadding: max(0.5px, 0.0117188 * (var(--scaling-factor) - var(--scrollbar-width))) !important;
   --verticalPadding: max(0.5px, 0.00625 * (var(--scaling-factor) - var(--scrollbar-width))) !important;
-  --fnt: normal normal normal clamp(20px, 1.55vw, 26px) / 1.1 var(--tsc-font-alan) !important;
+  --fnt: normal normal normal clamp(20px, 1.33vw, 21.25px) / 1.6 var(--tsc-font-alan) !important;
   --brw: max(0.5px, 0.0015625 * (var(--scaling-factor) - var(--scrollbar-width))) !important;
 }
 
@@ -455,8 +455,8 @@ body:has(#comp-mrly2iho) #comp-mrly2iho :is(.PoVCDy, .wixui-button) {
 }
 
 body:has(#comp-mrly2iho) #comp-mrly2iho .wixui-button__label {
-  font-size: clamp(20px, 1.55vw, 26px) !important;
-  line-height: 1.1 !important;
+  font-size: clamp(20px, 1.33vw, 21.25px) !important;
+  line-height: 1.6 !important;
   white-space: nowrap !important;
 }
 

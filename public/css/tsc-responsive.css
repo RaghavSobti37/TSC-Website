@@ -78,6 +78,17 @@ footer.site-footer:has(.tsc-mobile-footer) {
     display: none !important;
   }
 
+  body[data-page="resources"] #comp-mrd44ghl,
+  body[data-page="resources"] #comp-mrd44ghl .wixui-rich-text__text {
+    font-size: clamp(62px, 5.6vw, 88px) !important;
+    line-height: 1.08 !important;
+  }
+
+  body[data-page="resources"] #comp-mrd45m9s,
+  body[data-page="resources"] #comp-mrd45m9s .wixui-rich-text__text {
+    line-height: 1.45 !important;
+  }
+
   .tsc-desktop-site-header {
     align-items: center;
     background: #00473f;

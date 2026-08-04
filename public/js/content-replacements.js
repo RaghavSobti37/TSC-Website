@@ -306,6 +306,10 @@
   function injectResourcesBlogGrid() {
     if (location.pathname !== '/resources' && location.pathname !== '/pages/resources.html') return;
     var section = document.querySelector('#comp-mrdp2u69');
+    var hero = document.querySelector('#comp-mpgmnan2');
+    if (section && hero && hero.parentNode && hero.nextSibling !== section) {
+      hero.parentNode.insertBefore(section, hero.nextSibling);
+    }
     var container = section && section.querySelector('.comp-mrdp2u69-container');
     if (!container) return;
     var nativeGrid = container.querySelector('#comp-mrdq8d4s');

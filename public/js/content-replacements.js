@@ -689,6 +689,114 @@
     );
   }
 
+  var academyDesktopCourseCards = [
+    {
+      href: '/the-heart-of-composition',
+      imageSelector: '#img-comp-mpjo65q32 img',
+      imageSrc: '/assets/mirror/static.wixstatic.com/media/19f989_731e678e8fce4048864da9ec987ec897~mv2.jpg/v1/fill/w_852,h_341,fp_0.47_0.40,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/sandesh.jpg',
+      imageAlt: 'Sandesh Shandilya',
+      buttonSelector: '#comp-mpjo65qn',
+      fields: [
+        ['#comp-mpjo65q93', '01'],
+        ['#comp-mpjo65qb', 'The heART of Composition'],
+        ['#comp-mpjo65qc', '6 Months'],
+        ['#comp-mpjo65qd3', '200+ Mins Content'],
+        ['#comp-mpjo65qe6', '3 Live Sessions'],
+        ['#comp-mpjo65qg', 'Industry Mentorship'],
+        ['#comp-mpjo65qk', 'Mentor'],
+        ['#comp-mpjo65qi4', 'SANDESH SHANDILYA'],
+        ['#comp-mpjo65ql3', 'Dive deeper into advanced composition techniques with this comprehensive 6-month course. Learn the art of imagination, emotion to expression, and mainstream mastery directly from a legend.']
+      ],
+      badgesSelector: '#comp-mpjwvo70',
+      badges: ['Acclaimed Music Composer', '30+ Years Experience', '7Bn+ Streams']
+    },
+    {
+      href: '/roots-of-hindustani-classical',
+      imageSelector: '#img-comp-mpjxmot0 img',
+      imageAlt: 'Pandit Prasad Khaparde',
+      buttonSelector: '#comp-mpjxmotk',
+      fields: [
+        ['#comp-mpjxmot64', '02'],
+        ['#comp-mpjxmot8', 'Roots of Hindustani Classical'],
+        ['#comp-mpjxmot92', '6 Months'],
+        ['#comp-mpjxmota5', '300+ Mins Content'],
+        ['#comp-mpjxmotb6', '3+ Live Sessions'],
+        ['#comp-mpjxmotc9', 'Certification'],
+        ['#comp-mpjxmotf', 'Mentor'],
+        ['#comp-mpjxmotg2', 'PRASAD KHAPARDE'],
+        ['#comp-mpjxmoti5', 'Immerse yourself in the timeless art of Hindustani classical singing. Twelve exclusive online group sessions, quality assessments, and certification under the guidance of Pandit Prasad Khaparde.']
+      ],
+      badgesSelector: '#comp-mpjxmoth2',
+      badges: ['Rampur Sahaswan Gharana Master', '30+ Years Experience', 'Legendary Classical Vocalist']
+    },
+    {
+      href: '/music-production',
+      imageSelector: '#img-comp-mpjxxere2 img',
+      imageSrc: '/assets/luca/luca-petracca-course-wide.jpg',
+      imageAlt: 'Luca Petracca in a music production studio',
+      buttonSelector: '#comp-mpjxxery4',
+      fields: [
+        ['#comp-mpjxxerk', '03'],
+        ['#comp-mpjxxerm', 'A-Z of Music Production'],
+        ['#comp-mpjxxern1', 'Laptop Production'],
+        ['#comp-mpjxxero6', 'Hands-on Projects'],
+        ['#comp-mpjxxerq', 'Mixing & Mastering'],
+        ['#comp-mpjxxerr2', 'Certification'],
+        ['#comp-mpjxxert4', 'Mentor'],
+        ['#comp-mpjxxerv', 'LUCA PETRACCA'],
+        ['#comp-mpjxxerx1', 'A practical international masterclass in end-to-end track creation, built for artists who want to produce professional music using only a laptop.']
+      ],
+      badgesSelector: '#comp-mpjxxerw',
+      badges: ['Music Producer & Composer', '17+ Years Teaching', 'Laptop-Based Production'],
+      hideSelectors: ['#comp-mrg3zuhs']
+    }
+  ];
+
+  function setAcademyBadgeList(selector, badges) {
+    var node = document.querySelector(selector);
+    if (!node || !badges || !badges.length) return;
+    node.innerHTML =
+      '<ul class="font_2 wixui-rich-text__text">' +
+      badges.map(function(badge) {
+        return '<li class="wixui-rich-text__text"><p class="font_2 wixui-rich-text__text">' + ui.escapeHtml(badge) + '</p></li>';
+      }).join('') +
+      '</ul>';
+  }
+
+  function repairAcademyCourseCards() {
+    var path = normalizedPath();
+    if (path !== '/academy' && path !== '/learn-with-tsc') return;
+    academyDesktopCourseCards.forEach(function(card) {
+      card.fields.forEach(function(field) {
+        ui.setText(field[0], field[1]);
+      });
+      setAcademyBadgeList(card.badgesSelector, card.badges);
+      if (card.imageSelector && card.imageSrc) {
+        ui.setImage(card.imageSelector, {
+          src: card.imageSrc,
+          alt: card.imageAlt || '',
+          objectFit: 'cover',
+          objectPosition: '50% 50%'
+        });
+      } else if (card.imageSelector) {
+        var img = document.querySelector(card.imageSelector);
+        if (img && card.imageAlt) img.alt = card.imageAlt;
+      }
+      setButtonLink(document.querySelector(card.buttonSelector), card.href);
+      var mediaLink = document.querySelector(card.imageSelector) && document.querySelector(card.imageSelector).closest('a[href]');
+      if (mediaLink) {
+        mediaLink.setAttribute('href', card.href);
+        mediaLink.setAttribute('target', '_self');
+      }
+      (card.hideSelectors || []).forEach(function(selector) {
+        var node = document.querySelector(selector);
+        if (!node) return;
+        node.style.setProperty('display', 'none', 'important');
+        node.setAttribute('aria-hidden', 'true');
+      });
+    });
+  }
+
   function polishMobileMusicProductionPage() {
     var path = normalizedPath();
     if (path !== '/music-production' && path !== '/pages/music-production.html') return;
@@ -974,7 +1082,7 @@
     header.className = 'tsc-mobile-site-header' + (academyMode ? ' tsc-mobile-site-header-academy' : '');
     header.innerHTML = [
       '<a class="tsc-mobile-brand" href="' + (academyMode ? '/academy' : '/') + '" aria-label="' + (academyMode ? 'TSC Academy' : 'The Shakti Collective') + '">',
-        '<img class="tsc-mobile-brand-logo tsc-mobile-brand-logo-unified" src="' + logoSrcForPage() + '" alt="">',
+        '<img class="tsc-mobile-brand-logo tsc-mobile-brand-logo-unified" src="' + logoSrcForPage() + '" alt="" width="160" height="40" decoding="async">',
       '</a>',
       '<details class="tsc-mobile-menu">',
         '<summary aria-label="Open navigation"><span></span><span></span><span></span></summary>',
@@ -1050,13 +1158,23 @@
       if (img) {
         if (img.getAttribute('src') !== logoSrc) img.setAttribute('src', logoSrc);
         img.setAttribute('alt', brandLabel);
+        if (img.classList.contains('tsc-mobile-brand-logo-unified')) {
+          img.setAttribute('width', '160');
+          img.setAttribute('height', '40');
+        } else if (img.classList.contains('tsc-desktop-brand-logo-unified')) {
+          img.setAttribute('width', academyMode ? '146' : '205');
+          img.setAttribute('height', academyMode ? '68' : '51');
+        }
         link.dataset.tscBrandLogo = academyMode ? 'academy' : 'main';
         return;
       }
       var cls = isCustomChrome && link.closest('.tsc-mobile-footer, .tsc-mobile-site-header')
         ? 'tsc-mobile-brand-logo tsc-mobile-brand-logo-unified'
         : 'tsc-desktop-brand-logo tsc-desktop-brand-logo-unified';
-      link.innerHTML = '<img class="' + cls + '" src="' + logoSrc + '" alt="' + brandLabel + '">';
+      var size = cls.indexOf('tsc-mobile-brand-logo') !== -1
+        ? ' width="160" height="40"'
+        : ' width="' + (academyMode ? '146' : '205') + '" height="' + (academyMode ? '68' : '51') + '"';
+      link.innerHTML = '<img class="' + cls + '" src="' + logoSrc + '" alt="' + brandLabel + '"' + size + ' decoding="async">';
       link.dataset.tscBrandLogo = academyMode ? 'academy' : 'main';
     });
 
@@ -1064,6 +1182,13 @@
       if (img.classList.contains('tsc-mobile-footer-logo') || img.classList.contains('tsc-desktop-footer-logo')) return;
       if (img.getAttribute('src') !== navLogoSrc) img.setAttribute('src', navLogoSrc);
       img.setAttribute('alt', brandLabel);
+      if (img.classList.contains('tsc-mobile-brand-logo-unified')) {
+        img.setAttribute('width', '160');
+        img.setAttribute('height', '40');
+      } else {
+        img.setAttribute('width', academyMode ? '146' : '205');
+        img.setAttribute('height', academyMode ? '68' : '51');
+      }
     });
     Array.prototype.forEach.call(document.querySelectorAll('.tsc-mobile-footer-logo, .tsc-desktop-footer-logo'), function(img) {
       if (img.getAttribute('src') !== footLogoSrc) img.setAttribute('src', footLogoSrc);
@@ -1870,6 +1995,7 @@
         updateHeaderBrandLogos();
         syncResponsiveHeaderMenuCta();
         alignResponsiveElements();
+        repairAcademyCourseCards();
         repairArtistPages();
         repairArtistsRosterLinks();
         centerArtistsHeroButtons();
@@ -1892,6 +2018,7 @@
     buildMobileCourseExperience();
     buildMobileWorkCases();
     updateDesktopFilmCards();
+    repairAcademyCourseCards();
     buildMobileFilmsShells();
     if (ui.mountDesktopFooter) {
       ui.mountDesktopFooter({
@@ -1916,6 +2043,7 @@
     function afterHydrate() {
       removeMentorSessions();
       updateDesktopFilmCards();
+      repairAcademyCourseCards();
       ensureLucaCourseCardLinks();
       polishMobileAcademyCourseCards();
       polishMobileMusicProductionPage();

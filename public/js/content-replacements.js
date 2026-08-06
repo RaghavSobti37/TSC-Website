@@ -128,8 +128,8 @@
       mentorName: 'Luca Petracca',
       mentorBio: 'Luca Petracca is a music producer and composer from Italy. He studied classical guitar at Conservatory S. Cecilia of Rome, classical composition at the Conservatorium van Amsterdam, and has taught music globally for more than 17 years.',
       mentorBadges: ['Music Producer & Composer', '17+ Years Teaching', 'Laptop-Based Production'],
-      imageSelector: '#img-comp-mqz5xh42 img, img[alt*="f205ff385c2272184580fd45"], img[src*="19f989_72c26b9f755948e59217c0f217c9af16"]',
-      fallbackImage: '/assets/mirror/static.wixstatic.com/media/19f989_72c26b9f755948e59217c0f217c9af16~mv2.jpeg/v1/fill/w_640,h_517,fp_0.50_0.30,q_80,enc_avif,quality_auto/ab6761610000e5ebf205ff385c2272184580fd45.jpeg',
+      imageSelector: 'img[alt*="Luca"], img[src*="luca-petracca"]',
+      fallbackImage: '/assets/luca/luca-petracca-course-wide.jpg',
       href: '/book-a-call'
     }
   };
@@ -700,6 +700,18 @@
       el.dataset.tscMusicProductionPolished = '1';
     }
 
+    function setCourseImage(selector, src, alt, objectPosition) {
+      var img = document.querySelector(selector);
+      if (!img || img.dataset.tscMusicProductionImage === '1') return;
+      img.removeAttribute('srcset');
+      img.removeAttribute('data-src');
+      img.src = src;
+      img.alt = alt;
+      img.style.setProperty('object-fit', 'cover', 'important');
+      img.style.setProperty('object-position', objectPosition || '50% 50%', 'important');
+      img.dataset.tscMusicProductionImage = '1';
+    }
+
     setRichHtml('#comp-mpmj3dm7', '<h1 class="font_2 wixui-rich-text__text">A-Z of Music Production</h1>');
     setRichHtml('#comp-mpmj3dno8', '<p class="font_8 wixui-rich-text__text">A practical international masterclass teaching end-to-end music production for artists using only a laptop.</p>');
     setRichHtml(
@@ -728,12 +740,11 @@
     setRichHtml('#comp-mpmizyp39', '<p class="font_8 wixui-rich-text__text">Apply effects processing, balance mixes, and master finished tracks for release.</p>');
     setRichHtml('#comp-mpny86eb', '<p class="font_8 wixui-rich-text__text">Create professional-sounding songs without expensive studio gear.</p>');
 
-    var mentorImg = document.querySelector('#img-comp-mpu7qgfn img');
-    if (mentorImg && mentorImg.dataset.tscMusicProductionPolished !== '1') {
-      mentorImg.src = '/assets/mirror/static.wixstatic.com/media/19f989_72c26b9f755948e59217c0f217c9af16~mv2.jpeg/v1/fill/w_640,h_517,fp_0.50_0.30,q_80,enc_avif,quality_auto/ab6761610000e5ebf205ff385c2272184580fd45.jpeg';
-      mentorImg.alt = 'Luca Petracca';
-      mentorImg.dataset.tscMusicProductionPolished = '1';
-    }
+    setCourseImage('#img-comp-mpmj3doh img', '/assets/luca/luca-petracca-course-wide.jpg', 'Luca Petracca producing music on keyboard in studio', '48% 58%');
+    setCourseImage('#img-comp-mpu7qgfn img', '/assets/luca/luca-petracca-studio-portrait.jpg', 'Luca Petracca at a keyboard in the studio', '46% 54%');
+    setCourseImage('#img-comp-mpu8m8vg img', '/assets/luca/luca-production-mic.jpg', 'Studio microphone for recording techniques', '50% 50%');
+    setCourseImage('#img-comp-mpu8nwd9 img', '/assets/luca/luca-petracca-course-wide.jpg', 'Luca Petracca working on a music production session', '48% 58%');
+    setCourseImage('#img-comp-mpu8o6tu img', '/assets/luca/luca-production-gradient.jpg', 'A-Z of Music Production course visual', '50% 50%');
 
     [
       '01 : Introduction to Music Production',

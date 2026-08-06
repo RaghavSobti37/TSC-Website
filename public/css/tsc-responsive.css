@@ -210,24 +210,25 @@ footer.site-footer:has(.tsc-mobile-footer) {
     align-items: center;
     display: inline-flex;
     flex: 0 0 auto;
+    height: 51px;
     min-height: 54px;
     text-decoration: none;
+    width: 205px;
   }
 
   .tsc-desktop-site-brand img {
     display: block;
     filter: brightness(0) invert(1);
-    height: auto;
-    height: 51px;
+    height: 51px !important;
     max-height: 51px;
     object-fit: contain;
-    width: 205px;
+    width: 205px !important;
   }
 
   .tsc-desktop-site-header-academy .tsc-desktop-site-brand img {
-    height: auto;
+    height: 68px !important;
     max-height: 68px;
-    width: 146px;
+    width: 146px !important;
   }
 
   .tsc-desktop-site-nav {
@@ -259,6 +260,7 @@ footer.site-footer:has(.tsc-mobile-footer) {
 
   .tsc-main-artists-menu {
     color: #ffecd1;
+    display: inline-flex;
     position: relative;
   }
 
@@ -294,11 +296,12 @@ footer.site-footer:has(.tsc-mobile-footer) {
     background: #b74b02;
     border-radius: 0 0 8px 8px;
     display: none;
-    min-width: 190px;
+    min-width: 100%;
     padding: 12px 0;
     position: absolute;
-    right: 0;
-    top: calc(100% - 2px);
+    left: 0;
+    top: 100%;
+    width: max-content;
     z-index: 1001;
   }
 
@@ -519,7 +522,10 @@ footer.site-footer:has(.tsc-mobile-footer) {
 .tsc-desktop-brand-link {
   align-items: center !important;
   display: flex !important;
+  flex: 0 0 auto !important;
+  height: 51px !important;
   justify-content: flex-start !important;
+  width: 205px !important;
 }
 
 .tsc-desktop-brand-logo {
@@ -528,10 +534,23 @@ footer.site-footer:has(.tsc-mobile-footer) {
 }
 
 .tsc-desktop-brand-logo-unified {
-  height: auto !important;
-  max-height: 72px !important;
+  height: 51px !important;
+  max-height: 51px !important;
   mix-blend-mode: screen;
-  width: clamp(220px, 18vw, 340px) !important;
+  width: 205px !important;
+}
+
+.tsc-desktop-site-header-academy .tsc-desktop-brand-link,
+header a[data-tsc-brand-logo="academy"] {
+  height: 68px !important;
+  width: 146px !important;
+}
+
+.tsc-desktop-site-header-academy .tsc-desktop-brand-logo-unified,
+header a[data-tsc-brand-logo="academy"] .tsc-desktop-brand-logo-unified {
+  height: 68px !important;
+  max-height: 68px !important;
+  width: 146px !important;
 }
 
 /* Academy mark → solid white on dark header (same as TSC nav/footer). */

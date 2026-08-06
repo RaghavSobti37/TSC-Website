@@ -502,6 +502,47 @@
       'Artist Path': '/artist-path',
       'Learn With TSC': '/academy'
     };
+    function visibleRect(node) {
+      if (!node || !node.getBoundingClientRect) return null;
+      var rect = node.getBoundingClientRect();
+      return rect && rect.width > 2 && rect.height > 2 ? rect : null;
+    }
+    function isArtistsLabel(node) {
+      return (node.textContent || '').trim().replace(/\s+/g, ' ') === 'Artists';
+    }
+    function visibleArtistsTrigger() {
+      var candidates = Array.prototype.filter.call(document.querySelectorAll('header a, header button, header .wixui-horizontal-menu__item, header .wixui-menu__item'), function(node) {
+        var rect = visibleRect(node);
+        return rect && isArtistsLabel(node);
+      });
+      candidates.sort(function(a, b) {
+        var ar = a.getBoundingClientRect();
+        var br = b.getBoundingClientRect();
+        return ar.top - br.top || br.left - ar.left;
+      });
+      return candidates[0] || null;
+    }
+    function alignOpenArtistsDropdown() {
+      var trigger = visibleArtistsTrigger();
+      var triggerRect = visibleRect(trigger);
+      if (!triggerRect) return;
+      Array.prototype.forEach.call(document.querySelectorAll('[id$="-dropdown"], .wixui-dropdown-container'), function(dropdown) {
+        var label = (dropdown.textContent || '').trim().replace(/\s+/g, ' ');
+        if (label.indexOf('TSC Artists') === -1 || label.indexOf('Artist Path') === -1 || label.indexOf('Learn With TSC') === -1) return;
+        var rect = visibleRect(dropdown);
+        if (!rect) return;
+        var delta = Math.abs(rect.left - triggerRect.left);
+        if (delta <= 2) return;
+        dropdown.style.left = Math.round(triggerRect.left) + 'px';
+        dropdown.style.right = 'auto';
+        dropdown.style.transform = 'none';
+        dropdown.dataset.tscArtistsDropdownAligned = 'true';
+      });
+    }
+    function scheduleArtistsDropdownAlign() {
+      window.requestAnimationFrame(alignOpenArtistsDropdown);
+      window.setTimeout(alignOpenArtistsDropdown, 80);
+    }
     function dropdownTarget(event) {
       var node = event.target && event.target.closest && event.target.closest('a, [role="menuitem"], .wixui-dropdown-menu__item, .wixui-vertical-menu__item-label');
       if (!node) return null;
@@ -527,6 +568,14 @@
       event.stopImmediatePropagation();
       window.location.assign(href);
     }, true);
+    document.addEventListener('pointerover', scheduleArtistsDropdownAlign, true);
+    document.addEventListener('mouseover', scheduleArtistsDropdownAlign, true);
+    document.addEventListener('focusin', scheduleArtistsDropdownAlign, true);
+    document.addEventListener('click', scheduleArtistsDropdownAlign, true);
+    window.addEventListener('resize', scheduleArtistsDropdownAlign);
+    if (window.MutationObserver && document.body) {
+      new MutationObserver(scheduleArtistsDropdownAlign).observe(document.body, { attributes: true, childList: true, subtree: true, attributeFilter: ['style', 'class', 'data-state', 'aria-expanded'] });
+    }
   }
 
   function watchLinkNormalization() {

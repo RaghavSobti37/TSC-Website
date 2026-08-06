@@ -1,0 +1,54 @@
+{
+  "slug": "separate-home-navbar-hero",
+  "goal": "Keep the homepage navbar above the video and move the hero slightly lower.",
+  "acceptanceCriteria": [
+    "Homepage hero begins at least 12px below the mobile navbar",
+    "Homepage navbar remains in a higher stacking layer than the hero video",
+    "Website build exits 0",
+    "No commit, push, or production deploy is performed"
+  ],
+  "createdAt": "2026-07-30T13:58:00+05:30",
+  "updatedAt": "2026-07-30T18:48:00+05:30",
+  "iteration": 2,
+  "phase": "build",
+  "satisfaction": "pending",
+  "multiagentSlug": null,
+  "slices": [
+    {
+      "sliceId": "home-navbar-hero-spacing",
+      "goal": "Add scoped homepage spacing and stacking rules.",
+      "agentSlug": "frontend-developer",
+      "agentRule": ".cursor/rules/agency/frontend-developer.mdc",
+      "ownsFiles": [
+        "public/css/mobile/home.css",
+        "public/css/tsc-responsive.css"
+      ],
+      "forbiddenFiles": [],
+      "verifyCommands": [
+        "npm run build",
+        "browser layout check at 1024x507"
+      ],
+      "status": "in_progress",
+      "evidence": "Iteration 1 covered only the <=1024px mobile header. User screenshot proved the desktop locked-header path still had zero separation and could be overpainted by hero media. Iteration 2 adds equivalent desktop protection."
+    }
+  ],
+  "discoveries": [],
+  "verifyHistory": [
+    {
+      "iteration": 1,
+      "commands": [
+        "browser layout check at 1024x507",
+        "browser layout check at 390x844",
+        "npm run build",
+        "git diff --check -- public/css/mobile/home.css"
+      ],
+      "exitCode": 0,
+      "at": "2026-07-30T14:05:00+05:30"
+    }
+  ],
+  "satisfactionGate": {
+    "agentSlug": "reality-checker",
+    "status": "pending",
+    "evidence": ""
+  }
+}

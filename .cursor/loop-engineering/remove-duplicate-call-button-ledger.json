@@ -1,0 +1,63 @@
+{
+  "slug": "remove-duplicate-call-button",
+  "goal": "Remove duplicate floating call button on the Academy page across mobile and desktop.",
+  "acceptanceCriteria": [
+    "Mobile Academy renders one floating Book a Call button",
+    "Desktop Academy renders the same TSC floating Book a Call button and hides the legacy Wix button",
+    "Website build exits 0"
+  ],
+  "createdAt": "2026-07-30T13:40:00+05:30",
+  "updatedAt": "2026-07-30T13:57:00+05:30",
+  "iteration": 2,
+  "phase": "build",
+  "satisfaction": "pending",
+  "slices": [
+    {
+      "sliceId": "academy-call-fab",
+      "goal": "Hide the legacy Wix call pin when the Academy mobile call FAB is active.",
+      "agentSlug": "frontend-developer",
+      "agentRule": ".cursor/rules/agency/frontend-developer.mdc",
+      "ownsFiles": [
+        "public/css/tsc-mobile-system.css"
+      ],
+      "forbiddenFiles": [],
+      "verifyCommands": [
+        "npm run build"
+      ],
+      "status": "done",
+      "evidence": "390x844 browser: visibleFixedCallButtons=1, legacyDisplay=none, fabDisplay=flex. npm run build exit 0; 111 HTML pages ready."
+    },
+    {
+      "sliceId": "academy-desktop-call-fab",
+      "goal": "Hide the legacy Wix call pin on desktop and keep the shared TSC phone FAB.",
+      "agentSlug": "frontend-developer",
+      "agentRule": ".cursor/rules/agency/frontend-developer.mdc",
+      "ownsFiles": [
+        "public/css/tsc-responsive.css"
+      ],
+      "forbiddenFiles": [],
+      "verifyCommands": [
+        "npm run build"
+      ],
+      "status": "in_progress",
+      "evidence": ""
+    }
+  ],
+  "discoveries": [],
+  "verifyHistory": [
+    {
+      "iteration": 1,
+      "commands": [
+        "npm run build",
+        "390x844 browser DOM visibility check"
+      ],
+      "exitCode": 0,
+      "at": "2026-07-30T13:54:00+05:30"
+    }
+  ],
+  "satisfactionGate": {
+    "agentSlug": "reality-checker",
+    "status": "pending",
+    "evidence": ""
+  }
+}

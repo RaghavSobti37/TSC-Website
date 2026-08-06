@@ -1,0 +1,1527 @@
+[
+  {
+    "route": "/academy",
+    "vw": 375,
+    "fail": true,
+    "page": "academy",
+    "docOverflow": 0,
+    "bleedCount": 0,
+    "bleed": [],
+    "tiny": [
+      {
+        "id": "A",
+        "fs": 10,
+        "sample": "Explore Courses"
+      },
+      {
+        "id": "A",
+        "fs": 10,
+        "sample": "Know More"
+      },
+      {
+        "id": "A",
+        "fs": 10,
+        "sample": "Know More"
+      },
+      {
+        "id": "P",
+        "fs": 5.9,
+        "sample": "Choosing the right mentorship is a pivot"
+      },
+      {
+        "id": "A",
+        "fs": 10,
+        "sample": "Book a Call"
+      }
+    ],
+    "smallTap": [],
+    "brokenImg": [],
+    "coursesTitleInfo": {
+      "left": 24,
+      "right": 351,
+      "overflow": false,
+      "fontSize": "55.5px",
+      "whiteSpace": "nowrap"
+    },
+    "pinned": [],
+    "marquees": [],
+    "mainH": 0,
+    "shot": "C:\\Users\\ragha\\OneDrive\\Desktop\\TSC Platform\\website\\TSC-Website\\artifacts\\academy-fix\\academy-375.png"
+  },
+  {
+    "route": "/learn-with-tsc",
+    "vw": 375,
+    "fail": true,
+    "page": "learn-with-tsc",
+    "docOverflow": 0,
+    "bleedCount": 0,
+    "bleed": [],
+    "tiny": [
+      {
+        "id": "A",
+        "fs": 10,
+        "sample": "Know More"
+      },
+      {
+        "id": "A",
+        "fs": 10,
+        "sample": "Know More"
+      },
+      {
+        "id": "P",
+        "fs": 5.9,
+        "sample": "Learn how direct interactions with indus"
+      },
+      {
+        "id": "P",
+        "fs": 5.9,
+        "sample": "Ask about eligibility for our EWS & meri"
+      },
+      {
+        "id": "P",
+        "fs": 5.9,
+        "sample": "Get specific details about modules, sess"
+      },
+      {
+        "id": "P",
+        "fs": 5.9,
+        "sample": "Choosing the right mentorship is a pivot"
+      },
+      {
+        "id": "P",
+        "fs": 5.9,
+        "sample": "Understand how our courses fit into your"
+      }
+    ],
+    "smallTap": [],
+    "brokenImg": [],
+    "coursesTitleInfo": null,
+    "pinned": [],
+    "marquees": [],
+    "mainH": 0,
+    "shot": "C:\\Users\\ragha\\OneDrive\\Desktop\\TSC Platform\\website\\TSC-Website\\artifacts\\academy-fix\\learn-with-tsc-375.png"
+  },
+  {
+    "route": "/resources",
+    "vw": 375,
+    "fail": true,
+    "page": "resources",
+    "docOverflow": 0,
+    "bleedCount": 6,
+    "bleed": [
+      {
+        "id": "tab-comp-mparh5dg",
+        "left": 366,
+        "right": 478,
+        "w": 111,
+        "tag": "DIV"
+      },
+      {
+        "id": "TabsList2027980309__label",
+        "left": 382,
+        "right": 462,
+        "w": 79,
+        "tag": "SPAN"
+      },
+      {
+        "id": "tab-comp-mparh5cz",
+        "left": 486,
+        "right": 592,
+        "w": 106,
+        "tag": "DIV"
+      },
+      {
+        "id": "TabsList2027980309__label",
+        "left": 502,
+        "right": 576,
+        "w": 74,
+        "tag": "SPAN"
+      },
+      {
+        "id": "tab-comp-mrd98n1v",
+        "left": 600,
+        "right": 691,
+        "w": 91,
+        "tag": "DIV"
+      },
+      {
+        "id": "TabsList2027980309__label",
+        "left": 616,
+        "right": 675,
+        "w": 59,
+        "tag": "SPAN"
+      }
+    ],
+    "tiny": [
+      {
+        "id": "A",
+        "fs": 10,
+        "sample": "Get Resource"
+      },
+      {
+        "id": "A",
+        "fs": 10,
+        "sample": "Get Resource"
+      },
+      {
+        "id": "P",
+        "fs": 5,
+        "sample": "Cymatics Deja Vu"
+      },
+      {
+        "id": "A",
+        "fs": 10,
+        "sample": "Get Resource"
+      },
+      {
+        "id": "P",
+        "fs": 5,
+        "sample": "Solider Sound S Pulser"
+      },
+      {
+        "id": "A",
+        "fs": 10,
+        "sample": "Get Resource"
+      },
+      {
+        "id": "P",
+        "fs": 5,
+        "sample": "Rough Rider 3"
+      },
+      {
+        "id": "A",
+        "fs": 10,
+        "sample": "Get Resource"
+      }
+    ],
+    "smallTap": [],
+    "brokenImg": [
+      "http://127.0.0.1:3000/resources"
+    ],
+    "coursesTitleInfo": null,
+    "pinned": [],
+    "marquees": [],
+    "mainH": 0,
+    "shot": "C:\\Users\\ragha\\OneDrive\\Desktop\\TSC Platform\\website\\TSC-Website\\artifacts\\academy-fix\\resources-375.png"
+  },
+  {
+    "route": "/artist-path",
+    "vw": 375,
+    "fail": true,
+    "page": "artist-path",
+    "docOverflow": 0,
+    "bleedCount": 0,
+    "bleed": [],
+    "tiny": [
+      {
+        "id": "comp-mqp9cbq4",
+        "fs": 10,
+        "sample": "APPLY NOW"
+      },
+      {
+        "id": "P",
+        "fs": 10,
+        "sample": "Enroll Now"
+      },
+      {
+        "id": "A",
+        "fs": 10,
+        "sample": "Enroll Now"
+      },
+      {
+        "id": "SPAN",
+        "fs": 10,
+        "sample": "Enroll Now"
+      },
+      {
+        "id": "SPAN",
+        "fs": 5.3,
+        "sample": "Enroll Now"
+      },
+      {
+        "id": "SPAN",
+        "fs": 5.3,
+        "sample": "Enroll Now"
+      },
+      {
+        "id": "SPAN",
+        "fs": 5.3,
+        "sample": "Enroll Now"
+      },
+      {
+        "id": "SPAN",
+        "fs": 5.3,
+        "sample": "Enroll Now"
+      }
+    ],
+    "smallTap": [
+      {
+        "id": "comp-mqp9cbq4",
+        "h": 39,
+        "w": 311
+      }
+    ],
+    "brokenImg": [],
+    "coursesTitleInfo": null,
+    "pinned": [],
+    "marquees": [
+      {
+        "id": "comp-mqrxopeb",
+        "display": "none",
+        "b": {
+          "l": 0,
+          "r": 0,
+          "w": 0
+        }
+      }
+    ],
+    "mainH": 0,
+    "shot": "C:\\Users\\ragha\\OneDrive\\Desktop\\TSC Platform\\website\\TSC-Website\\artifacts\\academy-fix\\artist-path-375.png"
+  },
+  {
+    "route": "/roots-of-hindustani-classical",
+    "vw": 375,
+    "fail": true,
+    "page": "learn-with-tsc",
+    "docOverflow": 0,
+    "bleedCount": 0,
+    "bleed": [],
+    "tiny": [
+      {
+        "id": "P",
+        "fs": 10,
+        "sample": "₹3,999Enroll Now"
+      },
+      {
+        "id": "A",
+        "fs": 10,
+        "sample": "₹3,999Enroll Now"
+      },
+      {
+        "id": "SPAN",
+        "fs": 10,
+        "sample": "₹3,999Enroll Now"
+      },
+      {
+        "id": "SPAN",
+        "fs": 5.3,
+        "sample": "₹3,999Enroll Now"
+      },
+      {
+        "id": "SPAN",
+        "fs": 5.3,
+        "sample": "₹3,999Enroll Now"
+      },
+      {
+        "id": "SPAN",
+        "fs": 5.3,
+        "sample": "₹3,999Enroll Now"
+      },
+      {
+        "id": "SPAN",
+        "fs": 5.3,
+        "sample": "₹3,999"
+      },
+      {
+        "id": "SPAN",
+        "fs": 5.3,
+        "sample": "Enroll Now"
+      }
+    ],
+    "smallTap": [],
+    "brokenImg": [
+      "http://127.0.0.1:3000/roots-of-hindustani-classical",
+      "http://127.0.0.1:3000/roots-of-hindustani-classical"
+    ],
+    "coursesTitleInfo": null,
+    "pinned": [],
+    "marquees": [
+      {
+        "id": "comp-mrf1e0bb",
+        "display": "none",
+        "b": {
+          "l": 0,
+          "r": 0,
+          "w": 0
+        }
+      }
+    ],
+    "mainH": 0,
+    "shot": "C:\\Users\\ragha\\OneDrive\\Desktop\\TSC Platform\\website\\TSC-Website\\artifacts\\academy-fix\\roots-of-hindustani-classical-375.png"
+  },
+  {
+    "route": "/the-heart-of-composition",
+    "vw": 375,
+    "fail": true,
+    "page": "learn-with-tsc",
+    "docOverflow": 0,
+    "bleedCount": 0,
+    "bleed": [],
+    "tiny": [
+      {
+        "id": "P",
+        "fs": 10,
+        "sample": "₹3,999Enroll Now"
+      },
+      {
+        "id": "A",
+        "fs": 10,
+        "sample": "₹3,999Enroll Now"
+      },
+      {
+        "id": "SPAN",
+        "fs": 10,
+        "sample": "₹3,999Enroll Now"
+      },
+      {
+        "id": "SPAN",
+        "fs": 5.3,
+        "sample": "₹3,999Enroll Now"
+      },
+      {
+        "id": "SPAN",
+        "fs": 5.3,
+        "sample": "₹3,999Enroll Now"
+      },
+      {
+        "id": "SPAN",
+        "fs": 5.3,
+        "sample": "₹3,999Enroll Now"
+      },
+      {
+        "id": "SPAN",
+        "fs": 5.3,
+        "sample": "₹3,999"
+      },
+      {
+        "id": "SPAN",
+        "fs": 5.3,
+        "sample": "Enroll Now"
+      }
+    ],
+    "smallTap": [],
+    "brokenImg": [
+      "http://127.0.0.1:3000/the-heart-of-composition",
+      "http://127.0.0.1:3000/the-heart-of-composition"
+    ],
+    "coursesTitleInfo": null,
+    "pinned": [],
+    "marquees": [
+      {
+        "id": "comp-mpmjflor",
+        "display": "none",
+        "b": {
+          "l": 0,
+          "r": 0,
+          "w": 0
+        }
+      }
+    ],
+    "mainH": 0,
+    "shot": "C:\\Users\\ragha\\OneDrive\\Desktop\\TSC Platform\\website\\TSC-Website\\artifacts\\academy-fix\\the-heart-of-composition-375.png"
+  },
+  {
+    "route": "/academy",
+    "vw": 768,
+    "fail": true,
+    "page": "academy",
+    "docOverflow": 0,
+    "bleedCount": 12,
+    "bleed": [
+      {
+        "id": "comp-mqwl0xfw",
+        "left": -20,
+        "right": 712,
+        "w": 732,
+        "tag": "DIV"
+      },
+      {
+        "id": "comp-mqwl0xfw-overflow-wrapper gDZ5xr",
+        "left": -20,
+        "right": 712,
+        "w": 732,
+        "tag": "DIV"
+      },
+      {
+        "id": "comp-mqwl0xfw-container",
+        "left": -20,
+        "right": 712,
+        "w": 732,
+        "tag": "DIV"
+      },
+      {
+        "id": "comp-mqwl0xfz",
+        "left": -20,
+        "right": 712,
+        "w": 732,
+        "tag": "DIV"
+      },
+      {
+        "id": "comp-mqwl0xfz-container",
+        "left": -20,
+        "right": 712,
+        "w": 732,
+        "tag": "DIV"
+      },
+      {
+        "id": "p9hNc1 xjQkF3 fABPvj",
+        "left": -20,
+        "right": 712,
+        "w": 732,
+        "tag": "DIV"
+      },
+      {
+        "id": "comp-mqwl0xg1__item1",
+        "left": -19,
+        "right": 711,
+        "w": 730,
+        "tag": "DIV"
+      },
+      {
+        "id": "jdJeEr NYfD3h inner-box wixui-repeater__",
+        "left": -19,
+        "right": 711,
+        "w": 730,
+        "tag": "DIV"
+      }
+    ],
+    "tiny": [
+      {
+        "id": "A",
+        "fs": 10,
+        "sample": "Explore Courses"
+      },
+      {
+        "id": "A",
+        "fs": 10,
+        "sample": "Know More"
+      },
+      {
+        "id": "A",
+        "fs": 10,
+        "sample": "Know More"
+      },
+      {
+        "id": "A",
+        "fs": 10,
+        "sample": "Book a Call"
+      }
+    ],
+    "smallTap": [],
+    "brokenImg": [],
+    "coursesTitleInfo": {
+      "left": 24,
+      "right": 744,
+      "overflow": false,
+      "fontSize": "62.4px",
+      "whiteSpace": "nowrap"
+    },
+    "pinned": [],
+    "marquees": [],
+    "mainH": 0,
+    "shot": "C:\\Users\\ragha\\OneDrive\\Desktop\\TSC Platform\\website\\TSC-Website\\artifacts\\academy-fix\\academy-768.png"
+  },
+  {
+    "route": "/learn-with-tsc",
+    "vw": 768,
+    "fail": true,
+    "page": "learn-with-tsc",
+    "docOverflow": 0,
+    "bleedCount": 0,
+    "bleed": [],
+    "tiny": [
+      {
+        "id": "A",
+        "fs": 10,
+        "sample": "Know More"
+      },
+      {
+        "id": "A",
+        "fs": 10,
+        "sample": "Know More"
+      }
+    ],
+    "smallTap": [],
+    "brokenImg": [],
+    "coursesTitleInfo": null,
+    "pinned": [],
+    "marquees": [],
+    "mainH": 0,
+    "shot": "C:\\Users\\ragha\\OneDrive\\Desktop\\TSC Platform\\website\\TSC-Website\\artifacts\\academy-fix\\learn-with-tsc-768.png"
+  },
+  {
+    "route": "/resources",
+    "vw": 768,
+    "fail": true,
+    "page": "resources",
+    "docOverflow": 0,
+    "bleedCount": 10,
+    "bleed": [
+      {
+        "id": "comp-mrxbyc0t",
+        "left": -48,
+        "right": 161,
+        "w": 209,
+        "tag": "DIV"
+      },
+      {
+        "id": "iL7Pq5 gx51wo",
+        "left": -48,
+        "right": 161,
+        "w": 209,
+        "tag": "DIV"
+      },
+      {
+        "id": "[object SVGAnimatedString]",
+        "left": -48,
+        "right": 161,
+        "w": 209,
+        "tag": "svg"
+      },
+      {
+        "id": "[object SVGAnimatedString]",
+        "left": -47,
+        "right": 160,
+        "w": 206,
+        "tag": "g"
+      },
+      {
+        "id": "[object SVGAnimatedString]",
+        "left": -47,
+        "right": 160,
+        "w": 206,
+        "tag": "path"
+      },
+      {
+        "id": "comp-mrxbw8e8",
+        "left": 608,
+        "right": 817,
+        "w": 209,
+        "tag": "DIV"
+      },
+      {
+        "id": "iL7Pq5 gx51wo",
+        "left": 608,
+        "right": 817,
+        "w": 209,
+        "tag": "DIV"
+      },
+      {
+        "id": "[object SVGAnimatedString]",
+        "left": 608,
+        "right": 817,
+        "w": 209,
+        "tag": "svg"
+      }
+    ],
+    "tiny": [
+      {
+        "id": "A",
+        "fs": 10,
+        "sample": "Get Resource"
+      },
+      {
+        "id": "A",
+        "fs": 10,
+        "sample": "Get Resource"
+      },
+      {
+        "id": "P",
+        "fs": 10.2,
+        "sample": "Cymatics Deja Vu"
+      },
+      {
+        "id": "A",
+        "fs": 10,
+        "sample": "Get Resource"
+      },
+      {
+        "id": "P",
+        "fs": 10.2,
+        "sample": "Solider Sound S Pulser"
+      },
+      {
+        "id": "A",
+        "fs": 10,
+        "sample": "Get Resource"
+      },
+      {
+        "id": "P",
+        "fs": 10.2,
+        "sample": "Rough Rider 3"
+      },
+      {
+        "id": "A",
+        "fs": 10,
+        "sample": "Get Resource"
+      }
+    ],
+    "smallTap": [],
+    "brokenImg": [],
+    "coursesTitleInfo": null,
+    "pinned": [],
+    "marquees": [],
+    "mainH": 0,
+    "shot": "C:\\Users\\ragha\\OneDrive\\Desktop\\TSC Platform\\website\\TSC-Website\\artifacts\\academy-fix\\resources-768.png"
+  },
+  {
+    "route": "/artist-path",
+    "vw": 768,
+    "fail": true,
+    "page": "artist-path",
+    "docOverflow": 0,
+    "bleedCount": 0,
+    "bleed": [],
+    "tiny": [
+      {
+        "id": "comp-mqp9cbq4",
+        "fs": 10,
+        "sample": "APPLY NOW"
+      },
+      {
+        "id": "P",
+        "fs": 10,
+        "sample": "Enroll Now"
+      },
+      {
+        "id": "A",
+        "fs": 10,
+        "sample": "Enroll Now"
+      },
+      {
+        "id": "SPAN",
+        "fs": 10,
+        "sample": "Enroll Now"
+      },
+      {
+        "id": "SPAN",
+        "fs": 10.8,
+        "sample": "Enroll Now"
+      },
+      {
+        "id": "SPAN",
+        "fs": 10.8,
+        "sample": "Enroll Now"
+      },
+      {
+        "id": "SPAN",
+        "fs": 10.8,
+        "sample": "Enroll Now"
+      },
+      {
+        "id": "SPAN",
+        "fs": 10.8,
+        "sample": "Enroll Now"
+      }
+    ],
+    "smallTap": [],
+    "brokenImg": [],
+    "coursesTitleInfo": null,
+    "pinned": [],
+    "marquees": [
+      {
+        "id": "comp-mqrxopeb",
+        "display": "none",
+        "b": {
+          "l": 0,
+          "r": 0,
+          "w": 0
+        }
+      }
+    ],
+    "mainH": 0,
+    "shot": "C:\\Users\\ragha\\OneDrive\\Desktop\\TSC Platform\\website\\TSC-Website\\artifacts\\academy-fix\\artist-path-768.png"
+  },
+  {
+    "route": "/roots-of-hindustani-classical",
+    "vw": 768,
+    "fail": true,
+    "page": "learn-with-tsc",
+    "docOverflow": 0,
+    "bleedCount": 12,
+    "bleed": [
+      {
+        "id": "comp-mrf1e0bx4",
+        "left": -27,
+        "right": 147,
+        "w": 175,
+        "tag": "DIV"
+      },
+      {
+        "id": "YX2qkL",
+        "left": -27,
+        "right": 147,
+        "w": 175,
+        "tag": "DIV"
+      },
+      {
+        "id": "img-comp-mrf1e0bx4",
+        "left": -27,
+        "right": 147,
+        "w": 175,
+        "tag": "WOW-IMAGE"
+      },
+      {
+        "id": "PICTURE",
+        "left": -27,
+        "right": 147,
+        "w": 175,
+        "tag": "PICTURE"
+      },
+      {
+        "id": "IMG",
+        "left": -27,
+        "right": 147,
+        "w": 175,
+        "tag": "IMG"
+      },
+      {
+        "id": "comp-mrf1e0bz2",
+        "left": 143,
+        "right": 850,
+        "w": 707,
+        "tag": "DIV"
+      },
+      {
+        "id": "jdJeEr NYfD3h inner-box wixui-box",
+        "left": 143,
+        "right": 850,
+        "w": 707,
+        "tag": "DIV"
+      },
+      {
+        "id": "comp-mrf1e0c11",
+        "left": 165,
+        "right": 872,
+        "w": 707,
+        "tag": "DIV"
+      }
+    ],
+    "tiny": [
+      {
+        "id": "SPAN",
+        "fs": 10,
+        "sample": "COURSE 002"
+      },
+      {
+        "id": "SPAN",
+        "fs": 10,
+        "sample": "Mentor: Pt. Prasad Khaparde"
+      },
+      {
+        "id": "P",
+        "fs": 10,
+        "sample": "₹3,999Enroll Now"
+      },
+      {
+        "id": "A",
+        "fs": 10,
+        "sample": "₹3,999Enroll Now"
+      },
+      {
+        "id": "SPAN",
+        "fs": 10,
+        "sample": "₹3,999Enroll Now"
+      },
+      {
+        "id": "SPAN",
+        "fs": 10.8,
+        "sample": "₹3,999Enroll Now"
+      },
+      {
+        "id": "SPAN",
+        "fs": 10.8,
+        "sample": "₹3,999Enroll Now"
+      },
+      {
+        "id": "SPAN",
+        "fs": 10.8,
+        "sample": "₹3,999Enroll Now"
+      }
+    ],
+    "smallTap": [],
+    "brokenImg": [],
+    "coursesTitleInfo": null,
+    "pinned": [],
+    "marquees": [
+      {
+        "id": "comp-mrf1e0bb",
+        "display": "none",
+        "b": {
+          "l": 0,
+          "r": 0,
+          "w": 0
+        }
+      }
+    ],
+    "mainH": 0,
+    "shot": "C:\\Users\\ragha\\OneDrive\\Desktop\\TSC Platform\\website\\TSC-Website\\artifacts\\academy-fix\\roots-of-hindustani-classical-768.png"
+  },
+  {
+    "route": "/the-heart-of-composition",
+    "vw": 768,
+    "fail": true,
+    "page": "learn-with-tsc",
+    "docOverflow": 0,
+    "bleedCount": 12,
+    "bleed": [
+      {
+        "id": "comp-mpmjflon",
+        "left": -4,
+        "right": 1148,
+        "w": 1153,
+        "tag": "DIV"
+      },
+      {
+        "id": "jdJeEr NYfD3h inner-box wixui-box",
+        "left": -4,
+        "right": 1148,
+        "w": 1153,
+        "tag": "DIV"
+      },
+      {
+        "id": "comp-mpmwah7z",
+        "left": -27,
+        "right": 147,
+        "w": 175,
+        "tag": "DIV"
+      },
+      {
+        "id": "YX2qkL",
+        "left": -27,
+        "right": 147,
+        "w": 175,
+        "tag": "DIV"
+      },
+      {
+        "id": "img-comp-mpmwah7z",
+        "left": -27,
+        "right": 147,
+        "w": 175,
+        "tag": "WOW-IMAGE"
+      },
+      {
+        "id": "PICTURE",
+        "left": -27,
+        "right": 147,
+        "w": 175,
+        "tag": "PICTURE"
+      },
+      {
+        "id": "IMG",
+        "left": -27,
+        "right": 147,
+        "w": 175,
+        "tag": "IMG"
+      },
+      {
+        "id": "comp-mpn024f7",
+        "left": 143,
+        "right": 850,
+        "w": 707,
+        "tag": "DIV"
+      }
+    ],
+    "tiny": [
+      {
+        "id": "P",
+        "fs": 10,
+        "sample": "₹3,999Enroll Now"
+      },
+      {
+        "id": "A",
+        "fs": 10,
+        "sample": "₹3,999Enroll Now"
+      },
+      {
+        "id": "SPAN",
+        "fs": 10,
+        "sample": "₹3,999Enroll Now"
+      },
+      {
+        "id": "SPAN",
+        "fs": 10.8,
+        "sample": "₹3,999Enroll Now"
+      },
+      {
+        "id": "SPAN",
+        "fs": 10.8,
+        "sample": "₹3,999Enroll Now"
+      },
+      {
+        "id": "SPAN",
+        "fs": 10.8,
+        "sample": "₹3,999Enroll Now"
+      },
+      {
+        "id": "SPAN",
+        "fs": 10.8,
+        "sample": "₹3,999"
+      },
+      {
+        "id": "SPAN",
+        "fs": 10.8,
+        "sample": "Enroll Now"
+      }
+    ],
+    "smallTap": [],
+    "brokenImg": [],
+    "coursesTitleInfo": null,
+    "pinned": [],
+    "marquees": [
+      {
+        "id": "comp-mpmjflor",
+        "display": "none",
+        "b": {
+          "l": 0,
+          "r": 0,
+          "w": 0
+        }
+      }
+    ],
+    "mainH": 0,
+    "shot": "C:\\Users\\ragha\\OneDrive\\Desktop\\TSC Platform\\website\\TSC-Website\\artifacts\\academy-fix\\the-heart-of-composition-768.png"
+  },
+  {
+    "route": "/academy",
+    "vw": 1024,
+    "fail": true,
+    "page": "academy",
+    "docOverflow": 0,
+    "bleedCount": 12,
+    "bleed": [
+      {
+        "id": "comp-mqwl0xfw",
+        "left": -32,
+        "right": 956,
+        "w": 988,
+        "tag": "DIV"
+      },
+      {
+        "id": "comp-mqwl0xfw-overflow-wrapper gDZ5xr",
+        "left": -32,
+        "right": 956,
+        "w": 988,
+        "tag": "DIV"
+      },
+      {
+        "id": "comp-mqwl0xfw-container",
+        "left": -32,
+        "right": 956,
+        "w": 988,
+        "tag": "DIV"
+      },
+      {
+        "id": "comp-mqwl0xfz",
+        "left": -32,
+        "right": 956,
+        "w": 988,
+        "tag": "DIV"
+      },
+      {
+        "id": "comp-mqwl0xfz-container",
+        "left": -32,
+        "right": 956,
+        "w": 988,
+        "tag": "DIV"
+      },
+      {
+        "id": "p9hNc1 xjQkF3 fABPvj",
+        "left": -32,
+        "right": 956,
+        "w": 988,
+        "tag": "DIV"
+      },
+      {
+        "id": "comp-mqwl0xg1__item1",
+        "left": -31,
+        "right": 955,
+        "w": 986,
+        "tag": "DIV"
+      },
+      {
+        "id": "jdJeEr NYfD3h inner-box wixui-repeater__",
+        "left": -31,
+        "right": 955,
+        "w": 986,
+        "tag": "DIV"
+      }
+    ],
+    "tiny": [
+      {
+        "id": "A",
+        "fs": 10,
+        "sample": "Explore Courses"
+      },
+      {
+        "id": "A",
+        "fs": 10,
+        "sample": "Know More"
+      },
+      {
+        "id": "A",
+        "fs": 10,
+        "sample": "Know More"
+      },
+      {
+        "id": "A",
+        "fs": 10,
+        "sample": "Book a Call"
+      }
+    ],
+    "smallTap": [],
+    "brokenImg": [],
+    "coursesTitleInfo": {
+      "left": 24,
+      "right": 1000,
+      "overflow": false,
+      "fontSize": "62.4px",
+      "whiteSpace": "nowrap"
+    },
+    "pinned": [],
+    "marquees": [],
+    "mainH": 0,
+    "shot": "C:\\Users\\ragha\\OneDrive\\Desktop\\TSC Platform\\website\\TSC-Website\\artifacts\\academy-fix\\academy-1024.png"
+  },
+  {
+    "route": "/learn-with-tsc",
+    "vw": 1024,
+    "fail": true,
+    "page": "learn-with-tsc",
+    "docOverflow": 0,
+    "bleedCount": 0,
+    "bleed": [],
+    "tiny": [
+      {
+        "id": "A",
+        "fs": 10,
+        "sample": "Know More"
+      },
+      {
+        "id": "A",
+        "fs": 10,
+        "sample": "Know More"
+      }
+    ],
+    "smallTap": [],
+    "brokenImg": [],
+    "coursesTitleInfo": null,
+    "pinned": [],
+    "marquees": [],
+    "mainH": 0,
+    "shot": "C:\\Users\\ragha\\OneDrive\\Desktop\\TSC Platform\\website\\TSC-Website\\artifacts\\academy-fix\\learn-with-tsc-1024.png"
+  },
+  {
+    "route": "/resources",
+    "vw": 1024,
+    "fail": true,
+    "page": "resources",
+    "docOverflow": 0,
+    "bleedCount": 10,
+    "bleed": [
+      {
+        "id": "comp-mrxbyc0t",
+        "left": -64,
+        "right": 215,
+        "w": 278,
+        "tag": "DIV"
+      },
+      {
+        "id": "iL7Pq5 gx51wo",
+        "left": -64,
+        "right": 215,
+        "w": 278,
+        "tag": "DIV"
+      },
+      {
+        "id": "[object SVGAnimatedString]",
+        "left": -64,
+        "right": 215,
+        "w": 278,
+        "tag": "svg"
+      },
+      {
+        "id": "[object SVGAnimatedString]",
+        "left": -62,
+        "right": 213,
+        "w": 275,
+        "tag": "g"
+      },
+      {
+        "id": "[object SVGAnimatedString]",
+        "left": -62,
+        "right": 213,
+        "w": 275,
+        "tag": "path"
+      },
+      {
+        "id": "comp-mrxbw8e8",
+        "left": 811,
+        "right": 1089,
+        "w": 278,
+        "tag": "DIV"
+      },
+      {
+        "id": "iL7Pq5 gx51wo",
+        "left": 811,
+        "right": 1089,
+        "w": 278,
+        "tag": "DIV"
+      },
+      {
+        "id": "[object SVGAnimatedString]",
+        "left": 811,
+        "right": 1089,
+        "w": 278,
+        "tag": "svg"
+      }
+    ],
+    "tiny": [
+      {
+        "id": "A",
+        "fs": 10,
+        "sample": "Get Resource"
+      },
+      {
+        "id": "A",
+        "fs": 10,
+        "sample": "Get Resource"
+      },
+      {
+        "id": "A",
+        "fs": 10,
+        "sample": "Get Resource"
+      },
+      {
+        "id": "A",
+        "fs": 10,
+        "sample": "Get Resource"
+      },
+      {
+        "id": "A",
+        "fs": 10,
+        "sample": "Get Resource"
+      },
+      {
+        "id": "A",
+        "fs": 10,
+        "sample": "Get Resource"
+      },
+      {
+        "id": "A",
+        "fs": 10,
+        "sample": "Get Resource"
+      },
+      {
+        "id": "A",
+        "fs": 10,
+        "sample": "Get Resource"
+      }
+    ],
+    "smallTap": [],
+    "brokenImg": [],
+    "coursesTitleInfo": null,
+    "pinned": [],
+    "marquees": [],
+    "mainH": 0,
+    "shot": "C:\\Users\\ragha\\OneDrive\\Desktop\\TSC Platform\\website\\TSC-Website\\artifacts\\academy-fix\\resources-1024.png"
+  },
+  {
+    "route": "/artist-path",
+    "vw": 1024,
+    "fail": true,
+    "page": "artist-path",
+    "docOverflow": 0,
+    "bleedCount": 0,
+    "bleed": [],
+    "tiny": [
+      {
+        "id": "comp-mqp9cbq4",
+        "fs": 10,
+        "sample": "APPLY NOW"
+      },
+      {
+        "id": "P",
+        "fs": 10,
+        "sample": "Enroll Now"
+      },
+      {
+        "id": "A",
+        "fs": 10,
+        "sample": "Enroll Now"
+      },
+      {
+        "id": "SPAN",
+        "fs": 10,
+        "sample": "Enroll Now"
+      }
+    ],
+    "smallTap": [],
+    "brokenImg": [],
+    "coursesTitleInfo": null,
+    "pinned": [],
+    "marquees": [
+      {
+        "id": "comp-mqrxopeb",
+        "display": "none",
+        "b": {
+          "l": 0,
+          "r": 0,
+          "w": 0
+        }
+      }
+    ],
+    "mainH": 0,
+    "shot": "C:\\Users\\ragha\\OneDrive\\Desktop\\TSC Platform\\website\\TSC-Website\\artifacts\\academy-fix\\artist-path-1024.png"
+  },
+  {
+    "route": "/roots-of-hindustani-classical",
+    "vw": 1024,
+    "fail": true,
+    "page": "learn-with-tsc",
+    "docOverflow": 0,
+    "bleedCount": 11,
+    "bleed": [
+      {
+        "id": "comp-mrf1e0bx4",
+        "left": -37,
+        "right": 196,
+        "w": 233,
+        "tag": "DIV"
+      },
+      {
+        "id": "YX2qkL",
+        "left": -37,
+        "right": 196,
+        "w": 233,
+        "tag": "DIV"
+      },
+      {
+        "id": "img-comp-mrf1e0bx4",
+        "left": -37,
+        "right": 196,
+        "w": 233,
+        "tag": "WOW-IMAGE"
+      },
+      {
+        "id": "PICTURE",
+        "left": -37,
+        "right": 196,
+        "w": 233,
+        "tag": "PICTURE"
+      },
+      {
+        "id": "IMG",
+        "left": -37,
+        "right": 196,
+        "w": 233,
+        "tag": "IMG"
+      },
+      {
+        "id": "comp-mrf1e0bz2",
+        "left": 190,
+        "right": 1133,
+        "w": 943,
+        "tag": "DIV"
+      },
+      {
+        "id": "jdJeEr NYfD3h inner-box wixui-box",
+        "left": 190,
+        "right": 1133,
+        "w": 943,
+        "tag": "DIV"
+      },
+      {
+        "id": "comp-mrf1e0ck",
+        "left": -20,
+        "right": 621,
+        "w": 642,
+        "tag": "DIV"
+      }
+    ],
+    "tiny": [
+      {
+        "id": "SPAN",
+        "fs": 10,
+        "sample": "COURSE 002"
+      },
+      {
+        "id": "SPAN",
+        "fs": 10,
+        "sample": "Mentor: Pt. Prasad Khaparde"
+      },
+      {
+        "id": "P",
+        "fs": 10,
+        "sample": "₹3,999Enroll Now"
+      },
+      {
+        "id": "A",
+        "fs": 10,
+        "sample": "₹3,999Enroll Now"
+      },
+      {
+        "id": "SPAN",
+        "fs": 10,
+        "sample": "₹3,999Enroll Now"
+      },
+      {
+        "id": "LI",
+        "fs": 10,
+        "sample": "00 :INTRODUCTIONMeet your mentor and und"
+      },
+      {
+        "id": "LI",
+        "fs": 10,
+        "sample": "01 : WHAT IS MUSICDefinition and fundame"
+      },
+      {
+        "id": "LI",
+        "fs": 10,
+        "sample": "02 : CLASSICAL & SEMI CLASSICALDistincti"
+      }
+    ],
+    "smallTap": [],
+    "brokenImg": [],
+    "coursesTitleInfo": null,
+    "pinned": [],
+    "marquees": [
+      {
+        "id": "comp-mrf1e0bb",
+        "display": "none",
+        "b": {
+          "l": 0,
+          "r": 0,
+          "w": 0
+        }
+      }
+    ],
+    "mainH": 0,
+    "shot": "C:\\Users\\ragha\\OneDrive\\Desktop\\TSC Platform\\website\\TSC-Website\\artifacts\\academy-fix\\roots-of-hindustani-classical-1024.png"
+  },
+  {
+    "route": "/the-heart-of-composition",
+    "vw": 1024,
+    "fail": true,
+    "page": "learn-with-tsc",
+    "docOverflow": 0,
+    "bleedCount": 11,
+    "bleed": [
+      {
+        "id": "comp-mpmjflon",
+        "left": -5,
+        "right": 1531,
+        "w": 1537,
+        "tag": "DIV"
+      },
+      {
+        "id": "jdJeEr NYfD3h inner-box wixui-box",
+        "left": -5,
+        "right": 1531,
+        "w": 1537,
+        "tag": "DIV"
+      },
+      {
+        "id": "comp-mpmwah7z",
+        "left": -37,
+        "right": 196,
+        "w": 233,
+        "tag": "DIV"
+      },
+      {
+        "id": "YX2qkL",
+        "left": -37,
+        "right": 196,
+        "w": 233,
+        "tag": "DIV"
+      },
+      {
+        "id": "img-comp-mpmwah7z",
+        "left": -37,
+        "right": 196,
+        "w": 233,
+        "tag": "WOW-IMAGE"
+      },
+      {
+        "id": "PICTURE",
+        "left": -37,
+        "right": 196,
+        "w": 233,
+        "tag": "PICTURE"
+      },
+      {
+        "id": "IMG",
+        "left": -37,
+        "right": 196,
+        "w": 233,
+        "tag": "IMG"
+      },
+      {
+        "id": "comp-mpn024f7",
+        "left": 190,
+        "right": 1133,
+        "w": 943,
+        "tag": "DIV"
+      }
+    ],
+    "tiny": [
+      {
+        "id": "P",
+        "fs": 10,
+        "sample": "₹3,999Enroll Now"
+      },
+      {
+        "id": "A",
+        "fs": 10,
+        "sample": "₹3,999Enroll Now"
+      },
+      {
+        "id": "SPAN",
+        "fs": 10,
+        "sample": "₹3,999Enroll Now"
+      },
+      {
+        "id": "SPAN",
+        "fs": 10,
+        "sample": "COURSE 001"
+      },
+      {
+        "id": "SPAN",
+        "fs": 10,
+        "sample": "Mentor: Sandesh Shandilya"
+      },
+      {
+        "id": "LI",
+        "fs": 10,
+        "sample": "00 : IT ALL STARTS HEREIntroduction to t"
+      },
+      {
+        "id": "LI",
+        "fs": 10,
+        "sample": "01 : INTRODUCTION (AAMAD)Introduction (A"
+      },
+      {
+        "id": "LI",
+        "fs": 10,
+        "sample": "02 : BHAAV (EMOTIONS)Explore how emotion"
+      }
+    ],
+    "smallTap": [],
+    "brokenImg": [],
+    "coursesTitleInfo": null,
+    "pinned": [],
+    "marquees": [
+      {
+        "id": "comp-mpmjflor",
+        "display": "none",
+        "b": {
+          "l": 0,
+          "r": 0,
+          "w": 0
+        }
+      }
+    ],
+    "mainH": 0,
+    "shot": "C:\\Users\\ragha\\OneDrive\\Desktop\\TSC Platform\\website\\TSC-Website\\artifacts\\academy-fix\\the-heart-of-composition-1024.png"
+  }
+]

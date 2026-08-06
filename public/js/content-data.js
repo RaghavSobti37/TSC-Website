@@ -164,10 +164,10 @@ window.__TSC_CONTENT_REPLACEMENTS__ = {
       "Insta Music League — A digital-first music discovery ecosystem where originality matters more than following.",
       "Havells mYOUsic — A culture-first collaboration discovering and nurturing grassroots musical talent across India.",
       "Young Gunns — An incubator spotlighting the next generation of emerging creators.",
-      "Kalki — A culture-forward storytelling initiative exploring the story of tomorrow through ancient Indian imagination, strategic positioning and modern audience engagement.",
-      "Mahaavatar Narsimha — A mythology-led animated feature strategy focused on cultural positioning, audience development, monetisation and long-term IP growth.",
-      "Hanuman Ansh — A spiritual entertainment IP inspired by timeless wisdom and designed to connect faith, story, community and contemporary audiences.",
-      "Mahaprabhu Jagannath / Jai Jagannath — A cultural resonance initiative celebrating Lord Jagannath’s living tradition through community, devotion and new-generation storytelling.",
+      "Kalki — A future-facing mythology story connecting dharma, transformation, ancient Indian imagination and modern audience anticipation.",
+      "Mahavatar Narsimha — A mythology-led animated feature mounted for cultural positioning, audience demand, monetisation and long-term IP growth.",
+      "Hanuman Ansh — A spiritual entertainment IP shaped for faith communities, contemporary families and a long-term story universe.",
+      "Mahaprabhu Jagannath / Jai Jagannath — A Lord Jagannath cultural story positioned through devotion, community access, partnerships and new-generation storytelling.",
       "Build stories that travel.",
       "Create IPs that live."
     ],
@@ -431,13 +431,13 @@ window.__TSC_CONTENT_REPLACEMENTS__ = {
       "Looking Ahead",
       "Young Gunns is envisioned as an ongoing artist incubation platform creating a sustainable launchpad for independent talent across the country."
     ],
-    "Case Study: Mahaavatar Narsimha": [
+    "Case Study: Mahavatar Narsimha": [
       "Mounting a Film. Building a Cultural IP.",
       "A TSC Films impact story around a mythology-led animated feature with long-term audience and monetisation potential.",
       "Mahavatar Narsimha represented the opportunity to establish the foundations of a mythology-led entertainment property capable of growing across audiences, platforms and experiences.",
       "TSC supported strategic audience positioning, film mounting strategy, non-theatrical monetisation, partnership development and IP/franchise thinking.",
       "Looking Ahead",
-      "Mahaavatar Narsimha became a key foundation for TSC Films’ approach to culturally rooted film mounting and long-term IP development."
+      "Mahavatar Narsimha became a key foundation for TSC Films’ approach to culturally rooted film mounting and long-term IP development."
     ],
     "Case Study: Hanuman Ansh": [
       "Building an Enduring Spiritual IP for a New Generation",
@@ -910,7 +910,7 @@ window.__TSC_CONTENT_REPLACEMENTS__ = {
       "Mahavatar Narsimha represented the opportunity to establish the foundations of a mythology-led entertainment property capable of growing across audiences, platforms and experiences.",
       "TSC supported strategic audience positioning, film mounting strategy, non-theatrical monetisation, partnership development and IP/franchise thinking.",
       "Looking Ahead",
-      "Mahaavatar Narsimha became a key foundation for TSC Films’ approach to culturally rooted film mounting and long-term IP development."
+      "Mahavatar Narsimha became a key foundation for TSC Films’ approach to culturally rooted film mounting and long-term IP development."
     ],
     "/hanuman-ansh": [
       "Building an Enduring Spiritual IP for a New Generation",

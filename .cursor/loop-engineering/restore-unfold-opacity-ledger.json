@@ -1,0 +1,51 @@
+{
+  "slug": "restore-unfold-opacity",
+  "goal": "Restore the UNFOLD hero word to its previous opacity without deploying.",
+  "acceptanceCriteria": [
+    "UNFOLD hero opacity is restored from 0.9 to 0.5 in CSS and runtime enforcement",
+    "Website build exits 0",
+    "No commit, push, or production deploy is performed"
+  ],
+  "createdAt": "2026-07-30T13:35:00+05:30",
+  "updatedAt": "2026-07-30T13:45:00+05:30",
+  "iteration": 1,
+  "phase": "complete",
+  "satisfaction": "pass",
+  "multiagentSlug": null,
+  "slices": [
+    {
+      "sliceId": "hero-opacity",
+      "goal": "Restore prior UNFOLD opacity with the smallest diff.",
+      "agentSlug": "minimal-change-engineer",
+      "agentRule": ".cursor/rules/agency/minimal-change-engineer.mdc",
+      "ownsFiles": [
+        "public/css/mobile/home.css",
+        "public/js/tsc-wix-motion.js"
+      ],
+      "forbiddenFiles": [],
+      "verifyCommands": [
+        "npm run build"
+      ],
+      "status": "done",
+      "evidence": "Historical CSS confirmed 0.5 before commit 62cb976. Regression check failed before edit, passed after edit and again after build. npm run build exited 0. ReadLints reported no errors. git diff --check exited 0."
+    }
+  ],
+  "discoveries": [],
+  "verifyHistory": [
+    {
+      "iteration": 1,
+      "commands": [
+        "UNFOLD opacity static regression check",
+        "npm run build",
+        "git diff --check -- public/css/mobile/home.css public/js/tsc-wix-motion.js"
+      ],
+      "exitCode": 0,
+      "at": "2026-07-30T13:45:00+05:30"
+    }
+  ],
+  "satisfactionGate": {
+    "agentSlug": "reality-checker",
+    "status": "pass",
+    "evidence": "Reality-checker PASS: scoped diff restores CSS and runtime opacity from 0.9 to 0.5; no commit, push, or deploy."
+  }
+}

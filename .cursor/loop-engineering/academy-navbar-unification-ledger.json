@@ -1,0 +1,98 @@
+{
+  "slug": "academy-navbar-unification",
+  "goal": "Preserve the locked native desktop TSC and Academy navbars and make the correct variant the default across all pages.",
+  "acceptanceCriteria": [
+    "Canonical TSC and Academy pages use their locked native desktop navbar unchanged",
+    "Every desktop page shows exactly one correct TSC or Academy navbar",
+    "Competing desktop headers remain hidden",
+    "Mobile renders one TSC Academy header",
+    "Website build exits 0"
+  ],
+  "createdAt": "2026-07-30T15:54:00+05:30",
+  "updatedAt": "2026-07-30T16:49:00+05:30",
+  "iteration": 3,
+  "phase": "complete",
+  "satisfaction": "pass",
+  "slices": [
+    {
+      "sliceId": "shared-academy-navbar",
+      "goal": "Centralize Academy route detection, header markup, dropdown, styling, and legacy-header suppression.",
+      "agentSlug": "frontend-developer",
+      "agentRule": ".cursor/rules/agency/frontend-developer.mdc",
+      "ownsFiles": [
+        "public/js/tsc-components.js",
+        "public/css/tsc-responsive.css"
+      ],
+      "forbiddenFiles": [],
+      "verifyCommands": [
+        "npm run build",
+        "desktop and mobile browser route matrix"
+      ],
+      "status": "done",
+      "evidence": "Desktop matrix: /academy plus 7 Academy routes each visibleHeaders=1, academyHeader=true, legacyVisible=false, exact nav text. Mobile: one Academy header; hamburger and nested Courses dropdown verified. Alias matrix covers /blog-1..3 and review forms. npm run build exit 0 (111 HTML); lints clean."
+    },
+    {
+      "sliceId": "restore-main-site-navbar",
+      "goal": "Keep Resources and editorial pages on the original main-site navbar while preserving Academy chrome on Academy-only routes.",
+      "agentSlug": "frontend-developer",
+      "agentRule": ".cursor/rules/agency/frontend-developer.mdc",
+      "ownsFiles": [
+        "public/js/tsc-components.js"
+      ],
+      "forbiddenFiles": [],
+      "verifyCommands": [
+        "npm run build",
+        "desktop browser route matrix"
+      ],
+      "status": "cancelled",
+      "evidence": "Superseded by user's locked-native-navbar requirement."
+    },
+    {
+      "sliceId": "restore-locked-desktop-headers",
+      "goal": "Prefer locked native Wix desktop headers, select the correct TSC/Academy variant, and use shared fallback only where native chrome is absent.",
+      "agentSlug": "frontend-developer",
+      "agentRule": ".cursor/rules/agency/frontend-developer.mdc",
+      "ownsFiles": [
+        "public/js/tsc-components.js",
+        "public/css/tsc-responsive.css"
+      ],
+      "forbiddenFiles": [],
+      "verifyCommands": [
+        "npm run build",
+        "desktop browser route matrix"
+      ],
+      "status": "done",
+      "evidence": "Fresh build exit 0 (111 HTML). Desktop browser matrix: all 35 canonical routes render exactly one visible header; 32 use native locked headers, three headerless review forms use fallback. Canonical /about stays native TSC; /academy and /music-production stay native Academy. Reality-checker PASS."
+    }
+  ],
+  "discoveries": [],
+  "verifyHistory": [
+    {
+      "iteration": 1,
+      "commands": [
+        "npm run build",
+        "desktop and mobile browser route matrix",
+        "mobile hamburger and Courses dropdown interaction",
+        "IDE lint diagnostics"
+      ],
+      "exitCode": 0,
+      "at": "2026-07-30T16:10:00+05:30"
+    },
+    {
+      "iteration": 3,
+      "commands": [
+        "node --check public/js/tsc-components.js",
+        "npm run build",
+        "desktop browser matrix across 35 canonical routes",
+        "IDE lint diagnostics"
+      ],
+      "exitCode": 0,
+      "at": "2026-07-30T16:49:00+05:30"
+    }
+  ],
+  "satisfactionGate": {
+    "agentSlug": "reality-checker",
+    "status": "pass",
+    "evidence": "PASS: native locked header is preferred and never replaced; exactly one desktop header on every verified route; fallback appears only on three pages with no native header."
+  }
+}

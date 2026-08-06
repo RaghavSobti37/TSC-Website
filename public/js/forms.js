@@ -40,7 +40,6 @@
     talent: [
       'Harshad and Duhita Golesar',
       'YUGM',
-      'Mohit Shankar',
       'Open to Recommendations'
     ],
     logistics: [
@@ -148,7 +147,6 @@
     if (!raw) return '';
     if (/harshad|duhita/.test(raw)) return 'Harshad and Duhita Golesar';
     if (/yugm/.test(raw)) return 'YUGM';
-    if (/mohit/.test(raw)) return 'Mohit Shankar';
     if (/open/.test(raw) && /recommend/.test(raw)) return 'Open to Recommendations';
     return '';
   }

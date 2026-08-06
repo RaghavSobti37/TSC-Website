@@ -1,0 +1,1429 @@
+{
+  "generatedAt": "2026-08-04T06:59:28.763Z",
+  "rows": [
+    {
+      "w": 390,
+      "g": "academy",
+      "r": "/learn-with-tsc",
+      "f": [],
+      "data": {
+        "dataPage": "academy",
+        "mobileCss": [
+          "/css/mobile/academy.css",
+          "/css/mobile/boot.css"
+        ],
+        "hasMH": true,
+        "hasMF": true,
+        "hasDF": false,
+        "headClass": "tsc-mobile-site-header tsc-mobile-site-header-academy",
+        "footClass": "tsc-mobile-footer tsc-mobile-footer-academy",
+        "headBg": "rgb(0, 83, 90)",
+        "headColor": "rgb(255, 236, 209)",
+        "footBg": "rgb(255, 236, 209)",
+        "footColor": "rgb(0, 83, 90)",
+        "footLogo": "/assets/brand/tsc-academy-logo-trim-footer.png",
+        "over": false,
+        "sw": 390,
+        "cw": 390,
+        "legacy": false
+      }
+    },
+    {
+      "w": 390,
+      "g": "academy",
+      "r": "/the-heart-of-composition",
+      "f": [],
+      "data": {
+        "dataPage": "learn-with-tsc",
+        "mobileCss": [
+          "/css/mobile/learn.css"
+        ],
+        "hasMH": true,
+        "hasMF": true,
+        "hasDF": false,
+        "headClass": "tsc-mobile-site-header tsc-mobile-site-header-academy",
+        "footClass": "tsc-mobile-footer tsc-mobile-footer-academy",
+        "headBg": "rgb(0, 83, 90)",
+        "headColor": "rgb(255, 236, 209)",
+        "footBg": "rgb(255, 236, 209)",
+        "footColor": "rgb(0, 83, 90)",
+        "footLogo": "/assets/brand/tsc-academy-logo-trim-footer.png",
+        "over": false,
+        "sw": 390,
+        "cw": 390,
+        "legacy": false
+      }
+    },
+    {
+      "w": 390,
+      "g": "academy",
+      "r": "/roots-of-hindustani-classical",
+      "f": [],
+      "data": {
+        "dataPage": "learn-with-tsc",
+        "mobileCss": [
+          "/css/mobile/learn.css"
+        ],
+        "hasMH": true,
+        "hasMF": true,
+        "hasDF": false,
+        "headClass": "tsc-mobile-site-header tsc-mobile-site-header-academy",
+        "footClass": "tsc-mobile-footer tsc-mobile-footer-academy",
+        "headBg": "rgb(0, 83, 90)",
+        "headColor": "rgb(255, 236, 209)",
+        "footBg": "rgb(255, 236, 209)",
+        "footColor": "rgb(0, 83, 90)",
+        "footLogo": "/assets/brand/tsc-academy-logo-trim-footer.png",
+        "over": false,
+        "sw": 390,
+        "cw": 390,
+        "legacy": false
+      }
+    },
+    {
+      "w": 390,
+      "g": "academy",
+      "r": "/music-production",
+      "f": [],
+      "data": {
+        "dataPage": "learn-with-tsc",
+        "mobileCss": [
+          "/css/mobile/learn.css"
+        ],
+        "hasMH": true,
+        "hasMF": true,
+        "hasDF": false,
+        "headClass": "tsc-mobile-site-header tsc-mobile-site-header-academy",
+        "footClass": "tsc-mobile-footer tsc-mobile-footer-academy",
+        "headBg": "rgb(0, 83, 90)",
+        "headColor": "rgb(255, 236, 209)",
+        "footBg": "rgb(255, 236, 209)",
+        "footColor": "rgb(0, 83, 90)",
+        "footLogo": "/assets/brand/tsc-academy-logo-trim-footer.png",
+        "over": false,
+        "sw": 390,
+        "cw": 390,
+        "legacy": false
+      }
+    },
+    {
+      "w": 390,
+      "g": "academy",
+      "r": "/book-a-call",
+      "f": [],
+      "data": {
+        "dataPage": "book-a-call",
+        "mobileCss": [
+          "/css/mobile/learn.css"
+        ],
+        "hasMH": true,
+        "hasMF": true,
+        "hasDF": false,
+        "headClass": "tsc-mobile-site-header tsc-mobile-site-header-academy",
+        "footClass": "tsc-mobile-footer tsc-mobile-footer-academy",
+        "headBg": "rgb(0, 83, 90)",
+        "headColor": "rgb(255, 236, 209)",
+        "footBg": "rgb(255, 236, 209)",
+        "footColor": "rgb(0, 83, 90)",
+        "footLogo": "/assets/brand/tsc-academy-logo-trim-footer.png",
+        "over": false,
+        "sw": 390,
+        "cw": 390,
+        "legacy": false
+      }
+    },
+    {
+      "w": 390,
+      "g": "academy",
+      "r": "/masterclass-review01",
+      "f": [],
+      "data": {
+        "dataPage": "masterclass-review01",
+        "mobileCss": [
+          "/css/mobile/learn.css"
+        ],
+        "hasMH": true,
+        "hasMF": true,
+        "hasDF": false,
+        "headClass": "tsc-mobile-site-header tsc-mobile-site-header-academy",
+        "footClass": "tsc-mobile-footer tsc-mobile-footer-academy",
+        "headBg": "rgb(0, 83, 90)",
+        "headColor": "rgb(255, 236, 209)",
+        "footBg": "rgb(255, 236, 209)",
+        "footColor": "rgb(0, 83, 90)",
+        "footLogo": "/assets/brand/tsc-academy-logo-trim-footer.png",
+        "over": false,
+        "sw": 390,
+        "cw": 390,
+        "legacy": false
+      }
+    },
+    {
+      "w": 390,
+      "g": "academy",
+      "r": "/masterclass-review02",
+      "f": [],
+      "data": {
+        "dataPage": "masterclass-review02",
+        "mobileCss": [
+          "/css/mobile/learn.css"
+        ],
+        "hasMH": true,
+        "hasMF": true,
+        "hasDF": false,
+        "headClass": "tsc-mobile-site-header tsc-mobile-site-header-academy",
+        "footClass": "tsc-mobile-footer tsc-mobile-footer-academy",
+        "headBg": "rgb(0, 83, 90)",
+        "headColor": "rgb(255, 236, 209)",
+        "footBg": "rgb(255, 236, 209)",
+        "footColor": "rgb(0, 83, 90)",
+        "footLogo": "/assets/brand/tsc-academy-logo-trim-footer.png",
+        "over": false,
+        "sw": 390,
+        "cw": 390,
+        "legacy": false
+      }
+    },
+    {
+      "w": 390,
+      "g": "academy",
+      "r": "/classicalreview",
+      "f": [],
+      "data": {
+        "dataPage": "classicalreview",
+        "mobileCss": [
+          "/css/mobile/learn.css"
+        ],
+        "hasMH": true,
+        "hasMF": true,
+        "hasDF": false,
+        "headClass": "tsc-mobile-site-header tsc-mobile-site-header-academy",
+        "footClass": "tsc-mobile-footer tsc-mobile-footer-academy",
+        "headBg": "rgb(0, 83, 90)",
+        "headColor": "rgb(255, 236, 209)",
+        "footBg": "rgb(255, 236, 209)",
+        "footColor": "rgb(0, 83, 90)",
+        "footLogo": "/assets/brand/tsc-academy-logo-trim-footer.png",
+        "over": false,
+        "sw": 390,
+        "cw": 390,
+        "legacy": false
+      }
+    },
+    {
+      "w": 390,
+      "g": "artists",
+      "r": "/artist-path",
+      "f": [],
+      "data": {
+        "dataPage": "artist-path",
+        "mobileCss": [
+          "/css/mobile/artists.css",
+          "/css/mobile/boot.css"
+        ],
+        "hasMH": true,
+        "hasMF": true,
+        "hasDF": false,
+        "headClass": "tsc-mobile-site-header",
+        "footClass": "tsc-mobile-footer",
+        "headBg": "rgba(0, 0, 0, 0)",
+        "headColor": "rgb(255, 236, 209)",
+        "footBg": "rgba(0, 0, 0, 0)",
+        "footColor": "rgb(255, 236, 209)",
+        "footLogo": "/assets/brand/tsc-logo-trim-footer.png",
+        "over": false,
+        "sw": 390,
+        "cw": 390,
+        "legacy": false
+      }
+    },
+    {
+      "w": 390,
+      "g": "artists",
+      "r": "/harshad-duhita",
+      "f": [],
+      "data": {
+        "dataPage": "harshad-duhita",
+        "mobileCss": [
+          "/css/mobile/artists.css"
+        ],
+        "hasMH": true,
+        "hasMF": true,
+        "hasDF": false,
+        "headClass": "tsc-mobile-site-header",
+        "footClass": "tsc-mobile-footer",
+        "headBg": "rgba(0, 0, 0, 0)",
+        "headColor": "rgb(255, 236, 209)",
+        "footBg": "rgba(0, 0, 0, 0)",
+        "footColor": "rgb(255, 236, 209)",
+        "footLogo": "/assets/brand/tsc-logo-trim-footer.png",
+        "over": false,
+        "sw": 390,
+        "cw": 390,
+        "legacy": false
+      }
+    },
+    {
+      "w": 390,
+      "g": "artists",
+      "r": "/yugm",
+      "f": [],
+      "data": {
+        "dataPage": "yugm",
+        "mobileCss": [
+          "/css/mobile/artists.css"
+        ],
+        "hasMH": true,
+        "hasMF": true,
+        "hasDF": false,
+        "headClass": "tsc-mobile-site-header",
+        "footClass": "tsc-mobile-footer",
+        "headBg": "rgba(0, 0, 0, 0)",
+        "headColor": "rgb(255, 236, 209)",
+        "footBg": "rgba(0, 0, 0, 0)",
+        "footColor": "rgb(255, 236, 209)",
+        "footLogo": "/assets/brand/tsc-logo-trim-footer.png",
+        "over": false,
+        "sw": 390,
+        "cw": 390,
+        "legacy": false
+      }
+    },
+    {
+      "w": 390,
+      "g": "artists",
+      "r": "/book-an-artist",
+      "f": [],
+      "data": {
+        "dataPage": "book-an-artist",
+        "mobileCss": [
+          "/css/mobile/artists.css"
+        ],
+        "hasMH": true,
+        "hasMF": true,
+        "hasDF": false,
+        "headClass": "tsc-mobile-site-header",
+        "footClass": "tsc-mobile-footer",
+        "headBg": "rgba(0, 0, 0, 0)",
+        "headColor": "rgb(255, 236, 209)",
+        "footBg": "rgba(0, 0, 0, 0)",
+        "footColor": "rgb(255, 236, 209)",
+        "footLogo": "/assets/brand/tsc-logo-trim-footer.png",
+        "over": false,
+        "sw": 390,
+        "cw": 390,
+        "legacy": false
+      }
+    },
+    {
+      "w": 390,
+      "g": "artists",
+      "r": "/artist-query",
+      "f": [
+        "academy chrome on non-academy",
+        "headBg differs (rgba(0, 0, 0, 0) vs rgb(0, 83, 90))",
+        "footBg differs (rgba(0, 0, 0, 0) vs rgb(255, 236, 209))",
+        "footColor differs (rgb(255, 236, 209) vs rgb(0, 83, 90))"
+      ],
+      "data": {
+        "dataPage": "artist-query",
+        "mobileCss": [
+          "/css/mobile/artists.css"
+        ],
+        "hasMH": true,
+        "hasMF": true,
+        "hasDF": false,
+        "headClass": "tsc-mobile-site-header tsc-mobile-site-header-academy",
+        "footClass": "tsc-mobile-footer tsc-mobile-footer-academy",
+        "headBg": "rgb(0, 83, 90)",
+        "headColor": "rgb(255, 236, 209)",
+        "footBg": "rgb(255, 236, 209)",
+        "footColor": "rgb(0, 83, 90)",
+        "footLogo": "/assets/brand/tsc-logo-trim-footer.png",
+        "over": false,
+        "sw": 390,
+        "cw": 390,
+        "legacy": false
+      }
+    },
+    {
+      "w": 390,
+      "g": "artists",
+      "r": "/collab-query",
+      "f": [],
+      "data": {
+        "dataPage": "collab-query",
+        "mobileCss": [
+          "/css/mobile/artists.css"
+        ],
+        "hasMH": true,
+        "hasMF": true,
+        "hasDF": false,
+        "headClass": "tsc-mobile-site-header",
+        "footClass": "tsc-mobile-footer",
+        "headBg": "rgba(0, 0, 0, 0)",
+        "headColor": "rgb(255, 236, 209)",
+        "footBg": "rgba(0, 0, 0, 0)",
+        "footColor": "rgb(255, 236, 209)",
+        "footLogo": "/assets/brand/tsc-logo-trim-footer.png",
+        "over": false,
+        "sw": 390,
+        "cw": 390,
+        "legacy": false
+      }
+    },
+    {
+      "w": 390,
+      "g": "work",
+      "r": "/mba",
+      "f": [],
+      "data": {
+        "dataPage": "work",
+        "mobileCss": [
+          "/css/mobile/_safe-base.css",
+          "/css/mobile/impact-report.css"
+        ],
+        "hasMH": true,
+        "hasMF": true,
+        "hasDF": false,
+        "headClass": "tsc-mobile-site-header",
+        "footClass": "tsc-mobile-footer",
+        "headBg": "rgba(0, 0, 0, 0)",
+        "headColor": "rgb(255, 236, 209)",
+        "footBg": "rgba(0, 0, 0, 0)",
+        "footColor": "rgb(255, 236, 209)",
+        "footLogo": "/assets/brand/tsc-logo-trim-footer.png",
+        "over": false,
+        "sw": 390,
+        "cw": 390,
+        "legacy": false
+      }
+    },
+    {
+      "w": 390,
+      "g": "work",
+      "r": "/havells-myousic",
+      "f": [],
+      "data": {
+        "dataPage": "work",
+        "mobileCss": [
+          "/css/mobile/_safe-base.css",
+          "/css/mobile/impact-report.css"
+        ],
+        "hasMH": true,
+        "hasMF": true,
+        "hasDF": false,
+        "headClass": "tsc-mobile-site-header",
+        "footClass": "tsc-mobile-footer",
+        "headBg": "rgba(0, 0, 0, 0)",
+        "headColor": "rgb(255, 236, 209)",
+        "footBg": "rgba(0, 0, 0, 0)",
+        "footColor": "rgb(255, 236, 209)",
+        "footLogo": "/assets/brand/tsc-logo-trim-footer.png",
+        "over": false,
+        "sw": 390,
+        "cw": 390,
+        "legacy": false
+      }
+    },
+    {
+      "w": 390,
+      "g": "work",
+      "r": "/insta-music-league",
+      "f": [],
+      "data": {
+        "dataPage": "work",
+        "mobileCss": [
+          "/css/mobile/_safe-base.css",
+          "/css/mobile/work.css"
+        ],
+        "hasMH": true,
+        "hasMF": true,
+        "hasDF": false,
+        "headClass": "tsc-mobile-site-header",
+        "footClass": "tsc-mobile-footer",
+        "headBg": "rgba(0, 0, 0, 0)",
+        "headColor": "rgb(255, 236, 209)",
+        "footBg": "rgba(0, 0, 0, 0)",
+        "footColor": "rgb(255, 236, 209)",
+        "footLogo": "/assets/brand/tsc-logo-trim-footer.png",
+        "over": false,
+        "sw": 390,
+        "cw": 390,
+        "legacy": false
+      }
+    },
+    {
+      "w": 390,
+      "g": "work",
+      "r": "/young-gunns",
+      "f": [],
+      "data": {
+        "dataPage": "work",
+        "mobileCss": [
+          "/css/mobile/_safe-base.css",
+          "/css/mobile/work.css"
+        ],
+        "hasMH": true,
+        "hasMF": true,
+        "hasDF": false,
+        "headClass": "tsc-mobile-site-header",
+        "footClass": "tsc-mobile-footer",
+        "headBg": "rgba(0, 0, 0, 0)",
+        "headColor": "rgb(255, 236, 209)",
+        "footBg": "rgba(0, 0, 0, 0)",
+        "footColor": "rgb(255, 236, 209)",
+        "footLogo": "/assets/brand/tsc-logo-trim-footer.png",
+        "over": false,
+        "sw": 390,
+        "cw": 390,
+        "legacy": false
+      }
+    },
+    {
+      "w": 390,
+      "g": "films",
+      "r": "/mahavatar-narsimha",
+      "f": [],
+      "data": {
+        "dataPage": "mahavatar-narsimha",
+        "mobileCss": [
+          "/css/mobile/films.css"
+        ],
+        "hasMH": true,
+        "hasMF": true,
+        "hasDF": false,
+        "headClass": "tsc-mobile-site-header",
+        "footClass": "tsc-mobile-footer",
+        "headBg": "rgba(0, 0, 0, 0)",
+        "headColor": "rgb(255, 236, 209)",
+        "footBg": "rgba(0, 0, 0, 0)",
+        "footColor": "rgb(255, 236, 209)",
+        "footLogo": "/assets/brand/tsc-logo-trim-footer.png",
+        "over": false,
+        "sw": 390,
+        "cw": 390,
+        "legacy": false
+      }
+    },
+    {
+      "w": 390,
+      "g": "films",
+      "r": "/hanuman-ansh",
+      "f": [],
+      "data": {
+        "dataPage": "hanuman-ansh",
+        "mobileCss": [
+          "/css/mobile/films.css"
+        ],
+        "hasMH": true,
+        "hasMF": true,
+        "hasDF": false,
+        "headClass": "tsc-mobile-site-header",
+        "footClass": "tsc-mobile-footer",
+        "headBg": "rgba(0, 0, 0, 0)",
+        "headColor": "rgb(255, 236, 209)",
+        "footBg": "rgba(0, 0, 0, 0)",
+        "footColor": "rgb(255, 236, 209)",
+        "footLogo": "/assets/brand/tsc-logo-trim-footer.png",
+        "over": false,
+        "sw": 390,
+        "cw": 390,
+        "legacy": false
+      }
+    },
+    {
+      "w": 390,
+      "g": "films",
+      "r": "/mahaprbhu",
+      "f": [],
+      "data": {
+        "dataPage": "mahaprbhu",
+        "mobileCss": [
+          "/css/mobile/films.css"
+        ],
+        "hasMH": true,
+        "hasMF": true,
+        "hasDF": false,
+        "headClass": "tsc-mobile-site-header",
+        "footClass": "tsc-mobile-footer",
+        "headBg": "rgba(0, 0, 0, 0)",
+        "headColor": "rgb(255, 236, 209)",
+        "footBg": "rgba(0, 0, 0, 0)",
+        "footColor": "rgb(255, 236, 209)",
+        "footLogo": "/assets/brand/tsc-logo-trim-footer.png",
+        "over": false,
+        "sw": 390,
+        "cw": 390,
+        "legacy": false
+      }
+    },
+    {
+      "w": 390,
+      "g": "films",
+      "r": "/kalki",
+      "f": [],
+      "data": {
+        "dataPage": "kalki",
+        "mobileCss": [
+          "/css/mobile/films.css"
+        ],
+        "hasMH": true,
+        "hasMF": true,
+        "hasDF": false,
+        "headClass": "tsc-mobile-site-header",
+        "footClass": "tsc-mobile-footer",
+        "headBg": "rgba(0, 0, 0, 0)",
+        "headColor": "rgb(255, 236, 209)",
+        "footBg": "rgba(0, 0, 0, 0)",
+        "footColor": "rgb(255, 236, 209)",
+        "footLogo": "/assets/brand/tsc-logo-trim-footer.png",
+        "over": false,
+        "sw": 390,
+        "cw": 390,
+        "legacy": false
+      }
+    },
+    {
+      "w": 390,
+      "g": "resources",
+      "r": "/start-making-music",
+      "f": [],
+      "data": {
+        "dataPage": "blog-1",
+        "mobileCss": [
+          "/css/mobile/resources.css"
+        ],
+        "hasMH": true,
+        "hasMF": true,
+        "hasDF": false,
+        "headClass": "tsc-mobile-site-header",
+        "footClass": "tsc-mobile-footer",
+        "headBg": "rgba(0, 0, 0, 0)",
+        "headColor": "rgb(255, 236, 209)",
+        "footBg": "rgba(0, 0, 0, 0)",
+        "footColor": "rgb(255, 236, 209)",
+        "footLogo": "/assets/brand/tsc-logo-trim-footer.png",
+        "over": false,
+        "sw": 390,
+        "cw": 390,
+        "legacy": false
+      }
+    },
+    {
+      "w": 390,
+      "g": "resources",
+      "r": "/online-music-course-worth-it",
+      "f": [],
+      "data": {
+        "dataPage": "blog-2",
+        "mobileCss": [
+          "/css/mobile/resources.css"
+        ],
+        "hasMH": true,
+        "hasMF": true,
+        "hasDF": false,
+        "headClass": "tsc-mobile-site-header",
+        "footClass": "tsc-mobile-footer",
+        "headBg": "rgba(0, 0, 0, 0)",
+        "headColor": "rgb(255, 236, 209)",
+        "footBg": "rgba(0, 0, 0, 0)",
+        "footColor": "rgb(255, 236, 209)",
+        "footLogo": "/assets/brand/tsc-logo-trim-footer.png",
+        "over": false,
+        "sw": 390,
+        "cw": 390,
+        "legacy": false
+      }
+    },
+    {
+      "w": 390,
+      "g": "resources",
+      "r": "/artist-release-playbook",
+      "f": [],
+      "data": {
+        "dataPage": "blog-3",
+        "mobileCss": [
+          "/css/mobile/resources.css"
+        ],
+        "hasMH": true,
+        "hasMF": true,
+        "hasDF": false,
+        "headClass": "tsc-mobile-site-header",
+        "footClass": "tsc-mobile-footer",
+        "headBg": "rgba(0, 0, 0, 0)",
+        "headColor": "rgb(255, 236, 209)",
+        "footBg": "rgba(0, 0, 0, 0)",
+        "footColor": "rgb(255, 236, 209)",
+        "footLogo": "/assets/brand/tsc-logo-trim-footer.png",
+        "over": false,
+        "sw": 390,
+        "cw": 390,
+        "legacy": false
+      }
+    },
+    {
+      "w": 390,
+      "g": "resources",
+      "r": "/from-bhajan-to-clubbing",
+      "f": [],
+      "data": {
+        "dataPage": "from-bhajan-to-clubbing",
+        "mobileCss": [
+          "/css/mobile/resources.css"
+        ],
+        "hasMH": true,
+        "hasMF": true,
+        "hasDF": false,
+        "headClass": "tsc-mobile-site-header",
+        "footClass": "tsc-mobile-footer",
+        "headBg": "rgba(0, 0, 0, 0)",
+        "headColor": "rgb(255, 236, 209)",
+        "footBg": "rgba(0, 0, 0, 0)",
+        "footColor": "rgb(255, 236, 209)",
+        "footLogo": "/assets/brand/tsc-logo-trim-footer.png",
+        "over": false,
+        "sw": 390,
+        "cw": 390,
+        "legacy": false
+      }
+    },
+    {
+      "w": 390,
+      "g": "resources",
+      "r": "/you-released-a-song-now-what",
+      "f": [],
+      "data": {
+        "dataPage": "you-released-a-song-now-what",
+        "mobileCss": [
+          "/css/mobile/resources.css"
+        ],
+        "hasMH": true,
+        "hasMF": true,
+        "hasDF": false,
+        "headClass": "tsc-mobile-site-header",
+        "footClass": "tsc-mobile-footer",
+        "headBg": "rgba(0, 0, 0, 0)",
+        "headColor": "rgb(255, 236, 209)",
+        "footBg": "rgba(0, 0, 0, 0)",
+        "footColor": "rgb(255, 236, 209)",
+        "footLogo": "/assets/brand/tsc-logo-trim-footer.png",
+        "over": false,
+        "sw": 390,
+        "cw": 390,
+        "legacy": false
+      }
+    },
+    {
+      "w": 390,
+      "g": "resources",
+      "r": "/how-i-curate-music-with-independent-artists",
+      "f": [],
+      "data": {
+        "dataPage": "how-i-curate-music-with-independent-artists",
+        "mobileCss": [
+          "/css/mobile/resources.css"
+        ],
+        "hasMH": true,
+        "hasMF": true,
+        "hasDF": false,
+        "headClass": "tsc-mobile-site-header",
+        "footClass": "tsc-mobile-footer",
+        "headBg": "rgba(0, 0, 0, 0)",
+        "headColor": "rgb(255, 236, 209)",
+        "footBg": "rgba(0, 0, 0, 0)",
+        "footColor": "rgb(255, 236, 209)",
+        "footLogo": "/assets/brand/tsc-logo-trim-footer.png",
+        "over": false,
+        "sw": 390,
+        "cw": 390,
+        "legacy": false
+      }
+    },
+    {
+      "w": 1366,
+      "g": "academy",
+      "r": "/learn-with-tsc",
+      "f": [],
+      "data": {
+        "dataPage": "academy",
+        "mobileCss": [],
+        "hasMH": false,
+        "hasMF": false,
+        "hasDF": true,
+        "headClass": "comp-mrsu5g8j S829f_ comp-mrsu5g8j-container",
+        "footClass": "tsc-desktop-footer tsc-desktop-footer-academy",
+        "headBg": "rgba(0, 0, 0, 0)",
+        "headColor": "rgb(0, 0, 0)",
+        "footBg": "rgb(255, 236, 209)",
+        "footColor": "rgb(0, 83, 90)",
+        "footLogo": "/assets/brand/tsc-academy-logo-trim-footer.png",
+        "over": false,
+        "sw": 1366,
+        "cw": 1366,
+        "legacy": false
+      }
+    },
+    {
+      "w": 1366,
+      "g": "academy",
+      "r": "/the-heart-of-composition",
+      "f": [],
+      "data": {
+        "dataPage": "learn-with-tsc",
+        "mobileCss": [],
+        "hasMH": false,
+        "hasMF": false,
+        "hasDF": true,
+        "headClass": "comp-mrsu5xvq S829f_ comp-mrsu5xvq-container",
+        "footClass": "tsc-desktop-footer tsc-desktop-footer-academy",
+        "headBg": "rgba(0, 0, 0, 0)",
+        "headColor": "rgb(0, 0, 0)",
+        "footBg": "rgb(255, 236, 209)",
+        "footColor": "rgb(0, 83, 90)",
+        "footLogo": "/assets/brand/tsc-academy-logo-trim-footer.png",
+        "over": false,
+        "sw": 1366,
+        "cw": 1366,
+        "legacy": false
+      }
+    },
+    {
+      "w": 1366,
+      "g": "academy",
+      "r": "/roots-of-hindustani-classical",
+      "f": [],
+      "data": {
+        "dataPage": "learn-with-tsc",
+        "mobileCss": [],
+        "hasMH": false,
+        "hasMF": false,
+        "hasDF": true,
+        "headClass": "comp-mrsuasz9 S829f_ comp-mrsuasz9-container",
+        "footClass": "tsc-desktop-footer tsc-desktop-footer-academy",
+        "headBg": "rgba(0, 0, 0, 0)",
+        "headColor": "rgb(0, 0, 0)",
+        "footBg": "rgb(255, 236, 209)",
+        "footColor": "rgb(0, 83, 90)",
+        "footLogo": "/assets/brand/tsc-academy-logo-trim-footer.png",
+        "over": false,
+        "sw": 1366,
+        "cw": 1366,
+        "legacy": false
+      }
+    },
+    {
+      "w": 1366,
+      "g": "academy",
+      "r": "/music-production",
+      "f": [],
+      "data": {
+        "dataPage": "learn-with-tsc",
+        "mobileCss": [],
+        "hasMH": false,
+        "hasMF": false,
+        "hasDF": true,
+        "headClass": "comp-mrsu5xvq S829f_ comp-mrsu5xvq-container",
+        "footClass": "tsc-desktop-footer tsc-desktop-footer-academy",
+        "headBg": "rgba(0, 0, 0, 0)",
+        "headColor": "rgb(0, 0, 0)",
+        "footBg": "rgb(255, 236, 209)",
+        "footColor": "rgb(0, 83, 90)",
+        "footLogo": "/assets/brand/tsc-academy-logo-trim-footer.png",
+        "over": false,
+        "sw": 1366,
+        "cw": 1366,
+        "legacy": false
+      }
+    },
+    {
+      "w": 1366,
+      "g": "academy",
+      "r": "/book-a-call",
+      "f": [],
+      "data": {
+        "dataPage": "book-a-call",
+        "mobileCss": [],
+        "hasMH": false,
+        "hasMF": false,
+        "hasDF": true,
+        "headClass": "comp-mrxw3dmc S829f_ comp-mrxw3dmc-container",
+        "footClass": "tsc-desktop-footer tsc-desktop-footer-academy",
+        "headBg": "rgba(0, 0, 0, 0)",
+        "headColor": "rgb(0, 0, 0)",
+        "footBg": "rgb(255, 236, 209)",
+        "footColor": "rgb(0, 83, 90)",
+        "footLogo": "/assets/brand/tsc-academy-logo-trim-footer.png",
+        "over": false,
+        "sw": 1366,
+        "cw": 1366,
+        "legacy": false
+      }
+    },
+    {
+      "w": 1366,
+      "g": "academy",
+      "r": "/masterclass-review01",
+      "f": [],
+      "data": {
+        "dataPage": "masterclass-review01",
+        "mobileCss": [],
+        "hasMH": false,
+        "hasMF": false,
+        "hasDF": true,
+        "headClass": "tsc-desktop-site-header tsc-desktop-site-header-academy",
+        "footClass": "tsc-desktop-footer tsc-desktop-footer-academy",
+        "headBg": "rgb(0, 71, 63)",
+        "headColor": "rgb(255, 236, 209)",
+        "footBg": "rgb(255, 236, 209)",
+        "footColor": "rgb(0, 83, 90)",
+        "footLogo": "/assets/brand/tsc-academy-logo-trim-footer.png",
+        "over": false,
+        "sw": 1366,
+        "cw": 1366,
+        "legacy": false
+      }
+    },
+    {
+      "w": 1366,
+      "g": "academy",
+      "r": "/masterclass-review02",
+      "f": [],
+      "data": {
+        "dataPage": "masterclass-review02",
+        "mobileCss": [],
+        "hasMH": false,
+        "hasMF": false,
+        "hasDF": true,
+        "headClass": "tsc-desktop-site-header tsc-desktop-site-header-academy",
+        "footClass": "tsc-desktop-footer tsc-desktop-footer-academy",
+        "headBg": "rgb(0, 71, 63)",
+        "headColor": "rgb(255, 236, 209)",
+        "footBg": "rgb(255, 236, 209)",
+        "footColor": "rgb(0, 83, 90)",
+        "footLogo": "/assets/brand/tsc-academy-logo-trim-footer.png",
+        "over": false,
+        "sw": 1366,
+        "cw": 1366,
+        "legacy": false
+      }
+    },
+    {
+      "w": 1366,
+      "g": "academy",
+      "r": "/classicalreview",
+      "f": [],
+      "data": {
+        "dataPage": "classicalreview",
+        "mobileCss": [],
+        "hasMH": false,
+        "hasMF": false,
+        "hasDF": true,
+        "headClass": "tsc-desktop-site-header tsc-desktop-site-header-academy",
+        "footClass": "tsc-desktop-footer tsc-desktop-footer-academy",
+        "headBg": "rgb(0, 71, 63)",
+        "headColor": "rgb(255, 236, 209)",
+        "footBg": "rgb(255, 236, 209)",
+        "footColor": "rgb(0, 83, 90)",
+        "footLogo": "/assets/brand/tsc-academy-logo-trim-footer.png",
+        "over": false,
+        "sw": 1366,
+        "cw": 1366,
+        "legacy": false
+      }
+    },
+    {
+      "w": 1366,
+      "g": "artists",
+      "r": "/artist-path",
+      "f": [],
+      "data": {
+        "dataPage": "artist-path",
+        "mobileCss": [],
+        "hasMH": false,
+        "hasMF": false,
+        "hasDF": true,
+        "headClass": "comp-mqp4466w S829f_ comp-mqp4466w-container",
+        "footClass": "tsc-desktop-footer",
+        "headBg": "rgba(0, 0, 0, 0)",
+        "headColor": "rgb(0, 0, 0)",
+        "footBg": "rgb(255, 236, 209)",
+        "footColor": "rgb(0, 83, 90)",
+        "footLogo": "/assets/brand/tsc-logo-trim-footer.png",
+        "over": false,
+        "sw": 1366,
+        "cw": 1366,
+        "legacy": false
+      }
+    },
+    {
+      "w": 1366,
+      "g": "artists",
+      "r": "/harshad-duhita",
+      "f": [],
+      "data": {
+        "dataPage": "harshad-duhita",
+        "mobileCss": [],
+        "hasMH": false,
+        "hasMF": false,
+        "hasDF": true,
+        "headClass": "comp-mq6d7i6d S829f_ comp-mq6d7i6d-container",
+        "footClass": "tsc-desktop-footer",
+        "headBg": "rgba(0, 0, 0, 0)",
+        "headColor": "rgb(0, 0, 0)",
+        "footBg": "rgb(255, 236, 209)",
+        "footColor": "rgb(0, 83, 90)",
+        "footLogo": "/assets/brand/tsc-logo-trim-footer.png",
+        "over": false,
+        "sw": 1366,
+        "cw": 1366,
+        "legacy": false
+      }
+    },
+    {
+      "w": 1366,
+      "g": "artists",
+      "r": "/yugm",
+      "f": [],
+      "data": {
+        "dataPage": "yugm",
+        "mobileCss": [],
+        "hasMH": false,
+        "hasMF": false,
+        "hasDF": true,
+        "headClass": "comp-mqhqa6x9 S829f_ comp-mqhqa6x9-container",
+        "footClass": "tsc-desktop-footer",
+        "headBg": "rgba(0, 0, 0, 0)",
+        "headColor": "rgb(0, 0, 0)",
+        "footBg": "rgb(255, 236, 209)",
+        "footColor": "rgb(0, 83, 90)",
+        "footLogo": "/assets/brand/tsc-logo-trim-footer.png",
+        "over": false,
+        "sw": 1366,
+        "cw": 1366,
+        "legacy": false
+      }
+    },
+    {
+      "w": 1366,
+      "g": "artists",
+      "r": "/book-an-artist",
+      "f": [],
+      "data": {
+        "dataPage": "book-an-artist",
+        "mobileCss": [],
+        "hasMH": false,
+        "hasMF": false,
+        "hasDF": true,
+        "headClass": "comp-mrxmc0z2 S829f_ comp-mrxmc0z2-container",
+        "footClass": "tsc-desktop-footer",
+        "headBg": "rgba(0, 0, 0, 0)",
+        "headColor": "rgb(0, 0, 0)",
+        "footBg": "rgb(255, 236, 209)",
+        "footColor": "rgb(0, 83, 90)",
+        "footLogo": "/assets/brand/tsc-logo-trim-footer.png",
+        "over": false,
+        "sw": 1366,
+        "cw": 1366,
+        "legacy": false
+      }
+    },
+    {
+      "w": 1366,
+      "g": "artists",
+      "r": "/artist-query",
+      "f": [
+        "academy chrome on non-academy"
+      ],
+      "data": {
+        "dataPage": "artist-query",
+        "mobileCss": [],
+        "hasMH": false,
+        "hasMF": false,
+        "hasDF": true,
+        "headClass": "comp-mrxv5lfp S829f_ comp-mrxv5lfp-container",
+        "footClass": "tsc-desktop-footer tsc-desktop-footer-academy",
+        "headBg": "rgba(0, 0, 0, 0)",
+        "headColor": "rgb(0, 0, 0)",
+        "footBg": "rgb(255, 236, 209)",
+        "footColor": "rgb(0, 83, 90)",
+        "footLogo": "/assets/brand/tsc-logo-trim-footer.png",
+        "over": false,
+        "sw": 1366,
+        "cw": 1366,
+        "legacy": false
+      }
+    },
+    {
+      "w": 1366,
+      "g": "artists",
+      "r": "/collab-query",
+      "f": [],
+      "data": {
+        "dataPage": "collab-query",
+        "mobileCss": [],
+        "hasMH": false,
+        "hasMF": false,
+        "hasDF": true,
+        "headClass": "comp-mp2w3nh4 S829f_ comp-mp2w3nh4-container",
+        "footClass": "tsc-desktop-footer",
+        "headBg": "rgba(0, 0, 0, 0)",
+        "headColor": "rgb(0, 0, 0)",
+        "footBg": "rgb(255, 236, 209)",
+        "footColor": "rgb(0, 83, 90)",
+        "footLogo": "/assets/brand/tsc-logo-trim-footer.png",
+        "over": false,
+        "sw": 1366,
+        "cw": 1366,
+        "legacy": false
+      }
+    },
+    {
+      "w": 1366,
+      "g": "work",
+      "r": "/mba",
+      "f": [],
+      "data": {
+        "dataPage": "work",
+        "mobileCss": [
+          "/css/mobile/_safe-base.css"
+        ],
+        "hasMH": false,
+        "hasMF": false,
+        "hasDF": true,
+        "headClass": "report-header",
+        "footClass": "tsc-desktop-footer",
+        "headBg": "rgba(255, 236, 209, 0.92)",
+        "headColor": "rgb(0, 0, 0)",
+        "footBg": "rgb(196, 90, 18)",
+        "footColor": "rgb(255, 236, 209)",
+        "footLogo": "/assets/brand/tsc-logo-trim-footer.png",
+        "over": false,
+        "sw": 1366,
+        "cw": 1366,
+        "legacy": false
+      }
+    },
+    {
+      "w": 1366,
+      "g": "work",
+      "r": "/havells-myousic",
+      "f": [],
+      "data": {
+        "dataPage": "work",
+        "mobileCss": [
+          "/css/mobile/_safe-base.css"
+        ],
+        "hasMH": false,
+        "hasMF": false,
+        "hasDF": true,
+        "headClass": "report-header",
+        "footClass": "tsc-desktop-footer",
+        "headBg": "rgba(255, 236, 209, 0.92)",
+        "headColor": "rgb(0, 0, 0)",
+        "footBg": "rgb(196, 90, 18)",
+        "footColor": "rgb(255, 236, 209)",
+        "footLogo": "/assets/brand/tsc-logo-trim-footer.png",
+        "over": false,
+        "sw": 1366,
+        "cw": 1366,
+        "legacy": false
+      }
+    },
+    {
+      "w": 1366,
+      "g": "work",
+      "r": "/insta-music-league",
+      "f": [],
+      "data": {
+        "dataPage": "work",
+        "mobileCss": [
+          "/css/mobile/_safe-base.css"
+        ],
+        "hasMH": false,
+        "hasMF": false,
+        "hasDF": true,
+        "headClass": "report-header",
+        "footClass": "tsc-desktop-footer",
+        "headBg": "rgba(255, 236, 209, 0.92)",
+        "headColor": "rgb(0, 0, 0)",
+        "footBg": "rgb(196, 90, 18)",
+        "footColor": "rgb(255, 236, 209)",
+        "footLogo": "/assets/brand/tsc-logo-trim-footer.png",
+        "over": false,
+        "sw": 1366,
+        "cw": 1366,
+        "legacy": false
+      }
+    },
+    {
+      "w": 1366,
+      "g": "work",
+      "r": "/young-gunns",
+      "f": [],
+      "data": {
+        "dataPage": "work",
+        "mobileCss": [
+          "/css/mobile/_safe-base.css"
+        ],
+        "hasMH": false,
+        "hasMF": false,
+        "hasDF": true,
+        "headClass": "report-header",
+        "footClass": "tsc-desktop-footer",
+        "headBg": "rgba(255, 236, 209, 0.92)",
+        "headColor": "rgb(0, 0, 0)",
+        "footBg": "rgb(196, 90, 18)",
+        "footColor": "rgb(255, 236, 209)",
+        "footLogo": "/assets/brand/tsc-logo-trim-footer.png",
+        "over": false,
+        "sw": 1366,
+        "cw": 1366,
+        "legacy": false
+      }
+    },
+    {
+      "w": 1366,
+      "g": "films",
+      "r": "/mahavatar-narsimha",
+      "f": [],
+      "data": {
+        "dataPage": "mahavatar-narsimha",
+        "mobileCss": [],
+        "hasMH": false,
+        "hasMF": false,
+        "hasDF": true,
+        "headClass": "comp-mrag5r3m S829f_ comp-mrag5r3m-container",
+        "footClass": "tsc-desktop-footer",
+        "headBg": "rgba(0, 0, 0, 0)",
+        "headColor": "rgb(0, 0, 0)",
+        "footBg": "rgb(31, 28, 24)",
+        "footColor": "rgb(255, 236, 209)",
+        "footLogo": "/assets/brand/tsc-logo-trim-footer.png",
+        "over": false,
+        "sw": 1366,
+        "cw": 1366,
+        "legacy": false
+      }
+    },
+    {
+      "w": 1366,
+      "g": "films",
+      "r": "/hanuman-ansh",
+      "f": [],
+      "data": {
+        "dataPage": "hanuman-ansh",
+        "mobileCss": [],
+        "hasMH": false,
+        "hasMF": false,
+        "hasDF": true,
+        "headClass": "comp-mrbufbub S829f_ comp-mrbufbub-container",
+        "footClass": "tsc-desktop-footer",
+        "headBg": "rgba(0, 0, 0, 0)",
+        "headColor": "rgb(0, 0, 0)",
+        "footBg": "rgb(31, 28, 24)",
+        "footColor": "rgb(255, 236, 209)",
+        "footLogo": "/assets/brand/tsc-logo-trim-footer.png",
+        "over": false,
+        "sw": 1366,
+        "cw": 1366,
+        "legacy": false
+      }
+    },
+    {
+      "w": 1366,
+      "g": "films",
+      "r": "/mahaprbhu",
+      "f": [],
+      "data": {
+        "dataPage": "mahaprbhu",
+        "mobileCss": [],
+        "hasMH": false,
+        "hasMF": false,
+        "hasDF": true,
+        "headClass": "comp-mrbynucv S829f_ comp-mrbynucv-container",
+        "footClass": "tsc-desktop-footer",
+        "headBg": "rgba(0, 0, 0, 0)",
+        "headColor": "rgb(0, 0, 0)",
+        "footBg": "rgb(31, 28, 24)",
+        "footColor": "rgb(255, 236, 209)",
+        "footLogo": "/assets/brand/tsc-logo-trim-footer.png",
+        "over": false,
+        "sw": 1366,
+        "cw": 1366,
+        "legacy": false
+      }
+    },
+    {
+      "w": 1366,
+      "g": "films",
+      "r": "/kalki",
+      "f": [],
+      "data": {
+        "dataPage": "kalki",
+        "mobileCss": [],
+        "hasMH": false,
+        "hasMF": false,
+        "hasDF": true,
+        "headClass": "comp-mrbzlzx21 S829f_ comp-mrbzlzx21-container",
+        "footClass": "tsc-desktop-footer",
+        "headBg": "rgba(0, 0, 0, 0)",
+        "headColor": "rgb(0, 0, 0)",
+        "footBg": "rgb(31, 28, 24)",
+        "footColor": "rgb(255, 236, 209)",
+        "footLogo": "/assets/brand/tsc-logo-trim-footer.png",
+        "over": false,
+        "sw": 1366,
+        "cw": 1366,
+        "legacy": false
+      }
+    },
+    {
+      "w": 1366,
+      "g": "resources",
+      "r": "/start-making-music",
+      "f": [],
+      "data": {
+        "dataPage": "blog-1",
+        "mobileCss": [],
+        "hasMH": false,
+        "hasMF": false,
+        "hasDF": true,
+        "headClass": "comp-mreu9zpt S829f_ comp-mreu9zpt-container",
+        "footClass": "tsc-desktop-footer",
+        "headBg": "rgba(0, 0, 0, 0)",
+        "headColor": "rgb(0, 0, 0)",
+        "footBg": "rgb(232, 104, 44)",
+        "footColor": "rgb(255, 242, 220)",
+        "footLogo": "/assets/brand/tsc-logo-trim-footer.png",
+        "over": false,
+        "sw": 1366,
+        "cw": 1366,
+        "legacy": false
+      }
+    },
+    {
+      "w": 1366,
+      "g": "resources",
+      "r": "/online-music-course-worth-it",
+      "f": [],
+      "data": {
+        "dataPage": "blog-2",
+        "mobileCss": [],
+        "hasMH": false,
+        "hasMF": false,
+        "hasDF": true,
+        "headClass": "comp-mrg0d18c S829f_ comp-mrg0d18c-container",
+        "footClass": "tsc-desktop-footer",
+        "headBg": "rgba(0, 0, 0, 0)",
+        "headColor": "rgb(0, 0, 0)",
+        "footBg": "rgb(232, 104, 44)",
+        "footColor": "rgb(255, 242, 220)",
+        "footLogo": "/assets/brand/tsc-logo-trim-footer.png",
+        "over": false,
+        "sw": 1366,
+        "cw": 1366,
+        "legacy": false
+      }
+    },
+    {
+      "w": 1366,
+      "g": "resources",
+      "r": "/artist-release-playbook",
+      "f": [],
+      "data": {
+        "dataPage": "blog-3",
+        "mobileCss": [],
+        "hasMH": false,
+        "hasMF": false,
+        "hasDF": true,
+        "headClass": "comp-mrg0d7qv S829f_ comp-mrg0d7qv-container",
+        "footClass": "tsc-desktop-footer",
+        "headBg": "rgba(0, 0, 0, 0)",
+        "headColor": "rgb(0, 0, 0)",
+        "footBg": "rgb(232, 104, 44)",
+        "footColor": "rgb(255, 242, 220)",
+        "footLogo": "/assets/brand/tsc-logo-trim-footer.png",
+        "over": false,
+        "sw": 1366,
+        "cw": 1366,
+        "legacy": false
+      }
+    },
+    {
+      "w": 1366,
+      "g": "resources",
+      "r": "/from-bhajan-to-clubbing",
+      "f": [],
+      "data": {
+        "dataPage": "from-bhajan-to-clubbing",
+        "mobileCss": [],
+        "hasMH": false,
+        "hasMF": false,
+        "hasDF": true,
+        "headClass": "site-header",
+        "footClass": "tsc-desktop-footer",
+        "headBg": "rgba(255, 250, 241, 0.94)",
+        "headColor": "rgb(32, 21, 20)",
+        "footBg": "rgb(232, 104, 44)",
+        "footColor": "rgb(255, 242, 220)",
+        "footLogo": "/assets/brand/tsc-logo-trim-footer.png",
+        "over": false,
+        "sw": 1366,
+        "cw": 1366,
+        "legacy": false
+      }
+    },
+    {
+      "w": 1366,
+      "g": "resources",
+      "r": "/you-released-a-song-now-what",
+      "f": [],
+      "data": {
+        "dataPage": "you-released-a-song-now-what",
+        "mobileCss": [],
+        "hasMH": false,
+        "hasMF": false,
+        "hasDF": true,
+        "headClass": "site-header",
+        "footClass": "tsc-desktop-footer",
+        "headBg": "rgba(255, 250, 241, 0.94)",
+        "headColor": "rgb(32, 21, 20)",
+        "footBg": "rgb(232, 104, 44)",
+        "footColor": "rgb(255, 242, 220)",
+        "footLogo": "/assets/brand/tsc-logo-trim-footer.png",
+        "over": false,
+        "sw": 1366,
+        "cw": 1366,
+        "legacy": false
+      }
+    },
+    {
+      "w": 1366,
+      "g": "resources",
+      "r": "/how-i-curate-music-with-independent-artists",
+      "f": [
+        "footBg differs (rgb(232, 104, 44) vs rgba(0, 0, 0, 0))",
+        "footColor differs (rgb(255, 242, 220) vs rgb(255, 236, 209))"
+      ],
+      "data": {
+        "dataPage": "how-i-curate-music-with-independent-artists",
+        "mobileCss": [],
+        "hasMH": false,
+        "hasMF": false,
+        "hasDF": true,
+        "headClass": "site-header",
+        "footClass": "tsc-desktop-footer",
+        "headBg": "rgba(255, 250, 241, 0.94)",
+        "headColor": "rgb(32, 21, 20)",
+        "footBg": "rgba(0, 0, 0, 0)",
+        "footColor": "rgb(255, 236, 209)",
+        "footLogo": "/assets/brand/tsc-logo-trim-footer.png",
+        "over": false,
+        "sw": 1366,
+        "cw": 1366,
+        "legacy": false
+      }
+    }
+  ]
+}

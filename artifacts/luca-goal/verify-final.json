@@ -1,0 +1,202 @@
+{
+  "desktop": {
+    "path": "/pages/music-production.html",
+    "h1": "A-Z of Music Production",
+    "h1Font": "signika, sans-serif",
+    "h1Size": "83.0133px",
+    "lucaImgs": [
+      {
+        "alt": "Luca Petracca producing music on keyboard in studio",
+        "src": "http://127.0.0.1:3000/assets/luca/luca-petracca-course-wide.jpg",
+        "w": 473,
+        "h": 322,
+        "top": 1031,
+        "left": 53
+      },
+      {
+        "alt": "Luca Petracca at a keyboard in the studio",
+        "src": "http://127.0.0.1:3000/assets/luca/luca-petracca-studio-portrait.jpg",
+        "w": 340,
+        "h": 490,
+        "top": 3106,
+        "left": 113
+      },
+      {
+        "alt": "Studio microphone for recording techniques",
+        "src": "http://127.0.0.1:3000/assets/luca/luca-production-mic.jpg",
+        "w": 306,
+        "h": 283,
+        "top": 3780,
+        "left": 130
+      },
+      {
+        "alt": "Luca Petracca working on a music production session",
+        "src": "http://127.0.0.1:3000/assets/luca/luca-petracca-course-wide.jpg",
+        "w": 306,
+        "h": 283,
+        "top": 3780,
+        "left": 530
+      },
+      {
+        "alt": "A-Z of Music Production course visual",
+        "src": "http://127.0.0.1:3000/assets/luca/luca-production-gradient.jpg",
+        "w": 306,
+        "h": 283,
+        "top": 3780,
+        "left": 940
+      }
+    ],
+    "wrongImgs": [],
+    "hasPdfText": true,
+    "imgs": [
+      {
+        "alt": "whiteArtboard 24 copy_150x-8.png",
+        "src": "http://127.0.0.1:3000/assets/mirror/static.wixstatic.com/media/19f989_e046fdb6749e401b88aa9e0524c00729~mv2.png/v1/crop/x_945,y_0,w_2539,h_1664/fill/w_473,h_311,fp_0.50_0.50,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/whiteArtboard%2024%20copy_150x-8.png",
+        "w": 311,
+        "h": 473,
+        "top": 202,
+        "left": -49
+      },
+      {
+        "alt": "Luca Petracca producing music on keyboard in studio",
+        "src": "http://127.0.0.1:3000/assets/luca/luca-petracca-course-wide.jpg",
+        "w": 473,
+        "h": 322,
+        "top": 1031,
+        "left": 53
+      },
+      {
+        "alt": "Luca Petracca at a keyboard in the studio",
+        "src": "http://127.0.0.1:3000/assets/luca/luca-petracca-studio-portrait.jpg",
+        "w": 340,
+        "h": 490,
+        "top": 3106,
+        "left": 113
+      },
+      {
+        "alt": "Studio microphone for recording techniques",
+        "src": "http://127.0.0.1:3000/assets/luca/luca-production-mic.jpg",
+        "w": 306,
+        "h": 283,
+        "top": 3780,
+        "left": 130
+      },
+      {
+        "alt": "Luca Petracca working on a music production session",
+        "src": "http://127.0.0.1:3000/assets/luca/luca-petracca-course-wide.jpg",
+        "w": 306,
+        "h": 283,
+        "top": 3780,
+        "left": 530
+      },
+      {
+        "alt": "A-Z of Music Production course visual",
+        "src": "http://127.0.0.1:3000/assets/luca/luca-production-gradient.jpg",
+        "w": 306,
+        "h": 283,
+        "top": 3780,
+        "left": 940
+      }
+    ]
+  },
+  "mobile": {
+    "path": "/pages/music-production.html",
+    "h1": "A-Z of Music Production",
+    "h1Font": "signika, Signika, Georgia, serif",
+    "h1Size": "42.9px",
+    "lucaImgs": [
+      {
+        "alt": "",
+        "src": "http://127.0.0.1:3000/assets/luca/luca-petracca-course-wide.jpg",
+        "w": 348,
+        "h": 261,
+        "top": 618,
+        "left": 21
+      },
+      {
+        "alt": "Luca Petracca at a keyboard in the studio",
+        "src": "http://127.0.0.1:3000/assets/luca/luca-petracca-studio-portrait.jpg",
+        "w": 96,
+        "h": 139,
+        "top": 1705,
+        "left": 33
+      },
+      {
+        "alt": "Studio microphone for recording techniques",
+        "src": "http://127.0.0.1:3000/assets/luca/luca-production-mic.jpg",
+        "w": 86,
+        "h": 80,
+        "top": 1898,
+        "left": 37
+      },
+      {
+        "alt": "Luca Petracca working on a music production session",
+        "src": "http://127.0.0.1:3000/assets/luca/luca-petracca-course-wide.jpg",
+        "w": 86,
+        "h": 80,
+        "top": 1898,
+        "left": 152
+      },
+      {
+        "alt": "A-Z of Music Production course visual",
+        "src": "http://127.0.0.1:3000/assets/luca/luca-production-gradient.jpg",
+        "w": 86,
+        "h": 80,
+        "top": 1898,
+        "left": 269
+      }
+    ],
+    "wrongImgs": [],
+    "hasPdfText": true,
+    "imgs": [
+      {
+        "alt": "",
+        "src": "http://127.0.0.1:3000/assets/brand/tsc-academy-logo-trim-nav.png",
+        "w": 84,
+        "h": 84,
+        "top": 183,
+        "left": 43
+      },
+      {
+        "alt": "",
+        "src": "http://127.0.0.1:3000/assets/luca/luca-petracca-course-wide.jpg",
+        "w": 348,
+        "h": 261,
+        "top": 618,
+        "left": 21
+      },
+      {
+        "alt": "Luca Petracca at a keyboard in the studio",
+        "src": "http://127.0.0.1:3000/assets/luca/luca-petracca-studio-portrait.jpg",
+        "w": 96,
+        "h": 139,
+        "top": 1705,
+        "left": 33
+      },
+      {
+        "alt": "Studio microphone for recording techniques",
+        "src": "http://127.0.0.1:3000/assets/luca/luca-production-mic.jpg",
+        "w": 86,
+        "h": 80,
+        "top": 1898,
+        "left": 37
+      },
+      {
+        "alt": "Luca Petracca working on a music production session",
+        "src": "http://127.0.0.1:3000/assets/luca/luca-petracca-course-wide.jpg",
+        "w": 86,
+        "h": 80,
+        "top": 1898,
+        "left": 152
+      },
+      {
+        "alt": "A-Z of Music Production course visual",
+        "src": "http://127.0.0.1:3000/assets/luca/luca-production-gradient.jpg",
+        "w": 86,
+        "h": 80,
+        "top": 1898,
+        "left": 269
+      }
+    ]
+  }
+}

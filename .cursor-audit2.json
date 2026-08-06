@@ -1,0 +1,657 @@
+﻿[
+  {
+    "route": "/",
+    "width": 375,
+    "top": {
+      "scrollOverflow": 0,
+      "toggles": [
+        {
+          "label": "Menu",
+          "w": 0,
+          "h": 0,
+          "visible": false
+        }
+      ],
+      "visibleBroken": []
+    },
+    "navWorks": {
+      "type": "none"
+    },
+    "footer": {
+      "inputs": [
+        {
+          "w": 223,
+          "h": 48,
+          "visible": true,
+          "inFooter": true
+        }
+      ],
+      "visibleInput": {
+        "w": 223,
+        "h": 48,
+        "visible": true,
+        "inFooter": true
+      }
+    }
+  },
+  {
+    "route": "/",
+    "width": 768,
+    "top": {
+      "scrollOverflow": 0,
+      "toggles": [
+        {
+          "label": "Menu",
+          "w": 50,
+          "h": 50,
+          "visible": true
+        }
+      ],
+      "visibleBroken": []
+    },
+    "navWorks": {
+      "type": "wix",
+      "dialog": true,
+      "navLinks": 13
+    },
+    "footer": {
+      "inputs": [
+        {
+          "w": 616,
+          "h": 48,
+          "visible": true,
+          "inFooter": true
+        }
+      ],
+      "visibleInput": {
+        "w": 616,
+        "h": 48,
+        "visible": true,
+        "inFooter": true
+      }
+    }
+  },
+  {
+    "route": "/",
+    "width": 1024,
+    "top": {
+      "scrollOverflow": 0,
+      "toggles": [
+        {
+          "label": "Menu",
+          "w": 0,
+          "h": 0,
+          "visible": false
+        }
+      ],
+      "visibleBroken": []
+    },
+    "navWorks": {
+      "type": "none"
+    },
+    "footer": {
+      "inputs": [
+        {
+          "w": 872,
+          "h": 48,
+          "visible": true,
+          "inFooter": true
+        },
+        {
+          "w": 0,
+          "h": 0,
+          "visible": false,
+          "inFooter": true
+        }
+      ],
+      "visibleInput": {
+        "w": 872,
+        "h": 48,
+        "visible": true,
+        "inFooter": true
+      }
+    }
+  },
+  {
+    "route": "/about",
+    "width": 375,
+    "top": {
+      "scrollOverflow": 0,
+      "toggles": [
+        {
+          "label": "Menu",
+          "w": 0,
+          "h": 0,
+          "visible": false
+        },
+        {
+          "label": "Menu",
+          "w": 0,
+          "h": 0,
+          "visible": false
+        }
+      ],
+      "visibleBroken": []
+    },
+    "navWorks": {
+      "type": "none"
+    },
+    "footer": {
+      "inputs": [
+        {
+          "w": 223,
+          "h": 48,
+          "visible": true,
+          "inFooter": true
+        }
+      ],
+      "visibleInput": {
+        "w": 223,
+        "h": 48,
+        "visible": true,
+        "inFooter": true
+      }
+    }
+  },
+  {
+    "route": "/about",
+    "width": 768,
+    "top": {
+      "scrollOverflow": 0,
+      "toggles": [
+        {
+          "label": "Menu",
+          "w": 50,
+          "h": 50,
+          "visible": true
+        },
+        {
+          "label": "Menu",
+          "w": 50,
+          "h": 50,
+          "visible": true
+        }
+      ],
+      "visibleBroken": []
+    },
+    "navWorks": {
+      "type": "wix",
+      "dialog": true,
+      "navLinks": 5
+    },
+    "footer": {
+      "inputs": [
+        {
+          "w": 616,
+          "h": 48,
+          "visible": true,
+          "inFooter": true
+        }
+      ],
+      "visibleInput": {
+        "w": 616,
+        "h": 48,
+        "visible": true,
+        "inFooter": true
+      }
+    }
+  },
+  {
+    "route": "/about",
+    "width": 1024,
+    "top": {
+      "scrollOverflow": 0,
+      "toggles": [
+        {
+          "label": "Menu",
+          "w": 0,
+          "h": 0,
+          "visible": false
+        },
+        {
+          "label": "Menu",
+          "w": 0,
+          "h": 0,
+          "visible": false
+        }
+      ],
+      "visibleBroken": []
+    },
+    "navWorks": {
+      "type": "none"
+    },
+    "footer": {
+      "inputs": [
+        {
+          "w": 872,
+          "h": 48,
+          "visible": true,
+          "inFooter": true
+        },
+        {
+          "w": 0,
+          "h": 0,
+          "visible": false,
+          "inFooter": true
+        }
+      ],
+      "visibleInput": {
+        "w": 872,
+        "h": 48,
+        "visible": true,
+        "inFooter": true
+      }
+    }
+  },
+  {
+    "route": "/work",
+    "width": 375,
+    "top": {
+      "scrollOverflow": 0,
+      "toggles": [
+        {
+          "label": "Menu",
+          "w": 0,
+          "h": 0,
+          "visible": false
+        },
+        {
+          "label": "Menu",
+          "w": 0,
+          "h": 0,
+          "visible": false
+        }
+      ],
+      "visibleBroken": []
+    },
+    "navWorks": {
+      "type": "none"
+    },
+    "footer": {
+      "inputs": [
+        {
+          "w": 0,
+          "h": 0,
+          "visible": false,
+          "inFooter": false
+        },
+        {
+          "w": 223,
+          "h": 48,
+          "visible": true,
+          "inFooter": true
+        }
+      ],
+      "visibleInput": {
+        "w": 223,
+        "h": 48,
+        "visible": true,
+        "inFooter": true
+      }
+    }
+  },
+  {
+    "route": "/work",
+    "width": 768,
+    "top": {
+      "scrollOverflow": 0,
+      "toggles": [
+        {
+          "label": "Menu",
+          "w": 50,
+          "h": 50,
+          "visible": true
+        },
+        {
+          "label": "Menu",
+          "w": 50,
+          "h": 50,
+          "visible": true
+        }
+      ],
+      "visibleBroken": []
+    },
+    "navWorks": {
+      "type": "wix",
+      "dialog": true,
+      "navLinks": 5
+    },
+    "footer": {
+      "inputs": [
+        {
+          "w": 0,
+          "h": 0,
+          "visible": false,
+          "inFooter": false
+        },
+        {
+          "w": 616,
+          "h": 48,
+          "visible": true,
+          "inFooter": true
+        }
+      ],
+      "visibleInput": {
+        "w": 616,
+        "h": 48,
+        "visible": true,
+        "inFooter": true
+      }
+    }
+  },
+  {
+    "route": "/work",
+    "width": 1024,
+    "top": {
+      "scrollOverflow": 0,
+      "toggles": [
+        {
+          "label": "Menu",
+          "w": 0,
+          "h": 0,
+          "visible": false
+        },
+        {
+          "label": "Menu",
+          "w": 0,
+          "h": 0,
+          "visible": false
+        }
+      ],
+      "visibleBroken": []
+    },
+    "navWorks": {
+      "type": "none"
+    },
+    "footer": {
+      "inputs": [
+        {
+          "w": 0,
+          "h": 0,
+          "visible": false,
+          "inFooter": false
+        },
+        {
+          "w": 872,
+          "h": 48,
+          "visible": true,
+          "inFooter": true
+        },
+        {
+          "w": 0,
+          "h": 0,
+          "visible": false,
+          "inFooter": true
+        }
+      ],
+      "visibleInput": {
+        "w": 872,
+        "h": 48,
+        "visible": true,
+        "inFooter": true
+      }
+    }
+  },
+  {
+    "route": "/artists",
+    "width": 375,
+    "top": {
+      "scrollOverflow": 0,
+      "toggles": [
+        {
+          "label": "Menu",
+          "w": 0,
+          "h": 0,
+          "visible": false
+        },
+        {
+          "label": "Menu",
+          "w": 0,
+          "h": 0,
+          "visible": false
+        }
+      ],
+      "visibleBroken": []
+    },
+    "navWorks": {
+      "type": "none"
+    },
+    "footer": {
+      "inputs": [
+        {
+          "w": 223,
+          "h": 48,
+          "visible": true,
+          "inFooter": true
+        }
+      ],
+      "visibleInput": {
+        "w": 223,
+        "h": 48,
+        "visible": true,
+        "inFooter": true
+      }
+    }
+  },
+  {
+    "route": "/artists",
+    "width": 768,
+    "top": {
+      "scrollOverflow": 0,
+      "toggles": [
+        {
+          "label": "Menu",
+          "w": 50,
+          "h": 50,
+          "visible": true
+        },
+        {
+          "label": "Menu",
+          "w": 50,
+          "h": 50,
+          "visible": true
+        }
+      ],
+      "visibleBroken": []
+    },
+    "navWorks": {
+      "type": "wix",
+      "dialog": true,
+      "navLinks": 5
+    },
+    "footer": {
+      "inputs": [
+        {
+          "w": 616,
+          "h": 48,
+          "visible": true,
+          "inFooter": true
+        }
+      ],
+      "visibleInput": {
+        "w": 616,
+        "h": 48,
+        "visible": true,
+        "inFooter": true
+      }
+    }
+  },
+  {
+    "route": "/artists",
+    "width": 1024,
+    "top": {
+      "scrollOverflow": 0,
+      "toggles": [
+        {
+          "label": "Menu",
+          "w": 0,
+          "h": 0,
+          "visible": false
+        },
+        {
+          "label": "Menu",
+          "w": 0,
+          "h": 0,
+          "visible": false
+        }
+      ],
+      "visibleBroken": []
+    },
+    "navWorks": {
+      "type": "none"
+    },
+    "footer": {
+      "inputs": [
+        {
+          "w": 872,
+          "h": 48,
+          "visible": true,
+          "inFooter": true
+        },
+        {
+          "w": 0,
+          "h": 0,
+          "visible": false,
+          "inFooter": true
+        }
+      ],
+      "visibleInput": {
+        "w": 872,
+        "h": 48,
+        "visible": true,
+        "inFooter": true
+      }
+    }
+  },
+  {
+    "route": "/films",
+    "width": 375,
+    "top": {
+      "scrollOverflow": 0,
+      "toggles": [
+        {
+          "label": "Menu",
+          "w": 0,
+          "h": 0,
+          "visible": false
+        },
+        {
+          "label": "Menu",
+          "w": 0,
+          "h": 0,
+          "visible": false
+        }
+      ],
+      "visibleBroken": []
+    },
+    "navWorks": {
+      "type": "none"
+    },
+    "footer": {
+      "inputs": [
+        {
+          "w": 223,
+          "h": 48,
+          "visible": true,
+          "inFooter": true
+        }
+      ],
+      "visibleInput": {
+        "w": 223,
+        "h": 48,
+        "visible": true,
+        "inFooter": true
+      }
+    }
+  },
+  {
+    "route": "/films",
+    "width": 768,
+    "top": {
+      "scrollOverflow": 0,
+      "toggles": [
+        {
+          "label": "Menu",
+          "w": 50,
+          "h": 50,
+          "visible": true
+        },
+        {
+          "label": "Menu",
+          "w": 50,
+          "h": 50,
+          "visible": true
+        }
+      ],
+      "visibleBroken": []
+    },
+    "navWorks": {
+      "type": "wix",
+      "dialog": true,
+      "navLinks": 5
+    },
+    "footer": {
+      "inputs": [
+        {
+          "w": 616,
+          "h": 48,
+          "visible": true,
+          "inFooter": true
+        }
+      ],
+      "visibleInput": {
+        "w": 616,
+        "h": 48,
+        "visible": true,
+        "inFooter": true
+      }
+    }
+  },
+  {
+    "route": "/films",
+    "width": 1024,
+    "top": {
+      "scrollOverflow": 0,
+      "toggles": [
+        {
+          "label": "Menu",
+          "w": 0,
+          "h": 0,
+          "visible": false
+        },
+        {
+          "label": "Menu",
+          "w": 0,
+          "h": 0,
+          "visible": false
+        }
+      ],
+      "visibleBroken": []
+    },
+    "navWorks": {
+      "type": "none"
+    },
+    "footer": {
+      "inputs": [
+        {
+          "w": 872,
+          "h": 48,
+          "visible": true,
+          "inFooter": true
+        },
+        {
+          "w": 0,
+          "h": 0,
+          "visible": false,
+          "inFooter": true
+        }
+      ],
+      "visibleInput": {
+        "w": 872,
+        "h": 48,
+        "visible": true,
+        "inFooter": true
+      }
+    }
+  }
+]

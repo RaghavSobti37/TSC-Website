@@ -3,7 +3,7 @@
   "html": "/pages/harshad-duhita.html",
   "css": "/css/pages/harshad-duhita.css",
   "animations": "/js/pages/harshad-duhita.animations.js",
-  "generatedAt": "2026-08-04T10:30:12.976Z",
+  "generatedAt": "2026-08-06T07:43:08.356Z",
   "totals": {
     "assets": 114,
     "missing": 1
@@ -658,7 +658,7 @@
         "local": {
           "exists": true,
           "path": "/css/pages/harshad-duhita.css",
-          "bytes": 1150591
+          "bytes": 1156932
         }
       }
     ],

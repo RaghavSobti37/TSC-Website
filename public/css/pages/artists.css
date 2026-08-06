@@ -442,3 +442,11 @@ url("/assets/mirror/static.wixstatic.com/ufonts/834fa9_d08c6fe9ca9b47ccb21ecdcb7
 
 /* style 36 */
 #comp-mp2vm3m7_r_comp-mrsr3my7 svg [data-color="1"] {fill: #FFECD1;}
+
+#comp-mqutenq5,
+#comp-mqutenqa,
+#comp-mqutenqm,
+#comp-mqutenqk,
+[id^="comp-mqutenq"] {
+  display: none !important;
+}

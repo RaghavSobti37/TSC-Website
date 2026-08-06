@@ -1238,3 +1238,204 @@ url("/assets/mirror/static.wixstatic.com/ufonts/834fa9_d08c6fe9ca9b47ccb21ecdcb7
     position: relative !important;
   }
 }
+
+@media (min-width: 751px) {
+  body:not(:has(#comp-mqffd5wc)) #comp-mq6h99jp {
+    --l_display: flex !important;
+    display: flex !important;
+    min-height: min(640px, calc(100vh - 72px)) !important;
+    padding: 0 8.5vw 44px !important;
+    background: #b94d02 !important;
+    overflow: hidden !important;
+  }
+
+  body:not(:has(#comp-mqffd5wc)) #comp-mq6h99jp > [data-testid="responsive-container-content"],
+  body:not(:has(#comp-mqffd5wc)) #comp-mq6h99jp .comp-mq6h99jp-container,
+  body:not(:has(#comp-mqffd5wc)) #comp-mq6ibhwz,
+  body:not(:has(#comp-mqffd5wc)) #comp-mq6ibhwz > [data-testid="responsive-container-content"],
+  body:not(:has(#comp-mqffd5wc)) #comp-mq6ibhwz [class*="comp-mq6ibhwz-container"] {
+    display: grid !important;
+    width: 100% !important;
+    max-width: 1315px !important;
+    height: min(560px, calc(100vh - 96px)) !important;
+    min-height: min(560px, calc(100vh - 96px)) !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    grid-template: 1fr / 1fr !important;
+    position: relative !important;
+  }
+
+  body:not(:has(#comp-mqffd5wc)) #comp-mq6ibhwz {
+    background: rgba(22, 10, 3, 0.52) !important;
+    border-radius: 8px !important;
+    overflow: hidden !important;
+  }
+
+  body:not(:has(#comp-mqffd5wc)) #comp-mq6ibhwz::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(22, 10, 3, 0.22), rgba(22, 10, 3, 0.72));
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  body:not(:has(#comp-mqffd5wc)) #comp-mq6hsozz {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    margin: 0 !important;
+    grid-area: 1 / 1 !important;
+    border: 0 !important;
+    border-radius: 8px !important;
+    opacity: 0.78 !important;
+    overflow: hidden !important;
+    z-index: 0 !important;
+  }
+
+  body:not(:has(#comp-mqffd5wc)) #comp-mq6hsozz img,
+  body:not(:has(#comp-mqffd5wc)) #comp-mq6hsozz picture,
+  body:not(:has(#comp-mqffd5wc)) #comp-mq6hsozz wow-image {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+
+  body:not(:has(#comp-mqffd5wc)) #comp-mq6i6vma,
+  body:not(:has(#comp-mqffd5wc)) #comp-mq6igg7l,
+  body:not(:has(#comp-mqffd5wc)) #comp-mq9gnhcn,
+  body:not(:has(#comp-mqffd5wc)) #comp-mq7lgwyt,
+  body:not(:has(#comp-mqffd5wc)) #comp-mq7limoj {
+    display: block !important;
+    grid-area: 1 / 1 !important;
+    position: relative !important;
+    z-index: 2 !important;
+    margin: 0 !important;
+    opacity: 1 !important;
+  }
+
+  body:not(:has(#comp-mqffd5wc)) #comp-mq6i6vma {
+    align-self: start !important;
+    justify-self: center !important;
+    width: min(82vw, 980px) !important;
+    margin-top: clamp(28px, 3.2vw, 52px) !important;
+  }
+
+  body:not(:has(#comp-mqffd5wc)) #comp-mq6i6vma :is(h1, h2, p, span, div),
+  body:not(:has(#comp-mqffd5wc)) #comp-mq6i6vma .wixui-rich-text__text {
+    color: #ffecd1 !important;
+    font-size: clamp(72px, 8.6vw, 142px) !important;
+    line-height: 0.88 !important;
+    text-align: center !important;
+    text-shadow: 0 8px 28px rgba(0, 0, 0, 0.42) !important;
+  }
+
+  body:not(:has(#comp-mqffd5wc)) #comp-mq9gnhcn {
+    align-self: start !important;
+    justify-self: center !important;
+    width: min(35vw, 448px) !important;
+    margin-top: clamp(146px, 14vw, 236px) !important;
+    padding: 24px 28px !important;
+    background: rgba(183, 75, 2, 0.5) !important;
+    border-radius: 18px !important;
+  }
+
+  body:not(:has(#comp-mqffd5wc)) #comp-mq7kv6vq {
+    display: block !important;
+  }
+
+  body:not(:has(#comp-mqffd5wc)) #comp-mq6igg7l {
+    align-self: end !important;
+    justify-self: center !important;
+    width: min(78vw, 720px) !important;
+    margin-bottom: 120px !important;
+  }
+
+  body:not(:has(#comp-mqffd5wc)) #comp-mq6igg7l :is(p, span, div),
+  body:not(:has(#comp-mqffd5wc)) #comp-mq9gnhcn :is(p, span, div),
+  body:not(:has(#comp-mqffd5wc)) #comp-mq6igg7l .wixui-rich-text__text,
+  body:not(:has(#comp-mqffd5wc)) #comp-mq9gnhcn .wixui-rich-text__text {
+    color: #ffecd1 !important;
+    font-size: clamp(14px, 1vw, 18px) !important;
+    line-height: 1.45 !important;
+    text-align: center !important;
+  }
+
+  body:not(:has(#comp-mqffd5wc)) #comp-mq6igg7l,
+  body:not(:has(#comp-mqffd5wc)) #comp-mq9gnhcn,
+  body:not(:has(#comp-mqffd5wc)) #comp-mq7kv6vq {
+    color: #ffecd1 !important;
+    font-size: clamp(14px, 1vw, 18px) !important;
+    line-height: 1.45 !important;
+    text-align: center !important;
+  }
+
+  body:not(:has(#comp-mqffd5wc)) #comp-mq7lgwyt,
+  body:not(:has(#comp-mqffd5wc)) #comp-mq7limoj {
+    align-self: end !important;
+    width: 266px !important;
+    max-width: 22vw !important;
+    margin-bottom: 32px !important;
+  }
+
+  body:not(:has(#comp-mqffd5wc)) #comp-mq7lgwyt {
+    justify-self: center !important;
+    margin-right: 340px !important;
+  }
+
+  body:not(:has(#comp-mqffd5wc)) #comp-mq7limoj {
+    justify-self: center !important;
+    margin-left: 340px !important;
+  }
+
+  body:not(:has(#comp-mqffd5wc)) #comp-mq7lgwyt a,
+  body:not(:has(#comp-mqffd5wc)) #comp-mq7limoj a,
+  body:not(:has(#comp-mqffd5wc)) #comp-mq7lgwyt [data-testid="linkElement"],
+  body:not(:has(#comp-mqffd5wc)) #comp-mq7limoj [data-testid="linkElement"] {
+    min-height: 66px !important;
+    border-radius: 8px !important;
+    background: #ffecd1 !important;
+    border: 2px solid #b74b02 !important;
+  }
+
+  body:not(:has(#comp-mqffd5wc)) #comp-mq7lgwyt .wixui-button__label,
+  body:not(:has(#comp-mqffd5wc)) #comp-mq7limoj .wixui-button__label {
+    color: #b74b02 !important;
+    font-size: clamp(20px, 1.6vw, 26px) !important;
+    line-height: 1.2 !important;
+  }
+
+  body:not(:has(#comp-mqffd5wc)) #comp-mq6hsozz {
+    animation: hdcHeroImageIn 900ms ease-out both;
+  }
+
+  body:not(:has(#comp-mqffd5wc)) #comp-mq6i6vma,
+  body:not(:has(#comp-mqffd5wc)) #comp-mq9gnhcn,
+  body:not(:has(#comp-mqffd5wc)) #comp-mq6igg7l,
+  body:not(:has(#comp-mqffd5wc)) #comp-mq7lgwyt,
+  body:not(:has(#comp-mqffd5wc)) #comp-mq7limoj {
+    animation: hdcHeroContentIn 720ms ease-out both;
+  }
+}
+
+@keyframes hdcHeroImageIn {
+  from {
+    opacity: 0.45;
+    transform: scale(1.025);
+  }
+  to {
+    opacity: 0.78;
+    transform: scale(1);
+  }
+}
+
+@keyframes hdcHeroContentIn {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

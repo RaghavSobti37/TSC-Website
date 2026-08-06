@@ -1,0 +1,728 @@
+{
+  "desktop": {
+    "path": "/pages/music-production.html",
+    "title": "A-Z of Music Production | TSC",
+    "texts": [
+      {
+        "text": "Resources",
+        "tag": "A",
+        "top": 68,
+        "fontFamily": "Arial, Helvetica, sans-serif",
+        "fontSize": "10px"
+      },
+      {
+        "text": "Courses",
+        "tag": "A",
+        "top": 68,
+        "fontFamily": "Arial, Helvetica, sans-serif",
+        "fontSize": "10px"
+      },
+      {
+        "text": "Testimonials",
+        "tag": "A",
+        "top": 68,
+        "fontFamily": "Arial, Helvetica, sans-serif",
+        "fontSize": "10px"
+      },
+      {
+        "text": "Know More",
+        "tag": "A",
+        "top": 68,
+        "fontFamily": "Arial, Helvetica, sans-serif",
+        "fontSize": "10px"
+      },
+      {
+        "text": "MAIN WEBSITE",
+        "tag": "A",
+        "top": 56,
+        "fontFamily": "Arial, Helvetica, sans-serif",
+        "fontSize": "10px"
+      },
+      {
+        "text": "₹3,999\nENROLL NOW",
+        "tag": "P",
+        "top": 169,
+        "fontFamily": "Arial, Helvetica, sans-serif",
+        "fontSize": "10px"
+      },
+      {
+        "text": "₹3,999\nENROLL NOW",
+        "tag": "A",
+        "top": 169,
+        "fontFamily": "Arial, Helvetica, sans-serif",
+        "fontSize": "10px"
+      },
+      {
+        "text": "A-Z of Music Production",
+        "tag": "H1",
+        "top": 423,
+        "fontFamily": "signika, sans-serif",
+        "fontSize": "83.0133px"
+      },
+      {
+        "text": "COURSE 003",
+        "tag": "H2",
+        "top": 336,
+        "fontFamily": "wfont_68aed7_1615e2f9d1214a96a88382b24d67727b, wf_1615e2f9d1214a96a88382b24, orig_alan_sans_medium",
+        "fontSize": "26.6798px"
+      },
+      {
+        "text": "Mentor: Luca Petracca",
+        "tag": "H2",
+        "top": 335,
+        "fontFamily": "wfont_68aed7_1615e2f9d1214a96a88382b24d67727b, wf_1615e2f9d1214a96a88382b24, orig_alan_sans_medium",
+        "fontSize": "26.6798px"
+      },
+      {
+        "text": "COURSE OVERVIEW",
+        "tag": "H2",
+        "top": 784,
+        "fontFamily": "wfont_68aed7_1615e2f9d1214a96a88382b24d67727b, wf_1615e2f9d1214a96a88382b24, orig_alan_sans_medium",
+        "fontSize": "46.6033px"
+      },
+      {
+        "text": "A practical international masterclass teaching end-to-end music production for artists using only a laptop.",
+        "tag": "P",
+        "top": 889,
+        "fontFamily": "wfont_834fa9_d08c6fe9ca9b47ccb21ecdcb74412010, wf_d08c6fe9ca9b47ccb21ecdcb7, orig_alan_sans_light",
+        "fontSize": "18px"
+      },
+      {
+        "text": "This practical learning program by Luca Petracca teaches you how to take an idea to a finished track: crafting melodies,",
+        "tag": "P",
+        "top": 1148,
+        "fontFamily": "wfont_834fa9_d08c6fe9ca9b47ccb21ecdcb74412010, wf_d08c6fe9ca9b47ccb21ecdcb7, orig_alan_sans_light",
+        "fontSize": "18px"
+      },
+      {
+        "text": "Modules cover essential topics with hands-on projects so you can produce professional-sounding songs without expensive s",
+        "tag": "P",
+        "top": 776,
+        "fontFamily": "wfont_834fa9_d08c6fe9ca9b47ccb21ecdcb74412010, wf_d08c6fe9ca9b47ccb21ecdcb7, orig_alan_sans_light",
+        "fontSize": "18px"
+      },
+      {
+        "text": "6 Months Duration",
+        "tag": "P",
+        "top": 1453,
+        "fontFamily": "wfont_834fa9_d08c6fe9ca9b47ccb21ecdcb74412010, wf_d08c6fe9ca9b47ccb21ecdcb7, orig_alan_sans_light",
+        "fontSize": "22px"
+      },
+      {
+        "text": "3 Live Sessions",
+        "tag": "P",
+        "top": 1537,
+        "fontFamily": "wfont_834fa9_d08c6fe9ca9b47ccb21ecdcb74412010, wf_d08c6fe9ca9b47ccb21ecdcb7, orig_alan_sans_light",
+        "fontSize": "22px"
+      },
+      {
+        "text": "200+ Mins Recorded",
+        "tag": "P",
+        "top": 1453,
+        "fontFamily": "wfont_834fa9_d08c6fe9ca9b47ccb21ecdcb74412010, wf_d08c6fe9ca9b47ccb21ecdcb7, orig_alan_sans_light",
+        "fontSize": "22px"
+      },
+      {
+        "text": "6 Months Access",
+        "tag": "P",
+        "top": 1536,
+        "fontFamily": "wfont_834fa9_d08c6fe9ca9b47ccb21ecdcb74412010, wf_d08c6fe9ca9b47ccb21ecdcb7, orig_alan_sans_light",
+        "fontSize": "22px"
+      },
+      {
+        "text": "EWS Scholarship",
+        "tag": "P",
+        "top": 1538,
+        "fontFamily": "wfont_834fa9_d08c6fe9ca9b47ccb21ecdcb74412010, wf_d08c6fe9ca9b47ccb21ecdcb7, orig_alan_sans_light",
+        "fontSize": "22px"
+      },
+      {
+        "text": "Lifetime Community",
+        "tag": "P",
+        "top": 1453,
+        "fontFamily": "wfont_834fa9_d08c6fe9ca9b47ccb21ecdcb74412010, wf_d08c6fe9ca9b47ccb21ecdcb7, orig_alan_sans_light",
+        "fontSize": "22px"
+      },
+      {
+        "text": "Knowledge & Experience",
+        "tag": "P",
+        "top": 1539,
+        "fontFamily": "wfont_834fa9_d08c6fe9ca9b47ccb21ecdcb74412010, wf_d08c6fe9ca9b47ccb21ecdcb7, orig_alan_sans_light",
+        "fontSize": "22px"
+      },
+      {
+        "text": "Unique Approach",
+        "tag": "P",
+        "top": 1451,
+        "fontFamily": "wfont_834fa9_d08c6fe9ca9b47ccb21ecdcb74412010, wf_d08c6fe9ca9b47ccb21ecdcb7, orig_alan_sans_light",
+        "fontSize": "22px"
+      },
+      {
+        "text": "What You'll Learn",
+        "tag": "P",
+        "top": 1695,
+        "fontFamily": "wfont_14da03_0df54c350288431ea34bee746fbcc941, wf_0df54c350288431ea34bee746, orig_signika_semibold",
+        "fontSize": "61.5134px"
+      },
+      {
+        "text": "01",
+        "tag": "P",
+        "top": 1974,
+        "fontFamily": "wfont_68aed7_1615e2f9d1214a96a88382b24d67727b, wf_1615e2f9d1214a96a88382b24, orig_alan_sans_medium",
+        "fontSize": "73px"
+      },
+      {
+        "text": "Melody, Chords and Harmony",
+        "tag": "H3",
+        "top": 1989,
+        "fontFamily": "wfont_68aed7_1615e2f9d1214a96a88382b24d67727b, wf_1615e2f9d1214a96a88382b24, orig_alan_sans_medium",
+        "fontSize": "28.0089px"
+      },
+      {
+        "text": "Craft melodies, understand chord progressions, and use harmonic functions with purpose.",
+        "tag": "P",
+        "top": 2072,
+        "fontFamily": "wfont_834fa9_d08c6fe9ca9b47ccb21ecdcb74412010, wf_d08c6fe9ca9b47ccb21ecdcb7, orig_alan_sans_light",
+        "fontSize": "18.9362px"
+      },
+      {
+        "text": "02",
+        "tag": "P",
+        "top": 2247,
+        "fontFamily": "wfont_68aed7_1615e2f9d1214a96a88382b24d67727b, wf_1615e2f9d1214a96a88382b24, orig_alan_sans_medium",
+        "fontSize": "73px"
+      },
+      {
+        "text": "Genres, Song Forms and Sounds",
+        "tag": "H3",
+        "top": 2260,
+        "fontFamily": "wfont_68aed7_1615e2f9d1214a96a88382b24d67727b, wf_1615e2f9d1214a96a88382b24, orig_alan_sans_medium",
+        "fontSize": "28.0083px"
+      },
+      {
+        "text": "Arrange common song forms across genres and shape sounds with virtual instruments.",
+        "tag": "P",
+        "top": 2377,
+        "fontFamily": "wfont_834fa9_d08c6fe9ca9b47ccb21ecdcb74412010, wf_d08c6fe9ca9b47ccb21ecdcb7, orig_alan_sans_light",
+        "fontSize": "18.9362px"
+      },
+      {
+        "text": "03",
+        "tag": "P",
+        "top": 2552,
+        "fontFamily": "wfont_68aed7_1615e2f9d1214a96a88382b24d67727b, wf_1615e2f9d1214a96a88382b24, orig_alan_sans_medium",
+        "fontSize": "73px"
+      },
+      {
+        "text": "Recording and Production",
+        "tag": "H3",
+        "top": 2565,
+        "fontFamily": "wfont_68aed7_1615e2f9d1214a96a88382b24d67727b, wf_1615e2f9d1214a96a88382b24, orig_alan_sans_medium",
+        "fontSize": "28.0083px"
+      },
+      {
+        "text": "Record clean takes with laptop-friendly gear and build complete productions.",
+        "tag": "P",
+        "top": 2649,
+        "fontFamily": "wfont_834fa9_d08c6fe9ca9b47ccb21ecdcb74412010, wf_d08c6fe9ca9b47ccb21ecdcb7, orig_alan_sans_light",
+        "fontSize": "18.9362px"
+      },
+      {
+        "text": "04",
+        "tag": "P",
+        "top": 2841,
+        "fontFamily": "wfont_68aed7_1615e2f9d1214a96a88382b24d67727b, wf_1615e2f9d1214a96a88382b24, orig_alan_sans_medium",
+        "fontSize": "73px"
+      },
+      {
+        "text": "FX, Mixing and Mastering",
+        "tag": "H3",
+        "top": 2854,
+        "fontFamily": "wfont_68aed7_1615e2f9d1214a96a88382b24d67727b, wf_1615e2f9d1214a96a88382b24, orig_alan_sans_medium",
+        "fontSize": "28.0083px"
+      },
+      {
+        "text": "Apply effects processing, balance mixes, and master finished tracks for release.",
+        "tag": "P",
+        "top": 2937,
+        "fontFamily": "wfont_834fa9_d08c6fe9ca9b47ccb21ecdcb74412010, wf_d08c6fe9ca9b47ccb21ecdcb7, orig_alan_sans_light",
+        "fontSize": "18.9362px"
+      }
+    ],
+    "imgs": [
+      {
+        "alt": "whiteArtboard 24 copy_150x-8.png",
+        "src": "http://127.0.0.1:3000/assets/mirror/static.wixstatic.com/media/19f989_e046fdb6749e401b88aa9e0524c00729~mv2.png/v1/crop/x_945,y_0,w_2539,h_1664/fill/w_473,h_311,fp_0.50_0.50,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/whiteArtboard%2024%20copy_150x-8.png",
+        "w": 311,
+        "h": 473,
+        "top": 202,
+        "left": -49,
+        "fit": "cover",
+        "pos": "50% 50%"
+      },
+      {
+        "alt": "Luca Petracca producing music on keyboard in studio",
+        "src": "http://127.0.0.1:3000/assets/luca/luca-petracca-course-wide.jpg",
+        "w": 473,
+        "h": 322,
+        "top": 1031,
+        "left": 53,
+        "fit": "cover",
+        "pos": "48% 58%"
+      },
+      {
+        "alt": "Luca Petracca at a keyboard in the studio",
+        "src": "http://127.0.0.1:3000/assets/luca/luca-petracca-studio-portrait.jpg",
+        "w": 340,
+        "h": 490,
+        "top": 3106,
+        "left": 113,
+        "fit": "cover",
+        "pos": "46% 54%"
+      },
+      {
+        "alt": "Studio microphone for recording techniques",
+        "src": "http://127.0.0.1:3000/assets/luca/luca-production-mic.jpg",
+        "w": 306,
+        "h": 283,
+        "top": 3780,
+        "left": 130,
+        "fit": "cover",
+        "pos": "50% 50%"
+      },
+      {
+        "alt": "Luca Petracca working on a music production session",
+        "src": "http://127.0.0.1:3000/assets/luca/luca-petracca-course-wide.jpg",
+        "w": 306,
+        "h": 283,
+        "top": 3780,
+        "left": 530,
+        "fit": "cover",
+        "pos": "48% 58%"
+      },
+      {
+        "alt": "A-Z of Music Production course visual",
+        "src": "http://127.0.0.1:3000/assets/luca/luca-production-gradient.jpg",
+        "w": 306,
+        "h": 283,
+        "top": 3780,
+        "left": 940,
+        "fit": "cover",
+        "pos": "50% 50%"
+      }
+    ],
+    "sandeshImgs": [],
+    "lucaImgs": [
+      {
+        "alt": "Luca Petracca producing music on keyboard in studio",
+        "src": "http://127.0.0.1:3000/assets/luca/luca-petracca-course-wide.jpg",
+        "w": 473,
+        "h": 322,
+        "top": 1031,
+        "left": 53,
+        "fit": "cover",
+        "pos": "48% 58%"
+      },
+      {
+        "alt": "Luca Petracca at a keyboard in the studio",
+        "src": "http://127.0.0.1:3000/assets/luca/luca-petracca-studio-portrait.jpg",
+        "w": 340,
+        "h": 490,
+        "top": 3106,
+        "left": 113,
+        "fit": "cover",
+        "pos": "46% 54%"
+      },
+      {
+        "alt": "Studio microphone for recording techniques",
+        "src": "http://127.0.0.1:3000/assets/luca/luca-production-mic.jpg",
+        "w": 306,
+        "h": 283,
+        "top": 3780,
+        "left": 130,
+        "fit": "cover",
+        "pos": "50% 50%"
+      },
+      {
+        "alt": "Luca Petracca working on a music production session",
+        "src": "http://127.0.0.1:3000/assets/luca/luca-petracca-course-wide.jpg",
+        "w": 306,
+        "h": 283,
+        "top": 3780,
+        "left": 530,
+        "fit": "cover",
+        "pos": "48% 58%"
+      },
+      {
+        "alt": "A-Z of Music Production course visual",
+        "src": "http://127.0.0.1:3000/assets/luca/luca-production-gradient.jpg",
+        "w": 306,
+        "h": 283,
+        "top": 3780,
+        "left": 940,
+        "fit": "cover",
+        "pos": "50% 50%"
+      }
+    ]
+  },
+  "mobile": {
+    "path": "/pages/music-production.html",
+    "title": "A-Z of Music Production | TSC",
+    "texts": [
+      {
+        "text": "A-Z of Music Production",
+        "tag": "H1",
+        "top": 283,
+        "fontFamily": "signika, Signika, Georgia, serif",
+        "fontSize": "42.9px"
+      },
+      {
+        "text": "COURSE OVERVIEW",
+        "tag": "P",
+        "top": 487,
+        "fontFamily": "Arial, sans-serif",
+        "fontSize": "12px"
+      },
+      {
+        "text": "A practical international masterclass teaching end-to-end music production for artists using only a laptop.",
+        "tag": "P",
+        "top": 512,
+        "fontFamily": "Arial, sans-serif",
+        "fontSize": "16px"
+      },
+      {
+        "text": "COURSE MENTOR",
+        "tag": "P",
+        "top": 915,
+        "fontFamily": "Arial, sans-serif",
+        "fontSize": "12px"
+      },
+      {
+        "text": "Luca Petracca",
+        "tag": "H2",
+        "top": 952,
+        "fontFamily": "signika, Signika, Georgia, serif",
+        "fontSize": "25px"
+      },
+      {
+        "text": "Luca Petracca is a music producer and composer from Italy. He studied classical guitar at Conservatory S. Cecilia of Rom",
+        "tag": "P",
+        "top": 992,
+        "fontFamily": "Arial, sans-serif",
+        "fontSize": "15px"
+      },
+      {
+        "text": "Take an idea to a finished track: melodies, chords, harmonic progressions, song forms, virtual instruments, recording, F",
+        "tag": "P",
+        "top": 1372,
+        "fontFamily": "Arial, sans-serif",
+        "fontSize": "16px"
+      },
+      {
+        "text": "BOOK A CALL",
+        "tag": "A",
+        "top": 1525,
+        "fontFamily": "Arial, sans-serif",
+        "fontSize": "12px"
+      },
+      {
+        "text": "LUCA PETRACCA",
+        "tag": "P",
+        "top": 1704,
+        "fontFamily": "wfont_14da03_0df54c350288431ea34bee746fbcc941, wf_0df54c350288431ea34bee746, orig_signika_semibold",
+        "fontSize": "15.3737px"
+      },
+      {
+        "text": "COURSE MENTOR",
+        "tag": "P",
+        "top": 1726,
+        "fontFamily": "wfont_68aed7_1615e2f9d1214a96a88382b24d67727b, wf_1615e2f9d1214a96a88382b24, orig_alan_sans_medium",
+        "fontSize": "8.85409px"
+      },
+      {
+        "text": "Hi, I am Luca Petracca, a music producer and composer from Italy. I learned classical guitar from the Conservatory S. Ce",
+        "tag": "P",
+        "top": 1748,
+        "fontFamily": "wfont_68aed7_1615e2f9d1214a96a88382b24d67727b, wf_1615e2f9d1214a96a88382b24, orig_alan_sans_medium",
+        "fontSize": "6.09375px"
+      },
+      {
+        "text": "Music Producer & Composer",
+        "tag": "P",
+        "top": 1869,
+        "fontFamily": "wfont_68aed7_1615e2f9d1214a96a88382b24d67727b, wf_1615e2f9d1214a96a88382b24, orig_alan_sans_medium",
+        "fontSize": "6.09375px"
+      },
+      {
+        "text": "Classical Guitar & Composition",
+        "tag": "P",
+        "top": 1869,
+        "fontFamily": "wfont_68aed7_1615e2f9d1214a96a88382b24d67727b, wf_1615e2f9d1214a96a88382b24, orig_alan_sans_medium",
+        "fontSize": "6.09375px"
+      },
+      {
+        "text": "17+ Years Teaching",
+        "tag": "P",
+        "top": 1869,
+        "fontFamily": "wfont_68aed7_1615e2f9d1214a96a88382b24d67727b, wf_1615e2f9d1214a96a88382b24, orig_alan_sans_medium",
+        "fontSize": "6.09375px"
+      },
+      {
+        "text": "Curriculum Overview",
+        "tag": "P",
+        "top": 2011,
+        "fontFamily": "wfont_14da03_0df54c350288431ea34bee746fbcc941, wf_0df54c350288431ea34bee746, orig_signika_semibold",
+        "fontSize": "17.5625px"
+      },
+      {
+        "text": "01 : Introduction to Music Production",
+        "tag": "BUTTON",
+        "top": 2076,
+        "fontFamily": "Arial",
+        "fontSize": "13.3333px"
+      },
+      {
+        "text": "Create professional-sounding songs without expensive studio gear.",
+        "tag": "P",
+        "top": 2200,
+        "fontFamily": "wfont_68aed7_1615e2f9d1214a96a88382b24d67727b, wf_1615e2f9d1214a96a88382b24, orig_alan_sans_medium",
+        "fontSize": "6.09375px"
+      },
+      {
+        "text": "A-Z of Music Production",
+        "tag": "P",
+        "top": 2233,
+        "fontFamily": "wfont_68aed7_1615e2f9d1214a96a88382b24d67727b, wf_1615e2f9d1214a96a88382b24, orig_alan_sans_medium",
+        "fontSize": "5.17967px"
+      },
+      {
+        "text": "Align Yourself",
+        "tag": "P",
+        "top": 2252,
+        "fontFamily": "wfont_68aed7_1615e2f9d1214a96a88382b24d67727b, wf_1615e2f9d1214a96a88382b24, orig_alan_sans_medium",
+        "fontSize": "5.17967px"
+      },
+      {
+        "text": "02 : Melody and Chords",
+        "tag": "BUTTON",
+        "top": 2354,
+        "fontFamily": "Arial",
+        "fontSize": "13.3333px"
+      },
+      {
+        "text": "03 : Harmonic Progressions and Functions",
+        "tag": "BUTTON",
+        "top": 2436,
+        "fontFamily": "Arial",
+        "fontSize": "13.3333px"
+      },
+      {
+        "text": "04 : Music Genres",
+        "tag": "BUTTON",
+        "top": 2585,
+        "fontFamily": "Arial",
+        "fontSize": "13.3333px"
+      },
+      {
+        "text": "05 : Song Forms",
+        "tag": "BUTTON",
+        "top": 2667,
+        "fontFamily": "Arial",
+        "fontSize": "13.3333px"
+      },
+      {
+        "text": "06 : Instruments and Sounds",
+        "tag": "BUTTON",
+        "top": 2749,
+        "fontFamily": "Arial",
+        "fontSize": "13.3333px"
+      },
+      {
+        "text": "07 : Recording Techniques",
+        "tag": "BUTTON",
+        "top": 2864,
+        "fontFamily": "Arial",
+        "fontSize": "13.3333px"
+      },
+      {
+        "text": "08 : Production Techniques",
+        "tag": "BUTTON",
+        "top": 2984,
+        "fontFamily": "Arial",
+        "fontSize": "13.3333px"
+      },
+      {
+        "text": "09 : FXs (Effects Processing)",
+        "tag": "BUTTON",
+        "top": 3099,
+        "fontFamily": "Arial",
+        "fontSize": "13.3333px"
+      },
+      {
+        "text": "10 : Mixing and Mastering",
+        "tag": "BUTTON",
+        "top": 3215,
+        "fontFamily": "Arial",
+        "fontSize": "13.3333px"
+      },
+      {
+        "text": "ENROLL NOW",
+        "tag": "A",
+        "top": 3417,
+        "fontFamily": "Arial, Helvetica, sans-serif",
+        "fontSize": "10px"
+      },
+      {
+        "text": "Book a Call",
+        "tag": "A",
+        "top": 3586,
+        "fontFamily": "Madefor-Text, \"Wix Madefor Text\", system-ui, sans-serif",
+        "fontSize": "14px"
+      },
+      {
+        "text": "Apply for Artist Path",
+        "tag": "A",
+        "top": 3634,
+        "fontFamily": "Madefor-Text, \"Wix Madefor Text\", system-ui, sans-serif",
+        "fontSize": "14px"
+      },
+      {
+        "text": "Book an Artist",
+        "tag": "A",
+        "top": 3682,
+        "fontFamily": "Madefor-Text, \"Wix Madefor Text\", system-ui, sans-serif",
+        "fontSize": "14px"
+      },
+      {
+        "text": "Apply to newsletter",
+        "tag": "P",
+        "top": 3910,
+        "fontFamily": "Madefor-Text, \"Wix Madefor Text\", system-ui, sans-serif",
+        "fontSize": "12px"
+      },
+      {
+        "text": "SUBSCRIBE",
+        "tag": "BUTTON",
+        "top": 3940,
+        "fontFamily": "Arial",
+        "fontSize": "11px"
+      }
+    ],
+    "imgs": [
+      {
+        "alt": "",
+        "src": "http://127.0.0.1:3000/assets/brand/tsc-academy-logo-trim-nav.png",
+        "w": 84,
+        "h": 84,
+        "top": 183,
+        "left": 43,
+        "fit": "contain",
+        "pos": "50% 50%"
+      },
+      {
+        "alt": "",
+        "src": "http://127.0.0.1:3000/assets/mirror/static.wixstatic.com/media/19f989_3583e149066b4ebf9a6f37cc7d80382a~mv2.jpg/v1/crop/x_0,y_7,w_677,h_461/fill/w_205,h_140,fp_0.50_0.50,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/sandesh_edited.jpg",
+        "w": 348,
+        "h": 261,
+        "top": 618,
+        "left": 21,
+        "fit": "cover",
+        "pos": "50% 50%"
+      },
+      {
+        "alt": "Luca Petracca at a keyboard in the studio",
+        "src": "http://127.0.0.1:3000/assets/luca/luca-petracca-studio-portrait.jpg",
+        "w": 96,
+        "h": 139,
+        "top": 1705,
+        "left": 33,
+        "fit": "cover",
+        "pos": "46% 54%"
+      },
+      {
+        "alt": "Studio microphone for recording techniques",
+        "src": "http://127.0.0.1:3000/assets/luca/luca-production-mic.jpg",
+        "w": 86,
+        "h": 80,
+        "top": 1898,
+        "left": 37,
+        "fit": "cover",
+        "pos": "50% 50%"
+      },
+      {
+        "alt": "Luca Petracca working on a music production session",
+        "src": "http://127.0.0.1:3000/assets/luca/luca-petracca-course-wide.jpg",
+        "w": 86,
+        "h": 80,
+        "top": 1898,
+        "left": 152,
+        "fit": "cover",
+        "pos": "48% 58%"
+      },
+      {
+        "alt": "A-Z of Music Production course visual",
+        "src": "http://127.0.0.1:3000/assets/luca/luca-production-gradient.jpg",
+        "w": 86,
+        "h": 80,
+        "top": 1898,
+        "left": 269,
+        "fit": "cover",
+        "pos": "50% 50%"
+      }
+    ],
+    "sandeshImgs": [
+      {
+        "alt": "",
+        "src": "http://127.0.0.1:3000/assets/mirror/static.wixstatic.com/media/19f989_3583e149066b4ebf9a6f37cc7d80382a~mv2.jpg/v1/crop/x_0,y_7,w_677,h_461/fill/w_205,h_140,fp_0.50_0.50,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/sandesh_edited.jpg",
+        "w": 348,
+        "h": 261,
+        "top": 618,
+        "left": 21,
+        "fit": "cover",
+        "pos": "50% 50%"
+      }
+    ],
+    "lucaImgs": [
+      {
+        "alt": "Luca Petracca at a keyboard in the studio",
+        "src": "http://127.0.0.1:3000/assets/luca/luca-petracca-studio-portrait.jpg",
+        "w": 96,
+        "h": 139,
+        "top": 1705,
+        "left": 33,
+        "fit": "cover",
+        "pos": "46% 54%"
+      },
+      {
+        "alt": "Studio microphone for recording techniques",
+        "src": "http://127.0.0.1:3000/assets/luca/luca-production-mic.jpg",
+        "w": 86,
+        "h": 80,
+        "top": 1898,
+        "left": 37,
+        "fit": "cover",
+        "pos": "50% 50%"
+      },
+      {
+        "alt": "Luca Petracca working on a music production session",
+        "src": "http://127.0.0.1:3000/assets/luca/luca-petracca-course-wide.jpg",
+        "w": 86,
+        "h": 80,
+        "top": 1898,
+        "left": 152,
+        "fit": "cover",
+        "pos": "48% 58%"
+      },
+      {
+        "alt": "A-Z of Music Production course visual",
+        "src": "http://127.0.0.1:3000/assets/luca/luca-production-gradient.jpg",
+        "w": 86,
+        "h": 80,
+        "top": 1898,
+        "left": 269,
+        "fit": "cover",
+        "pos": "50% 50%"
+      }
+    ]
+  }
+}

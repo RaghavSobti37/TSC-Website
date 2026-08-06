@@ -174,8 +174,8 @@
   var mobileFilmCards = [
     {
       num: '01',
-      title: 'Mahaavatar Narsimha',
-      blurb: 'Mythology-led animated feature — cultural positioning, audience development, monetisation and long-term IP growth.',
+      title: 'Mahavatar Narsimha',
+      blurb: 'Mythology-led animated feature mounted for cultural positioning, audience demand, monetisation and long-term IP growth.',
       href: '/mahavatar-narsimha',
       titleSelector: '#comp-mqmi3w46',
       blurbSelector: '#comp-mqmi3w4a',
@@ -185,7 +185,7 @@
     {
       num: '02',
       title: 'Hanuman Ansh',
-      blurb: 'Spiritual entertainment IP connecting faith, story, community and contemporary audiences.',
+      blurb: 'Spiritual entertainment IP shaped for faith communities, contemporary families and a long-term story universe.',
       href: '/hanuman-ansh',
       titleSelector: '#comp-mqmi6yo71',
       blurbSelector: '#comp-mqmi6yob',
@@ -195,7 +195,7 @@
     {
       num: '03',
       title: 'Mahaprabhu Jagannath',
-      blurb: 'Cultural resonance initiative for Lord Jagannath’s living tradition — community, devotion, new-generation storytelling.',
+      blurb: 'Lord Jagannath cultural story positioned through devotion, community access, partnerships and new-generation storytelling.',
       href: '/mahaprbhu',
       titleSelector: '#comp-mqmi8cy13',
       blurbSelector: '#comp-mqmi8cy52',
@@ -205,7 +205,7 @@
     {
       num: '04',
       title: 'Kalki',
-      blurb: 'Culture-forward storytelling — tradition and the future, strategic positioning and modern audience engagement.',
+      blurb: 'Future-facing mythology story connecting dharma, transformation, ancient Indian imagination and modern audience anticipation.',
       href: '/kalki',
       titleSelector: '#comp-mqmi8suv6',
       blurbSelector: '#comp-mqmi8sv0',
@@ -217,16 +217,16 @@
     {
       root: '#comp-mqmi3w3o',
       href: '/mahavatar-narsimha',
-      title: 'Mahaavatar Narsimha',
+      title: 'Mahavatar Narsimha',
       titleSelector: '#comp-mqmi3w46',
       badgesSelector: '#comp-mqmi3w484',
       blurbSelector: '#comp-mqmi3w4a',
       labelSelector: '#comp-mqmi3w4k',
       nameSelector: '#comp-mqmi3w4l3',
-      meta: ['Animated Feature', 'Cultural Positioning', 'Audience Building', 'Long-Term IP Growth'],
+      meta: ['Animated Feature', 'Mythology IP', 'Audience Demand', 'Monetisation'],
       metaSelectors: ['#comp-mqmi3w3v3', '#comp-mqmi3w3x2', '#comp-mqmi3w3z', '#comp-mqmi3w41'],
-      badges: 'Mythology-Led Storytelling | Film Mounting | IP Strategy',
-      blurb: 'A culturally rooted animated feature strategy built around audience development, mythology-led positioning, partnerships, monetisation and long-term IP growth.'
+      badges: 'Mythology-Led Animation | Audience Strategy | IP Growth',
+      blurb: 'A culturally rooted animated feature mounted around mythology-led positioning, audience demand, partnerships, monetisation and long-term IP growth.'
     },
     {
       root: '#comp-mqmi6ynt2',
@@ -237,10 +237,10 @@
       blurbSelector: '#comp-mqmi6yob',
       labelSelector: '#comp-mqmi6yol3',
       nameSelector: '#comp-mqmi6yom7',
-      meta: ['Spiritual IP', 'Community Building', 'Faith-Led Story', 'Modern Audiences'],
+      meta: ['Spiritual IP', 'Faith Communities', 'Family Audiences', 'Story Universe'],
       metaSelectors: ['#comp-mqmi6yny', '#comp-mqmi6ynz5', '#comp-mqmi6yo1', '#comp-mqmi6yo2'],
-      badges: 'Spiritual Entertainment | Community Strategy | Cultural IP',
-      blurb: 'A spiritual entertainment IP shaped to connect faith, story, community and contemporary audiences through culture-first positioning.'
+      badges: 'Spiritual Entertainment | Faith Communities | IP Development',
+      blurb: 'A spiritual entertainment IP shaped to connect devotion-led communities, contemporary families and a long-term story universe.'
     },
     {
       root: '#comp-mqmi8cxm2',
@@ -251,10 +251,10 @@
       blurbSelector: '#comp-mqmi8cy52',
       labelSelector: '#comp-mqmi8cyf',
       nameSelector: '#comp-mqmi8cyg2',
-      meta: ['Living Tradition', 'Devotional Story', 'Cultural Resonance', 'New-Gen Reach'],
+      meta: ['Living Tradition', 'Devotional Story', 'Community Access', 'New-Gen Reach'],
       metaSelectors: ['#comp-mqmi8cxr2', '#comp-mqmi8cxt', '#comp-mqmi8cxu6', '#comp-mqmi8cxw'],
-      badges: 'Devotional Culture | Community Context | Story Positioning',
-      blurb: "A cultural resonance initiative for Lord Jagannath's living tradition, built around devotion, community and new-generation storytelling."
+      badges: 'Devotional Culture | Community Access | Story Positioning',
+      blurb: "A Lord Jagannath cultural story positioned through devotion, community access, partnerships and new-generation storytelling."
     },
     {
       root: '#comp-mqmi8sui',
@@ -265,10 +265,10 @@
       blurbSelector: '#comp-mqmi8sv0',
       labelSelector: '#comp-mqmi8sv51',
       nameSelector: '#comp-mqmi8sv66',
-      meta: ['Future Mythology', 'Audience Strategy', 'Cultural Positioning', 'Franchise Potential'],
+      meta: ['Future Mythology', 'Dharma & Renewal', 'Audience Anticipation', 'Franchise Potential'],
       metaSelectors: ['#comp-mqmi8sul4', '#comp-mqmi8sun1', '#comp-mqmi8suo6', '#comp-mqmi8suq'],
-      badges: 'Ancient Imagination | Future Story | Strategic Positioning',
-      blurb: 'A culture-forward storytelling initiative connecting ancient Indian imagination with modern audience engagement and franchise potential.'
+      badges: 'Ancient Imagination | Future Mythology | Audience Anticipation',
+      blurb: 'A future-facing mythology story connecting dharma, transformation, ancient Indian imagination and modern audience anticipation.'
     }
   ];
   var mobileFilmsWhatWeDo = [
@@ -1826,14 +1826,13 @@
   /* Roster Learn More buttons: Wix still points Harshad at /young-gunns. */
   var ARTIST_ROSTER_HREFS = {
     'comp-mqtpn27z': '/harshad-duhita',
-    'comp-mqtq8rt66': '/yugm',
-    'comp-mqutenqm': '/young-gunns'
+    'comp-mqtq8rt66': '/yugm'
   };
 
   function repairArtistsRosterLinks() {
     if (normalizedPath() !== '/artists') return;
     var mohitShell = document.getElementById('comp-mqutenq5');
-    if (mohitShell) mohitShell.style.setProperty('display', 'none', 'important');
+    if (mohitShell && mohitShell.parentNode) mohitShell.parentNode.removeChild(mohitShell);
     Object.keys(ARTIST_ROSTER_HREFS).forEach(function(btnId) {
       var href = ARTIST_ROSTER_HREFS[btnId];
       var host = document.getElementById(btnId);
@@ -1852,7 +1851,10 @@
       var href = null;
       if (/harshad|duhita/i.test(name)) href = '/harshad-duhita';
       else if (/yugm/i.test(name)) href = '/yugm';
-      else if (/mohit/i.test(name)) href = '/young-gunns';
+      else if (/mohit/i.test(name)) {
+        if (card.parentNode) card.parentNode.removeChild(card);
+        return;
+      }
       if (!href) return;
       var cta = card.querySelector('.tsc-artist-acc__cta');
       if (cta) {

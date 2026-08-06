@@ -620,7 +620,7 @@ url("/assets/mirror/static.wixstatic.com/ufonts/834fa9_d08c6fe9ca9b47ccb21ecdcb7
   #comp-mq7lr7n22 iframe {
     width: 100% !important;
     height: auto !important;
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 9 / 16;
   }
 
   /* —— Achievements collage → stacked cards —— */
@@ -1211,14 +1211,14 @@ url("/assets/mirror/static.wixstatic.com/ufonts/834fa9_d08c6fe9ca9b47ccb21ecdcb7
     display: none !important;
   }
 
-  /* Video poster must not dwarf the player */
+  /* Video poster must not dwarf the player (EPK is portrait) */
   #comp-mqhv0mup,
   #comp-mqhv0mup_img,
   #comp-mq7lr7n22 {
     height: auto !important;
     min-height: 0 !important;
     max-height: none !important;
-    aspect-ratio: 16 / 9 !important;
+    aspect-ratio: 9 / 16 !important;
     overflow: hidden !important;
   }
 

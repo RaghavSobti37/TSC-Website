@@ -164,3 +164,74 @@ window.__pageRevealPromise && window.__pageRevealPromise.then(function() {
   });
 })();
 // tsc-link-normalizer-end
+
+// tsc-harshad-epk-video-start
+(function() {
+  var EPK_SRC = '/assets/pages/harshad-duhita/epk.mp4';
+  var EPK_POSTER = '/assets/pages/harshad-duhita/epk-poster.jpg';
+
+  function isEpkSrc(value) {
+    return typeof value === 'string' && value.indexOf('/assets/pages/harshad-duhita/epk.mp4') !== -1;
+  }
+
+  function applyEpkVideo() {
+    var video = document.getElementById('comp-mqhv0mup_video');
+    if (!video) return false;
+
+    video.removeAttribute('crossorigin');
+    video.setAttribute('data-tsc-epk', '1');
+    video.setAttribute('playsinline', '');
+    video.setAttribute('webkit-playsinline', '');
+    video.setAttribute('poster', EPK_POSTER);
+    video.playsInline = true;
+    video.loop = true;
+    video.muted = true;
+    video.defaultMuted = true;
+    video.controls = true;
+
+    if (!isEpkSrc(video.getAttribute('src')) && !isEpkSrc(video.currentSrc)) {
+      video.src = EPK_SRC;
+      try { video.load(); } catch (e) {}
+    }
+
+    var posterImg = document.querySelector('#comp-mqhv0mup_img img');
+    if (posterImg && posterImg.getAttribute('src') !== EPK_POSTER) {
+      posterImg.setAttribute('src', EPK_POSTER);
+      posterImg.removeAttribute('srcset');
+    }
+
+    var playBtn = document.querySelector('#comp-mqhv0mup [aria-label]');
+    if (playBtn) {
+      playBtn.setAttribute('aria-label', 'Harshaduhita Collective EPK Play video');
+    }
+
+    if (!video.__tscEpkGuard) {
+      video.__tscEpkGuard = true;
+      if (window.MutationObserver) {
+        new MutationObserver(function() {
+          if (!isEpkSrc(video.getAttribute('src'))) {
+            video.src = EPK_SRC;
+            try { video.load(); } catch (e) {}
+          }
+        }).observe(video, { attributes: true, attributeFilter: ['src'] });
+      }
+    }
+
+    return true;
+  }
+
+  function boot() {
+    applyEpkVideo();
+    [100, 400, 1000, 2500, 5000, 10000].forEach(function(delay) {
+      window.setTimeout(applyEpkVideo, delay);
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', boot);
+  } else {
+    boot();
+  }
+  window.addEventListener('load', applyEpkVideo);
+})();
+// tsc-harshad-epk-video-end

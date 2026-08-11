@@ -80,7 +80,7 @@ Building platforms, partnerships, and cultural movements that create lasting imp
 - **Main Bhi Artist** — global creator community for writers, musicians, poets, storytellers
 - **Havells mYOUsic** — grassroots music movement to discover, mentor, and launch emerging talent
 - **Insta Music League** — digital-first music discovery celebrating originality
-- **Young Gunns** — artist incubation with producers and mentors
+- **The Young Gunns** — artist incubation with producers and mentors
 - **TSC Films** — mounting films, building audiences, creating lasting IPs
 
 Related case URL on this site: [MBA](https://wix-site-clone-psi.vercel.app/mba)
@@ -104,6 +104,7 @@ A 360° ecosystem helping independent artists build audiences, unlock opportunit
 
 **Roster profiles on this site:**
 - [Harshad Duhita](https://wix-site-clone-psi.vercel.app/harshad-duhita)
+- [Mohit Shankar](https://wix-site-clone-psi.vercel.app/mohit-shankar)
 - [YUGM](https://wix-site-clone-psi.vercel.app/yugm)
 
 **Book artists:** https://wix-site-clone-psi.vercel.app/book-an-artist

@@ -6,9 +6,9 @@ const snippets = [
   'Building platforms',
   'Whether through brand',
   'Selected Work',
-  'Mai Bhi Artist',
+  'Main Bhi Artist',
   'Havells',
-  'Young Gunns',
+  'The Young Gunns',
   'Insta Music'
 ];
 for (const s of snippets) {

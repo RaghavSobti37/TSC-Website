@@ -6,11 +6,11 @@
  * Do NOT alter those desktop renders. Mobile-only behavior must be guarded by
  * matchMedia('(max-width: 1024px)'). Never change desktop unless the site owner explicitly asks.
  */
-(function() {
+(function () {
   var ENABLE_CUSTOM_MOBILE_CHROME = true;
 
   function escapeHtml(value) {
-    return String(value).replace(/[&<>"']/g, function(char) {
+    return String(value).replace(/[&<>"']/g, function (char) {
       return ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[char];
     });
   }
@@ -58,7 +58,7 @@
     script.src = src;
     script.defer = true;
     if (onload) {
-      script.addEventListener('load', function() {
+      script.addEventListener('load', function () {
         script.dataset.tscLoaded = 'true';
         onload();
       });
@@ -74,8 +74,8 @@
   function mountBlogChrome(path) {
     if (!isBlogArticlePath(path)) return;
     ensureStylesheet('/css/pages/tsc-blog-hero.css?v=blog-hero-3');
-    ensureScript('/js/tsc-blog-posts.js?v=blog-hero-3', function() {
-      ensureScript('/js/tsc-blog-chrome.js?v=blog-hero-3', function() {
+    ensureScript('/js/tsc-blog-posts.js?v=blog-hero-3', function () {
+      ensureScript('/js/tsc-blog-chrome.js?v=blog-hero-3', function () {
         if (window.TSCBlogChrome && typeof window.TSCBlogChrome.mount === 'function') {
           window.TSCBlogChrome.mount(path);
         }
@@ -162,7 +162,7 @@
       '/how-i-curate-music-with-independent-artists-lessons-from-lost-found-with-faheem-abdullah-9d2c76cb8418': 'https://medium.com/@rohitsobti1/how-i-curate-music-with-independent-artists-lessons-from-lost-found-with-faheem-abdullah-9d2c76cb8418'
     };
     var internalLike = /^(?:\/\/)(blank(?:-[\w-]+)?|about(?:-[\w-]+)?|work(?:[\w-]*)?|artists(?:\/[\w-]+)?|academy(?:\/[\w-]+)?|forms(?:\/[\w-]+)?|resources(?:\/[\w-]+)?)([/?#].*)?$/i;
-    document.querySelectorAll('a[href]').forEach(function(anchor) {
+    document.querySelectorAll('a[href]').forEach(function (anchor) {
       var raw = anchor.getAttribute('href') || '';
       var normalized = raw;
       var match = raw.match(internalLike);
@@ -216,12 +216,12 @@
     grid.setAttribute('aria-label', 'Harshaduhita additional social links');
     grid.innerHTML = [
       '<a class="tsc-hd-social-card" href="https://youtube.com/@theHarshaduhitacollective" target="_blank" rel="noreferrer noopener" aria-label="Harshaduhita Collective on YouTube">',
-        '<span>YouTube</span>',
-        SOCIAL_SVGS.youtube,
+      '<span>YouTube</span>',
+      SOCIAL_SVGS.youtube,
       '</a>',
       '<a class="tsc-hd-social-card" href="https://www.facebook.com/harshad.golesar/" target="_blank" rel="noreferrer noopener" aria-label="Harshaduhita Golesar on Facebook">',
-        '<span>Facebook</span>',
-        SOCIAL_SVGS.facebook,
+      '<span>Facebook</span>',
+      SOCIAL_SVGS.facebook,
       '</a>'
     ].join('');
     container.appendChild(grid);
@@ -233,13 +233,13 @@
       ['#comp-mqhqa70a .wixui-rich-text__text', '2025'],
       ['#comp-mqhqa70h3 .wixui-rich-text__text', '2023']
     ];
-    timelineYears.forEach(function(item) {
+    timelineYears.forEach(function (item) {
       var year = document.querySelector(item[0]);
       if (year && year.textContent !== item[1]) {
         year.textContent = item[1];
       }
     });
-    document.querySelectorAll('#comp-mqhqa7081 .wixui-rich-text__text, #comp-mqhqa70f5 .wixui-rich-text__text').forEach(function(node) {
+    document.querySelectorAll('#comp-mqhqa7081 .wixui-rich-text__text, #comp-mqhqa70f5 .wixui-rich-text__text').forEach(function (node) {
       if (/^\s*(?:2024|2026)\s*$/.test(node.textContent || '')) {
         var title = node.parentElement && node.parentElement.parentElement && node.parentElement.parentElement.textContent || '';
         if (/IPL 2025/i.test(title)) node.textContent = '2025';
@@ -252,35 +252,35 @@
       { key: 'netflix', group: '#comp-mqhqa70m2', image: '#comp-mqhqa7052' },
       { key: 'best-band', group: '#comp-mqjlruby', image: '#comp-mqjlrudj' },
       { key: 'ipl', group: '#comp-mqhqa7081', image: '#comp-mqhqa707' }
-    ].map(function(item) {
+    ].map(function (item) {
       return {
         key: item.key,
         group: document.querySelector(item.group),
         image: document.querySelector(item.image)
       };
     });
-    if (timelineItems.some(function(item) { return !item.group || !item.image; })) return;
-    timelineItems.forEach(function(item) {
+    if (timelineItems.some(function (item) { return !item.group || !item.image; })) return;
+    timelineItems.forEach(function (item) {
       item.group.style.removeProperty('translate');
       item.image.style.removeProperty('translate');
     });
-    var textSlots = timelineItems.map(function(item) {
+    var textSlots = timelineItems.map(function (item) {
       return item.group.getBoundingClientRect().top;
-    }).sort(function(a, b) { return a - b; });
-    var imageSlots = timelineItems.map(function(item) {
+    }).sort(function (a, b) { return a - b; });
+    var imageSlots = timelineItems.map(function (item) {
       return item.image.getBoundingClientRect().top;
-    }).sort(function(a, b) { return a - b; });
-    var textXs = timelineItems.map(function(item) {
+    }).sort(function (a, b) { return a - b; });
+    var textXs = timelineItems.map(function (item) {
       return item.group.getBoundingClientRect().left;
-    }).sort(function(a, b) { return a - b; });
-    var imageXs = timelineItems.map(function(item) {
+    }).sort(function (a, b) { return a - b; });
+    var imageXs = timelineItems.map(function (item) {
       return item.image.getBoundingClientRect().left;
-    }).sort(function(a, b) { return a - b; });
+    }).sort(function (a, b) { return a - b; });
     var textLeftX = (textXs[0] + textXs[1]) / 2;
     var textRightX = (textXs[textXs.length - 2] + textXs[textXs.length - 1]) / 2;
     var imageLeftX = (imageXs[0] + imageXs[1]) / 2;
     var imageRightX = (imageXs[imageXs.length - 2] + imageXs[imageXs.length - 1]) / 2;
-    timelineItems.forEach(function(item, index) {
+    timelineItems.forEach(function (item, index) {
       var groupRect = item.group.getBoundingClientRect();
       var imageRect = item.image.getBoundingClientRect();
       var textTargetX = index % 2 === 0 ? textLeftX : textRightX;
@@ -299,10 +299,10 @@
   function mountWorkImpactLinks(path) {
     if (path !== '/work') return;
     var reports = [
-      { label: 'Mai Bhi Artist', href: '/mba-impact' },
+      { label: 'Main Bhi Artist', href: '/mba-impact' },
       { label: 'Havells mYOUsic', href: '/havells-myousic' },
       { label: 'Insta Music League', href: '/insta-music-league' },
-      { label: 'Young Gunns', href: '/young-gunns' }
+      { label: 'The Young Gunns', href: '/young-gunns' }
     ];
     var textNodes = Array.prototype.slice.call(document.querySelectorAll('.wixui-rich-text, [data-testid="richTextElement"], h1, h2, h3, p'));
 
@@ -312,9 +312,9 @@
     }
 
     function findTitle(label) {
-      return textNodes.filter(function(node) {
+      return textNodes.filter(function (node) {
         return (node.textContent || '').indexOf(label) !== -1 && visibleRect(node);
-      }).sort(function(a, b) {
+      }).sort(function (a, b) {
         var ar = visibleRect(a);
         var br = visibleRect(b);
         return (ar.width * ar.height) - (br.width * br.height);
@@ -334,14 +334,14 @@
         }
         node = node.parentElement;
       }
-      candidates.sort(function(a, b) {
+      candidates.sort(function (a, b) {
         if (a.hasButton !== b.hasButton) return a.hasButton ? -1 : 1;
         return a.area - b.area;
       });
       return candidates[0] && candidates[0].node;
     }
 
-    reports.forEach(function(report) {
+    reports.forEach(function (report) {
       var title = findTitle(report.label);
       var card = title && findCard(title, report.label);
       if (!card) return;
@@ -358,20 +358,20 @@
         anchor.textContent = 'Open ' + report.label + ' impact report';
         card.appendChild(anchor);
       }
-      Array.prototype.forEach.call(card.querySelectorAll('a[href]'), function(anchor) {
+      Array.prototype.forEach.call(card.querySelectorAll('a[href]'), function (anchor) {
         anchor.setAttribute('href', report.href);
         anchor.setAttribute('target', '_self');
         anchor.removeAttribute('rel');
       });
       if (card.getAttribute('data-tsc-work-report-wired') === 'true') return;
       card.setAttribute('data-tsc-work-report-wired', 'true');
-      card.addEventListener('click', function(event) {
+      card.addEventListener('click', function (event) {
         if (event.defaultPrevented) return;
         event.preventDefault();
         event.stopPropagation();
         window.location.assign(report.href);
       }, true);
-      card.addEventListener('keydown', function(event) {
+      card.addEventListener('keydown', function (event) {
         if (event.key !== 'Enter' && event.key !== ' ') return;
         event.preventDefault();
         window.location.assign(report.href);
@@ -389,7 +389,7 @@
       { root: '#comp-mqmi8sui', href: '/kalki-impact', title: 'Kalki' }
     ];
 
-    cards.forEach(function(card) {
+    cards.forEach(function (card) {
       var root = document.querySelector(card.root);
       if (!root) return;
       root.classList.add('tsc-film-report-card');
@@ -397,7 +397,7 @@
       root.setAttribute('tabindex', '0');
       root.setAttribute('aria-label', 'Open ' + card.title + ' impact report');
       root.setAttribute('data-tsc-film-report-link', card.href);
-      Array.prototype.forEach.call(root.querySelectorAll('a'), function(anchor) {
+      Array.prototype.forEach.call(root.querySelectorAll('a'), function (anchor) {
         anchor.setAttribute('href', card.href);
         anchor.setAttribute('target', '_self');
         anchor.removeAttribute('rel');
@@ -412,11 +412,11 @@
       }
       if (root.getAttribute('data-tsc-film-report-wired') === 'true') return;
       root.setAttribute('data-tsc-film-report-wired', 'true');
-      root.addEventListener('click', function(event) {
+      root.addEventListener('click', function (event) {
         if (event.defaultPrevented) return;
         window.location.assign(card.href);
       });
-      root.addEventListener('keydown', function(event) {
+      root.addEventListener('keydown', function (event) {
         if (event.key !== 'Enter' && event.key !== ' ') return;
         event.preventDefault();
         window.location.assign(card.href);
@@ -430,7 +430,7 @@
       { id: 'comp-mqmkrjnm', href: '/resources', label: 'Resources' },
       { id: 'comp-mqmkth8f', href: 'mailto:' + CONTACT_EMAIL, label: 'Email Us' }
     ];
-    ctas.forEach(function(cta) {
+    ctas.forEach(function (cta) {
       var node = document.getElementById(cta.id);
       if (!node) return;
       node.classList.add('tsc-film-bottom-cta');
@@ -449,11 +449,11 @@
       existing.setAttribute('aria-label', cta.label);
       if (node.getAttribute('data-tsc-film-bottom-cta-wired') === 'true') return;
       node.setAttribute('data-tsc-film-bottom-cta-wired', 'true');
-      node.addEventListener('click', function(event) {
+      node.addEventListener('click', function (event) {
         if (event.defaultPrevented) return;
         window.location.assign(cta.href);
       });
-      node.addEventListener('keydown', function(event) {
+      node.addEventListener('keydown', function (event) {
         if (event.key !== 'Enter' && event.key !== ' ') return;
         event.preventDefault();
         window.location.assign(cta.href);
@@ -478,11 +478,11 @@
       return (node.textContent || '').trim().replace(/\s+/g, ' ') === 'Artists';
     }
     function visibleArtistsTrigger() {
-      var candidates = Array.prototype.filter.call(document.querySelectorAll('header a, header button, header .wixui-horizontal-menu__item, header .wixui-menu__item'), function(node) {
+      var candidates = Array.prototype.filter.call(document.querySelectorAll('header a, header button, header .wixui-horizontal-menu__item, header .wixui-menu__item'), function (node) {
         var rect = visibleRect(node);
         return rect && isArtistsLabel(node);
       });
-      candidates.sort(function(a, b) {
+      candidates.sort(function (a, b) {
         var ar = a.getBoundingClientRect();
         var br = b.getBoundingClientRect();
         return ar.top - br.top || br.left - ar.left;
@@ -494,7 +494,7 @@
       var triggerRect = visibleRect(trigger);
       if (!triggerRect) return;
       /* Wix .rpHatU uses left:var(--dropdown-left)!important — plain style.left loses. */
-      Array.prototype.forEach.call(document.querySelectorAll('[id$="-dropdown"][data-part="dropdown-container"]'), function(dropdown) {
+      Array.prototype.forEach.call(document.querySelectorAll('[id$="-dropdown"][data-part="dropdown-container"]'), function (dropdown) {
         var label = (dropdown.textContent || '').trim().replace(/\s+/g, ' ');
         if (label.indexOf('TSC Artists') === -1 || label.indexOf('Artist Path') === -1 || label.indexOf('Learn With TSC') === -1) return;
         var rect = visibleRect(dropdown);
@@ -526,14 +526,14 @@
       if (!rect || rect.width < 2 || rect.height < 2) return null;
       return href;
     }
-    document.addEventListener('click', function(event) {
+    document.addEventListener('click', function (event) {
       var href = dropdownTarget(event);
       if (!href) return;
       event.preventDefault();
       event.stopImmediatePropagation();
       window.location.assign(href);
     }, true);
-    document.addEventListener('keydown', function(event) {
+    document.addEventListener('keydown', function (event) {
       if (event.key !== 'Enter' && event.key !== ' ') return;
       var href = dropdownTarget(event);
       if (!href) return;
@@ -555,16 +555,16 @@
     if (window.__tscLinkNormalizationObserver || !window.MutationObserver || !document.body) return;
     window.__tscLinkNormalizationObserver = true;
     var scheduled = false;
-    var observer = new MutationObserver(function(mutations) {
-      var relevant = mutations.some(function(mutation) {
+    var observer = new MutationObserver(function (mutations) {
+      var relevant = mutations.some(function (mutation) {
         if (mutation.type === 'attributes') return mutation.attributeName === 'href';
-        return Array.prototype.some.call(mutation.addedNodes || [], function(node) {
+        return Array.prototype.some.call(mutation.addedNodes || [], function (node) {
           return node.nodeType === 1 && (node.matches && node.matches('a[href]') || node.querySelector && node.querySelector('a[href]'));
         });
       });
       if (!relevant || scheduled) return;
       scheduled = true;
-      window.setTimeout(function() {
+      window.setTimeout(function () {
         scheduled = false;
         normalizeInternalProtocolRelativeLinks();
         normalizeArtistLinks();
@@ -572,6 +572,44 @@
       }, 120);
     });
     observer.observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ['href'] });
+  }
+
+  function syncWixChoiceState() {
+    document.querySelectorAll('[data-hook="box-selection-option"]').forEach(function (option) {
+      var selected =
+        option.getAttribute('aria-checked') === 'true' ||
+        option.getAttribute('aria-selected') === 'true' ||
+        option.getAttribute('data-preview') === 'selected' ||
+        !!option.querySelector('input:checked');
+      option.classList.toggle('is-selected', selected);
+      var wrapper = option.closest && option.closest('[data-hook="box-selection-option-wrapper"]');
+      if (wrapper && wrapper.classList) wrapper.classList.toggle('is-selected', selected);
+    });
+  }
+
+  function watchWixChoiceState() {
+    if (window.__tscWixChoiceObserver || !window.MutationObserver || !document.body) return;
+    window.__tscWixChoiceObserver = true;
+    var scheduled = false;
+    var observer = new MutationObserver(function () {
+      if (scheduled) return;
+      scheduled = true;
+      window.setTimeout(function () {
+        scheduled = false;
+        syncWixChoiceState();
+      }, 20);
+    });
+    syncWixChoiceState();
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true,
+      attributes: true,
+      attributeFilter: ['aria-checked', 'aria-selected', 'data-preview', 'class']
+    });
+    document.addEventListener('change', syncWixChoiceState, true);
+    document.addEventListener('click', function () {
+      window.setTimeout(syncWixChoiceState, 0);
+    }, true);
   }
 
   /** Flat canonical path even when served as /pages/*.html or nested alias. */
@@ -619,6 +657,7 @@
   var ARTISTS_PATHS = {
     '/artists': true,
     '/harshad-duhita': true,
+    '/mohit-shankar': true,
     '/yugm': true,
     '/artist-path': true,
     '/book-an-artist': true,
@@ -753,6 +792,7 @@
       'start-making-music': 'blog-1',
       'online-music-course-worth-it': 'blog-2',
       'artist-release-playbook': 'blog-3',
+      'mohit-shankar': 'harshad-duhita',
       'impact-report': 'mba-impact'
     };
     return dataPageAlias[base] || base;
@@ -805,7 +845,7 @@
       '[id$="-pinned-layer"]:has([data-hook="menu-root"])',
       '[id$="-pinned-layer"]:has([data-hook="hamburger-overlay-root"])'
     ].join(','));
-    Array.prototype.forEach.call(nodes, function(node) {
+    Array.prototype.forEach.call(nodes, function (node) {
       node.setAttribute('data-tsc-wix-nav-hidden', 'true');
       node.style.setProperty('display', 'none', 'important');
       node.style.setProperty('pointer-events', 'none', 'important');
@@ -822,13 +862,13 @@
       normalizeInternalProtocolRelativeLinks();
       // Drop stale course-hub CSS if soft-nav left learn.css on /academy
       if (path === '/academy') {
-        var stripLearnCss = function() {
-          document.querySelectorAll('link[rel="stylesheet"][href*="/css/mobile/learn.css"]').forEach(function(link) {
+        var stripLearnCss = function () {
+          document.querySelectorAll('link[rel="stylesheet"][href*="/css/mobile/learn.css"]').forEach(function (link) {
             if (link.parentNode) link.parentNode.removeChild(link);
           });
         };
         stripLearnCss();
-        [300, 1200].forEach(function(delay) {
+        [300, 1200].forEach(function (delay) {
           window.setTimeout(stripLearnCss, delay);
         });
       }
@@ -849,8 +889,8 @@
         mountMobileFooter({ path: path });
         hideWixMobileNavChrome();
         // Re-assert after Thunderbolt hydration may re-show Wix menu.
-        [400, 1200, 2500, 5000, 8000].forEach(function(delay) {
-          window.setTimeout(function() {
+        [400, 1200, 2500, 5000, 8000].forEach(function (delay) {
+          window.setTimeout(function () {
             mountMobileHeader({ path: path });
             mountMobileFooter({ path: path });
             hideWixMobileNavChrome();
@@ -859,7 +899,7 @@
       } else {
         unmountCustomMobileChrome();
       }
-      ensureScript('/js/tsc-mobile-system.js', function() {
+      ensureScript('/js/tsc-mobile-system.js', function () {
         // CTA may have been injected after first auto-init; rebind if API present.
         // Nav takeover only binds when [data-tsc-nav-takeover] exists — skip if absent.
         if (window.TSCMobileSystem) {
@@ -871,7 +911,7 @@
       // Page *.animations.js not inlined on locked primary HTML — load mesh/content
       // replacements here so Work/Films/Home mobile shells still mount under mobile-only loader.
       if (path === '/artists') {
-        ensureScript('/js/tsc-artists-accordion.js', function() {
+        ensureScript('/js/tsc-artists-accordion.js', function () {
           if (window.TSCArtistsAccordion && window.TSCArtistsAccordion.init) {
             window.TSCArtistsAccordion.init();
           }
@@ -888,20 +928,33 @@
     try {
       document.documentElement.classList.add('tsc-mobile-ready');
       document.documentElement.classList.add('tsc-skel-revealed');
-    } catch (e) {}
+    } catch (e) { }
   }
 
   function unmountCustomMobileChrome() {
-    document.querySelectorAll('.tsc-mobile-site-header, .tsc-mobile-footer, .tsc-desktop-footer').forEach(function(node) {
+    document.querySelectorAll('.tsc-mobile-site-header, .tsc-mobile-footer, .tsc-desktop-footer').forEach(function (node) {
       if (node && node.parentNode) node.parentNode.removeChild(node);
     });
     document.body.classList.remove('tsc-has-mobile-footer', 'tsc-has-desktop-footer', 'tsc-has-mobile-chrome');
   }
 
   function optionMarkup(options, selected) {
-    return ['<option value="">Select</option>'].concat((options || []).map(function(option) {
+    return ['<option value="">Select</option>'].concat((options || []).map(function (option) {
       return '<option value="' + escapeHtml(option) + '"' + (option === selected ? ' selected' : '') + '>' + escapeHtml(option) + '</option>';
     })).join('');
+  }
+
+  function countryCodeFromValue(value) {
+    var match = String(value || '').match(/^\+\d+/);
+    return match ? match[0] : '';
+  }
+
+  function phoneWithCountryCode(countryValue, phoneValue) {
+    var code = countryCodeFromValue(countryValue);
+    var phone = String(phoneValue || '').trim();
+    if (!code || !phone) return phone;
+    if (phone.indexOf('+') === 0) return phone;
+    return code + ' ' + phone;
   }
 
   function labelMarkup(field) {
@@ -934,12 +987,12 @@
     }
 
     if (field.type === 'phoneCountry') {
-      return '<div class="' + cls + '"><label for="' + id + '-phone">' + label + '</label><div class="tsc-phone-row"><select id="' + id + '-country" name="country-code">' + optionMarkup(shared.countryCodes, shared.defaultCountryCode || '+91 India') + '</select><input id="' + id + '-phone" name="' + name + '" type="tel"' + required + ariaRequired + '></div></div>';
+      return '<div class="' + cls + '"><label for="' + id + '-phone">' + label + '</label><div class="tsc-phone-row"><select id="' + id + '-country" name="country-code" aria-label="Country code">' + optionMarkup(shared.countryCodes, shared.defaultCountryCode || '+91 India') + '</select><input id="' + id + '-phone" name="' + name + '" type="tel"' + required + ariaRequired + '></div></div>';
     }
 
     if (field.type === 'checkboxes' || field.type === 'radios') {
       var inputType = field.type === 'checkboxes' ? 'checkbox' : 'radio';
-      var choices = (field.options || []).map(function(option, index) {
+      var choices = (field.options || []).map(function (option, index) {
         var choiceId = id + '-' + index;
         var choiceName = name + (inputType === 'checkbox' ? '[]' : '');
         return '<label class="tsc-choice" for="' + choiceId + '"><input id="' + choiceId + '" type="' + inputType + '" name="' + choiceName + '" value="' + escapeHtml(option) + '"' + (field.required && index === 0 ? required + ariaRequired : '') + '><span>' + escapeHtml(option) + '</span></label>';
@@ -951,7 +1004,7 @@
   }
 
   function formMarkup(def, name, shared) {
-    return '<form class="tsc-local-form" data-tsc-form="' + name + '"><h2>' + escapeHtml(def.title) + '</h2><p class="tsc-required-note"><span class="tsc-required-mark" aria-hidden="true">*</span> Required</p><div class="tsc-form-grid">' + (def.fields || []).map(function(field) {
+    return '<form class="tsc-local-form" data-tsc-form="' + name + '"><h2>' + escapeHtml(def.title) + '</h2><p class="tsc-required-note"><span class="tsc-required-mark" aria-hidden="true">*</span> Required</p><div class="tsc-form-grid">' + (def.fields || []).map(function (field) {
       return fieldMarkup(field, name, shared || {});
     }).join('') + '<div class="tsc-field tsc-field-full"><button class="tsc-submit" type="submit">Submit</button><p class="tsc-form-note" role="status" hidden></p></div></div></form>';
   }
@@ -971,7 +1024,7 @@
   function readFormValues(form) {
     var values = {};
     var data = new FormData(form);
-    data.forEach(function(value, key) {
+    data.forEach(function (value, key) {
       var cleanKey = key.replace(/\[\]$/, '');
       if (values[cleanKey] !== undefined) {
         if (!Array.isArray(values[cleanKey])) values[cleanKey] = [values[cleanKey]];
@@ -983,13 +1036,35 @@
     return values;
   }
 
+  function syncChoiceState(form) {
+    if (!form || !form.querySelectorAll) return;
+    form.querySelectorAll('.tsc-choice').forEach(function (choice) {
+      var input = choice.querySelector('input');
+      choice.classList.toggle('is-selected', !!(input && input.checked));
+    });
+  }
+
+  function bindChoiceState(form) {
+    if (!form || form.dataset.choiceStateBound) return;
+    form.dataset.choiceStateBound = 'true';
+    syncChoiceState(form);
+    form.addEventListener('change', function (event) {
+      if (event.target && event.target.matches && event.target.matches('.tsc-choice input')) {
+        syncChoiceState(form);
+      }
+    });
+    form.addEventListener('reset', function () {
+      window.setTimeout(function () { syncChoiceState(form); }, 0);
+    });
+  }
+
   function payloadForForm(name, values) {
     if (name === 'bookCall') {
       return {
         course: values['which-course-are-you-interested-in'],
         name: values['what-s-your-name'],
-        phone: values['phone-whatsapp-number'],
-        countryCode: values['country-code'],
+        phone: phoneWithCountryCode(values['country-code'], values['phone-whatsapp-number']),
+        countryCode: countryCodeFromValue(values['country-code']) || values['country-code'],
         email: values['email-address'],
         date: values['pick-a-date'],
         time: values['pick-a-time'],
@@ -1129,7 +1204,7 @@
       var control = wrapper.querySelector('[data-testid="linkElement"], a, button') || wrapper;
       if (control.tagName && control.tagName.toLowerCase() !== 'a') {
         var anchor = document.createElement('a');
-        Array.prototype.slice.call(control.attributes || []).forEach(function(attribute) {
+        Array.prototype.slice.call(control.attributes || []).forEach(function (attribute) {
           if (attribute.name === 'role' || attribute.name === 'tabindex') return;
           anchor.setAttribute(attribute.name, attribute.value);
         });
@@ -1172,8 +1247,8 @@
       data && data.currentlyWorkingOn
     ].join(' ').toLowerCase();
     var scores = { composition: 0, classical: 0, production: 0 };
-    ARTIST_PATH_COURSES.forEach(function(course) {
-      course.keywords.forEach(function(kw) {
+    ARTIST_PATH_COURSES.forEach(function (course) {
+      course.keywords.forEach(function (kw) {
         if (text.indexOf(kw) !== -1) scores[course.id] += 1;
       });
     });
@@ -1194,36 +1269,36 @@
     panel.setAttribute('role', 'status');
     panel.innerHTML =
       '<div class="tsc-artist-path-thanks">' +
-        '<p class="tsc-artist-path-check" aria-hidden="true">✓</p>' +
-        '<h2>Thank You!</h2>' +
-        '<p>Your artist journey has been recorded. We&apos;ve recommended a course that matches your path.</p>' +
-        '<a class="tsc-artist-path-whatsapp" href="' + ARTIST_PATH_WHATSAPP + '" target="_blank" rel="noreferrer noopener">Join the Community</a>' +
+      '<p class="tsc-artist-path-check" aria-hidden="true">✓</p>' +
+      '<h2>Thank You!</h2>' +
+      '<p>Your artist journey has been recorded. We&apos;ve recommended a course that matches your path.</p>' +
+      '<a class="tsc-artist-path-whatsapp" href="' + ARTIST_PATH_WHATSAPP + '" target="_blank" rel="noreferrer noopener">Join the Community</a>' +
       '</div>' +
       '<div class="tsc-artist-path-recommend">' +
-        '<p class="tsc-artist-path-kicker">Recommended for your growth</p>' +
-        '<article class="tsc-artist-path-card">' +
-          '<div class="tsc-artist-path-banner">' +
-            '<img src="' + escapeHtml(course.banner) + '" alt="' + escapeHtml(course.title) + '">' +
-            '<span class="tsc-artist-path-badge">Personalized Recommendation</span>' +
-          '</div>' +
-          '<div class="tsc-artist-path-card-body">' +
-            '<h3>' + escapeHtml(course.title) + '</h3>' +
-            '<p class="tsc-artist-path-mentor">Mentor: ' + escapeHtml(course.mentor) + '</p>' +
-            '<a class="tsc-artist-path-explore" href="' + escapeHtml(course.url) + '">Explore Course Details</a>' +
-            '<a class="tsc-artist-path-book" href="/book-a-call">Book a Call</a>' +
-          '</div>' +
-        '</article>' +
+      '<p class="tsc-artist-path-kicker">Recommended for your growth</p>' +
+      '<article class="tsc-artist-path-card">' +
+      '<div class="tsc-artist-path-banner">' +
+      '<img src="' + escapeHtml(course.banner) + '" alt="' + escapeHtml(course.title) + '">' +
+      '<span class="tsc-artist-path-badge">Personalized Recommendation</span>' +
+      '</div>' +
+      '<div class="tsc-artist-path-card-body">' +
+      '<h3>' + escapeHtml(course.title) + '</h3>' +
+      '<p class="tsc-artist-path-mentor">Mentor: ' + escapeHtml(course.mentor) + '</p>' +
+      '<a class="tsc-artist-path-explore" href="' + escapeHtml(course.url) + '">Explore Course Details</a>' +
+      '<a class="tsc-artist-path-book" href="/book-a-call">Book a Call</a>' +
+      '</div>' +
+      '</article>' +
       '</div>';
     form.replaceWith(panel);
     try {
       panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    } catch (e) {}
+    } catch (e) { }
   }
 
   function bindLocalSubmit(form) {
     if (!form || form.dataset.bound) return;
     form.dataset.bound = 'true';
-    form.addEventListener('submit', async function(event) {
+    form.addEventListener('submit', async function (event) {
       event.preventDefault();
       var name = form.dataset.tscForm || '';
       var endpoint = formEndpoint(name);
@@ -1245,7 +1320,7 @@
           headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
           body: JSON.stringify(payload)
         });
-        var body = await response.json().catch(function() { return {}; });
+        var body = await response.json().catch(function () { return {}; });
         if (!response.ok || body.success !== true) throw new Error(body.error || body.message || 'Submission failed');
         if (name === 'artistPath') {
           renderArtistPathSuccess(form, payload);
@@ -1267,7 +1342,7 @@
   function bindNewsletterSubmit(form, shell) {
     if (!form || form.dataset.bound) return;
     form.dataset.bound = 'true';
-    form.addEventListener('submit', async function(event) {
+    form.addEventListener('submit', async function (event) {
       event.preventDefault();
       var button = form.querySelector('[type="submit"]');
       var input = form.querySelector('input[type="email"]');
@@ -1282,7 +1357,7 @@
           headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
           body: JSON.stringify({ email: input && input.value, source: form.dataset.source || 'footer' })
         });
-        var body = await response.json().catch(function() { return {}; });
+        var body = await response.json().catch(function () { return {}; });
         if (!response.ok || body.success !== true) throw new Error(body.error || body.message || 'Subscription failed');
         setFormStatus(shell || form, body.message || 'Thanks, you are on the list.', 'success');
         form.reset();
@@ -1306,6 +1381,7 @@
     target.parentNode.insertBefore(form, target);
     target.hidden = true;
     target.style.display = 'none';
+    bindChoiceState(form);
     bindLocalSubmit(form);
   }
 
@@ -1313,7 +1389,9 @@
     if (!target || target.dataset.tscFormMounted === name) return;
     target.dataset.tscFormMounted = name;
     target.innerHTML = formMarkup(def, name, shared);
-    bindLocalSubmit(target.querySelector('form'));
+    var form = target.querySelector('form');
+    bindChoiceState(form);
+    bindLocalSubmit(form);
   }
 
   function setText(selector, value) {
@@ -1349,7 +1427,7 @@
     if (!node) return;
     node.style.display = 'none';
     node.setAttribute('aria-hidden', 'true');
-    node.querySelectorAll('a, button, [role="button"], [tabindex]').forEach(function(child) {
+    node.querySelectorAll('a, button, [role="button"], [tabindex]').forEach(function (child) {
       child.setAttribute('tabindex', '-1');
       child.setAttribute('aria-hidden', 'true');
       if (child.tagName === 'A') child.removeAttribute('href');
@@ -1357,7 +1435,7 @@
   }
 
   function normalizeNewsletter() {
-    document.querySelectorAll('input[type="email"][name="email"]').forEach(function(input) {
+    document.querySelectorAll('input[type="email"][name="email"]').forEach(function (input) {
       var wrapper = input.closest('.wixui-text-input') || input.closest('div');
       var label = wrapper && wrapper.querySelector('label');
       if (!label || !/subscribe|newsletter|stay in the collective/i.test(label.textContent || '')) return;
@@ -1417,11 +1495,11 @@
 
   function navLinksFor(academy) {
     if (academy) {
-      return ACADEMY_NAV_ITEMS.map(function(item) {
+      return ACADEMY_NAV_ITEMS.map(function (item) {
         return [item.href, item.label, item.key, item.className || ''];
       });
     }
-    return MAIN_NAV_ITEMS.map(function(item) {
+    return MAIN_NAV_ITEMS.map(function (item) {
       return [item.href, item.label, item.key, item.className || ''];
     });
   }
@@ -1431,7 +1509,7 @@
     if (path === '/' || path === '/home') return 'home';
     if (path === '/about') return 'about';
     if (WORK_PATHS[path] || IMPACT_PATHS[path]) return 'work';
-    if (ARTISTS_PATHS[path] || path === '/harshad-duhita' || path === '/yugm') return 'artists';
+    if (ARTISTS_PATHS[path] || path === '/harshad-duhita' || path === '/mohit-shankar' || path === '/yugm') return 'artists';
     if (FILMS_PATHS[path]) return 'films';
     if (RESOURCES_PATHS[path]) return 'resources';
     if (isAcademyPath(path)) return 'academy';
@@ -1450,17 +1528,17 @@
 
   function renderMainNav(activePage) {
     activePage = activePage || mainActivePage();
-    var artistsDropdown = MAIN_ARTISTS_MENU_ITEMS.map(function(item) {
+    var artistsDropdown = MAIN_ARTISTS_MENU_ITEMS.map(function (item) {
       return '<a href="' + escapeHtml(item.href) + '">' + escapeHtml(item.label) + '</a>';
     }).join('');
     return [
       '<a ' + mainNavAttrs('/about', 'about', activePage) + '>About</a>',
       '<a ' + mainNavAttrs('/work', 'work', activePage) + '>Work</a>',
       '<details class="tsc-main-artists-menu' + (activePage === 'artists' ? ' is-active' : '') + '">',
-        '<summary' + (activePage === 'artists' ? ' aria-current="page"' : '') + '>Artists</summary>',
-        '<div class="tsc-main-artists-dropdown">',
-          artistsDropdown,
-        '</div>',
+      '<summary' + (activePage === 'artists' ? ' aria-current="page"' : '') + '>Artists</summary>',
+      '<div class="tsc-main-artists-dropdown">',
+      artistsDropdown,
+      '</div>',
       '</details>',
       '<a ' + mainNavAttrs('/films', 'films', activePage) + '>Films</a>',
       '<a ' + mainNavAttrs('/resources', 'resources', activePage) + '>Resources</a>',
@@ -1494,7 +1572,7 @@
   function renderAcademyNav(activePage, mobile) {
     activePage = activePage || academyActivePage();
     var courseActive = activePage === 'courses';
-    var courseItems = ACADEMY_COURSE_ITEMS.map(function(item) {
+    var courseItems = ACADEMY_COURSE_ITEMS.map(function (item) {
       var active = item.href === canonicalPathname();
       return '<a href="' + escapeHtml(item.href) + '"' + (active ? ' class="is-active" aria-current="page"' : '') + '>' + escapeHtml(item.label) + '</a>';
     }).join('');
@@ -1502,10 +1580,10 @@
       return [
         academyNavItemMarkup({ href: '/resources', key: 'resources', label: 'Resources' }, activePage),
         '<details class="tsc-mobile-academy-courses' + (courseActive ? ' is-active' : '') + '">',
-          '<summary' + (courseActive ? ' aria-current="page"' : '') + '>Courses</summary>',
-          '<div>',
-            courseItems,
-          '</div>',
+        '<summary' + (courseActive ? ' aria-current="page"' : '') + '>Courses</summary>',
+        '<div>',
+        courseItems,
+        '</div>',
         '</details>',
         academyNavItemMarkup({ href: '/academy#testimonials', key: 'testimonials', label: 'Testimonials' }, activePage),
         academyNavItemMarkup({ href: '/book-a-call', key: 'know-more', label: 'Know More' }, activePage),
@@ -1515,10 +1593,10 @@
     return [
       academyNavItemMarkup({ href: '/resources', key: 'resources', label: 'Resources' }, activePage),
       '<details class="tsc-academy-courses-menu' + (courseActive ? ' is-active' : '') + '">',
-        '<summary' + (courseActive ? ' aria-current="page"' : '') + '>Courses</summary>',
-        '<div class="tsc-academy-courses-dropdown">',
-          courseItems,
-        '</div>',
+      '<summary' + (courseActive ? ' aria-current="page"' : '') + '>Courses</summary>',
+      '<div class="tsc-academy-courses-dropdown">',
+      courseItems,
+      '</div>',
       '</details>',
       academyNavItemMarkup({ href: '/academy#testimonials', key: 'testimonials', label: 'Testimonials' }, activePage),
       academyNavItemMarkup({ href: '/book-a-call', key: 'know-more', label: 'Know More' }, activePage),
@@ -1564,7 +1642,7 @@
 
   function repairLockedAcademyTopNav(header) {
     if (!header) return;
-    Array.prototype.forEach.call(header.querySelectorAll('a[href]'), function(anchor) {
+    Array.prototype.forEach.call(header.querySelectorAll('a[href]'), function (anchor) {
       if (
         anchor.closest(
           '.wixui-dropdown-menu, [data-testid="submenu"], .tsc-academy-courses-dropdown, .tsc-mobile-academy-courses > div, .tsc-main-artists-dropdown'
@@ -1612,7 +1690,7 @@
     );
     if (!activePage) return;
 
-    Array.prototype.forEach.call(header.querySelectorAll('a[href]'), function(anchor) {
+    Array.prototype.forEach.call(header.querySelectorAll('a[href]'), function (anchor) {
       if (anchor.classList.contains('tsc-desktop-brand-link')) return;
       var href = anchor.getAttribute('href') || '';
       var hrefPath = href.split('#')[0];
@@ -1642,7 +1720,7 @@
       if (key && key === activePage) markNavActive(anchor);
     });
 
-    Array.prototype.forEach.call(header.querySelectorAll('summary'), function(summary) {
+    Array.prototype.forEach.call(header.querySelectorAll('summary'), function (summary) {
       var label = navLinkLabel(summary);
       if (config.academy && label === 'courses' && activePage === 'courses') {
         markNavActive(summary);
@@ -1715,12 +1793,12 @@
 
   /** Force all 3 course rows (labels + hrefs) into Wix Courses dropdowns — every academy/course page. */
   function ensureAcademyCoursesInWixMenus() {
-    document.querySelectorAll('ul.wixui-dropdown-menu, ul[role="menu"]').forEach(function(menu) {
+    document.querySelectorAll('ul.wixui-dropdown-menu, ul[role="menu"]').forEach(function (menu) {
       if (!isAcademyCoursesDropdownMenu(menu)) return;
 
       var template = menu.querySelector('li[data-item-depth], li');
       var rebuilt = document.createDocumentFragment();
-      ACADEMY_COURSE_ITEMS.forEach(function(course) {
+      ACADEMY_COURSE_ITEMS.forEach(function (course) {
         rebuilt.appendChild(ensureWixCourseDropdownItem(menu, course, template));
       });
       menu.innerHTML = '';
@@ -1769,7 +1847,7 @@
     }
     document.addEventListener(
       'click',
-      function(event) {
+      function (event) {
         var href = courseHrefFromEvent(event);
         if (!href) return;
         event.preventDefault();
@@ -1780,7 +1858,7 @@
     );
     document.addEventListener(
       'keydown',
-      function(event) {
+      function (event) {
         if (event.key !== 'Enter' && event.key !== ' ') return;
         var href = courseHrefFromEvent(event);
         if (!href) return;
@@ -1855,7 +1933,7 @@
       if (drop) {
         drop.removeAttribute('data-tsc-courses-pinned');
         ['position', 'top', 'left', 'right', 'transform', 'display', 'visibility', 'opacity', 'pointer-events', 'z-index'].forEach(
-          function(prop) {
+          function (prop) {
             drop.style.removeProperty(prop);
           }
         );
@@ -1879,7 +1957,7 @@
 
     document.addEventListener(
       'pointerover',
-      function(event) {
+      function (event) {
         var li = coursesItemLi(event.target);
         if (li) pinOpen(li);
       },
@@ -1888,7 +1966,7 @@
 
     document.addEventListener(
       'pointermove',
-      function(event) {
+      function (event) {
         if (!openLi) return;
         if (inOpenZone(event.clientX, event.clientY)) {
           window.clearTimeout(closeTimer);
@@ -1896,7 +1974,7 @@
           return;
         }
         window.clearTimeout(closeTimer);
-        closeTimer = window.setTimeout(function() {
+        closeTimer = window.setTimeout(function () {
           if (openLi) releaseOpen(openLi);
         }, 160);
       },
@@ -1905,26 +1983,26 @@
 
     document.addEventListener(
       'pointerout',
-      function(event) {
+      function (event) {
         if (!openLi) return;
         var related = event.relatedTarget;
         if (related && openLi.contains(related)) return;
         if (related && related.closest && related.closest('[data-tsc-courses-pinned="1"]')) return;
         window.clearTimeout(closeTimer);
-        closeTimer = window.setTimeout(function() {
+        closeTimer = window.setTimeout(function () {
           if (openLi && !inOpenZone(event.clientX, event.clientY)) releaseOpen(openLi);
         }, 160);
       },
       true
     );
 
-    window.addEventListener('scroll', function() {
+    window.addEventListener('scroll', function () {
       if (openLi) pinOpen(openLi);
     }, true);
   }
 
   function markLegacyHeaders() {
-    document.querySelectorAll('header, #SITE_HEADER, [data-testid="siteHeader"]').forEach(function(header) {
+    document.querySelectorAll('header, #SITE_HEADER, [data-testid="siteHeader"]').forEach(function (header) {
       if (header.classList && header.classList.contains('tsc-desktop-site-header')) return;
       if (header.classList && header.classList.contains('tsc-mobile-site-header')) return;
       header.classList.add('tsc-legacy-header');
@@ -1935,7 +2013,7 @@
   function activateLockedDesktopHeader() {
     var headers = Array.prototype.filter.call(
       document.querySelectorAll('header, #SITE_HEADER, [data-testid="siteHeader"]'),
-      function(header) {
+      function (header) {
         return !header.classList.contains('tsc-desktop-site-header') &&
           !header.classList.contains('tsc-mobile-site-header');
       }
@@ -1943,18 +2021,18 @@
     if (!headers.length) return null;
 
     /* Stick to already-locked header — never flip to a competing Wix master after hydrate. */
-    var expected = headers.find(function(header) {
+    var expected = headers.find(function (header) {
       return header.getAttribute('data-tsc-locked-desktop-header') === 'true';
     });
     if (!expected) {
-      expected = headers.find(function(header) {
+      expected = headers.find(function (header) {
         var style = window.getComputedStyle(header);
         var rect = header.getBoundingClientRect();
         return style.display !== 'none' && rect.width > 0 && rect.height > 0;
       }) || headers[0];
     }
 
-    headers.forEach(function(header) {
+    headers.forEach(function (header) {
       var active = header === expected;
       header.classList.toggle('tsc-locked-desktop-header-hidden', !active);
       header.classList.toggle('tsc-legacy-header', !active);
@@ -1974,7 +2052,7 @@
     /* Clone-faithful: href/aria only — never replace Wix SVG/img or force box size/colour. */
     var brandName = config.brand.name || (config.academy ? 'TSC Academy' : 'The Shakti Collective');
     var homeHref = config.academy ? '/academy' : '/';
-    var candidates = Array.prototype.filter.call(header.querySelectorAll('a'), function(link) {
+    var candidates = Array.prototype.filter.call(header.querySelectorAll('a'), function (link) {
       var rect = link.getBoundingClientRect();
       if (rect.width > 0 && rect.height > 0 && rect.left > 430) return false;
       return !!link.querySelector('img, svg, wix-vector-image, .wixui-vector-image') ||
@@ -1996,6 +2074,190 @@
     host.dataset.tscShellFixed = '1';
   }
 
+  function repairArtistsRosterCards(path) {
+    if (path !== '/artists') return;
+
+    var mohitHref = '/mohit-shankar';
+    var mohitImage = '/assets/mirror/static.wixstatic.com/media/19f989_e1540fdd865d4f11a8e9ce58f7481893~mv2.png/v1/crop/x_0,y_110,w_912,h_746/fill/w_517,h_492,fp_0.50_0.50,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/12_edited_edited.png';
+    var mohitBio = 'A singer, composer and live performer building heartfelt contemporary Indian music through intimate songwriting and stage-ready storytelling.';
+    var existingMohit = document.getElementById('comp-mqutenq5');
+
+    if (!existingMohit) {
+      var yugm = document.getElementById('comp-mqtq8rsp');
+      var carousel = document.getElementById('comp-mqutig8q');
+      if (yugm && carousel) {
+        existingMohit = yugm.cloneNode(true);
+        [
+          ['mqtq8rsp', 'mqutenq5'],
+          ['mqtq8rsv', 'mqutenqa'],
+          ['mqtq8rsw7', 'mqutenqc3'],
+          ['mqtq8rt05', 'mqutenqg1'],
+          ['mqtq8rt23', 'mqutenqi'],
+          ['mqtq8rt44', 'mqutenqk'],
+          ['mqtq8rt66', 'mqutenqm']
+        ].forEach(function (pair) {
+          var from = pair[0];
+          var to = pair[1];
+          Array.prototype.forEach.call(existingMohit.querySelectorAll('[id*="' + from + '"], [class*="' + from + '"]'), function (node) {
+            if (node.id) node.id = node.id.replace(new RegExp(from, 'g'), to);
+            if (node.className && typeof node.className === 'string') {
+              node.className = node.className.replace(new RegExp(from, 'g'), to);
+            }
+          });
+          if (existingMohit.id) existingMohit.id = existingMohit.id.replace(new RegExp(from, 'g'), to);
+          if (existingMohit.className && typeof existingMohit.className === 'string') {
+            existingMohit.className = existingMohit.className.replace(new RegExp(from, 'g'), to);
+          }
+        });
+        carousel.appendChild(existingMohit);
+      }
+    }
+
+    if (!existingMohit) return;
+    existingMohit.removeAttribute('aria-hidden');
+    existingMohit.style.removeProperty('display');
+    existingMohit.style.removeProperty('height');
+    existingMohit.style.removeProperty('max-height');
+    existingMohit.style.removeProperty('visibility');
+    existingMohit.style.removeProperty('opacity');
+    existingMohit.style.setProperty('opacity', '1', 'important');
+
+    var yugmCard = document.getElementById('comp-mqtq8rsp');
+    if (yugmCard) {
+      yugmCard.removeAttribute('aria-hidden');
+      yugmCard.style.setProperty('opacity', '1', 'important');
+      yugmCard.style.removeProperty('visibility');
+    }
+
+    var name = existingMohit.querySelector('#comp-mqutenqi, .comp-mqutenqi');
+    if (name) name.textContent = 'Mohit Shankar';
+    var bio = existingMohit.querySelector('#comp-mqutenqk, .comp-mqutenqk');
+    if (bio) bio.textContent = mohitBio;
+    var img = existingMohit.querySelector('img');
+    if (img) {
+      img.src = mohitImage;
+      img.alt = 'Mohit Shankar';
+      img.removeAttribute('srcset');
+      img.loading = 'lazy';
+      img.style.objectFit = 'cover';
+      img.style.objectPosition = '50% 50%';
+    }
+    Array.prototype.forEach.call(existingMohit.querySelectorAll('a[href], [data-testid="linkElement"]'), function (link) {
+      link.setAttribute('href', mohitHref);
+      link.setAttribute('target', '_self');
+      link.removeAttribute('rel');
+      if ((link.textContent || '').replace(/\s+/g, ' ').trim() === 'Learn More') {
+        link.setAttribute('aria-label', 'Learn More');
+      }
+    });
+  }
+
+  function setArtistButtonLink(control, href) {
+    if (!control || !href) return;
+    if (control.tagName && control.tagName.toLowerCase() === 'a') {
+      control.setAttribute('href', href);
+      control.setAttribute('target', '_self');
+      return;
+    }
+    var anchor = control.querySelector && control.querySelector('a[href], [data-testid="linkElement"]');
+    if (anchor) {
+      anchor.setAttribute('href', href);
+      anchor.setAttribute('target', '_self');
+    }
+  }
+
+  function replaceExactText(oldValue, newValue) {
+    if (!oldValue || !newValue) return;
+    Array.prototype.forEach.call(document.querySelectorAll('[data-testid="richTextElement"], h1, h2, h3, p, span, a, button'), function (node) {
+      var text = (node.textContent || '').replace(/\s+/g, ' ').trim();
+      if (text !== oldValue) return;
+      node.textContent = newValue;
+      if (node.setAttribute && node.getAttribute('aria-label') === oldValue) {
+        node.setAttribute('aria-label', newValue);
+      }
+    });
+  }
+
+  function repairArtistProfilePage(path) {
+    var profiles = {
+      '/mohit-shankar': {
+        title: 'Mohit Shankar',
+        description: 'A singer, composer and live performer building heartfelt contemporary Indian music through intimate songwriting and stage-ready storytelling.',
+        badge: 'TSC Artist',
+        bookHref: '/query?artist=Mohit%20Shankar',
+        image: '/assets/mirror/static.wixstatic.com/media/19f989_e1540fdd865d4f11a8e9ce58f7481893~mv2.png/v1/crop/x_0,y_110,w_912,h_746/fill/w_880,h_701,fp_0.50_0.50,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/12_edited_edited.png',
+        replacements: [
+          ['Harshaduhita Collective', 'Mohit Shankar'],
+          ['A live music duo blending deep-rooted Indian classical music with divine emotion and diverse musical expression.', 'A singer, composer and live performer building heartfelt contemporary Indian music through intimate songwriting and stage-ready storytelling.'],
+          ['Winner - PADMA SHRI MAHENDRA KAPOOR AWARD 2026', 'TSC Artist'],
+          ['Winner - PADMA SHRI MAHENDRA KAPOOR AWARD 2026\u00a0', 'TSC Artist'],
+          ['Who Are We?', 'Who Is Mohit?'],
+          ['Deep Rooted \u2022 Divine \u2022 Diverse', 'Singer \u2022 Composer \u2022 Performer'],
+          ['Rooted in the traditions of the Rampur and Jaipur Gharanas, Harshad and Duhita bring together bhajans, sufi, folk, ghazals, and contemporary live arrangements into one emotionally powerful performance experience.', 'Mohit brings intimate songwriting, contemporary Indian melodies and a live performance instinct into music shaped for audiences, stages and digital-first discovery.'],
+          ['Duhita Golesar', 'Original Music'],
+          ['Raised in a family steeped in classical recordings, she is a University of Mumbai Gold Medalist, trained in the Jaipur Gharana, and a successful playback singer for films like Navra Maza Navsacha 2.', 'His work moves between composed releases, live performance and artist-led storytelling, keeping melody and emotional clarity at the centre.'],
+          ['Harshad Golesar', 'Live Performance'],
+          ['Hailing from a 12th-generation temple lineage, he is a Sangeet Visharad trained in the Rampur Gharana and a MiMa award-winning composer.', 'On stage, Mohit builds a warm, direct connection with listeners through voice, arrangement and presence.'],
+          ['Together, they create a sound that feels deeply rooted yet contemporary.', 'Mohit creates music that feels personal, present and built to travel.']
+        ]
+      },
+      '/yugm': {
+        title: 'YUGM',
+        description: 'A bridge between tradition and transformation.',
+        badge: 'Netflix Spotlight - Mismatched Season 2 & 3',
+        bookHref: '/query?artist=YUGM'
+      },
+      '/harshad-duhita': {
+        title: 'Harshaduhita Collective',
+        description: 'A live music duo blending deep-rooted Indian classical music with divine emotion and diverse musical expression.',
+        badge: 'Winner - PADMA SHRI MAHENDRA KAPOOR AWARD 2026',
+        bookHref: '/query?artist=Harshad%20and%20Duhita%20Golesar'
+      }
+    };
+    var config = profiles[path];
+    if (!config) return;
+    if (config.replacements) {
+      config.replacements.forEach(function (pair) {
+        replaceExactText(pair[0], pair[1]);
+      });
+    }
+
+    var main = document.querySelector('main');
+    if (!main) return;
+    var hero = Array.prototype.find.call(main.querySelectorAll('section'), function (section) {
+      var text = (section.textContent || '').replace(/\s+/g, ' ');
+      return /Book for Events/i.test(text) && /Explore Music/i.test(text);
+    });
+    if (!hero) return;
+    var title = hero.querySelector('h1, h2');
+    if (title) title.textContent = config.title;
+    var richText = Array.prototype.slice.call(hero.querySelectorAll('[data-testid="richTextElement"]'));
+    var description = richText.find(function (node) {
+      var text = (node.textContent || '').replace(/\s+/g, ' ').trim();
+      return text && text !== config.title && !/book for events|explore music/i.test(text);
+    });
+    if (description) description.textContent = config.description;
+    var badge = richText.find(function (node) {
+      return /winner|award|spotlight|tsc artist/i.test(node.textContent || '');
+    });
+    if (badge) badge.textContent = config.badge;
+    if (config.image) {
+      Array.prototype.slice.call(hero.querySelectorAll('img')).slice(0, 2).forEach(function (img) {
+        img.src = config.image;
+        img.alt = config.title;
+        img.removeAttribute('srcset');
+        img.loading = 'eager';
+        img.style.objectFit = 'cover';
+        img.style.objectPosition = '50% 50%';
+      });
+    }
+    Array.prototype.forEach.call(hero.querySelectorAll('[data-testid="linkElement"], a, [role="button"]'), function (button) {
+      var text = (button.textContent || button.getAttribute('aria-label') || '').replace(/\s+/g, ' ').trim();
+      if (/book for events/i.test(text)) setArtistButtonLink(button, config.bookHref);
+      if (/explore music/i.test(text)) setArtistButtonLink(button, path);
+    });
+  }
+
   function mountDesktopHeader(opts) {
     var desktop = !window.matchMedia || window.matchMedia('(min-width: 1025px)').matches;
     var existing = document.querySelector('.tsc-desktop-site-header');
@@ -2008,9 +2270,7 @@
     var activePage = opts && opts.activePage || academyActivePage(config.path);
     var forceCustomHeader = !!(opts && opts.forceCustomHeader) ||
       !!document.querySelector('.report-page') ||
-      !!IMPACT_PATHS[config.path] ||
-      config.path === '/harshad-duhita' ||
-      config.path === '/yugm';
+      !!IMPACT_PATHS[config.path];
     /* Prefer any native Wix header in DOM (even pre-layout) over injecting a second custom bar. */
     var nativeHeaders = document.querySelectorAll('header:not(.tsc-desktop-site-header):not(.tsc-mobile-site-header), #SITE_HEADER, [data-testid="siteHeader"]');
     var locked = forceCustomHeader ? null : (nativeHeaders.length ? activateLockedDesktopHeader() : null);
@@ -2033,7 +2293,7 @@
     markLegacyHeaders();
 
     var brandName = config.brand.name || (config.academy ? 'TSC Academy' : 'The Shakti Collective');
-    var navMarkup = config.academy ? renderAcademyNav(activePage, false) : navLinksFor(false).map(function(item) {
+    var navMarkup = config.academy ? renderAcademyNav(activePage, false) : navLinksFor(false).map(function (item) {
       return '<a href="' + escapeHtml(item[0]) + '">' + escapeHtml(item[1]) + '</a>';
     }).join('');
     if (!config.academy) navMarkup = renderMainNav(mainActivePage(config.path));
@@ -2045,10 +2305,10 @@
     header.setAttribute('data-tsc-theme', config.academy ? 'academy' : 'main');
     header.innerHTML = [
       '<a class="tsc-desktop-site-brand" href="' + (config.academy ? '/academy' : '/') + '" aria-label="' + escapeHtml(brandName) + '">',
-        '<img class="tsc-desktop-brand-logo tsc-desktop-brand-logo-unified" src="' + logoSrcForConfig(config) + '" alt="' + escapeHtml(brandName) + '" decoding="async">',
+      '<img class="tsc-desktop-brand-logo tsc-desktop-brand-logo-unified" src="' + logoSrcForConfig(config) + '" alt="' + escapeHtml(brandName) + '" decoding="async">',
       '</a>',
       '<nav class="tsc-desktop-site-nav" aria-label="' + (config.academy ? 'TSC Academy' : 'The Shakti Collective') + ' navigation">',
-        navMarkup,
+      navMarkup,
       '</nav>'
     ].join('');
     document.body.insertBefore(header, document.body.firstChild);
@@ -2138,7 +2398,7 @@
 
     var brandName = config.brand.name || (config.academy ? 'TSC Academy' : 'The Shakti Collective');
     var mobileActivePage = config.academy ? activePage : mainActivePage(config.path);
-    var mobileNavMarkup = config.academy ? renderAcademyNav(activePage, true) : navLinksFor(false).map(function(item) {
+    var mobileNavMarkup = config.academy ? renderAcademyNav(activePage, true) : navLinksFor(false).map(function (item) {
       var key = mainActivePage(item[0]);
       var active = key && key === mobileActivePage;
       return '<a href="' + escapeHtml(item[0]) + '"' + (active ? ' class="is-active" aria-current="page"' : '') + '>' + escapeHtml(item[1]) + '</a>';
@@ -2149,13 +2409,13 @@
     if (config.academy) header.dataset.tscActivePage = activePage;
     header.innerHTML = [
       '<a class="tsc-mobile-brand" href="' + (config.academy ? '/academy' : '/') + '" aria-label="' + escapeHtml(brandName) + '">',
-        mobileHeaderLogoMarkup(config),
+      mobileHeaderLogoMarkup(config),
       '</a>',
       '<details class="tsc-mobile-menu">',
-        '<summary aria-label="Open navigation"><span></span><span></span><span></span></summary>',
-        '<nav aria-label="' + (config.academy ? 'TSC Academy mobile' : 'TSC mobile') + '">',
-          mobileNavMarkup,
-        '</nav>',
+      '<summary aria-label="Open navigation"><span></span><span></span><span></span></summary>',
+      '<nav aria-label="' + (config.academy ? 'TSC Academy mobile' : 'TSC mobile') + '">',
+      mobileNavMarkup,
+      '</nav>',
       '</details>',
       '<a class="tsc-mobile-header-cta" href="' + (config.academy ? '/' : '/academy') + '">' + (config.academy ? 'Main Website' : 'TSC Academy') + '</a>'
     ].join('');
@@ -2164,12 +2424,12 @@
 
     var menu = header.querySelector('.tsc-mobile-menu');
     if (menu) {
-      menu.querySelectorAll('nav a').forEach(function(link) {
-        link.addEventListener('click', function() {
+      menu.querySelectorAll('nav a').forEach(function (link) {
+        link.addEventListener('click', function () {
           menu.removeAttribute('open');
         });
       });
-      document.addEventListener('click', function(event) {
+      document.addEventListener('click', function (event) {
         if (!menu.hasAttribute('open')) return;
         if (!menu.contains(event.target)) menu.removeAttribute('open');
       });
@@ -2204,7 +2464,7 @@
   }
 
   function findLegacyFooterSections() {
-    return Array.prototype.slice.call(document.querySelectorAll('.wixui-footer, section, [data-testid="section-container"]')).filter(function(section) {
+    return Array.prototype.slice.call(document.querySelectorAll('.wixui-footer, section, [data-testid="section-container"]')).filter(function (section) {
       if (section.closest('.tsc-desktop-footer, .tsc-mobile-footer')) return false;
       var text = (section.textContent || '').replace(/\s+/g, ' ').trim();
       var footerText = /©\s*2026\s*The Shakti Collective|All rights reserved/i.test(text);
@@ -2215,7 +2475,7 @@
   }
 
   function markLegacyFooters() {
-    findLegacyFooterSections().forEach(function(section) {
+    findLegacyFooterSections().forEach(function (section) {
       section.classList.add('tsc-legacy-footer');
       var parentFooter = section.closest('footer');
       if (parentFooter && !parentFooter.querySelector('.tsc-desktop-footer, .tsc-mobile-footer')) {
@@ -2246,7 +2506,7 @@
   }
 
   function buildFooterLinks(group) {
-    return '<div class="tsc-desktop-footer-group"><h3>' + escapeHtml(group[0]) + '</h3><div class="tsc-desktop-footer-links">' + group[1].map(function(link) {
+    return '<div class="tsc-desktop-footer-group"><h3>' + escapeHtml(group[0]) + '</h3><div class="tsc-desktop-footer-links">' + group[1].map(function (link) {
       var external = link[2] ? ' target="_blank" rel="noopener noreferrer"' : '';
       return '<a href="' + escapeHtml(link[0]) + '"' + external + '>' + escapeHtml(link[1]) + '</a>';
     }).join('') + '</div></div>';
@@ -2256,13 +2516,13 @@
     if (!group) return '';
     return [
       '<section class="tsc-desktop-footer-startbox" aria-labelledby="tsc-desktop-footer-start-title">',
-        '<h2 id="tsc-desktop-footer-start-title">' + escapeHtml(group[0]) + '</h2>',
-        '<div class="tsc-desktop-footer-startlinks">',
-          group[1].map(function(link) {
-            var external = link[2] ? ' target="_blank" rel="noopener noreferrer"' : '';
-            return '<a href="' + escapeHtml(link[0]) + '"' + external + '>' + escapeHtml(link[1]) + '</a>';
-          }).join(''),
-        '</div>',
+      '<h2 id="tsc-desktop-footer-start-title">' + escapeHtml(group[0]) + '</h2>',
+      '<div class="tsc-desktop-footer-startlinks">',
+      group[1].map(function (link) {
+        var external = link[2] ? ' target="_blank" rel="noopener noreferrer"' : '';
+        return '<a href="' + escapeHtml(link[0]) + '"' + external + '>' + escapeHtml(link[1]) + '</a>';
+      }).join(''),
+      '</div>',
       '</section>'
     ].join('');
   }
@@ -2270,7 +2530,7 @@
   function buildFooterCopyrightUnderSocials(brandName) {
     return [
       '<div class="tsc-desktop-footer-meta">',
-        '<p class="tsc-desktop-footer-copy">&copy; 2026 ' + escapeHtml(brandName) + '. All rights reserved.</p>',
+      '<p class="tsc-desktop-footer-copy">&copy; 2026 ' + escapeHtml(brandName) + '. All rights reserved.</p>',
       '</div>'
     ].join('');
   }
@@ -2278,7 +2538,7 @@
   function buildMobileFooterCopyrightUnderSocials(brandName) {
     return [
       '<div class="tsc-mobile-footer-bottom">',
-        '<span>&copy; 2026 ' + escapeHtml(brandName) + '. All rights reserved.</span>',
+      '<span>&copy; 2026 ' + escapeHtml(brandName) + '. All rights reserved.</span>',
       '</div>'
     ].join('');
   }
@@ -2313,12 +2573,12 @@
       { id: 'facebook', aria: 'Facebook', href: 'https://www.facebook.com/people/The-Shakti-Collective/61575006284507/', needle: 'facebook' },
       { id: 'linkedin', aria: 'LinkedIn', href: LINKEDIN_URL, needle: 'linkedin' },
       { id: 'email', aria: 'Email', href: 'mailto:' + CONTACT_EMAIL, needle: 'mailto:' }
-    ].map(function(s) {
+    ].map(function (s) {
       var scraped = scrapeFooterSocialHref(sourceFooter, s.needle, s.href);
       // Prefer canonical LinkedIn / contact email over stale Wix scraped URLs.
       var href = s.id === 'linkedin' ? LINKEDIN_URL
         : s.id === 'email' ? ('mailto:' + CONTACT_EMAIL)
-        : scraped;
+          : scraped;
       return {
         aria: s.aria,
         href: href,
@@ -2328,11 +2588,11 @@
 
     var brandName = config.brand.name || (config.academy ? 'TSC Academy' : 'The Shakti Collective');
     var baseGroups = footerGroupsFor(config.academy, config.whatsapp);
-    var startGroup = baseGroups.find(function(group) {
+    var startGroup = baseGroups.find(function (group) {
       return /^start here$/i.test(group[0]);
     });
     // Start Here is a nav column (same title row as Quick Links / Explore); community = newsletter/social.
-    var navGroups = baseGroups.filter(function(group) {
+    var navGroups = baseGroups.filter(function (group) {
       return !/start here|join our community|get started/i.test(group[0]);
     });
     var emailId = 'tsc-desktop-footer-email-' + variant;
@@ -2344,37 +2604,37 @@
     var logoMarkup = legacyFooterLogoMarkup(config, brandName, config.brand.logo);
     shell.innerHTML = [
       '<div class="tsc-desktop-footer-main">',
-        '<div class="tsc-desktop-footer-brandblock">',
-          '<a class="tsc-desktop-footer-brand" href="' + (config.academy ? '/academy' : '/') + '" aria-label="' + escapeHtml(brandName) + '">',
-            logoMarkup,
-          '</a>',
-          '<p class="tsc-desktop-footer-tagline">' + escapeHtml(config.brand.tagline || (config.academy ? 'Mentorship-led learning for serious artists.' : 'Unfolding artist force.')) + '</p>',
-        '</div>',
-        buildFooterStartHereBox(startGroup),
-        '<nav class="tsc-desktop-footer-nav" aria-label="Footer navigation">',
-          navGroups.map(buildFooterLinks).join(''),
-        '</nav>',
-        '<div class="tsc-desktop-footer-news">',
-          '<h2>' + (config.academy ? 'Join Our Community' : 'Join Our Community') + '</h2>',
-          '<p>Subscribe to our Newsletter *</p>',
-          '<form class="tsc-desktop-footer-newsrow" action="#" method="post" data-source="footer">',
-            '<label class="tsc-sr-only" for="' + emailId + '">Email</label>',
-            '<input id="' + emailId + '" name="email" type="email" autocomplete="email" required placeholder="example@domain.com">',
-            '<button type="submit">Subscribe</button>',
-          '</form>',
-          '<p class="tsc-desktop-footer-newsnote" role="status" hidden>Thanks, you are on the list.</p>',
-          '<div class="tsc-desktop-footer-social">',
-            socials.map(function(s) {
-              return '<a class="tsc-desktop-footer-icon" href="' + escapeHtml(s.href) + '" target="_blank" rel="noopener noreferrer" aria-label="' + escapeHtml(s.aria) + '">' + s.svg + '</a>';
-            }).join(''),
-          '</div>',
-          buildFooterCopyrightUnderSocials(brandName),
-        '</div>',
+      '<div class="tsc-desktop-footer-brandblock">',
+      '<a class="tsc-desktop-footer-brand" href="' + (config.academy ? '/academy' : '/') + '" aria-label="' + escapeHtml(brandName) + '">',
+      logoMarkup,
+      '</a>',
+      '<p class="tsc-desktop-footer-tagline">' + escapeHtml(config.brand.tagline || (config.academy ? 'Mentorship-led learning for serious artists.' : 'Unfolding artist force.')) + '</p>',
+      '</div>',
+      buildFooterStartHereBox(startGroup),
+      '<nav class="tsc-desktop-footer-nav" aria-label="Footer navigation">',
+      navGroups.map(buildFooterLinks).join(''),
+      '</nav>',
+      '<div class="tsc-desktop-footer-news">',
+      '<h2>' + (config.academy ? 'Join Our Community' : 'Join Our Community') + '</h2>',
+      '<p>Subscribe to our Newsletter *</p>',
+      '<form class="tsc-desktop-footer-newsrow" action="#" method="post" data-source="footer">',
+      '<label class="tsc-sr-only" for="' + emailId + '">Email</label>',
+      '<input id="' + emailId + '" name="email" type="email" autocomplete="email" required placeholder="example@domain.com">',
+      '<button type="submit">Subscribe</button>',
+      '</form>',
+      '<p class="tsc-desktop-footer-newsnote" role="status" hidden>Thanks, you are on the list.</p>',
+      '<div class="tsc-desktop-footer-social">',
+      socials.map(function (s) {
+        return '<a class="tsc-desktop-footer-icon" href="' + escapeHtml(s.href) + '" target="_blank" rel="noopener noreferrer" aria-label="' + escapeHtml(s.aria) + '">' + s.svg + '</a>';
+      }).join(''),
+      '</div>',
+      buildFooterCopyrightUnderSocials(brandName),
+      '</div>',
       '</div>'
     ].join('');
 
     footer.insertBefore(shell, footer.firstChild);
-    Array.prototype.slice.call(footer.children).forEach(function(child) {
+    Array.prototype.slice.call(footer.children).forEach(function (child) {
       if (child !== shell && !child.classList.contains('tsc-mobile-footer')) {
         child.classList.add('tsc-legacy-footer');
       }
@@ -2415,11 +2675,11 @@
       { id: 'facebook', aria: 'Facebook', href: 'https://www.facebook.com/people/The-Shakti-Collective/61575006284507/', needle: 'facebook' },
       { id: 'linkedin', aria: 'LinkedIn', href: LINKEDIN_URL, needle: 'linkedin' },
       { id: 'email', aria: 'Email', href: 'mailto:' + CONTACT_EMAIL, needle: 'mailto:' }
-    ].map(function(s) {
+    ].map(function (s) {
       var scraped = scrapeFooterSocialHref(sourceFooter, s.needle, s.href);
       var href = s.id === 'linkedin' ? LINKEDIN_URL
         : s.id === 'email' ? ('mailto:' + CONTACT_EMAIL)
-        : scraped;
+          : scraped;
       return {
         aria: s.aria,
         href: href,
@@ -2430,7 +2690,7 @@
     var brandName = config.brand.name || (config.academy ? 'TSC Academy' : 'The Shakti Collective');
     var emailId = 'tsc-mobile-footer-email-' + variant;
     // Start Here stays in accordion columns; copyright only under socials.
-    var mobileGroups = footerGroupsFor(config.academy, config.whatsapp).filter(function(group) {
+    var mobileGroups = footerGroupsFor(config.academy, config.whatsapp).filter(function (group) {
       return !/get started/i.test(group[0]);
     });
     var shell = document.createElement('div');
@@ -2439,34 +2699,34 @@
     shell.setAttribute('data-tsc-theme', config.academy ? 'academy' : 'dark');
     shell.innerHTML = [
       '<div class="tsc-mobile-footer-brand">',
-        mobileFooterLogoMarkup(config, brandName),
+      mobileFooterLogoMarkup(config, brandName),
       '</div>',
-      mobileGroups.map(function(group, index) {
-        return '<details class="tsc-mobile-footer-acc"' + (index === 0 ? ' open' : '') + '><summary>' + escapeHtml(group[0]) + '</summary><div class="tsc-mobile-footer-links">' + group[1].map(function(link) {
+      mobileGroups.map(function (group, index) {
+        return '<details class="tsc-mobile-footer-acc"' + (index === 0 ? ' open' : '') + '><summary>' + escapeHtml(group[0]) + '</summary><div class="tsc-mobile-footer-links">' + group[1].map(function (link) {
           var external = link[2] ? ' target="_blank" rel="noopener noreferrer"' : '';
           return '<a href="' + escapeHtml(link[0]) + '"' + external + '>' + escapeHtml(link[1]) + '</a>';
         }).join('') + '</div></details>';
       }).join(''),
       '<div class="tsc-mobile-footer-news">',
-        '<h4>' + (config.academy ? 'Academy updates' : 'Subscribe to our newsletter') + '</h4>',
-        '<p>Apply to newsletter</p>',
-        '<form class="tsc-mobile-footer-newsrow" action="#" method="post">',
-          '<label class="tsc-sr-only" for="' + emailId + '">Email</label>',
-          '<input id="' + emailId + '" name="email" type="email" autocomplete="email" required placeholder="email@domain.com">',
-          '<button type="submit">Subscribe</button>',
-        '</form>',
-        '<p class="tsc-mobile-footer-newsnote" role="status" hidden>Thanks, you are on the list.</p>',
+      '<h4>' + (config.academy ? 'Academy updates' : 'Subscribe to our newsletter') + '</h4>',
+      '<p>Apply to newsletter</p>',
+      '<form class="tsc-mobile-footer-newsrow" action="#" method="post">',
+      '<label class="tsc-sr-only" for="' + emailId + '">Email</label>',
+      '<input id="' + emailId + '" name="email" type="email" autocomplete="email" required placeholder="email@domain.com">',
+      '<button type="submit">Subscribe</button>',
+      '</form>',
+      '<p class="tsc-mobile-footer-newsnote" role="status" hidden>Thanks, you are on the list.</p>',
       '</div>',
       '<div class="tsc-mobile-footer-social">',
-        socials.map(function(s) {
-          return '<a class="tsc-mobile-footer-icon" href="' + escapeHtml(s.href) + '" target="_blank" rel="noopener noreferrer" aria-label="' + escapeHtml(s.aria) + '">' + s.svg + '</a>';
-        }).join(''),
+      socials.map(function (s) {
+        return '<a class="tsc-mobile-footer-icon" href="' + escapeHtml(s.href) + '" target="_blank" rel="noopener noreferrer" aria-label="' + escapeHtml(s.aria) + '">' + s.svg + '</a>';
+      }).join(''),
       '</div>',
       buildMobileFooterCopyrightUnderSocials(brandName)
     ].join('');
 
     footer.insertBefore(shell, footer.firstChild);
-    Array.prototype.slice.call(footer.children).forEach(function(child) {
+    Array.prototype.slice.call(footer.children).forEach(function (child) {
       if (child !== shell && !child.classList.contains('tsc-desktop-footer')) {
         child.classList.add('tsc-legacy-footer');
       }
@@ -2478,14 +2738,14 @@
   }
 
   function normalizeArtistLinks() {
-    document.querySelectorAll('a[href]').forEach(function(anchor) {
+    document.querySelectorAll('a[href]').forEach(function (anchor) {
       try {
         var url = new URL(anchor.getAttribute('href'), location.origin);
         var text = anchor.textContent || '';
         if (url.pathname === '/query') {
           anchor.setAttribute('href', '/book-an-artist' + url.search + url.hash);
         }
-      } catch (e) {}
+      } catch (e) { }
     });
   }
 
@@ -2502,7 +2762,7 @@
       '/classicalreview': true
     };
     if (!academyPaths[location.pathname]) return;
-    document.querySelectorAll('header a[href], [class*="wixui-header"] a[href]').forEach(function(anchor) {
+    document.querySelectorAll('header a[href], [class*="wixui-header"] a[href]').forEach(function (anchor) {
       try {
         var url = new URL(anchor.getAttribute('href'), location.origin);
         var isHomeLink = url.pathname === '/' || url.pathname === '/blank-3';
@@ -2511,7 +2771,7 @@
           anchor.setAttribute('href', '/academy');
           anchor.setAttribute('target', '_self');
         }
-      } catch (e) {}
+      } catch (e) { }
     });
   }
 
@@ -2529,7 +2789,7 @@
     if (wrapper) {
       wrapper.classList.add('tsc-native-video-player');
       wrapper.setAttribute('data-tsc-native-video-player', '');
-      wrapper.querySelectorAll('.IuQm4G, .uqsi3c, .JODVkC, .juFBxh, .QpcXUG, [data-audio], [aria-label*="Mute"], [aria-label*="Sound"]').forEach(function(control) {
+      wrapper.querySelectorAll('.IuQm4G, .uqsi3c, .JODVkC, .juFBxh, .QpcXUG, [data-audio], [aria-label*="Mute"], [aria-label*="Sound"]').forEach(function (control) {
         control.setAttribute('aria-hidden', 'true');
         control.setAttribute('tabindex', '-1');
         control.style.setProperty('display', 'none', 'important');
@@ -2540,9 +2800,9 @@
 
   function observeVideoPlayers() {
     if (!window.MutationObserver || window.__tscVideoPlayerObserver) return;
-    window.__tscVideoPlayerObserver = new MutationObserver(function(mutations) {
-      mutations.forEach(function(mutation) {
-        mutation.addedNodes.forEach(function(node) {
+    window.__tscVideoPlayerObserver = new MutationObserver(function (mutations) {
+      mutations.forEach(function (mutation) {
+        mutation.addedNodes.forEach(function (node) {
           if (!node || node.nodeType !== 1) return;
           if (node.tagName === 'VIDEO') configureVideoPlayer(node);
           if (node.querySelectorAll) {
@@ -2560,7 +2820,7 @@
   function muteVideos() {
     document.querySelectorAll('video').forEach(configureVideoPlayer);
     observeVideoPlayers();
-    document.querySelectorAll('[data-audio], [aria-label*="Mute"], [aria-label*="Sound"]').forEach(function(node) {
+    document.querySelectorAll('[data-audio], [aria-label*="Mute"], [aria-label*="Sound"]').forEach(function (node) {
       node.setAttribute('data-audio', 'off');
     });
   }
@@ -2569,7 +2829,7 @@
     if (!window.HTMLMediaElement || window.__tscMutedPlayPatch) return;
     window.__tscMutedPlayPatch = true;
     var originalPlay = window.HTMLMediaElement.prototype.play;
-    window.HTMLMediaElement.prototype.play = function() {
+    window.HTMLMediaElement.prototype.play = function () {
       this.muted = true;
       this.defaultMuted = true;
       this.volume = 0;
@@ -2582,7 +2842,7 @@
   function applyOnSchedule(callback) {
     callback();
     window.addEventListener('load', callback);
-    [250, 1000, 2500, 5000].forEach(function(delay) {
+    [250, 1000, 2500, 5000].forEach(function (delay) {
       window.setTimeout(callback, delay);
     });
   }
@@ -2644,7 +2904,7 @@
 
   /** Wix viewer-model can rehydrate Courses → /learn-with-tsc after our rewrite. */
   function forceLearnHubLinksToAcademy() {
-    document.querySelectorAll('a[href]').forEach(function(anchor) {
+    document.querySelectorAll('a[href]').forEach(function (anchor) {
       var raw = anchor.getAttribute('href') || '';
       if (!/learn-with-tsc|blank-3-1/i.test(raw)) return;
       try {
@@ -2659,14 +2919,14 @@
         ) {
           anchor.setAttribute('href', '/academy' + url.search + url.hash);
         }
-      } catch (e) {}
+      } catch (e) { }
     });
   }
 
   function wireLearnHubClickGuard() {
     if (window.__tscLearnHubGuard) return;
     window.__tscLearnHubGuard = true;
-    document.addEventListener('click', function(event) {
+    document.addEventListener('click', function (event) {
       if (event.defaultPrevented || event.button !== 0) return;
       if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
       var anchor = event.target && event.target.closest ? event.target.closest('a[href]') : null;
@@ -2685,7 +2945,7 @@
           event.stopPropagation();
           location.assign('/academy' + url.search + url.hash);
         }
-      } catch (e) {}
+      } catch (e) { }
     }, true);
   }
 
@@ -2753,7 +3013,7 @@
     window.__tscAcademyHashNavGuard = true;
     document.addEventListener(
       'click',
-      function(event) {
+      function (event) {
         if (event.defaultPrevented || event.button !== 0) return;
         if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
         var anchor = event.target && event.target.closest ? event.target.closest('a[href]') : null;
@@ -2775,17 +3035,17 @@
             history.replaceState(null, '', '/academy' + (location.search || '') + url.hash);
           }
           // Remount storms can nudge layout — re-assert scroll.
-          window.setTimeout(function() {
+          window.setTimeout(function () {
             scrollAcademyHash(url.hash);
           }, 350);
-          window.setTimeout(function() {
+          window.setTimeout(function () {
             scrollAcademyHash(url.hash);
           }, 900);
-        } catch (e) {}
+        } catch (e) { }
       },
       true
     );
-    window.addEventListener('hashchange', function() {
+    window.addEventListener('hashchange', function () {
       if (canonicalPathname() !== '/academy') return;
       ensureAcademyCoursesAnchor();
       ensureAcademyTestimonialsAnchor();
@@ -2802,17 +3062,20 @@
   // Play paused Wix enter/loop motions + slideshow word-swap (all viewports).
   ensureStylesheet('/css/tsc-wix-motion.css?v=hero-word-single-1');
   ensureScript('/js/tsc-wix-motion.js?v=testimonial-slide-1');
+  ensureScript('/js/tsc-animations.js?v=desktop-reveal-1');
   function bootUi() {
     if (redirectLegacyLearnHub()) return;
     var path = canonicalPathname();
     setBodyPage(path);
     mountBlogChrome(path);
-    var mountSharedChrome = function() {
+    var mountSharedChrome = function () {
       mountDesktopHeader({ path: path });
       mountDesktopFooter({ path: path });
       mountBlogChrome(path);
       mountMobileHeader({ path: path });
       mountMobileFooter({ path: path });
+      repairArtistsRosterCards(path);
+      repairArtistProfilePage(path);
       if (isAcademyPath(path) || ACADEMY_COURSE_HREFS[path]) {
         ensureAcademyCoursesInWixMenus();
         var lockedHeader = document.querySelector('[data-tsc-locked-desktop-header="true"]');
@@ -2835,12 +3098,12 @@
       ensureAcademyCoursesInWixMenus();
     }
     if (path === '/academy' && location.hash) {
-      window.setTimeout(function() {
+      window.setTimeout(function () {
         ensureAcademyCoursesAnchor();
         ensureAcademyTestimonialsAnchor();
         scrollAcademyHash(location.hash || '');
       }, 400);
-      window.setTimeout(function() {
+      window.setTimeout(function () {
         scrollAcademyHash(location.hash || '');
       }, 1200);
     }
@@ -2857,9 +3120,13 @@
     };
     if (formPages[path]) {
       ensureStylesheet('/css/forms.css?v=form-pickers-1');
+      ensureScript('/js/forms.js?v=selected-state-1');
+      watchWixChoiceState();
     }
     mountSharedChrome();
     linkHomeClosingCtas();
+    repairArtistsRosterCards(path);
+    repairArtistProfilePage(path);
     mountHarshadDigitalPresenceLinks(path);
     mountYugmIplYearFix(path);
     mountWorkImpactLinks(path);
@@ -2867,14 +3134,16 @@
     mountFilmBottomCtas(path);
     if (path === '/about') {
       fixAboutHeroShellViewBox();
-      [200, 800, 2000].forEach(function(delay) {
+      [200, 800, 2000].forEach(function (delay) {
         window.setTimeout(fixAboutHeroShellViewBox, delay);
       });
     }
-    [250, 900, 1800, 3200, 6000, 9000].forEach(function(delay) {
-      window.setTimeout(function() {
+    [250, 900, 1800, 3200, 6000, 9000].forEach(function (delay) {
+      window.setTimeout(function () {
         mountSharedChrome();
         linkHomeClosingCtas();
+        repairArtistsRosterCards(path);
+        repairArtistProfilePage(path);
         mountHarshadDigitalPresenceLinks(path);
         mountYugmIplYearFix(path);
         mountWorkImpactLinks(path);
@@ -2884,11 +3153,11 @@
       }, delay);
     });
     if ('MutationObserver' in window && !window.__tscSharedChromeObserver) {
-      window.__tscSharedChromeObserver = new MutationObserver(function() {
+      window.__tscSharedChromeObserver = new MutationObserver(function () {
         var compact = window.matchMedia && window.matchMedia('(max-width: 1024px)').matches;
         if (path === '/films') {
           window.clearTimeout(window.__tscFilmReportRepairTimer);
-          window.__tscFilmReportRepairTimer = window.setTimeout(function() {
+          window.__tscFilmReportRepairTimer = window.setTimeout(function () {
             mountFilmReportCards(path);
             mountFilmBottomCtas(path);
           }, 80);
@@ -2896,12 +3165,14 @@
         var missing = compact
           ? !document.querySelector('.tsc-mobile-site-header') || !document.querySelector('.tsc-mobile-footer')
           : !document.querySelector('[data-tsc-locked-desktop-header="true"], .tsc-desktop-site-header') ||
-            !document.querySelector('.tsc-desktop-brand-logo-unified') ||
-            !document.querySelector('.tsc-desktop-footer');
+          !document.querySelector('.tsc-desktop-brand-logo-unified') ||
+          !document.querySelector('.tsc-desktop-footer');
         if (!missing) return;
         window.clearTimeout(window.__tscSharedChromeRepairTimer);
-        window.__tscSharedChromeRepairTimer = window.setTimeout(function() {
+        window.__tscSharedChromeRepairTimer = window.setTimeout(function () {
           mountSharedChrome();
+          repairArtistsRosterCards(path);
+          repairArtistProfilePage(path);
           mountFilmReportCards(path);
           mountFilmBottomCtas(path);
         }, 40);
@@ -2918,8 +3189,8 @@
     }
     wireCourseAccordions();
     watchLinkNormalization();
-    [400, 1500, 3000].forEach(function(delay) {
-      window.setTimeout(function() {
+    [400, 1500, 3000].forEach(function (delay) {
+      window.setTimeout(function () {
         normalizeInternalProtocolRelativeLinks();
         forceLearnHubLinksToAcademy();
       }, delay);

@@ -366,7 +366,7 @@ body[data-page="resources"] .tsc-all-blogs-section {
   width: 100%;
   padding:
     max(48px, 0.065625 * (var(--scaling-factor) - var(--scrollbar-width, 0px)))
-    var(--tsc-resources-pad-x)
+    clamp(22px, 1.45vw, 24px)
     max(48px, 0.05 * (var(--scaling-factor) - var(--scrollbar-width, 0px)));
   background: #083d3a;
   color: #ffecd1;
@@ -427,7 +427,7 @@ body[data-page="resources"] .tsc-all-blogs-head p {
 body[data-page="resources"] .tsc-all-blogs-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 18px;
+  gap: 36px;
   align-items: stretch;
   width: 100%;
 }
@@ -503,12 +503,12 @@ body[data-page="resources"] .tsc-blog-card {
   box-sizing: border-box;
   display: flex;
   min-width: 0;
-  min-height: 318px;
+  min-height: 680px;
   flex-direction: column;
-  gap: 10px;
-  padding: 12px 13px 14px;
-  border: 1px solid rgba(8, 61, 58, 0.22);
-  border-radius: 8px;
+  gap: 26px;
+  padding: 31px 26px 18px;
+  border: 2px solid #007c86;
+  border-radius: 18px;
   background: #ffecd1;
   color: #083d3a;
   pointer-events: auto;
@@ -517,11 +517,11 @@ body[data-page="resources"] .tsc-blog-card {
 body[data-page="resources"] .tsc-blog-meta {
   display: flex;
   justify-content: space-between;
-  gap: 8px;
-  color: #126d5e;
+  gap: 16px;
+  color: #083d3a;
   font-family: "Madefor Text", Arial, sans-serif;
-  font-size: 8px;
-  font-weight: 800;
+  font-size: 21px;
+  font-weight: 700;
   line-height: 1;
   letter-spacing: 0;
   text-transform: uppercase;
@@ -530,9 +530,9 @@ body[data-page="resources"] .tsc-blog-meta {
 body[data-page="resources"] .tsc-blog-card img {
   display: block;
   width: 100%;
-  aspect-ratio: 16 / 9;
-  border: 1.5px solid #126d5e;
-  border-radius: 6px;
+  aspect-ratio: 1.68 / 1;
+  border: 2px solid #007c86;
+  border-radius: 18px;
   object-fit: cover;
   background: rgba(8, 61, 58, 0.08);
 }
@@ -541,20 +541,20 @@ body[data-page="resources"] .tsc-blog-card h3 {
   margin: 0;
   color: #083d3a;
   font-family: Signika, "Madefor Text", sans-serif;
-  font-size: 15px;
-  font-weight: 800;
-  line-height: 1.16;
+  font-size: 31px;
+  font-weight: 700;
+  line-height: 1.34;
   letter-spacing: 0;
 }
 
 body[data-page="resources"] .tsc-blog-card p {
   flex: 1 1 auto;
   margin: 0;
-  color: #126d5e;
+  color: #007c6f;
   font-family: "Madefor Text", Arial, sans-serif;
-  font-size: 9px;
+  font-size: 20px;
   font-weight: 700;
-  line-height: 1.35;
+  line-height: 1.28;
   letter-spacing: 0;
 }
 
@@ -563,8 +563,8 @@ body[data-page="resources"] .tsc-blog-ctas {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  margin-top: 6px;
+  gap: 12px;
+  margin-top: auto;
   width: 100%;
   pointer-events: auto;
 }
@@ -574,19 +574,20 @@ body[data-page="resources"] .tsc-blog-card a.tsc-blog-cta {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  flex: 1 1 auto;
-  width: auto;
-  min-width: 118px;
+  flex: 0 0 auto;
+  width: 204px;
+  min-width: 204px;
   max-width: 100%;
-  min-height: 38px;
+  min-height: 57px;
   margin: 0;
-  padding: 10px 14px;
-  border-radius: 999px;
-  background: #126d5e;
+  padding: 12px 24px;
+  border: 0;
+  border-radius: 17px;
+  background: #157b6a;
   color: #ffecd1;
   font-family: "Madefor Text", Arial, sans-serif;
-  font-size: 12px;
-  font-weight: 800;
+  font-size: 22px;
+  font-weight: 700;
   line-height: 1.15;
   letter-spacing: 0;
   text-align: center;
@@ -598,23 +599,15 @@ body[data-page="resources"] .tsc-blog-card a.tsc-blog-cta {
 }
 
 body[data-page="resources"] .tsc-blog-card a.tsc-blog-cta--medium {
-  background: transparent;
-  color: #126d5e;
-  border: 1.5px solid #126d5e;
+  background: #157b6a;
+  color: #ffecd1;
+  border: 0;
 }
 
 body[data-page="resources"] .tsc-blog-card a.tsc-blog-cta:hover,
 body[data-page="resources"] .tsc-blog-card a.tsc-blog-cta:focus-visible {
   background: #083d3a;
   color: #ffecd1;
-  border-color: #083d3a;
-}
-
-body[data-page="resources"] .tsc-blog-card a.tsc-blog-cta--medium:hover,
-body[data-page="resources"] .tsc-blog-card a.tsc-blog-cta--medium:focus-visible {
-  background: #126d5e;
-  color: #ffecd1;
-  border-color: #126d5e;
 }
 
 @media (max-width: 860px) {
@@ -653,10 +646,11 @@ body[data-page="resources"] .tsc-blog-card a.tsc-blog-cta--medium:focus-visible 
   }
 
   body[data-page="resources"] .tsc-blog-card a.tsc-blog-cta {
-    min-width: min(100%, 160px);
-    min-height: 46px;
+    width: min(100%, 204px);
+    min-width: min(100%, 204px);
+    min-height: 52px;
     padding: 12px 16px;
-    font-size: 14px;
+    font-size: 18px;
     line-height: 1.2;
   }
 }

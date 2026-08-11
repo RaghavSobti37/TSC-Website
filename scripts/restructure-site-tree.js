@@ -19,6 +19,7 @@ const CRYPTIC_DIR_RE = /^(blank-|about-[89]|work[023]|query$)/;
 const NESTED_ALIASES = [
   { alias: '/work/mba', route: '/mba' },
   { alias: '/artists/harshad-duhita', route: '/harshad-duhita' },
+  { alias: '/artists/mohit-shankar', route: '/mohit-shankar' },
   { alias: '/artists/yugm', route: '/yugm' },
   { alias: '/artists/artist-path', route: '/artist-path' },
   { alias: '/films/mahavatar-narsimha', route: '/mahavatar-narsimha' },
@@ -98,7 +99,7 @@ const SITE_NODES = [
   },
   {
     sitePath: 'work/cases/young-gunns',
-    title: 'Young Gunns',
+    title: 'The Young Gunns',
     canonicalRoute: '/young-gunns',
     pageFile: 'young-gunns.html',
     section: 'work',
@@ -119,6 +120,14 @@ const SITE_NODES = [
     pageFile: 'harshad-duhita.html',
     section: 'artists',
     aliases: ['/blank-10', '/artists/harshad-duhita'],
+  },
+  {
+    sitePath: 'artists/roster/mohit-shankar',
+    title: 'Mohit Shankar',
+    canonicalRoute: '/mohit-shankar',
+    pageFile: 'mohit-shankar.html',
+    section: 'artists',
+    aliases: ['/artists/mohit-shankar'],
   },
   {
     sitePath: 'artists/roster/yugm',
@@ -508,7 +517,7 @@ public/site/
   work/
     cases/mba/
   artists/
-    roster/harshad-duhita/  yugm/
+    roster/harshad-duhita/  mohit-shankar/  yugm/
     artist-path/
   films/
     cases/mahavatar-narsimha/  hanuman-ansh/  mahaprbhu/  kalki/

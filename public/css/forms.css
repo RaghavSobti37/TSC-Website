@@ -218,7 +218,7 @@
 
 .tsc-phone-row {
   display: grid;
-  grid-template-columns: minmax(150px, 0.42fr) minmax(0, 1fr);
+  grid-template-columns: minmax(180px, 0.46fr) minmax(0, 1fr);
   gap: 10px;
 }
 
@@ -235,9 +235,11 @@
 }
 
 .tsc-choice {
+  position: relative;
   box-sizing: border-box;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
   min-height: 44px;
   padding: 9px 12px;
@@ -245,17 +247,41 @@
   border-radius: 7px;
   background: #fff8ec;
   color: #053f40;
+  cursor: pointer;
   font-size: 14px;
+  font-weight: 700;
   line-height: 1.35;
+  text-align: center;
+  transition: background-color 160ms ease, border-color 160ms ease, color 160ms ease, box-shadow 160ms ease;
 }
 
 .tsc-choice input {
-  flex: 0 0 auto;
-  width: 16px;
-  height: 16px;
+  position: absolute;
+  width: 1px;
+  height: 1px;
   min-height: 0;
+  margin: -1px;
   padding: 0;
+  border: 0;
   accent-color: #00535a;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.tsc-choice:hover,
+.tsc-choice:focus-within,
+.tsc-choice:has(input:checked),
+.tsc-choice.is-selected {
+  border-color: #00535a;
+  background: #00535a;
+  color: #ffecd1;
+  box-shadow: 0 8px 22px rgba(0, 83, 90, 0.18);
+}
+
+.tsc-choice:focus-within {
+  outline: 2px solid rgba(0, 83, 90, 0.35);
+  outline-offset: 2px;
 }
 
 .tsc-submit {
@@ -322,6 +348,54 @@ body:has(.tsc-local-form) main [data-hook^="bgLayers"],
 body:has(.tsc-local-form) main [data-motion-part*="BG_LAYER"],
 body:has(.tsc-local-form) main [data-motion-part*="BG_MEDIA"] {
   pointer-events: none !important;
+}
+
+/* Wix native form fallback: keep selections visually identical to hover. */
+[data-hook="box-selection-option"],
+[data-hook="box-selection-option"] .s_Jh7Ip,
+.sltdxLr {
+  transition: background-color 160ms ease, border-color 160ms ease, color 160ms ease, box-shadow 160ms ease !important;
+}
+
+[data-hook="box-selection-option"]:is(:hover, [aria-checked="true"], [aria-selected="true"], [data-preview="selected"], .is-selected),
+[data-hook="box-selection-option"].is-selected .s_Jh7Ip,
+[data-hook="box-selection-option"]:has(input:checked),
+[data-hook="box-selection-option-wrapper"]:has(input:checked) [data-hook="box-selection-option"],
+[data-hook="box-selection-option-wrapper"].is-selected [data-hook="box-selection-option"],
+.sltdxLr:is(:hover, [aria-checked="true"], [aria-selected="true"], [data-preview="selected"], .is-selected) {
+  border-color: #00535a !important;
+  background: #00535a !important;
+  color: #ffecd1 !important;
+  box-shadow: 0 8px 22px rgba(0, 83, 90, 0.18) !important;
+}
+
+[data-hook="box-selection-option"]:is(:hover, [aria-checked="true"], [aria-selected="true"], [data-preview="selected"], .is-selected) *,
+[data-hook="box-selection-option"]:has(input:checked) *,
+[data-hook="box-selection-option-wrapper"]:has(input:checked) [data-hook="box-selection-option"] *,
+[data-hook="box-selection-option-wrapper"].is-selected [data-hook="box-selection-option"] *,
+.sltdxLr:is(:hover, [aria-checked="true"], [aria-selected="true"], [data-preview="selected"], .is-selected) * {
+  color: #ffecd1 !important;
+}
+
+/* Wix phone country popover must rise above form sections and not be clipped. */
+[data-field-type="CONTACTS_PHONE"],
+[data-field-type="CONTACTS_PHONE"] [data-hook="text-field-root"],
+[data-field-type="CONTACTS_PHONE"] [data-hook="core-input-root"],
+[data-field-type="CONTACTS_PHONE"] [data-hook="prefix"],
+[data-field-type="CONTACTS_PHONE"] [data-content-hook^="popover-content"],
+[data-field-type="CONTACTS_PHONE"] [data-hook="popover-element"] {
+  overflow: visible !important;
+}
+
+[data-hook="country-selector-trigger"] {
+  min-width: 70px !important;
+  min-height: 48px !important;
+  z-index: 10020 !important;
+}
+
+[data-content-hook^="popover-content"]:has([data-hook="country-selector-trigger"]) {
+  position: relative !important;
+  z-index: 10020 !important;
 }
 
 .tsc-review-page {

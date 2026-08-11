@@ -1851,7 +1851,7 @@ body[data-tsc-films-card-repair="true"] :is(
   align-items: center !important;
   display: grid !important;
   gap: clamp(12px, 1.7vw, 28px) !important;
-  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
   height: 100% !important;
   justify-items: start !important;
   overflow: visible !important;
@@ -1934,25 +1934,59 @@ body[data-tsc-films-card-repair="true"] :is(
 body[data-tsc-films-card-repair="true"] :is(
   #comp-mqmi3w3v3,
   #comp-mqmi3w3x2,
-  #comp-mqmi3w41,
+  #comp-mqmi3w3z,
   #comp-mqmi6yny,
   #comp-mqmi6ynz5,
   #comp-mqmi6yo1,
-  #comp-mqmi6yo2,
   #comp-mqmi8cxr2,
   #comp-mqmi8cxt,
   #comp-mqmi8cxu6,
-  #comp-mqmi8cxw,
   #comp-mqmi8sul4,
   #comp-mqmi8sun1,
-  #comp-mqmi8suo6,
-  #comp-mqmi8suq
+  #comp-mqmi8suo6
 ) .wixui-rich-text__text {
   white-space: nowrap !important;
 }
 
-body[data-tsc-films-card-repair="true"] #comp-mqmi3w3z .wixui-rich-text__text {
-  white-space: normal !important;
+body[data-tsc-films-card-repair="true"] :is(
+  #comp-mqmi3w41,
+  #comp-mqmi6yo2,
+  #comp-mqmi8cxw,
+  #comp-mqmi8suq
+) {
+  display: none !important;
+}
+
+body[data-tsc-films-card-repair="true"] :is(
+  #comp-mqmi3w46,
+  #comp-mqmi6yo71,
+  #comp-mqmi8cy13,
+  #comp-mqmi8suv6,
+  #comp-mqmi3w4k,
+  #comp-mqmi3w4l3,
+  #comp-mqmi6yol3,
+  #comp-mqmi6yom7,
+  #comp-mqmi8cyf,
+  #comp-mqmi8cyg2,
+  #comp-mqmi8sv51,
+  #comp-mqmi8sv66
+) .wixui-rich-text__text {
+  display: block !important;
+  max-width: 100% !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+}
+
+body[data-tsc-films-card-repair="true"] :is(
+  #comp-mqmi3w4l3,
+  #comp-mqmi6yom7,
+  #comp-mqmi8cyg2,
+  #comp-mqmi8sv66
+) .wixui-rich-text__text {
+  font-size: clamp(16px, 1.25vw, 20px) !important;
+  height: 1.18em !important;
+  line-height: 1.18 !important;
 }
 
 body[data-tsc-films-card-repair="true"] :is(
@@ -2004,23 +2038,96 @@ body[data-tsc-films-card-repair="true"] :is(
     #comp-mqmi8cxq,
     #comp-mqmi8suk2
   ) [class*="-container"] {
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
   }
 }
 </style>
 <script id="tsc-films-card-text-repair">
 (function () {
   /* Clone-faithful: wire impact hrefs only — do not rewrite Wix card copy. */
+  var copy = {
+    '#comp-mqmi3w3o': {
+      meta: ['Positioning', 'Promotions', 'Music'],
+      metaNodes: ['#comp-mqmi3w3v3', '#comp-mqmi3w3x2', '#comp-mqmi3w3z'],
+      hiddenMeta: '#comp-mqmi3w41',
+      titleNode: '#comp-mqmi3w4k',
+      title: 'Film Mounting Partner',
+      tagsNode: '#comp-mqmi3w4l3',
+      tags: 'Positioning | Promotions | Music'
+    },
+    '#comp-mqmi6ynt2': {
+      meta: ['Faith', 'Music', 'Universe'],
+      metaNodes: ['#comp-mqmi6yny', '#comp-mqmi6ynz5', '#comp-mqmi6yo1'],
+      hiddenMeta: '#comp-mqmi6yo2',
+      titleNode: '#comp-mqmi6yol3',
+      title: 'RAM RAM Universe',
+      tagsNode: '#comp-mqmi6yom7',
+      tags: 'Faith | Music | Universe'
+    },
+    '#comp-mqmi8cxm2': {
+      meta: ['Community', 'Outreach', 'Devotion'],
+      metaNodes: ['#comp-mqmi8cxr2', '#comp-mqmi8cxt', '#comp-mqmi8cxu6'],
+      hiddenMeta: '#comp-mqmi8cxw',
+      titleNode: '#comp-mqmi8cyf',
+      title: 'Devotional Launch',
+      tagsNode: '#comp-mqmi8cyg2',
+      tags: 'Community | Outreach | Devotion'
+    },
+    '#comp-mqmi8sui': {
+      meta: ['IP', 'Licensing', 'Music'],
+      metaNodes: ['#comp-mqmi8sul4', '#comp-mqmi8sun1', '#comp-mqmi8suo6'],
+      hiddenMeta: '#comp-mqmi8suq',
+      titleNode: '#comp-mqmi8sv51',
+      title: 'Film IP Growth',
+      tagsNode: '#comp-mqmi8sv66',
+      tags: 'IP | Licensing | Music'
+    }
+  };
+
   var cards = [
     { root: '#comp-mqmi3w3o', href: '/mahavatar-narsimha-impact', title: 'Mahavatar Narsimha' },
     { root: '#comp-mqmi6ynt2', href: '/hanuman-ansh-impact', title: 'Hanuman Ansh' },
     { root: '#comp-mqmi8cxm2', href: '/mahaprabhu-jagannath-impact', title: 'Mahaprabhu Jagannath' },
     { root: '#comp-mqmi8sui', href: '/kalki-impact', title: 'Kalki' }
   ];
+  var mainTitleNodes = ['#comp-mqmi3w46', '#comp-mqmi6yo71', '#comp-mqmi8cy13', '#comp-mqmi8suv6'];
+
+  function setRichText(selector, text) {
+    var node = document.querySelector(selector);
+    if (!node) return;
+    var textNode = node.querySelector('.wixui-rich-text__text') || node;
+    textNode.textContent = text;
+    forceOneLine(selector);
+  }
+
+  function forceOneLine(selector) {
+    var node = document.querySelector(selector);
+    if (!node) return;
+    var textNode = node.querySelector('.wixui-rich-text__text') || node;
+    textNode.style.setProperty('display', 'block', 'important');
+    textNode.style.setProperty('max-width', '100%', 'important');
+    textNode.style.setProperty('overflow', 'hidden', 'important');
+    textNode.style.setProperty('text-overflow', 'ellipsis', 'important');
+    textNode.style.setProperty('white-space', 'nowrap', 'important');
+  }
+
+  function repairCopy(rootSelector) {
+    var config = copy[rootSelector];
+    if (!config) return;
+    config.metaNodes.forEach(function (selector, index) {
+      setRichText(selector, config.meta[index]);
+    });
+    setRichText(config.titleNode, config.title);
+    setRichText(config.tagsNode, config.tags);
+    var hiddenMeta = document.querySelector(config.hiddenMeta);
+    if (hiddenMeta) hiddenMeta.setAttribute('aria-hidden', 'true');
+    mainTitleNodes.forEach(forceOneLine);
+  }
 
   function wireCard(card) {
     var root = document.querySelector(card.root);
     if (!root) return;
+    repairCopy(card.root);
     root.classList.add('tsc-film-report-card');
     root.setAttribute('role', 'link');
     root.setAttribute('tabindex', '0');

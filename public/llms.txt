@@ -29,6 +29,7 @@ Full corpus for LLMs: [llms-full.txt](https://wix-site-clone-psi.vercel.app/llms
 ## Artists
 
 - [Harshad Duhita](https://wix-site-clone-psi.vercel.app/harshad-duhita): TSC artist profile
+- [Mohit Shankar](https://wix-site-clone-psi.vercel.app/mohit-shankar): TSC artist profile
 - [YUGM](https://wix-site-clone-psi.vercel.app/yugm): TSC artist profile
 
 ## Films & stories

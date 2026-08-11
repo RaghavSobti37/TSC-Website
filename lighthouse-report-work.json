@@ -8666,7 +8666,7 @@
                 "height": 21
               },
               "snippet": "<h2 class=\"font_2 wixui-rich-text__text\">",
-              "nodeLabel": "Young Gunns",
+              "nodeLabel": "The Young Gunns",
               "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 3.8 (foreground color: #849586, background color: #083d3a, font size: 12.1pt (16.0938px), font weight: bold). Expected contrast ratio of 4.5:1"
             },
             "subItems": {
@@ -8708,7 +8708,7 @@
                 "height": 21
               },
               "snippet": "<h2 class=\"font_2 wixui-rich-text__text\">",
-              "nodeLabel": "Mai Bhi Artist",
+              "nodeLabel": "Main Bhi Artist",
               "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 3.8 (foreground color: #849586, background color: #083d3a, font size: 12.1pt (16.0938px), font weight: bold). Expected contrast ratio of 4.5:1"
             },
             "subItems": {

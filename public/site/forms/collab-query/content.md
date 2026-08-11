@@ -30,7 +30,7 @@ Insta Music League — Digital-first talent discovery format through social medi
 
 Havells mYOUsic — Brand IP discovering and developing grassroots music talent across India.
 
-Young Gunns — Talent incubator and showcase IP for the next generation of breakthrough artists.
+The Young Gunns — Talent incubator and showcase IP for the next generation of breakthrough artists.
 
 Collaborate With TSC
 

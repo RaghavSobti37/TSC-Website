@@ -443,12 +443,15 @@ url("/assets/mirror/static.wixstatic.com/ufonts/834fa9_d08c6fe9ca9b47ccb21ecdcb7
 /* style 36 */
 #comp-mp2vm3m7_r_comp-mrsr3my7 svg [data-color="1"] {fill: #FFECD1;}
 
-/* Mohit Shankar roster card removed from HTML — keep CSS tombstone if Wix CSS rehydrates ids */
-#comp-mqutenq5,
-#comp-mqutenqa,
-#comp-mqutenqm,
-#comp-mqutenqk,
-[id^="comp-mqutenq"] {
+/* Harshaduhita roster card commented out; Mohit Shankar stays visible. */
+#comp-mqtpn27i,
+#comp-mqtpn27o,
+#comp-mqtpn27q5,
+#comp-mqtpn27x,
+#comp-mqtpn2877,
+#comp-mqtpn2854,
+#comp-mqtpn27z,
+[id^="comp-mqtpn27"] {
   display: none !important;
   width: 0 !important;
   min-width: 0 !important;
@@ -461,7 +464,7 @@ url("/assets/mirror/static.wixstatic.com/ufonts/834fa9_d08c6fe9ca9b47ccb21ecdcb7
   pointer-events: none !important;
 }
 
-/* Two-artist roster: Harshad + Yugm centered like locked desktop cards */
+/* Visible roster: Yugm + Mohit centered like locked desktop cards */
 #comp-mqutig8q {
   justify-self: center !important;
   margin-left: auto !important;

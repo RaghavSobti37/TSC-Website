@@ -5,9 +5,24 @@
  */
 (function() {
   var ui = window.TSCComponents;
-  if (!ui || window.__tscRevealAnimations) return;
-  // Desktop (>=1025px): leave Wix / faf9dea motions alone. Scroll-reveal is mobile-only.
-  if (!window.matchMedia || !window.matchMedia('(max-width: 1024px)').matches) return;
+  if (!ui) {
+    if (window.__tscRevealAnimationsWaiting) return;
+    window.__tscRevealAnimationsWaiting = true;
+    var waitAttempts = 0;
+    var waitForComponents = window.setInterval(function() {
+      waitAttempts += 1;
+      if (!window.TSCComponents && waitAttempts < 40) return;
+      window.clearInterval(waitForComponents);
+      window.__tscRevealAnimationsWaiting = false;
+      if (!window.TSCComponents || window.__tscRevealAnimations) return;
+      var script = document.createElement('script');
+      script.src = '/js/tsc-animations.js?v=component-wait-retry-1';
+      script.defer = true;
+      (document.body || document.head || document.documentElement).appendChild(script);
+    }, 50);
+    return;
+  }
+  if (window.__tscRevealAnimations) return;
   window.__tscRevealAnimations = true;
 
   var styleId = 'tsc-reveal-animation-styles';
@@ -64,7 +79,7 @@
   function isInRevealRange(element) {
     var rect = element.getBoundingClientRect();
     var viewportHeight = window.innerHeight || document.documentElement.clientHeight || 0;
-    return rect.top < viewportHeight * 0.92 && rect.bottom > -20;
+    return rect.top < viewportHeight * 1.05 && rect.bottom > -120;
   }
 
   function revealVisiblePending() {
@@ -88,6 +103,7 @@
       });
       window.setTimeout(revealVisiblePending, 90);
       window.setTimeout(revealVisiblePending, 240);
+      window.setTimeout(revealVisiblePending, 520);
       startTemporaryRevealSweeper();
     }
     window.addEventListener('scroll', requestReveal, { passive: true });
@@ -110,7 +126,7 @@
 
   function scheduleRevealSweep() {
     window.requestAnimationFrame(revealVisiblePending);
-    [80, 180, 360, 700, 1200].forEach(function(delay) {
+    [80, 180, 360, 700, 1200, 1800, 2600].forEach(function(delay) {
       window.setTimeout(revealVisiblePending, delay);
     });
   }
@@ -123,12 +139,12 @@
         window.clearInterval(window.__tscRevealTemporarySweeper);
         window.__tscRevealTemporarySweeper = null;
       }
-    }, 250);
+    }, 180);
     window.setTimeout(function() {
       if (!window.__tscRevealTemporarySweeper) return;
       window.clearInterval(window.__tscRevealTemporarySweeper);
       window.__tscRevealTemporarySweeper = null;
-    }, 7000);
+    }, 15000);
   }
 
   function bindReveals() {
@@ -168,14 +184,12 @@
       }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
 
       elements.forEach(function(element) {
-        if (isInRevealRange(element)) {
-          reveal(element);
-        } else {
-          observer.observe(element);
-        }
+        observer.observe(element);
       });
     } else {
-      elements.forEach(reveal);
+      window.requestAnimationFrame(function() {
+        elements.forEach(reveal);
+      });
     }
     bindViewportRevealEvents();
     scheduleRevealSweep();

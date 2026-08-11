@@ -2,7 +2,7 @@
   var ui = window.TSCComponents;
   if (!ui) return;
 
-  ui.ensureStylesheet('/css/forms.css?v=artist-path-recommend-1');
+  ui.ensureStylesheet('/css/forms.css?v=selected-state-1');
 
   var shared = {
     defaultCountryCode: '+91 India',

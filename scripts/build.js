@@ -215,6 +215,14 @@ for (const file of htmlFiles) {
   const relativeFile = path.relative(publicDir, file).replace(/\\/g, '/');
   const isFilmsPage = relativeFile === 'pages/films.html' || relativeFile === 'films/index.html';
   const isWorkPage = relativeFile === 'pages/work.html' || relativeFile === 'work/index.html';
+  const isCoursePage = [
+    'pages/music-production.html',
+    'pages/the-heart-of-composition.html',
+    'pages/roots-of-hindustani-classical.html',
+    'music-production/index.html',
+    'the-heart-of-composition/index.html',
+    'roots-of-hindustani-classical/index.html',
+  ].includes(relativeFile);
   const strippedHtml = isFilmsPage ? removeSectionById(html, 'comp-mqmh352i') : html;
   if (strippedHtml !== html) {
     fs.writeFileSync(file, strippedHtml, 'utf8');
@@ -230,6 +238,13 @@ for (const file of htmlFiles) {
   }
   if (isWorkPage) {
     const scriptedHtml = ensurePageScript(html, '/js/pages/work.animations.js');
+    if (scriptedHtml !== html) {
+      fs.writeFileSync(file, scriptedHtml, 'utf8');
+      html = scriptedHtml;
+    }
+  }
+  if (isCoursePage) {
+    const scriptedHtml = ensurePageScript(html, '/js/content-replacements.js?v=course-content-1');
     if (scriptedHtml !== html) {
       fs.writeFileSync(file, scriptedHtml, 'utf8');
       html = scriptedHtml;

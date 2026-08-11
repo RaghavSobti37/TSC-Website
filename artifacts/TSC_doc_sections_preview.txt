@@ -239,7 +239,7 @@ Work Cards
 Main Bhi Artist — Every Artist Has a Story. A global creator community built for writers, musicians, poets, storytellers and artists to share their work, find their audience and grow together.
 Havells mYOUsic — Discovering India’s Next Musical Voices. A grassroots music movement created to discover, mentor and launch emerging singers, composers, lyricists and instrumentalists.
 Insta Music League — Where Original Music Takes Centre Stage. A digital-first music discovery format built to celebrate originality over popularity metrics.
-Young Gunns — Building the Next Generation of Artists. An artist incubation programme where emerging musicians collaborate with experienced producers and creative mentors.
+The Young Gunns — Building the Next Generation of Artists. An artist incubation programme where emerging musicians collaborate with experienced producers and creative mentors.
 TSC Films — Mounting Films. Building Audiences. Creating Lasting IPs. Strategic support for independent films and culture-forward stories.
 
 
@@ -255,7 +255,7 @@ IP Cards
 Main Bhi Artist — A global community helping emerging creators showcase work, receive mentorship and grow together.
 Insta Music League — A digital-first music discovery ecosystem where originality matters more than following.
 Havells mYOUsic — A culture-first collaboration discovering and nurturing grassroots musical talent across India.
-Young Gunns — An incubator spotlighting the next generation of emerging creators.
+The Young Gunns — An incubator spotlighting the next generation of emerging creators.
 Initiative Cards
 Kalki — A culture-forward storytelling initiative exploring the story of tomorrow through ancient Indian imagination, strategic positioning and modern audience engagement.
 Mahaavatar Narsimha — A mythology-led animated feature strategy focused on cultural positioning, audience development, monetisation and long-term IP growth.
@@ -291,7 +291,7 @@ IP Gallery
 Main Bhi Artist — Global community platform for emerging creators to showcase work and find mentorship.
 Insta Music League — Digital-first talent discovery format through social media.
 Havells mYOUsic — Brand IP discovering and developing grassroots music talent across India.
-Young Gunns — Talent incubator and showcase IP for the next generation of breakthrough artists.
+The Young Gunns — Talent incubator and showcase IP for the next generation of breakthrough artists.
 CTA
 Collaborate With TSC
 Build Culture With Us
@@ -627,7 +627,7 @@ Insta Music League is envisioned as an annual digital music property that contin
 
 
 ================================================================================
-PAGE: Case Study: Young Gunns
+PAGE: Case Study: The Young Gunns
 URL / Placement: /work/young-gunns
 Design note: Use for Work case study subpage.
 Hero Headline
@@ -635,13 +635,13 @@ Building Tomorrow’s Artists Before the World Knows Their Names
 Hero Subheadline
 An artist incubator by The Shakti Collective bringing together emerging musicians, producers and creative mentors to transform original talent into release-ready artists.
 Overview / Opportunity
-India has never lacked musical talent. What it has lacked is structured artist development. Young Gunns was built to bridge this gap and invest in artists at the beginning of their journey.
+India has never lacked musical talent. What it has lacked is structured artist development. The Young Gunns was built to bridge this gap and invest in artists at the beginning of their journey.
 The Shakti Collective Role
 TSC led programme conceptualisation, artist selection, creative direction, music curation, production planning, visual identity, campaign strategy, release planning and community building.
 What We Built / Impact
 9 emerging artists, 9 original songs, 1 collaborative season anthem and a multidisciplinary ecosystem of producers, curators, filmmakers and creative collaborators.
 Looking Ahead
-Young Gunns is envisioned as an ongoing artist incubation platform creating a sustainable launchpad for independent talent across the country.
+The Young Gunns is envisioned as an ongoing artist incubation platform creating a sustainable launchpad for independent talent across the country.
 
 
 ================================================================================

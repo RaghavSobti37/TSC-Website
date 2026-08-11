@@ -548,9 +548,9 @@ footer.site-footer:has(.tsc-mobile-footer) {
 }
 
 @media (min-width: 1025px) {
-  /* Owner request: remove Mohit Shankar roster card; keep Harshad + Yugm only */
-  body[data-page="artists"] #comp-mqutenq5,
-  body[data-page="artists"] [id^="comp-mqutenq"] {
+  /* Harshaduhita roster card commented out; Mohit Shankar stays visible. */
+  body[data-page="artists"] #comp-mqtpn27i,
+  body[data-page="artists"] [id^="comp-mqtpn27"] {
     display: none !important;
     width: 0 !important;
     min-width: 0 !important;
@@ -2192,8 +2192,8 @@ body:has(#comp-mr69hwoy) :is(#comp-mr69hwvf5, #comp-mr69hwvh) {
 
   body[data-page="about"] #comp-mp2vlkbh2,
   body[data-page="about"] #comp-mp2vlkbh2 .comp-mp2vlkbh2-overflow-wrapper {
-    min-height: clamp(562px, calc(75svh - 150px), 780px) !important;
-    height: clamp(562px, calc(75svh - 150px), 780px) !important;
+    min-height: clamp(560px, 55.6svh, 640px) !important;
+    height: clamp(560px, 55.6svh, 640px) !important;
     overflow: hidden !important;
   }
 
@@ -2267,8 +2267,10 @@ body:has(#comp-mr69hwoy) :is(#comp-mr69hwvf5, #comp-mr69hwvh) {
   body[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tv44l,
   body[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tv44l .wixui-rich-text__text {
     height: auto !important;
-    line-height: 1.04 !important;
+    line-height: 1.12 !important;
     max-width: min(48vw, 420px) !important;
+    min-height: 64px !important;
+    overflow: visible !important;
     text-align: center !important;
     white-space: normal !important;
     width: min(48vw, 420px) !important;
@@ -2276,6 +2278,81 @@ body:has(#comp-mr69hwoy) :is(#comp-mr69hwvf5, #comp-mr69hwvh) {
 
   body[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tv44l .wixui-rich-text__text {
     font-size: clamp(21px, 1.9vw, 27px) !important;
+  }
+
+  body[data-page="about"] [data-tsc-locked-desktop-header="true"],
+  body[data-page="about"] [data-tsc-locked-desktop-header="true"] #comp-mp2vlkc3_r_comp-kbgajy18 {
+    height: 177px !important;
+    min-height: 177px !important;
+  }
+
+  body[data-page="about"] [data-tsc-locked-desktop-header="true"] #comp-mp2vlkc3_r_comp-mp3rsqk1 {
+    height: 101px !important;
+    left: -91px !important;
+    top: 5px !important;
+    width: 246px !important;
+  }
+
+  body[data-page="about"] [data-tsc-locked-desktop-header="true"] #comp-mp2vlkc3_r_comp-mp3rsqk1 svg,
+  body[data-page="about"] [data-tsc-locked-desktop-header="true"] #comp-mp2vlkc3_r_comp-mp3rsqk1 a {
+    height: 100% !important;
+    width: 100% !important;
+  }
+
+  body[data-page="about"] [data-tsc-locked-desktop-header="true"] #comp-mp2vlkc3_r_comp-mrriywbr {
+    left: 24px !important;
+    top: 1px !important;
+  }
+
+  body[data-page="about"] [data-tsc-locked-desktop-header="true"] #comp-mp2vlkc3_r_comp-mrriyw6n {
+    left: 72px !important;
+    top: 0 !important;
+  }
+
+  body[data-page="about"] #comp-mr1u2p4j,
+  body[data-page="about"] #comp-mr1u2p4j .comp-mr1u2p4j-container {
+    min-height: 625px !important;
+    overflow: visible !important;
+  }
+
+  body[data-page="about"] #comp-mr1u2p4j .comp-mr1u2p4j-container {
+    box-sizing: border-box !important;
+    display: grid !important;
+    gap: 24px 56px !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    grid-template-rows: 112px auto !important;
+    margin-inline: auto !important;
+    max-width: min(84.4vw, 1586px) !important;
+    padding: 114px 0 72px !important;
+    width: min(84.4vw, 1586px) !important;
+  }
+
+  body[data-page="about"] #comp-mr1u2p4j .comp-mr1u2p4j-container > :is(#comp-mr1w88dl, #comp-mr1wb3oc, #comp-mr1wdo6d, #comp-mr1wdahh) {
+    left: auto !important;
+    margin: 0 !important;
+    max-width: none !important;
+    position: relative !important;
+    top: auto !important;
+    transform: none !important;
+    width: 100% !important;
+  }
+
+  body[data-page="about"] #comp-mr1w88dl {
+    grid-area: 1 / 1 / 2 / 2 !important;
+    height: 112px !important;
+  }
+
+  body[data-page="about"] #comp-mr1wdo6d {
+    grid-area: 1 / 2 / 2 / 3 !important;
+    height: 112px !important;
+  }
+
+  body[data-page="about"] #comp-mr1wb3oc {
+    grid-area: 2 / 1 / 3 / 2 !important;
+  }
+
+  body[data-page="about"] #comp-mr1wdahh {
+    grid-area: 2 / 2 / 3 / 3 !important;
   }
 
 

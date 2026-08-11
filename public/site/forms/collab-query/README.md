@@ -25,7 +25,7 @@
 - Main Bhi Artist — Global community platform for emerging creators to showcase work and find mentorship.
 - Insta Music League — Digital-first talent discovery format through social media.
 - Havells mYOUsic — Brand IP discovering and developing grassroots music talent across India.
-- Young Gunns — Talent incubator and showcase IP for the next generation of breakthrough artists.
+- The Young Gunns — Talent incubator and showcase IP for the next generation of breakthrough artists.
 - Collaborate With TSC
 - Build Culture With Us
 

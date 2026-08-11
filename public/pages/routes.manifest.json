@@ -75,7 +75,7 @@
       "file": "insta-music-league.html"
     },
     {
-      "title": "Young Gunns",
+      "title": "The Young Gunns",
       "route": "/young-gunns",
       "aliases": [
         "/work0",
@@ -91,6 +91,14 @@
         "/artists/harshad-duhita"
       ],
       "file": "harshad-duhita.html"
+    },
+    {
+      "title": "Mohit Shankar",
+      "route": "/mohit-shankar",
+      "aliases": [
+        "/artists/mohit-shankar"
+      ],
+      "file": "mohit-shankar.html"
     },
     {
       "title": "Roots of Hindustani Classical",
@@ -370,6 +378,10 @@
       "route": "/harshad-duhita"
     },
     {
+      "alias": "/artists/mohit-shankar",
+      "route": "/mohit-shankar"
+    },
+    {
       "alias": "/blank-9-1",
       "route": "/roots-of-hindustani-classical"
     },
@@ -625,6 +637,7 @@
     "/insta-music-league",
     "/young-gunns",
     "/harshad-duhita",
+    "/mohit-shankar",
     "/roots-of-hindustani-classical",
     "/the-heart-of-composition",
     "/music-production",

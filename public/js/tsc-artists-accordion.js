@@ -10,20 +10,20 @@
 
   var CARD_SPECS = [
     {
-      root: 'comp-mqtpn27i',
-      img: 'comp-mqtpn27o',
-      name: 'comp-mqtpn2877',
-      bio: 'comp-mqtpn2854',
-      btn: 'comp-mqtpn27z',
-      href: '/harshad-duhita'
-    },
-    {
       root: 'comp-mqtq8rsp',
       img: 'comp-mqtq8rsv',
       name: 'comp-mqtq8rt23',
       bio: 'comp-mqtq8rt44',
       btn: 'comp-mqtq8rt66',
       href: '/yugm'
+    },
+    {
+      root: 'comp-mqutenq5',
+      img: 'comp-mqutenqa',
+      name: 'comp-mqutenqi',
+      bio: 'comp-mqutenqk',
+      btn: 'comp-mqutenqm',
+      href: '/mohit-shankar'
     }
   ];
 

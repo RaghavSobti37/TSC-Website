@@ -10,7 +10,7 @@ Building platforms, partnerships, and cultural movements that create lasting imp
 - **Main Bhi Artist** — global creator community for writers, musicians, poets, storytellers
 - **Havells mYOUsic** — grassroots music movement to discover, mentor, and launch emerging talent
 - **Insta Music League** — digital-first music discovery celebrating originality
-- **Young Gunns** — artist incubation with producers and mentors
+- **The Young Gunns** — artist incubation with producers and mentors
 - **TSC Films** — mounting films, building audiences, creating lasting IPs
 
 Related case URL on this site: [MBA](https://wix-site-clone-psi.vercel.app/mba)
@@ -27,6 +27,6 @@ Havells mYOUsic — Discovering India’s Next Musical Voices. A grassroots musi
 
 Insta Music League — Where Original Music Takes Centre Stage. A digital-first music discovery format built to celebrate originality over popularity metrics.
 
-Young Gunns — Building the Next Generation of Artists. An artist incubation programme where emerging musicians collaborate with experienced producers and creative mentors.
+The Young Gunns — Building the Next Generation of Artists. An artist incubation programme where emerging musicians collaborate with experienced producers and creative mentors.
 
 TSC Films — Mounting Films. Building Audiences. Creating Lasting IPs. Strategic support for independent films and culture-forward stories.

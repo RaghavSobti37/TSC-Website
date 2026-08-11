@@ -1659,13 +1659,23 @@ For storytellers building identity beyond trends.</p>
   if (!element) return;
   var model = JSON.parse(element.textContent);
   var origin = location.origin;
-  var href = new URL(location.pathname + location.search, origin).href;
+  function canonicalPathname() {
+    var path = location.pathname || "/";
+    var match = path.match(/^\/pages\/([^/]+)\.html$/);
+    if (!match) return path;
+    return match[1] === "home" ? "/" : "/" + match[1];
+  }
+  var runtimePath = canonicalPathname();
+  if (runtimePath !== location.pathname) {
+    history.replaceState(history.state, "", runtimePath + location.search + location.hash);
+  }
+  var href = new URL(runtimePath + location.search, origin).href;
   var config = model.siteFeaturesConfigs || {};
   if (config.router) config.router.baseUrl = origin;
   if (config.routerFetch) config.routerFetch.externalBaseUrl = origin;
   if (config.seo && config.seo.context) {
     config.seo.context.siteUrl = origin;
-    config.seo.context.defaultUrl = location.pathname || "/";
+    config.seo.context.defaultUrl = runtimePath;
   }
   model.requestUrl = href;
   if (model.site) model.site.externalBaseUrl = origin;

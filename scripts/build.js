@@ -219,6 +219,19 @@ function ensureHeadScript(html, src) {
   return ensurePageScript(html, src);
 }
 
+function canonicalizeRuntimeConfig(html) {
+  if (!html.includes('data-tsc-runtime-config')) return html;
+  let next = html.replace(
+    /^(\s*)var origin = location\.origin;\r?\n(?:\1function canonicalPathname\(\) \{[\s\S]*?\1var href = new URL\(runtimePath \+ location\.search, origin\)\.href;|\1var href = new URL\(location\.pathname \+ location\.search, origin\)\.href;)/m,
+    '$1var origin = location.origin;\n$1function canonicalPathname() {\n$1  var path = location.pathname || "/";\n$1  var match = path.match(/^\\/pages\\/([^/]+)\\.html$/);\n$1  if (!match) return path;\n$1  return match[1] === "home" ? "/" : "/" + match[1];\n$1}\n$1var runtimePath = canonicalPathname();\n$1if (runtimePath !== location.pathname) {\n$1  history.replaceState(history.state, "", runtimePath + location.search + location.hash);\n$1}\n$1var href = new URL(runtimePath + location.search, origin).href;'
+  );
+  next = next.replace(
+    '    config.seo.context.defaultUrl = location.pathname || "/";',
+    '    config.seo.context.defaultUrl = runtimePath;'
+  );
+  return next;
+}
+
 for (const file of htmlFiles) {
   let html = fs.readFileSync(file, 'utf8');
   const relativeFile = path.relative(publicDir, file).replace(/\\/g, '/');
@@ -286,6 +299,11 @@ for (const file of htmlFiles) {
     process.exit(1);
   }
   if (routePath) {
+    const runtimeHtml = canonicalizeRuntimeConfig(html);
+    if (runtimeHtml !== html) {
+      fs.writeFileSync(file, runtimeHtml, 'utf8');
+      html = runtimeHtml;
+    }
     const guardedHtml = ensureHeadScript(html, '/js/tsc-wix-animation-runtime.js?v=range-guard-1');
     if (guardedHtml !== html) {
       fs.writeFileSync(file, guardedHtml, 'utf8');
@@ -301,7 +319,7 @@ for (const file of htmlFiles) {
       console.error(`Invalid canonical runtime URL found in ${relativeFile}`);
       process.exit(1);
     }
-    if (!html.includes('model.site.externalBaseUrl = origin') || !html.includes('model.requestUrl = new URL(location.pathname + location.search, origin).href') || !html.includes('data-tsc-runtime-config') || !html.includes('data-tsc-standalone-runtime')) {
+    if (!html.includes('model.site.externalBaseUrl = origin') || !html.includes('var runtimePath = canonicalPathname()') || !html.includes('model.requestUrl = href') || !html.includes('data-tsc-runtime-config') || !html.includes('data-tsc-standalone-runtime')) {
       console.error(`Dynamic Thunderbolt origin bootstrap is missing in ${relativeFile}`);
       process.exit(1);
     }

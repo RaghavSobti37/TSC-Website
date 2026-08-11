@@ -499,6 +499,13 @@
     display: block;
   }
 
+  .tsc-mobile-footer-icon svg,
+  .tsc-mobile-footer-icon svg * {
+    color: var(--tsc-mobile-footer-icon-fg);
+    fill: var(--tsc-mobile-footer-icon-fg) !important;
+    stroke: none !important;
+  }
+
   .tsc-mobile-menu nav a {
     box-sizing: border-box;
     min-height: 44px;

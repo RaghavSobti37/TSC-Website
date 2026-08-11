@@ -4,7 +4,7 @@ const path = require('path');
 const publicDir = path.join(__dirname, '..', 'public');
 const pagesDir = path.join(publicDir, 'pages');
 
-const media = '/assets/mirror/static.wixstatic.com/media/';
+const media = '/assets/mirror/static.wixstatic.com/original-media/';
 
 const reports = [
   {
@@ -208,7 +208,7 @@ function render(report) {
   <title>${htmlEscape(report.title)} | Film Impact Report | The Shakti Collective</title>
   <meta name="description" content="${htmlEscape(report.subtitle)}">
   <link rel="canonical" href="/${report.slug}">
-  <link rel="stylesheet" href="/css/pages/impact-report.css">
+  <link rel="stylesheet" href="/css/pages/impact-report.css?v=readability-nav-1">
   <link rel="stylesheet" href="/css/tsc-responsive.css">
   <link rel="stylesheet" href="/css/tsc-mobile-system.css">
   <link rel="stylesheet" href="/css/mobile/_safe-base.css">
@@ -284,7 +284,7 @@ function render(report) {
     </nav>
   </main>
   <script src="/js/tsc-components.js?v=nav-component-1" defer></script>
-  <script src="/js/pages/impact-report-components.js" defer></script>
+  <script src="/js/pages/impact-report-components.js?v=readability-nav-1" defer></script>
 </body>
 </html>
 `;

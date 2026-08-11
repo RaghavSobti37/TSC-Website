@@ -27,8 +27,11 @@
   function mountImpactComponents() {
     if (!window.TSCComponents) return;
     var path = canonicalPathname();
+    var isWorkReport = !!IMPACT_PATHS[path];
+    var isFilmReport = !!FILM_REPORT_PATHS[path];
+    var chromePath = isFilmReport ? '/films' : (isWorkReport ? '/work' : '/work');
     var opts = {
-      path: IMPACT_PATHS[path] || FILM_REPORT_PATHS[path] ? path : '/work',
+      path: chromePath,
       academyPaths: {},
       brandAssets: {
         main: {
@@ -52,7 +55,7 @@
     document.body.dataset.page = path.replace(/^\//, '') || 'home';
     document.body.setAttribute('data-page', document.body.dataset.page);
 
-    if (window.TSCComponents.mountDesktopHeader) window.TSCComponents.mountDesktopHeader(Object.assign({}, opts, { forceCustomHeader: true }));
+    if (window.TSCComponents.mountDesktopHeader) window.TSCComponents.mountDesktopHeader(Object.assign({}, opts, { forceCustomHeader: true, activePage: isFilmReport ? 'films' : 'work' }));
     if (window.TSCComponents.mountMobileHeader) window.TSCComponents.mountMobileHeader(opts);
     if (window.TSCComponents.mountDesktopFooter) window.TSCComponents.mountDesktopFooter(opts);
     if (window.TSCComponents.mountMobileFooter) window.TSCComponents.mountMobileFooter(opts);

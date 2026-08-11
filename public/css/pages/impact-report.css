@@ -53,7 +53,7 @@ a {
   min-height: 100vh;
   background:
     linear-gradient(90deg, rgba(58, 18, 18, 0.06) 1px, transparent 1px) 0 0 / 72px 72px,
-    linear-gradient(180deg, #ffecd1 0%, #f8dfbd 48%, #ffecd1 100%);
+    linear-gradient(180deg, #ffecd1 0%, #fde6c4 48%, #ffecd1 100%);
   overflow: clip;
 }
 
@@ -306,6 +306,11 @@ a {
 .report-band {
   border-top: 1px solid var(--report-line);
   position: relative;
+  background: rgba(255, 236, 209, 0.82);
+}
+
+.report-band:nth-of-type(even) {
+  background: rgba(255, 236, 209, 0.92);
 }
 
 .report-section {
@@ -321,11 +326,14 @@ a {
   position: sticky;
   top: 92px;
   align-self: start;
-  color: var(--report-gold);
-  font-size: 12px;
-  font-weight: 850;
+  max-width: 260px;
+  color: #7a2f18;
+  font-size: clamp(22px, 2.15vw, 34px);
+  font-family: var(--font-display);
+  font-weight: 900;
+  line-height: 1.02;
   text-transform: uppercase;
-  letter-spacing: 0.12em;
+  letter-spacing: 0;
 }
 
 .report-copy h2 {
@@ -347,8 +355,10 @@ a {
 
 .report-copy p {
   margin: 0 0 16px;
-  color: rgba(58, 18, 18, 0.78);
-  font-size: 19px;
+  color: #35130d;
+  font-size: clamp(20px, 1.45vw, 24px);
+  font-weight: 500;
+  line-height: 1.55;
 }
 
 .report-list {
@@ -364,8 +374,10 @@ a {
   border: 1px solid var(--report-line);
   border-left: 5px solid var(--report-gold);
   background: rgba(255, 236, 209, 0.68);
-  color: rgba(58, 18, 18, 0.82);
-  font-size: 16px;
+  color: #35130d;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.45;
 }
 
 .quote-card {
@@ -493,8 +505,10 @@ a {
 
 .proof-item p {
   margin: 0;
-  color: rgba(58, 18, 18, 0.76);
-  font-size: 15px;
+  color: #35130d;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.45;
 }
 
 .report-process {
@@ -542,7 +556,15 @@ a {
   background:
     linear-gradient(90deg, rgba(96, 35, 20, 0.05) 1px, transparent 1px) 0 0 / 76px 76px,
     radial-gradient(circle at 8% 8%, rgba(97, 35, 20, 0.18), transparent 28%),
-    linear-gradient(180deg, #ffecd1 0%, rgba(97, 35, 20, 0.88) 44%, #ffecd1 100%);
+    linear-gradient(180deg, #ffecd1 0%, #f6d4ae 44%, #ffecd1 100%);
+}
+
+.report-page--film .report-band {
+  background: rgba(255, 236, 209, 0.74);
+}
+
+.report-page--film .report-band:nth-of-type(even) {
+  background: rgba(255, 236, 209, 0.88);
 }
 
 .report-page--film .report-hero::after {
@@ -637,6 +659,11 @@ a {
   line-height: 1.1;
 }
 
+body:has(.tsc-desktop-site-header) .report-header,
+body:has(.tsc-mobile-site-header) .report-header {
+  display: none !important;
+}
+
 @media (max-width: 1024px) {
   .report-header {
     position: relative;
@@ -655,6 +682,8 @@ a {
 
   .section-label {
     position: static;
+    max-width: none;
+    font-size: clamp(21px, 4.2vw, 30px);
   }
 
   .report-case-nav {
@@ -686,7 +715,7 @@ a {
   }
 
   .report-copy p {
-    font-size: 17px;
+    font-size: 18px;
   }
 
   .quote-card p {
@@ -801,7 +830,7 @@ a {
   }
 
   .report-copy p {
-    font-size: 16px;
+    font-size: 17px;
     line-height: 1.55;
   }
 

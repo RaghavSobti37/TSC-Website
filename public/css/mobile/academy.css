@@ -25,6 +25,22 @@
     overflow-x: hidden !important;
   }
 
+  /* From learn.css wrapper — keep when boot loads academy.css directly */
+  body[data-page="academy"] main,
+  body[data-page="academy"] #SITE_PAGES {
+    overflow-x: clip !important;
+    max-width: 100% !important;
+  }
+
+  body[data-page="academy"] main section.wixui-section {
+    overflow-x: clip !important;
+    max-width: 100% !important;
+  }
+
+  body[data-page="academy"] .tsc-sticky-cta:not(.tsc-phone-fab) {
+    display: none !important;
+  }
+
   #courses {
     scroll-margin-top: 56px;
   }
@@ -117,6 +133,39 @@
   }
   body[data-page="academy"] #comp-mqwdnovu { order: 3 !important; } /* body copy */
   body[data-page="academy"] #comp-mqwe17k6 { order: 4 !important; align-self: flex-start !important; width: auto !important; }
+
+  /*
+   * Hero photo (#comp-mqwhzev1): tsc-responsive hides it only ≤700px.
+   * On tablet (701–1024) it was order:0 → image above copy. Stack after CTA.
+   */
+  body[data-page="academy"] #comp-mqwhzev1 {
+    order: 5 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    max-height: min(48vh, 420px) !important;
+    margin: 8px 0 0 !important;
+    overflow: hidden !important;
+  }
+
+  body[data-page="academy"] #comp-mqwhzev1 .YX2qkL,
+  body[data-page="academy"] #comp-mqwhzev1 wow-image,
+  body[data-page="academy"] #comp-mqwhzev1 img {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 100% !important;
+    max-height: min(48vh, 420px) !important;
+    object-fit: cover !important;
+    object-position: center top !important;
+  }
+
+  @media (max-width: 700px) {
+    /* Match tsc-responsive phone hide — keep hero copy-first on small screens */
+    body[data-page="academy"] #comp-mqwhzev1,
+    body[data-page="academy"] #comp-mpjwvo70 {
+      display: none !important;
+    }
+  }
 
   body[data-page="academy"] .comp-mqwcognj-overflow-wrapper {
     height: auto !important;

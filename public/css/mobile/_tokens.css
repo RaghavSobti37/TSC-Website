@@ -97,12 +97,12 @@
   --tsc-progress-w: 2px;
   --tsc-progress-inset: 16px;
 
-  /* Mobile chrome logos — trimmed assets, contain (no crop-zoom) */
+  /* Mobile chrome logos — flush-trimmed assets, contain (no crop-zoom) */
   --tsc-nav-logo-h: 40px;
-  --tsc-nav-logo-w: 160px;
+  --tsc-nav-logo-w: 148px;
   --tsc-nav-bar-h: 56px;
-  --tsc-footer-logo-w: 168px;
-  --tsc-footer-logo-h: 48px;
+  --tsc-footer-logo-w: 180px;
+  --tsc-footer-logo-h: 74px;
   --tsc-phone-fab-size: 56px;
 }
 

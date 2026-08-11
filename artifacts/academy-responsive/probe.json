@@ -1,0 +1,71 @@
+[
+  {
+    "vp": "desktop",
+    "iw": 1440,
+    "sw": 1440,
+    "overflowX": false,
+    "desktopMq": true,
+    "cssAcademy": [],
+    "heroFlex": "row",
+    "heroDisplay": "grid",
+    "heroH": 761,
+    "readyFlex": "row",
+    "featuresFlex": "row",
+    "mobileHeader": false,
+    "lockedHeader": true,
+    "offenders": [],
+    "title": "Unfolding Artist Force"
+  },
+  {
+    "vp": "tablet",
+    "iw": 768,
+    "sw": 768,
+    "overflowX": false,
+    "desktopMq": false,
+    "cssAcademy": [
+      {
+        "href": "/css/mobile/academy.css",
+        "media": "(max-width: 1024px)"
+      },
+      {
+        "href": "/css/mobile/academy.css?v=academy-stack-3",
+        "media": ""
+      }
+    ],
+    "heroFlex": "column",
+    "heroDisplay": "flex",
+    "heroH": 728,
+    "readyFlex": "column",
+    "featuresFlex": "column",
+    "mobileHeader": true,
+    "lockedHeader": false,
+    "offenders": [],
+    "title": "Unfolding Artist Force"
+  },
+  {
+    "vp": "mobile",
+    "iw": 390,
+    "sw": 390,
+    "overflowX": false,
+    "desktopMq": false,
+    "cssAcademy": [
+      {
+        "href": "/css/mobile/academy.css",
+        "media": "(max-width: 1024px)"
+      },
+      {
+        "href": "/css/mobile/academy.css?v=academy-stack-3",
+        "media": ""
+      }
+    ],
+    "heroFlex": "column",
+    "heroDisplay": "flex",
+    "heroH": 349,
+    "readyFlex": "column",
+    "featuresFlex": "column",
+    "mobileHeader": true,
+    "lockedHeader": false,
+    "offenders": [],
+    "title": "Unfolding Artist Force"
+  }
+]

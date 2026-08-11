@@ -4,6 +4,22 @@
   src: url("/assets/mirror/static.parastorage.com/services/santa-resources/resources/viewer/user-site-fonts/fonts/WixMadefor/v3/WixMadeforTextVF_W_Wght.woff2") format("woff2-variations");
 }
 
+@font-face {
+  font-display: swap;
+  font-family: Signika;
+  font-style: normal;
+  font-weight: 400;
+  src: url("/assets/mirror/static.parastorage.com/tag-bundler/api/v1/fonts-cache/googlefont/woff2/s/signika/v10/vEFR2_JTCgwQ5ejvG1EmBlprZ0g.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: Signika;
+  font-style: normal;
+  font-weight: 700;
+  src: url("/assets/mirror/static.parastorage.com/tag-bundler/api/v1/fonts-cache/googlefont/woff2/s/signika/v10/vEFU2_JTCgwQ5ejvE-oDE3dJamIe2tI.woff2") format("woff2");
+}
+
 :root {
   --tsc-cream: #ffecd1;
   --tsc-paper: #fffaf1;

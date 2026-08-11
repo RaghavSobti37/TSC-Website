@@ -1,0 +1,104 @@
+{
+  "scrollY": 0,
+  "kids": [
+    {
+      "id": "comp-mqz7149p",
+      "order": "0",
+      "top": 0,
+      "h": 0,
+      "w": 0
+    },
+    {
+      "id": "comp-mqwhzev1",
+      "order": "5",
+      "top": 324,
+      "h": 420,
+      "w": 724
+    },
+    {
+      "id": "comp-mqwdnovu",
+      "order": "3",
+      "top": 190,
+      "h": 45,
+      "w": 724
+    },
+    {
+      "id": "comp-mqwe8zdd",
+      "order": "1",
+      "top": 88,
+      "h": 23,
+      "w": 724
+    },
+    {
+      "id": "comp-mqwcozxs",
+      "order": "2",
+      "top": 125,
+      "h": 52,
+      "w": 724
+    },
+    {
+      "id": "comp-mqwe17k6",
+      "order": "4",
+      "top": 249,
+      "h": 52,
+      "w": 190
+    }
+  ],
+  "tops": [
+    {
+      "id": "comp-mqwcognj",
+      "top": 56,
+      "h": 728,
+      "text": "We help artists who aspire to go professional atta"
+    },
+    {
+      "id": "comp-mqwhzev1",
+      "top": 324,
+      "h": 420,
+      "text": ""
+    },
+    {
+      "id": "comp-mqwe6h8s",
+      "top": 784,
+      "h": 320,
+      "text": "ARE YOU READY? Every artist has a story waiting t"
+    },
+    {
+      "id": "comp-mqweukbe",
+      "top": 808,
+      "h": 97,
+      "text": "ARE YOU READY? Every artist has a story waiting t"
+    },
+    {
+      "id": "comp-mqwedc4k",
+      "top": 820,
+      "h": 73,
+      "text": "ARE YOU READY? Every artist has a story waiting t"
+    },
+    {
+      "id": "comp-mqwezo2o",
+      "top": 820,
+      "h": 72,
+      "text": "ARE YOU READY? Every artist has a story waiting t"
+    },
+    {
+      "id": "comp-mqweuv8n",
+      "top": 920,
+      "h": 159,
+      "text": "We're a one of a kind group of leading industry pr"
+    },
+    {
+      "id": "comp-mqwf1pnj",
+      "top": 932,
+      "h": 135,
+      "text": "We're a one of a kind group of leading industry pr"
+    },
+    {
+      "id": "comp-mqweb0ql",
+      "top": 932,
+      "h": 135,
+      "text": "We're a one of a kind group of leading industry pr"
+    }
+  ],
+  "luca": null
+}

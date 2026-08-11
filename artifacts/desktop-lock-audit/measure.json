@@ -1,0 +1,249 @@
+[
+  {
+    "route": "/",
+    "dataPage": "home",
+    "w": 1440,
+    "desktopMq": true,
+    "overflowX": false,
+    "hasLockedHeader": true,
+    "hasCustomHeader": false,
+    "mobileHeaderVisible": false,
+    "navVisible": [
+      "About",
+      "Work",
+      "Artists",
+      "Films",
+      "Resources",
+      "TSC ACADEMY"
+    ],
+    "logo": {
+      "w": 259,
+      "h": 72,
+      "mix": "screen",
+      "filter": "none"
+    },
+    "hero": null,
+    "dupPartnershipsHidden": true,
+    "shot": "ok"
+  },
+  {
+    "route": "/about",
+    "dataPage": "about",
+    "w": 1440,
+    "desktopMq": true,
+    "overflowX": false,
+    "hasLockedHeader": true,
+    "hasCustomHeader": false,
+    "mobileHeaderVisible": false,
+    "navVisible": [
+      "About",
+      "Work",
+      "Artists",
+      "Films",
+      "Resources",
+      "TSC ACADEMY"
+    ],
+    "logo": {
+      "w": 259,
+      "h": 72,
+      "mix": "normal",
+      "filter": "brightness(0) saturate(1) invert(0.36) sepia(0.78) saturate(14.5) hue-rotate(357"
+    },
+    "hero": {
+      "h": 562,
+      "flex": "flex",
+      "shell": {
+        "w": 150,
+        "h": 150,
+        "y": 226,
+        "fixed": "1",
+        "img": {
+          "nw": 72,
+          "nh": 112,
+          "complete": true
+        },
+        "cropped": null,
+        "viewBox": null,
+        "path0Fill": null,
+        "path3Display": null,
+        "pathCount": 0
+      }
+    },
+    "dupPartnershipsHidden": true,
+    "shot": "ok"
+  },
+  {
+    "route": "/films",
+    "dataPage": "films",
+    "w": 1440,
+    "desktopMq": true,
+    "overflowX": false,
+    "hasLockedHeader": true,
+    "hasCustomHeader": false,
+    "mobileHeaderVisible": false,
+    "navVisible": [
+      "About",
+      "Work",
+      "Artists",
+      "Films",
+      "Resources",
+      "TSC ACADEMY"
+    ],
+    "logo": {
+      "w": 259,
+      "h": 72,
+      "mix": "normal",
+      "filter": "brightness(0) saturate(1) invert(0.36) sepia(0.78) saturate(14.5) hue-rotate(357"
+    },
+    "hero": null,
+    "dupPartnershipsHidden": true,
+    "shot": "ok"
+  },
+  {
+    "route": "/work",
+    "dataPage": "work",
+    "w": 1440,
+    "desktopMq": true,
+    "overflowX": false,
+    "hasLockedHeader": true,
+    "hasCustomHeader": false,
+    "mobileHeaderVisible": false,
+    "navVisible": [
+      "About",
+      "Work",
+      "Artists",
+      "Films",
+      "Resources",
+      "TSC ACADEMY"
+    ],
+    "logo": {
+      "w": 259,
+      "h": 72,
+      "mix": "normal",
+      "filter": "brightness(0) saturate(1) invert(0.36) sepia(0.78) saturate(14.5) hue-rotate(357"
+    },
+    "hero": null,
+    "dupPartnershipsHidden": true,
+    "shot": "ok"
+  },
+  {
+    "route": "/artists",
+    "dataPage": "artists",
+    "w": 1440,
+    "desktopMq": true,
+    "overflowX": false,
+    "hasLockedHeader": true,
+    "hasCustomHeader": false,
+    "mobileHeaderVisible": false,
+    "navVisible": [
+      "About",
+      "Work",
+      "Artists",
+      "Films",
+      "Resources",
+      "TSC ACADEMY"
+    ],
+    "logo": {
+      "w": 259,
+      "h": 72,
+      "mix": "normal",
+      "filter": "brightness(0) saturate(1) invert(0.36) sepia(0.78) saturate(14.5) hue-rotate(357"
+    },
+    "hero": null,
+    "dupPartnershipsHidden": true,
+    "shot": "ok"
+  },
+  {
+    "route": "/academy",
+    "dataPage": "academy",
+    "w": 1440,
+    "desktopMq": true,
+    "overflowX": false,
+    "hasLockedHeader": true,
+    "hasCustomHeader": false,
+    "mobileHeaderVisible": false,
+    "navVisible": [
+      "Resources"
+    ],
+    "logo": {
+      "w": 259,
+      "h": 72,
+      "mix": "screen",
+      "filter": "none"
+    },
+    "hero": null,
+    "dupPartnershipsHidden": true,
+    "shot": "ok"
+  },
+  {
+    "route": "/resources",
+    "dataPage": "resources",
+    "w": 1440,
+    "desktopMq": true,
+    "overflowX": false,
+    "hasLockedHeader": true,
+    "hasCustomHeader": false,
+    "mobileHeaderVisible": false,
+    "navVisible": [
+      "Resources"
+    ],
+    "logo": {
+      "w": 259,
+      "h": 72,
+      "mix": "screen",
+      "filter": "none"
+    },
+    "hero": null,
+    "dupPartnershipsHidden": true,
+    "shot": "ok"
+  },
+  {
+    "route": "/artist-path",
+    "dataPage": "artist-path",
+    "w": 1440,
+    "desktopMq": true,
+    "overflowX": false,
+    "hasLockedHeader": true,
+    "hasCustomHeader": false,
+    "mobileHeaderVisible": false,
+    "navVisible": [
+      "About",
+      "Work",
+      "Artists",
+      "Films",
+      "Resources",
+      "TSC ACADEMY"
+    ],
+    "logo": {
+      "w": 259,
+      "h": 72,
+      "mix": "normal",
+      "filter": "brightness(0) saturate(1) invert(0.36) sepia(0.78) saturate(14.5) hue-rotate(357"
+    },
+    "hero": null,
+    "dupPartnershipsHidden": true,
+    "shot": "ok"
+  },
+  {
+    "route": "/learn-with-tsc",
+    "dataPage": "academy",
+    "w": 1440,
+    "desktopMq": true,
+    "overflowX": false,
+    "hasLockedHeader": true,
+    "hasCustomHeader": false,
+    "mobileHeaderVisible": false,
+    "navVisible": [
+      "Resources"
+    ],
+    "logo": {
+      "w": 259,
+      "h": 72,
+      "mix": "screen",
+      "filter": "none"
+    },
+    "hero": null,
+    "dupPartnershipsHidden": true,
+    "shot": "ok"
+  }
+]

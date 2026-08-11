@@ -1,0 +1,19 @@
+{
+  "mobile": {
+    "copyInBrand": false,
+    "afterSocial": true,
+    "socialBox": { "x": 20, "y": 614, "w": 350, "h": 71 },
+    "copyBox": { "x": 20, "y": 698, "w": 350, "h": 15 },
+    "copyText": "© 2026 The Shakti Collective. All rights reserved.",
+    "order": [
+      "tsc-mobile-footer-brand",
+      "tsc-mobile-footer-acc",
+      "tsc-mobile-footer-acc",
+      "tsc-mobile-footer-acc",
+      "tsc-mobile-footer-news",
+      "tsc-mobile-footer-social",
+      "tsc-mobile-footer-bottom"
+    ],
+    "placement": "under social icon row inside .tsc-mobile-footer-bottom"
+  }
+}

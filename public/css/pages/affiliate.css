@@ -1,12 +1,12 @@
 :root {
-  --affiliate-teal: #005a5a;
-  --affiliate-teal-deep: #003f3d;
+  --affiliate-teal: #08525f;
+  --affiliate-teal-deep: #053d48;
   --affiliate-cream: #ffecd1;
   --affiliate-terracotta: #b74b02;
   --affiliate-ink: #321615;
-  --affiliate-hairline: rgba(0, 90, 90, 0.2);
-  --affiliate-display: Georgia, "Times New Roman", serif;
-  --affiliate-sans: Arial, Helvetica, sans-serif;
+  --affiliate-hairline: rgba(8, 82, 95, 0.2);
+  --affiliate-display: Signika, "Wix Madefor Text", "Madefor-Text", Arial, sans-serif;
+  --affiliate-sans: Signika, "Wix Madefor Text", "Madefor-Text", Arial, sans-serif;
 }
 
 * {
@@ -79,7 +79,7 @@ body.affiliate-page {
 
 .affiliate-hero {
   background:
-    linear-gradient(180deg, rgba(0, 90, 90, 0.18), rgba(255, 236, 209, 0) 78%),
+    linear-gradient(180deg, rgba(8, 82, 95, 0.18), rgba(255, 236, 209, 0) 78%),
     var(--affiliate-teal);
   min-height: calc(100svh - 78px);
   overflow: hidden;
@@ -89,7 +89,7 @@ body.affiliate-page {
 
 .affiliate-hero-bg {
   background-image:
-    linear-gradient(90deg, rgba(0, 90, 90, 0.95) 0%, rgba(0, 90, 90, 0.8) 42%, rgba(0, 90, 90, 0.28) 72%, rgba(0, 90, 90, 0.56) 100%),
+    linear-gradient(90deg, rgba(8, 82, 95, 0.95) 0%, rgba(8, 82, 95, 0.8) 42%, rgba(8, 82, 95, 0.28) 72%, rgba(8, 82, 95, 0.56) 100%),
     url("/assets/mirror/static.wixstatic.com/media/19f989_af2aef4555f948bf86d9b8ec43f9f4d1~mv2.png/v1/fill/w_360,h_203,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/19f989_af2aef4555f948bf86d9b8ec43f9f4d1~mv2.png");
   background-position: center;
   background-repeat: repeat;
@@ -123,7 +123,7 @@ body.affiliate-page {
 .affiliate-band p {
   color: var(--affiliate-cream);
   font-size: 20px;
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: 0;
   line-height: 1.25;
   margin: 0 0 22px;
@@ -134,7 +134,7 @@ body.affiliate-page {
   color: var(--affiliate-cream);
   font-family: var(--affiliate-display);
   font-size: clamp(58px, 7.2vw, 100px);
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: 0;
   line-height: 1.02;
   margin: 0;
@@ -159,7 +159,7 @@ body.affiliate-page {
   color: var(--affiliate-cream);
   display: inline-flex;
   font-size: 22px;
-  font-weight: 800;
+  font-weight: 700;
   justify-content: center;
   min-height: 72px;
   min-width: 266px;
@@ -347,7 +347,7 @@ body.affiliate-page {
 .affiliate-footer a {
   color: var(--affiliate-cream);
   font-size: 16px;
-  font-weight: 800;
+  font-weight: 700;
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 4px;

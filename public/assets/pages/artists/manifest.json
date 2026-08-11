@@ -3,9 +3,9 @@
   "html": "/pages/artists.html",
   "css": "/css/pages/artists.css",
   "animations": "/js/pages/artists.animations.js",
-  "generatedAt": "2026-08-06T11:53:13.690Z",
+  "generatedAt": "2026-08-10T11:16:54.139Z",
   "totals": {
-    "assets": 103,
+    "assets": 102,
     "missing": 0
   },
   "assetsByType": {
@@ -250,7 +250,7 @@
         "local": {
           "exists": true,
           "path": "/js/pages/artists.animations.js",
-          "bytes": 6864
+          "bytes": 894
         }
       }
     ],
@@ -344,7 +344,7 @@
         "local": {
           "exists": true,
           "path": "/assets/mirror/siteassets.parastorage.com/pages/pages/thunderbolt/thunderbolt-features--19f989_363e917e98e6d1f48f732c46aef87fd1_1362.json--desktop--f145183b.bundle.min.json",
-          "bytes": 219360
+          "bytes": 219273
         }
       },
       {
@@ -362,7 +362,7 @@
         "local": {
           "exists": true,
           "path": "/assets/mirror/siteassets.parastorage.com/pages/pages/thunderbolt/thunderbolt-platform--19f989_363e917e98e6d1f48f732c46aef87fd1_1362.json--desktop--1645f6a3.bundle.min.json",
-          "bytes": 131409
+          "bytes": 131357
         }
       }
     ],
@@ -897,7 +897,7 @@
         "local": {
           "exists": true,
           "path": "/css/pages/artists.css",
-          "bytes": 797694
+          "bytes": 798258
         }
       }
     ],
@@ -936,15 +936,6 @@
           "exists": true,
           "path": "/assets/mirror/static.wixstatic.com/original-media/19f989_bab2ee9371d84a19af3cbcc17a932337~mv2.jpg",
           "bytes": 120409
-        }
-      },
-      {
-        "type": "images",
-        "url": "/assets/mirror/static.wixstatic.com/media/19f989_dbe9f8dff0254a8eb15a92c951b078bc~mv2.jpg/v1/fill/w_147,h_98,al_c,q_80,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/Singer%20In%20Recording.jpg",
-        "local": {
-          "exists": true,
-          "path": "/assets/mirror/static.wixstatic.com/original-media/19f989_dbe9f8dff0254a8eb15a92c951b078bc~mv2.jpg",
-          "bytes": 162403
         }
       }
     ]

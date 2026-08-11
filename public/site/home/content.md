@@ -125,7 +125,7 @@ Whether you want to learn, create, collaborate or build something meaningful, th
 
 Explore TSC Academy
 
-Discover Artist Paths
+Discover artist path
 
 Build With TSC
 

@@ -84,7 +84,7 @@ The Shakti Collective is a culture-first artist development ecosystem for singer
 - With the right mentorship, systems and environment, growth starts compounding.
 - Whether you want to learn, create, collaborate or build something meaningful, there is space for you here.
 - Explore TSC Academy
-- Discover Artist Paths
+- Discover artist path
 - Build With TSC
 - Join The Ecosystem
 

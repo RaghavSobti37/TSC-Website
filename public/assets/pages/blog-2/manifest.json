@@ -3,7 +3,7 @@
   "html": "/pages/blog-2.html",
   "css": "/css/pages/blog-2.css",
   "animations": "/js/pages/blog-2.animations.js",
-  "generatedAt": "2026-08-06T11:53:13.716Z",
+  "generatedAt": "2026-08-10T11:16:54.188Z",
   "totals": {
     "assets": 97,
     "missing": 0
@@ -877,7 +877,7 @@
         "local": {
           "exists": true,
           "path": "/js/pages/blog-2.animations.js",
-          "bytes": 6752
+          "bytes": 782
         }
       }
     ],

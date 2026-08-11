@@ -3,7 +3,7 @@
   "html": "/pages/start-making-music.html",
   "css": "/css/pages/start-making-music.css",
   "animations": "/js/pages/start-making-music.animations.js",
-  "generatedAt": "2026-08-06T11:53:14.022Z",
+  "generatedAt": "2026-08-10T11:16:54.656Z",
   "totals": {
     "assets": 97,
     "missing": 0
@@ -877,7 +877,7 @@
         "local": {
           "exists": true,
           "path": "/js/pages/start-making-music.animations.js",
-          "bytes": 6746
+          "bytes": 776
         }
       }
     ],

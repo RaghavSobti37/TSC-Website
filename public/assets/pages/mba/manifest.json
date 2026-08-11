@@ -3,7 +3,7 @@
   "html": "/pages/mba.html",
   "css": "/css/pages/mba.css",
   "animations": "/js/pages/mba.animations.js",
-  "generatedAt": "2026-08-06T11:53:13.946Z",
+  "generatedAt": "2026-08-10T11:16:54.521Z",
   "totals": {
     "assets": 62,
     "missing": 0
@@ -571,7 +571,7 @@
         "local": {
           "exists": true,
           "path": "/js/pages/mba.animations.js",
-          "bytes": 6749
+          "bytes": 779
         }
       }
     ]

@@ -3,7 +3,7 @@
   "html": "/pages/work.html",
   "css": "/css/pages/work.css",
   "animations": "/js/pages/work.animations.js",
-  "generatedAt": "2026-08-06T11:53:14.053Z",
+  "generatedAt": "2026-08-10T11:16:54.707Z",
   "totals": {
     "assets": 104,
     "missing": 0
@@ -250,7 +250,7 @@
         "local": {
           "exists": true,
           "path": "/js/pages/work.animations.js",
-          "bytes": 6842
+          "bytes": 2103
         }
       }
     ],

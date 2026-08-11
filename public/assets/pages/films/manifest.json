@@ -3,9 +3,9 @@
   "html": "/pages/films.html",
   "css": "/css/pages/films.css",
   "animations": "/js/pages/films.animations.js",
-  "generatedAt": "2026-08-06T11:53:13.805Z",
+  "generatedAt": "2026-08-10T11:16:54.312Z",
   "totals": {
-    "assets": 152,
+    "assets": 151,
     "missing": 0
   },
   "assetsByType": {
@@ -250,7 +250,7 @@
         "local": {
           "exists": true,
           "path": "/js/pages/films.animations.js",
-          "bytes": 6862
+          "bytes": 1952
         }
       }
     ],
@@ -344,7 +344,7 @@
         "local": {
           "exists": true,
           "path": "/assets/mirror/siteassets.parastorage.com/pages/pages/thunderbolt/thunderbolt-features--19f989_6e16e7b8d427e689039e2c59c89523fa_1301.json--desktop--f145183b.bundle.min.json",
-          "bytes": 407715
+          "bytes": 407792
         }
       },
       {
@@ -1275,7 +1275,7 @@
         "local": {
           "exists": true,
           "path": "/css/pages/films.css",
-          "bytes": 1361089
+          "bytes": 1361043
         }
       }
     ],
@@ -1332,15 +1332,6 @@
           "exists": true,
           "path": "/assets/mirror/static.wixstatic.com/original-media/19f989_aa253abda5504ab6bd9aec467737fd29~mv2.png",
           "bytes": 297470
-        }
-      },
-      {
-        "type": "images",
-        "url": "/assets/mirror/static.wixstatic.com/media/19f989_afbcbcc8dac54f2dbaa1f1a8a87033e9f000.jpg/v1/fill/w_160,h_90,al_c,q_80,usm_0.66_1.00_0.01,blur_3,enc_avif,quality_auto/19f989_afbcbcc8dac54f2dbaa1f1a8a87033e9f000.jpg",
-        "local": {
-          "exists": true,
-          "path": "/assets/mirror/static.wixstatic.com/original-media/19f989_afbcbcc8dac54f2dbaa1f1a8a87033e9f000.jpg",
-          "bytes": 6443
         }
       },
       {

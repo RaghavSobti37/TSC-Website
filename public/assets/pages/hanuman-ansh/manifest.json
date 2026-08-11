@@ -3,7 +3,7 @@
   "html": "/pages/hanuman-ansh.html",
   "css": "/css/pages/hanuman-ansh.css",
   "animations": "/js/pages/hanuman-ansh.animations.js",
-  "generatedAt": "2026-08-06T11:53:13.827Z",
+  "generatedAt": "2026-08-10T11:16:54.338Z",
   "totals": {
     "assets": 98,
     "missing": 0
@@ -859,7 +859,7 @@
         "local": {
           "exists": true,
           "path": "/js/pages/hanuman-ansh.animations.js",
-          "bytes": 6758
+          "bytes": 788
         }
       }
     ],

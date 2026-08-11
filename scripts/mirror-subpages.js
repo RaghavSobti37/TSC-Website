@@ -29,6 +29,11 @@ const subpages = [
   { title: 'Book A Call', route: '/book-a-call', sourcePath: '/blank-8' },
 ];
 
+const requestedRoutes = new Set(process.argv.slice(2).map(value => {
+  const clean = String(value || '').trim().replace(/^\/?pages\//, '').replace(/\.html$/, '');
+  return clean ? `/${clean.replace(/^\//, '')}` : '';
+}).filter(Boolean));
+
 const hrefRewrites = new Map([
   ['/about-8', '/book-a-call'],
   ['/about-8-1', '/book-an-artist'],
@@ -106,6 +111,8 @@ function rewriteUrls(html) {
 function removeWixBadge(html) {
   return html
     .replace(/<div id="WIX_ADS"[\s\S]*?<\/div>(?=<div id="site-root")/i, '')
+    .replace(/<!--\$-->\s*<div id="WIX_ADS"[\s\S]*?<\/div>\s*<!--\/\$-->/i, '')
+    .replace(/<div id="WIX_ADS"[\s\S]*?<\/div>/i, '')
     .replace(/<a[^>]+href=["'](?:https?:)?\/\/wix\.com\/studio["'][\s\S]*?<\/a>/gi, '')
     .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, script => script.includes('SENTRY_SDK_SOURCE') ? '' : script);
 }
@@ -119,9 +126,18 @@ function extractStyles(html, pageSlug) {
     first = false;
     return `<link rel="stylesheet" href="/css/pages/${pageSlug}.css" data-tsc-page-style="${pageSlug}" data-tsc-standalone-runtime>`;
   });
-  const css = styles.map((entry, index) => `/* style ${index + 1}${entry.attrs ? `: ${entry.attrs.replace(/\*\//g, '* /')}` : ''} */\n${entry.css.trim()}\n`).join('\n');
+  const css = styles.map((entry, index) => `/* style ${index + 1}${entry.attrs ? `: ${entry.attrs.replace(/\*\//g, '* /')}` : ''} */\n${entry.css.trim()}\n`).join('\n') + mirrorCleanupCss(pageSlug);
   fs.writeFileSync(path.join(cssDir, `${pageSlug}.css`), css, 'utf8');
   return rewritten;
+}
+
+function mirrorCleanupCss(pageSlug) {
+  const heroTitleFix = pageSlug === 'harshad-duhita'
+    ? '\n#comp-mqfgsqjf{opacity:1!important;--comp-opacity:1!important;}'
+    : pageSlug === 'yugm'
+      ? '\n#comp-mqhqa6y3{opacity:1!important;--comp-opacity:1!important;}'
+      : '';
+  return `\n/* TSC mirror cleanup */\n:root,body,#SITE_CONTAINER,#site-root{--wix-ads-height:0px!important;}\n#WIX_ADS{display:none!important;height:0!important;max-height:0!important;min-height:0!important;opacity:0!important;overflow:hidden!important;pointer-events:none!important;visibility:hidden!important;}\n#site-root{top:0!important;}${heroTitleFix}\n`;
 }
 
 function extractAnimationScript(html, pageSlug) {
@@ -180,7 +196,13 @@ async function main() {
   const browser = await puppeteer.launch({ headless: true, executablePath: 'C:/Program Files/Google/Chrome/Application/chrome.exe' });
   try {
     const page = await browser.newPage();
-    for (const subpage of subpages) {
+    const pagesToMirror = requestedRoutes.size
+      ? subpages.filter(subpage => requestedRoutes.has(subpage.route))
+      : subpages;
+    if (!pagesToMirror.length) {
+      throw new Error(`No matching subpages for: ${[...requestedRoutes].join(', ')}`);
+    }
+    for (const subpage of pagesToMirror) {
       const url = `${sourceBase}${subpage.sourcePath}`;
       console.log(`Capturing ${url}`);
       const response = await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 90000 });
@@ -196,7 +218,7 @@ async function main() {
   } finally {
     await browser.close();
   }
-  console.log(`Mirrored ${subpages.length} real subpage HTML files.`);
+  console.log(`Mirrored ${requestedRoutes.size ? requestedRoutes.size : subpages.length} real subpage HTML files.`);
 }
 
 main().catch(error => {

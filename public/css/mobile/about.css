@@ -20,9 +20,7 @@
   #comp-mr1ychhq,
   #comp-mr38xqqo,
   #comp-mr3axlwa,
-  #comp-mr3hvomh,
   #comp-mr3fzsjq,
-  #comp-mr3hkny1,
   #comp-mr3iatty,
   #comp-mr3si7hw {
     height: auto !important;
@@ -632,12 +630,8 @@
   /* —— What We Build / other brand cards: stack like TSC Artists —— */
   #comp-mr3axlwa [data-testid="responsive-container-content"],
   #comp-mr3axlwa .comp-mr3axlwa-container,
-  #comp-mr3hvomh [data-testid="responsive-container-content"],
-  #comp-mr3hvomh .comp-mr3hvomh-container,
   #comp-mr3fzsjq [data-testid="responsive-container-content"],
-  #comp-mr3fzsjq .comp-mr3fzsjq-container,
-  #comp-mr3hkny1 [data-testid="responsive-container-content"],
-  #comp-mr3hkny1 .comp-mr3hkny1-container {
+  #comp-mr3fzsjq .comp-mr3fzsjq-container {
     display: flex !important;
     flex-direction: column !important;
     align-items: stretch !important;
@@ -654,9 +648,7 @@
   }
 
   #comp-mr3axlwa [data-testid="responsive-container-content"] > [id^="comp-"],
-  #comp-mr3hvomh [data-testid="responsive-container-content"] > [id^="comp-"],
-  #comp-mr3fzsjq [data-testid="responsive-container-content"] > [id^="comp-"],
-  #comp-mr3hkny1 [data-testid="responsive-container-content"] > [id^="comp-"] {
+  #comp-mr3fzsjq [data-testid="responsive-container-content"] > [id^="comp-"] {
     position: relative !important;
     left: auto !important;
     top: auto !important;
@@ -674,12 +666,8 @@
 
   #comp-mr3axlwa,
   #comp-mr3axlwa *,
-  #comp-mr3hvomh,
-  #comp-mr3hvomh *,
   #comp-mr3fzsjq,
-  #comp-mr3fzsjq *,
-  #comp-mr3hkny1,
-  #comp-mr3hkny1 * {
+  #comp-mr3fzsjq * {
     animation: none !important;
   }
 
@@ -730,9 +718,7 @@
   /* Kill sticky / unfold / pulse motion — sticky parents stack-overlap on scroll */
   #comp-mr38xqqo,
   #comp-mr3axlwa,
-  #comp-mr3hvomh,
-  #comp-mr3fzsjq,
-  #comp-mr3hkny1 {
+  #comp-mr3fzsjq {
     position: relative !important;
     top: auto !important;
     bottom: auto !important;
@@ -745,12 +731,8 @@
   #comp-mr38xqqo *,
   #comp-mr3axlwa,
   #comp-mr3axlwa *,
-  #comp-mr3hvomh,
-  #comp-mr3hvomh *,
   #comp-mr3fzsjq,
-  #comp-mr3fzsjq *,
-  #comp-mr3hkny1,
-  #comp-mr3hkny1 * {
+  #comp-mr3fzsjq * {
     animation: none !important;
     transition: none !important;
   }
@@ -1459,9 +1441,9 @@
 /* Final shared mobile skin for all What We Build information cards.
    Kept after the older ID fixes so every card matches the supplied compact design. */
 @media (max-width: 1024px) {
-  body[data-page="about"] :is(#comp-mr38xqqo, #comp-mr3axlwa, #comp-mr3hvomh, #comp-mr3fzsjq, #comp-mr3hkny1),
-  body[data-page="about"] :is(#comp-mr38xqqo, #comp-mr3axlwa, #comp-mr3hvomh, #comp-mr3fzsjq, #comp-mr3hkny1) > [data-testid="responsive-container-content"],
-  body[data-page="about"] :is(#comp-mr38xqqo, #comp-mr3axlwa, #comp-mr3hvomh, #comp-mr3fzsjq, #comp-mr3hkny1) > [class*="-container"] {
+  body[data-page="about"] :is(#comp-mr38xqqo, #comp-mr3axlwa, #comp-mr3fzsjq),
+  body[data-page="about"] :is(#comp-mr38xqqo, #comp-mr3axlwa, #comp-mr3fzsjq) > [data-testid="responsive-container-content"],
+  body[data-page="about"] :is(#comp-mr38xqqo, #comp-mr3axlwa, #comp-mr3fzsjq) > [class*="-container"] {
     border: 0 !important;
     outline: 0 !important;
     box-shadow: none !important;
@@ -1950,8 +1932,8 @@
     text-align: left !important;
   }
 
-  body[data-page="about"] :is(#comp-mr38xqqo, #comp-mr3axlwa, #comp-mr3hvomh, #comp-mr3fzsjq, #comp-mr3hkny1) .tsc-brand-card__eyebrow *,
-  body[data-page="about"] :is(#comp-mr38xqqo, #comp-mr3axlwa, #comp-mr3hvomh, #comp-mr3fzsjq, #comp-mr3hkny1) .tsc-brand-card__eyebrow .wixui-rich-text__text {
+  body[data-page="about"] :is(#comp-mr38xqqo, #comp-mr3axlwa, #comp-mr3fzsjq) .tsc-brand-card__eyebrow *,
+  body[data-page="about"] :is(#comp-mr38xqqo, #comp-mr3axlwa, #comp-mr3fzsjq) .tsc-brand-card__eyebrow .wixui-rich-text__text {
     font-size: 10.5px !important;
     line-height: 1.25 !important;
     letter-spacing: 0.07em !important;
@@ -1962,8 +1944,8 @@
     margin: 0 !important;
   }
 
-  body[data-page="about"] :is(#comp-mr38xqqo, #comp-mr3axlwa, #comp-mr3hvomh, #comp-mr3fzsjq, #comp-mr3hkny1) .tsc-brand-card__body *,
-  body[data-page="about"] :is(#comp-mr38xqqo, #comp-mr3axlwa, #comp-mr3hvomh, #comp-mr3fzsjq, #comp-mr3hkny1) .tsc-brand-card__body .wixui-rich-text__text {
+  body[data-page="about"] :is(#comp-mr38xqqo, #comp-mr3axlwa, #comp-mr3fzsjq) .tsc-brand-card__body *,
+  body[data-page="about"] :is(#comp-mr38xqqo, #comp-mr3axlwa, #comp-mr3fzsjq) .tsc-brand-card__body .wixui-rich-text__text {
     font-size: 12.25px !important;
     line-height: 1.45 !important;
     letter-spacing: 0 !important;
@@ -1973,12 +1955,12 @@
     margin: 0 !important;
   }
 
-  body[data-page="about"] :is(#comp-mr38xqqo, #comp-mr3axlwa, #comp-mr3hvomh, #comp-mr3fzsjq, #comp-mr3hkny1) .tsc-brand-card__list *,
-  body[data-page="about"] :is(#comp-mr38xqqo, #comp-mr3axlwa, #comp-mr3hvomh, #comp-mr3fzsjq, #comp-mr3hkny1) .tsc-brand-card__tags *,
-  body[data-page="about"] :is(#comp-mr38xqqo, #comp-mr3axlwa, #comp-mr3hvomh, #comp-mr3fzsjq, #comp-mr3hkny1) .tsc-brand-card__pill *,
-  body[data-page="about"] :is(#comp-mr38xqqo, #comp-mr3axlwa, #comp-mr3hvomh, #comp-mr3fzsjq, #comp-mr3hkny1) .tsc-brand-card__list .wixui-rich-text__text,
-  body[data-page="about"] :is(#comp-mr38xqqo, #comp-mr3axlwa, #comp-mr3hvomh, #comp-mr3fzsjq, #comp-mr3hkny1) .tsc-brand-card__tags .wixui-rich-text__text,
-  body[data-page="about"] :is(#comp-mr38xqqo, #comp-mr3axlwa, #comp-mr3hvomh, #comp-mr3fzsjq, #comp-mr3hkny1) .tsc-brand-card__pill .wixui-rich-text__text {
+  body[data-page="about"] :is(#comp-mr38xqqo, #comp-mr3axlwa, #comp-mr3fzsjq) .tsc-brand-card__list *,
+  body[data-page="about"] :is(#comp-mr38xqqo, #comp-mr3axlwa, #comp-mr3fzsjq) .tsc-brand-card__tags *,
+  body[data-page="about"] :is(#comp-mr38xqqo, #comp-mr3axlwa, #comp-mr3fzsjq) .tsc-brand-card__pill *,
+  body[data-page="about"] :is(#comp-mr38xqqo, #comp-mr3axlwa, #comp-mr3fzsjq) .tsc-brand-card__list .wixui-rich-text__text,
+  body[data-page="about"] :is(#comp-mr38xqqo, #comp-mr3axlwa, #comp-mr3fzsjq) .tsc-brand-card__tags .wixui-rich-text__text,
+  body[data-page="about"] :is(#comp-mr38xqqo, #comp-mr3axlwa, #comp-mr3fzsjq) .tsc-brand-card__pill .wixui-rich-text__text {
     font-size: 10px !important;
     line-height: 1.2 !important;
     letter-spacing: 0 !important;
@@ -1988,30 +1970,30 @@
     margin: 0 !important;
   }
 
-  body[data-page="about"] :is(#comp-mr38xqqo, #comp-mr3axlwa, #comp-mr3hvomh, #comp-mr3fzsjq, #comp-mr3hkny1) .tsc-brand-card__list > [data-testid="responsive-container-content"] > [id^="comp-"]:first-child *,
-  body[data-page="about"] :is(#comp-mr38xqqo, #comp-mr3axlwa, #comp-mr3hvomh, #comp-mr3fzsjq, #comp-mr3hkny1) .tsc-brand-card__list > [class*="-container"] > [id^="comp-"]:first-child * {
+  body[data-page="about"] :is(#comp-mr38xqqo, #comp-mr3axlwa, #comp-mr3fzsjq) .tsc-brand-card__list > [data-testid="responsive-container-content"] > [id^="comp-"]:first-child *,
+  body[data-page="about"] :is(#comp-mr38xqqo, #comp-mr3axlwa, #comp-mr3fzsjq) .tsc-brand-card__list > [class*="-container"] > [id^="comp-"]:first-child * {
     font-size: 11px !important;
     line-height: 1.25 !important;
     font-weight: 700 !important;
     text-align: left !important;
   }
 
-  body[data-page="about"] :is(#comp-mr38xqqo, #comp-mr3axlwa, #comp-mr3hvomh, #comp-mr3fzsjq, #comp-mr3hkny1) .tsc-brand-card__eyebrow {
+  body[data-page="about"] :is(#comp-mr38xqqo, #comp-mr3axlwa, #comp-mr3fzsjq) .tsc-brand-card__eyebrow {
     max-height: none !important;
     overflow: visible !important;
   }
 
-  body[data-page="about"] :is(#comp-mr38xqqo, #comp-mr3axlwa, #comp-mr3hvomh, #comp-mr3fzsjq, #comp-mr3hkny1) .tsc-brand-card__body {
+  body[data-page="about"] :is(#comp-mr38xqqo, #comp-mr3axlwa, #comp-mr3fzsjq) .tsc-brand-card__body {
     max-height: none !important;
     overflow: visible !important;
   }
 
-  body[data-page="about"] :is(#comp-mr38xqqo, #comp-mr3axlwa, #comp-mr3hvomh, #comp-mr3fzsjq, #comp-mr3hkny1) .tsc-brand-card__list {
+  body[data-page="about"] :is(#comp-mr38xqqo, #comp-mr3axlwa, #comp-mr3fzsjq) .tsc-brand-card__list {
     max-height: none !important;
     overflow: visible !important;
   }
 
-  body[data-page="about"] :is(#comp-mr38xqqo, #comp-mr3axlwa, #comp-mr3hvomh, #comp-mr3fzsjq, #comp-mr3hkny1) .tsc-brand-card__tags {
+  body[data-page="about"] :is(#comp-mr38xqqo, #comp-mr3axlwa, #comp-mr3fzsjq) .tsc-brand-card__tags {
     max-height: none !important;
     overflow: visible !important;
   }
@@ -2273,10 +2255,10 @@
 }
 
 /*
- * About hero mobile — vertical desktop composition.
- * Desktop stack scaled: shell → THE SHAKTI COLLECTIVE → tagline, centered on a stage.
+ * About hero mobile — portrait stage, same desktop elements.
+ * Desktop lock lives in tsc-responsive @media (min-width: 1025px).
+ * Banner media stays full-bleed cover (pattern + cream brushstroke) — never motif-shrink.
  * Specificity must beat tsc-responsive (loads after mobile/about.css).
- * Portrait artboard stays a small center motif — never full-bleed cover.
  */
 @media (max-width: 1024px) {
   html body.responsive[data-page="about"] #comp-mp2vlkbh2,
@@ -2301,19 +2283,11 @@
     gap: clamp(12px, 2.6vh, 20px) !important;
   }
 
-  html body.responsive[data-page="about"] #comp-mp2vlkbh2 #bgLayers_comp-mp2vlkbh2 {
-    inset: 0 !important;
-    width: 100% !important;
-    height: 100% !important;
-  }
-
+  html body.responsive[data-page="about"] #comp-mp2vlkbh2 #bgLayers_comp-mp2vlkbh2,
   html body.responsive[data-page="about"] #comp-mp2vlkbh2 #bgMedia_comp-mp2vlkbh2 {
     inset: 0 !important;
     width: 100% !important;
     height: 100% !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
     overflow: hidden !important;
   }
 
@@ -2323,19 +2297,20 @@
   html body.responsive[data-page="about"] #comp-mp2vlkbh2 #img_comp-mp2vlkbh2 img,
   html body.responsive[data-page="about"] #comp-mp2vlkbh2 canvas.webglcanvas {
     position: absolute !important;
-    left: 50% !important;
-    top: 50% !important;
-    right: auto !important;
-    bottom: auto !important;
-    width: min(42vw, 148px) !important;
-    max-width: min(42vw, 148px) !important;
-    height: auto !important;
-    max-height: min(30vh, 180px) !important;
-    transform: translate(-50%, -50%) !important;
-    object-fit: contain !important;
-    object-position: center !important;
+    inset: 0 !important;
+    left: 0 !important;
+    top: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100% !important;
+    max-width: none !important;
+    height: 100% !important;
+    max-height: none !important;
+    transform: none !important;
+    object-fit: cover !important;
+    object-position: center bottom !important;
     pointer-events: none !important;
-    opacity: 0.22 !important;
+    opacity: 1 !important;
     z-index: 0 !important;
   }
 
@@ -2419,7 +2394,6 @@
     margin: 0 !important;
   }
 
-  html body.responsive[data-page="about"] #comp-mp2vlkbh2,
   html body.responsive[data-page="about"] #comp-mp2vlkbh2 :is(#comp-mr1ttkgk, #comp-mr1vbgc2, #comp-mr1tvuqc, #comp-mr1tvuqc *, #comp-mr1tv44l, #comp-mr1tv44l *) {
     animation: none !important;
     filter: none !important;

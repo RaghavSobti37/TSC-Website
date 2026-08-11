@@ -14,6 +14,19 @@ ${filmsCssOverrideMarker}
   visibility: hidden !important;
 }
 
+#comp-mqmh352i,
+#comp-mqmh352i_relative {
+  display: none !important;
+  height: 0 !important;
+  min-height: 0 !important;
+  max-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  pointer-events: none !important;
+  visibility: hidden !important;
+}
+
 #comp-mqmk8hzp {
   width: max-content !important;
   max-width: none !important;
@@ -110,6 +123,11 @@ function walk(dir) {
 
 const htmlFiles = walk(publicDir).filter(file => file.endsWith('.html'));
 const videoReferences = new Set();
+const routeManifestPath = path.join(publicDir, 'pages', 'routes.manifest.json');
+const routeManifest = fs.existsSync(routeManifestPath)
+  ? JSON.parse(fs.readFileSync(routeManifestPath, 'utf8'))
+  : { aliases: [] };
+const aliasRoutes = routeManifest.aliases || [];
 const academyFaviconRoutes = new Set([
   '/academy',
   '/learn-with-tsc',
@@ -156,9 +174,88 @@ function normalizeFavicons(html, relativeFile) {
   return withoutIcons.replace('</head>', `  ${faviconBlockForRoute(route)}\n</head>`);
 }
 
+function findAliasHref(text) {
+  for (const { alias, route } of aliasRoutes) {
+    const escapedAlias = alias.replace(/\//g, '\\/');
+    if (
+      text.includes(`href="${alias}"`) ||
+      text.includes(`href='${alias}'`) ||
+      text.includes(`"href":${JSON.stringify(alias)}`) ||
+      text.includes(`"href":"${escapedAlias}"`) ||
+      text.includes(`\\u002F${alias.slice(1)}`)
+    ) {
+      return `${alias} -> ${route}`;
+    }
+  }
+  return null;
+}
+
+function removeSectionById(html, id) {
+  const start = html.indexOf(`<section id="${id}"`);
+  if (start === -1) return html;
+  const close = html.indexOf('</section>', start);
+  if (close === -1) {
+    console.error(`Unable to remove section ${id}: closing tag missing`);
+    process.exit(1);
+  }
+  let end = close + '</section>'.length;
+  if (html.slice(end, end + '<!--/$-->'.length) === '<!--/$-->') {
+    end += '<!--/$-->'.length;
+  }
+  return html.slice(0, start) + html.slice(end);
+}
+
+function ensurePageScript(html, src) {
+  if (html.includes(`src="${src}"`) || html.includes(`src='${src}'`)) return html;
+  return html.replace('</body>', `<script src="${src}" defer></script>\n</body>`);
+}
+
 for (const file of htmlFiles) {
   let html = fs.readFileSync(file, 'utf8');
   const relativeFile = path.relative(publicDir, file).replace(/\\/g, '/');
+  const isFilmsPage = relativeFile === 'pages/films.html' || relativeFile === 'films/index.html';
+  const isWorkPage = relativeFile === 'pages/work.html' || relativeFile === 'work/index.html';
+  const strippedHtml = isFilmsPage ? removeSectionById(html, 'comp-mqmh352i') : html;
+  if (strippedHtml !== html) {
+    fs.writeFileSync(file, strippedHtml, 'utf8');
+    html = strippedHtml;
+  }
+  if (isFilmsPage) {
+    html = html.replace(/\s*<script\s+src=["']\/js\/tsc-films-page\.js(?:\?[^"']*)?["']\s+defer><\/script>/g, '');
+    const scriptedHtml = ensurePageScript(html, '/js/pages/films.animations.js');
+    if (scriptedHtml !== html) {
+      fs.writeFileSync(file, scriptedHtml, 'utf8');
+      html = scriptedHtml;
+    }
+  }
+  if (isWorkPage) {
+    const scriptedHtml = ensurePageScript(html, '/js/pages/work.animations.js');
+    if (scriptedHtml !== html) {
+      fs.writeFileSync(file, scriptedHtml, 'utf8');
+      html = scriptedHtml;
+    }
+  }
+  if (html.includes('/js/pages/impact-report-components.js')) {
+    const cleanedHtml = html.replace(/\s*<script\s+src=["']\/js\/tsc-components\.js(?:\?[^"']*)?["']\s+defer><\/script>/g, '');
+    const marker = '<script src="/js/pages/impact-report-components.js" defer></script>';
+    const scriptedHtml = cleanedHtml.includes(marker)
+      ? cleanedHtml.replace(marker, '<script src="/js/tsc-components.js?v=nav-component-1" defer></script>\n  ' + marker)
+      : ensurePageScript(cleanedHtml, '/js/tsc-components.js?v=nav-component-1');
+    if (scriptedHtml !== html) {
+      fs.writeFileSync(file, scriptedHtml, 'utf8');
+      html = scriptedHtml;
+    }
+  }
+  const usesSharedChrome = html.includes('id="site-root"') ||
+    html.includes('class="report-page') ||
+    html.includes('class="site-header"');
+  if (usesSharedChrome && !html.includes('/js/tsc-components.js')) {
+    const scriptedHtml = ensurePageScript(html, '/js/tsc-components.js?v=nav-component-1');
+    if (scriptedHtml !== html) {
+      fs.writeFileSync(file, scriptedHtml, 'utf8');
+      html = scriptedHtml;
+    }
+  }
   const normalizedHtml = normalizeFavicons(html, relativeFile);
   if (normalizedHtml !== html) {
     fs.writeFileSync(file, normalizedHtml, 'utf8');
@@ -219,6 +316,11 @@ for (const file of htmlFiles) {
     console.error(`Wix badge link found in ${path.relative(publicDir, file)}`);
     process.exit(1);
   }
+  const aliasHref = findAliasHref(html);
+  if (aliasHref) {
+    console.error(`Non-canonical alias link found in ${relativeFile}: ${aliasHref}`);
+    process.exit(1);
+  }
 }
 
 for (const reference of videoReferences) {
@@ -243,6 +345,14 @@ const thunderboltVariants = fs.existsSync(thunderboltDir)
 if (thunderboltVariants.length < 20) {
   console.error('Per-page Thunderbolt runtime payloads are incomplete');
   process.exit(1);
+}
+for (const file of thunderboltVariants) {
+  const fullPath = path.join(thunderboltDir, file);
+  const aliasHref = findAliasHref(fs.readFileSync(fullPath, 'utf8'));
+  if (aliasHref) {
+    console.error(`Non-canonical alias link found in Thunderbolt payload ${file}: ${aliasHref}`);
+    process.exit(1);
+  }
 }
 
 const originalMediaDir = path.join(publicDir, 'assets/mirror/static.wixstatic.com/original-media');

@@ -1,0 +1,263 @@
+/**
+ * Shared blog article hero — Wix frame blogs + editorial side nav.
+ * Title one row; READ + DATE pills under title; less top gap.
+ */
+
+/* —— Wix blogs (blog-1 / blog-2 / blog-3) —— */
+body[data-page="blog-1"] .tsc-blog-hero-frame,
+body[data-page="blog-2"] .tsc-blog-hero-frame,
+body[data-page="blog-3"] .tsc-blog-hero-frame {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  justify-content: flex-start !important;
+  align-self: start !important;
+  justify-self: center !important;
+  gap: 12px !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+  max-width: min(989px, 92vw) !important;
+  height: auto !important;
+  min-height: 0 !important;
+  margin: 4px auto 24px !important;
+  padding: 10px 32px 24px !important;
+  grid-template-columns: none !important;
+  grid-template-rows: none !important;
+}
+
+/* Parent section: pin hero to top, kill Wix tall empty row */
+body[data-page="blog-1"] #comp-mreu9zoc .comp-mreu9zoc-container,
+body[data-page="blog-1"] #comp-mreu9zoc [data-testid="responsive-container-content"],
+body[data-page="blog-2"] #comp-mrg0d18i .comp-mrg0d18i-container,
+body[data-page="blog-2"] #comp-mrg0d18i [data-testid="responsive-container-content"],
+body[data-page="blog-3"] #comp-mrg0d7qw .comp-mrg0d7qw-container,
+body[data-page="blog-3"] #comp-mrg0d7qw [data-testid="responsive-container-content"] {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  grid-template-rows: none !important;
+  min-height: 0 !important;
+  height: auto !important;
+  padding-top: 8px !important;
+}
+
+body[data-page="blog-1"] .tsc-blog-hero-frame > [id^="comp-"],
+body[data-page="blog-2"] .tsc-blog-hero-frame > [id^="comp-"],
+body[data-page="blog-3"] .tsc-blog-hero-frame > [id^="comp-"],
+body[data-page="blog-1"] .tsc-blog-hero-frame > .tsc-blog-hero-meta,
+body[data-page="blog-2"] .tsc-blog-hero-frame > .tsc-blog-hero-meta,
+body[data-page="blog-3"] .tsc-blog-hero-frame > .tsc-blog-hero-meta {
+  position: relative !important;
+  inset: auto !important;
+  left: auto !important;
+  top: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+  margin: 0 !important;
+  transform: none !important;
+  justify-self: stretch !important;
+  align-self: stretch !important;
+  grid-area: auto !important;
+  width: 100% !important;
+  max-width: none !important;
+  height: auto !important;
+  min-height: 0 !important;
+}
+
+body[data-page="blog-1"] .tsc-blog-hero-ghost,
+body[data-page="blog-2"] .tsc-blog-hero-ghost,
+body[data-page="blog-3"] .tsc-blog-hero-ghost,
+body[data-page="blog-1"] .tsc-blog-hero-author,
+body[data-page="blog-2"] .tsc-blog-hero-author,
+body[data-page="blog-3"] .tsc-blog-hero-author {
+  display: none !important;
+}
+
+body[data-page="blog-1"] .tsc-blog-hero-title,
+body[data-page="blog-2"] .tsc-blog-hero-title,
+body[data-page="blog-3"] .tsc-blog-hero-title {
+  order: 1 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+body[data-page="blog-1"] .tsc-blog-hero-title :is(h1, h2, p, .wixui-rich-text__text),
+body[data-page="blog-2"] .tsc-blog-hero-title :is(h1, h2, p, .wixui-rich-text__text),
+body[data-page="blog-3"] .tsc-blog-hero-title :is(h1, h2, p, .wixui-rich-text__text) {
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  font-size: clamp(1.35rem, 2.4vw, 2.35rem) !important;
+  line-height: 1.15 !important;
+  letter-spacing: 0 !important;
+}
+
+body[data-page="blog-1"] .tsc-blog-hero-meta,
+body[data-page="blog-2"] .tsc-blog-hero-meta,
+body[data-page="blog-3"] .tsc-blog-hero-meta {
+  order: 2 !important;
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  gap: 10px !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+body[data-page="blog-1"] .tsc-blog-hero-meta > [id^="comp-"],
+body[data-page="blog-2"] .tsc-blog-hero-meta > [id^="comp-"],
+body[data-page="blog-3"] .tsc-blog-hero-meta > [id^="comp-"] {
+  position: relative !important;
+  inset: auto !important;
+  margin: 0 !important;
+  width: auto !important;
+  max-width: max-content !important;
+  min-width: 0 !important;
+  height: auto !important;
+  min-height: 0 !important;
+  flex: 0 0 auto !important;
+  display: inline-grid !important;
+}
+
+/* Keep pill box look; smaller type */
+body[data-page="blog-1"] .tsc-blog-hero-meta .wixui-rich-text__text,
+body[data-page="blog-2"] .tsc-blog-hero-meta .wixui-rich-text__text,
+body[data-page="blog-3"] .tsc-blog-hero-meta .wixui-rich-text__text,
+body[data-page="blog-1"] .tsc-blog-hero-meta :is(p, h2, span),
+body[data-page="blog-2"] .tsc-blog-hero-meta :is(p, h2, span),
+body[data-page="blog-3"] .tsc-blog-hero-meta :is(p, h2, span) {
+  font-size: 11px !important;
+  line-height: 1.2 !important;
+  letter-spacing: 0.04em !important;
+}
+
+body[data-page="blog-1"] .tsc-blog-hero-art,
+body[data-page="blog-2"] .tsc-blog-hero-art,
+body[data-page="blog-3"] .tsc-blog-hero-art {
+  order: 3 !important;
+  width: 100% !important;
+  margin: 8px 0 0 !important;
+}
+
+body[data-page="blog-1"] .tsc-blog-hero-art img,
+body[data-page="blog-2"] .tsc-blog-hero-art img,
+body[data-page="blog-3"] .tsc-blog-hero-art img {
+  width: 100% !important;
+  height: auto !important;
+  max-height: none !important;
+  object-fit: cover !important;
+  border-radius: 12px !important;
+}
+
+/* Shrink section top air above the white frame */
+body[data-page="blog-1"] main > section.wixui-section:first-of-type,
+body[data-page="blog-2"] main > section.wixui-section:first-of-type,
+body[data-page="blog-3"] main > section.wixui-section:first-of-type,
+body[data-page="blog-1"] #comp-mreu9zoc,
+body[data-page="blog-2"] #comp-mrg0d18i,
+body[data-page="blog-3"] #comp-mrg0d7qw {
+  padding-top: 8px !important;
+  min-height: 0 !important;
+  height: auto !important;
+}
+
+@media (max-width: 1024px) {
+  body[data-page="blog-1"] .tsc-blog-hero-frame,
+  body[data-page="blog-2"] .tsc-blog-hero-frame,
+  body[data-page="blog-3"] .tsc-blog-hero-frame {
+    margin: 12px auto 24px !important;
+    padding: 16px 16px 22px !important;
+    gap: 12px !important;
+    max-width: 100% !important;
+  }
+
+  body[data-page="blog-1"] .tsc-blog-hero-title :is(h1, h2, p, .wixui-rich-text__text),
+  body[data-page="blog-2"] .tsc-blog-hero-title :is(h1, h2, p, .wixui-rich-text__text),
+  body[data-page="blog-3"] .tsc-blog-hero-title :is(h1, h2, p, .wixui-rich-text__text) {
+    white-space: normal !important;
+    font-size: clamp(1.2rem, 5.2vw, 1.55rem) !important;
+  }
+}
+
+/* —— Editorial blogs: tighter hero + floating prev/next —— */
+.tsc-blog-editorial-hero {
+  padding-top: clamp(28px, 4vw, 48px) !important;
+}
+
+.tsc-blog-editorial-hero h1 {
+  white-space: normal;
+  max-width: 100%;
+}
+
+.tsc-blog-editorial-hero .meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 10px;
+  margin-top: 12px;
+}
+
+.tsc-blog-editorial-hero .meta span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 10px;
+  border: 1px solid rgba(32, 21, 20, 0.28);
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+.tsc-blog-side-nav {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  right: 0;
+  z-index: 40;
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none;
+  padding: 0 max(12px, calc((100vw - 1200px) / 2));
+  transform: translateY(-50%);
+}
+
+.tsc-blog-side-nav__btn {
+  pointer-events: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border: 1.5px solid rgba(8, 61, 58, 0.55);
+  border-radius: 10px;
+  background: rgba(255, 236, 209, 0.92);
+  color: #083d3a;
+  text-decoration: none;
+  font-size: 28px;
+  line-height: 1;
+  box-shadow: 0 2px 10px rgba(8, 61, 58, 0.12);
+}
+
+.tsc-blog-side-nav__btn:hover,
+.tsc-blog-side-nav__btn:focus-visible {
+  background: #083d3a;
+  color: #ffecd1;
+  border-color: #083d3a;
+}
+
+@media (max-width: 1024px) {
+  .tsc-blog-side-nav {
+    display: none;
+  }
+}

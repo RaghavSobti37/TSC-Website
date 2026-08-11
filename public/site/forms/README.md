@@ -9,3 +9,5 @@ Pages in this section:
 - [Masterclass Review 01](./masterclass-review01/) — `/masterclass-review01` → `pages/masterclass-review01.html`
 - [Masterclass Review 02](./masterclass-review02/) — `/masterclass-review02` → `pages/masterclass-review02.html`
 - [Classical Review](./classicalreview/) — `/classicalreview` → `pages/classicalreview.html`
+
+**Destinations:** see [`docs/FORMS_GUIDE.md`](../../../docs/FORMS_GUIDE.md) — all forms post to Vercel `api/*` then Taskmaster webhooks (MongoCRM / `newslettersubscribers`). No Google Sheets in-repo.

@@ -12,6 +12,19 @@
   display: none !important;
 }
 
+/* Owner request: remove TSC Originals promo card and let adjacent Films sections close up. */
+#comp-mqmh352i {
+  display: none !important;
+  height: 0 !important;
+  min-height: 0 !important;
+  max-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  pointer-events: none !important;
+  visibility: hidden !important;
+}
+
 @media (max-width: 1024px) {
   main,
   #SITE_PAGES {
@@ -518,19 +531,23 @@
     line-height: 1.45 !important;
   }
 
-  /* Wix duplicate Partnerships pair (second 03 + orphaned list) ? mobile only */
+  /* Duplicate Partnerships — also hidden globally in pages/films.css */
   #comp-mqmhowf1,
   #comp-mqmhp1sq,
   #comp-mqmhpx0p {
     display: none !important;
     height: 0 !important;
     min-height: 0 !important;
+    max-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
     overflow: hidden !important;
     visibility: hidden !important;
     pointer-events: none !important;
+    grid-area: auto !important;
   }
 
-  /* Keep big step numbers inside cream Wix cards (no left clip) */
+  /* Keep big step numbers inside cream/maroon Wix cards (no left clip) */
   #comp-mqktx0nc [data-testid="responsive-container-overflow"],
   #comp-mqktx0nc [class*="overflow-wrapper"],
   #comp-mqktx0nc .wixui-box,
@@ -541,7 +558,6 @@
   #comp-mqktx0o11,
   #comp-mql591nr,
   #comp-mql5hyxr,
-  #comp-mqmhp9le2,
   #comp-mql5q7n31,
   #comp-mql5uiwc {
     position: relative !important;
@@ -549,22 +565,23 @@
     top: auto !important;
     right: auto !important;
     transform: none !important;
-    margin: 0 0 6px !important;
+    margin: 0 0 6px 8px !important;
     width: auto !important;
-    max-width: 100% !important;
+    max-width: calc(100% - 8px) !important;
     padding-left: 4px !important;
     box-sizing: border-box !important;
+    overflow: visible !important;
   }
 
   #comp-mqktx0o11 .wixui-rich-text__text,
   #comp-mql591nr .wixui-rich-text__text,
   #comp-mql5hyxr .wixui-rich-text__text,
-  #comp-mqmhp9le2 .wixui-rich-text__text,
   #comp-mql5q7n31 .wixui-rich-text__text,
   #comp-mql5uiwc .wixui-rich-text__text {
     display: inline-block !important;
     max-width: 100% !important;
     overflow: visible !important;
+    -webkit-text-stroke-width: 0 !important;
   }
 
   /* ?? Film project cards (learn-style mesh crush) ?? */

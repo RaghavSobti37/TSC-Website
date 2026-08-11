@@ -1,0 +1,389 @@
+{
+  "/": {
+    "samples": [
+      {
+        "delayMs": 0,
+        "missing": false,
+        "t": 4867,
+        "src": "/assets/brand/tsc-logo-trim-nav.png",
+        "srcFull": "/assets/brand/tsc-logo-trim-nav.png?v=nav-lock-3",
+        "attrW": null,
+        "attrH": null,
+        "w": 259,
+        "h": 72,
+        "mixBlend": "screen",
+        "filter": "none",
+        "brandAttr": "main",
+        "locked": "1"
+      },
+      {
+        "delayMs": 100,
+        "missing": false,
+        "t": 4973,
+        "src": "/assets/brand/tsc-logo-trim-nav.png",
+        "srcFull": "/assets/brand/tsc-logo-trim-nav.png?v=nav-lock-3",
+        "attrW": null,
+        "attrH": null,
+        "w": 259,
+        "h": 72,
+        "mixBlend": "screen",
+        "filter": "none",
+        "brandAttr": "main",
+        "locked": "1"
+      },
+      {
+        "delayMs": 500,
+        "missing": false,
+        "t": 5372,
+        "src": "/assets/brand/tsc-logo-trim-nav.png",
+        "srcFull": "/assets/brand/tsc-logo-trim-nav.png?v=nav-lock-3",
+        "attrW": null,
+        "attrH": null,
+        "w": 259,
+        "h": 72,
+        "mixBlend": "screen",
+        "filter": "none",
+        "brandAttr": "main",
+        "locked": "1"
+      },
+      {
+        "delayMs": 1000,
+        "missing": false,
+        "t": 5867,
+        "src": "/assets/brand/tsc-logo-trim-nav.png",
+        "srcFull": "/assets/brand/tsc-logo-trim-nav.png?v=nav-lock-3",
+        "attrW": null,
+        "attrH": null,
+        "w": 259,
+        "h": 72,
+        "mixBlend": "screen",
+        "filter": "none",
+        "brandAttr": "main",
+        "locked": "1"
+      },
+      {
+        "delayMs": 3000,
+        "missing": false,
+        "t": 7869,
+        "src": "/assets/brand/tsc-logo-trim-nav.png",
+        "srcFull": "/assets/brand/tsc-logo-trim-nav.png?v=nav-lock-3",
+        "attrW": null,
+        "attrH": null,
+        "w": 259,
+        "h": 72,
+        "mixBlend": "screen",
+        "filter": "none",
+        "brandAttr": "main",
+        "locked": "1"
+      }
+    ],
+    "changes": [
+      {
+        "t": 291,
+        "kind": "innerHTML",
+        "tag": "A",
+        "cls": "IT88M3 tsc-desktop-brand-link",
+        "snippet": "<img class=\"tsc-desktop-brand-logo tsc-desktop-brand-logo-unified\" src=\"/assets/brand/tsc-logo-trim-nav.png?v=nav-lock-3\" alt=\"The Shakti Collective\" decoding=\"async\">",
+        "stack": "at syncLockedDesktopHeaderBrand (http://127.0.0.1:3033/js/tsc-components.js:1553:25) | at mountDesktopHeader (http://127.0.0.1:3033/js/tsc-components.js:1579:7) | at mountSharedChrome (http://127.0.0.1:3033/js/tsc-components.js:2254:7) | at bootUi (http://127.0.0.1:3033/js/tsc-components.js:2278:5) | at http://127.0.0.1:3033/js/tsc-components.js:2346:5 | at http://127.0.0.1:3033/js/tsc-components.js:2352:3"
+      },
+      {
+        "t": 292,
+        "kind": "innerHTML",
+        "tag": "DIV",
+        "cls": "tsc-desktop-footer",
+        "snippet": "<div class=\"tsc-desktop-footer-main\"><div class=\"tsc-desktop-footer-brandblock\"><a class=\"tsc-desktop-footer-brand\" href=\"/\" aria-label=\"The Shakti Collective\"><img class=\"tsc-desk",
+        "stack": "at mountDesktopFooter (http://127.0.0.1:3033/js/tsc-components.js:1881:21) | at mountSharedChrome (http://127.0.0.1:3033/js/tsc-components.js:2255:7) | at bootUi (http://127.0.0.1:3033/js/tsc-components.js:2278:5) | at http://127.0.0.1:3033/js/tsc-components.js:2346:5 | at http://127.0.0.1:3033/js/tsc-components.js:2352:3"
+      },
+      {
+        "t": 1041,
+        "kind": "innerHTML",
+        "tag": "A",
+        "cls": "IT88M3 tsc-desktop-brand-link",
+        "snippet": "<img class=\"tsc-desktop-brand-logo tsc-desktop-brand-logo-unified\" src=\"/assets/brand/tsc-logo-trim-nav.png?v=nav-lock-3\" alt=\"The Shakti Collective\" decoding=\"async\">",
+        "stack": "at syncLockedDesktopHeaderBrand (http://127.0.0.1:3033/js/tsc-components.js:1553:25) | at mountDesktopHeader (http://127.0.0.1:3033/js/tsc-components.js:1579:7) | at mountSharedChrome (http://127.0.0.1:3033/js/tsc-components.js:2254:7) | at http://127.0.0.1:3033/js/tsc-components.js:2319:11"
+      }
+    ]
+  },
+  "/about": {
+    "samples": [
+      {
+        "delayMs": 0,
+        "missing": false,
+        "t": 5055,
+        "src": "/assets/brand/tsc-logo-trim-nav.png",
+        "srcFull": "/assets/brand/tsc-logo-trim-nav.png?v=nav-lock-3",
+        "attrW": null,
+        "attrH": null,
+        "w": 259,
+        "h": 72,
+        "mixBlend": "screen",
+        "filter": "none",
+        "brandAttr": "main",
+        "locked": "1"
+      },
+      {
+        "delayMs": 100,
+        "missing": false,
+        "t": 5164,
+        "src": "/assets/brand/tsc-logo-trim-nav.png",
+        "srcFull": "/assets/brand/tsc-logo-trim-nav.png?v=nav-lock-3",
+        "attrW": null,
+        "attrH": null,
+        "w": 259,
+        "h": 72,
+        "mixBlend": "screen",
+        "filter": "none",
+        "brandAttr": "main",
+        "locked": "1"
+      },
+      {
+        "delayMs": 500,
+        "missing": false,
+        "t": 5566,
+        "src": "/assets/brand/tsc-logo-trim-nav.png",
+        "srcFull": "/assets/brand/tsc-logo-trim-nav.png?v=nav-lock-3",
+        "attrW": null,
+        "attrH": null,
+        "w": 259,
+        "h": 72,
+        "mixBlend": "screen",
+        "filter": "none",
+        "brandAttr": "main",
+        "locked": "1"
+      },
+      {
+        "delayMs": 1000,
+        "missing": false,
+        "t": 6061,
+        "src": "/assets/brand/tsc-logo-trim-nav.png",
+        "srcFull": "/assets/brand/tsc-logo-trim-nav.png?v=nav-lock-3",
+        "attrW": null,
+        "attrH": null,
+        "w": 259,
+        "h": 72,
+        "mixBlend": "screen",
+        "filter": "none",
+        "brandAttr": "main",
+        "locked": "1"
+      },
+      {
+        "delayMs": 3000,
+        "missing": false,
+        "t": 8057,
+        "src": "/assets/brand/tsc-logo-trim-nav.png",
+        "srcFull": "/assets/brand/tsc-logo-trim-nav.png?v=nav-lock-3",
+        "attrW": null,
+        "attrH": null,
+        "w": 259,
+        "h": 72,
+        "mixBlend": "screen",
+        "filter": "none",
+        "brandAttr": "main",
+        "locked": "1"
+      }
+    ],
+    "changes": [
+      {
+        "t": 481,
+        "kind": "innerHTML",
+        "tag": "A",
+        "cls": "IT88M3 tsc-desktop-brand-link",
+        "snippet": "<img class=\"tsc-desktop-brand-logo tsc-desktop-brand-logo-unified\" src=\"/assets/brand/tsc-logo-trim-nav.png?v=nav-lock-3\" alt=\"The Shakti Collective\" decoding=\"async\">",
+        "stack": "at syncLockedDesktopHeaderBrand (http://127.0.0.1:3033/js/tsc-components.js:1553:25) | at mountDesktopHeader (http://127.0.0.1:3033/js/tsc-components.js:1579:7) | at mountSharedChrome (http://127.0.0.1:3033/js/tsc-components.js:2254:7) | at bootUi (http://127.0.0.1:3033/js/tsc-components.js:2278:5) | at http://127.0.0.1:3033/js/tsc-components.js:2346:5 | at http://127.0.0.1:3033/js/tsc-components.js:2352:3"
+      },
+      {
+        "t": 481,
+        "kind": "innerHTML",
+        "tag": "A",
+        "cls": "IT88M3 tsc-desktop-brand-link",
+        "snippet": "<img class=\"tsc-desktop-brand-logo tsc-desktop-brand-logo-unified\" src=\"/assets/brand/tsc-logo-trim-nav.png?v=nav-lock-3\" alt=\"The Shakti Collective\" decoding=\"async\">",
+        "stack": "at HTMLAnchorElement.set [as innerHTML] (<anonymous>:93:23) | at syncLockedDesktopHeaderBrand (http://127.0.0.1:3033/js/tsc-components.js:1553:25) | at mountDesktopHeader (http://127.0.0.1:3033/js/tsc-components.js:1579:7) | at mountSharedChrome (http://127.0.0.1:3033/js/tsc-components.js:2254:7) | at bootUi (http://127.0.0.1:3033/js/tsc-components.js:2278:5) | at http://127.0.0.1:3033/js/tsc-components.js:2346:5"
+      },
+      {
+        "t": 483,
+        "kind": "innerHTML",
+        "tag": "DIV",
+        "cls": "tsc-desktop-footer",
+        "snippet": "<div class=\"tsc-desktop-footer-main\"><div class=\"tsc-desktop-footer-brandblock\"><a class=\"tsc-desktop-footer-brand\" href=\"/\" aria-label=\"The Shakti Collective\"><img class=\"tsc-desk",
+        "stack": "at mountDesktopFooter (http://127.0.0.1:3033/js/tsc-components.js:1881:21) | at mountSharedChrome (http://127.0.0.1:3033/js/tsc-components.js:2255:7) | at bootUi (http://127.0.0.1:3033/js/tsc-components.js:2278:5) | at http://127.0.0.1:3033/js/tsc-components.js:2346:5 | at http://127.0.0.1:3033/js/tsc-components.js:2352:3"
+      },
+      {
+        "t": 483,
+        "kind": "innerHTML",
+        "tag": "DIV",
+        "cls": "tsc-desktop-footer",
+        "snippet": "<div class=\"tsc-desktop-footer-main\"><div class=\"tsc-desktop-footer-brandblock\"><a class=\"tsc-desktop-footer-brand\" href=\"/\" aria-label=\"The Shakti Collective\"><img class=\"tsc-desk",
+        "stack": "at HTMLDivElement.set [as innerHTML] (<anonymous>:93:23) | at mountDesktopFooter (http://127.0.0.1:3033/js/tsc-components.js:1881:21) | at mountSharedChrome (http://127.0.0.1:3033/js/tsc-components.js:2255:7) | at bootUi (http://127.0.0.1:3033/js/tsc-components.js:2278:5) | at http://127.0.0.1:3033/js/tsc-components.js:2346:5 | at http://127.0.0.1:3033/js/tsc-components.js:2352:3"
+      },
+      {
+        "t": 1583,
+        "kind": "innerHTML",
+        "tag": "A",
+        "cls": "IT88M3 tsc-desktop-brand-link",
+        "snippet": "<img class=\"tsc-desktop-brand-logo tsc-desktop-brand-logo-unified\" src=\"/assets/brand/tsc-logo-trim-nav.png?v=nav-lock-3\" alt=\"The Shakti Collective\" decoding=\"async\">",
+        "stack": "at syncLockedDesktopHeaderBrand (http://127.0.0.1:3033/js/tsc-components.js:1553:25) | at mountDesktopHeader (http://127.0.0.1:3033/js/tsc-components.js:1579:7) | at mountSharedChrome (http://127.0.0.1:3033/js/tsc-components.js:2254:7) | at http://127.0.0.1:3033/js/tsc-components.js:2319:11"
+      },
+      {
+        "t": 1583,
+        "kind": "innerHTML",
+        "tag": "A",
+        "cls": "IT88M3 tsc-desktop-brand-link",
+        "snippet": "<img class=\"tsc-desktop-brand-logo tsc-desktop-brand-logo-unified\" src=\"/assets/brand/tsc-logo-trim-nav.png?v=nav-lock-3\" alt=\"The Shakti Collective\" decoding=\"async\">",
+        "stack": "at HTMLAnchorElement.set [as innerHTML] (<anonymous>:93:23) | at syncLockedDesktopHeaderBrand (http://127.0.0.1:3033/js/tsc-components.js:1553:25) | at mountDesktopHeader (http://127.0.0.1:3033/js/tsc-components.js:1579:7) | at mountSharedChrome (http://127.0.0.1:3033/js/tsc-components.js:2254:7) | at http://127.0.0.1:3033/js/tsc-components.js:2319:11"
+      }
+    ]
+  },
+  "/academy": {
+    "samples": [
+      {
+        "delayMs": 0,
+        "missing": false,
+        "t": 4965,
+        "src": "/assets/brand/tsc-logo-trim-nav.png",
+        "srcFull": "/assets/brand/tsc-logo-trim-nav.png?v=nav-lock-3",
+        "attrW": null,
+        "attrH": null,
+        "w": 259,
+        "h": 72,
+        "mixBlend": "screen",
+        "filter": "none",
+        "brandAttr": "academy",
+        "locked": "1"
+      },
+      {
+        "delayMs": 100,
+        "missing": false,
+        "t": 5073,
+        "src": "/assets/brand/tsc-logo-trim-nav.png",
+        "srcFull": "/assets/brand/tsc-logo-trim-nav.png?v=nav-lock-3",
+        "attrW": null,
+        "attrH": null,
+        "w": 259,
+        "h": 72,
+        "mixBlend": "screen",
+        "filter": "none",
+        "brandAttr": "academy",
+        "locked": "1"
+      },
+      {
+        "delayMs": 500,
+        "missing": false,
+        "t": 5478,
+        "src": "/assets/brand/tsc-logo-trim-nav.png",
+        "srcFull": "/assets/brand/tsc-logo-trim-nav.png?v=nav-lock-3",
+        "attrW": null,
+        "attrH": null,
+        "w": 259,
+        "h": 72,
+        "mixBlend": "screen",
+        "filter": "none",
+        "brandAttr": "academy",
+        "locked": "1"
+      },
+      {
+        "delayMs": 1000,
+        "missing": false,
+        "t": 5976,
+        "src": "/assets/brand/tsc-logo-trim-nav.png",
+        "srcFull": "/assets/brand/tsc-logo-trim-nav.png?v=nav-lock-3",
+        "attrW": null,
+        "attrH": null,
+        "w": 259,
+        "h": 72,
+        "mixBlend": "screen",
+        "filter": "none",
+        "brandAttr": "academy",
+        "locked": "1"
+      },
+      {
+        "delayMs": 3000,
+        "missing": false,
+        "t": 7972,
+        "src": "/assets/brand/tsc-logo-trim-nav.png",
+        "srcFull": "/assets/brand/tsc-logo-trim-nav.png?v=nav-lock-3",
+        "attrW": null,
+        "attrH": null,
+        "w": 259,
+        "h": 72,
+        "mixBlend": "screen",
+        "filter": "none",
+        "brandAttr": "academy",
+        "locked": "1"
+      }
+    ],
+    "changes": [
+      {
+        "t": 362,
+        "kind": "innerHTML",
+        "tag": "A",
+        "cls": "IT88M3 tsc-desktop-brand-link",
+        "snippet": "<img class=\"tsc-desktop-brand-logo tsc-desktop-brand-logo-unified\" src=\"/assets/brand/tsc-logo-trim-nav.png?v=nav-lock-3\" alt=\"TSC Academy\" decoding=\"async\">",
+        "stack": "at syncLockedDesktopHeaderBrand (http://127.0.0.1:3033/js/tsc-components.js:1553:25) | at mountDesktopHeader (http://127.0.0.1:3033/js/tsc-components.js:1579:7) | at mountSharedChrome (http://127.0.0.1:3033/js/tsc-components.js:2254:7) | at bootUi (http://127.0.0.1:3033/js/tsc-components.js:2278:5) | at http://127.0.0.1:3033/js/tsc-components.js:2346:5 | at http://127.0.0.1:3033/js/tsc-components.js:2352:3"
+      },
+      {
+        "t": 362,
+        "kind": "innerHTML",
+        "tag": "A",
+        "cls": "IT88M3 tsc-desktop-brand-link",
+        "snippet": "<img class=\"tsc-desktop-brand-logo tsc-desktop-brand-logo-unified\" src=\"/assets/brand/tsc-logo-trim-nav.png?v=nav-lock-3\" alt=\"TSC Academy\" decoding=\"async\">",
+        "stack": "at HTMLAnchorElement.set [as innerHTML] (<anonymous>:93:23) | at syncLockedDesktopHeaderBrand (http://127.0.0.1:3033/js/tsc-components.js:1553:25) | at mountDesktopHeader (http://127.0.0.1:3033/js/tsc-components.js:1579:7) | at mountSharedChrome (http://127.0.0.1:3033/js/tsc-components.js:2254:7) | at bootUi (http://127.0.0.1:3033/js/tsc-components.js:2278:5) | at http://127.0.0.1:3033/js/tsc-components.js:2346:5"
+      },
+      {
+        "t": 362,
+        "kind": "innerHTML",
+        "tag": "A",
+        "cls": "IT88M3 tsc-desktop-brand-link",
+        "snippet": "<img class=\"tsc-desktop-brand-logo tsc-desktop-brand-logo-unified\" src=\"/assets/brand/tsc-logo-trim-nav.png?v=nav-lock-3\" alt=\"TSC Academy\" decoding=\"async\">",
+        "stack": "at HTMLAnchorElement.set (<anonymous>:93:23) | at HTMLAnchorElement.set [as innerHTML] (<anonymous>:93:23) | at syncLockedDesktopHeaderBrand (http://127.0.0.1:3033/js/tsc-components.js:1553:25) | at mountDesktopHeader (http://127.0.0.1:3033/js/tsc-components.js:1579:7) | at mountSharedChrome (http://127.0.0.1:3033/js/tsc-components.js:2254:7) | at bootUi (http://127.0.0.1:3033/js/tsc-components.js:2278:5)"
+      },
+      {
+        "t": 364,
+        "kind": "innerHTML",
+        "tag": "DIV",
+        "cls": "tsc-desktop-footer tsc-desktop-footer-academy",
+        "snippet": "<div class=\"tsc-desktop-footer-main\"><div class=\"tsc-desktop-footer-brandblock\"><a class=\"tsc-desktop-footer-brand\" href=\"/academy\" aria-label=\"TSC Academy\"><img class=\"tsc-desktop",
+        "stack": "at mountDesktopFooter (http://127.0.0.1:3033/js/tsc-components.js:1881:21) | at mountSharedChrome (http://127.0.0.1:3033/js/tsc-components.js:2255:7) | at bootUi (http://127.0.0.1:3033/js/tsc-components.js:2278:5) | at http://127.0.0.1:3033/js/tsc-components.js:2346:5 | at http://127.0.0.1:3033/js/tsc-components.js:2352:3"
+      },
+      {
+        "t": 364,
+        "kind": "innerHTML",
+        "tag": "DIV",
+        "cls": "tsc-desktop-footer tsc-desktop-footer-academy",
+        "snippet": "<div class=\"tsc-desktop-footer-main\"><div class=\"tsc-desktop-footer-brandblock\"><a class=\"tsc-desktop-footer-brand\" href=\"/academy\" aria-label=\"TSC Academy\"><img class=\"tsc-desktop",
+        "stack": "at HTMLDivElement.set [as innerHTML] (<anonymous>:93:23) | at mountDesktopFooter (http://127.0.0.1:3033/js/tsc-components.js:1881:21) | at mountSharedChrome (http://127.0.0.1:3033/js/tsc-components.js:2255:7) | at bootUi (http://127.0.0.1:3033/js/tsc-components.js:2278:5) | at http://127.0.0.1:3033/js/tsc-components.js:2346:5 | at http://127.0.0.1:3033/js/tsc-components.js:2352:3"
+      },
+      {
+        "t": 364,
+        "kind": "innerHTML",
+        "tag": "DIV",
+        "cls": "tsc-desktop-footer tsc-desktop-footer-academy",
+        "snippet": "<div class=\"tsc-desktop-footer-main\"><div class=\"tsc-desktop-footer-brandblock\"><a class=\"tsc-desktop-footer-brand\" href=\"/academy\" aria-label=\"TSC Academy\"><img class=\"tsc-desktop",
+        "stack": "at HTMLDivElement.set (<anonymous>:93:23) | at HTMLDivElement.set [as innerHTML] (<anonymous>:93:23) | at mountDesktopFooter (http://127.0.0.1:3033/js/tsc-components.js:1881:21) | at mountSharedChrome (http://127.0.0.1:3033/js/tsc-components.js:2255:7) | at bootUi (http://127.0.0.1:3033/js/tsc-components.js:2278:5) | at http://127.0.0.1:3033/js/tsc-components.js:2346:5"
+      },
+      {
+        "t": 1282,
+        "kind": "innerHTML",
+        "tag": "A",
+        "cls": "IT88M3 tsc-desktop-brand-link",
+        "snippet": "<img class=\"tsc-desktop-brand-logo tsc-desktop-brand-logo-unified\" src=\"/assets/brand/tsc-logo-trim-nav.png?v=nav-lock-3\" alt=\"TSC Academy\" decoding=\"async\">",
+        "stack": "at syncLockedDesktopHeaderBrand (http://127.0.0.1:3033/js/tsc-components.js:1553:25) | at mountDesktopHeader (http://127.0.0.1:3033/js/tsc-components.js:1579:7) | at mountSharedChrome (http://127.0.0.1:3033/js/tsc-components.js:2254:7) | at http://127.0.0.1:3033/js/tsc-components.js:2319:11"
+      },
+      {
+        "t": 1282,
+        "kind": "innerHTML",
+        "tag": "A",
+        "cls": "IT88M3 tsc-desktop-brand-link",
+        "snippet": "<img class=\"tsc-desktop-brand-logo tsc-desktop-brand-logo-unified\" src=\"/assets/brand/tsc-logo-trim-nav.png?v=nav-lock-3\" alt=\"TSC Academy\" decoding=\"async\">",
+        "stack": "at HTMLAnchorElement.set [as innerHTML] (<anonymous>:93:23) | at syncLockedDesktopHeaderBrand (http://127.0.0.1:3033/js/tsc-components.js:1553:25) | at mountDesktopHeader (http://127.0.0.1:3033/js/tsc-components.js:1579:7) | at mountSharedChrome (http://127.0.0.1:3033/js/tsc-components.js:2254:7) | at http://127.0.0.1:3033/js/tsc-components.js:2319:11"
+      },
+      {
+        "t": 1282,
+        "kind": "innerHTML",
+        "tag": "A",
+        "cls": "IT88M3 tsc-desktop-brand-link",
+        "snippet": "<img class=\"tsc-desktop-brand-logo tsc-desktop-brand-logo-unified\" src=\"/assets/brand/tsc-logo-trim-nav.png?v=nav-lock-3\" alt=\"TSC Academy\" decoding=\"async\">",
+        "stack": "at HTMLAnchorElement.set (<anonymous>:93:23) | at HTMLAnchorElement.set [as innerHTML] (<anonymous>:93:23) | at syncLockedDesktopHeaderBrand (http://127.0.0.1:3033/js/tsc-components.js:1553:25) | at mountDesktopHeader (http://127.0.0.1:3033/js/tsc-components.js:1579:7) | at mountSharedChrome (http://127.0.0.1:3033/js/tsc-components.js:2254:7) | at http://127.0.0.1:3033/js/tsc-components.js:2319:11"
+      }
+    ]
+  }
+}

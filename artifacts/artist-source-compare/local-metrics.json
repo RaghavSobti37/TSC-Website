@@ -1,0 +1,566 @@
+[
+  {
+    "path": "/harshad-duhita",
+    "bodyMargin": "0px",
+    "bodyBg": "rgba(0, 0, 0, 0)",
+    "htmlBg": "rgba(0, 0, 0, 0)",
+    "topElements": [
+      {
+        "tag": "DIV",
+        "id": "WIX_ADS",
+        "cls": "WIX_ADS ub230c YY89bY aD8jGL",
+        "bg": "rgb(255, 255, 255)"
+      },
+      {
+        "tag": "DIV",
+        "id": "main_MF",
+        "cls": "main_MF",
+        "bg": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "tag": "DIV",
+        "id": "SITE_CONTAINER",
+        "cls": "",
+        "bg": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "tag": "BODY",
+        "id": "",
+        "cls": "responsive",
+        "bg": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "tag": "HTML",
+        "id": "",
+        "cls": "",
+        "bg": "rgba(0, 0, 0, 0)"
+      }
+    ],
+    "header": {
+      "id": "comp-mq6d7i6d",
+      "tag": "HEADER",
+      "cls": "comp-mq6d7i6d S829f_ comp-mq6d7i6d-container",
+      "top": 30,
+      "left": 0,
+      "w": 1868,
+      "h": 150,
+      "bg": "rgba(0, 0, 0, 0)",
+      "display": "grid",
+      "text": "AboutWorkArtistsTSC ArtistsArtist PathLearn With TSCTSC ArtistsArtist PathLearn With TSCFi"
+    },
+    "first": [
+      {
+        "id": "comp-mq6d7i6d",
+        "tag": "HEADER",
+        "cls": "comp-mq6d7i6d S829f_ comp-mq6d7i6d-container",
+        "top": 30,
+        "left": 0,
+        "w": 1868,
+        "h": 150,
+        "bg": "rgba(0, 0, 0, 0)",
+        "display": "grid",
+        "text": "AboutWorkArtistsTSC ArtistsArtist PathLearn With TSCTSC ArtistsArtist PathLearn With TSCFi"
+      },
+      {
+        "id": "comp-mq6d7i6d_r_comp-kbgajy18",
+        "tag": "SECTION",
+        "cls": "Lnr3dj comp-mq6d7i6d_r_comp-kbgajy18 Lnr3dj wixui-header fwXYgt",
+        "top": 30,
+        "left": 0,
+        "w": 1868,
+        "h": 150,
+        "bg": "rgb(255, 236, 209)",
+        "display": "grid",
+        "text": "AboutWorkArtistsTSC ArtistsArtist PathLearn With TSCTSC ArtistsArtist PathLearn With TSCFi"
+      },
+      {
+        "id": "comp-mq6d7i6d_r_comp-mp3rsqk1",
+        "tag": "DIV",
+        "cls": "comp-mq6d7i6d_r_comp-mp3rsqk1 wixui-vector-image",
+        "top": 61,
+        "left": 211,
+        "w": 215,
+        "h": 88,
+        "bg": "rgba(0, 0, 0, 0)",
+        "display": "block",
+        "text": ""
+      },
+      {
+        "id": "comp-mq6d7i6d_r_comp-mrriywbr",
+        "tag": "DIV",
+        "cls": "comp-mq6d7i6d_r_comp-mrriywbr-container comp-mq6d7i6d_r_comp-mrriywbr",
+        "top": 82,
+        "left": 970,
+        "w": 490,
+        "h": 46,
+        "bg": "rgba(0, 0, 0, 0)",
+        "display": "grid",
+        "text": "AboutWorkArtistsTSC ArtistsArtist PathLearn With TSCTSC ArtistsArtist PathLearn With TSCFi"
+      },
+      {
+        "id": "comp-mq6d7i6d_r_comp-mrriywbr-menu-content",
+        "tag": "DIV",
+        "cls": "h75ntl",
+        "top": 82,
+        "left": 970,
+        "w": 490,
+        "h": 46,
+        "bg": "rgba(0, 0, 0, 0)",
+        "display": "block",
+        "text": "AboutWorkArtistsTSC ArtistsArtist PathLearn With TSCTSC ArtistsArtist PathLearn With TSCFi"
+      },
+      {
+        "id": "comp-mq6d7i6d_r_comp-mrriyw6n",
+        "tag": "DIV",
+        "cls": "comp-mq6d7i6d_r_comp-mrriyw6n lIkFMb",
+        "top": 77,
+        "left": 1485,
+        "w": 193,
+        "h": 58,
+        "bg": "rgba(0, 0, 0, 0)",
+        "display": "grid",
+        "text": "TSC ACADEMY"
+      },
+      {
+        "id": "comp-mq6h99jp",
+        "tag": "SECTION",
+        "cls": "ke5pl1 comp-mq6h99jp wixui-section fwXYgt",
+        "top": 180,
+        "left": 0,
+        "w": 1868,
+        "h": 933,
+        "bg": "rgb(185, 77, 2)",
+        "display": "flex",
+        "text": "Harshaduhita CollectiveA live music duo blending deep-rooted Indian classical music with d"
+      },
+      {
+        "id": "comp-mq6ibhwz",
+        "tag": "DIV",
+        "cls": "HFEOE3 NaeT1r comp-mq6ibhwz wixui-box",
+        "top": 365,
+        "left": 294,
+        "w": 1280,
+        "h": 560,
+        "bg": "rgba(22, 10, 3, 0.52)",
+        "display": "grid",
+        "text": "Harshaduhita CollectiveA live music duo blending deep-rooted Indian classical music with d"
+      },
+      {
+        "id": "comp-mq6hsozz",
+        "tag": "DIV",
+        "cls": "i4P7Vt comp-mq6hsozz ZYZJBv wixui-image",
+        "top": 365,
+        "left": 294,
+        "w": 1280,
+        "h": 560,
+        "bg": "rgba(0, 0, 0, 0)",
+        "display": "block",
+        "text": ""
+      },
+      {
+        "id": "comp-mq6i6vma",
+        "tag": "DIV",
+        "cls": "N8MGzv _v6ohL PO9MfV comp-mq6i6vma wixui-rich-text",
+        "top": 287,
+        "left": 444,
+        "w": 980,
+        "h": 250,
+        "bg": "rgba(0, 0, 0, 0)",
+        "display": "block",
+        "text": "Harshaduhita Collective"
+      },
+      {
+        "id": "comp-mq6igg7l",
+        "tag": "DIV",
+        "cls": "N8MGzv _v6ohL PO9MfV comp-mq6igg7l wixui-rich-text",
+        "top": 753,
+        "left": 574,
+        "w": 720,
+        "h": 52,
+        "bg": "rgba(0, 0, 0, 0)",
+        "display": "block",
+        "text": "A live music duo blending deep-rooted Indian classical music with divine emotion and diver"
+      },
+      {
+        "id": "comp-mq7lgwyt",
+        "tag": "DIV",
+        "cls": "comp-mq7lgwyt lIkFMb",
+        "top": 819,
+        "left": 631,
+        "w": 266,
+        "h": 70,
+        "bg": "rgba(0, 0, 0, 0)",
+        "display": "block",
+        "text": "Book for Events"
+      }
+    ],
+    "heroCandidates": [
+      {
+        "id": "comp-mq6h99jp",
+        "tag": "SECTION",
+        "cls": "ke5pl1 comp-mq6h99jp wixui-section fwXYgt",
+        "top": 180,
+        "left": 0,
+        "w": 1868,
+        "h": 933,
+        "bg": "rgb(185, 77, 2)",
+        "display": "flex",
+        "text": "Harshaduhita CollectiveA live music duo blending deep-rooted Indian classical music with d"
+      },
+      {
+        "id": "comp-mq6ibhwz",
+        "tag": "DIV",
+        "cls": "HFEOE3 NaeT1r comp-mq6ibhwz wixui-box",
+        "top": 365,
+        "left": 294,
+        "w": 1280,
+        "h": 560,
+        "bg": "rgba(22, 10, 3, 0.52)",
+        "display": "grid",
+        "text": "Harshaduhita CollectiveA live music duo blending deep-rooted Indian classical music with d"
+      },
+      {
+        "id": "comp-mq6i6vma",
+        "tag": "DIV",
+        "cls": "N8MGzv _v6ohL PO9MfV comp-mq6i6vma wixui-rich-text",
+        "top": 287,
+        "left": 444,
+        "w": 980,
+        "h": 250,
+        "bg": "rgba(0, 0, 0, 0)",
+        "display": "block",
+        "text": "Harshaduhita Collective"
+      },
+      {
+        "id": "comp-mq7lgwyt",
+        "tag": "DIV",
+        "cls": "comp-mq7lgwyt lIkFMb",
+        "top": 819,
+        "left": 631,
+        "w": 266,
+        "h": 70,
+        "bg": "rgba(0, 0, 0, 0)",
+        "display": "block",
+        "text": "Book for Events"
+      },
+      {
+        "id": "comp-mq7limoj",
+        "tag": "DIV",
+        "cls": "comp-mq7limoj lIkFMb",
+        "top": 819,
+        "left": 971,
+        "w": 266,
+        "h": 70,
+        "bg": "rgba(0, 0, 0, 0)",
+        "display": "block",
+        "text": "Explore Music"
+      },
+      {
+        "id": "comp-mq7lr7m2",
+        "tag": "SECTION",
+        "cls": "ke5pl1 comp-mq7lr7m2 wixui-section fwXYgt",
+        "top": 1113,
+        "left": 0,
+        "w": 1868,
+        "h": 979,
+        "bg": "rgba(255, 255, 255, 0)",
+        "display": "flex",
+        "text": "Who Are We?Deep Rooted • Divine • DiverseRooted in the traditions of the Rampur and Jaipur"
+      }
+    ]
+  },
+  {
+    "path": "/yugm",
+    "bodyMargin": "0px",
+    "bodyBg": "rgba(0, 0, 0, 0)",
+    "htmlBg": "rgba(0, 0, 0, 0)",
+    "topElements": [
+      {
+        "tag": "DIV",
+        "id": "WIX_ADS",
+        "cls": "WIX_ADS ub230c YY89bY aD8jGL",
+        "bg": "rgb(255, 255, 255)"
+      },
+      {
+        "tag": "DIV",
+        "id": "main_MF",
+        "cls": "main_MF",
+        "bg": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "tag": "DIV",
+        "id": "SITE_CONTAINER",
+        "cls": "",
+        "bg": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "tag": "BODY",
+        "id": "",
+        "cls": "responsive",
+        "bg": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "tag": "HTML",
+        "id": "",
+        "cls": "",
+        "bg": "rgba(0, 0, 0, 0)"
+      }
+    ],
+    "header": {
+      "id": "comp-mqhqa6x9",
+      "tag": "HEADER",
+      "cls": "comp-mqhqa6x9 S829f_ comp-mqhqa6x9-container",
+      "top": 30,
+      "left": 0,
+      "w": 1868,
+      "h": 150,
+      "bg": "rgba(0, 0, 0, 0)",
+      "display": "grid",
+      "text": "AboutWorkArtistsTSC ArtistsArtist PathLearn With TSCTSC ArtistsArtist PathLearn With TSCFi"
+    },
+    "first": [
+      {
+        "id": "comp-mqhqa6x9",
+        "tag": "HEADER",
+        "cls": "comp-mqhqa6x9 S829f_ comp-mqhqa6x9-container",
+        "top": 30,
+        "left": 0,
+        "w": 1868,
+        "h": 150,
+        "bg": "rgba(0, 0, 0, 0)",
+        "display": "grid",
+        "text": "AboutWorkArtistsTSC ArtistsArtist PathLearn With TSCTSC ArtistsArtist PathLearn With TSCFi"
+      },
+      {
+        "id": "comp-mqhqa6x9_r_comp-kbgajy18",
+        "tag": "SECTION",
+        "cls": "Lnr3dj comp-mqhqa6x9_r_comp-kbgajy18 Lnr3dj wixui-header fwXYgt",
+        "top": 30,
+        "left": 0,
+        "w": 1868,
+        "h": 150,
+        "bg": "rgb(255, 236, 209)",
+        "display": "grid",
+        "text": "AboutWorkArtistsTSC ArtistsArtist PathLearn With TSCTSC ArtistsArtist PathLearn With TSCFi"
+      },
+      {
+        "id": "comp-mqhqa6x9_r_comp-mp3rsqk1",
+        "tag": "DIV",
+        "cls": "comp-mqhqa6x9_r_comp-mp3rsqk1 wixui-vector-image",
+        "top": 61,
+        "left": 211,
+        "w": 215,
+        "h": 88,
+        "bg": "rgba(0, 0, 0, 0)",
+        "display": "block",
+        "text": ""
+      },
+      {
+        "id": "comp-mqhqa6x9_r_comp-mrriywbr",
+        "tag": "DIV",
+        "cls": "comp-mqhqa6x9_r_comp-mrriywbr-container comp-mqhqa6x9_r_comp-mrriywbr",
+        "top": 82,
+        "left": 970,
+        "w": 490,
+        "h": 46,
+        "bg": "rgba(0, 0, 0, 0)",
+        "display": "grid",
+        "text": "AboutWorkArtistsTSC ArtistsArtist PathLearn With TSCTSC ArtistsArtist PathLearn With TSCFi"
+      },
+      {
+        "id": "comp-mqhqa6x9_r_comp-mrriywbr-menu-content",
+        "tag": "DIV",
+        "cls": "h75ntl",
+        "top": 82,
+        "left": 970,
+        "w": 490,
+        "h": 46,
+        "bg": "rgba(0, 0, 0, 0)",
+        "display": "block",
+        "text": "AboutWorkArtistsTSC ArtistsArtist PathLearn With TSCTSC ArtistsArtist PathLearn With TSCFi"
+      },
+      {
+        "id": "comp-mqhqa6x9_r_comp-mrriyw6n",
+        "tag": "DIV",
+        "cls": "comp-mqhqa6x9_r_comp-mrriyw6n lIkFMb",
+        "top": 77,
+        "left": 1485,
+        "w": 193,
+        "h": 58,
+        "bg": "rgba(0, 0, 0, 0)",
+        "display": "grid",
+        "text": "TSC ACADEMY"
+      },
+      {
+        "id": "comp-mqhqa6vo",
+        "tag": "SECTION",
+        "cls": "ke5pl1 comp-mqhqa6vo wixui-section fwXYgt",
+        "top": 180,
+        "left": 0,
+        "w": 1868,
+        "h": 905,
+        "bg": "rgb(185, 77, 2)",
+        "display": "flex",
+        "text": "YUGMA bridge between tradition and transformation.Book for EventsExplore MusicNetflix Spot"
+      },
+      {
+        "id": "comp-mqhqa6vs2",
+        "tag": "DIV",
+        "cls": "HFEOE3 NaeT1r comp-mqhqa6vs2 wixui-box",
+        "top": 365,
+        "left": 294,
+        "w": 1280,
+        "h": 560,
+        "bg": "rgba(22, 10, 3, 0.52)",
+        "display": "grid",
+        "text": "YUGMA bridge between tradition and transformation.Book for EventsExplore MusicNetflix Spot"
+      },
+      {
+        "id": "comp-mqhqa6w11",
+        "tag": "DIV",
+        "cls": "i4P7Vt comp-mqhqa6w11 ZYZJBv wixui-image",
+        "top": 365,
+        "left": 294,
+        "w": 1280,
+        "h": 560,
+        "bg": "rgba(0, 0, 0, 0)",
+        "display": "block",
+        "text": ""
+      },
+      {
+        "id": "comp-mqhqa6wg",
+        "tag": "DIV",
+        "cls": "N8MGzv _v6ohL PO9MfV comp-mqhqa6wg wixui-rich-text",
+        "top": 297,
+        "left": 444,
+        "w": 980,
+        "h": 125,
+        "bg": "rgba(0, 0, 0, 0)",
+        "display": "block",
+        "text": "YUGM"
+      },
+      {
+        "id": "comp-mqhqa6wl3",
+        "tag": "DIV",
+        "cls": "N8MGzv _v6ohL PO9MfV comp-mqhqa6wl3 wixui-rich-text",
+        "top": 779,
+        "left": 574,
+        "w": 720,
+        "h": 26,
+        "bg": "rgba(0, 0, 0, 0)",
+        "display": "block",
+        "text": "A bridge between tradition and transformation."
+      },
+      {
+        "id": "comp-mqhqa6wo",
+        "tag": "DIV",
+        "cls": "comp-mqhqa6wo lIkFMb",
+        "top": 823,
+        "left": 631,
+        "w": 266,
+        "h": 70,
+        "bg": "rgba(0, 0, 0, 0)",
+        "display": "block",
+        "text": "Book for Events"
+      }
+    ],
+    "heroCandidates": [
+      {
+        "id": "comp-mqhqa6vo",
+        "tag": "SECTION",
+        "cls": "ke5pl1 comp-mqhqa6vo wixui-section fwXYgt",
+        "top": 180,
+        "left": 0,
+        "w": 1868,
+        "h": 905,
+        "bg": "rgb(185, 77, 2)",
+        "display": "flex",
+        "text": "YUGMA bridge between tradition and transformation.Book for EventsExplore MusicNetflix Spot"
+      },
+      {
+        "id": "comp-mqhqa6vs2",
+        "tag": "DIV",
+        "cls": "HFEOE3 NaeT1r comp-mqhqa6vs2 wixui-box",
+        "top": 365,
+        "left": 294,
+        "w": 1280,
+        "h": 560,
+        "bg": "rgba(22, 10, 3, 0.52)",
+        "display": "grid",
+        "text": "YUGMA bridge between tradition and transformation.Book for EventsExplore MusicNetflix Spot"
+      },
+      {
+        "id": "comp-mqhqa6wg",
+        "tag": "DIV",
+        "cls": "N8MGzv _v6ohL PO9MfV comp-mqhqa6wg wixui-rich-text",
+        "top": 297,
+        "left": 444,
+        "w": 980,
+        "h": 125,
+        "bg": "rgba(0, 0, 0, 0)",
+        "display": "block",
+        "text": "YUGM"
+      },
+      {
+        "id": "comp-mqhqa6wo",
+        "tag": "DIV",
+        "cls": "comp-mqhqa6wo lIkFMb",
+        "top": 823,
+        "left": 631,
+        "w": 266,
+        "h": 70,
+        "bg": "rgba(0, 0, 0, 0)",
+        "display": "block",
+        "text": "Book for Events"
+      },
+      {
+        "id": "comp-mqhqa6ww",
+        "tag": "DIV",
+        "cls": "comp-mqhqa6ww lIkFMb",
+        "top": 823,
+        "left": 971,
+        "w": 266,
+        "h": 70,
+        "bg": "rgba(0, 0, 0, 0)",
+        "display": "block",
+        "text": "Explore Music"
+      },
+      {
+        "id": "comp-mqhqa6yo",
+        "tag": "SECTION",
+        "cls": "ke5pl1 comp-mqhqa6yo wixui-section fwXYgt",
+        "top": 1085,
+        "left": 0,
+        "w": 1868,
+        "h": 1089,
+        "bg": "rgba(255, 255, 255, 0)",
+        "display": "flex",
+        "text": "Who Are We?A bridge between tradition and transformation.Yugm is a Jaipur-based folk-fusio"
+      },
+      {
+        "id": "comp-mqhqa6yu1",
+        "tag": "DIV",
+        "cls": "HFEOE3 NaeT1r comp-mqhqa6yu1 wixui-box",
+        "top": 1180,
+        "left": 264,
+        "w": 527,
+        "h": 290,
+        "bg": "rgba(0, 0, 0, 0)",
+        "display": "flex",
+        "text": "Who Are We?A bridge between tradition and transformation."
+      },
+      {
+        "id": "comp-mqhqa6z05",
+        "tag": "DIV",
+        "cls": "HFEOE3 NaeT1r comp-mqhqa6z05 wixui-box",
+        "top": 1180,
+        "left": 816,
+        "w": 758,
+        "h": 919,
+        "bg": "rgba(0, 0, 0, 0)",
+        "display": "flex",
+        "text": "Yugm is a Jaipur-based folk-fusion band that weaves India’s traditional roots with modern "
+      }
+    ]
+  }
+]

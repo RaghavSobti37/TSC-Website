@@ -1,0 +1,42 @@
+{
+  "logoSrc": "/assets/brand/tsc-logo-trim-footer.png",
+  "logoNatural": {
+    "w": 560,
+    "h": 160
+  },
+  "logoBox": {
+    "x": 56,
+    "y": 655.75,
+    "w": 280,
+    "h": 80
+  },
+  "tagBox": {
+    "x": 56,
+    "y": 749.75,
+    "w": 280,
+    "h": 20.25
+  },
+  "blockBox": {
+    "x": 56,
+    "y": 655.75,
+    "w": 280,
+    "h": 181.140625
+  },
+  "footerBox": {
+    "x": 0,
+    "y": 591.75,
+    "w": 1440,
+    "h": 307.9375
+  },
+  "tagText": "Unfolding artist force.",
+  "tagAlign": "left",
+  "tagAlignLast": "left",
+  "copyText": "© 2026 The Shakti Collective. All rights reserved.",
+  "copyWhiteSpace": "nowrap",
+  "blockWidth": 280,
+  "footerWidth": 1440,
+  "tagWidth": 280,
+  "logoWidth": 280,
+  "ratioTagToLogo": 1,
+  "ratioTagToFooter": 0.19444444444444445
+}

@@ -608,45 +608,93 @@ url("/assets/mirror/static.wixstatic.com/ufonts/834fa9_d08c6fe9ca9b47ccb21ecdcb7
 
 /* style 38 */
 #comp-mruf9s08_r_comp-mruf8w8h svg [data-color="1"] {fill: #FFECD1;}
-/* TSC Films: keep card index numerals inside their cards and remove duplicated Partnerships pair. */
-@media screen and (min-width: 1025px) {
-  #comp-mqktx0nc #comp-mqmhowf1,
-  #comp-mqktx0nc #comp-mqmhp1sq {
-    display: none !important;
-    height: 0 !important;
-    min-height: 0 !important;
-    margin: 0 !important;
-    overflow: hidden !important;
-    pointer-events: none !important;
-    visibility: hidden !important;
-  }
+/* TSC Films: hide Wix duplicate Partnerships pair (all viewports) + keep numerals unclipped. */
+#comp-mqmhowf1,
+#comp-mqmhp1sq,
+#comp-mqmhpx0p {
+  display: none !important;
+  height: 0 !important;
+  min-height: 0 !important;
+  max-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  pointer-events: none !important;
+  visibility: hidden !important;
+  grid-area: auto !important;
+  align-self: stretch !important;
+}
 
-  #comp-mqktx0nc :is(
-    #comp-mql591nr,
-    #comp-mql5hyxr,
-    #comp-mqmhp9le2,
-    #comp-mql5q7n31,
-    #comp-mql5uiwc
-  ) {
-    justify-self: start !important;
-    margin-left: max(18px, 0.018 * (var(--scaling-factor) - var(--scrollbar-width))) !important;
-    min-width: 0 !important;
-    overflow: hidden !important;
-    width: max-content !important;
-  }
+/* Numbers: kill Wix negative margin-left + overflow clip (01–05). */
+#comp-mqktx0nc :is(
+  #comp-mqktx0o11,
+  #comp-mql591nr,
+  #comp-mql5hyxr,
+  #comp-mql5q7n31,
+  #comp-mql5uiwc
+) {
+  justify-self: start !important;
+  left: auto !important;
+  margin-left: 12px !important;
+  margin-right: 0 !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+  overflow: visible !important;
+  padding-left: 2px !important;
+  position: relative !important;
+  transform: none !important;
+  width: max-content !important;
+}
 
-  #comp-mqktx0nc :is(
-    #comp-mql57ff9,
-    #comp-mql5hyxn,
-    #comp-mql5q7my,
-    #comp-mql5uiw7,
-    #comp-mql5v04u
-  ) {
-    overflow: hidden !important;
-  }
+#comp-mqktx0nc :is(
+  #comp-mqktx0o11,
+  #comp-mql591nr,
+  #comp-mql5hyxr,
+  #comp-mql5q7n31,
+  #comp-mql5uiwc
+) .wixui-rich-text__text {
+  display: inline-block !important;
+  overflow: visible !important;
+  -webkit-text-stroke-width: 0 !important;
+}
+
+#comp-mqktx0nc :is(
+  #comp-mqktx0nl,
+  #comp-mql57ff9,
+  #comp-mql5hyxn,
+  #comp-mql5q7my,
+  #comp-mql5uiw7,
+  #comp-mql5v04u
+),
+#comp-mqktx0nc :is(
+  #comp-mqktx0nl,
+  #comp-mql57ff9,
+  #comp-mql5hyxn,
+  #comp-mql5q7my,
+  #comp-mql5uiw7,
+  #comp-mql5v04u
+) [data-testid="responsive-container-overflow"],
+#comp-mqktx0nc :is(
+  #comp-mqktx0nl,
+  #comp-mql57ff9,
+  #comp-mql5hyxn,
+  #comp-mql5q7my,
+  #comp-mql5uiw7,
+  #comp-mql5v04u
+) [class*="overflow-wrapper"],
+#comp-mqktx0nc :is(
+  #comp-mqktx0nl,
+  #comp-mql57ff9,
+  #comp-mql5hyxn,
+  #comp-mql5q7my,
+  #comp-mql5uiw7,
+  #comp-mql5v04u
+) .inner-box {
+  overflow: visible !important;
 }
 
 @media screen and (min-width: 1001px) {
+  /* 5 feature rows only — duplicate 03 removed from flow */
   #comp-mqktx0nc .comp-mqktx0nc-container {
     grid-template-rows:
       minmax(max(0.5px, 0.2311344 * (var(--scaling-factor) - var(--scrollbar-width))), auto)
@@ -673,21 +721,6 @@ url("/assets/mirror/static.wixstatic.com/ufonts/834fa9_d08c6fe9ca9b47ccb21ecdcb7
   }
 }
 
-@media screen and (min-width: 1025px) and (max-width: 1000px) {
-  #comp-mqktx0nc .comp-mqktx0nc-container {
-    grid-template-rows:
-      minmax(max(0.5px, 0.260418 * (var(--scaling-factor) - var(--scrollbar-width))), auto)
-      minmax(max(0.5px, 0.260418 * (var(--scaling-factor) - var(--scrollbar-width))), auto)
-      minmax(max(0.5px, 0.260418 * (var(--scaling-factor) - var(--scrollbar-width))), auto)
-      minmax(max(0.5px, 0.260418 * (var(--scaling-factor) - var(--scrollbar-width))), auto)
-      minmax(max(0.5px, 0.260418 * (var(--scaling-factor) - var(--scrollbar-width))), auto)
-      minmax(max(0.5px, 0.260418 * (var(--scaling-factor) - var(--scrollbar-width))), auto)
-      minmax(max(0.5px, 0.260418 * (var(--scaling-factor) - var(--scrollbar-width))), auto)
-      minmax(max(0.5px, 0.260418 * (var(--scaling-factor) - var(--scrollbar-width))), auto)
-      minmax(max(0.5px, 0.260418 * (var(--scaling-factor) - var(--scrollbar-width))), auto)
-      minmax(max(0.5px, 0.260418 * (var(--scaling-factor) - var(--scrollbar-width))), auto) !important;
-  }
-}
 /* TSC films page copy/layout overrides */
 #comp-mqktsjdh {
   display: none !important;

@@ -1,0 +1,23 @@
+{
+  "page": "kalki-impact",
+  "html": "/pages/kalki-impact.html",
+  "css": "/css/pages/kalki-impact.css",
+  "animations": "/js/pages/kalki-impact.animations.js",
+  "generatedAt": "2026-08-10T11:16:54.404Z",
+  "totals": {
+    "assets": 1,
+    "missing": 1
+  },
+  "assetsByType": {
+    "images": [
+      {
+        "type": "images",
+        "url": "/assets/mirror/static.wixstatic.com/media/19f989_6592546481f648a68d7dde078ace15ea~mv2.png",
+        "local": {
+          "exists": false,
+          "path": "/assets/mirror/static.wixstatic.com/media/19f989_6592546481f648a68d7dde078ace15ea~mv2.png"
+        }
+      }
+    ]
+  }
+}

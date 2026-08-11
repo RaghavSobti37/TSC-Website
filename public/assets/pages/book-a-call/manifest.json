@@ -3,7 +3,7 @@
   "html": "/pages/book-a-call.html",
   "css": "/css/pages/book-a-call.css",
   "animations": "/js/pages/book-a-call.animations.js",
-  "generatedAt": "2026-08-06T11:53:13.744Z",
+  "generatedAt": "2026-08-10T11:16:54.231Z",
   "totals": {
     "assets": 114,
     "missing": 6
@@ -1006,7 +1006,7 @@
         "local": {
           "exists": true,
           "path": "/js/pages/book-a-call.animations.js",
-          "bytes": 6757
+          "bytes": 787
         }
       }
     ],

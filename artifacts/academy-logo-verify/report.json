@@ -1,0 +1,48 @@
+[
+  {
+    "route": "/",
+    "early": {
+      "navSrc": "tsc-logo-trim-nav.png",
+      "navBrand": "main",
+      "navW": 175,
+      "navH": 72,
+      "attrW": null,
+      "attrH": null,
+      "footSrc": "tsc-logo-trim-footer.png"
+    },
+    "late": {
+      "navSrc": "tsc-logo-trim-nav.png",
+      "navBrand": "main",
+      "navW": 175,
+      "navH": 72,
+      "attrW": null,
+      "attrH": null,
+      "footSrc": "tsc-logo-trim-footer.png"
+    },
+    "stable": true,
+    "brandOk": true
+  },
+  {
+    "route": "/academy",
+    "early": {
+      "navSrc": "tsc-academy-logo-trim-nav.png",
+      "navBrand": "academy",
+      "navW": 155,
+      "navH": 72,
+      "attrW": null,
+      "attrH": null,
+      "footSrc": "tsc-academy-logo-trim-footer.png"
+    },
+    "late": {
+      "navSrc": "tsc-academy-logo-trim-nav.png",
+      "navBrand": "academy",
+      "navW": 155,
+      "navH": 72,
+      "attrW": null,
+      "attrH": null,
+      "footSrc": "tsc-academy-logo-trim-footer.png"
+    },
+    "stable": true,
+    "brandOk": true
+  }
+]

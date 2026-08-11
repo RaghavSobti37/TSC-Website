@@ -136,8 +136,8 @@
   .tsc-mobile-footer-brand {
     display: block;
     position: relative;
-    width: var(--tsc-footer-logo-w, 168px);
-    height: var(--tsc-footer-logo-h, 48px);
+    width: var(--tsc-footer-logo-w, 148px);
+    height: var(--tsc-footer-logo-h, 61px);
     margin: 0 0 16px;
     padding: 0;
     overflow: visible;
@@ -149,8 +149,8 @@
     color: #ffecd1;
     display: block;
     flex: 0 0 auto;
-    height: 56px;
-    width: 168px;
+    height: 61px;
+    width: 148px;
   }
 
   .tsc-mobile-footer-logo-svg svg {
@@ -206,8 +206,8 @@
     object-position: left center;
     border-radius: 0;
     mix-blend-mode: normal;
-    /* force white mark everywhere (TSC + Academy) */
-    filter: brightness(0) invert(1) !important;
+    /* keep native orange wordmark (Academy keeps its own tint below) */
+    filter: none !important;
     opacity: 1;
     visibility: visible;
   }
@@ -317,7 +317,7 @@
   }
 
   .tsc-mobile-footer-newsrow input {
-    flex: 1 1 auto;
+    flex: 1 1 0;
     min-width: 0;
     border: 1.5px solid #ffecd1;
     background: transparent;
@@ -339,12 +339,14 @@
     background: #ffecd1;
     color: #083d3a;
     border-radius: 6px;
-    padding: 0 14px;
+    padding: 0 10px;
     font-size: 11px;
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 0.03em;
     min-height: 48px;
+    min-width: 0;
+    width: auto;
     cursor: pointer;
   }
 
@@ -396,10 +398,12 @@
     border-top: 1px solid rgba(255, 236, 209, 0.25);
     font-size: 11px;
     line-height: 1.4;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    opacity: 0.9;
+  }
+
+  .tsc-mobile-footer-bottom > span {
     opacity: 0.75;
+    white-space: normal;
   }
 
   .tsc-mobile-footer-academy {

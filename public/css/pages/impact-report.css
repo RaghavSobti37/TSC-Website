@@ -23,9 +23,10 @@
   --report-green: #083d3a;
   --report-coral: #b64d26;
   --report-blue: #126d5e;
+  --report-film-brown: #612314;
   --report-max: 1220px;
-  --font-display: Signika, "Arial Rounded MT Bold", Arial, sans-serif;
-  --font-body: "Madefor Text", Poppins, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-display: signika, Signika, sans-serif;
+  --font-body: wfont_834fa9_d08c6fe9ca9b47ccb21ecdcb74412010, wf_d08c6fe9ca9b47ccb21ecdcb7, orig_alan_sans_light, Arial, Helvetica, sans-serif;
 }
 
 * {
@@ -217,6 +218,13 @@ a {
   background: #000;
   border-color: #000;
   color: #ffecd1;
+}
+
+.case-wordmark.film {
+  background: var(--report-film-brown);
+  border-color: #ffecd1;
+  color: #ffecd1;
+  max-width: min(520px, 78vw);
 }
 
 .publisher-mark {
@@ -523,6 +531,57 @@ a {
   line-height: 1.05;
 }
 
+.report-page--film {
+  --report-ink: #2b120b;
+  --report-muted: rgba(96, 35, 20, 0.74);
+  --report-paper: #ffecd1;
+  --report-card: rgba(255, 236, 209, 0.92);
+  --report-line: rgba(96, 35, 20, 0.22);
+  --report-gold: #7a2f18;
+  --report-green: var(--report-film-brown);
+  background:
+    linear-gradient(90deg, rgba(96, 35, 20, 0.05) 1px, transparent 1px) 0 0 / 76px 76px,
+    radial-gradient(circle at 8% 8%, rgba(97, 35, 20, 0.18), transparent 28%),
+    linear-gradient(180deg, #ffecd1 0%, rgba(97, 35, 20, 0.88) 44%, #ffecd1 100%);
+}
+
+.report-page--film .report-hero::after {
+  background: rgba(122, 47, 24, 0.18);
+  border-color: rgba(122, 47, 24, 0.26);
+}
+
+.report-page--film .report-panel,
+.report-page--film .report-cta-band,
+.report-page--film .quote-card {
+  background: var(--report-film-brown);
+}
+
+.report-page--film .report-media {
+  background: var(--report-film-brown);
+  border-color: var(--report-film-brown);
+}
+
+.report-page--film .report-media img {
+  filter: sepia(0.22) saturate(0.9) contrast(1.05);
+}
+
+.report-page--film .report-copy mark,
+.report-page--film .report-list strong,
+.report-page--film .stat strong {
+  color: #7a2f18;
+}
+
+.report-page--film .report-copy mark {
+  background: transparent;
+  font-size: 1.12em;
+  font-weight: 900;
+}
+
+.report-page--film .stat strong {
+  color: #ffecd1;
+  font-size: clamp(46px, 4.6vw, 64px);
+}
+
 .report-cta-band {
   border-top: 1px solid var(--report-line);
   background: #083d3a;
@@ -670,6 +729,12 @@ a {
   body:has(.tsc-mobile-site-header) .report-hero {
     min-height: calc(100vh - 72px);
     padding-top: 36px;
+  }
+}
+
+@media (min-width: 701px) {
+  body:has(.tsc-desktop-site-header) .report-header {
+    display: none;
   }
 }
 

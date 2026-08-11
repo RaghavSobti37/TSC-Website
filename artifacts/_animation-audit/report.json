@@ -1,0 +1,336 @@
+{
+  "base": "http://127.0.0.1:3000",
+  "at": "2026-08-10T07:14:20.561Z",
+  "total": 24,
+  "passed": 24,
+  "failed": 0,
+  "results": [
+    {
+      "route": "/",
+      "ok": true,
+      "issues": [],
+      "notes": [
+        "tsc-animations.js not loaded yet",
+        "enter done=0 pausedLeft=0",
+        "UNFOLD opacity=0.5 enter=done",
+        "slideshow slides=4 active=1"
+      ],
+      "scripts": {
+        "wixMotion": true,
+        "pageAnim": true,
+        "reveal": false
+      }
+    },
+    {
+      "route": "/about",
+      "ok": true,
+      "issues": [],
+      "notes": [
+        "tsc-animations.js not loaded yet",
+        "enter done=0 pausedLeft=0"
+      ],
+      "scripts": {
+        "wixMotion": true,
+        "pageAnim": true,
+        "reveal": false
+      }
+    },
+    {
+      "route": "/work",
+      "ok": true,
+      "issues": [],
+      "notes": [
+        "tsc-animations.js not loaded yet",
+        "enter done=0 pausedLeft=0"
+      ],
+      "scripts": {
+        "wixMotion": true,
+        "pageAnim": true,
+        "reveal": false
+      }
+    },
+    {
+      "route": "/artists",
+      "ok": true,
+      "issues": [],
+      "notes": [
+        "tsc-animations.js not loaded yet",
+        "enter done=0 pausedLeft=0"
+      ],
+      "scripts": {
+        "wixMotion": true,
+        "pageAnim": true,
+        "reveal": false
+      }
+    },
+    {
+      "route": "/artist-path",
+      "ok": true,
+      "issues": [],
+      "notes": [
+        "enter done=0 pausedLeft=0"
+      ],
+      "scripts": {
+        "wixMotion": true,
+        "pageAnim": true,
+        "reveal": true
+      }
+    },
+    {
+      "route": "/learn-with-tsc",
+      "ok": true,
+      "issues": [],
+      "notes": [
+        "tsc-animations.js not loaded yet",
+        "enter done=0 pausedLeft=0"
+      ],
+      "scripts": {
+        "wixMotion": true,
+        "pageAnim": true,
+        "reveal": false
+      }
+    },
+    {
+      "route": "/films",
+      "ok": true,
+      "issues": [],
+      "notes": [
+        "tsc-animations.js not loaded yet",
+        "enter done=0 pausedLeft=0"
+      ],
+      "scripts": {
+        "wixMotion": true,
+        "pageAnim": true,
+        "reveal": false
+      }
+    },
+    {
+      "route": "/resources",
+      "ok": true,
+      "issues": [],
+      "notes": [
+        "tsc-animations.js not loaded yet",
+        "enter done=0 pausedLeft=0"
+      ],
+      "scripts": {
+        "wixMotion": true,
+        "pageAnim": true,
+        "reveal": false
+      }
+    },
+    {
+      "route": "/academy",
+      "ok": true,
+      "issues": [],
+      "notes": [
+        "tsc-animations.js not loaded yet",
+        "enter done=0 pausedLeft=0"
+      ],
+      "scripts": {
+        "wixMotion": true,
+        "pageAnim": true,
+        "reveal": false
+      }
+    },
+    {
+      "route": "/harshad-duhita",
+      "ok": true,
+      "issues": [],
+      "notes": [
+        "enter done=0 pausedLeft=0",
+        "title=Harshaduhita Collective"
+      ],
+      "scripts": {
+        "wixMotion": true,
+        "pageAnim": true,
+        "reveal": true
+      }
+    },
+    {
+      "route": "/yugm",
+      "ok": true,
+      "issues": [],
+      "notes": [
+        "enter done=0 pausedLeft=0",
+        "title=YUGM"
+      ],
+      "scripts": {
+        "wixMotion": true,
+        "pageAnim": true,
+        "reveal": true
+      }
+    },
+    {
+      "route": "/book-an-artist",
+      "ok": true,
+      "issues": [],
+      "notes": [
+        "enter done=0 pausedLeft=0"
+      ],
+      "scripts": {
+        "wixMotion": true,
+        "pageAnim": true,
+        "reveal": true
+      }
+    },
+    {
+      "route": "/artist-query",
+      "ok": true,
+      "issues": [],
+      "notes": [
+        "enter done=0 pausedLeft=0"
+      ],
+      "scripts": {
+        "wixMotion": true,
+        "pageAnim": true,
+        "reveal": true
+      }
+    },
+    {
+      "route": "/collab-query",
+      "ok": true,
+      "issues": [],
+      "notes": [
+        "enter done=0 pausedLeft=0"
+      ],
+      "scripts": {
+        "wixMotion": true,
+        "pageAnim": true,
+        "reveal": true
+      }
+    },
+    {
+      "route": "/book-a-call",
+      "ok": true,
+      "issues": [],
+      "notes": [
+        "enter done=0 pausedLeft=0"
+      ],
+      "scripts": {
+        "wixMotion": true,
+        "pageAnim": true,
+        "reveal": true
+      }
+    },
+    {
+      "route": "/music-production",
+      "ok": true,
+      "issues": [],
+      "notes": [
+        "enter done=0 pausedLeft=0"
+      ],
+      "scripts": {
+        "wixMotion": true,
+        "pageAnim": true,
+        "reveal": true
+      }
+    },
+    {
+      "route": "/roots-of-hindustani-classical",
+      "ok": true,
+      "issues": [],
+      "notes": [
+        "enter done=0 pausedLeft=0"
+      ],
+      "scripts": {
+        "wixMotion": true,
+        "pageAnim": true,
+        "reveal": true
+      }
+    },
+    {
+      "route": "/the-heart-of-composition",
+      "ok": true,
+      "issues": [],
+      "notes": [
+        "enter done=0 pausedLeft=0"
+      ],
+      "scripts": {
+        "wixMotion": true,
+        "pageAnim": true,
+        "reveal": true
+      }
+    },
+    {
+      "route": "/mba",
+      "ok": true,
+      "issues": [],
+      "notes": [
+        "no page animations script tag (may be inlined)",
+        "enter done=0 pausedLeft=0"
+      ],
+      "scripts": {
+        "wixMotion": true,
+        "pageAnim": false,
+        "reveal": true
+      }
+    },
+    {
+      "route": "/kalki",
+      "ok": true,
+      "issues": [],
+      "notes": [
+        "enter done=0 pausedLeft=0"
+      ],
+      "scripts": {
+        "wixMotion": true,
+        "pageAnim": true,
+        "reveal": true
+      }
+    },
+    {
+      "route": "/mahaprbhu",
+      "ok": true,
+      "issues": [],
+      "notes": [
+        "enter done=0 pausedLeft=0"
+      ],
+      "scripts": {
+        "wixMotion": true,
+        "pageAnim": true,
+        "reveal": true
+      }
+    },
+    {
+      "route": "/mahavatar-narsimha",
+      "ok": true,
+      "issues": [],
+      "notes": [
+        "enter done=0 pausedLeft=0"
+      ],
+      "scripts": {
+        "wixMotion": true,
+        "pageAnim": true,
+        "reveal": true
+      }
+    },
+    {
+      "route": "/hanuman-ansh",
+      "ok": true,
+      "issues": [],
+      "notes": [
+        "enter done=0 pausedLeft=0"
+      ],
+      "scripts": {
+        "wixMotion": true,
+        "pageAnim": true,
+        "reveal": true
+      }
+    },
+    {
+      "route": "/affiliate",
+      "ok": true,
+      "issues": [],
+      "notes": [
+        "no page animations script tag (may be inlined)",
+        "tsc-animations.js not loaded yet",
+        "enter done=0 pausedLeft=0"
+      ],
+      "scripts": {
+        "wixMotion": true,
+        "pageAnim": false,
+        "reveal": false
+      }
+    }
+  ]
+}

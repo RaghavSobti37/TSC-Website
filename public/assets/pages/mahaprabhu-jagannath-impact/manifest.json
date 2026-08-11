@@ -1,0 +1,24 @@
+{
+  "page": "mahaprabhu-jagannath-impact",
+  "html": "/pages/mahaprabhu-jagannath-impact.html",
+  "css": "/css/pages/mahaprabhu-jagannath-impact.css",
+  "animations": "/js/pages/mahaprabhu-jagannath-impact.animations.js",
+  "generatedAt": "2026-08-10T11:16:54.453Z",
+  "totals": {
+    "assets": 1,
+    "missing": 0
+  },
+  "assetsByType": {
+    "images": [
+      {
+        "type": "images",
+        "url": "/assets/mirror/static.wixstatic.com/media/19f989_455089248e404ce8a8410dc7c2db5331~mv2.png",
+        "local": {
+          "exists": true,
+          "path": "/assets/mirror/static.wixstatic.com/media/19f989_455089248e404ce8a8410dc7c2db5331~mv2.png",
+          "bytes": 0
+        }
+      }
+    ]
+  }
+}

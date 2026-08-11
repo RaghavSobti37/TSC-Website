@@ -73,7 +73,7 @@ window.__TSC_CONTENT_REPLACEMENTS__ = {
       "With the right mentorship, systems and environment, growth starts compounding.",
       "Whether you want to learn, create, collaborate or build something meaningful, there is space for you here.",
       "Explore TSC Academy",
-      "Discover Artist Paths",
+      "Discover artist path",
       "Build With TSC",
       "Join The Ecosystem"
     ],
@@ -543,7 +543,7 @@ window.__TSC_CONTENT_REPLACEMENTS__ = {
       "With the right mentorship, systems and environment, growth starts compounding.",
       "Whether you want to learn, create, collaborate or build something meaningful, there is space for you here.",
       "Explore TSC Academy",
-      "Discover Artist Paths",
+      "Discover artist path",
       "Build With TSC",
       "Join The Ecosystem"
     ],

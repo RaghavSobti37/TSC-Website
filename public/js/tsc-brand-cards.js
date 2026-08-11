@@ -43,20 +43,6 @@
       cta: 'comp-mr3axlzv3'
     },
     {
-      section: 'comp-mr3hvomh',
-      card: 'comp-mr3hvona',
-      logoLabel: 'TSC Originals',
-      accent: '#592415',
-      media: 'comp-mr3hvont',
-      eyebrow: 'comp-mr3hvonj',
-      body: 'comp-mr3hvonw2',
-      list: 'comp-mr3hvond',
-      listTitle: 'comp-mr3hvonh1',
-      listItems: 'comp-mr3hvone',
-      tags: 'comp-mr3hvonm',
-      cta: 'comp-mr3hvoo22'
-    },
-    {
       section: 'comp-mr3fzsjq',
       card: 'comp-mr3fzskh1',
       logoLabel: 'Artist Path',
@@ -69,20 +55,6 @@
       listItems: 'comp-mr3fzskl2',
       tags: 'comp-mr3fzskt3',
       cta: 'comp-mr3fzsla'
-    },
-    {
-      section: 'comp-mr3hkny1',
-      card: 'comp-mr3hknyr',
-      logoLabel: 'TSC Films',
-      accent: '#592415',
-      media: 'comp-mr3hknz88',
-      eyebrow: 'comp-mr3hknyz',
-      body: 'comp-mr3hknzc5',
-      list: 'comp-mr3hknyt5',
-      listTitle: 'comp-mr3hknyx2',
-      listItems: 'comp-mr3hknyu4',
-      tags: 'comp-mr3hknz14',
-      cta: 'comp-mr3hknzi1'
     }
   ];
 
@@ -140,7 +112,7 @@
     if (!isMobile() || !document.head) return;
     var css = [
       '@media (max-width: 1024px){',
-      'body[data-page="about"] :is(#comp-mr38xqqo,#comp-mr3axlwa,#comp-mr3hvomh,#comp-mr3fzsjq,#comp-mr3hkny1),body[data-page="about"] :is(#comp-mr38xqqo,#comp-mr3axlwa,#comp-mr3hvomh,#comp-mr3fzsjq,#comp-mr3hkny1)>[data-testid="responsive-container-content"],body[data-page="about"] :is(#comp-mr38xqqo,#comp-mr3axlwa,#comp-mr3hvomh,#comp-mr3fzsjq,#comp-mr3hkny1)>[class*="-container"],body[data-page="about"] .tsc-brand-card,body[data-page="about"] .tsc-brand-card>[data-testid="responsive-container-content"],body[data-page="about"] .tsc-brand-card>[class*="-container"]{border:0!important;outline:0!important;box-shadow:none!important;}',
+      'body[data-page="about"] :is(#comp-mr38xqqo,#comp-mr3axlwa,#comp-mr3fzsjq),body[data-page="about"] :is(#comp-mr38xqqo,#comp-mr3axlwa,#comp-mr3fzsjq)>[data-testid="responsive-container-content"],body[data-page="about"] :is(#comp-mr38xqqo,#comp-mr3axlwa,#comp-mr3fzsjq)>[class*="-container"],body[data-page="about"] .tsc-brand-card,body[data-page="about"] .tsc-brand-card>[data-testid="responsive-container-content"],body[data-page="about"] .tsc-brand-card>[class*="-container"]{border:0!important;outline:0!important;box-shadow:none!important;}',
       'body[data-page="about"] .tsc-brand-card> .inner-box,body[data-page="about"] .tsc-brand-card> .jdJeEr{display:none!important;border:0!important;outline:0!important;box-shadow:none!important;background:transparent!important;}',
       'body[data-page="about"] .tsc-brand-card__eyebrow> .inner-box,body[data-page="about"] .tsc-brand-card__eyebrow> .jdJeEr,body[data-page="about"] .tsc-brand-card__body> .inner-box,body[data-page="about"] .tsc-brand-card__body> .jdJeEr,body[data-page="about"] .tsc-brand-card__list> .inner-box,body[data-page="about"] .tsc-brand-card__list> .jdJeEr,body[data-page="about"] .tsc-brand-card__tags> .inner-box,body[data-page="about"] .tsc-brand-card__tags> .jdJeEr{display:none!important;}',
       'body[data-page="about"] .tsc-brand-card__eyebrow,body[data-page="about"] .tsc-brand-card__body,body[data-page="about"] .tsc-brand-card__tags{display:block!important;height:auto!important;min-height:0!important;max-height:none!important;overflow:visible!important;padding:6px 2px!important;margin:0!important;background:transparent!important;border:0!important;outline:0!important;box-shadow:none!important;}',

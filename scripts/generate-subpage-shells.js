@@ -17,11 +17,16 @@ const subpages = [
   { title: 'Harshad Duhita', route: '/harshad-duhita', aliases: ['/blank-10', '/artists/harshad-duhita'] },
   { title: 'Roots of Hindustani Classical', route: '/roots-of-hindustani-classical', aliases: ['/blank-9-1', '/about-9-1', '/academy/roots-of-hindustani-classical'] },
   { title: 'The HeART of Composition', route: '/the-heart-of-composition', aliases: ['/blank-9', '/about-9', '/academy/the-heart-of-composition'] },
+  { title: 'A-Z of Music Production', route: '/music-production', aliases: ['/academy/music-production', '/courses/music-production'] },
   { title: 'How Do I Start Making Music If I Have No Experience?', route: '/start-making-music', aliases: ['/blog-1', '/blank-13', '/resources/blog-1', '/resources/start-making-music'] },
   { title: 'YUGM', route: '/yugm', aliases: ['/blank-10-1', '/work0-1', '/artists/yugm'] },
   { title: 'Mahaprbhu', route: '/mahaprbhu', aliases: ['/blank-12-1-1', '/work2-1-1', '/films/mahaprbhu'] },
   { title: 'Mahavatar Narsimha', route: '/mahavatar-narsimha', aliases: ['/blank-12', '/films/mahavatar-narsimha'] },
   { title: 'Hanuman ansh', route: '/hanuman-ansh', aliases: ['/blank-12-1', '/work2-1', '/films/hanuman-ansh'] },
+  { title: 'Mahavatar Narsimha Impact Report', route: '/mahavatar-narsimha-impact', aliases: ['/films/mahavatar-narsimha-impact'] },
+  { title: 'Hanuman Ansh Impact Report', route: '/hanuman-ansh-impact', aliases: ['/films/hanuman-ansh-impact'] },
+  { title: 'Mahaprabhu Jagannath Impact Report', route: '/mahaprabhu-jagannath-impact', aliases: ['/mahaprbhu-impact', '/films/mahaprbhu-impact', '/films/mahaprabhu-jagannath-impact'] },
+  { title: 'Kalki Impact Report', route: '/kalki-impact', aliases: ['/films/kalki-impact'] },
   { title: 'The Artist Release Playbook', route: '/artist-release-playbook', aliases: ['/blog-3', '/blank-13-1-1', '/work3-1-1', '/resources/blog-3', '/resources/artist-release-playbook'] },
   { title: 'Is an Online Music Course Worth It for Beginners?', route: '/online-music-course-worth-it', aliases: ['/blog-2', '/blank-13-1', '/work3-1', '/resources/blog-2', '/resources/online-music-course-worth-it'] },
   { title: 'Indian Culture Mainstream Forms', route: '/from-bhajan-to-clubbing', aliases: ['/resources/from-bhajan-to-clubbing'] },
@@ -61,6 +66,11 @@ function pageFileForRoute(route) {
   return `${slugFromRoute(route)}.html`;
 }
 
+function shimPathForRoute(route) {
+  if (route === '/') return path.join(publicDir, 'index.html');
+  return path.join(publicDir, ...route.slice(1).split('/'), 'index.html');
+}
+
 function escapeRegExp(value) {
   return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
@@ -76,25 +86,58 @@ function routeForHref(href) {
   return href;
 }
 
-function rewriteLinks(html) {
+function aliasReplacements() {
   const replacements = new Map();
   for (const page of subpages) {
     for (const alias of page.aliases) replacements.set(alias, page.route);
   }
-  for (const [from, to] of replacements) {
-    html = html.replace(new RegExp(`href="${escapeRegExp(from)}"`, 'g'), `href="${to}"`);
-    html = html.replace(new RegExp(`href='${escapeRegExp(from)}'`, 'g'), `href='${to}'`);
-    html = html.replace(new RegExp(escapeRegExp(`\\u002F${from.slice(1)}`), 'g'), `\\u002F${to.slice(1)}`);
+  return [...replacements.entries()].sort((a, b) => b[0].length - a[0].length);
+}
+
+function canonicalizeAliasLinks(text) {
+  for (const [from, to] of aliasReplacements()) {
+    text = text.replace(new RegExp(`href="${escapeRegExp(from)}"`, 'g'), `href="${to}"`);
+    text = text.replace(new RegExp(`href='${escapeRegExp(from)}'`, 'g'), `href='${to}'`);
+    text = text.split(JSON.stringify(from)).join(JSON.stringify(to));
+    text = text.split(from.replace(/\//g, '\\/')).join(to.replace(/\//g, '\\/'));
+    text = text.split(encodeURIComponent(from)).join(encodeURIComponent(to));
+    text = text.split(`\\u002F${from.slice(1)}`).join(`\\u002F${to.slice(1)}`);
   }
+  return text;
+}
+
+function rewriteLinks(html) {
+  html = canonicalizeAliasLinks(html);
   html = html.replace(
     /(<a\b(?=[^>]*href=["']\/artists["'])[^>]*\bhref=)(["'])\/artists\2([^>]*>[\s\S]*?Book an Artist[\s\S]*?<\/a>)/gi,
-    '$1$2/query$2$3'
+    '$1$2/book-an-artist$2$3'
   );
   html = html.replace(
     /(<a\b(?=[^>]*href=["']\/book-an-artist["'])[^>]*\bhref=)(["'])\/book-an-artist\2([^>]*>[\s\S]*?(?:Book an Artist|Partner With Us)[\s\S]*?<\/a>)/gi,
-    '$1$2/query$2$3'
+    '$1$2/book-an-artist$2$3'
   );
   return html;
+}
+
+function walkFiles(dir) {
+  if (!fs.existsSync(dir)) return [];
+  return fs.readdirSync(dir, { withFileTypes: true }).flatMap(entry => {
+    const fullPath = path.join(dir, entry.name);
+    return entry.isDirectory() ? walkFiles(fullPath) : [fullPath];
+  });
+}
+
+function canonicalizeRuntimePayloadLinks() {
+  const payloadDir = path.join(publicDir, 'assets', 'mirror', 'siteassets.parastorage.com', 'pages', 'pages', 'thunderbolt');
+  let updated = 0;
+  for (const filePath of walkFiles(payloadDir).filter(file => file.endsWith('.json'))) {
+    const json = fs.readFileSync(filePath, 'utf8');
+    const next = canonicalizeAliasLinks(json);
+    if (next === json) continue;
+    fs.writeFileSync(filePath, next, 'utf8');
+    updated++;
+  }
+  return updated;
 }
 
 function setRuntimeRoute(html, page) {
@@ -136,99 +179,7 @@ function shimHtml(route) {
 }
 
 function linkNormalizerScript() {
-  const aliasMap = {};
-  for (const page of subpages) {
-    for (const alias of page.aliases) {
-      if (alias !== '/query') aliasMap[alias] = page.route;
-    }
-  }
-  return `
-
-// tsc-link-normalizer-start
-(function() {
-  var routeMap = ${JSON.stringify(aliasMap, null, 2)};
-  var academyPaths = {
-    '/academy': true,
-    '/learn-with-tsc': true,
-    '/the-heart-of-composition': true,
-    '/roots-of-hindustani-classical': true,
-    '/book-a-call': true,
-    '/masterclass-review01': true,
-    '/masterclass-review02': true,
-    '/classicalreview': true
-  };
-  function normalizeAnchor(anchor) {
-    try {
-      var url = new URL(anchor.getAttribute('href'), location.origin);
-      var target = routeMap[url.pathname];
-      if (!target && url.pathname === '/artists' && /book\\s+an\\s+artist/i.test(anchor.textContent || '')) {
-        target = '/query';
-      }
-      if (!target) return;
-      var nextHref = target + url.search + url.hash;
-      if (anchor.getAttribute('href') !== nextHref) anchor.setAttribute('href', nextHref);
-    } catch (e) {}
-  }
-  function normalizeAcademyLogoLinks() {
-    if (!academyPaths[location.pathname]) return;
-    document.querySelectorAll('header a[href], [class*="wixui-header"] a[href]').forEach(function(anchor) {
-      try {
-        var url = new URL(anchor.getAttribute('href'), location.origin);
-        var isHomeLink = url.pathname === '/' || url.pathname === '/blank-3';
-        var isLogo = !!anchor.closest('.wixui-vector-image, [class*="wixui-vector-image"]');
-        if (isHomeLink && isLogo && anchor.getAttribute('href') !== '/academy') {
-          anchor.setAttribute('href', '/academy');
-          anchor.setAttribute('target', '_self');
-        }
-      } catch (e) {}
-    });
-  }
-  function normalizeLinks() {
-    document.querySelectorAll('a[href]').forEach(normalizeAnchor);
-    document.querySelectorAll('a[href="/book-an-artist"]').forEach(function(anchor) {
-      if (/book\\s+an\\s+artist|partner\\s+with\\s+us/i.test(anchor.textContent || '') || location.pathname === '/artists') {
-        if (anchor.getAttribute('href') !== '/query') anchor.setAttribute('href', '/query');
-      }
-    });
-    normalizeAcademyLogoLinks();
-  }
-  normalizeLinks();
-  var componentsScript = document.querySelector('script[src="/js/tsc-components.js"]');
-  if (!componentsScript) {
-    componentsScript = document.createElement('script');
-    componentsScript.src = '/js/tsc-components.js';
-    componentsScript.defer = true;
-    document.head.appendChild(componentsScript);
-  }
-  function loadAfterComponents(src) {
-    if (document.querySelector('script[src="' + src + '"]')) return;
-    var script = document.createElement('script');
-    script.src = src;
-    script.defer = true;
-    if (window.TSCComponents) {
-      document.head.appendChild(script);
-    } else {
-      componentsScript.addEventListener('load', function() {
-        document.head.appendChild(script);
-      });
-    }
-  }
-  if (!document.querySelector('script[src="/js/forms.js"]')) {
-    loadAfterComponents('/js/forms.js');
-  }
-  if (!document.querySelector('script[src="/js/tsc-animations.js"]')) {
-    loadAfterComponents('/js/tsc-animations.js');
-  }
-  if (!document.querySelector('script[src="/js/content-replacements.js"]')) {
-    loadAfterComponents('/js/content-replacements.js');
-  }
-  window.addEventListener('load', normalizeLinks);
-  [250, 1000, 2500, 5000].forEach(function(delay) {
-    window.setTimeout(normalizeLinks, delay);
-  });
-})();
-// tsc-link-normalizer-end
-`;
+  return '';
 }
 
 function refreshPageScripts() {
@@ -257,8 +208,13 @@ function main() {
 
   const allKnownRoutes = [...primaryPages.map(page => page.route), ...subpages.map(page => page.route)];
   const aliases = subpages.flatMap(page => page.aliases.map(alias => ({ alias, route: page.route })));
+  for (const page of primaryPages) {
+    const shimPath = shimPathForRoute(page.route);
+    fs.mkdirSync(path.dirname(shimPath), { recursive: true });
+    fs.writeFileSync(shimPath, shimHtml(page.route), 'utf8');
+  }
   for (const page of subpages) {
-    const shimPath = path.join(publicDir, ...page.route.slice(1).split('/'), 'index.html');
+    const shimPath = shimPathForRoute(page.route);
     fs.mkdirSync(path.dirname(shimPath), { recursive: true });
     fs.writeFileSync(shimPath, shimHtml(page.route), 'utf8');
   }
@@ -273,6 +229,7 @@ function main() {
     const pagePath = path.join(pagesDir, file);
     fs.writeFileSync(pagePath, rewriteLinks(fs.readFileSync(pagePath, 'utf8')), 'utf8');
   }
+  const updatedPayloads = canonicalizeRuntimePayloadLinks();
   refreshPageScripts();
 
   const routing = {
@@ -284,6 +241,7 @@ function main() {
   fs.writeFileSync(path.join(publicDir, 'pages', 'routes.manifest.json'), `${JSON.stringify(routing, null, 2)}\n`, 'utf8');
   const injectResult = injectAllPages();
   console.log(`Generated ${createdShells} subpage shells, kept ${keptPages} existing pages, and refreshed ${aliases.length} alias shims.`);
+  console.log(`Canonicalized ${updatedPayloads} Thunderbolt payload link files.`);
   console.log(`Responsive assets: scanned ${injectResult.scanned}, updated ${injectResult.updated}.`);
 }
 

@@ -22,18 +22,15 @@ function write(p, c) { fs.writeFileSync(p, c); }
 }
 
 function ensurePrice(file) {
+  // Owner: enroll marquee must NOT show ₹3,999 — leave as "Enroll Now" only.
   let h = read(file);
-  if (h.includes('tsc-course-price') || h.includes('&#8377;3,999')) {
-    console.log('price already', file);
+  if (h.includes('tsc-course-price') || /marquee-item-text[\s\S]{0,160}3,?999/.test(h)) {
+    h = h.replace(/<span class="tsc-course-price"[^>]*>[\s\S]*?<\/span>/gi, '');
+    write(file, h);
+    console.log('price stripped', file);
     return;
   }
-  const next = h.replace(
-    /(<span>Enroll Now <\/span>)/,
-    '<span class="tsc-course-price" style="display:inline-block;margin-right:1rem;font-weight:700;">&#8377;3,999</span>$1'
-  );
-  if (next === h) throw new Error('price inject failed ' + file);
-  write(file, next);
-  console.log('price added', file);
+  console.log('price already clean', file);
 }
 ensurePrice('public/pages/the-heart-of-composition.html');
 ensurePrice('public/pages/roots-of-hindustani-classical.html');

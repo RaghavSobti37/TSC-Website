@@ -1,7 +1,7 @@
 /*
- * DESKTOP LOCK (>=1025px): injects early HEAD boot + body component loader into
- * primary pages (and optionally all public HTML). Mobile CSS links BEFORE paint
- * so desktop mesh never flashes. Components still delayed briefly for Wix hydrate.
+ * DESKTOP LOCK (>=1025px): keeps early mobile CSS, removes post-paint component
+ * loaders. Runtime component/content replacement scripts caused correct Wix HTML
+ * to render first, then visible content to be rewritten.
  */
 const fs = require('fs');
 const path = require('path');
@@ -47,7 +47,8 @@ const HEAD_BOOT = `<script data-tsc-mobile-boot>/* DESKTOP LOCK: early mobile CS
     'artist-query': '/css/mobile/artists.css',
     'collab-query': '/css/mobile/artists.css',
     'learn-with-tsc': '/css/mobile/learn.css',
-    academy: '/css/mobile/learn.css',
+    academy: '/css/mobile/academy.css',
+    affiliate: '/css/mobile/academy.css',
     'the-heart-of-composition': '/css/mobile/learn.css',
     'roots-of-hindustani-classical': '/css/mobile/learn.css',
     'music-production': '/css/mobile/learn.css',
@@ -67,39 +68,11 @@ const HEAD_BOOT = `<script data-tsc-mobile-boot>/* DESKTOP LOCK: early mobile CS
   };
   if (map[seg]) link(map[seg]);
   else link('/css/mobile/home.css');
-  /* safety: never leave page invisible */
-  setTimeout(function () { html.classList.add('tsc-mobile-ready'); }, 4000);
+  html.classList.add('tsc-mobile-ready');
+  html.classList.add('tsc-skel-revealed');
 })();
 </script>`;
 
-const BODY_LOADER = `<script data-tsc-mobile-loader>/* DESKTOP LOCK: mobile-only enhancements, never at >=1025px */
-(function () {
-  var mq = window.matchMedia && window.matchMedia('(max-width: 1024px)');
-  if (!mq) return;
-  var up = window.matchMedia('(min-width: 1025px)');
-  var onUp = function (e) { if (e.matches) location.reload(); };
-  if (up.addEventListener) up.addEventListener('change', onUp); else if (up.addListener) up.addListener(onUp);
-  var markReady = function () {
-    document.documentElement.classList.add('tsc-mobile-ready');
-  };
-  var inject = function () {
-    if (document.querySelector('script[data-tsc-components-boot]')) return;
-    var s = document.createElement('script');
-    s.src = '/js/tsc-components.js';
-    s.defer = true;
-    s.setAttribute('data-tsc-components-boot', '1');
-    s.onload = markReady;
-    s.onerror = markReady;
-    document.head.appendChild(s);
-  };
-  /* Inject ASAP after DOM — no artificial delay (local FOUC felt like hung load) */
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', inject, { once: true });
-  } else {
-    inject();
-  }
-})();
-</script>`;
 
 function patchHtml(filePath) {
   let html = fs.readFileSync(filePath, 'utf8');
@@ -116,14 +89,7 @@ function patchHtml(filePath) {
   }
   changed = true;
 
-  if (html.includes('data-tsc-mobile-loader')) {
-    html = html.replace(/<script data-tsc-mobile-loader>[\s\S]*?<\/script>/, BODY_LOADER);
-  } else {
-    const idx = html.lastIndexOf('</body>');
-    if (idx >= 0) {
-      html = `${html.slice(0, idx)}${BODY_LOADER}\n${html.slice(idx)}`;
-    }
-  }
+  html = html.replace(/\s*<script data-tsc-mobile-loader>[\s\S]*?<\/script>/g, '');
 
   fs.writeFileSync(filePath, html, 'utf8');
   return changed;
@@ -134,7 +100,7 @@ for (const file of primaryFiles) {
   const fp = path.join(pagesDir, file);
   if (!fs.existsSync(fp)) continue;
   patchHtml(fp);
-  console.log('boot+loader -> pages/' + file);
+  console.log('mobile boot cleanup -> pages/' + file);
   n++;
 }
 
@@ -155,8 +121,8 @@ for (const fp of shells) {
   if (html.length > 80000) continue; /* skip huge mirrored Wix dumps if any */
   if (!html.includes('tsc-components') && !html.includes('data-tsc-mobile') && html.length > 5000) continue;
   patchHtml(fp);
-  console.log('boot+loader -> ' + path.relative(root, fp));
+  console.log('mobile boot cleanup -> ' + path.relative(root, fp));
   n++;
 }
 
-console.log('Done. Patched ' + n + ' files.');
+console.log('Done. Patched ' + n + ' files without adding runtime loaders.');

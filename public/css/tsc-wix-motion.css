@@ -42,3 +42,42 @@
   pointer-events: none !important;
   visibility: hidden !important;
 }
+
+/* Home hero word swap: one visible phrase only. */
+#comp-mrg8g76o .p9hNc1:not(.xjQkF3),
+#comp-mrg8g76o .p9hNc1.fABPvj:not(.xjQkF3) {
+  visibility: hidden !important;
+  opacity: 0 !important;
+  animation: none !important;
+  pointer-events: none !important;
+}
+
+#comp-mrg8g76o .p9hNc1.xjQkF3 {
+  visibility: visible !important;
+  opacity: 1 !important;
+  animation: none !important;
+}
+
+/* Course enroll marquees — always scroll; never show price chips. */
+.wixui-text-marquee {
+  --marquee-animation-state: running !important;
+  --marquee-clicked: running !important;
+}
+
+.wixui-text-marquee .tsc-course-price {
+  display: none !important;
+}
+
+.wixui-text-marquee .Qbdehy[data-marquee-animation="left"],
+.wixui-text-marquee .Qbdehy[data-marquee-animation="right"],
+.wixui-text-marquee .Qbdehy[data-marquee-animation=""] {
+  animation-play-state: running !important;
+}
+
+/* Empty direction still gets a left scroll once CSS kicks in. */
+.wixui-text-marquee .Qbdehy[data-marquee-animation=""] {
+  animation-name: ZIhYoU !important;
+  animation-duration: var(--marquee-duration, 40s) !important;
+  animation-timing-function: linear !important;
+  animation-iteration-count: infinite !important;
+}

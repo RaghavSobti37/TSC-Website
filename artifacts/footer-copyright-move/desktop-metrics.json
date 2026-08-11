@@ -1,0 +1,16 @@
+{
+  "desktop": {
+    "copyInBrand": false,
+    "brandKids": ["tsc-desktop-footer-brand", "tsc-desktop-footer-tagline"],
+    "newsKids": ["H2", "P", "tsc-desktop-footer-newsrow", "tsc-desktop-footer-newsnote", "tsc-desktop-footer-social", "tsc-desktop-footer-meta"],
+    "socialBox": { "x": 817, "y": 430, "w": 299, "h": 38 },
+    "copyBox": { "x": 817, "y": 490, "w": 299, "h": 18 },
+    "copyBelowSocial": true,
+    "sameColumnAsSocial": true,
+    "placement": "right/community column — under social icon row, above Start Here"
+  },
+  "source": {
+    "desktop": "public/js/tsc-components.js → buildFooterMetaUnderSocials after .tsc-desktop-footer-social",
+    "mobile": "public/js/tsc-components.js → buildMobileFooterMetaUnderSocials after .tsc-mobile-footer-social"
+  }
+}

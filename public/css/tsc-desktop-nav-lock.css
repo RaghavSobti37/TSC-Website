@@ -1,0 +1,7 @@
+/*
+ * DESKTOP NAV LOCK — NO-OP (clone-faithful).
+ * Owner: do not mutate Wix navbar logo size/colour/blend.
+ * Ads strip kill lives in tsc-nav-overrides.css.
+ * Forced custom headers (impact/report pages) use .tsc-desktop-site-header styles
+ * in tsc-responsive.css only.
+ */

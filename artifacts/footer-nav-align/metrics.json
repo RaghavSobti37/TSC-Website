@@ -1,0 +1,129 @@
+{
+  "390": {
+    "hasFooter": true,
+    "footerClass": "tsc-mobile-footer",
+    "logo": {
+      "x": 20,
+      "y": 2906.3,
+      "w": 148,
+      "h": 61,
+      "mw": "0px",
+      "flex": "0 1 auto",
+      "pad": "0px",
+      "src": "http://127.0.0.1:3033/assets/brand/tsc-logo-trim-footer.png?v=flush-1"
+    },
+    "tag": null,
+    "copy": {
+      "x": 20,
+      "y": 3628.7,
+      "w": 350,
+      "h": 15.4,
+      "mw": "auto",
+      "flex": "0 1 auto",
+      "pad": "0px",
+      "src": null
+    },
+    "input": {
+      "x": 20,
+      "y": 3480.7,
+      "w": 245.5,
+      "h": 48,
+      "mw": "0px",
+      "flex": "1 1 0px",
+      "pad": "11px 12px",
+      "src": null
+    },
+    "btn": {
+      "x": 273.5,
+      "y": 3480.7,
+      "w": 96.5,
+      "h": 48,
+      "mw": "0px",
+      "flex": "0 0 auto",
+      "pad": "0px 10px",
+      "src": null
+    },
+    "newsBorder": null,
+    "navLogo": {
+      "x": 14,
+      "y": 6,
+      "w": 148,
+      "h": 44,
+      "mw": "auto",
+      "flex": "0 1 auto",
+      "pad": "0px",
+      "src": "http://127.0.0.1:3033/assets/brand/tsc-logo-trim-nav.png?v=flush-1"
+    },
+    "logoTagDx": null,
+    "logoCopyDx": 0,
+    "inputBtnRatio": 2.54
+  },
+  "1440": {
+    "hasFooter": true,
+    "footerClass": "tsc-desktop-footer",
+    "logo": {
+      "x": 56,
+      "y": 2761.8,
+      "w": 200,
+      "h": 80,
+      "mw": "0px",
+      "flex": "0 1 auto",
+      "pad": "0px",
+      "src": "http://127.0.0.1:3033/assets/brand/tsc-logo-trim-footer.png?v=flush-1"
+    },
+    "tag": {
+      "x": 56,
+      "y": 2855.8,
+      "w": 158.8,
+      "h": 20.3,
+      "mw": "auto",
+      "flex": "0 1 auto",
+      "pad": "0px",
+      "src": null
+    },
+    "copy": {
+      "x": 56,
+      "y": 2890,
+      "w": 323.8,
+      "h": 18.9,
+      "mw": "auto",
+      "flex": "0 1 auto",
+      "pad": "0px",
+      "src": null
+    },
+    "input": {
+      "x": 1085,
+      "y": 2825.7,
+      "w": 195.2,
+      "h": 60,
+      "mw": "0px",
+      "flex": "1 1 0px",
+      "pad": "12px 14px",
+      "src": null
+    },
+    "btn": {
+      "x": 1288.2,
+      "y": 2825.7,
+      "w": 95.8,
+      "h": 60,
+      "mw": "0px",
+      "flex": "0 0 auto",
+      "pad": "0px 12px",
+      "src": null
+    },
+    "newsBorder": "1px solid rgba(244, 233, 211, 0.28)",
+    "navLogo": {
+      "x": 71,
+      "y": 56.4,
+      "w": 175.7,
+      "h": 56,
+      "mw": "auto",
+      "flex": "0 1 auto",
+      "pad": "0px",
+      "src": "http://127.0.0.1:3033/assets/brand/tsc-logo-trim-nav.png?v=flush-1"
+    },
+    "logoTagDx": 0,
+    "logoCopyDx": 0,
+    "inputBtnRatio": 2.04
+  }
+}

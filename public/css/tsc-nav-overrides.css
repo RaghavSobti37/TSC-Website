@@ -2,12 +2,19 @@
  * DESKTOP DESIGN LOCK — PERMANENT. Desktop (>=1025px) of the 9 primary pages is locked to commit faf9dea.
  * Rules in this file must NOT affect viewports >= 1025px on those pages. Mobile-only changes belong inside
  * @media (max-width: 1024px). Never change desktop unless the site owner explicitly asks.
+ *
+ * Exception (owner request): kill Wix freemium white strip above navbar on ALL pages/viewports —
+ * that strip is not part of the locked desktop design.
  */
 /* Remove the reserved Wix ad strip so the navbar and page content start at the top. */
 :root,
 body,
+html,
 .theme-vars,
-.max-width-container {
+.max-width-container,
+#SITE_CONTAINER,
+#site-root,
+#masterPage {
   --wix-ads-height: 0px !important;
   --wix-ads-top-height: 0px !important;
   --sticky-offset: 0px !important;
@@ -15,23 +22,54 @@ body,
 
 #site-root {
   top: 0 !important;
+  margin-top: 0 !important;
 }
 
-@media (min-width: 1025px) {
-  header,
-  [id$="-pinned-layer"]:has(header) {
-    top: 0 !important;
-  }
-
-  header .wixui-horizontal-menu__item-label,
-  header .wixui-dropdown-menu__item-label {
-    font-size: 1.25vw !important;
-  }
-}
-
+/* Freemium banner: white fixed bar (.ub230c / .YY89bY = 30px + pad). Kill completely. */
 #WIX_ADS,
+.WIX_ADS,
+.ub230c,
+.YY89bY,
 a[href*="wix.com/studio"] {
+  --display: none !important;
   display: none !important;
   visibility: hidden !important;
+  opacity: 0 !important;
   height: 0 !important;
+  max-height: 0 !important;
+  min-height: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  overflow: hidden !important;
+  pointer-events: none !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+/* Pinned / sticky chrome: sit flush at viewport top (no ads offset). */
+header,
+#SITE_HEADER,
+[data-testid="siteHeader"],
+[id$="-pinned-layer"],
+.QED8q1,
+.tsc-mobile-site-header,
+.tsc-desktop-site-header {
+  top: 0 !important;
+  margin-top: 0 !important;
+}
+
+.QED8q1 {
+  height: 100% !important;
+}
+
+/* Desktop menu label size: leave clone Wix fonts alone (no 1.25vw override). */
+
+@media (max-width: 1024px) {
+  /* Radius left a white corner gap above the teal band — square flush to top. */
+  .tsc-mobile-site-header {
+    border-top-left-radius: 0 !important;
+    border-top-right-radius: 0 !important;
+    top: 0 !important;
+  }
 }

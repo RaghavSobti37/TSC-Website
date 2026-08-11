@@ -1,6 +1,9 @@
 /*
- * DESKTOP DESIGN LOCK — PERMANENT. Desktop (>=1025px) of the 9 primary pages is locked to commit faf9dea.
- * This script must NOT alter desktop rendering of those pages. Mobile-only behavior must be guarded by
+ * DESKTOP DESIGN LOCK — PERMANENT.
+ * - 9 primary pages: desktop (>=1025px) locked to commit faf9dea.
+ * - /yugm + /harshad-duhita: desktop hero + animations locked in
+ *   public/css/pages/yugm.css and harshad-duhita.css (see .cursor/rules/desktop-lock.mdc).
+ * Do NOT alter those desktop renders. Mobile-only behavior must be guarded by
  * matchMedia('(max-width: 1024px)'). Never change desktop unless the site owner explicitly asks.
  */
 (function() {
@@ -25,6 +28,20 @@
     }
   }
 
+  /** Clone-faithful: no logo size/colour CSS. Keep mentor-card hide only. */
+  function injectDesktopNavLockInline() {
+    if (document.getElementById('tsc-desktop-nav-lock-inline')) return;
+    var style = document.createElement('style');
+    style.id = 'tsc-desktop-nav-lock-inline';
+    style.textContent = [
+      'body:has([data-tsc-locked-desktop-header="true"]) .tsc-desktop-site-header:not([data-tsc-forced-header="true"]){display:none!important;}',
+      '.tsc-desktop-site-header[data-tsc-forced-header="true"]{display:flex!important;}',
+      '#comp-mpl387ie,#comp-mrufx9ud,#comp-mrufx9rd2{display:none!important;height:0!important;min-height:0!important;max-height:0!important;margin:0!important;padding:0!important;overflow:hidden!important;pointer-events:none!important;visibility:hidden!important;}'
+    ].join('');
+    (document.head || document.documentElement).appendChild(style);
+  }
+  injectDesktopNavLockInline();
+
   function ensureScript(src, onload) {
     var existing = document.querySelector('script[src="' + src + '"]');
     if (existing) {
@@ -48,6 +65,22 @@
     }
     (document.body || document.head).appendChild(script);
     return script;
+  }
+
+  function isBlogArticlePath(path) {
+    return !!(RESOURCES_PATHS[path] && path !== '/resources');
+  }
+
+  function mountBlogChrome(path) {
+    if (!isBlogArticlePath(path)) return;
+    ensureStylesheet('/css/pages/tsc-blog-hero.css?v=blog-hero-3');
+    ensureScript('/js/tsc-blog-posts.js?v=blog-hero-3', function() {
+      ensureScript('/js/tsc-blog-chrome.js?v=blog-hero-3', function() {
+        if (window.TSCBlogChrome && typeof window.TSCBlogChrome.mount === 'function') {
+          window.TSCBlogChrome.mount(path);
+        }
+      });
+    });
   }
 
   function normalizeInternalProtocolRelativeLinks() {
@@ -266,7 +299,7 @@
   function mountWorkImpactLinks(path) {
     if (path !== '/work') return;
     var reports = [
-      { label: 'Mai Bhi Artist', href: '/mba' },
+      { label: 'Mai Bhi Artist', href: '/mba-impact' },
       { label: 'Havells mYOUsic', href: '/havells-myousic' },
       { label: 'Insta Music League', href: '/insta-music-league' },
       { label: 'Young Gunns', href: '/young-gunns' }
@@ -348,83 +381,17 @@
 
   function mountFilmReportCards(path) {
     if (path !== '/films') return;
+    /* Clone-faithful: keep Wix card copy; only wire impact-report links. */
     var cards = [
-      {
-        root: '#comp-mqmi3w3o',
-        href: '/mahavatar-narsimha',
-        title: 'Mahavatar Narsimha',
-        titleSelector: '#comp-mqmi3w46',
-        badgesSelector: '#comp-mqmi3w484',
-        blurbSelector: '#comp-mqmi3w4a',
-        labelSelector: '#comp-mqmi3w4k',
-        nameSelector: '#comp-mqmi3w4l3',
-        meta: ['Animated Feature', 'Mythology IP', 'Audience Demand', 'Monetisation'],
-        metaSelectors: ['#comp-mqmi3w3v3', '#comp-mqmi3w3x2', '#comp-mqmi3w3z', '#comp-mqmi3w41'],
-        badges: 'Mythology-Led Animation | Audience Strategy | IP Growth',
-        blurb: 'A culturally rooted animated feature mounted around mythology-led positioning, audience demand, partnerships, monetisation and long-term IP growth.'
-      },
-      {
-        root: '#comp-mqmi6ynt2',
-        href: '/hanuman-ansh',
-        title: 'Hanuman Ansh',
-        titleSelector: '#comp-mqmi6yo71',
-        badgesSelector: '#comp-mqmi6yo94',
-        blurbSelector: '#comp-mqmi6yob',
-        labelSelector: '#comp-mqmi6yol3',
-        nameSelector: '#comp-mqmi6yom7',
-        meta: ['Spiritual IP', 'Faith Communities', 'Family Audiences', 'Story Universe'],
-        metaSelectors: ['#comp-mqmi6yny', '#comp-mqmi6ynz5', '#comp-mqmi6yo1', '#comp-mqmi6yo2'],
-        badges: 'Spiritual Entertainment | Faith Communities | IP Development',
-        blurb: 'A spiritual entertainment IP shaped to connect devotion-led communities, contemporary families and a long-term story universe.'
-      },
-      {
-        root: '#comp-mqmi8cxm2',
-        href: '/mahaprbhu',
-        title: 'Mahaprabhu Jagannath',
-        titleSelector: '#comp-mqmi8cy13',
-        badgesSelector: '#comp-mqmi8cy4',
-        blurbSelector: '#comp-mqmi8cy52',
-        labelSelector: '#comp-mqmi8cyf',
-        nameSelector: '#comp-mqmi8cyg2',
-        meta: ['Living Tradition', 'Devotional Story', 'Community Access', 'New-Gen Reach'],
-        metaSelectors: ['#comp-mqmi8cxr2', '#comp-mqmi8cxt', '#comp-mqmi8cxu6', '#comp-mqmi8cxw'],
-        badges: 'Devotional Culture | Community Access | Story Positioning',
-        blurb: "A Lord Jagannath cultural story positioned through devotion, community access, partnerships and new-generation storytelling."
-      },
-      {
-        root: '#comp-mqmi8sui',
-        href: '/kalki',
-        title: 'Kalki',
-        titleSelector: '#comp-mqmi8suv6',
-        badgesSelector: '#comp-mqmi8suy3',
-        blurbSelector: '#comp-mqmi8sv0',
-        labelSelector: '#comp-mqmi8sv51',
-        nameSelector: '#comp-mqmi8sv66',
-        meta: ['Future Mythology', 'Dharma & Renewal', 'Audience Anticipation', 'Franchise Potential'],
-        metaSelectors: ['#comp-mqmi8sul4', '#comp-mqmi8sun1', '#comp-mqmi8suo6', '#comp-mqmi8suq'],
-        badges: 'Ancient Imagination | Future Mythology | Audience Anticipation',
-        blurb: 'A future-facing mythology story connecting dharma, transformation, ancient Indian imagination and modern audience anticipation.'
-      }
+      { root: '#comp-mqmi3w3o', href: '/mahavatar-narsimha-impact', title: 'Mahavatar Narsimha' },
+      { root: '#comp-mqmi6ynt2', href: '/hanuman-ansh-impact', title: 'Hanuman Ansh' },
+      { root: '#comp-mqmi8cxm2', href: '/mahaprabhu-jagannath-impact', title: 'Mahaprabhu Jagannath' },
+      { root: '#comp-mqmi8sui', href: '/kalki-impact', title: 'Kalki' }
     ];
-
-    function setText(selector, value) {
-      var node = document.querySelector(selector);
-      if (!node) return;
-      var textNode = node.querySelector('.wixui-rich-text__text') || node;
-      textNode.textContent = value;
-    }
 
     cards.forEach(function(card) {
       var root = document.querySelector(card.root);
       if (!root) return;
-      setText(card.titleSelector, card.title);
-      setText(card.badgesSelector, card.badges);
-      setText(card.blurbSelector, card.blurb);
-      setText(card.labelSelector, 'Focus');
-      setText(card.nameSelector, 'IMPACT REPORT');
-      card.metaSelectors.forEach(function(selector, i) {
-        setText(selector, card.meta[i]);
-      });
       root.classList.add('tsc-film-report-card');
       root.setAttribute('role', 'link');
       root.setAttribute('tabindex', '0');
@@ -526,22 +493,28 @@
       var trigger = visibleArtistsTrigger();
       var triggerRect = visibleRect(trigger);
       if (!triggerRect) return;
-      Array.prototype.forEach.call(document.querySelectorAll('[id$="-dropdown"], .wixui-dropdown-container'), function(dropdown) {
+      /* Wix .rpHatU uses left:var(--dropdown-left)!important — plain style.left loses. */
+      Array.prototype.forEach.call(document.querySelectorAll('[id$="-dropdown"][data-part="dropdown-container"]'), function(dropdown) {
         var label = (dropdown.textContent || '').trim().replace(/\s+/g, ' ');
         if (label.indexOf('TSC Artists') === -1 || label.indexOf('Artist Path') === -1 || label.indexOf('Learn With TSC') === -1) return;
         var rect = visibleRect(dropdown);
         if (!rect) return;
         var delta = Math.abs(rect.left - triggerRect.left);
         if (delta <= 2) return;
-        dropdown.style.left = Math.round(triggerRect.left) + 'px';
-        dropdown.style.right = 'auto';
-        dropdown.style.transform = 'none';
+        var parent = dropdown.offsetParent;
+        var parentLeft = parent && parent.getBoundingClientRect ? parent.getBoundingClientRect().left : 0;
+        var leftPx = Math.round(triggerRect.left - parentLeft) + 'px';
+        dropdown.style.setProperty('--dropdown-left', leftPx);
+        dropdown.style.setProperty('left', leftPx, 'important');
+        dropdown.style.setProperty('right', 'auto', 'important');
+        dropdown.style.setProperty('transform', 'none', 'important');
         dropdown.dataset.tscArtistsDropdownAligned = 'true';
       });
     }
     function scheduleArtistsDropdownAlign() {
       window.requestAnimationFrame(alignOpenArtistsDropdown);
       window.setTimeout(alignOpenArtistsDropdown, 80);
+      window.setTimeout(alignOpenArtistsDropdown, 200);
     }
     function dropdownTarget(event) {
       var node = event.target && event.target.closest && event.target.closest('a, [role="menuitem"], .wixui-dropdown-menu__item, .wixui-vertical-menu__item-label');
@@ -574,7 +547,7 @@
     document.addEventListener('click', scheduleArtistsDropdownAlign, true);
     window.addEventListener('resize', scheduleArtistsDropdownAlign);
     if (window.MutationObserver && document.body) {
-      new MutationObserver(scheduleArtistsDropdownAlign).observe(document.body, { attributes: true, childList: true, subtree: true, attributeFilter: ['style', 'class', 'data-state', 'aria-expanded'] });
+      new MutationObserver(scheduleArtistsDropdownAlign).observe(document.body, { attributes: true, childList: true, subtree: true, attributeFilter: ['style', 'class', 'data-state', 'data-open', 'data-anchor', 'aria-expanded'] });
     }
   }
 
@@ -623,12 +596,12 @@
 
   var MOBILE_PAGE_CSS = {
     home: '/css/mobile/home.css',
-    about: '/css/mobile/about.css?v=about-hero-img-sm-1',
+    about: '/css/mobile/about.css?v=about-hero-sep-2',
     work: '/css/mobile/work.css',
     artists: '/css/mobile/artists.css',
     learn: '/css/mobile/learn.css',
-    academy: '/css/mobile/academy.css',
-    films: '/css/mobile/films.css?v=mobile-space-3',
+    academy: '/css/mobile/academy.css?v=academy-stack-3',
+    films: '/css/mobile/films.css?v=films-num-cards-1',
     resources: '/css/mobile/resources.css',
     impact: '/css/mobile/impact-report.css'
   };
@@ -665,9 +638,14 @@
   var FILMS_PATHS = {
     '/films': true,
     '/mahavatar-narsimha': true,
+    '/mahavatar-narsimha-impact': true,
     '/hanuman-ansh': true,
+    '/hanuman-ansh-impact': true,
     '/mahaprbhu': true,
-    '/kalki': true
+    '/mahaprbhu-impact': true,
+    '/mahaprabhu-jagannath-impact': true,
+    '/kalki': true,
+    '/kalki-impact': true
   };
   var RESOURCES_PATHS = {
     '/resources': true,
@@ -682,10 +660,11 @@
     '/how-i-curate-music-with-independent-artists': true
   };
 
-  var TSC_LOGO_SRC = '/assets/brand/tsc-logo-trim-nav.png';
-  var ACADEMY_LOGO_SRC = '/assets/brand/tsc-academy-logo-trim-nav.png';
-  var TSC_FOOTER_LOGO_SRC = '/assets/brand/tsc-logo-trim-footer.png';
-  var ACADEMY_FOOTER_LOGO_SRC = '/assets/brand/tsc-academy-logo-trim-footer.png';
+  /* Nav logos: locked desktop treatment — no flush-bust after lock (stable v). */
+  var TSC_LOGO_SRC = '/assets/brand/tsc-logo-trim-nav.png?v=nav-lock-4';
+  var ACADEMY_LOGO_SRC = '/assets/brand/tsc-academy-logo-trim-nav.png?v=nav-lock-4';
+  var TSC_FOOTER_LOGO_SRC = '/assets/brand/tsc-logo-trim-footer.png?v=flush-1';
+  var ACADEMY_FOOTER_LOGO_SRC = '/assets/brand/tsc-academy-logo-trim-footer.png?v=flush-1';
   var DEFAULT_BRAND_ASSETS = {
     main: {
       logo: TSC_LOGO_SRC,
@@ -854,7 +833,7 @@
         });
       }
       // tsc-mobile-system.css @imports ./mobile/_tokens.css — no separate tokens link
-      ensureStylesheet('/css/tsc-mobile-system.css?v=academy-one-2');
+      ensureStylesheet('/css/tsc-mobile-system.css?v=kill-ads-strip-2');
       var bucket = mobileCssBucket(path);
       if (bucket && MOBILE_PAGE_CSS[bucket]) {
         // ponytail: paths may already carry ?v= — don't double-append
@@ -891,7 +870,6 @@
       });
       // Page *.animations.js not inlined on locked primary HTML — load mesh/content
       // replacements here so Work/Films/Home mobile shells still mount under mobile-only loader.
-      ensureScript('/js/content-replacements.js?v=work-cards-1');
       if (path === '/artists') {
         ensureScript('/js/tsc-artists-accordion.js', function() {
           if (window.TSCArtistsAccordion && window.TSCArtistsAccordion.init) {
@@ -975,7 +953,7 @@
   function formMarkup(def, name, shared) {
     return '<form class="tsc-local-form" data-tsc-form="' + name + '"><h2>' + escapeHtml(def.title) + '</h2><p class="tsc-required-note"><span class="tsc-required-mark" aria-hidden="true">*</span> Required</p><div class="tsc-form-grid">' + (def.fields || []).map(function(field) {
       return fieldMarkup(field, name, shared || {});
-    }).join('') + '<div class="tsc-field tsc-field-full"><button class="tsc-submit" type="submit">Submit</button><p class="tsc-form-note" role="status">Thank you. Your details have been captured locally for this demo.</p></div></div></form>';
+    }).join('') + '<div class="tsc-field tsc-field-full"><button class="tsc-submit" type="submit">Submit</button><p class="tsc-form-note" role="status" hidden></p></div></div></form>';
   }
 
   function formEndpoint(name) {
@@ -983,6 +961,7 @@
       bookCall: '/api/book-call',
       bookArtist: '/api/query',
       artistPath: '/api/artist-path',
+      collabQuery: '/api/leads',
       review01: '/api/reviews',
       review02: '/api/reviews02',
       classicalReview: '/api/reviews'
@@ -1066,6 +1045,19 @@
         source: 'tsc-website'
       };
     }
+    if (name === 'collabQuery') {
+      return {
+        userType: values['i-am-a'] || values['user-type'] || 'Brand',
+        name: values['full-name'] || values.name,
+        email: values['email-address'],
+        phone: values['contact-number'] || values.phone,
+        company: values.organization || values.company,
+        message: values['how-can-we-collaborate'] || values.message,
+        lookingFor: values['what-are-you-looking-for'],
+        campaignType: values['collaboration-type'],
+        source: 'tsc-website-collab'
+      };
+    }
     if (name === 'review01' || name === 'review02' || name === 'classicalReview') {
       return {
         firstName: values['first-name'],
@@ -1126,6 +1118,48 @@
   ];
 
   var ARTIST_PATH_WHATSAPP = 'https://chat.whatsapp.com/IaS1GaJT7Gp7ufxHIjDkZu?mode=gi_t';
+
+  /** Home closing CTAs: keep Join → WhatsApp community; keep Build → /films. */
+  function linkHomeClosingCtas() {
+    var path = canonicalPathname();
+    if (path !== '/' && path !== '/home' && path !== '/pages/home.html') return;
+
+    function promoteToAnchor(wrapper) {
+      if (!wrapper) return null;
+      var control = wrapper.querySelector('[data-testid="linkElement"], a, button') || wrapper;
+      if (control.tagName && control.tagName.toLowerCase() !== 'a') {
+        var anchor = document.createElement('a');
+        Array.prototype.slice.call(control.attributes || []).forEach(function(attribute) {
+          if (attribute.name === 'role' || attribute.name === 'tabindex') return;
+          anchor.setAttribute(attribute.name, attribute.value);
+        });
+        while (control.firstChild) anchor.appendChild(control.firstChild);
+        if (control.parentNode) control.parentNode.replaceChild(anchor, control);
+        control = anchor;
+      }
+      return control;
+    }
+
+    var join = promoteToAnchor(document.getElementById('comp-mrly2iho'));
+    if (join) {
+      join.setAttribute('href', ARTIST_PATH_WHATSAPP);
+      join.setAttribute('target', '_blank');
+      join.setAttribute('rel', 'noreferrer noopener');
+      join.setAttribute('aria-label', 'Join The Ecosystem');
+      var joinLabel = join.querySelector('.wixui-button__label, span');
+      if (joinLabel) joinLabel.textContent = 'Join The Ecosystem';
+      join.style.pointerEvents = 'auto';
+    }
+
+    var build = promoteToAnchor(document.getElementById('comp-mrly1u79'));
+    if (build) {
+      build.setAttribute('href', '/films');
+      build.setAttribute('target', '_self');
+      build.removeAttribute('rel');
+      build.setAttribute('aria-label', 'Build With TSC');
+      build.style.pointerEvents = 'auto';
+    }
+  }
 
   function getRecommendedCourse(data) {
     var text = [
@@ -1246,7 +1280,7 @@
         var response = await fetch('/api/newsletter', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-          body: JSON.stringify({ email: input && input.value, source: 'footer' })
+          body: JSON.stringify({ email: input && input.value, source: form.dataset.source || 'footer' })
         });
         var body = await response.json().catch(function() { return {}; });
         if (!response.ok || body.success !== true) throw new Error(body.error || body.message || 'Subscription failed');
@@ -1348,40 +1382,89 @@
     };
   }
 
+  var MAIN_NAV_ITEMS = [
+    { href: '/about', key: 'about', label: 'About' },
+    { href: '/work', key: 'work', label: 'Work' },
+    { href: '/artists', key: 'artists', label: 'Artists' },
+    { href: '/films', key: 'films', label: 'Films' },
+    { href: '/resources', key: 'resources', label: 'Resources' },
+    { href: '/academy', key: 'academy', label: 'TSC Academy', className: 'tsc-main-academy-link' }
+  ];
+
+  var MAIN_ARTISTS_MENU_ITEMS = [
+    { href: '/artists', label: 'TSC Artists' },
+    { href: '/artist-path', label: 'Artist Path' },
+    { href: '/academy', label: 'Learn With TSC' }
+  ];
+
+  var ACADEMY_COURSE_ITEMS = [
+    { href: '/music-production', label: 'A to Z of Music Production' },
+    { href: '/the-heart-of-composition', label: 'The HeART of Composition' },
+    { href: '/roots-of-hindustani-classical', label: 'Roots of Hindustani Classical' }
+  ];
+
+  var ACADEMY_COURSE_HREFS = {
+    '/music-production': true,
+    '/the-heart-of-composition': true,
+    '/roots-of-hindustani-classical': true
+  };
+
+  var ACADEMY_NAV_ITEMS = [
+    { href: '/resources', key: 'resources', label: 'Resources' },
+    { href: '/academy#testimonials', key: 'testimonials', label: 'Testimonials' },
+    { href: '/book-a-call', key: 'know-more', label: 'Know More' }
+  ];
+
   function navLinksFor(academy) {
     if (academy) {
-      return [
-        ['/resources', 'Resources'],
-        ['/academy#courses', 'Courses'],
-        ['/academy', 'Testimonials'],
-        ['/academy', 'Know More']
-      ];
+      return ACADEMY_NAV_ITEMS.map(function(item) {
+        return [item.href, item.label, item.key, item.className || ''];
+      });
     }
-    return [
-      ['/about', 'About'],
-      ['/work', 'Work'],
-      ['/artists', 'Artists'],
-      ['/films', 'Films'],
-      ['/resources', 'Resources'],
-      ['/academy', 'TSC Academy']
-    ];
+    return MAIN_NAV_ITEMS.map(function(item) {
+      return [item.href, item.label, item.key, item.className || ''];
+    });
   }
 
-  function renderMainNav() {
+  function mainActivePage(path) {
+    path = path || canonicalPathname();
+    if (path === '/' || path === '/home') return 'home';
+    if (path === '/about') return 'about';
+    if (WORK_PATHS[path] || IMPACT_PATHS[path]) return 'work';
+    if (ARTISTS_PATHS[path] || path === '/harshad-duhita' || path === '/yugm') return 'artists';
+    if (FILMS_PATHS[path]) return 'films';
+    if (RESOURCES_PATHS[path]) return 'resources';
+    if (isAcademyPath(path)) return 'academy';
+    return '';
+  }
+
+  function mainNavAttrs(href, key, activePage, className) {
+    var active = key && key === activePage;
+    var attrs = ['href="' + escapeHtml(href) + '"'];
+    var classes = className ? [className] : [];
+    if (active) classes.push('is-active');
+    if (classes.length) attrs.push('class="' + escapeHtml(classes.join(' ')) + '"');
+    if (active) attrs.push('aria-current="page"');
+    return attrs.join(' ');
+  }
+
+  function renderMainNav(activePage) {
+    activePage = activePage || mainActivePage();
+    var artistsDropdown = MAIN_ARTISTS_MENU_ITEMS.map(function(item) {
+      return '<a href="' + escapeHtml(item.href) + '">' + escapeHtml(item.label) + '</a>';
+    }).join('');
     return [
-      '<a href="/about">About</a>',
-      '<a href="/work">Work</a>',
-      '<details class="tsc-main-artists-menu">',
-        '<summary>Artists</summary>',
+      '<a ' + mainNavAttrs('/about', 'about', activePage) + '>About</a>',
+      '<a ' + mainNavAttrs('/work', 'work', activePage) + '>Work</a>',
+      '<details class="tsc-main-artists-menu' + (activePage === 'artists' ? ' is-active' : '') + '">',
+        '<summary' + (activePage === 'artists' ? ' aria-current="page"' : '') + '>Artists</summary>',
         '<div class="tsc-main-artists-dropdown">',
-          '<a href="/artists">TSC Artists</a>',
-          '<a href="/artist-path">Artist Path</a>',
-          '<a href="/learn-with-tsc">Learn With TSC</a>',
+          artistsDropdown,
         '</div>',
       '</details>',
-      '<a href="/films">Films</a>',
-      '<a href="/resources">Resources</a>',
-      '<a class="tsc-main-academy-link" href="/academy">TSC Academy</a>'
+      '<a ' + mainNavAttrs('/films', 'films', activePage) + '>Films</a>',
+      '<a ' + mainNavAttrs('/resources', 'resources', activePage) + '>Resources</a>',
+      '<a ' + mainNavAttrs('/academy', 'academy', activePage, 'tsc-main-academy-link') + '>TSC Academy</a>'
     ].join('');
   }
 
@@ -1411,11 +1494,7 @@
   function renderAcademyNav(activePage, mobile) {
     activePage = activePage || academyActivePage();
     var courseActive = activePage === 'courses';
-    var courseItems = [
-      { href: '/music-production', label: 'A-Z of Music Production' },
-      { href: '/the-heart-of-composition', label: 'The HeART of Composition' },
-      { href: '/roots-of-hindustani-classical', label: 'Roots of Hindustani Classical' }
-    ].map(function(item) {
+    var courseItems = ACADEMY_COURSE_ITEMS.map(function(item) {
       var active = item.href === canonicalPathname();
       return '<a href="' + escapeHtml(item.href) + '"' + (active ? ' class="is-active" aria-current="page"' : '') + '>' + escapeHtml(item.label) + '</a>';
     }).join('');
@@ -1429,7 +1508,7 @@
           '</div>',
         '</details>',
         academyNavItemMarkup({ href: '/academy#testimonials', key: 'testimonials', label: 'Testimonials' }, activePage),
-        academyNavItemMarkup({ href: '/academy#know-more', key: 'know-more', label: 'Know More' }, activePage),
+        academyNavItemMarkup({ href: '/book-a-call', key: 'know-more', label: 'Know More' }, activePage),
         academyNavItemMarkup({ href: '/', key: 'main-site', label: 'MAIN WEBSITE' }, activePage)
       ].join('');
     }
@@ -1442,9 +1521,406 @@
         '</div>',
       '</details>',
       academyNavItemMarkup({ href: '/academy#testimonials', key: 'testimonials', label: 'Testimonials' }, activePage),
-      academyNavItemMarkup({ href: '/academy#know-more', key: 'know-more', label: 'Know More' }, activePage),
+      academyNavItemMarkup({ href: '/book-a-call', key: 'know-more', label: 'Know More' }, activePage),
       academyNavItemMarkup({ href: '/', key: 'main-site', label: 'MAIN WEBSITE', className: 'tsc-academy-main-site-link' }, activePage)
     ].join('');
+  }
+
+  /** Wix blanks collide (Courses+Testimonials share //blank-3). Force top nav by label. */
+  var ACADEMY_TOP_NAV_HREFS = [
+    { key: 'resources', href: '/resources', label: 'resources' },
+    { key: 'courses', href: '/academy#courses', label: 'courses' },
+    { key: 'testimonials', href: '/academy#testimonials', label: 'testimonials' },
+    { key: 'know-more', href: '/book-a-call', label: 'know more' },
+    { key: 'main-site', href: '/', label: 'main website' }
+  ];
+
+  function navLinkLabel(node) {
+    if (!node) return '';
+    var labelNode =
+      (node.querySelector &&
+        node.querySelector(
+          '[data-part="label"], .wixui-horizontal-menu__item-label, .wixui-menu__item-label, [data-testid="submenu-item-label"]'
+        )) ||
+      null;
+    if (labelNode) return textKeyNav(labelNode.textContent);
+    return textKeyNav(node.textContent);
+  }
+
+  function clearNavActiveMarks(node) {
+    if (!node || !node.classList) return;
+    node.classList.remove('is-active', 'WB5Q35');
+    node.removeAttribute('aria-current');
+    if (node.getAttribute && node.getAttribute('data-preview') === 'selected') {
+      node.removeAttribute('data-preview');
+    }
+  }
+
+  function markNavActive(node) {
+    if (!node || !node.classList) return;
+    node.classList.add('is-active');
+    node.setAttribute('aria-current', 'page');
+  }
+
+  function repairLockedAcademyTopNav(header) {
+    if (!header) return;
+    Array.prototype.forEach.call(header.querySelectorAll('a[href]'), function(anchor) {
+      if (
+        anchor.closest(
+          '.wixui-dropdown-menu, [data-testid="submenu"], .tsc-academy-courses-dropdown, .tsc-mobile-academy-courses > div, .tsc-main-artists-dropdown'
+        )
+      ) {
+        return;
+      }
+      var label = navLinkLabel(anchor);
+      for (var i = 0; i < ACADEMY_TOP_NAV_HREFS.length; i++) {
+        if (ACADEMY_TOP_NAV_HREFS[i].label !== label) continue;
+        anchor.setAttribute('href', ACADEMY_TOP_NAV_HREFS[i].href);
+        anchor.setAttribute('target', '_self');
+        anchor.removeAttribute('rel');
+        return;
+      }
+    });
+  }
+
+  function academyTopNavKey(label) {
+    if (label === 'resources') return 'resources';
+    if (label === 'courses') return 'courses';
+    if (label === 'testimonials') return 'testimonials';
+    if (label === 'know more') return 'know-more';
+    return '';
+  }
+
+  function mainTopNavKey(label) {
+    if (label === 'about') return 'about';
+    if (label === 'work') return 'work';
+    if (label === 'artists') return 'artists';
+    if (label === 'films') return 'films';
+    if (label === 'resources') return 'resources';
+    if (label === 'tsc academy' || label === 'academy') return 'academy';
+    return '';
+  }
+
+  function applyLockedDesktopActiveState(header, config) {
+    if (!header || !config) return;
+    if (config.academy) repairLockedAcademyTopNav(header);
+
+    var activePage = config.academy ? academyActivePage(config.path) : mainActivePage(config.path);
+    Array.prototype.forEach.call(
+      header.querySelectorAll('a, summary, [role="menuitem"], [data-part="menu-item-content"], details'),
+      clearNavActiveMarks
+    );
+    if (!activePage) return;
+
+    Array.prototype.forEach.call(header.querySelectorAll('a[href]'), function(anchor) {
+      if (anchor.classList.contains('tsc-desktop-brand-link')) return;
+      var href = anchor.getAttribute('href') || '';
+      var hrefPath = href.split('#')[0];
+      var inCourseDropdown = !!(
+        anchor.closest &&
+        anchor.closest(
+          '.tsc-academy-courses-dropdown, .tsc-mobile-academy-courses > div, .wixui-dropdown-menu, [data-testid="submenu"]'
+        )
+      );
+      var inArtistsDropdown = !!(
+        anchor.closest && anchor.closest('.tsc-main-artists-dropdown, .tsc-mobile-artists-menu > div')
+      );
+
+      // Dropdown leaves: only the matching destination page is active.
+      if (inCourseDropdown || ACADEMY_COURSE_HREFS[hrefPath]) {
+        if (hrefPath && hrefPath === config.path) markNavActive(anchor);
+        return;
+      }
+      if (inArtistsDropdown) {
+        if (hrefPath && hrefPath === config.path) markNavActive(anchor);
+        return;
+      }
+
+      // Top-level: label/key only — never "href === current path" (Wix blanks share URLs).
+      var label = navLinkLabel(anchor);
+      var key = config.academy ? academyTopNavKey(label) : mainTopNavKey(label);
+      if (key && key === activePage) markNavActive(anchor);
+    });
+
+    Array.prototype.forEach.call(header.querySelectorAll('summary'), function(summary) {
+      var label = navLinkLabel(summary);
+      if (config.academy && label === 'courses' && activePage === 'courses') {
+        markNavActive(summary);
+        if (summary.parentElement) summary.parentElement.classList.add('is-active');
+      }
+      if (!config.academy && label === 'artists' && activePage === 'artists') {
+        markNavActive(summary);
+        if (summary.parentElement) summary.parentElement.classList.add('is-active');
+      }
+    });
+  }
+
+  function textKeyNav(value) {
+    return String(value || '').replace(/\s+/g, ' ').trim().toLowerCase();
+  }
+
+  function ensureWixCourseDropdownItem(menu, course, template) {
+    var item = (template && template.cloneNode(true)) || document.createElement('li');
+    item.setAttribute('data-tsc-course-item', course.href);
+    item.setAttribute('data-item-depth', '1');
+    // Keep Wix item chrome from template — wiping className clipped last-row hit area on some pages.
+    if (!item.className && template && template.className) item.className = template.className;
+    var anchor = item.querySelector('a') || document.createElement('a');
+    if (!anchor.parentNode) item.appendChild(anchor);
+    anchor.setAttribute('href', course.href);
+    anchor.setAttribute('target', '_self');
+    anchor.removeAttribute('rel');
+    anchor.removeAttribute('aria-current');
+    anchor.classList.remove('WB5Q35', 'is-active');
+    anchor.setAttribute('aria-label', course.label);
+    var labelNode =
+      anchor.querySelector('[data-testid="submenu-item-label"], [data-part="dropdown-item-label"], span') ||
+      anchor;
+    labelNode.textContent = course.label;
+    labelNode.removeAttribute('data-selected');
+    return item;
+  }
+
+  function isMusicProductionLabel(label) {
+    return (
+      label === 'a-z of music production' ||
+      label === 'a to z of music production' ||
+      label === 'a to z course' ||
+      label.indexOf('a to z') >= 0 ||
+      label.indexOf('a-z') >= 0
+    );
+  }
+
+  function matchesAcademyCourse(anchor, course) {
+    var label = textKeyNav(anchor.textContent);
+    var href = anchor.getAttribute('href') || '';
+    if (href === course.href || label === textKeyNav(course.label)) return true;
+    // ponytail: a-z aliases only for music-production — shared match rewrote A-Z → HeART and looped injects
+    if (course.href === '/music-production' && isMusicProductionLabel(label)) return true;
+    return false;
+  }
+
+  function isAcademyCoursesDropdownMenu(menu) {
+    var menuText = textKeyNav(menu.textContent);
+    if (!menuText) return false;
+    // Never rewrite Artists mega-menu.
+    if (menuText.indexOf('tsc artists') >= 0 && menuText.indexOf('artist path') >= 0) return false;
+    return (
+      menuText.indexOf('roots of hindustani') >= 0 ||
+      menuText.indexOf('heart of composition') >= 0 ||
+      isMusicProductionLabel(menuText) ||
+      menuText.indexOf('music production') >= 0
+    );
+  }
+
+  /** Force all 3 course rows (labels + hrefs) into Wix Courses dropdowns — every academy/course page. */
+  function ensureAcademyCoursesInWixMenus() {
+    document.querySelectorAll('ul.wixui-dropdown-menu, ul[role="menu"]').forEach(function(menu) {
+      if (!isAcademyCoursesDropdownMenu(menu)) return;
+
+      var template = menu.querySelector('li[data-item-depth], li');
+      var rebuilt = document.createDocumentFragment();
+      ACADEMY_COURSE_ITEMS.forEach(function(course) {
+        rebuilt.appendChild(ensureWixCourseDropdownItem(menu, course, template));
+      });
+      menu.innerHTML = '';
+      menu.appendChild(rebuilt);
+      menu.style.setProperty('--items-number', String(ACADEMY_COURSE_ITEMS.length));
+      menu.setAttribute('data-tsc-courses-menu', '1');
+    });
+  }
+
+  /** Label wins over Wix //blank-9 collisions (A-Z and HeART both used blank-9). */
+  function wireLockedCoursesDropdownClickGuard() {
+    if (window.__tscCoursesDropdownClickGuard) return;
+    window.__tscCoursesDropdownClickGuard = true;
+    var targets = {
+      'A to Z of Music Production': '/music-production',
+      'A-Z of Music Production': '/music-production',
+      'A to Z Course': '/music-production',
+      'The HeART of Composition': '/the-heart-of-composition',
+      'The Heart of Composition': '/the-heart-of-composition',
+      'Roots of Hindustani Classical': '/roots-of-hindustani-classical'
+    };
+    function courseHrefFromEvent(event) {
+      var node =
+        event.target &&
+        event.target.closest &&
+        event.target.closest(
+          'a, [role="menuitem"], .wixui-dropdown-menu__item, [data-testid="submenu-item-label"], [data-part="dropdown-item-label"]'
+        );
+      if (!node) return null;
+      var inCourses =
+        node.closest &&
+        node.closest(
+          '.wixui-dropdown-menu, [data-testid="submenu"], .tsc-academy-courses-dropdown, [data-tsc-courses-menu="1"]'
+        );
+      if (!inCourses) return null;
+      var label = (node.textContent || '').trim().replace(/\s+/g, ' ');
+      if (targets[label]) return targets[label];
+      var key = textKeyNav(label);
+      if (isMusicProductionLabel(key)) return '/music-production';
+      if (key.indexOf('heart') >= 0 && key.indexOf('composition') >= 0) return '/the-heart-of-composition';
+      if (key.indexOf('roots') >= 0 || key.indexOf('hindustani') >= 0) return '/roots-of-hindustani-classical';
+      var anchor = node.closest ? node.closest('a[href]') : null;
+      var href = (anchor && anchor.getAttribute('href')) || '';
+      if (ACADEMY_COURSE_HREFS[href.split('#')[0]]) return href.split('#')[0];
+      return null;
+    }
+    document.addEventListener(
+      'click',
+      function(event) {
+        var href = courseHrefFromEvent(event);
+        if (!href) return;
+        event.preventDefault();
+        event.stopImmediatePropagation();
+        window.location.assign(href);
+      },
+      true
+    );
+    document.addEventListener(
+      'keydown',
+      function(event) {
+        if (event.key !== 'Enter' && event.key !== ' ') return;
+        var href = courseHrefFromEvent(event);
+        if (!href) return;
+        event.preventDefault();
+        event.stopImmediatePropagation();
+        window.location.assign(href);
+      },
+      true
+    );
+  }
+
+  /**
+   * Course pages: Courses dropdown sits left of trigger + ~35px gap.
+   * Mouse path to "Roots…" leaves Wix hover → menu closes. Pin open under Courses.
+   */
+  function wireCoursesDropdownStayOpen() {
+    if (window.__tscCoursesDropdownStayOpen) return;
+    window.__tscCoursesDropdownStayOpen = true;
+    var openLi = null;
+    var closeTimer = null;
+    var dropRect = null;
+
+    function coursesItemLi(node) {
+      if (!node || !node.closest) return null;
+      var header = node.closest('[data-tsc-locked-desktop-header="true"]');
+      if (!header) return null;
+      var li = node.closest('li');
+      if (!li || !header.contains(li)) return null;
+      var labelEl =
+        li.querySelector('[data-part="label"], .wixui-horizontal-menu__item-label, .wixui-menu__item-label') || li;
+      if (navLinkLabel(labelEl) !== 'courses') return null;
+      return li;
+    }
+
+    function dropdownFor(li) {
+      return (
+        (li &&
+          (li.querySelector('#dataItem-mrxcvn15-dropdown') ||
+            li.querySelector('.rpHatU') ||
+            li.querySelector('[id$="-dropdown"]'))) ||
+        null
+      );
+    }
+
+    function pinOpen(li) {
+      if (!li) return;
+      window.clearTimeout(closeTimer);
+      if (openLi && openLi !== li) releaseOpen(openLi);
+      openLi = li;
+      li.setAttribute('data-tsc-courses-open', '1');
+      var drop = dropdownFor(li);
+      if (!drop) return;
+      var liRect = li.getBoundingClientRect();
+      drop.setAttribute('data-tsc-courses-pinned', '1');
+      drop.style.setProperty('position', 'fixed', 'important');
+      drop.style.setProperty('top', Math.round(liRect.bottom - 6) + 'px', 'important');
+      drop.style.setProperty('left', Math.round(liRect.left) + 'px', 'important');
+      drop.style.setProperty('right', 'auto', 'important');
+      drop.style.setProperty('transform', 'none', 'important');
+      drop.style.setProperty('display', 'grid', 'important');
+      drop.style.setProperty('visibility', 'visible', 'important');
+      drop.style.setProperty('opacity', '1', 'important');
+      drop.style.setProperty('pointer-events', 'auto', 'important');
+      drop.style.setProperty('z-index', '100000', 'important');
+      dropRect = drop.getBoundingClientRect();
+    }
+
+    function releaseOpen(li) {
+      if (!li) return;
+      li.removeAttribute('data-tsc-courses-open');
+      var drop = dropdownFor(li);
+      if (drop) {
+        drop.removeAttribute('data-tsc-courses-pinned');
+        ['position', 'top', 'left', 'right', 'transform', 'display', 'visibility', 'opacity', 'pointer-events', 'z-index'].forEach(
+          function(prop) {
+            drop.style.removeProperty(prop);
+          }
+        );
+      }
+      if (openLi === li) {
+        openLi = null;
+        dropRect = null;
+      }
+    }
+
+    function inOpenZone(x, y) {
+      if (!openLi) return false;
+      var lr = openLi.getBoundingClientRect();
+      var dr = dropRect || lr;
+      var left = Math.min(lr.left, dr.left) - 4;
+      var right = Math.max(lr.right, dr.right) + 4;
+      var top = Math.min(lr.top, dr.top) - 4;
+      var bottom = Math.max(lr.bottom, dr.bottom) + 4;
+      return x >= left && x <= right && y >= top && y <= bottom;
+    }
+
+    document.addEventListener(
+      'pointerover',
+      function(event) {
+        var li = coursesItemLi(event.target);
+        if (li) pinOpen(li);
+      },
+      true
+    );
+
+    document.addEventListener(
+      'pointermove',
+      function(event) {
+        if (!openLi) return;
+        if (inOpenZone(event.clientX, event.clientY)) {
+          window.clearTimeout(closeTimer);
+          pinOpen(openLi);
+          return;
+        }
+        window.clearTimeout(closeTimer);
+        closeTimer = window.setTimeout(function() {
+          if (openLi) releaseOpen(openLi);
+        }, 160);
+      },
+      true
+    );
+
+    document.addEventListener(
+      'pointerout',
+      function(event) {
+        if (!openLi) return;
+        var related = event.relatedTarget;
+        if (related && openLi.contains(related)) return;
+        if (related && related.closest && related.closest('[data-tsc-courses-pinned="1"]')) return;
+        window.clearTimeout(closeTimer);
+        closeTimer = window.setTimeout(function() {
+          if (openLi && !inOpenZone(event.clientX, event.clientY)) releaseOpen(openLi);
+        }, 160);
+      },
+      true
+    );
+
+    window.addEventListener('scroll', function() {
+      if (openLi) pinOpen(openLi);
+    }, true);
   }
 
   function markLegacyHeaders() {
@@ -1464,12 +1940,19 @@
           !header.classList.contains('tsc-mobile-site-header');
       }
     );
+    if (!headers.length) return null;
+
+    /* Stick to already-locked header — never flip to a competing Wix master after hydrate. */
     var expected = headers.find(function(header) {
-      var style = window.getComputedStyle(header);
-      var rect = header.getBoundingClientRect();
-      return style.display !== 'none' && rect.width > 0 && rect.height > 0;
-    }) || headers[0];
-    if (!expected) return null;
+      return header.getAttribute('data-tsc-locked-desktop-header') === 'true';
+    });
+    if (!expected) {
+      expected = headers.find(function(header) {
+        var style = window.getComputedStyle(header);
+        var rect = header.getBoundingClientRect();
+        return style.display !== 'none' && rect.width > 0 && rect.height > 0;
+      }) || headers[0];
+    }
 
     headers.forEach(function(header) {
       var active = header === expected;
@@ -1488,8 +1971,8 @@
 
   function syncLockedDesktopHeaderBrand(header, config) {
     if (!header || !config) return;
+    /* Clone-faithful: href/aria only — never replace Wix SVG/img or force box size/colour. */
     var brandName = config.brand.name || (config.academy ? 'TSC Academy' : 'The Shakti Collective');
-    var logoSrc = logoSrcForConfig(config);
     var homeHref = config.academy ? '/academy' : '/';
     var candidates = Array.prototype.filter.call(header.querySelectorAll('a'), function(link) {
       var rect = link.getBoundingClientRect();
@@ -1501,9 +1984,16 @@
     if (!brandLink) return;
     brandLink.href = homeHref;
     brandLink.setAttribute('aria-label', brandName);
-    brandLink.classList.add('tsc-desktop-brand-link');
-    brandLink.dataset.tscBrandLogo = config.academy ? 'academy' : 'main';
-    brandLink.innerHTML = '<img class="tsc-desktop-brand-logo tsc-desktop-brand-logo-unified" src="' + logoSrc + '" alt="' + escapeHtml(brandName) + '" width="' + (config.academy ? '270' : '205') + '" height="' + (config.academy ? '86' : '51') + '" decoding="async">';
+    header.setAttribute('data-tsc-brand-locked', '1');
+  }
+
+  /* About hero shankha: Wix vector is thin fragments + giant frame. Swap to brand mark. */
+  function fixAboutHeroShellViewBox() {
+    var host = document.getElementById('comp-mr1ttkgk');
+    if (!host || host.dataset.tscShellFixed === '1') return;
+    host.innerHTML =
+      '<img class="tsc-about-shankha" src="/assets/brand/tsc-shankha-cream.png" alt="" width="140" height="140" decoding="async" aria-hidden="true">';
+    host.dataset.tscShellFixed = '1';
   }
 
   function mountDesktopHeader(opts) {
@@ -1516,10 +2006,18 @@
     var config = componentOptions(opts);
     var variant = config.academy ? 'academy' : 'main';
     var activePage = opts && opts.activePage || academyActivePage(config.path);
-    var forceCustomHeader = !!(opts && opts.forceCustomHeader) || !!IMPACT_PATHS[config.path] || config.path === '/harshad-duhita' || config.path === '/yugm';
-    var locked = forceCustomHeader ? null : activateLockedDesktopHeader();
+    var forceCustomHeader = !!(opts && opts.forceCustomHeader) ||
+      !!document.querySelector('.report-page') ||
+      !!IMPACT_PATHS[config.path] ||
+      config.path === '/harshad-duhita' ||
+      config.path === '/yugm';
+    /* Prefer any native Wix header in DOM (even pre-layout) over injecting a second custom bar. */
+    var nativeHeaders = document.querySelectorAll('header:not(.tsc-desktop-site-header):not(.tsc-mobile-site-header), #SITE_HEADER, [data-testid="siteHeader"]');
+    var locked = forceCustomHeader ? null : (nativeHeaders.length ? activateLockedDesktopHeader() : null);
     if (locked) {
       syncLockedDesktopHeaderBrand(locked, config);
+      if (config.academy) ensureAcademyCoursesInWixMenus();
+      applyLockedDesktopActiveState(locked, config);
       if (existing && existing.parentNode) existing.parentNode.removeChild(existing);
       return locked;
     }
@@ -1538,7 +2036,7 @@
     var navMarkup = config.academy ? renderAcademyNav(activePage, false) : navLinksFor(false).map(function(item) {
       return '<a href="' + escapeHtml(item[0]) + '">' + escapeHtml(item[1]) + '</a>';
     }).join('');
-    if (!config.academy) navMarkup = renderMainNav();
+    if (!config.academy) navMarkup = renderMainNav(mainActivePage(config.path));
     var header = document.createElement('header');
     header.className = 'tsc-desktop-site-header' + (config.academy ? ' tsc-desktop-site-header-academy' : '');
     header.dataset.tscVariant = variant;
@@ -1547,7 +2045,7 @@
     header.setAttribute('data-tsc-theme', config.academy ? 'academy' : 'main');
     header.innerHTML = [
       '<a class="tsc-desktop-site-brand" href="' + (config.academy ? '/academy' : '/') + '" aria-label="' + escapeHtml(brandName) + '">',
-        '<img src="' + logoSrcForConfig(config) + '" alt="" width="205" height="51" decoding="async">',
+        '<img class="tsc-desktop-brand-logo tsc-desktop-brand-logo-unified" src="' + logoSrcForConfig(config) + '" alt="' + escapeHtml(brandName) + '" decoding="async">',
       '</a>',
       '<nav class="tsc-desktop-site-nav" aria-label="' + (config.academy ? 'TSC Academy' : 'The Shakti Collective') + ' navigation">',
         navMarkup,
@@ -1604,7 +2102,7 @@
         ['/resources', 'Resources'],
         ['/affiliate', 'Affiliate Program']
       ]],
-      ['Join our community', [
+      ['Join Our Community', [
         [whatsappUrl, 'WhatsApp community', true],
         ['mailto:' + CONTACT_EMAIL, CONTACT_EMAIL]
       ]]
@@ -1639,8 +2137,11 @@
     markLegacyHeaders();
 
     var brandName = config.brand.name || (config.academy ? 'TSC Academy' : 'The Shakti Collective');
+    var mobileActivePage = config.academy ? activePage : mainActivePage(config.path);
     var mobileNavMarkup = config.academy ? renderAcademyNav(activePage, true) : navLinksFor(false).map(function(item) {
-      return '<a href="' + escapeHtml(item[0]) + '">' + escapeHtml(item[1]) + '</a>';
+      var key = mainActivePage(item[0]);
+      var active = key && key === mobileActivePage;
+      return '<a href="' + escapeHtml(item[0]) + '"' + (active ? ' class="is-active" aria-current="page"' : '') + '>' + escapeHtml(item[1]) + '</a>';
     }).join('');
     var header = document.createElement('div');
     header.className = 'tsc-mobile-site-header' + (config.academy ? ' tsc-mobile-site-header-academy' : '');
@@ -1688,6 +2189,7 @@
     if (host) return host;
     host = document.createElement('footer');
     host.className = 'tsc-shared-footer-host';
+    host.dataset.tscComponent = 'shared-footer';
     host.setAttribute('aria-label', 'Site footer');
     document.body.appendChild(host);
     return host;
@@ -1722,6 +2224,7 @@
     });
   }
 
+  /* Nav header: Collective on main, Academy mark on Academy chrome. Same CSS size box. */
   function logoSrcForConfig(config) {
     return config && config.academy ? ACADEMY_LOGO_SRC : TSC_LOGO_SRC;
   }
@@ -1731,15 +2234,15 @@
   }
 
   function legacyFooterLogoMarkup(config, brandName, fallbackLogo) {
-    return '<img class="tsc-desktop-footer-logo" src="' + footerLogoSrcForConfig(config) + '" alt="' + escapeHtml(brandName) + '" width="360" height="96" decoding="async">';
+    return '<img class="tsc-desktop-footer-logo" src="' + footerLogoSrcForConfig(config) + '" alt="' + escapeHtml(brandName) + '" width="260" height="108" decoding="async">';
   }
 
   function mobileFooterLogoMarkup(config, brandName) {
-    return '<img class="tsc-mobile-footer-logo" src="' + footerLogoSrcForConfig(config) + '" alt="' + escapeHtml(brandName) + '" width="168" height="56" decoding="async">';
+    return '<img class="tsc-mobile-footer-logo" src="' + footerLogoSrcForConfig(config) + '" alt="' + escapeHtml(brandName) + '" width="180" height="74" decoding="async">';
   }
 
   function mobileHeaderLogoMarkup(config) {
-    return '<img class="tsc-mobile-brand-logo tsc-mobile-brand-logo-unified" src="' + logoSrcForConfig(config) + '" alt="" width="160" height="40" decoding="async">';
+    return '<img class="tsc-mobile-brand-logo tsc-mobile-brand-logo-unified" src="' + logoSrcForConfig(config) + '" alt="" width="148" height="40" decoding="async">';
   }
 
   function buildFooterLinks(group) {
@@ -1747,6 +2250,37 @@
       var external = link[2] ? ' target="_blank" rel="noopener noreferrer"' : '';
       return '<a href="' + escapeHtml(link[0]) + '"' + external + '>' + escapeHtml(link[1]) + '</a>';
     }).join('') + '</div></div>';
+  }
+
+  function buildFooterStartHereBox(group) {
+    if (!group) return '';
+    return [
+      '<section class="tsc-desktop-footer-startbox" aria-labelledby="tsc-desktop-footer-start-title">',
+        '<h2 id="tsc-desktop-footer-start-title">' + escapeHtml(group[0]) + '</h2>',
+        '<div class="tsc-desktop-footer-startlinks">',
+          group[1].map(function(link) {
+            var external = link[2] ? ' target="_blank" rel="noopener noreferrer"' : '';
+            return '<a href="' + escapeHtml(link[0]) + '"' + external + '>' + escapeHtml(link[1]) + '</a>';
+          }).join(''),
+        '</div>',
+      '</section>'
+    ].join('');
+  }
+
+  function buildFooterCopyrightUnderSocials(brandName) {
+    return [
+      '<div class="tsc-desktop-footer-meta">',
+        '<p class="tsc-desktop-footer-copy">&copy; 2026 ' + escapeHtml(brandName) + '. All rights reserved.</p>',
+      '</div>'
+    ].join('');
+  }
+
+  function buildMobileFooterCopyrightUnderSocials(brandName) {
+    return [
+      '<div class="tsc-mobile-footer-bottom">',
+        '<span>&copy; 2026 ' + escapeHtml(brandName) + '. All rights reserved.</span>',
+      '</div>'
+    ].join('');
   }
 
   function mountDesktopFooter(opts) {
@@ -1794,12 +2328,17 @@
 
     var brandName = config.brand.name || (config.academy ? 'TSC Academy' : 'The Shakti Collective');
     var baseGroups = footerGroupsFor(config.academy, config.whatsapp);
+    var startGroup = baseGroups.find(function(group) {
+      return /^start here$/i.test(group[0]);
+    });
+    // Start Here is a nav column (same title row as Quick Links / Explore); community = newsletter/social.
     var navGroups = baseGroups.filter(function(group) {
-      return !/join our community|get started/i.test(group[0]);
+      return !/start here|join our community|get started/i.test(group[0]);
     });
     var emailId = 'tsc-desktop-footer-email-' + variant;
     var shell = document.createElement('div');
     shell.className = 'tsc-desktop-footer' + (config.academy ? ' tsc-desktop-footer-academy' : '');
+    shell.dataset.tscComponent = 'shared-footer';
     shell.dataset.tscVariant = variant;
     shell.setAttribute('data-tsc-theme', config.academy ? 'academy' : 'dark');
     var logoMarkup = legacyFooterLogoMarkup(config, brandName, config.brand.logo);
@@ -1810,15 +2349,15 @@
             logoMarkup,
           '</a>',
           '<p class="tsc-desktop-footer-tagline">' + escapeHtml(config.brand.tagline || (config.academy ? 'Mentorship-led learning for serious artists.' : 'Unfolding artist force.')) + '</p>',
-          '<p class="tsc-desktop-footer-copy">&copy; 2026 ' + escapeHtml(brandName) + '. All rights reserved.</p>',
         '</div>',
+        buildFooterStartHereBox(startGroup),
         '<nav class="tsc-desktop-footer-nav" aria-label="Footer navigation">',
           navGroups.map(buildFooterLinks).join(''),
         '</nav>',
         '<div class="tsc-desktop-footer-news">',
           '<h2>' + (config.academy ? 'Join Our Community' : 'Join Our Community') + '</h2>',
           '<p>Subscribe to our Newsletter *</p>',
-          '<form class="tsc-desktop-footer-newsrow" action="#" method="post">',
+          '<form class="tsc-desktop-footer-newsrow" action="#" method="post" data-source="footer">',
             '<label class="tsc-sr-only" for="' + emailId + '">Email</label>',
             '<input id="' + emailId + '" name="email" type="email" autocomplete="email" required placeholder="example@domain.com">',
             '<button type="submit">Subscribe</button>',
@@ -1829,6 +2368,7 @@
               return '<a class="tsc-desktop-footer-icon" href="' + escapeHtml(s.href) + '" target="_blank" rel="noopener noreferrer" aria-label="' + escapeHtml(s.aria) + '">' + s.svg + '</a>';
             }).join(''),
           '</div>',
+          buildFooterCopyrightUnderSocials(brandName),
         '</div>',
       '</div>'
     ].join('');
@@ -1889,14 +2429,10 @@
 
     var brandName = config.brand.name || (config.academy ? 'TSC Academy' : 'The Shakti Collective');
     var emailId = 'tsc-mobile-footer-email-' + variant;
-    var mobileActionGroup = ['Start Here', [
-      ['/book-a-call', 'Book a Call'],
-      ['/book-an-artist', 'Book an Artist'],
-      ['/artist-query', 'Apply for Artist Path']
-    ]];
+    // Start Here stays in accordion columns; copyright only under socials.
     var mobileGroups = footerGroupsFor(config.academy, config.whatsapp).filter(function(group) {
       return !/get started/i.test(group[0]);
-    }).concat([mobileActionGroup]);
+    });
     var shell = document.createElement('div');
     shell.className = 'tsc-mobile-footer' + (config.academy ? ' tsc-mobile-footer-academy' : '');
     shell.dataset.tscVariant = variant;
@@ -1926,9 +2462,7 @@
           return '<a class="tsc-mobile-footer-icon" href="' + escapeHtml(s.href) + '" target="_blank" rel="noopener noreferrer" aria-label="' + escapeHtml(s.aria) + '">' + s.svg + '</a>';
         }).join(''),
       '</div>',
-      '<div class="tsc-mobile-footer-bottom">',
-        '<span>&copy; 2026 ' + escapeHtml(brandName) + ' - All rights reserved</span>',
-      '</div>'
+      buildMobileFooterCopyrightUnderSocials(brandName)
     ].join('');
 
     footer.insertBefore(shell, footer.firstChild);
@@ -2155,41 +2689,161 @@
     }, true);
   }
 
-  /** Courses nav uses /academy#courses — marker before course cards (keeps Wix IDs intact). */
-  function ensureAcademyCoursesAnchor() {
+  /** Courses / Testimonials nav hashes — markers keep Wix section IDs intact. */
+  function ensureAcademySectionAnchor(id, sectionSelector, opts) {
     if (canonicalPathname() !== '/academy') return;
-    if (document.getElementById('courses')) return;
-    var section = document.querySelector('#comp-mpjvjuos') || document.querySelector('#comp-mpjvo1xd');
+    if (document.getElementById(id)) return;
+    var section = document.querySelector(sectionSelector);
     if (!section || !section.parentNode) return;
     var marker = document.createElement('div');
-    marker.id = 'courses';
+    marker.id = id;
     marker.setAttribute('aria-hidden', 'true');
+    var inside = opts && opts.inside;
+    if (inside) {
+      // Grid siblings can reorder visually — pin marker to section top edge.
+      if (window.getComputedStyle(section).position === 'static') {
+        section.style.setProperty('position', 'relative');
+      }
+      marker.style.cssText =
+        'height:0;width:0;overflow:hidden;position:absolute;top:0;left:0;scroll-margin-top:96px;pointer-events:none;';
+      section.insertBefore(marker, section.firstChild);
+      return;
+    }
     marker.style.cssText = 'height:0;width:0;overflow:hidden;position:relative;scroll-margin-top:96px;';
     section.parentNode.insertBefore(marker, section);
   }
 
-  ensureStylesheet('/css/tsc-nav-overrides.css?v=desktop-top-1');
-  ensureStylesheet('/css/tsc-responsive.css?v=academy-chrome-1');
+  function ensureAcademyCoursesAnchor() {
+    ensureAcademySectionAnchor('courses', '#comp-mpjvjuos, #comp-mpjvo1xd');
+  }
+
+  function ensureAcademyTestimonialsAnchor() {
+    if (canonicalPathname() !== '/academy') return;
+    var section = document.querySelector('#comp-mpl384rr');
+    if (!section) return;
+    var existing = document.getElementById('testimonials');
+    if (existing && section.contains(existing)) return;
+    if (existing && existing.parentNode) existing.parentNode.removeChild(existing);
+    ensureAcademySectionAnchor('testimonials', '#comp-mpl384rr', { inside: true });
+  }
+
+  function academyHashScrollTarget(hash) {
+    if (!hash || hash.charAt(0) !== '#') return null;
+    var id = hash.slice(1);
+    if (!id) return null;
+    if (id === 'testimonials') {
+      return document.getElementById('comp-mpl384rr') || document.getElementById('testimonials');
+    }
+    if (id === 'courses') {
+      return document.getElementById('comp-mpjvjuos') || document.getElementById('courses');
+    }
+    return document.getElementById(id);
+  }
+
+  function scrollAcademyHash(hash) {
+    var el = academyHashScrollTarget(hash);
+    if (!el) return false;
+    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    return true;
+  }
+
+  /** In-page Academy hash nav (Testimonials) — Wix clicks can eat hash scroll. */
+  function wireAcademyHashNavGuard() {
+    if (window.__tscAcademyHashNavGuard) return;
+    window.__tscAcademyHashNavGuard = true;
+    document.addEventListener(
+      'click',
+      function(event) {
+        if (event.defaultPrevented || event.button !== 0) return;
+        if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+        var anchor = event.target && event.target.closest ? event.target.closest('a[href]') : null;
+        if (!anchor || anchor.target === '_blank') return;
+        try {
+          var url = new URL(anchor.getAttribute('href'), location.origin);
+          if (url.origin !== location.origin) return;
+          var path = url.pathname.replace(/\/+$/, '') || '/';
+          var here = canonicalPathname();
+          if (!url.hash) return;
+          if (path === '/academy' && here !== '/academy') return;
+          if (path !== '/academy' && path !== here) return;
+          ensureAcademyCoursesAnchor();
+          ensureAcademyTestimonialsAnchor();
+          if (!scrollAcademyHash(url.hash)) return;
+          event.preventDefault();
+          event.stopPropagation();
+          if (here === '/academy' && location.hash !== url.hash) {
+            history.replaceState(null, '', '/academy' + (location.search || '') + url.hash);
+          }
+          // Remount storms can nudge layout — re-assert scroll.
+          window.setTimeout(function() {
+            scrollAcademyHash(url.hash);
+          }, 350);
+          window.setTimeout(function() {
+            scrollAcademyHash(url.hash);
+          }, 900);
+        } catch (e) {}
+      },
+      true
+    );
+    window.addEventListener('hashchange', function() {
+      if (canonicalPathname() !== '/academy') return;
+      ensureAcademyCoursesAnchor();
+      ensureAcademyTestimonialsAnchor();
+      scrollAcademyHash(location.hash || '');
+    });
+  }
+
+  /* Critical desktop nav lock BEFORE any header mount (stops size/colour flash). */
+  ensureStylesheet('/css/tsc-nav-overrides.css?v=clone-faithful-1');
+  ensureStylesheet('/css/tsc-responsive.css?v=courses-roots-click-1');
+  ensureStylesheet('/css/tsc-desktop-nav-lock.css?v=nav-lock-noop-1');
   ensureStylesheet('/css/tsc-brand-card.css');
-  ensureScript('/js/tsc-brand-cards.js');
+  ensureScript('/js/tsc-brand-cards.js?v=films-card-copy-1');
   // Play paused Wix enter/loop motions + slideshow word-swap (all viewports).
-  ensureStylesheet('/css/tsc-wix-motion.css?v=academy-one-2');
-  ensureScript('/js/tsc-wix-motion.js?v=academy-one-2');
+  ensureStylesheet('/css/tsc-wix-motion.css?v=hero-word-single-1');
+  ensureScript('/js/tsc-wix-motion.js?v=testimonial-slide-1');
   function bootUi() {
     if (redirectLegacyLearnHub()) return;
     var path = canonicalPathname();
     setBodyPage(path);
+    mountBlogChrome(path);
     var mountSharedChrome = function() {
       mountDesktopHeader({ path: path });
       mountDesktopFooter({ path: path });
+      mountBlogChrome(path);
       mountMobileHeader({ path: path });
       mountMobileFooter({ path: path });
+      if (isAcademyPath(path) || ACADEMY_COURSE_HREFS[path]) {
+        ensureAcademyCoursesInWixMenus();
+        var lockedHeader = document.querySelector('[data-tsc-locked-desktop-header="true"]');
+        if (lockedHeader) {
+          applyLockedDesktopActiveState(lockedHeader, componentOptions({ path: path }));
+        }
+      }
+      linkHomeClosingCtas();
     };
     wireLearnHubClickGuard();
     wireLockedArtistsDropdownClickGuard();
+    wireLockedCoursesDropdownClickGuard();
+    wireCoursesDropdownStayOpen();
+    wireAcademyHashNavGuard();
     normalizeInternalProtocolRelativeLinks();
     forceLearnHubLinksToAcademy();
     ensureAcademyCoursesAnchor();
+    ensureAcademyTestimonialsAnchor();
+    if (isAcademyPath(path) || ACADEMY_COURSE_HREFS[path]) {
+      ensureAcademyCoursesInWixMenus();
+    }
+    if (path === '/academy' && location.hash) {
+      window.setTimeout(function() {
+        ensureAcademyCoursesAnchor();
+        ensureAcademyTestimonialsAnchor();
+        scrollAcademyHash(location.hash || '');
+      }, 400);
+      window.setTimeout(function() {
+        scrollAcademyHash(location.hash || '');
+      }, 1200);
+    }
     // Form pages: load forms.css early (Wix widget + local form mobile layout)
     var formPages = {
       '/book-a-call': true,
@@ -2205,19 +2859,28 @@
       ensureStylesheet('/css/forms.css?v=form-pickers-1');
     }
     mountSharedChrome();
+    linkHomeClosingCtas();
     mountHarshadDigitalPresenceLinks(path);
     mountYugmIplYearFix(path);
     mountWorkImpactLinks(path);
     mountFilmReportCards(path);
     mountFilmBottomCtas(path);
+    if (path === '/about') {
+      fixAboutHeroShellViewBox();
+      [200, 800, 2000].forEach(function(delay) {
+        window.setTimeout(fixAboutHeroShellViewBox, delay);
+      });
+    }
     [250, 900, 1800, 3200, 6000, 9000].forEach(function(delay) {
       window.setTimeout(function() {
         mountSharedChrome();
+        linkHomeClosingCtas();
         mountHarshadDigitalPresenceLinks(path);
         mountYugmIplYearFix(path);
         mountWorkImpactLinks(path);
         mountFilmReportCards(path);
         mountFilmBottomCtas(path);
+        if (path === '/about') fixAboutHeroShellViewBox();
       }, delay);
     });
     if ('MutationObserver' in window && !window.__tscSharedChromeObserver) {
@@ -2233,6 +2896,7 @@
         var missing = compact
           ? !document.querySelector('.tsc-mobile-site-header') || !document.querySelector('.tsc-mobile-footer')
           : !document.querySelector('[data-tsc-locked-desktop-header="true"], .tsc-desktop-site-header') ||
+            !document.querySelector('.tsc-desktop-brand-logo-unified') ||
             !document.querySelector('.tsc-desktop-footer');
         if (!missing) return;
         window.clearTimeout(window.__tscSharedChromeRepairTimer);
@@ -2245,10 +2909,8 @@
       window.__tscSharedChromeObserver.observe(document.body, { childList: true, subtree: true });
     }
     if (path === '/resources') {
-      ensureScript('/js/content-replacements.js?v=resources-medium-blogs-1');
     }
     if (path === '/academy' || path === '/learn-with-tsc') {
-      ensureScript('/js/content-replacements.js?v=academy-chrome-1');
     }
     wireMobileAssets();
     if (path === '/artist-path') {

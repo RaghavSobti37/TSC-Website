@@ -1,0 +1,57 @@
+{
+  "base": "http://127.0.0.1:3000",
+  "at": "2026-08-10T07:11:38.707Z",
+  "total": 3,
+  "passed": 3,
+  "failed": 0,
+  "results": [
+    {
+      "route": "/the-heart-of-composition",
+      "ok": true,
+      "issues": [],
+      "notes": [
+        "visibleEnter=0",
+        "pausedEnter=0",
+        "runningLoop=0"
+      ],
+      "scripts": {
+        "pageScript": true,
+        "wixMotion": true,
+        "reveal": true,
+        "contentReplacements": true
+      }
+    },
+    {
+      "route": "/roots-of-hindustani-classical",
+      "ok": true,
+      "issues": [],
+      "notes": [
+        "visibleEnter=0",
+        "pausedEnter=0",
+        "runningLoop=0"
+      ],
+      "scripts": {
+        "pageScript": true,
+        "wixMotion": true,
+        "reveal": true,
+        "contentReplacements": true
+      }
+    },
+    {
+      "route": "/music-production",
+      "ok": true,
+      "issues": [],
+      "notes": [
+        "visibleEnter=0",
+        "pausedEnter=0",
+        "runningLoop=0"
+      ],
+      "scripts": {
+        "pageScript": true,
+        "wixMotion": true,
+        "reveal": true,
+        "contentReplacements": true
+      }
+    }
+  ]
+}

@@ -139,7 +139,22 @@
     },
     review01: { title: 'Masterclass Review 01', standalone: true, routes: ['/masterclass-review01', '/pages/masterclass-review01.html'], fields: reviewFields() },
     review02: { title: 'Masterclass Review 02', standalone: true, routes: ['/masterclass-review02', '/pages/masterclass-review02.html'], fields: reviewFields() },
-    classicalReview: { title: 'Classical Review', standalone: true, routes: ['/classicalreview', '/pages/classicalreview.html'], fields: reviewFields() }
+    classicalReview: { title: 'Classical Review', standalone: true, routes: ['/classicalreview', '/pages/classicalreview.html'], fields: reviewFields() },
+    collabQuery: {
+      title: 'Collaborate With TSC',
+      mount: '#comp-mp2w3ngp2',
+      routes: ['/collab-query', '/blank-6', '/forms/collab-query'],
+      fields: [
+        { label: 'I am a', name: 'i-am-a', type: 'radios', options: ['Brand', 'Artist', 'Institution', 'Other'], required: true, full: true },
+        { label: 'Full Name', type: 'text', required: true },
+        { label: 'Organization', type: 'text', required: true },
+        { label: 'Email Address', type: 'email', required: true },
+        { label: 'Contact Number', type: 'tel', required: true },
+        { label: 'Collaboration Type', type: 'select', options: ['Music-led Campaign', 'Cultural Storytelling', 'Branded Experience', 'Talent Program', 'Other'], required: true },
+        { label: 'What are you looking for?', type: 'textarea', full: true },
+        { label: 'How can we collaborate?', type: 'textarea', required: true, full: true }
+      ]
+    }
   };
 
   function normalizeArtistNameParam(value) {

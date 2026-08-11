@@ -3,10 +3,10 @@
   "html": "/pages/yugm.html",
   "css": "/css/pages/yugm.css",
   "animations": "/js/pages/yugm.animations.js",
-  "generatedAt": "2026-08-06T11:53:14.069Z",
+  "generatedAt": "2026-08-10T11:16:54.737Z",
   "totals": {
     "assets": 123,
-    "missing": 1
+    "missing": 7
   },
   "assetsByType": {
     "other": [
@@ -21,7 +21,7 @@
       },
       {
         "type": "other",
-        "url": "/assets/mirror/siteassets.parastorage.com/pages/pages/thunderbolt?appDefinitionIdToSiteRevision=%7B%2214271d6f-ba62-d045-549b-ab972ae1f70e%22%3A%2225%22%2C%22b2e8b4cb-1799-4b3c-bace-d55b503f7334%22%3A%2246%22%2C%22deb18ef1-e0c6-4668-a7bc-4a13785eb5b7%22%3A%22816%22%7D&beckyExperiments=.DatePickerPortal%2C.DisableDocumentScrollWhenLightBoxOpen%2C.EnableCustomCSSVarsForLoginSocialBar%2C.FreemiumBannerOdeditor%2C.LoginBarEnableLoggingInStateInSSR%2C.TextInputAutoFillFix%2C.UseLoginSocialBarCustomMenu%2C.UseNestedLoginSocialBarMenuItems%2C.UseNewLoginBarDropdownMenuAlignment%2C.UseNewLoginSocialBarElementStructure%2C.UseNewLoginSocialBarMemberInitialsAvatar%2C.WixFreeSiteBannerDesktop%2C.WixFreeSiteBannerMobile%2C.a11yContrast%2C.addIdAsClassName%2C.allowWebpAvifTransforms%2C.builderBoxSizingBorderBox%2C.buttonUdp%2C.calculateCollapsibleTextLineHeightByFont%2C.dom_store%2C.dontApplyDacOverridesOnBoBApps%2C.dynamicSlots%2C.fiveGridLineStudioSkins%2C.fixFirefoxLinkBarIntrinsicSizing%2C.fixRemappedFullNameCompType%2C.imageEncodingAVIF%2C.isClassNameToRootEnabled%2C.motionTimeAnimationsCSS%2C.responsiveContainerRoleGroup%2C.sectionA11yProps%2C.shouldIgnoreWidgetsPageData%2C.shouldUseResponsiveImages%2C.svgResolver_2%2C.updateRichTextSemanticClassNamesOnCorvid%2C.useClassnameInResponsiveAppWidget%2C.useFragmentHrefForTopBottomAnchor%2C.useImageAvifFormatInNativeProGallery%2C.useResponsiveImgClassicFixed%2C.useSvgLoaderFeature%2C.useSvgLoaderFeatureOnBuilderComps%2C.useWowImageInFastGallery&blocksBuilderManifestGeneratorVersion=1.129.0&contentType=application%2Fjson&deviceType=Desktop&dfCk=6&dfVersion=1.5507.0&disableStaticPagesUrlHierarchy=false&editorName=Studio&experiments=dm_bgScrubToMotionFixer%2Cdm_masterPageVariablesQueryFixer%2Cdm_migrateOldHoverBoxToNewFixer&externalBaseUrl=https%3A%2F%2Fmeghanabhawalkarwo.wixstudio.com%2Fmy-site&fileId=5166e0cd.bundle.min&formFactor=desktop&freemiumBanner=true&hasTPAWorkerOnSite=false&hasUserDomainMedia=false&isBuilderComponentModel=false&isClientSdkOnSite=true&isHttps=true&isInSeo=false&isMultilingualEnabled=false&isResponsive=true&isTrackClicksAnalyticsEnabled=false&isUrlMigrated=true&isWixCodeOnPage=false&isWixCodeOnSite=false&language=en&languageResolutionMethod=QueryParam&metaSiteId=2caa2b2a-1059-48f7-9f64-62ab1616ffa1&module=thunderbolt-features&originalLanguage=en&pageId=19f989_c8466e696b35fc1b5a4e28bc1ad3d620_1365.json&pilerExperiments=specs.piler.useEditorReactComponents&quickActionsMenuEnabled=false&registryLibrariesTopology=%5B%7B%22artifactId%22%3A%22editor-elements%22%2C%22namespace%22%3A%22wixui%22%2C%22url%22%3A%22%2Fassets%2Fmirror%2Fstatic.parastorage.com%2Fservices%2Feditor-elements%2F1.15349.0%22%7D%2C%7B%22artifactId%22%3A%22editor-elements%22%2C%22namespace%22%3A%22dsgnsys%22%2C%22url%22%3A%22%2Fassets%2Fmirror%2Fstatic.parastorage.com%2Fservices%2Feditor-elements%2F1.15349.0%22%7D%5D&remoteWidgetStructureBuilderVersion=1.251.0&siteId=f59671d5-39b9-48e0-a8f7-268d7c3576f0&siteRevision=1365&staticHTMLComponentUrl=https%3A%2F%2Fmeghanabhawalkarwo-wixstudio-com.filesusr.com%2F&useSandboxInHTMLComp=true&viewMode=desktop",
+        "url": "/assets/mirror/siteassets.parastorage.com/pages/pages/thunderbolt?appDefinitionIdToSiteRevision=%7B%2214271d6f-ba62-d045-549b-ab972ae1f70e%22%3A%2225%22%2C%22b2e8b4cb-1799-4b3c-bace-d55b503f7334%22%3A%2246%22%2C%22deb18ef1-e0c6-4668-a7bc-4a13785eb5b7%22%3A%22816%22%7D&beckyExperiments=.DatePickerPortal%2C.DisableDocumentScrollWhenLightBoxOpen%2C.EnableCustomCSSVarsForLoginSocialBar%2C.FreemiumBannerOdeditor%2C.LoginBarEnableLoggingInStateInSSR%2C.TextInputAutoFillFix%2C.UseLoginSocialBarCustomMenu%2C.UseNestedLoginSocialBarMenuItems%2C.UseNewLoginBarDropdownMenuAlignment%2C.UseNewLoginSocialBarElementStructure%2C.UseNewLoginSocialBarMemberInitialsAvatar%2C.WixFreeSiteBannerDesktop%2C.WixFreeSiteBannerMobile%2C.a11yContrast%2C.addIdAsClassName%2C.allowWebpAvifTransforms%2C.builderBoxSizingBorderBox%2C.buttonUdp%2C.calculateCollapsibleTextLineHeightByFont%2C.dom_store%2C.dontApplyDacOverridesOnBoBApps%2C.dynamicPageLinkTarget%2C.dynamicSlots%2C.fiveGridLineStudioSkins%2C.fixFirefoxLinkBarIntrinsicSizing%2C.fixRemappedFullNameCompType%2C.imageEncodingAVIF%2C.isClassNameToRootEnabled%2C.logVsmFeaturesModuleDiff%2C.motionTimeAnimationsCSS%2C.plainClassSelectors%2C.responsiveContainerRoleGroup%2C.sectionA11yProps%2C.shouldIgnoreWidgetsPageData%2C.shouldUseResponsiveImages%2C.splitSlotSelectors%2C.svgResolver_2%2C.updateRichTextSemanticClassNamesOnCorvid%2C.useClassnameInResponsiveAppWidget%2C.useFragmentHrefForTopBottomAnchor%2C.useImageAvifFormatInNativeProGallery%2C.useResponsiveImgClassicFixed%2C.useSvgLoaderFeature%2C.useSvgLoaderFeatureOnBuilderComps%2C.useWowImageInFastGallery&blocksBuilderManifestGeneratorVersion=1.129.0&contentType=application%2Fjson&deviceType=Desktop&dfCk=6&dfVersion=1.5507.0&disableStaticPagesUrlHierarchy=false&editorName=Studio&experiments=dm_bgScrubToMotionFixer%2Cdm_masterPageVariablesQueryFixer%2Cdm_migrateOldHoverBoxToNewFixer&externalBaseUrl=https%3A%2F%2Fmeghanabhawalkarwo.wixstudio.com%2Fmy-site&fileId=1e3a5ed1.bundle.min&formFactor=desktop&freemiumBanner=true&hasTPAWorkerOnSite=false&hasUserDomainMedia=false&isBuilderComponentModel=false&isClientSdkOnSite=true&isHttps=true&isInSeo=false&isMultilingualEnabled=false&isResponsive=true&isTrackClicksAnalyticsEnabled=false&isUrlMigrated=true&isWixCodeOnPage=false&isWixCodeOnSite=false&language=en&languageResolutionMethod=QueryParam&metaSiteId=2caa2b2a-1059-48f7-9f64-62ab1616ffa1&module=thunderbolt-features&originalLanguage=en&pageId=19f989_c8466e696b35fc1b5a4e28bc1ad3d620_1365.json&pilerExperiments=specs.piler.useEditorReactComponents&quickActionsMenuEnabled=false&registryLibrariesTopology=%5B%7B%22artifactId%22%3A%22editor-elements%22%2C%22namespace%22%3A%22wixui%22%2C%22url%22%3A%22%2Fassets%2Fmirror%2Fstatic.parastorage.com%2Fservices%2Feditor-elements%2F1.15414.0%22%7D%2C%7B%22artifactId%22%3A%22editor-elements%22%2C%22namespace%22%3A%22dsgnsys%22%2C%22url%22%3A%22%2Fassets%2Fmirror%2Fstatic.parastorage.com%2Fservices%2Feditor-elements%2F1.15414.0%22%7D%5D&remoteWidgetStructureBuilderVersion=1.251.0&siteId=f59671d5-39b9-48e0-a8f7-268d7c3576f0&siteRevision=1365&staticHTMLComponentUrl=https%3A%2F%2Fmeghanabhawalkarwo-wixstudio-com.filesusr.com%2F&useSandboxInHTMLComp=true&viewMode=desktop",
         "local": {
           "exists": true,
           "path": "/assets/mirror/siteassets.parastorage.com/pages/pages/thunderbolt",
@@ -30,7 +30,7 @@
       },
       {
         "type": "other",
-        "url": "/assets/mirror/siteassets.parastorage.com/pages/pages/thunderbolt?appDefinitionIdToSiteRevision=%7B%2214271d6f-ba62-d045-549b-ab972ae1f70e%22%3A%2225%22%2C%22b2e8b4cb-1799-4b3c-bace-d55b503f7334%22%3A%2246%22%2C%22deb18ef1-e0c6-4668-a7bc-4a13785eb5b7%22%3A%22816%22%7D&beckyExperiments=.DatePickerPortal%2C.DisableDocumentScrollWhenLightBoxOpen%2C.EnableCustomCSSVarsForLoginSocialBar%2C.FreemiumBannerOdeditor%2C.LoginBarEnableLoggingInStateInSSR%2C.TextInputAutoFillFix%2C.UseLoginSocialBarCustomMenu%2C.UseNestedLoginSocialBarMenuItems%2C.UseNewLoginBarDropdownMenuAlignment%2C.UseNewLoginSocialBarElementStructure%2C.UseNewLoginSocialBarMemberInitialsAvatar%2C.WixFreeSiteBannerDesktop%2C.WixFreeSiteBannerMobile%2C.a11yContrast%2C.addIdAsClassName%2C.allowWebpAvifTransforms%2C.builderBoxSizingBorderBox%2C.buttonUdp%2C.calculateCollapsibleTextLineHeightByFont%2C.dom_store%2C.dontApplyDacOverridesOnBoBApps%2C.dynamicSlots%2C.fiveGridLineStudioSkins%2C.fixFirefoxLinkBarIntrinsicSizing%2C.fixRemappedFullNameCompType%2C.imageEncodingAVIF%2C.isClassNameToRootEnabled%2C.motionTimeAnimationsCSS%2C.responsiveContainerRoleGroup%2C.sectionA11yProps%2C.shouldIgnoreWidgetsPageData%2C.shouldUseResponsiveImages%2C.svgResolver_2%2C.updateRichTextSemanticClassNamesOnCorvid%2C.useClassnameInResponsiveAppWidget%2C.useFragmentHrefForTopBottomAnchor%2C.useImageAvifFormatInNativeProGallery%2C.useResponsiveImgClassicFixed%2C.useSvgLoaderFeature%2C.useSvgLoaderFeatureOnBuilderComps%2C.useWowImageInFastGallery&blocksBuilderManifestGeneratorVersion=1.129.0&contentType=application%2Fjson&deviceType=Desktop&dfCk=6&dfVersion=1.5507.0&disableStaticPagesUrlHierarchy=false&editorName=Studio&experiments=dm_bgScrubToMotionFixer%2Cdm_masterPageVariablesQueryFixer%2Cdm_migrateOldHoverBoxToNewFixer&externalBaseUrl=https%3A%2F%2Fmeghanabhawalkarwo.wixstudio.com%2Fmy-site&fileId=5166e0cd.bundle.min&formFactor=desktop&freemiumBanner=true&hasTPAWorkerOnSite=false&hasUserDomainMedia=false&isBuilderComponentModel=false&isClientSdkOnSite=true&isHttps=true&isInSeo=false&isMultilingualEnabled=false&isResponsive=true&isTrackClicksAnalyticsEnabled=false&isUrlMigrated=true&isWixCodeOnPage=false&isWixCodeOnSite=false&language=en&languageResolutionMethod=QueryParam&metaSiteId=2caa2b2a-1059-48f7-9f64-62ab1616ffa1&module=thunderbolt-features&originalLanguage=en&pageId=19f989_dc1d76e58ecbad2de8aa4285466030bb_1362.json&pilerExperiments=specs.piler.useEditorReactComponents&quickActionsMenuEnabled=false&registryLibrariesTopology=%5B%7B%22artifactId%22%3A%22editor-elements%22%2C%22namespace%22%3A%22wixui%22%2C%22url%22%3A%22%2Fassets%2Fmirror%2Fstatic.parastorage.com%2Fservices%2Feditor-elements%2F1.15349.0%22%7D%2C%7B%22artifactId%22%3A%22editor-elements%22%2C%22namespace%22%3A%22dsgnsys%22%2C%22url%22%3A%22%2Fassets%2Fmirror%2Fstatic.parastorage.com%2Fservices%2Feditor-elements%2F1.15349.0%22%7D%5D&remoteWidgetStructureBuilderVersion=1.251.0&siteId=f59671d5-39b9-48e0-a8f7-268d7c3576f0&siteRevision=1365&staticHTMLComponentUrl=https%3A%2F%2Fmeghanabhawalkarwo-wixstudio-com.filesusr.com%2F&useSandboxInHTMLComp=true&viewMode=desktop",
+        "url": "/assets/mirror/siteassets.parastorage.com/pages/pages/thunderbolt?appDefinitionIdToSiteRevision=%7B%2214271d6f-ba62-d045-549b-ab972ae1f70e%22%3A%2225%22%2C%22b2e8b4cb-1799-4b3c-bace-d55b503f7334%22%3A%2246%22%2C%22deb18ef1-e0c6-4668-a7bc-4a13785eb5b7%22%3A%22816%22%7D&beckyExperiments=.DatePickerPortal%2C.DisableDocumentScrollWhenLightBoxOpen%2C.EnableCustomCSSVarsForLoginSocialBar%2C.FreemiumBannerOdeditor%2C.LoginBarEnableLoggingInStateInSSR%2C.TextInputAutoFillFix%2C.UseLoginSocialBarCustomMenu%2C.UseNestedLoginSocialBarMenuItems%2C.UseNewLoginBarDropdownMenuAlignment%2C.UseNewLoginSocialBarElementStructure%2C.UseNewLoginSocialBarMemberInitialsAvatar%2C.WixFreeSiteBannerDesktop%2C.WixFreeSiteBannerMobile%2C.a11yContrast%2C.addIdAsClassName%2C.allowWebpAvifTransforms%2C.builderBoxSizingBorderBox%2C.buttonUdp%2C.calculateCollapsibleTextLineHeightByFont%2C.dom_store%2C.dontApplyDacOverridesOnBoBApps%2C.dynamicPageLinkTarget%2C.dynamicSlots%2C.fiveGridLineStudioSkins%2C.fixFirefoxLinkBarIntrinsicSizing%2C.fixRemappedFullNameCompType%2C.imageEncodingAVIF%2C.isClassNameToRootEnabled%2C.logVsmFeaturesModuleDiff%2C.motionTimeAnimationsCSS%2C.plainClassSelectors%2C.responsiveContainerRoleGroup%2C.sectionA11yProps%2C.shouldIgnoreWidgetsPageData%2C.shouldUseResponsiveImages%2C.splitSlotSelectors%2C.svgResolver_2%2C.updateRichTextSemanticClassNamesOnCorvid%2C.useClassnameInResponsiveAppWidget%2C.useFragmentHrefForTopBottomAnchor%2C.useImageAvifFormatInNativeProGallery%2C.useResponsiveImgClassicFixed%2C.useSvgLoaderFeature%2C.useSvgLoaderFeatureOnBuilderComps%2C.useWowImageInFastGallery&blocksBuilderManifestGeneratorVersion=1.129.0&contentType=application%2Fjson&deviceType=Desktop&dfCk=6&dfVersion=1.5507.0&disableStaticPagesUrlHierarchy=false&editorName=Studio&experiments=dm_bgScrubToMotionFixer%2Cdm_masterPageVariablesQueryFixer%2Cdm_migrateOldHoverBoxToNewFixer&externalBaseUrl=https%3A%2F%2Fmeghanabhawalkarwo.wixstudio.com%2Fmy-site&fileId=1e3a5ed1.bundle.min&formFactor=desktop&freemiumBanner=true&hasTPAWorkerOnSite=false&hasUserDomainMedia=false&isBuilderComponentModel=false&isClientSdkOnSite=true&isHttps=true&isInSeo=false&isMultilingualEnabled=false&isResponsive=true&isTrackClicksAnalyticsEnabled=false&isUrlMigrated=true&isWixCodeOnPage=false&isWixCodeOnSite=false&language=en&languageResolutionMethod=QueryParam&metaSiteId=2caa2b2a-1059-48f7-9f64-62ab1616ffa1&module=thunderbolt-features&originalLanguage=en&pageId=19f989_dc1d76e58ecbad2de8aa4285466030bb_1362.json&pilerExperiments=specs.piler.useEditorReactComponents&quickActionsMenuEnabled=false&registryLibrariesTopology=%5B%7B%22artifactId%22%3A%22editor-elements%22%2C%22namespace%22%3A%22wixui%22%2C%22url%22%3A%22%2Fassets%2Fmirror%2Fstatic.parastorage.com%2Fservices%2Feditor-elements%2F1.15414.0%22%7D%2C%7B%22artifactId%22%3A%22editor-elements%22%2C%22namespace%22%3A%22dsgnsys%22%2C%22url%22%3A%22%2Fassets%2Fmirror%2Fstatic.parastorage.com%2Fservices%2Feditor-elements%2F1.15414.0%22%7D%5D&remoteWidgetStructureBuilderVersion=1.251.0&siteId=f59671d5-39b9-48e0-a8f7-268d7c3576f0&siteRevision=1365&staticHTMLComponentUrl=https%3A%2F%2Fmeghanabhawalkarwo-wixstudio-com.filesusr.com%2F&useSandboxInHTMLComp=true&viewMode=desktop",
         "local": {
           "exists": true,
           "path": "/assets/mirror/siteassets.parastorage.com/pages/pages/thunderbolt",
@@ -39,7 +39,7 @@
       },
       {
         "type": "other",
-        "url": "/assets/mirror/siteassets.parastorage.com/pages/pages/thunderbolt?appDefinitionIdToSiteRevision=%7B%2214271d6f-ba62-d045-549b-ab972ae1f70e%22%3A%2225%22%2C%22b2e8b4cb-1799-4b3c-bace-d55b503f7334%22%3A%2246%22%2C%22deb18ef1-e0c6-4668-a7bc-4a13785eb5b7%22%3A%22816%22%7D&beckyExperiments=.DatePickerPortal%2C.EnableCustomCSSVarsForLoginSocialBar%2C.FreemiumBannerOdeditor%2C.LoginBarEnableLoggingInStateInSSR%2C.TextInputAutoFillFix%2C.UseLoginSocialBarCustomMenu%2C.UseNestedLoginSocialBarMenuItems%2C.UseNewLoginBarDropdownMenuAlignment%2C.UseNewLoginSocialBarElementStructure%2C.UseNewLoginSocialBarMemberInitialsAvatar%2C.WixFreeSiteBannerDesktop%2C.WixFreeSiteBannerMobile%2C.addIdAsClassName%2C.buttonUdp%2C.calculateCollapsibleTextLineHeightByFont%2C.dynamicSlots%2C.fiveGridLineStudioSkins%2C.fixFirefoxLinkBarIntrinsicSizing%2C.isClassNameToRootEnabled%2C.logVsmPlatformDiff%2C.migrateSdkDataMappers%2C.shouldIgnoreWidgetsPageData%2C.svgResolver_2%2C.updateRichTextSemanticClassNamesOnCorvid%2C.useClassnameInResponsiveAppWidget%2C.useImageAvifFormatInNativeProGallery%2C.useWowImageInFastGallery&blocksBuilderManifestGeneratorVersion=1.129.0&contentType=application%2Fjson&dfCk=6&dfVersion=1.5507.0&editorName=Studio&experiments=dm_bgScrubToMotionFixer%2Cdm_masterPageVariablesQueryFixer%2Cdm_migrateOldHoverBoxToNewFixer&externalBaseUrl=https%3A%2F%2Fmeghanabhawalkarwo.wixstudio.com%2Fmy-site&fileId=af81b442.bundle.min&formFactor=desktop&freemiumBanner=true&hasTPAWorkerOnSite=false&hasUserDomainMedia=false&isBuilderComponentModel=false&isClientSdkOnSite=true&isHttps=true&isInSeo=false&isResponsive=true&isUrlMigrated=true&isWixCodeOnPage=false&isWixCodeOnSite=false&language=en&metaSiteId=2caa2b2a-1059-48f7-9f64-62ab1616ffa1&module=thunderbolt-platform&originalLanguage=en&pageId=19f989_dc1d76e58ecbad2de8aa4285466030bb_1362.json&pilerExperiments=specs.piler.useEditorReactComponents&quickActionsMenuEnabled=false&registryLibrariesTopology=%5B%7B%22artifactId%22%3A%22editor-elements%22%2C%22namespace%22%3A%22wixui%22%2C%22url%22%3A%22%2Fassets%2Fmirror%2Fstatic.parastorage.com%2Fservices%2Feditor-elements%2F1.15349.0%22%7D%2C%7B%22artifactId%22%3A%22editor-elements%22%2C%22namespace%22%3A%22dsgnsys%22%2C%22url%22%3A%22%2Fassets%2Fmirror%2Fstatic.parastorage.com%2Fservices%2Feditor-elements%2F1.15349.0%22%7D%5D&remoteWidgetStructureBuilderVersion=1.251.0&siteId=f59671d5-39b9-48e0-a8f7-268d7c3576f0&siteRevision=1365&staticHTMLComponentUrl=https%3A%2F%2Fmeghanabhawalkarwo-wixstudio-com.filesusr.com%2F&viewMode=desktop",
+        "url": "/assets/mirror/siteassets.parastorage.com/pages/pages/thunderbolt?appDefinitionIdToSiteRevision=%7B%2214271d6f-ba62-d045-549b-ab972ae1f70e%22%3A%2225%22%2C%22b2e8b4cb-1799-4b3c-bace-d55b503f7334%22%3A%2246%22%2C%22deb18ef1-e0c6-4668-a7bc-4a13785eb5b7%22%3A%22816%22%7D&beckyExperiments=.DatePickerPortal%2C.EnableCustomCSSVarsForLoginSocialBar%2C.FreemiumBannerOdeditor%2C.LoginBarEnableLoggingInStateInSSR%2C.TextInputAutoFillFix%2C.UseLoginSocialBarCustomMenu%2C.UseNestedLoginSocialBarMenuItems%2C.UseNewLoginBarDropdownMenuAlignment%2C.UseNewLoginSocialBarElementStructure%2C.UseNewLoginSocialBarMemberInitialsAvatar%2C.WixFreeSiteBannerDesktop%2C.WixFreeSiteBannerMobile%2C.addIdAsClassName%2C.buttonUdp%2C.calculateCollapsibleTextLineHeightByFont%2C.dynamicPageLinkTarget%2C.dynamicSlots%2C.fiveGridLineStudioSkins%2C.fixFirefoxLinkBarIntrinsicSizing%2C.isClassNameToRootEnabled%2C.logVsmPlatformDiff%2C.migrateSdkDataMappers%2C.plainClassSelectors%2C.shouldIgnoreWidgetsPageData%2C.splitSlotSelectors%2C.svgResolver_2%2C.updateRichTextSemanticClassNamesOnCorvid%2C.useClassnameInResponsiveAppWidget%2C.useImageAvifFormatInNativeProGallery%2C.useWowImageInFastGallery&blocksBuilderManifestGeneratorVersion=1.129.0&contentType=application%2Fjson&dfCk=6&dfVersion=1.5507.0&editorName=Studio&experiments=dm_bgScrubToMotionFixer%2Cdm_masterPageVariablesQueryFixer%2Cdm_migrateOldHoverBoxToNewFixer&externalBaseUrl=https%3A%2F%2Fmeghanabhawalkarwo.wixstudio.com%2Fmy-site&fileId=b5b39521.bundle.min&formFactor=desktop&freemiumBanner=true&hasTPAWorkerOnSite=false&hasUserDomainMedia=false&isBuilderComponentModel=false&isClientSdkOnSite=true&isHttps=true&isInSeo=false&isResponsive=true&isUrlMigrated=true&isWixCodeOnPage=false&isWixCodeOnSite=false&language=en&metaSiteId=2caa2b2a-1059-48f7-9f64-62ab1616ffa1&module=thunderbolt-platform&originalLanguage=en&pageId=19f989_dc1d76e58ecbad2de8aa4285466030bb_1362.json&pilerExperiments=specs.piler.useEditorReactComponents&quickActionsMenuEnabled=false&registryLibrariesTopology=%5B%7B%22artifactId%22%3A%22editor-elements%22%2C%22namespace%22%3A%22wixui%22%2C%22url%22%3A%22%2Fassets%2Fmirror%2Fstatic.parastorage.com%2Fservices%2Feditor-elements%2F1.15414.0%22%7D%2C%7B%22artifactId%22%3A%22editor-elements%22%2C%22namespace%22%3A%22dsgnsys%22%2C%22url%22%3A%22%2Fassets%2Fmirror%2Fstatic.parastorage.com%2Fservices%2Feditor-elements%2F1.15414.0%22%7D%5D&remoteWidgetStructureBuilderVersion=1.251.0&siteId=f59671d5-39b9-48e0-a8f7-268d7c3576f0&siteRevision=1365&staticHTMLComponentUrl=https%3A%2F%2Fmeghanabhawalkarwo-wixstudio-com.filesusr.com%2F&viewMode=desktop",
         "local": {
           "exists": true,
           "path": "/assets/mirror/siteassets.parastorage.com/pages/pages/thunderbolt",
@@ -466,20 +466,18 @@
       },
       {
         "type": "styles",
-        "url": "/assets/mirror/static.parastorage.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.thunderbolt[MediaControls].5898ceca.min.css",
+        "url": "/assets/mirror/static.parastorage.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.thunderbolt[MediaControls].ac5016a6.min.css",
         "local": {
-          "exists": true,
-          "path": "/assets/mirror/static.parastorage.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.thunderbolt[MediaControls].5898ceca.min.css",
-          "bytes": 3906
+          "exists": false,
+          "path": "/assets/mirror/static.parastorage.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.thunderbolt[MediaControls].ac5016a6.min.css"
         }
       },
       {
         "type": "styles",
-        "url": "/assets/mirror/static.parastorage.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.thunderbolt[MediaOverlayControls].5898ceca.min.css",
+        "url": "/assets/mirror/static.parastorage.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.thunderbolt[MediaOverlayControls].ac5016a6.min.css",
         "local": {
-          "exists": true,
-          "path": "/assets/mirror/static.parastorage.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.thunderbolt[MediaOverlayControls].5898ceca.min.css",
-          "bytes": 3906
+          "exists": false,
+          "path": "/assets/mirror/static.parastorage.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.thunderbolt[MediaOverlayControls].ac5016a6.min.css"
         }
       },
       {
@@ -574,11 +572,10 @@
       },
       {
         "type": "styles",
-        "url": "/assets/mirror/static.parastorage.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.thunderbolt[VectorImage_VectorButton].4e3b3b75.min.css",
+        "url": "/assets/mirror/static.parastorage.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.thunderbolt[VectorImage_VectorButton].8d19a428.min.css",
         "local": {
-          "exists": true,
-          "path": "/assets/mirror/static.parastorage.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.thunderbolt[VectorImage_VectorButton].4e3b3b75.min.css",
-          "bytes": 657
+          "exists": false,
+          "path": "/assets/mirror/static.parastorage.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.thunderbolt[VectorImage_VectorButton].8d19a428.min.css"
         }
       },
       {
@@ -609,20 +606,18 @@
       },
       {
         "type": "styles",
-        "url": "/assets/mirror/static.parastorage.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.thunderbolt_bootstrap.6437938f.min.css",
+        "url": "/assets/mirror/static.parastorage.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.thunderbolt_bootstrap.2c161780.min.css",
         "local": {
-          "exists": true,
-          "path": "/assets/mirror/static.parastorage.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.thunderbolt_bootstrap.6437938f.min.css",
-          "bytes": 14562
+          "exists": false,
+          "path": "/assets/mirror/static.parastorage.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.thunderbolt_bootstrap.2c161780.min.css"
         }
       },
       {
         "type": "styles",
-        "url": "/assets/mirror/static.parastorage.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.thunderbolt_menu.e5c02fb0.min.css",
+        "url": "/assets/mirror/static.parastorage.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.thunderbolt_menu.d7f69225.min.css",
         "local": {
-          "exists": true,
-          "path": "/assets/mirror/static.parastorage.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.thunderbolt_menu.e5c02fb0.min.css",
-          "bytes": 83598
+          "exists": false,
+          "path": "/assets/mirror/static.parastorage.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.thunderbolt_menu.d7f69225.min.css"
         }
       },
       {
@@ -654,11 +649,10 @@
       },
       {
         "type": "styles",
-        "url": "/assets/mirror/static.parastorage.com/services/wix-thunderbolt/dist/main.renderer.c1b1af7e.min.css",
+        "url": "/assets/mirror/static.parastorage.com/services/wix-thunderbolt/dist/main.renderer.5cae55b2.min.css",
         "local": {
-          "exists": true,
-          "path": "/assets/mirror/static.parastorage.com/services/wix-thunderbolt/dist/main.renderer.c1b1af7e.min.css",
-          "bytes": 9805
+          "exists": false,
+          "path": "/assets/mirror/static.parastorage.com/services/wix-thunderbolt/dist/main.renderer.5cae55b2.min.css"
         }
       },
       {
@@ -667,7 +661,7 @@
         "local": {
           "exists": true,
           "path": "/css/pages/yugm.css",
-          "bytes": 1166865
+          "bytes": 1136664
         }
       }
     ],
@@ -773,11 +767,11 @@
       },
       {
         "type": "scripts",
-        "url": "/assets/mirror/static.parastorage.com/services/wix-thunderbolt/dist/main.5749709b.bundle.min.js",
+        "url": "/assets/mirror/static.parastorage.com/services/wix-thunderbolt/dist/main.32313191.bundle.min.js",
         "local": {
           "exists": true,
-          "path": "/assets/mirror/static.parastorage.com/services/wix-thunderbolt/dist/main.5749709b.bundle.min.js",
-          "bytes": 224037
+          "path": "/assets/mirror/static.parastorage.com/services/wix-thunderbolt/dist/main.32313191.bundle.min.js",
+          "bytes": 229186
         }
       },
       {
@@ -818,19 +812,19 @@
       },
       {
         "type": "scripts",
-        "url": "/assets/mirror/static.parastorage.com/services/wix-thunderbolt/dist/thunderbolt-commons.29a549a6.bundle.min.js",
+        "url": "/assets/mirror/static.parastorage.com/services/wix-thunderbolt/dist/thunderbolt-commons.47744264.bundle.min.js",
         "local": {
           "exists": true,
-          "path": "/assets/mirror/static.parastorage.com/services/wix-thunderbolt/dist/thunderbolt-commons.29a549a6.bundle.min.js",
-          "bytes": 152092
+          "path": "/assets/mirror/static.parastorage.com/services/wix-thunderbolt/dist/thunderbolt-commons.47744264.bundle.min.js",
+          "bytes": 153918
         }
       },
       {
         "type": "scripts",
-        "url": "/assets/mirror/static.parastorage.com/services/wix-thunderbolt/dist/webpack-runtime.1fa9abf5.bundle.min.js",
+        "url": "/assets/mirror/static.parastorage.com/services/wix-thunderbolt/dist/webpack-runtime.20f8e58a.bundle.min.js",
         "local": {
           "exists": true,
-          "path": "/assets/mirror/static.parastorage.com/services/wix-thunderbolt/dist/webpack-runtime.1fa9abf5.bundle.min.js",
+          "path": "/assets/mirror/static.parastorage.com/services/wix-thunderbolt/dist/webpack-runtime.20f8e58a.bundle.min.js",
           "bytes": 15906
         }
       },
@@ -903,7 +897,7 @@
         "local": {
           "exists": true,
           "path": "/js/pages/yugm.animations.js",
-          "bytes": 6750
+          "bytes": 762
         }
       }
     ],

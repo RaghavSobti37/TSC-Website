@@ -3,9 +3,9 @@
   "html": "/pages/resources.html",
   "css": "/css/pages/resources.css",
   "animations": "/js/pages/resources.animations.js",
-  "generatedAt": "2026-08-06T11:53:13.990Z",
+  "generatedAt": "2026-08-10T11:16:54.614Z",
   "totals": {
-    "assets": 148,
+    "assets": 151,
     "missing": 0
   },
   "assetsByType": {
@@ -250,7 +250,7 @@
         "local": {
           "exists": true,
           "path": "/js/pages/resources.animations.js",
-          "bytes": 6866
+          "bytes": 896
         }
       }
     ],
@@ -569,7 +569,7 @@
         "local": {
           "exists": true,
           "path": "/assets/mirror/siteassets.parastorage.com/pages/pages/thunderbolt/thunderbolt-features--19f989_a2ea6c0a2625ceae9b9c795b2052630f_1336.json--desktop--f145183b.bundle.min.json",
-          "bytes": 476409
+          "bytes": 476531
         }
       },
       {
@@ -1149,7 +1149,7 @@
         "local": {
           "exists": true,
           "path": "/css/pages/resources.css",
-          "bytes": 873163
+          "bytes": 877261
         }
       }
     ],
@@ -1192,6 +1192,15 @@
       },
       {
         "type": "images",
+        "url": "/assets/mirror/static.wixstatic.com/media/19f989_455089248e404ce8a8410dc7c2db5331~mv2.png/v1/fill/w_360,h_203,al_c,q_85,enc_avif,quality_auto/The%20Artist%20Release%20Playbook.png",
+        "local": {
+          "exists": true,
+          "path": "/assets/mirror/static.wixstatic.com/original-media/19f989_455089248e404ce8a8410dc7c2db5331~mv2.png",
+          "bytes": 811827
+        }
+      },
+      {
+        "type": "images",
         "url": "/assets/mirror/static.wixstatic.com/media/19f989_455089248e404ce8a8410dc7c2db5331~mv2.png/v1/fill/w_49,h_28,al_c,q_85,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/The%20Artist%20Release%20Playbook.png",
         "local": {
           "exists": true,
@@ -1215,6 +1224,15 @@
           "exists": true,
           "path": "/assets/mirror/static.wixstatic.com/original-media/19f989_5457918adfd04728b8ff9c06957f54d6~mv2.jpg",
           "bytes": 61880
+        }
+      },
+      {
+        "type": "images",
+        "url": "/assets/mirror/static.wixstatic.com/media/19f989_61db9aa550eb45d9b5a3efc2637858bb~mv2.jpg/v1/fill/w_360,h_203,al_c,q_85,enc_avif,quality_auto/blog%20banner.jpg",
+        "local": {
+          "exists": true,
+          "path": "/assets/mirror/static.wixstatic.com/original-media/19f989_61db9aa550eb45d9b5a3efc2637858bb~mv2.jpg",
+          "bytes": 108348
         }
       },
       {
@@ -1332,6 +1350,15 @@
           "exists": true,
           "path": "/assets/mirror/static.wixstatic.com/original-media/19f989_e25825b8d7df42608b636bf55c67e149~mv2.jpg",
           "bytes": 65391
+        }
+      },
+      {
+        "type": "images",
+        "url": "/assets/mirror/static.wixstatic.com/media/19f989_ec7d3895a1564e0db9bf00fdff664260~mv2.png/v1/fill/w_360,h_203,al_c,q_85,enc_avif,quality_auto/film%20playbook.png",
+        "local": {
+          "exists": true,
+          "path": "/assets/mirror/static.wixstatic.com/original-media/19f989_ec7d3895a1564e0db9bf00fdff664260~mv2.png",
+          "bytes": 768651
         }
       },
       {

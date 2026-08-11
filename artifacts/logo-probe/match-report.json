@@ -1,0 +1,6 @@
+﻿{
+  "home": {"src":"/assets/brand/tsc-logo-trim-nav.png?v=nav-lock-3","w":259.2,"h":72,"blend":"screen","filter":"none","locked":"1"},
+  "academy": {"src":"/assets/brand/tsc-logo-trim-nav.png?v=nav-lock-3","w":259.2,"h":72,"blend":"screen","filter":"none","locked":"1","stableAfter2500ms":true},
+  "match": true,
+  "viewport": 1440
+}

@@ -1204,6 +1204,7 @@
   .tsc-blog-directory__card h3 {
     margin: 0 !important;
     color: #083d3a !important;
+    font-family: Signika, "Madefor Text", sans-serif !important;
     font-size: 18px !important;
     font-weight: 800 !important;
     line-height: 1.2 !important;
@@ -1213,6 +1214,7 @@
   .tsc-blog-directory__card p {
     margin: 0 !important;
     color: #083d3a !important;
+    font-family: "Madefor Text", sans-serif !important;
     font-size: 15px !important;
     line-height: 1.45 !important;
   }
@@ -1229,5 +1231,185 @@
   .tsc-blog-directory__card a {
     width: min(100%, 160px) !important;
     margin: 4px auto 0 !important;
+  }
+}
+
+/* Resources page canonical blog section on mobile. */
+@media (max-width: 1024px) {
+  body[data-page="resources"] #PAGE_SECTIONSxk8qq {
+    display: block !important;
+    width: 100% !important;
+    overflow-x: clip !important;
+  }
+
+  body[data-page="resources"] #PAGE_SECTIONSxk8qq > section {
+    width: 100% !important;
+  }
+
+  body[data-page="resources"] #comp-mpgmnan2 {
+    grid-area: 2 / 1 / 3 / 2 !important;
+  }
+
+  body[data-page="resources"] #comp-mrdp2u69 {
+    display: none !important;
+  }
+
+  body[data-page="resources"] .tsc-all-blogs-section {
+    box-sizing: border-box !important;
+    grid-area: 3 / 1 / 4 / 2 !important;
+    width: 100% !important;
+    padding: 30px 16px 38px !important;
+    background: #083d3a !important;
+    color: #ffecd1 !important;
+    overflow: visible !important;
+  }
+
+  body[data-page="resources"] #comp-mp2vpkoa {
+    grid-area: 4 / 1 / 5 / 2 !important;
+  }
+
+  body[data-page="resources"] #comp-mrd4xija {
+    grid-area: 5 / 1 / 6 / 2 !important;
+  }
+
+  body[data-page="resources"] .tsc-all-blogs-inner {
+    box-sizing: border-box !important;
+    width: min(100%, 560px) !important;
+    margin: 0 auto !important;
+  }
+
+  body[data-page="resources"] .tsc-all-blogs-head,
+  body[data-page="resources"] .tsc-all-blogs-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  body[data-page="resources"] .tsc-all-blogs-head {
+    margin-bottom: 22px !important;
+  }
+
+  body[data-page="resources"] .tsc-all-blogs-head h2 {
+    margin: 0 !important;
+    color: #ffecd1 !important;
+    font-family: Signika, "Madefor Text", sans-serif !important;
+    font-size: clamp(1.45rem, 6.4vw, 2rem) !important;
+    font-weight: 800 !important;
+    line-height: 1.15 !important;
+    letter-spacing: 0 !important;
+  }
+
+  body[data-page="resources"] .tsc-all-blogs-head p {
+    margin: 0 !important;
+    color: #ffecd1 !important;
+    font-family: "Madefor Text", Arial, sans-serif !important;
+    font-size: 14px !important;
+    font-weight: 800 !important;
+    line-height: 1.45 !important;
+    letter-spacing: 0 !important;
+  }
+
+  body[data-page="resources"] .tsc-blog-card {
+    box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+    padding: 14px !important;
+    border: 1.5px solid rgba(255, 236, 209, 0.86) !important;
+    border-radius: 8px !important;
+    background: #ffecd1 !important;
+    color: #083d3a !important;
+  }
+
+  body[data-page="resources"] .tsc-blog-meta {
+    display: flex !important;
+    justify-content: space-between !important;
+    gap: 10px !important;
+    color: #126d5e !important;
+    font-size: 12px !important;
+    font-weight: 800 !important;
+    line-height: 1 !important;
+    letter-spacing: 0 !important;
+    text-transform: uppercase !important;
+  }
+
+  body[data-page="resources"] .tsc-blog-card img {
+    display: block !important;
+    width: 100% !important;
+    aspect-ratio: 16 / 9 !important;
+    border: 1.5px solid #126d5e !important;
+    border-radius: 6px !important;
+    object-fit: cover !important;
+  }
+
+  body[data-page="resources"] .tsc-blog-card h3 {
+    margin: 0 !important;
+    color: #083d3a !important;
+    font-family: Signika, "Madefor Text", sans-serif !important;
+    font-size: 18px !important;
+    font-weight: 800 !important;
+    line-height: 1.2 !important;
+    letter-spacing: 0 !important;
+  }
+
+  body[data-page="resources"] .tsc-blog-card p {
+    margin: 0 !important;
+    color: #126d5e !important;
+    font-family: "Madefor Text", Arial, sans-serif !important;
+    font-size: 15px !important;
+    font-weight: 700 !important;
+    line-height: 1.45 !important;
+    letter-spacing: 0 !important;
+  }
+
+  body[data-page="resources"] .tsc-blog-ctas {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 10px !important;
+    margin-top: 4px !important;
+    width: 100% !important;
+    pointer-events: auto !important;
+  }
+
+  body[data-page="resources"] .tsc-blog-card a.tsc-blog-cta {
+    box-sizing: border-box !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex: 1 1 auto !important;
+    width: auto !important;
+    min-width: min(100%, 160px) !important;
+    min-height: 46px !important;
+    margin: 0 !important;
+    padding: 12px 16px !important;
+    border-radius: 999px !important;
+    background: #126d5e !important;
+    color: #ffecd1 !important;
+    font-size: 14px !important;
+    font-weight: 800 !important;
+    line-height: 1.2 !important;
+    letter-spacing: 0 !important;
+    text-align: center !important;
+    text-decoration: none !important;
+    cursor: pointer !important;
+    pointer-events: auto !important;
+  }
+
+  body[data-page="resources"] .tsc-blog-card a.tsc-blog-cta--medium {
+    background: transparent !important;
+    color: #126d5e !important;
+    border: 1.5px solid #126d5e !important;
+  }
+}
+
+/* Keep Wix section sizing intact; the mounted blog band is inserted in DOM order. */
+@media (max-width: 1024px) {
+  body[data-page="resources"] #PAGE_SECTIONSxk8qq {
+    display: block !important;
   }
 }

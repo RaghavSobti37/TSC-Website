@@ -1,40 +1,42 @@
 /**
  * About mobile hero — kept in sync with public/css/mobile/about.css hero rules.
  * Note: currently not linked by the mobile loader; mobile/about.css is the live source.
+ * Desktop lock: tsc-responsive.css @media (min-width: 1025px) — do not put desktop rules here.
  */
 @media (max-width: 1024px) {
   html body.responsive[data-page="about"] #comp-mp2vlkbh2,
   html body.responsive[data-page="about"] #comp-mp2vlkbh2 .comp-mp2vlkbh2-overflow-wrapper,
-  body.responsive #comp-mp2vlkbh2,
-  body.responsive #comp-mp2vlkbh2 .comp-mp2vlkbh2-overflow-wrapper {
-    height: auto !important;
-    min-height: 0 !important;
+  body.responsive[data-page="about"] #comp-mp2vlkbh2,
+  body.responsive[data-page="about"] #comp-mp2vlkbh2 .comp-mp2vlkbh2-overflow-wrapper {
+    height: clamp(420px, calc(100svh - 72px), 620px) !important;
+    min-height: clamp(420px, calc(100svh - 72px), 620px) !important;
     max-height: none !important;
     overflow: hidden !important;
   }
 
   html body.responsive[data-page="about"] #comp-mp2vlkbh2 .comp-mp2vlkbh2-container,
   html body.responsive[data-page="about"] #comp-mp2vlkbh2 [data-testid="responsive-container-content"],
-  body.responsive #comp-mp2vlkbh2 .comp-mp2vlkbh2-container,
-  body.responsive #comp-mp2vlkbh2 [data-testid="responsive-container-content"] {
+  body.responsive[data-page="about"] #comp-mp2vlkbh2 .comp-mp2vlkbh2-container,
+  body.responsive[data-page="about"] #comp-mp2vlkbh2 [data-testid="responsive-container-content"] {
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
     justify-content: center !important;
-    height: auto !important;
-    min-height: 0 !important;
+    height: 100% !important;
+    min-height: 100% !important;
     max-height: none !important;
-    padding: 36px 24px 44px !important;
+    padding: clamp(40px, 7vh, 64px) 24px clamp(52px, 9vh, 72px) !important;
     box-sizing: border-box !important;
-    gap: 10px !important;
+    gap: clamp(12px, 2.6vh, 20px) !important;
   }
 
+  html body.responsive[data-page="about"] #comp-mp2vlkbh2 #bgLayers_comp-mp2vlkbh2,
   html body.responsive[data-page="about"] #comp-mp2vlkbh2 #bgMedia_comp-mp2vlkbh2,
-  body.responsive #comp-mp2vlkbh2 #bgMedia_comp-mp2vlkbh2 {
+  body.responsive[data-page="about"] #comp-mp2vlkbh2 #bgLayers_comp-mp2vlkbh2,
+  body.responsive[data-page="about"] #comp-mp2vlkbh2 #bgMedia_comp-mp2vlkbh2 {
     inset: 0 !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
+    width: 100% !important;
+    height: 100% !important;
     overflow: hidden !important;
   }
 
@@ -43,30 +45,37 @@
   html body.responsive[data-page="about"] #comp-mp2vlkbh2 #img_comp-mp2vlkbh2,
   html body.responsive[data-page="about"] #comp-mp2vlkbh2 #img_comp-mp2vlkbh2 img,
   html body.responsive[data-page="about"] #comp-mp2vlkbh2 canvas.webglcanvas,
-  body.responsive #comp-mp2vlkbh2 wix-media-canvas,
-  body.responsive #comp-mp2vlkbh2 wow-image,
-  body.responsive #comp-mp2vlkbh2 #img_comp-mp2vlkbh2,
-  body.responsive #comp-mp2vlkbh2 #img_comp-mp2vlkbh2 img,
-  body.responsive #comp-mp2vlkbh2 canvas.webglcanvas {
+  body.responsive[data-page="about"] #comp-mp2vlkbh2 wix-media-canvas,
+  body.responsive[data-page="about"] #comp-mp2vlkbh2 wow-image,
+  body.responsive[data-page="about"] #comp-mp2vlkbh2 #img_comp-mp2vlkbh2,
+  body.responsive[data-page="about"] #comp-mp2vlkbh2 #img_comp-mp2vlkbh2 img,
+  body.responsive[data-page="about"] #comp-mp2vlkbh2 canvas.webglcanvas {
     position: absolute !important;
-    left: 50% !important;
-    top: 50% !important;
-    width: min(38vw, 132px) !important;
-    max-width: min(38vw, 132px) !important;
-    height: auto !important;
-    max-height: min(28vh, 160px) !important;
-    transform: translate(-50%, -50%) !important;
-    object-fit: contain !important;
+    inset: 0 !important;
+    left: 0 !important;
+    top: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100% !important;
+    max-width: none !important;
+    height: 100% !important;
+    max-height: none !important;
+    transform: none !important;
+    object-fit: cover !important;
+    object-position: center bottom !important;
+    opacity: 1 !important;
+    pointer-events: none !important;
+    z-index: 0 !important;
   }
 
   html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1ttkgk.comp-mr1ttkgk,
   html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1vbgc2.comp-mr1vbgc2,
   html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tvuqc.comp-mr1tvuqc,
   html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tv44l.comp-mr1tv44l,
-  body.responsive #comp-mp2vlkbh2 #comp-mr1ttkgk.comp-mr1ttkgk,
-  body.responsive #comp-mp2vlkbh2 #comp-mr1vbgc2.comp-mr1vbgc2,
-  body.responsive #comp-mp2vlkbh2 #comp-mr1tvuqc.comp-mr1tvuqc,
-  body.responsive #comp-mp2vlkbh2 #comp-mr1tv44l.comp-mr1tv44l {
+  body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1ttkgk.comp-mr1ttkgk,
+  body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1vbgc2.comp-mr1vbgc2,
+  body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tvuqc.comp-mr1tvuqc,
+  body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tv44l.comp-mr1tv44l {
     position: relative !important;
     top: auto !important;
     left: auto !important;
@@ -79,40 +88,40 @@
   }
 
   html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1ttkgk.comp-mr1ttkgk,
-  body.responsive #comp-mp2vlkbh2 #comp-mr1ttkgk.comp-mr1ttkgk {
+  body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1ttkgk.comp-mr1ttkgk {
     order: 1 !important;
-    width: 56px !important;
-    height: 56px !important;
-    min-width: 56px !important;
-    min-height: 56px !important;
-    max-width: 56px !important;
-    max-height: 56px !important;
-    flex: 0 0 56px !important;
+    width: clamp(88px, 24vw, 120px) !important;
+    height: clamp(88px, 24vw, 120px) !important;
+    min-width: clamp(88px, 24vw, 120px) !important;
+    min-height: clamp(88px, 24vw, 120px) !important;
+    max-width: clamp(88px, 24vw, 120px) !important;
+    max-height: clamp(88px, 24vw, 120px) !important;
+    flex: 0 0 auto !important;
     margin: 0 auto 4px !important;
   }
 
   html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1ttkgk.comp-mr1ttkgk svg,
-  body.responsive #comp-mp2vlkbh2 #comp-mr1ttkgk.comp-mr1ttkgk svg {
-    width: 56px !important;
-    height: 56px !important;
-    max-width: 56px !important;
-    max-height: 56px !important;
+  body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1ttkgk.comp-mr1ttkgk svg {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
   }
 
   html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1vbgc2.comp-mr1vbgc2,
-  body.responsive #comp-mp2vlkbh2 #comp-mr1vbgc2.comp-mr1vbgc2 {
+  body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1vbgc2.comp-mr1vbgc2 {
     order: 2 !important;
     display: block !important;
-    width: min(72vw, 280px) !important;
-    max-width: min(72vw, 280px) !important;
+    width: min(84vw, 320px) !important;
+    max-width: min(84vw, 320px) !important;
     height: auto !important;
     overflow: visible !important;
   }
 
   html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tvuqc.comp-mr1tvuqc,
   html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tvuqc.comp-mr1tvuqc svg,
-  body.responsive #comp-mp2vlkbh2 #comp-mr1tvuqc.comp-mr1tvuqc,
-  body.responsive #comp-mp2vlkbh2 #comp-mr1tvuqc.comp-mr1tvuqc svg {
+  body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tvuqc.comp-mr1tvuqc,
+  body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tvuqc.comp-mr1tvuqc svg {
     aspect-ratio: 867.52 / 415.6 !important;
     display: block !important;
     width: 100% !important;
@@ -121,10 +130,10 @@
   }
 
   html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tv44l.comp-mr1tv44l,
-  body.responsive #comp-mp2vlkbh2 #comp-mr1tv44l.comp-mr1tv44l {
+  body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tv44l.comp-mr1tv44l {
     order: 3 !important;
-    width: min(86vw, 340px) !important;
-    max-width: min(86vw, 340px) !important;
+    width: min(88vw, 340px) !important;
+    max-width: min(88vw, 340px) !important;
     height: auto !important;
     margin-top: 4px !important;
   }
@@ -132,11 +141,11 @@
   html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tv44l.comp-mr1tv44l .wixui-rich-text__text,
   html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tv44l.comp-mr1tv44l h1,
   html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tv44l.comp-mr1tv44l p,
-  body.responsive #comp-mp2vlkbh2 #comp-mr1tv44l.comp-mr1tv44l .wixui-rich-text__text,
-  body.responsive #comp-mp2vlkbh2 #comp-mr1tv44l.comp-mr1tv44l h1,
-  body.responsive #comp-mp2vlkbh2 #comp-mr1tv44l.comp-mr1tv44l p {
-    font-size: clamp(16px, 4.4vw, 20px) !important;
-    line-height: 1.2 !important;
+  body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tv44l.comp-mr1tv44l .wixui-rich-text__text,
+  body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tv44l.comp-mr1tv44l h1,
+  body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tv44l.comp-mr1tv44l p {
+    font-size: clamp(15px, 4vw, 18px) !important;
+    line-height: 1.25 !important;
     text-align: center !important;
     white-space: normal !important;
   }
@@ -144,36 +153,27 @@
 
 @media (max-width: 600px) {
   html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1ttkgk.comp-mr1ttkgk,
-  body.responsive #comp-mp2vlkbh2 #comp-mr1ttkgk.comp-mr1ttkgk {
-    width: 48px !important;
-    height: 48px !important;
-    min-width: 48px !important;
-    min-height: 48px !important;
-    max-width: 48px !important;
-    max-height: 48px !important;
-    flex: 0 0 48px !important;
-  }
-
-  html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1ttkgk.comp-mr1ttkgk svg,
-  body.responsive #comp-mp2vlkbh2 #comp-mr1ttkgk.comp-mr1ttkgk svg {
-    width: 48px !important;
-    height: 48px !important;
-    max-width: 48px !important;
-    max-height: 48px !important;
+  body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1ttkgk.comp-mr1ttkgk {
+    width: clamp(80px, 22vw, 104px) !important;
+    height: clamp(80px, 22vw, 104px) !important;
+    min-width: clamp(80px, 22vw, 104px) !important;
+    min-height: clamp(80px, 22vw, 104px) !important;
+    max-width: clamp(80px, 22vw, 104px) !important;
+    max-height: clamp(80px, 22vw, 104px) !important;
   }
 
   html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1vbgc2.comp-mr1vbgc2,
-  body.responsive #comp-mp2vlkbh2 #comp-mr1vbgc2.comp-mr1vbgc2 {
-    width: min(78vw, 260px) !important;
-    max-width: min(78vw, 260px) !important;
+  body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1vbgc2.comp-mr1vbgc2 {
+    width: min(86vw, 300px) !important;
+    max-width: min(86vw, 300px) !important;
   }
 
   html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tv44l.comp-mr1tv44l .wixui-rich-text__text,
   html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tv44l.comp-mr1tv44l h1,
   html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tv44l.comp-mr1tv44l p,
-  body.responsive #comp-mp2vlkbh2 #comp-mr1tv44l.comp-mr1tv44l .wixui-rich-text__text,
-  body.responsive #comp-mp2vlkbh2 #comp-mr1tv44l.comp-mr1tv44l h1,
-  body.responsive #comp-mp2vlkbh2 #comp-mr1tv44l.comp-mr1tv44l p {
-    font-size: clamp(15px, 4.2vw, 18px) !important;
+  body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tv44l.comp-mr1tv44l .wixui-rich-text__text,
+  body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tv44l.comp-mr1tv44l h1,
+  body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tv44l.comp-mr1tv44l p {
+    font-size: clamp(14px, 3.9vw, 17px) !important;
   }
 }

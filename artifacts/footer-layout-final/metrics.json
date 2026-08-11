@@ -1,0 +1,120 @@
+{
+  "desktopHome": {
+    "route": "/",
+    "navGroups": [
+      "Start Here",
+      "Quick Links",
+      "Explore"
+    ],
+    "startHereInNav": true,
+    "startHereUnderSocials": false,
+    "copyInBrand": false,
+    "copyInMeta": true,
+    "copyText": "© 2026 The Shakti Collective. All rights reserved.",
+    "brandKids": [
+      "tsc-desktop-footer-brand",
+      "tsc-desktop-footer-tagline"
+    ],
+    "newsKids": [
+      "H2",
+      "P",
+      "tsc-desktop-footer-newsrow",
+      "tsc-desktop-footer-newsnote",
+      "tsc-desktop-footer-social",
+      "tsc-desktop-footer-meta"
+    ],
+    "copyBelowSocial": true,
+    "logoW": 260,
+    "logoH": 108,
+    "btnW": 96,
+    "inputW": 175,
+    "btnFont": "12px"
+  },
+  "desktopAcademy": {
+    "route": "/academy",
+    "navGroups": [
+      "Start Here",
+      "Academy",
+      "Explore TSC"
+    ],
+    "startHereInNav": true,
+    "startHereUnderSocials": false,
+    "copyInBrand": false,
+    "copyInMeta": true,
+    "copyText": "© 2026 TSC Academy. All rights reserved.",
+    "brandKids": [
+      "tsc-desktop-footer-brand",
+      "tsc-desktop-footer-tagline"
+    ],
+    "newsKids": [
+      "H2",
+      "P",
+      "tsc-desktop-footer-newsrow",
+      "tsc-desktop-footer-newsnote",
+      "tsc-desktop-footer-social",
+      "tsc-desktop-footer-meta"
+    ],
+    "copyBelowSocial": true,
+    "logoW": 260,
+    "logoH": 108,
+    "btnW": 96,
+    "inputW": 175,
+    "btnFont": "12px"
+  },
+  "mobileHome": {
+    "route": "/",
+    "accordion": [
+      "Start Here",
+      "Quick Links",
+      "Explore",
+      "Join our community"
+    ],
+    "startHereInAccordion": true,
+    "startHereUnderSocials": false,
+    "copyInBrand": false,
+    "copyAfterSocial": true,
+    "copyText": "© 2026 The Shakti Collective. All rights reserved.",
+    "shellOrder": [
+      "tsc-mobile-footer-brand",
+      "tsc-mobile-footer-acc",
+      "tsc-mobile-footer-acc",
+      "tsc-mobile-footer-acc",
+      "tsc-mobile-footer-acc",
+      "tsc-mobile-footer-news",
+      "tsc-mobile-footer-social",
+      "tsc-mobile-footer-bottom"
+    ],
+    "logoW": 180,
+    "logoH": 74,
+    "btnW": 96,
+    "inputW": 246,
+    "btnFont": "11px"
+  },
+  "mobileAcademy": {
+    "route": "/academy",
+    "accordion": [
+      "Start Here",
+      "Academy",
+      "Explore TSC"
+    ],
+    "startHereInAccordion": true,
+    "startHereUnderSocials": false,
+    "copyInBrand": false,
+    "copyAfterSocial": true,
+    "copyText": "© 2026 TSC Academy. All rights reserved.",
+    "shellOrder": [
+      "tsc-mobile-footer-brand",
+      "tsc-mobile-footer-acc",
+      "tsc-mobile-footer-acc",
+      "tsc-mobile-footer-acc",
+      "tsc-mobile-footer-news",
+      "tsc-mobile-footer-social",
+      "tsc-mobile-footer-bottom"
+    ],
+    "logoW": 180,
+    "logoH": 74,
+    "btnW": 96,
+    "inputW": 246,
+    "btnFont": "11px"
+  }
+}

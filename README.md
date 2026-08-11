@@ -1,12 +1,10 @@
 # The Shakti Collective Static Site
 
-> **DESKTOP DESIGN LOCK — PERMANENT.** The desktop design (viewport >= 1025px) of the 9 primary pages
+> **DESKTOP DESIGN LOCK — PERMANENT (clone-faithful).** The desktop design (viewport >= 1025px) of the 9 primary pages
 > (`/`, `/about`, `/work`, `/artists`, `/artist-path`, `/learn-with-tsc`, `/films`, `/resources`, `/academy`)
-> is locked forever to commit `faf9dea`. It was restored with `scripts/restore-faf9dea-desktop.js` and verified
-> pixel-identical against that commit. Do **not** change desktop markup, styles, copy, or behavior of these pages
-> unless the site owner explicitly and specifically asks for a desktop design change. All responsive/mobile work
-> must live exclusively inside `@media (max-width: 1024px)` blocks or stylesheets linked with
-> `media="(max-width: 1024px)"`.
+> is locked to the Wix clone. **Zero tolerance** for fonts, colors, logo sizing, navbar redesign, or animation style changes.
+> Allowed only: content/copy, footer link labels/hrefs (keep clone fonts/icons/per-page colors), form wiring, and owner-approved section hides.
+> Mobile work stays inside `@media (max-width: 1024px)`. See `.cursor/rules/desktop-lock.mdc`.
 
 Static mirror + cleaned local runtime for The Shakti Collective website.
 
@@ -48,6 +46,16 @@ Build pipeline:
 - `scripts/serve-mirror.js` handles local route rewrites, disabled telemetry endpoints, Thunderbolt JSON variants, and media fallbacks.
 - `public/js/content-replacements.js` applies post-hydration page polish: brand-aware favicons/logos, mobile header/footer, mobile work + films shells, course mobile cards, Resources blog cards, CTA repairs, and artist-page fixes.
 - `vercel.json` is source of truth for production rewrites, legacy redirects, security headers, and cache policy for mirrored assets.
+
+## Newsletter pipeline
+
+Footer newsletter forms are rendered by the shared component in `public/js/tsc-components.js` and submit to `api/newsletter.js`. The API forwards signups to Taskmaster at `TASKMASTER_NEWSLETTER_WEBHOOK_URL` or `/api/webhooks/newsletter` using `NEWSLETTER_WEBHOOK_SECRET`.
+
+Newsletter destination collection: `newslettersubscribers` (`NewsletterSubscriber` model in Taskmaster). **No Google Sheets** in the submit path.
+
+## Forms guide
+
+Full form → API → Taskmaster destination map: [`docs/FORMS_GUIDE.md`](docs/FORMS_GUIDE.md).
 
 ## Route model
 

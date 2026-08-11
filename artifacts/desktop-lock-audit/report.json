@@ -1,0 +1,149 @@
+[
+  {
+    "route": "/",
+    "dataPage": "home",
+    "overflowX": false,
+    "bodyW": 1440,
+    "htmlW": 1440,
+    "mobileHeaderVisible": false,
+    "hero": null,
+    "logos": [
+      {
+        "w": 259,
+        "h": 65,
+        "src": "tsc-logo-trim-nav.png"
+      },
+      {
+        "w": 477,
+        "h": 731,
+        "src": "LogoArtboard%204_edited.png"
+      },
+      {
+        "w": 477,
+        "h": 731,
+        "src": "LogoArtboard%204_edited.png"
+      },
+      {
+        "w": 324,
+        "h": 96,
+        "src": "tsc-logo-text.png"
+      }
+    ],
+    "filmCards": [],
+    "dupHide": [
+      {
+        "id": "comp-mqmhowf1",
+        "present": false
+      },
+      {
+        "id": "comp-mqmhp1sq",
+        "present": false
+      },
+      {
+        "id": "comp-mqmhpx0p",
+        "present": false
+      }
+    ]
+  },
+  {
+    "route": "/about",
+    "dataPage": "about",
+    "overflowX": false,
+    "bodyW": 1440,
+    "htmlW": 1440,
+    "mobileHeaderVisible": false,
+    "hero": {
+      "w": 1440,
+      "h": 525,
+      "display": "flex",
+      "flex": "flex",
+      "gap": "22px"
+    },
+    "logos": [
+      {
+        "w": 259,
+        "h": 65,
+        "src": "tsc-logo-trim-nav.png"
+      },
+      {
+        "w": 324,
+        "h": 96,
+        "src": "tsc-logo-text.png"
+      }
+    ],
+    "filmCards": [],
+    "dupHide": [
+      {
+        "id": "comp-mqmhowf1",
+        "present": false
+      },
+      {
+        "id": "comp-mqmhp1sq",
+        "present": false
+      },
+      {
+        "id": "comp-mqmhpx0p",
+        "present": false
+      }
+    ]
+  },
+  {
+    "route": "/films",
+    "dataPage": "films",
+    "overflowX": false,
+    "bodyW": 1440,
+    "htmlW": 1440,
+    "mobileHeaderVisible": false,
+    "hero": null,
+    "logos": [
+      {
+        "w": 259,
+        "h": 65,
+        "src": "tsc-logo-trim-nav.png"
+      },
+      {
+        "w": 324,
+        "h": 96,
+        "src": "tsc-logo-text.png"
+      }
+    ],
+    "filmCards": [
+      {
+        "w": 1267,
+        "h": 588
+      },
+      {
+        "w": 1267,
+        "h": 588
+      },
+      {
+        "w": 1267,
+        "h": 588
+      },
+      {
+        "w": 1267,
+        "h": 588
+      }
+    ],
+    "dupHide": [
+      {
+        "id": "comp-mqmhowf1",
+        "present": true,
+        "display": "none",
+        "visibility": "hidden"
+      },
+      {
+        "id": "comp-mqmhp1sq",
+        "present": true,
+        "display": "none",
+        "visibility": "hidden"
+      },
+      {
+        "id": "comp-mqmhpx0p",
+        "present": true,
+        "display": "none",
+        "visibility": "hidden"
+      }
+    ]
+  }
+]

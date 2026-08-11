@@ -1,0 +1,258 @@
+[
+  {
+    "url": "https://meghanabhawalkarwo.wixstudio.com/my-site/blank-10",
+    "bodyBg": "rgba(0, 0, 0, 0)",
+    "header": {
+      "id": "comp-mq6d7i6d",
+      "top": 30,
+      "h": 150,
+      "bg": "rgba(0, 0, 0, 0)",
+      "text": "AboutWorkArtistsTSC ArtistsArtist PathLearn With TSCTSC ArtistsArtist PathLearn With TSCFilmsResourcesMenu AboutWorkArti"
+    },
+    "main": {
+      "id": "SITE_PAGES",
+      "top": 30,
+      "h": 9393
+    },
+    "elems": [
+      {
+        "id": "comp-mq6d7i6d",
+        "tag": "HEADER",
+        "cls": "comp-mq6d7i6d S829f_ comp-mq6d7i6d-container",
+        "top": 30,
+        "left": 0,
+        "w": 1868,
+        "h": 150,
+        "text": "AboutWorkArtistsTSC ArtistsArtist PathLearn With TSCTSC ArtistsArtist PathLearn "
+      },
+      {
+        "id": "comp-mq6d7i6d_r_comp-kbgajy18",
+        "tag": "SECTION",
+        "cls": "Lnr3dj comp-mq6d7i6d_r_comp-kbgajy18 Lnr3dj wixui-header fwXYgt",
+        "top": 30,
+        "left": 0,
+        "w": 1868,
+        "h": 150,
+        "text": "AboutWorkArtistsTSC ArtistsArtist PathLearn With TSCTSC ArtistsArtist PathLearn "
+      },
+      {
+        "id": "comp-mq6d7i6d_r_comp-mp3rsqk1",
+        "tag": "DIV",
+        "cls": "comp-mq6d7i6d_r_comp-mp3rsqk1 wixui-vector-image",
+        "top": 61,
+        "left": 211,
+        "w": 215,
+        "h": 88,
+        "text": ""
+      },
+      {
+        "id": "comp-mq6d7i6d_r_comp-mrriywbr",
+        "tag": "DIV",
+        "cls": "comp-mq6d7i6d_r_comp-mrriywbr-container comp-mq6d7i6d_r_comp-mrriywbr",
+        "top": 82,
+        "left": 970,
+        "w": 490,
+        "h": 46,
+        "text": "AboutWorkArtistsTSC ArtistsArtist PathLearn With TSCTSC ArtistsArtist PathLearn "
+      },
+      {
+        "id": "comp-mq6d7i6d_r_comp-mrriywbr-menu-content",
+        "tag": "DIV",
+        "cls": "h75ntl",
+        "top": 82,
+        "left": 970,
+        "w": 490,
+        "h": 46,
+        "text": "AboutWorkArtistsTSC ArtistsArtist PathLearn With TSCTSC ArtistsArtist PathLearn "
+      },
+      {
+        "id": "comp-mq6d7i6d_r_comp-mrriyw6n",
+        "tag": "DIV",
+        "cls": "comp-mq6d7i6d_r_comp-mrriyw6n lIkFMb",
+        "top": 77,
+        "left": 1485,
+        "w": 193,
+        "h": 58,
+        "text": "TSC ACADEMY"
+      },
+      {
+        "id": "comp-mqffd5wc",
+        "tag": "SECTION",
+        "cls": "ke5pl1 comp-mqffd5wc wixui-section fwXYgt",
+        "top": 180,
+        "left": 0,
+        "w": 1868,
+        "h": 904,
+        "text": "Harshaduhita CollectiveA live music duo blending deep-rooted Indian classical mu"
+      },
+      {
+        "id": "comp-mqfgozm3",
+        "tag": "DIV",
+        "cls": "i4P7Vt comp-mqfgozm3 ZYZJBv wixui-image",
+        "top": 223,
+        "left": 636,
+        "w": 1416,
+        "h": 833,
+        "text": ""
+      },
+      {
+        "id": "comp-mqfgsqjf",
+        "tag": "DIV",
+        "cls": "N8MGzv _v6ohL PO9MfV comp-mqfgsqjf wixui-rich-text",
+        "top": 399,
+        "left": 245,
+        "w": 823,
+        "h": 271,
+        "text": "Harshaduhita Collective"
+      },
+      {
+        "id": "comp-mqfgsqh1",
+        "tag": "DIV",
+        "cls": "N8MGzv _v6ohL PO9MfV comp-mqfgsqh1 wixui-rich-text",
+        "top": 788,
+        "left": 250,
+        "w": 617,
+        "h": 59,
+        "text": "A live music duo blending deep-rooted Indian classical music with divine emotion"
+      },
+      {
+        "id": "comp-mqfgsqei",
+        "tag": "DIV",
+        "cls": "comp-mqfgsqei lIkFMb",
+        "top": 870,
+        "left": 585,
+        "w": 266,
+        "h": 70,
+        "text": "Explore Music"
+      },
+      {
+        "id": "comp-mqfgsqfs",
+        "tag": "DIV",
+        "cls": "comp-mqfgsqfs lIkFMb",
+        "top": 870,
+        "left": 245,
+        "w": 266,
+        "h": 70,
+        "text": "Book for Events"
+      },
+      {
+        "id": "comp-mqg6dhlo",
+        "tag": "DIV",
+        "cls": "HFEOE3 NaeT1r comp-mqg6dhlo-container comp-mqg6dhlo wixui-box",
+        "top": 304,
+        "left": 249,
+        "w": 685,
+        "h": 66,
+        "text": "Winner - PADMA SHRI MAHENDRA KAPOOR AWARD 2026"
+      },
+      {
+        "id": "comp-mqfgsqia",
+        "tag": "DIV",
+        "cls": "N8MGzv _v6ohL PO9MfV comp-mqfgsqia wixui-rich-text",
+        "top": 323,
+        "left": 270,
+        "w": 643,
+        "h": 29,
+        "text": "Winner - PADMA SHRI MAHENDRA KAPOOR AWARD 2026"
+      },
+      {
+        "id": "comp-mq7lr7m2",
+        "tag": "SECTION",
+        "cls": "ke5pl1 comp-mq7lr7m2 wixui-section fwXYgt",
+        "top": 1084,
+        "left": 0,
+        "w": 1868,
+        "h": 979,
+        "text": "Who Are We?Deep Rooted • Divine • DiverseRooted in the traditions of the Rampur "
+      }
+    ]
+  },
+  {
+    "url": "https://meghanabhawalkarwo.wixstudio.com/my-site/blank-10-1",
+    "bodyBg": "rgba(0, 0, 0, 0)",
+    "header": {
+      "id": "comp-mqhqa6x9",
+      "top": 30,
+      "h": 150,
+      "bg": "rgba(0, 0, 0, 0)",
+      "text": "AboutWorkArtistsTSC ArtistsArtist PathLearn With TSCTSC ArtistsArtist PathLearn With TSCFilmsResourcesMenu AboutWorkArti"
+    },
+    "main": {
+      "id": "SITE_PAGES",
+      "top": 30,
+      "h": 9742
+    },
+    "elems": [
+      {
+        "id": "comp-mqhqa6x9",
+        "tag": "HEADER",
+        "cls": "comp-mqhqa6x9 S829f_ comp-mqhqa6x9-container",
+        "top": 30,
+        "left": 0,
+        "w": 1868,
+        "h": 150,
+        "text": "AboutWorkArtistsTSC ArtistsArtist PathLearn With TSCTSC ArtistsArtist PathLearn "
+      },
+      {
+        "id": "comp-mqhqa6x9_r_comp-kbgajy18",
+        "tag": "SECTION",
+        "cls": "Lnr3dj comp-mqhqa6x9_r_comp-kbgajy18 Lnr3dj wixui-header fwXYgt",
+        "top": 30,
+        "left": 0,
+        "w": 1868,
+        "h": 150,
+        "text": "AboutWorkArtistsTSC ArtistsArtist PathLearn With TSCTSC ArtistsArtist PathLearn "
+      },
+      {
+        "id": "comp-mqhqa6x9_r_comp-mp3rsqk1",
+        "tag": "DIV",
+        "cls": "comp-mqhqa6x9_r_comp-mp3rsqk1 wixui-vector-image",
+        "top": 61,
+        "left": 211,
+        "w": 215,
+        "h": 88,
+        "text": ""
+      },
+      {
+        "id": "comp-mqhqa6x9_r_comp-mrriywbr",
+        "tag": "DIV",
+        "cls": "comp-mqhqa6x9_r_comp-mrriywbr-container comp-mqhqa6x9_r_comp-mrriywbr",
+        "top": 82,
+        "left": 970,
+        "w": 490,
+        "h": 46,
+        "text": "AboutWorkArtistsTSC ArtistsArtist PathLearn With TSCTSC ArtistsArtist PathLearn "
+      },
+      {
+        "id": "comp-mqhqa6x9_r_comp-mrriywbr-menu-content",
+        "tag": "DIV",
+        "cls": "h75ntl",
+        "top": 82,
+        "left": 970,
+        "w": 490,
+        "h": 46,
+        "text": "AboutWorkArtistsTSC ArtistsArtist PathLearn With TSCTSC ArtistsArtist PathLearn "
+      },
+      {
+        "id": "comp-mqhqa6x9_r_comp-mrriyw6n",
+        "tag": "DIV",
+        "cls": "comp-mqhqa6x9_r_comp-mrriyw6n lIkFMb",
+        "top": 77,
+        "left": 1485,
+        "w": 193,
+        "h": 58,
+        "text": "TSC ACADEMY"
+      },
+      {
+        "id": "comp-mqhqa6yo",
+        "tag": "SECTION",
+        "cls": "ke5pl1 comp-mqhqa6yo wixui-section fwXYgt",
+        "top": 1084,
+        "left": 0,
+        "w": 1868,
+        "h": 1089,
+        "text": "Who Are We?A bridge between tradition and transformation.Yugm is a Jaipur-based "
+      }
+    ]
+  }
+]

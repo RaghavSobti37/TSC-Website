@@ -3,7 +3,7 @@
   "html": "/pages/artist-path.html",
   "css": "/css/pages/artist-path.css",
   "animations": "/js/pages/artist-path.animations.js",
-  "generatedAt": "2026-08-06T11:53:13.645Z",
+  "generatedAt": "2026-08-10T11:16:54.062Z",
   "totals": {
     "assets": 112,
     "missing": 0
@@ -250,7 +250,7 @@
         "local": {
           "exists": true,
           "path": "/js/pages/artist-path.animations.js",
-          "bytes": 11051
+          "bytes": 5081
         }
       }
     ],
@@ -344,7 +344,7 @@
         "local": {
           "exists": true,
           "path": "/assets/mirror/siteassets.parastorage.com/pages/pages/thunderbolt/thunderbolt-features--19f989_0acee9e71a994e6d376e0bba81dfa461_1365.json--desktop--f145183b.bundle.min.json",
-          "bytes": 537623
+          "bytes": 537626
         }
       },
       {

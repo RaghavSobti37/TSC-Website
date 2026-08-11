@@ -89,13 +89,8 @@ chapters.forEach(([from, to]) => {
   if (html.includes(from)) html = html.split(from).join(to);
 });
 
-// Inject price near first Enroll Now marquee
-if (!html.includes('₹3,999') && !html.includes('&#8377;3,999')) {
-  html = html.replace(
-    /(<span>Enroll Now <\/span>)/,
-    '<span class="tsc-course-price" style="display:inline-block;margin-right:1rem;font-weight:700;">&#8377;3,999</span>$1'
-  );
-}
+// Owner: enroll marquee must NOT show price — strip if present.
+html = html.replace(/<span class="tsc-course-price"[^>]*>[\s\S]*?<\/span>/gi, '');
 
 write('public/pages/music-production.html', html);
 

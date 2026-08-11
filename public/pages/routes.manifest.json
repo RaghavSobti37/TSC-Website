@@ -113,6 +113,15 @@
       "file": "the-heart-of-composition.html"
     },
     {
+      "title": "A-Z of Music Production",
+      "route": "/music-production",
+      "aliases": [
+        "/academy/music-production",
+        "/courses/music-production"
+      ],
+      "file": "music-production.html"
+    },
+    {
       "title": "How Do I Start Making Music If I Have No Experience?",
       "route": "/start-making-music",
       "aliases": [
@@ -161,6 +170,40 @@
         "/films/hanuman-ansh"
       ],
       "file": "hanuman-ansh.html"
+    },
+    {
+      "title": "Mahavatar Narsimha Impact Report",
+      "route": "/mahavatar-narsimha-impact",
+      "aliases": [
+        "/films/mahavatar-narsimha-impact"
+      ],
+      "file": "mahavatar-narsimha-impact.html"
+    },
+    {
+      "title": "Hanuman Ansh Impact Report",
+      "route": "/hanuman-ansh-impact",
+      "aliases": [
+        "/films/hanuman-ansh-impact"
+      ],
+      "file": "hanuman-ansh-impact.html"
+    },
+    {
+      "title": "Mahaprabhu Jagannath Impact Report",
+      "route": "/mahaprabhu-jagannath-impact",
+      "aliases": [
+        "/mahaprbhu-impact",
+        "/films/mahaprbhu-impact",
+        "/films/mahaprabhu-jagannath-impact"
+      ],
+      "file": "mahaprabhu-jagannath-impact.html"
+    },
+    {
+      "title": "Kalki Impact Report",
+      "route": "/kalki-impact",
+      "aliases": [
+        "/films/kalki-impact"
+      ],
+      "file": "kalki-impact.html"
     },
     {
       "title": "The Artist Release Playbook",
@@ -351,6 +394,14 @@
       "route": "/the-heart-of-composition"
     },
     {
+      "alias": "/academy/music-production",
+      "route": "/music-production"
+    },
+    {
+      "alias": "/courses/music-production",
+      "route": "/music-production"
+    },
+    {
       "alias": "/blog-1",
       "route": "/start-making-music"
     },
@@ -409,6 +460,30 @@
     {
       "alias": "/films/hanuman-ansh",
       "route": "/hanuman-ansh"
+    },
+    {
+      "alias": "/films/mahavatar-narsimha-impact",
+      "route": "/mahavatar-narsimha-impact"
+    },
+    {
+      "alias": "/films/hanuman-ansh-impact",
+      "route": "/hanuman-ansh-impact"
+    },
+    {
+      "alias": "/mahaprbhu-impact",
+      "route": "/mahaprabhu-jagannath-impact"
+    },
+    {
+      "alias": "/films/mahaprbhu-impact",
+      "route": "/mahaprabhu-jagannath-impact"
+    },
+    {
+      "alias": "/films/mahaprabhu-jagannath-impact",
+      "route": "/mahaprabhu-jagannath-impact"
+    },
+    {
+      "alias": "/films/kalki-impact",
+      "route": "/kalki-impact"
     },
     {
       "alias": "/blog-3",
@@ -552,11 +627,16 @@
     "/harshad-duhita",
     "/roots-of-hindustani-classical",
     "/the-heart-of-composition",
+    "/music-production",
     "/start-making-music",
     "/yugm",
     "/mahaprbhu",
     "/mahavatar-narsimha",
     "/hanuman-ansh",
+    "/mahavatar-narsimha-impact",
+    "/hanuman-ansh-impact",
+    "/mahaprabhu-jagannath-impact",
+    "/kalki-impact",
     "/artist-release-playbook",
     "/online-music-course-worth-it",
     "/from-bhajan-to-clubbing",

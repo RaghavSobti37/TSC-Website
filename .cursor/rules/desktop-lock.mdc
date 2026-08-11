@@ -3,22 +3,41 @@ description: Permanent desktop design lock for the 9 primary pages
 alwaysApply: true
 ---
 
-# DESKTOP DESIGN LOCK — PERMANENT
+# DESKTOP DESIGN LOCK — PERMANENT (clone-faithful)
 
 The desktop design (viewport width >= 1025px) of the 9 primary pages —
 `public/pages/home.html`, `about.html`, `work.html`, `artists.html`, `artist-path.html`,
 `learn-with-tsc.html`, `films.html`, `resources.html`, `academy.html` — is **locked forever**
-to the exact rendering of commit `faf9dea` (restored via `scripts/restore-faf9dea-desktop.js`,
-verified pixel-identical).
+to the Wix clone baseline (commit `faf9dea` / live clone look).
 
-Rules for every agent session:
+## Zero tolerance
 
-1. **Never** modify desktop markup, inline styles, copy, media, or behavior of these pages
-   unless the user explicitly and specifically asks to change the desktop design.
-2. All responsive/mobile work must live **only** inside `@media (max-width: 1024px)` blocks,
-   stylesheets linked with `media="(max-width: 1024px)"`, or JS guarded by
-   `matchMedia('(max-width: 1024px)')`.
-3. Do not let build scripts inject CSS/JS into these pages (`scripts/inject-responsive-assets.js`
-   is intentionally a no-op).
-4. After any change that could touch these pages, verify desktop (1280px) rendering is unchanged
-   before finishing.
+**Forbidden on desktop (>=1025px) unless the owner explicitly requests a desktop visual change:**
+
+- Fonts, font-size overrides, new typefaces
+- Colors / filters / mix-blend on logos or chrome
+- Logo box resizing or swapping Wix SVG for PNG
+- Navbar redesign
+- Layout / spacing / animation style changes
+- Any CSS/JS that restyles clone chrome outside ads-strip kill
+
+**Allowed (content / behavior only):**
+
+- Footer **link labels and hrefs** (keep per-page footer colors + clone fonts/icons)
+- Text/copy updates that do not change typography
+- Form submit wiring
+- Hiding owner-rejected sections (e.g. Films TSC Originals `#comp-mqmh352i`) with collapse-only CSS
+- Mobile-only work inside `@media (max-width: 1024px)` / `matchMedia('(max-width: 1024px)')`
+
+## Files that must stay no-op for desktop visuals
+
+- `public/css/tsc-desktop-nav-lock.css` — intentionally empty / no-op
+- Do not reintroduce logo size/filter rules in `tsc-components.js` `injectDesktopNavLockInline` or `tsc-responsive.css`
+
+## Agent rules
+
+1. Never modify desktop markup/styles of the 9 primaries for “polish”.
+2. Mobile-only changes stay in max-width 1024 guards.
+3. `scripts/inject-responsive-assets.js` stays a no-op.
+4. After any change that could touch these pages, verify desktop at 1280px before finishing.
+5. See `docs/FORMS_GUIDE.md` for form destinations (Taskmaster — not Sheets).

@@ -124,4 +124,45 @@
   html.tsc-boot-mobile.tsc-mobile-ready body {
     background: transparent;
   }
+
+  /* Kill Wix freemium white strip above teal navbar (early paint). */
+  :root,
+  body,
+  #SITE_CONTAINER,
+  #site-root {
+    --wix-ads-height: 0px !important;
+    --wix-ads-top-height: 0px !important;
+    --sticky-offset: 0px !important;
+  }
+
+  #WIX_ADS,
+  .WIX_ADS,
+  .ub230c,
+  .YY89bY,
+  a[href*="wix.com/studio"] {
+    --display: none !important;
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    max-height: 0 !important;
+    min-height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+    pointer-events: none !important;
+    background: transparent !important;
+  }
+
+  #site-root,
+  header,
+  #SITE_HEADER,
+  .tsc-mobile-site-header,
+  [id$="-pinned-layer"] {
+    top: 0 !important;
+    margin-top: 0 !important;
+  }
+
+  .tsc-mobile-site-header {
+    border-radius: 0 !important;
+  }
 }

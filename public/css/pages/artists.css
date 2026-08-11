@@ -443,10 +443,27 @@ url("/assets/mirror/static.wixstatic.com/ufonts/834fa9_d08c6fe9ca9b47ccb21ecdcb7
 /* style 36 */
 #comp-mp2vm3m7_r_comp-mrsr3my7 svg [data-color="1"] {fill: #FFECD1;}
 
+/* Mohit Shankar roster card removed from HTML — keep CSS tombstone if Wix CSS rehydrates ids */
 #comp-mqutenq5,
 #comp-mqutenqa,
 #comp-mqutenqm,
 #comp-mqutenqk,
 [id^="comp-mqutenq"] {
   display: none !important;
+  width: 0 !important;
+  min-width: 0 !important;
+  max-width: 0 !important;
+  height: 0 !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  pointer-events: none !important;
+}
+
+/* Two-artist roster: Harshad + Yugm centered like locked desktop cards */
+#comp-mqutig8q {
+  justify-self: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }

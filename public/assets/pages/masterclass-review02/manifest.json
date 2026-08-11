@@ -3,7 +3,7 @@
   "html": "/pages/masterclass-review02.html",
   "css": "/css/pages/masterclass-review02.css",
   "animations": "/js/pages/masterclass-review02.animations.js",
-  "generatedAt": "2026-08-06T11:53:13.937Z",
+  "generatedAt": "2026-08-10T11:16:54.504Z",
   "totals": {
     "assets": 2,
     "missing": 0
@@ -27,7 +27,7 @@
         "local": {
           "exists": true,
           "path": "/js/pages/masterclass-review02.animations.js",
-          "bytes": 6008
+          "bytes": 38
         }
       }
     ]

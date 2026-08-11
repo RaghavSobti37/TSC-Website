@@ -21,8 +21,18 @@
   }
 
   /* Hide emptied Mohit Shankar card shell */
-  body[data-page="artists"] #comp-mqutenq5 {
+  body[data-page="artists"] #comp-mqutenq5,
+  body[data-page="artists"] [id^="comp-mqutenq"] {
     display: none !important;
+    width: 0 !important;
+    min-width: 0 !important;
+    max-width: 0 !important;
+    height: 0 !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    pointer-events: none !important;
   }
 
   /* Artist Path benefits: outer scrolls, inner is max-content row */

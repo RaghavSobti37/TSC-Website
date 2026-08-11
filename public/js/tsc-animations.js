@@ -6,6 +6,8 @@
 (function() {
   var ui = window.TSCComponents;
   if (!ui || window.__tscRevealAnimations) return;
+  // Desktop (>=1025px): leave Wix / faf9dea motions alone. Scroll-reveal is mobile-only.
+  if (!window.matchMedia || !window.matchMedia('(max-width: 1024px)').matches) return;
   window.__tscRevealAnimations = true;
 
   var styleId = 'tsc-reveal-animation-styles';

@@ -1860,6 +1860,27 @@
     overflow: visible !important;
   }
 
+  body[data-page="films"] #comp-mqkt0pl5 {
+    align-items: center !important;
+    background: #652415 !important;
+    border-radius: 20px !important;
+    display: flex !important;
+    justify-content: center !important;
+    min-height: 172px !important;
+    padding: 24px !important;
+  }
+
+  body[data-page="films"] #comp-mqkt0pl5 > .inner-box,
+  body[data-page="films"] :is(#comp-mqkt94ql, #comp-mqktaucr, #comp-mqktbh9q) > .inner-box {
+    display: none !important;
+  }
+
+  body[data-page="films"] #comp-mqks7qjl {
+    margin: 0 auto !important;
+    max-width: 260px !important;
+    width: min(78%, 260px) !important;
+  }
+
   body[data-page="films"] :is(#comp-mqkt0pln, #comp-mqkt1dhr) > [data-testid="responsive-container-content"],
   body[data-page="films"] :is(#comp-mqktaucr, #comp-mqktbh9q) > [data-testid="responsive-container-content"] {
     display: flex !important;

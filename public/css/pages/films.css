@@ -693,6 +693,152 @@ url("/assets/mirror/static.wixstatic.com/ufonts/834fa9_d08c6fe9ca9b47ccb21ecdcb7
   overflow: visible !important;
 }
 
+/* TSC Films About: restore locked desktop card layout. */
+@media (min-width: 1025px) {
+  body[data-page="films"] #comp-mqksjwhn {
+    background: #ffecd1 !important;
+    height: auto !important;
+    min-height: 372px !important;
+    overflow: visible !important;
+  }
+
+  body[data-page="films"] #comp-mqksjwhn > [data-testid="responsive-container-content"],
+  body[data-page="films"] #comp-mqksjwhn > .comp-mqksjwhn-container {
+    box-sizing: border-box !important;
+    display: grid !important;
+    grid-template-columns: minmax(420px, 0.92fr) minmax(520px, 1.08fr) !important;
+    grid-template-rows: 148px 124px !important;
+    column-gap: 30px !important;
+    row-gap: 30px !important;
+    max-width: 1664px !important;
+    margin: 0 auto !important;
+    padding: 64px 0 18px !important;
+    width: calc(100% - 190px) !important;
+    min-height: 372px !important;
+    overflow: visible !important;
+  }
+
+  body[data-page="films"] #comp-mqksjwhn > [data-testid="responsive-container-content"] > :is(#comp-mqkt0pl5, #comp-mqkt0pln, #comp-mqkt1dhr),
+  body[data-page="films"] #comp-mqksjwhn > .comp-mqksjwhn-container > :is(#comp-mqkt0pl5, #comp-mqkt0pln, #comp-mqkt1dhr) {
+    box-sizing: border-box !important;
+    display: flex !important;
+    position: relative !important;
+    inset: auto !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    max-width: none !important;
+    height: 100% !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    transform: none !important;
+    overflow: hidden !important;
+  }
+
+  body[data-page="films"] #comp-mqkt0pl5 {
+    grid-area: 1 / 1 / 3 / 2 !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: #652415 !important;
+    border: 0 !important;
+    border-radius: 28px !important;
+    padding: 0 !important;
+  }
+
+  body[data-page="films"] #comp-mqkt0pln,
+  body[data-page="films"] #comp-mqkt1dhr {
+    align-items: center !important;
+    justify-content: flex-start !important;
+    background: #ffecd1 !important;
+    border: 2px solid #652415 !important;
+    border-radius: 28px !important;
+    padding: 0 42px !important;
+  }
+
+  body[data-page="films"] #comp-mqkt0pln {
+    grid-area: 1 / 2 / 2 / 3 !important;
+  }
+
+  body[data-page="films"] #comp-mqkt1dhr {
+    grid-area: 2 / 2 / 3 / 3 !important;
+  }
+
+  body[data-page="films"] :is(#comp-mqkt0pl5, #comp-mqkt0pln, #comp-mqkt1dhr) > .inner-box,
+  body[data-page="films"] :is(#comp-mqkt94ql, #comp-mqktaucr, #comp-mqktbh9q) > .inner-box {
+    display: none !important;
+  }
+
+  body[data-page="films"] :is(#comp-mqkt0pl5, #comp-mqkt0pln, #comp-mqkt1dhr, #comp-mqkt94ql, #comp-mqktaucr, #comp-mqktbh9q) > [data-testid="responsive-container-content"] {
+    align-items: center !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    height: 100% !important;
+    justify-content: inherit !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+    padding: 0 !important;
+    width: 100% !important;
+  }
+
+  body[data-page="films"] :is(#comp-mqkt94ql, #comp-mqktaucr, #comp-mqktbh9q, #comp-mqks7qjl, #comp-mqksu27c, #comp-mqksqdxe) {
+    box-sizing: border-box !important;
+    display: block !important;
+    position: relative !important;
+    inset: auto !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    transform: none !important;
+  }
+
+  body[data-page="films"] #comp-mqks7qjl {
+    width: min(72%, 420px) !important;
+    margin: 0 auto !important;
+  }
+
+  body[data-page="films"] #comp-mqks7qjl svg {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  body[data-page="films"] #comp-mqksu27c :is(h1, p, span, .wixui-rich-text__text) {
+    color: #652415 !important;
+    font-size: clamp(56px, 4.7vw, 82px) !important;
+    font-weight: 700 !important;
+    line-height: 1 !important;
+    letter-spacing: 0 !important;
+    margin: 0 !important;
+    text-align: left !important;
+    white-space: nowrap !important;
+  }
+
+  body[data-page="films"] #comp-mqksqdxe :is(p, span, .wixui-rich-text__text) {
+    color: #652415 !important;
+    font-size: clamp(24px, 1.65vw, 30px) !important;
+    font-weight: 700 !important;
+    line-height: 1.22 !important;
+    letter-spacing: 0 !important;
+    margin: 0 !important;
+    text-align: left !important;
+    white-space: nowrap !important;
+  }
+
+  body[data-page="films"] #comp-mqksqdxe p:first-child {
+    height: 1.22em !important;
+    max-height: 1.22em !important;
+    overflow: hidden !important;
+  }
+
+  body[data-page="films"] #comp-mqksqdxe br {
+    display: none !important;
+  }
+}
+
 @media screen and (min-width: 1001px) {
   /* 5 feature rows only — duplicate 03 removed from flow */
   #comp-mqktx0nc .comp-mqktx0nc-container {

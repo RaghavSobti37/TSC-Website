@@ -3483,6 +3483,21 @@ body.tsc-has-mobile-footer .tsc-legacy-footer-host:not(:has(.tsc-mobile-footer))
     z-index: 1 !important;
   }
 
+  /* Let nav children (Quick Links, Explore) flow as direct grid items */
+  .tsc-desktop-footer-nav {
+    display: contents !important;
+  }
+
+  /* Academy footer: tagline text and subscribe button need contrast */
+  .tsc-desktop-footer-academy .tsc-desktop-footer-tagline {
+    color: #08525f !important;
+  }
+
+  .tsc-desktop-footer-academy .tsc-desktop-footer-newsrow button {
+    color: #08525f !important;
+    -webkit-text-fill-color: #08525f !important;
+  }
+
   /* Logo column: flush-left logo + tagline share one left edge */
   .tsc-desktop-footer-brandblock {
     align-content: start !important;
@@ -3533,228 +3548,7 @@ body.tsc-has-mobile-footer .tsc-legacy-footer-host:not(:has(.tsc-mobile-footer))
     stroke: var(--tsc-footer-logo-fg, var(--tsc-footer-fg)) !important;
   }
 
-  .tsc-desktop-footer-academy .tsc-desktop-footer-logo {
-    filter: brightness(0) saturate(100%) invert(20%) sepia(36%) saturate(1088%) hue-rotate(134deg) brightness(94%) contrast(91%) !important;
-  }
-
   .tsc-desktop-footer-tagline {
-    align-self: flex-start !important;
-    box-sizing: border-box !important;
-    color: inherit !important;
-    font-size: 15px !important;
-    font-weight: 400 !important;
-    letter-spacing: 0 !important;
-    line-height: 1.35 !important;
-    margin: 0 !important;
-    max-width: 260px !important;
-    opacity: 1 !important;
-    padding: 0 !important;
-    text-align: left !important;
-    text-align-last: left !important;
-    white-space: normal !important;
-    width: auto !important;
-  }
-
-  .tsc-desktop-footer-meta {
-    display: block !important;
-    margin-top: 18px !important;
-    max-width: 450px !important;
-  }
-
-  .tsc-desktop-footer-copy {
-    color: inherit !important;
-    font-size: 13px !important;
-    font-style: italic !important;
-    font-weight: 400 !important;
-    line-height: 1.35 !important;
-    margin: 0 !important;
-    max-width: none !important;
-    opacity: 0.85 !important;
-    padding: 0 !important;
-    text-align: left !important;
-    white-space: normal !important;
-  }
-
-  /* ponytail: same column chrome as Quick Links / Explore — no outline box */
-  .tsc-desktop-footer-startbox {
-    align-self: start !important;
-    border: 0 !important;
-    border-radius: 0 !important;
-    color: inherit !important;
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 14px !important;
-    min-height: 0 !important;
-    min-width: 0 !important;
-    padding: 0 !important;
-  }
-
-  .tsc-desktop-footer-startbox h2 {
-    color: inherit !important;
-    font-size: 13px !important;
-    font-weight: 400 !important;
-    letter-spacing: 0 !important;
-    line-height: 1.15 !important;
-    margin: 0 0 4px !important;
-    opacity: 1 !important;
-    text-transform: uppercase !important;
-  }
-
-  .tsc-desktop-footer-startlinks {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 14px !important;
-  }
-
-  .tsc-desktop-footer-startlinks a {
-    color: inherit !important;
-    font-size: 15px !important;
-    font-weight: 400 !important;
-    line-height: 1.25 !important;
-    overflow-wrap: normal !important;
-    text-decoration: underline !important;
-    text-decoration-color: currentColor !important;
-    text-decoration-thickness: 1px !important;
-    text-underline-offset: 3px !important;
-    white-space: normal !important;
-  }
-
-  .tsc-desktop-footer-nav {
-    border: 0 !important;
-    display: contents !important;
-    padding: 0 !important;
-    position: static !important;
-  }
-
-  .tsc-desktop-footer-nav::after {
-    display: none !important;
-  }
-
-  .tsc-desktop-footer-group {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 14px !important;
-    min-width: 0 !important;
-  }
-
-  .tsc-desktop-footer-group h3 {
-    color: inherit !important;
-    font-size: 13px !important;
-    font-weight: 400 !important;
-    letter-spacing: 0 !important;
-    line-height: 1.15 !important;
-    margin: 0 0 4px !important;
-    opacity: 1 !important;
-    text-transform: uppercase !important;
-  }
-
-  .tsc-desktop-footer-links {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 14px !important;
-  }
-
-  .tsc-desktop-footer-links a {
-    color: inherit !important;
-    font-size: 15px !important;
-    font-weight: 400 !important;
-    line-height: 1.3 !important;
-    opacity: 1 !important;
-    overflow-wrap: anywhere !important;
-    text-decoration: underline !important;
-    text-decoration-color: currentColor !important;
-    text-decoration-thickness: 1px !important;
-    text-underline-offset: 3px !important;
-    white-space: normal !important;
-  }
-
-  .tsc-desktop-footer-news {
-    align-self: stretch !important;
-    border-left: 1px solid var(--tsc-footer-rule) !important;
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 0 !important;
-    max-width: none !important;
-    padding-left: 40px !important;
-  }
-
-  .tsc-desktop-footer-news h2 {
-    color: inherit !important;
-    font-size: 17px !important;
-    font-weight: 400 !important;
-    line-height: 1.2 !important;
-    margin: 0 0 16px !important;
-    text-decoration: underline !important;
-    text-decoration-thickness: 1px !important;
-    text-underline-offset: 4px !important;
-  }
-
-  .tsc-desktop-footer-news p {
-    color: inherit !important;
-    font-size: 13px !important;
-    font-weight: 400 !important;
-    line-height: 1.35 !important;
-    margin: 0 0 10px !important;
-    opacity: 1 !important;
-  }
-
-  .tsc-desktop-footer-newsrow {
-    align-items: stretch !important;
-    border: 0 !important;
-    border-radius: 4px !important;
-    display: grid !important;
-    grid-template-columns: minmax(0, 1fr) auto !important;
-    gap: 8px !important;
-    margin: 0 0 22px !important;
-    max-width: 100% !important;
-    overflow: visible !important;
-    width: 100% !important;
-  }
-
-  .tsc-desktop-footer-newsrow input {
-    background: var(--tsc-footer-input-bg) !important;
-    border: 1px solid var(--tsc-footer-rule) !important;
-    border-radius: 4px !important;
-    color: var(--tsc-footer-fg) !important;
-    flex: 1 1 0 !important;
-    font-size: 14px !important;
-    font-weight: 400 !important;
-    min-height: 60px !important;
-    min-width: 0 !important;
-    padding: 12px 14px !important;
-    width: auto !important;
-  }
-
-  .tsc-desktop-footer-newsrow input::placeholder {
-    color: var(--tsc-footer-dim) !important;
-    opacity: 1 !important;
-  }
-
-  .tsc-desktop-footer-newsrow button {
-    background: var(--tsc-footer-accent) !important;
-    border: 0 !important;
-    border-radius: 4px !important;
-    color: var(--tsc-footer-bg) !important;
-    flex: 0 0 auto !important;
-    font-size: 12px !important;
-    font-weight: 400 !important;
-    letter-spacing: 0 !important;
-    min-height: 60px !important;
-    min-width: 126px !important;
-    padding: 0 16px !important;
-    text-transform: uppercase !important;
-    white-space: nowrap !important;
-    width: auto !important;
-  }
-
-  .tsc-desktop-footer-academy .tsc-desktop-footer-newsrow button {
-    color: #fbe6c8 !important;
-  }
-
-  .tsc-desktop-footer-social {
-    display: flex !important;
-    flex-wrap: wrap !important;
-    gap: 10px !important;
     margin-top: 26px !important;
   }
 
@@ -3781,6 +3575,15 @@ body.tsc-has-mobile-footer .tsc-legacy-footer-host:not(:has(.tsc-mobile-footer))
     width: 100% !important;
   }
 
+  .tsc-desktop-footer-icon svg,
+  body[data-page] .tsc-desktop-footer .tsc-desktop-footer-icon svg {
+    color: var(--tsc-footer-icon-fg) !important;
+    fill: var(--tsc-footer-icon-fg) !important;
+    height: 100% !important;
+    stroke: none !important;
+    width: 100% !important;
+  }
+
   .tsc-desktop-footer-icon svg *,
   body[data-page] .tsc-desktop-footer .tsc-desktop-footer-icon svg * {
     color: var(--tsc-footer-icon-fg) !important;
@@ -3791,7 +3594,7 @@ body.tsc-has-mobile-footer .tsc-legacy-footer-host:not(:has(.tsc-mobile-footer))
 
 @media (min-width: 1025px) and (max-width: 1280px) {
   .tsc-desktop-footer-main {
-    grid-template-columns: minmax(230px, 0.95fr) minmax(180px, 0.75fr) minmax(300px, 1fr) !important;
+    grid-template-columns: minmax(200px, 1fr) minmax(140px, 0.7fr) minmax(110px, 0.55fr) minmax(120px, 0.6fr) minmax(280px, 1.1fr) !important;
   }
 
   .tsc-desktop-footer-news {
@@ -3801,3 +3604,30 @@ body.tsc-has-mobile-footer .tsc-legacy-footer-host:not(:has(.tsc-mobile-footer))
 }
 
 /* Home mission quote: leave clone typography alone (no nowrap/font override). */
+
+/* Footer newsrow subscribe button modifications for icons */
+.tsc-desktop-footer-newsrow button {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 54px !important;
+  height: 54px !important;
+  padding: 0 !important;
+  flex: 0 0 54px !important;
+  border-radius: 0 7px 7px 0 !important;
+}
+
+.tsc-mobile-footer-newsrow button {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 48px !important;
+  height: 48px !important;
+  padding: 0 !important;
+  flex: 0 0 48px !important;
+  border-radius: 6px !important;
+}
+
+.tsc-desktop-footer-nav::after {
+  display: none !important;
+}

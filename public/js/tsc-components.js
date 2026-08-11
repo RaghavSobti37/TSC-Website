@@ -1360,8 +1360,8 @@
       var input = form.querySelector('input[type="email"]');
       if (button) {
         button.disabled = true;
-        button.dataset.originalText = button.textContent;
-        button.textContent = 'Sending...';
+        button.dataset.originalText = button.innerHTML;
+        button.innerHTML = 'Sending...';
       }
       try {
         var response = await fetch('/api/newsletter', {
@@ -1378,7 +1378,7 @@
       } finally {
         if (button) {
           button.disabled = false;
-          button.textContent = button.dataset.originalText || 'Subscribe';
+          button.innerHTML = button.dataset.originalText || 'Subscribe';
         }
       }
     });
@@ -2440,17 +2440,10 @@
 
   function buildFooterStartHereBox(group) {
     if (!group) return '';
-    return [
-      '<section class="tsc-desktop-footer-startbox" aria-labelledby="tsc-desktop-footer-start-title">',
-      '<h2 id="tsc-desktop-footer-start-title">' + escapeHtml(group[0]) + '</h2>',
-      '<div class="tsc-desktop-footer-startlinks">',
-      group[1].map(function (link) {
-        var external = link[2] ? ' target="_blank" rel="noopener noreferrer"' : '';
-        return '<a href="' + escapeHtml(link[0]) + '"' + external + '>' + escapeHtml(link[1]) + '</a>';
-      }).join(''),
-      '</div>',
-      '</section>'
-    ].join('');
+    return '<div class="tsc-desktop-footer-group"><h3>' + escapeHtml(group[0]) + '</h3><div class="tsc-desktop-footer-links">' + group[1].map(function (link) {
+      var external = link[2] ? ' target="_blank" rel="noopener noreferrer"' : '';
+      return '<a href="' + escapeHtml(link[0]) + '"' + external + '>' + escapeHtml(link[1]) + '</a>';
+    }).join('') + '</div></div>';
   }
 
   function buildFooterCopyrightUnderSocials(brandName) {
@@ -2547,7 +2540,7 @@
       '<form class="tsc-desktop-footer-newsrow" action="#" method="post" data-source="footer">',
       '<label class="tsc-sr-only" for="' + emailId + '">Email</label>',
       '<input id="' + emailId + '" name="email" type="email" autocomplete="email" required placeholder="example@domain.com">',
-      '<button type="submit">Subscribe</button>',
+      '<button type="submit" aria-label="Subscribe"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></button>',
       '</form>',
       '<p class="tsc-desktop-footer-newsnote" role="status" hidden>Thanks, you are on the list.</p>',
       '<div class="tsc-desktop-footer-social">',
@@ -2642,7 +2635,7 @@
       '<form class="tsc-mobile-footer-newsrow" action="#" method="post">',
       '<label class="tsc-sr-only" for="' + emailId + '">Email</label>',
       '<input id="' + emailId + '" name="email" type="email" autocomplete="email" required placeholder="email@domain.com">',
-      '<button type="submit">Subscribe</button>',
+      '<button type="submit" aria-label="Subscribe"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></button>',
       '</form>',
       '<p class="tsc-mobile-footer-newsnote" role="status" hidden>Thanks, you are on the list.</p>',
       '</div>',

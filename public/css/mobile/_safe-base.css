@@ -115,6 +115,7 @@
     --tsc-mobile-footer-icon-fg: #ffecd1;
     --tsc-mobile-footer-button-bg: #ffecd1;
     --tsc-mobile-footer-button-fg: #083d3a;
+    --tsc-mobile-footer-texture-opacity: 1;
     --tsc-mobile-footer-bg-image:
       radial-gradient(circle at 80.3008524576823% 81.2366231282552%, #083D3A 0%, 20%, rgba(8,61,58,0) 40%),
       radial-gradient(circle at 10.919342041015625% 42.114003499348954%, #B74B02 0%, 30.865999999999996%, rgba(183,75,2,0) 46%),
@@ -127,10 +128,10 @@
     box-sizing: border-box;
     padding: 28px 20px 22px;
     background-color: var(--tsc-mobile-footer-bg);
-    background-image: var(--tsc-mobile-footer-texture), var(--tsc-mobile-footer-bg-image);
-    background-position: center center, center center;
-    background-repeat: repeat, no-repeat;
-    background-size: 300px 225px, cover;
+    background-image: var(--tsc-mobile-footer-bg-image);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
     color: var(--tsc-mobile-footer-fg);
     font-family: var(--tsc-mobile-footer-font-ref);
     position: relative;
@@ -168,6 +169,7 @@
     --tsc-mobile-footer-button-bg: #ffecd1;
     --tsc-mobile-footer-button-fg: #08525f;
     --tsc-mobile-footer-logo-fg: #08525f;
+    --tsc-mobile-footer-texture-opacity: 0;
     --tsc-mobile-footer-bg-image:
       radial-gradient(circle at 93.70498657226562% 63.596420288085945%, #08525F 0%, 47.06400000000001%, rgba(8,82,95,0) 74%),
       radial-gradient(circle at 12.373097737630207% 43.813374837239586%, #FFECD1 0%, 31.62%, rgba(255,236,209,0) 62%),
@@ -242,13 +244,23 @@
   }
 
   .tsc-mobile-footer::before {
+    background-image: var(--tsc-mobile-footer-texture);
+    background-position: center center;
+    background-repeat: repeat;
+    background-size: 300px 225px;
     content: "";
-    display: none;
+    display: block;
+    inset: 0;
+    opacity: var(--tsc-mobile-footer-texture-opacity);
+    pointer-events: none;
+    position: absolute;
+    z-index: 0;
   }
 
   .tsc-mobile-footer-brand {
     display: block;
     position: relative;
+    z-index: 1;
     width: var(--tsc-footer-logo-w, 148px);
     height: var(--tsc-footer-logo-h, 61px);
     margin: 0 0 16px;
@@ -350,6 +362,8 @@
   .tsc-mobile-footer-acc {
     border-top: 1px solid var(--tsc-mobile-footer-rule);
     margin: 0;
+    position: relative;
+    z-index: 1;
   }
 
   .tsc-mobile-footer-acc summary {
@@ -405,6 +419,8 @@
   .tsc-mobile-footer-news {
     border-top: 1px solid var(--tsc-mobile-footer-rule);
     padding: 16px 0 4px;
+    position: relative;
+    z-index: 1;
   }
 
   .tsc-mobile-footer-news h4 {
@@ -476,6 +492,8 @@
     padding: 16px 0 10px;
     border-top: 1px solid var(--tsc-mobile-footer-rule);
     margin-top: 12px;
+    position: relative;
+    z-index: 1;
   }
 
   .tsc-mobile-footer-icon {
@@ -520,6 +538,8 @@
     font-size: 11px;
     line-height: 1.4;
     opacity: 0.9;
+    position: relative;
+    z-index: 1;
   }
 
   .tsc-mobile-footer-bottom > span {

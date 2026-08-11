@@ -12,6 +12,23 @@ async function waitForRender(page) {
   }, { timeout: 60000 });
 }
 
+async function visibleLinkFor(page, destination) {
+  const links = await page.$$(`a[href="${destination}"]`);
+  for (const link of links) {
+    const visible = await link.evaluate(node => {
+      const rect = node.getBoundingClientRect();
+      const style = window.getComputedStyle(node);
+      return rect.width > 1 &&
+        rect.height > 1 &&
+        style.display !== 'none' &&
+        style.visibility !== 'hidden' &&
+        Number(style.opacity || 1) !== 0;
+    });
+    if (visible) return link;
+  }
+  return null;
+}
+
 async function main() {
   const browser = await puppeteer.launch({
     headless: true,
@@ -24,7 +41,7 @@ async function main() {
     for (const destination of destinations) {
       await page.goto(`${baseUrl}/`, { waitUntil: 'domcontentloaded', timeout: 60000 });
       await waitForRender(page);
-      const link = await page.$(`a[href="${destination}"]`);
+      const link = await visibleLinkFor(page, destination);
       if (!link) throw new Error(`Missing navigation link for ${destination}`);
       await link.click();
       try {

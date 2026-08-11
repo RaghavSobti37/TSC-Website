@@ -15,7 +15,7 @@
     {
       "page": "affiliate",
       "manifest": "/assets/pages/affiliate/manifest.json",
-      "assets": 3,
+      "assets": 117,
       "missing": 0
     },
     {
@@ -100,7 +100,7 @@
       "page": "hanuman-ansh-impact",
       "manifest": "/assets/pages/hanuman-ansh-impact/manifest.json",
       "assets": 1,
-      "missing": 1
+      "missing": 0
     },
     {
       "page": "hanuman-ansh",
@@ -142,7 +142,7 @@
       "page": "kalki-impact",
       "manifest": "/assets/pages/kalki-impact/manifest.json",
       "assets": 1,
-      "missing": 1
+      "missing": 0
     },
     {
       "page": "kalki",
@@ -172,7 +172,7 @@
       "page": "mahavatar-narsimha-impact",
       "manifest": "/assets/pages/mahavatar-narsimha-impact/manifest.json",
       "assets": 1,
-      "missing": 1
+      "missing": 0
     },
     {
       "page": "mahavatar-narsimha",
@@ -267,7 +267,7 @@
     {
       "page": "yugm",
       "manifest": "/assets/pages/yugm/manifest.json",
-      "assets": 123,
+      "assets": 121,
       "missing": 7
     }
   ]

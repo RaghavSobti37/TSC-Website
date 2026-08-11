@@ -210,6 +210,14 @@ function ensurePageScript(html, src) {
   return html.replace('</body>', `<script src="${src}" defer></script>\n</body>`);
 }
 
+function ensureHeadScript(html, src) {
+  if (html.includes(`src="${src}"`) || html.includes(`src='${src}'`)) return html;
+  if (html.includes('</head>')) {
+    return html.replace('</head>', `<script src="${src}"></script>\n</head>`);
+  }
+  return ensurePageScript(html, src);
+}
+
 for (const file of htmlFiles) {
   let html = fs.readFileSync(file, 'utf8');
   const relativeFile = path.relative(publicDir, file).replace(/\\/g, '/');
@@ -223,11 +231,6 @@ for (const file of htmlFiles) {
     'the-heart-of-composition/index.html',
     'roots-of-hindustani-classical/index.html',
   ].includes(relativeFile);
-  const strippedHtml = isFilmsPage ? removeSectionById(html, 'comp-mqmh352i') : html;
-  if (strippedHtml !== html) {
-    fs.writeFileSync(file, strippedHtml, 'utf8');
-    html = strippedHtml;
-  }
   if (isFilmsPage) {
     html = html.replace(/\s*<script\s+src=["']\/js\/tsc-films-page\.js(?:\?[^"']*)?["']\s+defer><\/script>/g, '');
     const scriptedHtml = ensurePageScript(html, '/js/pages/films.animations.js');
@@ -282,6 +285,16 @@ for (const file of htmlFiles) {
     process.exit(1);
   }
   if (routePath) {
+    const guardedHtml = ensureHeadScript(html, '/js/tsc-wix-animation-runtime.js?v=range-guard-1');
+    if (guardedHtml !== html) {
+      fs.writeFileSync(file, guardedHtml, 'utf8');
+      html = guardedHtml;
+    }
+    const motionMappedHtml = ensureHeadScript(html, '/js/tsc-wix-authored-motion.js?v=payload-map-1');
+    if (motionMappedHtml !== html) {
+      fs.writeFileSync(file, motionMappedHtml, 'utf8');
+      html = motionMappedHtml;
+    }
     const requestUrl = `"requestUrl":"${productionOrigin.replace(/\//g, '\\/')}${(routePath === '/' ? '/' : routePath).replace(/\//g, '\\/')}"`;
     if (!html.includes(requestUrl)) {
       console.error(`Invalid canonical runtime URL found in ${relativeFile}`);

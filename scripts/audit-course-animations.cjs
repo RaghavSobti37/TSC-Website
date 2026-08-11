@@ -65,7 +65,7 @@ async function auditRoute(page, spec) {
     const contentReplacements = !!document.querySelector('script[src*="content-replacements.js"]');
     if (!pageScript) issues.push(`missing page animation script ${expectedScript}`);
     if (!wixMotion) issues.push('missing tsc-wix-motion.js');
-    if (!reveal) issues.push('missing tsc-animations.js');
+    if (reveal) issues.push('custom reveal script should not load on course pages');
     if (!contentReplacements) issues.push('missing content-replacements.js');
     if (!new RegExp(routeSpec.mentor.source, 'i').test(bodyText)) {
       issues.push(`missing mentor copy ${routeSpec.mentor.source}`);

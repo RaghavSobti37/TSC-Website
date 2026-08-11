@@ -451,7 +451,9 @@ url("/assets/mirror/static.wixstatic.com/ufonts/834fa9_d08c6fe9ca9b47ccb21ecdcb7
 #comp-mqtpn2877,
 #comp-mqtpn2854,
 #comp-mqtpn27z,
-[id^="comp-mqtpn27"] {
+[id^="comp-mqtpn27"],
+#comp-mqutenq5,
+[id^="comp-mqutenq"] {
   display: none !important;
   width: 0 !important;
   min-width: 0 !important;
@@ -464,7 +466,7 @@ url("/assets/mirror/static.wixstatic.com/ufonts/834fa9_d08c6fe9ca9b47ccb21ecdcb7
   pointer-events: none !important;
 }
 
-/* Visible roster: Yugm + Mohit centered like locked desktop cards */
+/* Visible roster: Yugm centered like the locked desktop card */
 #comp-mqutig8q {
   justify-self: center !important;
   margin-left: auto !important;

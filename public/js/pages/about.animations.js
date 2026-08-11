@@ -152,16 +152,19 @@ window.__pageRevealPromise && window.__pageRevealPromise.then(function() {
 (function () {
   var TITLE_ID = 'comp-mr355d93';
   var STYLE_ID = 'tsc-about-build-scroll-style';
-  /* ponytail: Films/Originals sections removed from about.html — keep Artists/Academy/Artist Path only */
   var SECTION_IDS = [
     'comp-mr38xqqo',
     'comp-mr3axlwa',
-    'comp-mr3fzsjq'
+    'comp-mr3hvomh',
+    'comp-mr3fzsjq',
+    'comp-mr3hkny1'
   ];
   var CARD_IDS = {
     'comp-mr38xqqo': 'comp-mr3ifogb',
     'comp-mr3axlwa': 'comp-mr3axlxx',
-    'comp-mr3fzsjq': 'comp-mr3fzskh1'
+    'comp-mr3hvomh': 'comp-mr3hvona',
+    'comp-mr3fzsjq': 'comp-mr3fzskh1',
+    'comp-mr3hkny1': 'comp-mr3hknyr'
   };
   var TITLE_TOP = 40;
   var CARD_TOP = 295;

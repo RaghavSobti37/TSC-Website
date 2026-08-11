@@ -3,7 +3,7 @@
   "html": "/pages/affiliate.html",
   "css": "/css/pages/affiliate.css",
   "animations": "/js/pages/affiliate.animations.js",
-  "generatedAt": "2026-08-10T11:16:54.016Z",
+  "generatedAt": "2026-08-11T10:02:53.267Z",
   "totals": {
     "assets": 3,
     "missing": 0
@@ -12,11 +12,11 @@
     "images": [
       {
         "type": "images",
-        "url": "/assets/mirror/static.wixstatic.com/media/19f989_9c70d1615227488dbbf761995637df24~mv2.jpg/v1/fill/w_860,h_860,fp_0.37_0.40,q_88,usm_0.66_1.00_0.01,enc_avif,quality_auto/2.jpg",
+        "url": "/assets/mirror/static.wixstatic.com/media/19f989_5cab5667eba246c1b70c62b2d76061a1~mv2.jpg/v1/crop/x_0,y_311,w_965,h_780/fill/w_860,h_860,fp_0.50_0.50,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/19f989_5cab5667eba246c1b70c62b2d76061a1~mv2.jpg",
         "local": {
           "exists": true,
-          "path": "/assets/mirror/static.wixstatic.com/original-media/19f989_9c70d1615227488dbbf761995637df24~mv2.jpg",
-          "bytes": 89771
+          "path": "/assets/mirror/static.wixstatic.com/original-media/19f989_5cab5667eba246c1b70c62b2d76061a1~mv2.jpg",
+          "bytes": 76907
         }
       },
       {
@@ -36,7 +36,7 @@
         "local": {
           "exists": true,
           "path": "/css/pages/affiliate.css",
-          "bytes": 10313
+          "bytes": 10376
         }
       }
     ]

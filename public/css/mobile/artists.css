@@ -20,9 +20,11 @@
     box-sizing: border-box !important;
   }
 
-  /* Harshaduhita roster card commented out; Mohit Shankar stays visible. */
+  /* Harshaduhita and Mohit Shankar roster cards are hidden for now. */
   body[data-page="artists"] #comp-mqtpn27i,
-  body[data-page="artists"] [id^="comp-mqtpn27"] {
+  body[data-page="artists"] [id^="comp-mqtpn27"],
+  body[data-page="artists"] #comp-mqutenq5,
+  body[data-page="artists"] [id^="comp-mqutenq"] {
     display: none !important;
     width: 0 !important;
     min-width: 0 !important;

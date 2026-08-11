@@ -389,6 +389,19 @@
       { root: '#comp-mqmi8sui', href: '/kalki-impact', title: 'Kalki' }
     ];
 
+    function isModifiedClick(event) {
+      return event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey;
+    }
+
+    function openImpactReport(event, href) {
+      if (event) {
+        event.preventDefault();
+        event.stopPropagation();
+        if (typeof event.stopImmediatePropagation === 'function') event.stopImmediatePropagation();
+      }
+      window.location.href = href;
+    }
+
     cards.forEach(function (card) {
       var root = document.querySelector(card.root);
       if (!root) return;
@@ -413,13 +426,12 @@
       if (root.getAttribute('data-tsc-film-report-wired') === 'true') return;
       root.setAttribute('data-tsc-film-report-wired', 'true');
       root.addEventListener('click', function (event) {
-        if (event.defaultPrevented) return;
-        window.location.assign(card.href);
-      });
+        if (event.defaultPrevented || isModifiedClick(event)) return;
+        openImpactReport(event, card.href);
+      }, true);
       root.addEventListener('keydown', function (event) {
         if (event.key !== 'Enter' && event.key !== ' ') return;
-        event.preventDefault();
-        window.location.assign(card.href);
+        openImpactReport(event, card.href);
       });
     });
   }
@@ -2065,200 +2077,26 @@
     header.setAttribute('data-tsc-brand-locked', '1');
   }
 
-  /* About hero shankha: Wix vector is thin fragments + giant frame. Swap to brand mark. */
+  /* About hero shankha: keep Wix's original vector frame so authored motion stays aligned. */
   function fixAboutHeroShellViewBox() {
     var host = document.getElementById('comp-mr1ttkgk');
-    if (!host || host.dataset.tscShellFixed === '1') return;
-    host.innerHTML =
-      '<img class="tsc-about-shankha" src="/assets/brand/tsc-shankha-cream.png" alt="" width="140" height="140" decoding="async" aria-hidden="true">';
+    if (!host) return;
     host.dataset.tscShellFixed = '1';
   }
 
-  function repairArtistsRosterCards(path) {
-    if (path !== '/artists') return;
-
-    var mohitHref = '/mohit-shankar';
-    var mohitImage = '/assets/mirror/static.wixstatic.com/media/19f989_e1540fdd865d4f11a8e9ce58f7481893~mv2.png/v1/crop/x_0,y_110,w_912,h_746/fill/w_517,h_492,fp_0.50_0.50,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/12_edited_edited.png';
-    var mohitBio = 'A singer, composer and live performer building heartfelt contemporary Indian music through intimate songwriting and stage-ready storytelling.';
-    var existingMohit = document.getElementById('comp-mqutenq5');
-
-    if (!existingMohit) {
-      var yugm = document.getElementById('comp-mqtq8rsp');
-      var carousel = document.getElementById('comp-mqutig8q');
-      if (yugm && carousel) {
-        existingMohit = yugm.cloneNode(true);
-        [
-          ['mqtq8rsp', 'mqutenq5'],
-          ['mqtq8rsv', 'mqutenqa'],
-          ['mqtq8rsw7', 'mqutenqc3'],
-          ['mqtq8rt05', 'mqutenqg1'],
-          ['mqtq8rt23', 'mqutenqi'],
-          ['mqtq8rt44', 'mqutenqk'],
-          ['mqtq8rt66', 'mqutenqm']
-        ].forEach(function (pair) {
-          var from = pair[0];
-          var to = pair[1];
-          Array.prototype.forEach.call(existingMohit.querySelectorAll('[id*="' + from + '"], [class*="' + from + '"]'), function (node) {
-            if (node.id) node.id = node.id.replace(new RegExp(from, 'g'), to);
-            if (node.className && typeof node.className === 'string') {
-              node.className = node.className.replace(new RegExp(from, 'g'), to);
-            }
-          });
-          if (existingMohit.id) existingMohit.id = existingMohit.id.replace(new RegExp(from, 'g'), to);
-          if (existingMohit.className && typeof existingMohit.className === 'string') {
-            existingMohit.className = existingMohit.className.replace(new RegExp(from, 'g'), to);
-          }
-        });
-        carousel.appendChild(existingMohit);
-      }
-    }
-
-    if (!existingMohit) return;
-    existingMohit.removeAttribute('aria-hidden');
-    existingMohit.style.removeProperty('display');
-    existingMohit.style.removeProperty('height');
-    existingMohit.style.removeProperty('max-height');
-    existingMohit.style.removeProperty('visibility');
-    existingMohit.style.removeProperty('opacity');
-    existingMohit.style.setProperty('opacity', '1', 'important');
-
-    var yugmCard = document.getElementById('comp-mqtq8rsp');
-    if (yugmCard) {
-      yugmCard.removeAttribute('aria-hidden');
-      yugmCard.style.setProperty('opacity', '1', 'important');
-      yugmCard.style.removeProperty('visibility');
-    }
-
-    var name = existingMohit.querySelector('#comp-mqutenqi, .comp-mqutenqi');
-    if (name) name.textContent = 'Mohit Shankar';
-    var bio = existingMohit.querySelector('#comp-mqutenqk, .comp-mqutenqk');
-    if (bio) bio.textContent = mohitBio;
-    var img = existingMohit.querySelector('img');
-    if (img) {
-      img.src = mohitImage;
-      img.alt = 'Mohit Shankar';
-      img.removeAttribute('srcset');
-      img.loading = 'lazy';
-      img.style.objectFit = 'cover';
-      img.style.objectPosition = '50% 50%';
-    }
-    Array.prototype.forEach.call(existingMohit.querySelectorAll('a[href], [data-testid="linkElement"]'), function (link) {
-      link.setAttribute('href', mohitHref);
-      link.setAttribute('target', '_self');
-      link.removeAttribute('rel');
-      if ((link.textContent || '').replace(/\s+/g, ' ').trim() === 'Learn More') {
-        link.setAttribute('aria-label', 'Learn More');
-      }
-    });
-  }
-
-  function setArtistButtonLink(control, href) {
-    if (!control || !href) return;
-    if (control.tagName && control.tagName.toLowerCase() === 'a') {
-      control.setAttribute('href', href);
-      control.setAttribute('target', '_self');
-      return;
-    }
-    var anchor = control.querySelector && control.querySelector('a[href], [data-testid="linkElement"]');
-    if (anchor) {
-      anchor.setAttribute('href', href);
-      anchor.setAttribute('target', '_self');
-    }
-  }
-
-  function replaceExactText(oldValue, newValue) {
-    if (!oldValue || !newValue) return;
-    Array.prototype.forEach.call(document.querySelectorAll('[data-testid="richTextElement"], h1, h2, h3, p, span, a, button'), function (node) {
-      var text = (node.textContent || '').replace(/\s+/g, ' ').trim();
-      if (text !== oldValue) return;
-      node.textContent = newValue;
-      if (node.setAttribute && node.getAttribute('aria-label') === oldValue) {
-        node.setAttribute('aria-label', newValue);
-      }
-    });
-  }
-
-  function repairArtistProfilePage(path) {
-    var profiles = {
-      '/mohit-shankar': {
-        title: 'Mohit Shankar',
-        description: 'A singer, composer and live performer building heartfelt contemporary Indian music through intimate songwriting and stage-ready storytelling.',
-        badge: 'TSC Artist',
-        bookHref: '/query?artist=Mohit%20Shankar',
-        image: '/assets/mirror/static.wixstatic.com/media/19f989_e1540fdd865d4f11a8e9ce58f7481893~mv2.png/v1/crop/x_0,y_110,w_912,h_746/fill/w_880,h_701,fp_0.50_0.50,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/12_edited_edited.png',
-        replacements: [
-          ['Harshaduhita Collective', 'Mohit Shankar'],
-          ['A live music duo blending deep-rooted Indian classical music with divine emotion and diverse musical expression.', 'A singer, composer and live performer building heartfelt contemporary Indian music through intimate songwriting and stage-ready storytelling.'],
-          ['Winner - PADMA SHRI MAHENDRA KAPOOR AWARD 2026', 'TSC Artist'],
-          ['Winner - PADMA SHRI MAHENDRA KAPOOR AWARD 2026\u00a0', 'TSC Artist'],
-          ['Who Are We?', 'Who Is Mohit?'],
-          ['Deep Rooted \u2022 Divine \u2022 Diverse', 'Singer \u2022 Composer \u2022 Performer'],
-          ['Rooted in the traditions of the Rampur and Jaipur Gharanas, Harshad and Duhita bring together bhajans, sufi, folk, ghazals, and contemporary live arrangements into one emotionally powerful performance experience.', 'Mohit brings intimate songwriting, contemporary Indian melodies and a live performance instinct into music shaped for audiences, stages and digital-first discovery.'],
-          ['Duhita Golesar', 'Original Music'],
-          ['Raised in a family steeped in classical recordings, she is a University of Mumbai Gold Medalist, trained in the Jaipur Gharana, and a successful playback singer for films like Navra Maza Navsacha 2.', 'His work moves between composed releases, live performance and artist-led storytelling, keeping melody and emotional clarity at the centre.'],
-          ['Harshad Golesar', 'Live Performance'],
-          ['Hailing from a 12th-generation temple lineage, he is a Sangeet Visharad trained in the Rampur Gharana and a MiMa award-winning composer.', 'On stage, Mohit builds a warm, direct connection with listeners through voice, arrangement and presence.'],
-          ['Together, they create a sound that feels deeply rooted yet contemporary.', 'Mohit creates music that feels personal, present and built to travel.']
-        ]
-      },
-      '/yugm': {
-        title: 'YUGM',
-        description: 'A bridge between tradition and transformation.',
-        badge: 'Netflix Spotlight - Mismatched Season 2 & 3',
-        bookHref: '/query?artist=YUGM'
-      },
-      '/harshad-duhita': {
-        title: 'Harshaduhita Collective',
-        description: 'A live music duo blending deep-rooted Indian classical music with divine emotion and diverse musical expression.',
-        badge: 'Winner - PADMA SHRI MAHENDRA KAPOOR AWARD 2026',
-        bookHref: '/query?artist=Harshad%20and%20Duhita%20Golesar'
-      }
-    };
-    var config = profiles[path];
-    if (!config) return;
-    if (config.replacements) {
-      config.replacements.forEach(function (pair) {
-        replaceExactText(pair[0], pair[1]);
-      });
-    }
-
-    var main = document.querySelector('main');
-    if (!main) return;
-    var hero = Array.prototype.find.call(main.querySelectorAll('section'), function (section) {
-      var text = (section.textContent || '').replace(/\s+/g, ' ');
-      return /Book for Events/i.test(text) && /Explore Music/i.test(text);
-    });
-    if (!hero) return;
-    var title = hero.querySelector('h1, h2');
-    if (title) title.textContent = config.title;
-    var richText = Array.prototype.slice.call(hero.querySelectorAll('[data-testid="richTextElement"]'));
-    var description = richText.find(function (node) {
-      var text = (node.textContent || '').replace(/\s+/g, ' ').trim();
-      return text && text !== config.title && !/book for events|explore music/i.test(text);
-    });
-    if (description) description.textContent = config.description;
-    var badge = richText.find(function (node) {
-      return /winner|award|spotlight|tsc artist/i.test(node.textContent || '');
-    });
-    if (badge) badge.textContent = config.badge;
-    if (config.image) {
-      Array.prototype.slice.call(hero.querySelectorAll('img')).slice(0, 2).forEach(function (img) {
-        img.src = config.image;
-        img.alt = config.title;
-        img.removeAttribute('srcset');
-        img.loading = 'eager';
-        img.style.objectFit = 'cover';
-        img.style.objectPosition = '50% 50%';
-      });
-    }
-    Array.prototype.forEach.call(hero.querySelectorAll('[data-testid="linkElement"], a, [role="button"]'), function (button) {
-      var text = (button.textContent || button.getAttribute('aria-label') || '').replace(/\s+/g, ' ').trim();
-      if (/book for events/i.test(text)) setArtistButtonLink(button, config.bookHref);
-      if (/explore music/i.test(text)) setArtistButtonLink(button, path);
-    });
-  }
-
   function mountDesktopHeader(opts) {
+    if (document.body && document.body.dataset && document.body.dataset.page === 'about') {
+      var aboutDesktopHeader = document.querySelector('.tsc-desktop-site-header');
+      if (aboutDesktopHeader && aboutDesktopHeader.parentNode) aboutDesktopHeader.parentNode.removeChild(aboutDesktopHeader);
+      document.querySelectorAll('.tsc-legacy-header, .tsc-locked-desktop-header-hidden').forEach(function (node) {
+        node.classList.remove('tsc-legacy-header', 'tsc-locked-desktop-header-hidden');
+        node.removeAttribute('aria-hidden');
+      });
+      document.querySelectorAll('[data-tsc-locked-desktop-header="true"]').forEach(function (node) {
+        node.removeAttribute('data-tsc-locked-desktop-header');
+      });
+      return null;
+    }
     var desktop = !window.matchMedia || window.matchMedia('(min-width: 1025px)').matches;
     var existing = document.querySelector('.tsc-desktop-site-header');
     if (!desktop) {
@@ -2269,6 +2107,7 @@
     var variant = config.academy ? 'academy' : 'main';
     var activePage = opts && opts.activePage || academyActivePage(config.path);
     var forceCustomHeader = !!(opts && opts.forceCustomHeader) ||
+      !!ARTISTS_PATHS[config.path] ||
       !!document.querySelector('.report-page') ||
       !!IMPACT_PATHS[config.path];
     /* Prefer any native Wix header in DOM (even pre-layout) over injecting a second custom bar. */
@@ -2374,6 +2213,16 @@
       unmountCustomMobileChrome();
       return null;
     }
+    if (document.body && document.body.dataset && document.body.dataset.page === 'about') {
+      var aboutMobileHeader = document.querySelector('.tsc-mobile-site-header');
+      if (aboutMobileHeader && aboutMobileHeader.parentNode) aboutMobileHeader.parentNode.removeChild(aboutMobileHeader);
+      document.body.classList.remove('tsc-has-mobile-chrome');
+      document.querySelectorAll('.tsc-legacy-header').forEach(function (node) {
+        node.classList.remove('tsc-legacy-header');
+        node.removeAttribute('aria-hidden');
+      });
+      return null;
+    }
     // Tablet + phone: Wix hamburger is broken 701–1024px — use TSC chrome through 1024.
     var compact = window.matchMedia && window.matchMedia('(max-width: 1024px)').matches;
     var existing = document.querySelector('.tsc-mobile-site-header');
@@ -2463,6 +2312,19 @@
     return fallback;
   }
 
+  function scrapeFooterSvgMarkup(footer, needle, fallback) {
+    if (!footer) return fallback;
+    var selector = needle ? 'a[href*="' + needle + '"] svg' : 'svg';
+    var svg = footer.querySelector(selector);
+    if (!svg) return fallback;
+    var clone = svg.cloneNode(true);
+    clone.removeAttribute('id');
+    clone.removeAttribute('data-testid');
+    clone.setAttribute('aria-hidden', 'true');
+    clone.setAttribute('focusable', 'false');
+    return clone.outerHTML || fallback;
+  }
+
   function findLegacyFooterSections() {
     return Array.prototype.slice.call(document.querySelectorAll('.wixui-footer, section, [data-testid="section-container"]')).filter(function (section) {
       if (section.closest('.tsc-desktop-footer, .tsc-mobile-footer')) return false;
@@ -2493,11 +2355,31 @@
     return config && config.academy ? ACADEMY_FOOTER_LOGO_SRC : TSC_FOOTER_LOGO_SRC;
   }
 
-  function legacyFooterLogoMarkup(config, brandName, fallbackLogo) {
+  function scrapeFooterLogoSvgMarkup(footer) {
+    if (!footer) return '';
+    var links = Array.prototype.slice.call(footer.querySelectorAll('.wixui-vector-image a[href] svg, a[href] .wixui-vector-image svg, a[href] svg'));
+    var logo = links.find(function (svg) {
+      var href = (svg.closest('a') && svg.closest('a').getAttribute('href')) || '';
+      return href === '/' || href === '/academy' || /theshakticollective|academy/i.test(href);
+    }) || footer.querySelector('.wixui-vector-image svg');
+    if (!logo) return '';
+    var clone = logo.cloneNode(true);
+    clone.removeAttribute('id');
+    clone.removeAttribute('data-testid');
+    clone.setAttribute('aria-hidden', 'true');
+    clone.setAttribute('focusable', 'false');
+    return clone.outerHTML || '';
+  }
+
+  function legacyFooterLogoMarkup(config, brandName, sourceFooter) {
+    var svgMarkup = scrapeFooterLogoSvgMarkup(sourceFooter);
+    if (svgMarkup) return '<span class="tsc-desktop-footer-logo tsc-desktop-footer-logo-legacy" aria-hidden="true">' + svgMarkup + '</span>';
     return '<img class="tsc-desktop-footer-logo" src="' + footerLogoSrcForConfig(config) + '" alt="' + escapeHtml(brandName) + '" width="260" height="108" decoding="async">';
   }
 
-  function mobileFooterLogoMarkup(config, brandName) {
+  function mobileFooterLogoMarkup(config, brandName, sourceFooter) {
+    var svgMarkup = scrapeFooterLogoSvgMarkup(sourceFooter);
+    if (svgMarkup) return '<span class="tsc-mobile-footer-logo tsc-mobile-footer-logo-svg" aria-hidden="true">' + svgMarkup + '</span>';
     return '<img class="tsc-mobile-footer-logo" src="' + footerLogoSrcForConfig(config) + '" alt="' + escapeHtml(brandName) + '" width="180" height="74" decoding="async">';
   }
 
@@ -2582,7 +2464,7 @@
       return {
         aria: s.aria,
         href: href,
-        svg: SOCIAL_SVGS[s.id]
+        svg: scrapeFooterSvgMarkup(sourceFooter, s.needle, SOCIAL_SVGS[s.id])
       };
     });
 
@@ -2601,7 +2483,7 @@
     shell.dataset.tscComponent = 'shared-footer';
     shell.dataset.tscVariant = variant;
     shell.setAttribute('data-tsc-theme', config.academy ? 'academy' : 'dark');
-    var logoMarkup = legacyFooterLogoMarkup(config, brandName, config.brand.logo);
+    var logoMarkup = legacyFooterLogoMarkup(config, brandName, sourceFooter);
     shell.innerHTML = [
       '<div class="tsc-desktop-footer-main">',
       '<div class="tsc-desktop-footer-brandblock">',
@@ -2683,7 +2565,7 @@
       return {
         aria: s.aria,
         href: href,
-        svg: SOCIAL_SVGS[s.id]
+        svg: scrapeFooterSvgMarkup(sourceFooter, s.needle, SOCIAL_SVGS[s.id])
       };
     });
 
@@ -2699,7 +2581,7 @@
     shell.setAttribute('data-tsc-theme', config.academy ? 'academy' : 'dark');
     shell.innerHTML = [
       '<div class="tsc-mobile-footer-brand">',
-      mobileFooterLogoMarkup(config, brandName),
+      mobileFooterLogoMarkup(config, brandName, sourceFooter),
       '</div>',
       mobileGroups.map(function (group, index) {
         return '<details class="tsc-mobile-footer-acc"' + (index === 0 ? ' open' : '') + '><summary>' + escapeHtml(group[0]) + '</summary><div class="tsc-mobile-footer-links">' + group[1].map(function (link) {
@@ -3062,7 +2944,7 @@
   // Play paused Wix enter/loop motions + slideshow word-swap (all viewports).
   ensureStylesheet('/css/tsc-wix-motion.css?v=hero-word-single-1');
   ensureScript('/js/tsc-wix-motion.js?v=testimonial-slide-1');
-  ensureScript('/js/tsc-animations.js?v=desktop-reveal-1');
+  ensureScript('/js/tsc-wix-authored-motion.js?v=payload-map-1');
   function bootUi() {
     if (redirectLegacyLearnHub()) return;
     var path = canonicalPathname();
@@ -3074,8 +2956,6 @@
       mountBlogChrome(path);
       mountMobileHeader({ path: path });
       mountMobileFooter({ path: path });
-      repairArtistsRosterCards(path);
-      repairArtistProfilePage(path);
       if (isAcademyPath(path) || ACADEMY_COURSE_HREFS[path]) {
         ensureAcademyCoursesInWixMenus();
         var lockedHeader = document.querySelector('[data-tsc-locked-desktop-header="true"]');
@@ -3125,8 +3005,6 @@
     }
     mountSharedChrome();
     linkHomeClosingCtas();
-    repairArtistsRosterCards(path);
-    repairArtistProfilePage(path);
     mountHarshadDigitalPresenceLinks(path);
     mountYugmIplYearFix(path);
     mountWorkImpactLinks(path);
@@ -3142,8 +3020,6 @@
       window.setTimeout(function () {
         mountSharedChrome();
         linkHomeClosingCtas();
-        repairArtistsRosterCards(path);
-        repairArtistProfilePage(path);
         mountHarshadDigitalPresenceLinks(path);
         mountYugmIplYearFix(path);
         mountWorkImpactLinks(path);
@@ -3171,8 +3047,6 @@
         window.clearTimeout(window.__tscSharedChromeRepairTimer);
         window.__tscSharedChromeRepairTimer = window.setTimeout(function () {
           mountSharedChrome();
-          repairArtistsRosterCards(path);
-          repairArtistProfilePage(path);
           mountFilmReportCards(path);
           mountFilmBottomCtas(path);
         }, 40);

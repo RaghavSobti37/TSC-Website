@@ -66,6 +66,7 @@
 <script data-tsc-standalone-runtime>
 (function () {
   var siteRoutes = new Set(["/","/about","/work","/artists","/artist-path","/learn-with-tsc","/films","/resources","/academy"]);
+  var hardRoutes = new Set(["/mahavatar-narsimha-impact","/hanuman-ansh-impact","/mahaprabhu-jagannath-impact","/kalki-impact"]);
   var clearPlatformBadge = function () {
     var ads = document.getElementById("WIX_ADS");
     if (ads) {
@@ -80,7 +81,15 @@
     if (!target || target.target === "_blank" || target.hasAttribute("download")) return;
     var destination;
     try { destination = new URL(target.href, location.href); } catch (_) { return; }
-    if (destination.origin !== location.origin || !siteRoutes.has(destination.pathname)) return;
+    if (destination.origin !== location.origin) return;
+    if (hardRoutes.has(destination.pathname)) {
+      if (destination.pathname === location.pathname) return;
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      location.href = destination.pathname + destination.search + destination.hash;
+      return;
+    }
+    if (!siteRoutes.has(destination.pathname)) return;
     if (destination.pathname === location.pathname) return;
     event.preventDefault();
     event.stopImmediatePropagation();
@@ -919,6 +928,8 @@ url("/assets/mirror/static.wixstatic.com/ufonts/834fa9_d08c6fe9ca9b47ccb21ecdcb7
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"https://wix-site-clone-psi.vercel.app/#organization","name":"The Shakti Collective","url":"https://wix-site-clone-psi.vercel.app","description":"The Shakti Collective is a culture-first artist development ecosystem for singers, musicians, producers, storytellers, and conscious creative communities.","email":"Artist@theshakticollective.in","sameAs":["https://www.instagram.com/the_shakti_collective/","https://youtube.com/@theshakticollective","https://www.facebook.com/people/The-Shakti-Collective/61575006284507/","https://www.linkedin.com/company/theshakticollective"]}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","@id":"https://wix-site-clone-psi.vercel.app/films#webpage","url":"https://wix-site-clone-psi.vercel.app/films","name":"TSC Films | Original Stories, Music Ecosystems & Culture-First Experiences","description":"Explore films and original storytelling from The Shakti Collective, built around emotionally honest music, artists, and culture-first creative worlds.","about":{"@id":"https://wix-site-clone-psi.vercel.app/#organization"},"inLanguage":"en","dateModified":"2026-07-24"}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is The Shakti Collective?","acceptedAnswer":{"@type":"Answer","text":"The Shakti Collective is a culture-first artist development ecosystem for singers, musicians, producers, storytellers, and conscious creative communities."}},{"@type":"Question","name":"How does The Shakti Collective support artists?","acceptedAnswer":{"@type":"Answer","text":"The Shakti Collective supports artists through mentorship, learning frameworks, collaboration, storytelling, artist development systems, brand partnerships, and go-to-market guidance."}}]}</script>
+<script defer src="/js/tsc-wix-animation-runtime.js?v=range-guard-1"></script>
+<script defer src="/js/tsc-wix-authored-motion.js?v=payload-map-1"></script>
   <link rel="icon" href="/assets/brand/tsc-favicon-32.png" type="image/png" sizes="32x32">
   <link rel="apple-touch-icon" href="/assets/brand/tsc-apple-touch-icon.png" sizes="180x180">
 </head>
@@ -1851,7 +1862,7 @@ body[data-tsc-films-card-repair="true"] :is(
   align-items: center !important;
   display: grid !important;
   gap: clamp(12px, 1.7vw, 28px) !important;
-  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
   height: 100% !important;
   justify-items: start !important;
   overflow: visible !important;
@@ -1929,32 +1940,6 @@ body[data-tsc-films-card-repair="true"] :is(
   text-wrap: pretty;
   white-space: normal !important;
   word-break: normal !important;
-}
-
-body[data-tsc-films-card-repair="true"] :is(
-  #comp-mqmi3w3v3,
-  #comp-mqmi3w3x2,
-  #comp-mqmi3w3z,
-  #comp-mqmi6yny,
-  #comp-mqmi6ynz5,
-  #comp-mqmi6yo1,
-  #comp-mqmi8cxr2,
-  #comp-mqmi8cxt,
-  #comp-mqmi8cxu6,
-  #comp-mqmi8sul4,
-  #comp-mqmi8sun1,
-  #comp-mqmi8suo6
-) .wixui-rich-text__text {
-  white-space: nowrap !important;
-}
-
-body[data-tsc-films-card-repair="true"] :is(
-  #comp-mqmi3w41,
-  #comp-mqmi6yo2,
-  #comp-mqmi8cxw,
-  #comp-mqmi8suq
-) {
-  display: none !important;
 }
 
 body[data-tsc-films-card-repair="true"] :is(
@@ -2038,45 +2023,33 @@ body[data-tsc-films-card-repair="true"] :is(
     #comp-mqmi8cxq,
     #comp-mqmi8suk2
   ) [class*="-container"] {
-    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
   }
 }
 </style>
 <script id="tsc-films-card-text-repair">
 (function () {
-  /* Clone-faithful: wire impact hrefs only — do not rewrite Wix card copy. */
+  /* Keep Wix card labels compact after hydration. */
   var copy = {
     '#comp-mqmi3w3o': {
-      meta: ['Positioning', 'Promotions', 'Music'],
-      metaNodes: ['#comp-mqmi3w3v3', '#comp-mqmi3w3x2', '#comp-mqmi3w3z'],
-      hiddenMeta: '#comp-mqmi3w41',
       titleNode: '#comp-mqmi3w4k',
       title: 'Film Mounting Partner',
       tagsNode: '#comp-mqmi3w4l3',
       tags: 'Positioning | Promotions | Music'
     },
     '#comp-mqmi6ynt2': {
-      meta: ['Faith', 'Music', 'Universe'],
-      metaNodes: ['#comp-mqmi6yny', '#comp-mqmi6ynz5', '#comp-mqmi6yo1'],
-      hiddenMeta: '#comp-mqmi6yo2',
       titleNode: '#comp-mqmi6yol3',
       title: 'RAM RAM Universe',
       tagsNode: '#comp-mqmi6yom7',
       tags: 'Faith | Music | Universe'
     },
     '#comp-mqmi8cxm2': {
-      meta: ['Community', 'Outreach', 'Devotion'],
-      metaNodes: ['#comp-mqmi8cxr2', '#comp-mqmi8cxt', '#comp-mqmi8cxu6'],
-      hiddenMeta: '#comp-mqmi8cxw',
       titleNode: '#comp-mqmi8cyf',
       title: 'Devotional Launch',
       tagsNode: '#comp-mqmi8cyg2',
       tags: 'Community | Outreach | Devotion'
     },
     '#comp-mqmi8sui': {
-      meta: ['IP', 'Licensing', 'Music'],
-      metaNodes: ['#comp-mqmi8sul4', '#comp-mqmi8sun1', '#comp-mqmi8suo6'],
-      hiddenMeta: '#comp-mqmi8suq',
       titleNode: '#comp-mqmi8sv51',
       title: 'Film IP Growth',
       tagsNode: '#comp-mqmi8sv66',
@@ -2114,13 +2087,8 @@ body[data-tsc-films-card-repair="true"] :is(
   function repairCopy(rootSelector) {
     var config = copy[rootSelector];
     if (!config) return;
-    config.metaNodes.forEach(function (selector, index) {
-      setRichText(selector, config.meta[index]);
-    });
     setRichText(config.titleNode, config.title);
     setRichText(config.tagsNode, config.tags);
-    var hiddenMeta = document.querySelector(config.hiddenMeta);
-    if (hiddenMeta) hiddenMeta.setAttribute('aria-hidden', 'true');
     mainTitleNodes.forEach(forceOneLine);
   }
 
@@ -2148,14 +2116,22 @@ body[data-tsc-films-card-repair="true"] :is(
     }
     if (root.getAttribute('data-tsc-card-wired') === 'true') return;
     root.setAttribute('data-tsc-card-wired', 'true');
+    function isModifiedClick(event) {
+      return event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey;
+    }
+    function openImpactReport(event) {
+      event.preventDefault();
+      event.stopPropagation();
+      if (typeof event.stopImmediatePropagation === 'function') event.stopImmediatePropagation();
+      window.location.href = card.href;
+    }
     root.addEventListener('click', function (event) {
-      if (event.defaultPrevented || event.target.closest('a')) return;
-      window.location.assign(card.href);
-    });
+      if (event.defaultPrevented || isModifiedClick(event)) return;
+      openImpactReport(event);
+    }, true);
     root.addEventListener('keydown', function (event) {
       if (event.key !== 'Enter' && event.key !== ' ') return;
-      event.preventDefault();
-      window.location.assign(card.href);
+      openImpactReport(event);
     });
   }
 

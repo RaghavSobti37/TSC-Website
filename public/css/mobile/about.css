@@ -20,9 +20,12 @@
   #comp-mr1ychhq,
   #comp-mr38xqqo,
   #comp-mr3axlwa,
+  #comp-mr3hvomh,
   #comp-mr3fzsjq,
+  #comp-mr3hkny1,
   #comp-mr3iatty,
-  #comp-mr3si7hw {
+  #comp-mr3si7hw,
+  #comp-mr3smd70 {
     height: auto !important;
     min-height: 0 !important;
     overflow: visible !important;
@@ -1432,10 +1435,6 @@
     padding-bottom: 40px !important;
   }
 
-  /* Hide empty spacer under cards if present */
-  #comp-mr3smd70 {
-    display: none !important;
-  }
 }
 
 /* Final shared mobile skin for all What We Build information cards.

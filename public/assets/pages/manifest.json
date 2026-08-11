@@ -205,6 +205,12 @@
       "missing": 0
     },
     {
+      "page": "mohit-shankar",
+      "manifest": "/assets/pages/mohit-shankar/manifest.json",
+      "assets": 48,
+      "missing": 0
+    },
+    {
       "page": "music-production",
       "manifest": "/assets/pages/music-production/manifest.json",
       "assets": 125,

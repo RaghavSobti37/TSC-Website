@@ -16,14 +16,6 @@
       bio: 'comp-mqtq8rt44',
       btn: 'comp-mqtq8rt66',
       href: '/yugm'
-    },
-    {
-      root: 'comp-mqutenq5',
-      img: 'comp-mqutenqa',
-      name: 'comp-mqutenqi',
-      bio: 'comp-mqutenqk',
-      btn: 'comp-mqutenqm',
-      href: '/mohit-shankar'
     }
   ];
 

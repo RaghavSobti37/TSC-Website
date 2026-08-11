@@ -474,3 +474,23 @@ url("/assets/mirror/static.wixstatic.com/ufonts/834fa9_d08c6fe9ca9b47ccb21ecdcb7
 #WIX_ADS{display:none!important;height:0!important;max-height:0!important;min-height:0!important;opacity:0!important;overflow:hidden!important;pointer-events:none!important;visibility:hidden!important;}
 #site-root{top:0!important;}
 #comp-mqhqa6y3{opacity:1!important;--comp-opacity:1!important;}
+
+/* Desktop Yugm profile: use the authored Yugm hero and keep the stale copied hero out of flow. */
+body[data-page="yugm"] #comp-mqhqa6vo {
+  display: none !important;
+  height: 0 !important;
+  min-height: 0 !important;
+  overflow: hidden !important;
+}
+
+body[data-page="yugm"] #comp-mqhqa6xg {
+  grid-area: 1 / 1 / 2 / 2 !important;
+  height: clamp(820px, 92svh, 960px) !important;
+  min-height: clamp(820px, 92svh, 960px) !important;
+  overflow: hidden !important;
+}
+
+body[data-page="yugm"] #comp-mqhqa6xg .comp-mqhqa6xg-container {
+  height: 100% !important;
+  min-height: 100% !important;
+}

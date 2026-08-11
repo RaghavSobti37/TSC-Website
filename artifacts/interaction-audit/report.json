@@ -1,279 +1,804 @@
 {
-  "generatedAt": "2026-07-25T08:08:49.179Z",
-  "target": "https://wix-site-clone-psi.vercel.app",
+  "generatedAt": "2026-08-11T10:14:35.084Z",
+  "target": "http://127.0.0.1:3100",
   "passed": true,
   "results": [
     {
-      "route": "home",
-      "url": "https://wix-site-clone-psi.vercel.app/",
+      "route": "about",
+      "url": "http://127.0.0.1:3100/about",
       "passed": true,
       "mountFinished": true,
       "clientRenderFinished": true,
       "authored": {
         "hoverTests": [
           {
-            "sourceId": "comp-mrlr0ide",
-            "targetId": "comp-mrlrm6bo",
+            "sourceId": "comp-mr355d93",
+            "targetId": "comp-mr355d93",
             "stateNames": [
-              "variants-mrltykzx"
+              "variants-mr35a1tt"
             ]
           },
           {
-            "sourceId": "comp-mrlrorgn",
-            "targetId": "comp-mrlrorgr",
+            "sourceId": "comp-mr1wvwvr",
+            "targetId": "comp-mr1wvwvx2",
             "stateNames": [
-              "variants-mrltz4wi"
+              "variants-mr1wvwvx3"
             ]
           },
           {
-            "sourceId": "comp-mrlrqzuf",
-            "targetId": "comp-mrlrqzui",
+            "sourceId": "comp-mr1wvwym",
+            "targetId": "comp-mr1wvwys2",
             "stateNames": [
-              "variants-mrltzhk21"
+              "variants-mr1wvwys3"
             ]
           },
           {
-            "sourceId": "comp-kbgakxmn_r_comp-mrsrn7dh",
-            "targetId": "comp-kbgakxmn_r_comp-mrsrn7dh",
+            "sourceId": "comp-mr1wvwst",
+            "targetId": "comp-mr1wvwt1",
             "stateNames": [
-              "comp-kbgakxmn_r_variants-mrst53iu"
+              "variants-mr1wvwt11"
             ]
           },
           {
-            "sourceId": "comp-kbgakxmn_r_comp-mrsrmk22",
-            "targetId": "comp-kbgakxmn_r_comp-mrsrmk22",
+            "sourceId": "comp-mr1wvwpv",
+            "targetId": "comp-mr1wvwqh",
             "stateNames": [
-              "comp-kbgakxmn_r_variants-mrst6mny"
+              "variants-mr1wvwqh1"
             ]
           },
           {
-            "sourceId": "comp-kbgakxmn_r_comp-mrsrlyv2",
-            "targetId": "comp-kbgakxmn_r_comp-mrsrlyv2",
+            "sourceId": "comp-mp2vlkda_r_comp-mrsrn7dh",
+            "targetId": "comp-mp2vlkda_r_comp-mrsrn7dh",
             "stateNames": [
-              "comp-kbgakxmn_r_variants-mrst74mc"
+              "comp-mp2vlkda_r_variants-mrst53iu"
             ]
           },
           {
-            "sourceId": "comp-kbgakxmn_r_comp-mrsrnf35",
-            "targetId": "comp-kbgakxmn_r_comp-mrsrnf35",
+            "sourceId": "comp-mp2vlkda_r_comp-mrsrmk22",
+            "targetId": "comp-mp2vlkda_r_comp-mrsrmk22",
             "stateNames": [
-              "comp-kbgakxmn_r_variants-mrst7nl2"
+              "comp-mp2vlkda_r_variants-mrst6mny"
             ]
           },
           {
-            "sourceId": "comp-kbgakxmn_r_comp-mrsrmzjv",
-            "targetId": "comp-kbgakxmn_r_comp-mrsrmzjv",
+            "sourceId": "comp-mp2vlkda_r_comp-mrsrlyv2",
+            "targetId": "comp-mp2vlkda_r_comp-mrsrlyv2",
             "stateNames": [
-              "comp-kbgakxmn_r_variants-mrst86i8"
+              "comp-mp2vlkda_r_variants-mrst74mc"
             ]
           },
           {
-            "sourceId": "comp-kbgakxmn_r_comp-mrsro01g",
-            "targetId": "comp-kbgakxmn_r_comp-mrsro01g",
+            "sourceId": "comp-mp2vlkda_r_comp-mrsrnf35",
+            "targetId": "comp-mp2vlkda_r_comp-mrsrnf35",
             "stateNames": [
-              "comp-kbgakxmn_r_variants-mrst8po6"
+              "comp-mp2vlkda_r_variants-mrst7nl2"
+            ]
+          },
+          {
+            "sourceId": "comp-mp2vlkda_r_comp-mrsrmzjv",
+            "targetId": "comp-mp2vlkda_r_comp-mrsrmzjv",
+            "stateNames": [
+              "comp-mp2vlkda_r_variants-mrst86i8"
+            ]
+          },
+          {
+            "sourceId": "comp-mp2vlkda_r_comp-mrsro01g",
+            "targetId": "comp-mp2vlkda_r_comp-mrsro01g",
+            "stateNames": [
+              "comp-mp2vlkda_r_variants-mrst8po6"
             ]
           }
         ],
-        "viewportTriggers": 5,
-        "progressTriggers": 1
+        "viewportTriggers": 13,
+        "progressTriggers": 14
       },
       "observed": {
         "namedMotion": [
           {
             "name": "motion-fadeIn",
-            "target": "comp-mrgcdx8y",
+            "target": "comp-mr1ttkgk",
             "duration": 1400
           },
           {
             "name": "motion-blurIn",
-            "target": "comp-mrgcdx8y",
+            "target": "comp-mr1ttkgk",
             "duration": 2000
           },
           {
             "name": "motion-fadeIn",
-            "target": "comp-mrgd8bb6",
+            "target": "comp-mr1tvuqc",
             "duration": 1400
           },
           {
             "name": "motion-blurIn",
-            "target": "comp-mrgd8bb6",
+            "target": "comp-mr1tvuqc",
             "duration": 2000
           },
           {
-            "name": "motion-fadeIn",
-            "target": "comp-mrg8g77c__item-mp3ozw9b",
-            "duration": 1200
-          },
-          {
-            "name": "motion-flipIn",
-            "target": "comp-mrg8g77c__item-mp3ozw9b",
+            "name": "motion-slideIn",
+            "target": "comp-mr1tv44l",
             "duration": 1200
           },
           {
             "name": "motion-fadeIn",
-            "target": "comp-mrg8g77k6__item-mp3ozw9b",
+            "target": "comp-mr1tv44l",
+            "duration": 1200
+          },
+          {
+            "name": "motion-slideIn",
+            "target": "comp-mr1y8j19",
             "duration": 1200
           },
           {
             "name": "motion-fadeIn",
-            "target": "comp-mrg8g77c__item-mrg8jnrt",
+            "target": "comp-mr1y8j19",
             "duration": 1200
           },
           {
-            "name": "motion-flipIn",
-            "target": "comp-mrg8g77c__item-mrg8jnrt",
-            "duration": 1200
-          },
-          {
-            "name": "motion-fadeIn",
-            "target": "comp-mrg8g77k6__item-mrg8jnrt",
+            "name": "motion-slideIn",
+            "target": "comp-mr1wnsbb",
             "duration": 1200
           },
           {
             "name": "motion-fadeIn",
-            "target": "comp-mrg8g77c__item-mrg8klt9",
+            "target": "comp-mr1wnsbb",
             "duration": 1200
           },
           {
-            "name": "motion-flipIn",
-            "target": "comp-mrg8g77c__item-mrg8klt9",
-            "duration": 1200
-          },
-          {
-            "name": "motion-fadeIn",
-            "target": "comp-mrg8g77k6__item-mrg8klt9",
-            "duration": 1200
-          },
-          {
-            "name": "motion-fadeIn",
-            "target": "comp-mrg8g77c__item-mrg8knii1",
-            "duration": 1200
-          },
-          {
-            "name": "motion-flipIn",
-            "target": "comp-mrg8g77c__item-mrg8knii1",
-            "duration": 1200
-          },
-          {
-            "name": "motion-fadeIn",
-            "target": "comp-mrg8g77k6__item-mrg8knii1",
-            "duration": 1200
-          },
-          {
-            "name": "motion-fadeIn",
-            "target": "comp-mrxkm2y2",
-            "duration": 1400
-          },
-          {
-            "name": "motion-blurIn",
-            "target": "comp-mrxkm2y2",
-            "duration": 2000
-          },
-          {
-            "name": "motion-breathe-1",
-            "target": "comp-mrge27je",
-            "duration": 2900
+            "name": "motion-pulse-025",
+            "target": "comp-mr35f98m",
+            "duration": 4000
           }
         ],
         "scrubMotion": [
           {
             "name": "(scrub)",
-            "target": "bgMedia_comp-mrlrzobh",
-            "duration": "auto"
+            "target": "comp-mr22tzwu",
+            "duration": 1000
           },
           {
             "name": "(scrub)",
-            "target": "comp-mrqgho75_r_comp-mrqgho3a",
+            "target": "comp-mr234332",
+            "duration": 1000
+          },
+          {
+            "name": "(scrub)",
+            "target": "comp-mr225jy2",
+            "duration": 1000
+          },
+          {
+            "name": "(scrub)",
+            "target": "comp-mr225fky",
+            "duration": 1000
+          },
+          {
+            "name": "(scrub)",
+            "target": "comp-mr225awb",
+            "duration": 1000
+          },
+          {
+            "name": "(scrub)",
+            "target": "comp-mr225543",
+            "duration": 1000
+          },
+          {
+            "name": "(scrub)",
+            "target": "comp-mr224yhj",
+            "duration": 1000
+          },
+          {
+            "name": "(scrub)",
+            "target": "comp-mr224td1",
+            "duration": 1000
+          },
+          {
+            "name": "(scrub)",
+            "target": "comp-mr224lmj",
             "duration": 1000
           }
         ],
         "hoverResults": [
           {
-            "sourceId": "comp-mrlr0ide",
-            "targetId": "comp-mrlrm6bo",
+            "sourceId": "comp-mr355d93",
+            "targetId": "comp-mr355d93",
             "stateNames": [
-              "variants-mrltykzx"
+              "variants-mr35a1tt"
+            ],
+            "status": "skipped",
+            "reason": "source-not-rendered-at-desktop-breakpoint"
+          },
+          {
+            "sourceId": "comp-mr1wvwvr",
+            "targetId": "comp-mr1wvwvx2",
+            "stateNames": [
+              "variants-mr1wvwvx3"
             ],
             "status": "passed",
             "changed": true,
             "stateApplied": true
           },
           {
-            "sourceId": "comp-mrlrorgn",
-            "targetId": "comp-mrlrorgr",
+            "sourceId": "comp-mr1wvwym",
+            "targetId": "comp-mr1wvwys2",
             "stateNames": [
-              "variants-mrltz4wi"
+              "variants-mr1wvwys3"
             ],
             "status": "passed",
             "changed": true,
             "stateApplied": true
           },
           {
-            "sourceId": "comp-mrlrqzuf",
-            "targetId": "comp-mrlrqzui",
+            "sourceId": "comp-mr1wvwst",
+            "targetId": "comp-mr1wvwt1",
             "stateNames": [
-              "variants-mrltzhk21"
+              "variants-mr1wvwt11"
             ],
             "status": "passed",
             "changed": true,
             "stateApplied": true
           },
           {
-            "sourceId": "comp-kbgakxmn_r_comp-mrsrlyv2",
-            "targetId": "comp-kbgakxmn_r_comp-mrsrlyv2",
+            "sourceId": "comp-mr1wvwpv",
+            "targetId": "comp-mr1wvwqh",
             "stateNames": [
-              "comp-kbgakxmn_r_variants-mrst74mc"
+              "variants-mr1wvwqh1"
             ],
             "status": "passed",
             "changed": true,
             "stateApplied": true
           },
           {
-            "sourceId": "comp-kbgakxmn_r_comp-mrsro01g",
-            "targetId": "comp-kbgakxmn_r_comp-mrsro01g",
+            "sourceId": "comp-mp2vlkda_r_comp-mrsrn7dh",
+            "targetId": "comp-mp2vlkda_r_comp-mrsrn7dh",
             "stateNames": [
-              "comp-kbgakxmn_r_variants-mrst8po6"
+              "comp-mp2vlkda_r_variants-mrst53iu"
+            ],
+            "status": "skipped",
+            "reason": "source-not-rendered-at-desktop-breakpoint"
+          },
+          {
+            "sourceId": "comp-mp2vlkda_r_comp-mrsrmk22",
+            "targetId": "comp-mp2vlkda_r_comp-mrsrmk22",
+            "stateNames": [
+              "comp-mp2vlkda_r_variants-mrst6mny"
+            ],
+            "status": "skipped",
+            "reason": "source-not-rendered-at-desktop-breakpoint"
+          },
+          {
+            "sourceId": "comp-mp2vlkda_r_comp-mrsrlyv2",
+            "targetId": "comp-mp2vlkda_r_comp-mrsrlyv2",
+            "stateNames": [
+              "comp-mp2vlkda_r_variants-mrst74mc"
+            ],
+            "status": "skipped",
+            "reason": "source-not-rendered-at-desktop-breakpoint"
+          },
+          {
+            "sourceId": "comp-mp2vlkda_r_comp-mrsrnf35",
+            "targetId": "comp-mp2vlkda_r_comp-mrsrnf35",
+            "stateNames": [
+              "comp-mp2vlkda_r_variants-mrst7nl2"
+            ],
+            "status": "skipped",
+            "reason": "source-not-rendered-at-desktop-breakpoint"
+          },
+          {
+            "sourceId": "comp-mp2vlkda_r_comp-mrsrmzjv",
+            "targetId": "comp-mp2vlkda_r_comp-mrsrmzjv",
+            "stateNames": [
+              "comp-mp2vlkda_r_variants-mrst86i8"
+            ],
+            "status": "skipped",
+            "reason": "source-not-rendered-at-desktop-breakpoint"
+          },
+          {
+            "sourceId": "comp-mp2vlkda_r_comp-mrsro01g",
+            "targetId": "comp-mp2vlkda_r_comp-mrsro01g",
+            "stateNames": [
+              "comp-mp2vlkda_r_variants-mrst8po6"
+            ],
+            "status": "skipped",
+            "reason": "source-not-rendered-at-desktop-breakpoint"
+          }
+        ]
+      },
+      "diagnostics": {
+        "pageErrors": [],
+        "requestFailures": [],
+        "consoleErrors": [
+          "suspense rendered fallback for - WIX_ADS - (FreemiumBannerResponsive_Studio)",
+          "suspense rendered fallback for - comp-mp2vlkc3_r_comp-mb5540mw - (Menu)",
+          "suspense rendered fallback for - comp-mp2vlkc3_r_comp-mp3rsqk1 - (VectorImage)",
+          "suspense rendered fallback for - comp-mp2vlkc3_r_comp-mrriywbr - (Menu)",
+          "suspense rendered fallback for - comp-mp2vlkc3_r_comp-mrriyw6n - (SiteButton_WrappingButton)",
+          "suspense rendered fallback for - comp-mp2vlkbh2",
+          "suspense rendered fallback for - comp-mr1u2p4j",
+          "suspense rendered fallback for - comp-mr1whees",
+          "suspense rendered fallback for - comp-mr1ychhq",
+          "suspense rendered fallback for - comp-mr2db8fa",
+          "suspense rendered fallback for - comp-mr38xqqo",
+          "suspense rendered fallback for - comp-mr3axlwa",
+          "suspense rendered fallback for - comp-mr3hvomh",
+          "suspense rendered fallback for - comp-mr3fzsjq",
+          "suspense rendered fallback for - comp-mr3hkny1",
+          "suspense rendered fallback for - comp-mr3iatty",
+          "suspense rendered fallback for - comp-mr3si7hw",
+          "suspense rendered fallback for - comp-mr3smd70",
+          "suspense rendered fallback for - comp-mp2vlkda_r_comp-kbgakgyt",
+          "suspense rendered fallback for - comp-mp2vlke4-pinned-layer - (PinnedLayer)",
+          "suspense rendered fallback for - comp-mp2vlkc3_r_comp-mb5540nm5 - (HamburgerOpenButton_Default)",
+          "suspense rendered fallback for - comp-mp2vlkc3_r_comp-mrriywd03 - (HamburgerOpenButton_Default)",
+          "suspense rendered fallback for - WIX_ADS - (FreemiumBannerResponsive_Studio)",
+          "suspense rendered fallback for - comp-mp2vlkc3_r_comp-mb5540mw - (Menu)",
+          "suspense rendered fallback for - comp-mp2vlkc3_r_comp-mp3rsqk1 - (VectorImage)",
+          "suspense rendered fallback for - comp-mp2vlkc3_r_comp-mrriywbr - (Menu)",
+          "suspense rendered fallback for - comp-mp2vlkc3_r_comp-mrriyw6n - (SiteButton_WrappingButton)",
+          "suspense rendered fallback for - comp-mp2vlkbh2",
+          "suspense rendered fallback for - comp-mr1u2p4j",
+          "suspense rendered fallback for - comp-mr1whees",
+          "suspense rendered fallback for - comp-mr1ychhq",
+          "suspense rendered fallback for - comp-mr2db8fa",
+          "suspense rendered fallback for - comp-mr38xqqo",
+          "suspense rendered fallback for - comp-mr3axlwa",
+          "suspense rendered fallback for - comp-mr3hvomh",
+          "suspense rendered fallback for - comp-mr3fzsjq",
+          "suspense rendered fallback for - comp-mr3hkny1",
+          "suspense rendered fallback for - comp-mr3iatty",
+          "suspense rendered fallback for - comp-mr3si7hw",
+          "suspense rendered fallback for - comp-mr3smd70",
+          "suspense rendered fallback for - comp-mp2vlkda_r_comp-kbgakgyt",
+          "suspense rendered fallback for - comp-mp2vlke4-pinned-layer - (PinnedLayer)",
+          "suspense rendered fallback for - comp-mp2vlkc3_r_comp-mb5540nm5 - (HamburgerOpenButton_Default)",
+          "suspense rendered fallback for - comp-mp2vlkc3_r_comp-mrriywd03 - (HamburgerOpenButton_Default)"
+        ]
+      }
+    },
+    {
+      "route": "work",
+      "url": "http://127.0.0.1:3100/work",
+      "passed": true,
+      "mountFinished": true,
+      "clientRenderFinished": true,
+      "authored": {
+        "hoverTests": [
+          {
+            "sourceId": "comp-mrueiu2w",
+            "targetId": "comp-mrueiu2w",
+            "stateNames": [
+              "variants-mrueiu2w1"
+            ]
+          },
+          {
+            "sourceId": "comp-mrueiu35",
+            "targetId": "comp-mrueiu35",
+            "stateNames": [
+              "variants-mrueiu36"
+            ]
+          },
+          {
+            "sourceId": "comp-mrueiu384",
+            "targetId": "comp-mrueiu384",
+            "stateNames": [
+              "variants-mrueiu39"
+            ]
+          },
+          {
+            "sourceId": "comp-mrueiu3c",
+            "targetId": "comp-mrueiu3c",
+            "stateNames": [
+              "variants-mrueiu3c1"
+            ]
+          },
+          {
+            "sourceId": "comp-mrueiu3f",
+            "targetId": "comp-mrueiu3f",
+            "stateNames": [
+              "variants-mrueiu3g"
+            ]
+          },
+          {
+            "sourceId": "comp-mrueiu3i2",
+            "targetId": "comp-mrueiu3i2",
+            "stateNames": [
+              "variants-mrueiu3j"
+            ]
+          },
+          {
+            "sourceId": "comp-mr69hwud",
+            "targetId": "comp-mr69hwul",
+            "stateNames": [
+              "variants-mr6cmdut"
+            ]
+          },
+          {
+            "sourceId": "comp-mr69hwud",
+            "targetId": "comp-mr69hwva",
+            "stateNames": [
+              "variants-mrum56h9"
+            ]
+          },
+          {
+            "sourceId": "comp-mr69hwvh",
+            "targetId": "comp-mr6by9bu",
+            "stateNames": [
+              "variants-mr6cn0uu1"
+            ]
+          },
+          {
+            "sourceId": "comp-mr69hwvh",
+            "targetId": "comp-mr6by9ep",
+            "stateNames": [
+              "variants-mrupr8ip"
+            ]
+          },
+          {
+            "sourceId": "comp-mr69hwvu1",
+            "targetId": "comp-mr69hwvv4",
+            "stateNames": [
+              "variants-mr6ckpre"
+            ]
+          },
+          {
+            "sourceId": "comp-mr69hwvu1",
+            "targetId": "comp-mr69hww4",
+            "stateNames": [
+              "variants-mrue9gov"
+            ]
+          },
+          {
+            "sourceId": "comp-mr69hwwa4",
+            "targetId": "comp-mr6b08sp",
+            "stateNames": [
+              "variants-mr6clg2t"
+            ]
+          },
+          {
+            "sourceId": "comp-mr69hwwa4",
+            "targetId": "comp-mr6b08ww3",
+            "stateNames": [
+              "variants-mrupmxb5"
+            ]
+          },
+          {
+            "sourceId": "comp-mr509k7k",
+            "targetId": "comp-mr509srm",
+            "stateNames": [
+              "variants-mr523ups"
+            ]
+          },
+          {
+            "sourceId": "comp-mr509k7k",
+            "targetId": "comp-mr509k7k",
+            "stateNames": [
+              "variants-mr522uju"
+            ]
+          },
+          {
+            "sourceId": "comp-mr509srm",
+            "targetId": "comp-mr509srm",
+            "stateNames": [
+              "variants-mr525h27"
+            ]
+          },
+          {
+            "sourceId": "comp-mr509srm",
+            "targetId": "comp-mr509k7k",
+            "stateNames": [
+              "variants-mr526kmj"
+            ]
+          },
+          {
+            "sourceId": "comp-mr4tz9uj",
+            "targetId": "comp-mr4tzkrn",
+            "stateNames": [
+              "variants-mr5335qa"
+            ]
+          },
+          {
+            "sourceId": "comp-mr4tz9uj",
+            "targetId": "comp-mr4tz9uj",
+            "stateNames": [
+              "variants-mr531ihq"
+            ]
+          },
+          {
+            "sourceId": "comp-mr4tzkrn",
+            "targetId": "comp-mr4tzkrn",
+            "stateNames": [
+              "variants-mr536qgj"
+            ]
+          },
+          {
+            "sourceId": "comp-mr4tzkrn",
+            "targetId": "comp-mr4tz9uj",
+            "stateNames": [
+              "variants-mr537o2a"
+            ]
+          },
+          {
+            "sourceId": "comp-mr69hwvm1",
+            "targetId": "comp-mr69hwt41",
+            "stateNames": [
+              "variants-mr69jxlu"
+            ]
+          },
+          {
+            "sourceId": "comp-mr69hwvm1",
+            "targetId": "comp-mr69hwvm1",
+            "stateNames": [
+              "variants-mr69j0o6"
+            ]
+          },
+          {
+            "sourceId": "comp-mr69hwt41",
+            "targetId": "comp-mr69hwt41",
+            "stateNames": [
+              "variants-mr69m5vh"
+            ]
+          },
+          {
+            "sourceId": "comp-mr69hwt41",
+            "targetId": "comp-mr69hwvm1",
+            "stateNames": [
+              "variants-mr69mswq"
+            ]
+          }
+        ],
+        "viewportTriggers": 0,
+        "progressTriggers": 1
+      },
+      "observed": {
+        "namedMotion": [],
+        "scrubMotion": [
+          {
+            "name": "(scrub)",
+            "target": "img-comp-mr69hwud",
+            "duration": 1000
+          }
+        ],
+        "hoverResults": [
+          {
+            "sourceId": "comp-mrueiu2w",
+            "targetId": "comp-mrueiu2w",
+            "stateNames": [
+              "variants-mrueiu2w1"
+            ],
+            "status": "skipped",
+            "reason": "source-not-rendered-at-desktop-breakpoint"
+          },
+          {
+            "sourceId": "comp-mrueiu35",
+            "targetId": "comp-mrueiu35",
+            "stateNames": [
+              "variants-mrueiu36"
+            ],
+            "status": "skipped",
+            "reason": "source-not-rendered-at-desktop-breakpoint"
+          },
+          {
+            "sourceId": "comp-mrueiu384",
+            "targetId": "comp-mrueiu384",
+            "stateNames": [
+              "variants-mrueiu39"
+            ],
+            "status": "skipped",
+            "reason": "source-not-rendered-at-desktop-breakpoint"
+          },
+          {
+            "sourceId": "comp-mrueiu3c",
+            "targetId": "comp-mrueiu3c",
+            "stateNames": [
+              "variants-mrueiu3c1"
+            ],
+            "status": "skipped",
+            "reason": "source-not-rendered-at-desktop-breakpoint"
+          },
+          {
+            "sourceId": "comp-mrueiu3f",
+            "targetId": "comp-mrueiu3f",
+            "stateNames": [
+              "variants-mrueiu3g"
+            ],
+            "status": "skipped",
+            "reason": "source-not-rendered-at-desktop-breakpoint"
+          },
+          {
+            "sourceId": "comp-mrueiu3i2",
+            "targetId": "comp-mrueiu3i2",
+            "stateNames": [
+              "variants-mrueiu3j"
+            ],
+            "status": "skipped",
+            "reason": "source-not-rendered-at-desktop-breakpoint"
+          },
+          {
+            "sourceId": "comp-mr69hwud",
+            "targetId": "comp-mr69hwul",
+            "stateNames": [
+              "variants-mr6cmdut"
             ],
             "status": "passed",
             "changed": true,
             "stateApplied": true
           },
           {
-            "sourceId": "comp-kbgakxmn_r_comp-mrsrn7dh",
-            "targetId": "comp-kbgakxmn_r_comp-mrsrn7dh",
+            "sourceId": "comp-mr69hwud",
+            "targetId": "comp-mr69hwva",
             "stateNames": [
-              "comp-kbgakxmn_r_variants-mrst53iu"
+              "variants-mrum56h9"
             ],
             "status": "passed",
             "changed": true,
             "stateApplied": true
           },
           {
-            "sourceId": "comp-kbgakxmn_r_comp-mrsrmk22",
-            "targetId": "comp-kbgakxmn_r_comp-mrsrmk22",
+            "sourceId": "comp-mr69hwvh",
+            "targetId": "comp-mr6by9bu",
             "stateNames": [
-              "comp-kbgakxmn_r_variants-mrst6mny"
+              "variants-mr6cn0uu1"
             ],
             "status": "passed",
             "changed": true,
             "stateApplied": true
           },
           {
-            "sourceId": "comp-kbgakxmn_r_comp-mrsrnf35",
-            "targetId": "comp-kbgakxmn_r_comp-mrsrnf35",
+            "sourceId": "comp-mr69hwvh",
+            "targetId": "comp-mr6by9ep",
             "stateNames": [
-              "comp-kbgakxmn_r_variants-mrst7nl2"
+              "variants-mrupr8ip"
             ],
             "status": "passed",
             "changed": true,
             "stateApplied": true
           },
           {
-            "sourceId": "comp-kbgakxmn_r_comp-mrsrmzjv",
-            "targetId": "comp-kbgakxmn_r_comp-mrsrmzjv",
+            "sourceId": "comp-mr69hwvu1",
+            "targetId": "comp-mr69hwvv4",
             "stateNames": [
-              "comp-kbgakxmn_r_variants-mrst86i8"
+              "variants-mr6ckpre"
+            ],
+            "status": "passed",
+            "changed": true,
+            "stateApplied": true
+          },
+          {
+            "sourceId": "comp-mr69hwvu1",
+            "targetId": "comp-mr69hww4",
+            "stateNames": [
+              "variants-mrue9gov"
+            ],
+            "status": "passed",
+            "changed": true,
+            "stateApplied": true
+          },
+          {
+            "sourceId": "comp-mr69hwwa4",
+            "targetId": "comp-mr6b08sp",
+            "stateNames": [
+              "variants-mr6clg2t"
+            ],
+            "status": "passed",
+            "changed": true,
+            "stateApplied": true
+          },
+          {
+            "sourceId": "comp-mr69hwwa4",
+            "targetId": "comp-mr6b08ww3",
+            "stateNames": [
+              "variants-mrupmxb5"
+            ],
+            "status": "passed",
+            "changed": true,
+            "stateApplied": true
+          },
+          {
+            "sourceId": "comp-mr509k7k",
+            "targetId": "comp-mr509srm",
+            "stateNames": [
+              "variants-mr523ups"
+            ],
+            "status": "skipped",
+            "reason": "source-not-rendered-at-desktop-breakpoint"
+          },
+          {
+            "sourceId": "comp-mr509k7k",
+            "targetId": "comp-mr509k7k",
+            "stateNames": [
+              "variants-mr522uju"
+            ],
+            "status": "skipped",
+            "reason": "source-not-rendered-at-desktop-breakpoint"
+          },
+          {
+            "sourceId": "comp-mr509srm",
+            "targetId": "comp-mr509srm",
+            "stateNames": [
+              "variants-mr525h27"
+            ],
+            "status": "skipped",
+            "reason": "source-not-rendered-at-desktop-breakpoint"
+          },
+          {
+            "sourceId": "comp-mr509srm",
+            "targetId": "comp-mr509k7k",
+            "stateNames": [
+              "variants-mr526kmj"
+            ],
+            "status": "skipped",
+            "reason": "source-not-rendered-at-desktop-breakpoint"
+          },
+          {
+            "sourceId": "comp-mr4tz9uj",
+            "targetId": "comp-mr4tzkrn",
+            "stateNames": [
+              "variants-mr5335qa"
+            ],
+            "status": "skipped",
+            "reason": "source-not-rendered-at-desktop-breakpoint"
+          },
+          {
+            "sourceId": "comp-mr4tz9uj",
+            "targetId": "comp-mr4tz9uj",
+            "stateNames": [
+              "variants-mr531ihq"
+            ],
+            "status": "skipped",
+            "reason": "source-not-rendered-at-desktop-breakpoint"
+          },
+          {
+            "sourceId": "comp-mr4tzkrn",
+            "targetId": "comp-mr4tzkrn",
+            "stateNames": [
+              "variants-mr536qgj"
+            ],
+            "status": "skipped",
+            "reason": "source-not-rendered-at-desktop-breakpoint"
+          },
+          {
+            "sourceId": "comp-mr4tzkrn",
+            "targetId": "comp-mr4tz9uj",
+            "stateNames": [
+              "variants-mr537o2a"
+            ],
+            "status": "skipped",
+            "reason": "source-not-rendered-at-desktop-breakpoint"
+          },
+          {
+            "sourceId": "comp-mr69hwvm1",
+            "targetId": "comp-mr69hwt41",
+            "stateNames": [
+              "variants-mr69jxlu"
+            ],
+            "status": "passed",
+            "changed": true,
+            "stateApplied": true
+          },
+          {
+            "sourceId": "comp-mr69hwvm1",
+            "targetId": "comp-mr69hwvm1",
+            "stateNames": [
+              "variants-mr69j0o6"
+            ],
+            "status": "passed",
+            "changed": true,
+            "stateApplied": true
+          },
+          {
+            "sourceId": "comp-mr69hwt41",
+            "targetId": "comp-mr69hwt41",
+            "stateNames": [
+              "variants-mr69m5vh"
+            ],
+            "status": "passed",
+            "changed": true,
+            "stateApplied": true
+          },
+          {
+            "sourceId": "comp-mr69hwt41",
+            "targetId": "comp-mr69hwvm1",
+            "stateNames": [
+              "variants-mr69mswq"
             ],
             "status": "passed",
             "changed": true,
@@ -285,8 +810,658 @@
         "pageErrors": [],
         "requestFailures": [],
         "consoleErrors": [
-          "TypeError: Failed to construct 'URL': Invalid URL",
-          "TypeError: Failed to construct 'URL': Invalid URL"
+          "suspense rendered fallback for - WIX_ADS - (FreemiumBannerResponsive_Studio)",
+          "suspense rendered fallback for - comp-mp2vlxyv_r_comp-mb5540mw - (Menu)",
+          "suspense rendered fallback for - comp-mp2vlxyv_r_comp-mp3rsqk1 - (VectorImage)",
+          "suspense rendered fallback for - comp-mp2vlxyv_r_comp-mrriywbr - (Menu)",
+          "suspense rendered fallback for - comp-mp2vlxyv_r_comp-mrriyw6n - (SiteButton_WrappingButton)",
+          "suspense rendered fallback for - comp-mp3okkrk",
+          "suspense rendered fallback for - comp-mr4pxqsd",
+          "suspense rendered fallback for - comp-mp2vlxyh",
+          "suspense rendered fallback for - comp-mr69hwoy",
+          "suspense rendered fallback for - comp-mruek03p",
+          "suspense rendered fallback for - comp-mrueitxt",
+          "suspense rendered fallback for - comp-mp2vly0q-pinned-layer - (PinnedLayer)",
+          "suspense rendered fallback for - comp-mp2vlxyv_r_comp-mb5540nm5 - (HamburgerOpenButton_Default)",
+          "suspense rendered fallback for - WIX_ADS - (FreemiumBannerResponsive_Studio)",
+          "suspense rendered fallback for - comp-mp2vlxyv_r_comp-mb5540mw - (Menu)",
+          "suspense rendered fallback for - comp-mp2vlxyv_r_comp-mp3rsqk1 - (VectorImage)",
+          "suspense rendered fallback for - comp-mp2vlxyv_r_comp-mrriywbr - (Menu)",
+          "suspense rendered fallback for - comp-mp2vlxyv_r_comp-mrriyw6n - (SiteButton_WrappingButton)",
+          "suspense rendered fallback for - comp-mp3okkrk",
+          "suspense rendered fallback for - comp-mr4pxqsd",
+          "suspense rendered fallback for - comp-mp2vlxyh",
+          "suspense rendered fallback for - comp-mr69hwoy",
+          "suspense rendered fallback for - comp-mruek03p",
+          "suspense rendered fallback for - comp-mrueitxt",
+          "suspense rendered fallback for - comp-mp2vly0q-pinned-layer - (PinnedLayer)",
+          "suspense rendered fallback for - comp-mp2vlxyv_r_comp-mb5540nm5 - (HamburgerOpenButton_Default)",
+          "suspense rendered fallback for - comp-mp2vlxyv_r_comp-mrriywd03 - (HamburgerOpenButton_Default)",
+          "suspense rendered fallback for - comp-mrueiu1x - (VerticalLine_VerticalSolidLine)",
+          "suspense rendered fallback for - comp-mrueiu2a1 - (TextInput)"
+        ]
+      }
+    },
+    {
+      "route": "films",
+      "url": "http://127.0.0.1:3100/films",
+      "passed": true,
+      "mountFinished": true,
+      "clientRenderFinished": true,
+      "authored": {
+        "hoverTests": [
+          {
+            "sourceId": "comp-mql25lfy1",
+            "targetId": "comp-mql25lfy1",
+            "stateNames": [
+              "variants-mql25lfz"
+            ]
+          },
+          {
+            "sourceId": "comp-mql25lg14",
+            "targetId": "comp-mql25lg14",
+            "stateNames": [
+              "variants-mql25lg2"
+            ]
+          },
+          {
+            "sourceId": "comp-mql25lg37",
+            "targetId": "comp-mql25lg37",
+            "stateNames": [
+              "variants-mql25lg4"
+            ]
+          },
+          {
+            "sourceId": "comp-mql262k7",
+            "targetId": "comp-mql262k7",
+            "stateNames": [
+              "variants-mql262k8"
+            ]
+          },
+          {
+            "sourceId": "comp-mqmk8hzp",
+            "targetId": "comp-mqmk8hzp",
+            "stateNames": [
+              "variants-mqmk8hzr"
+            ]
+          },
+          {
+            "sourceId": "comp-mqmi3w4b3",
+            "targetId": "comp-mqmi3w4b3",
+            "stateNames": [
+              "variants-mqmi3w4e"
+            ]
+          },
+          {
+            "sourceId": "comp-mqmi6yoc4",
+            "targetId": "comp-mqmi6yoc4",
+            "stateNames": [
+              "variants-mqmi6yof"
+            ]
+          },
+          {
+            "sourceId": "comp-mqmi8cy66",
+            "targetId": "comp-mqmi8cy66",
+            "stateNames": [
+              "variants-mqmi8cy9"
+            ]
+          },
+          {
+            "sourceId": "comp-mqmi8sv12",
+            "targetId": "comp-mqmi8sv12",
+            "stateNames": [
+              "variants-mqmi8sv14"
+            ]
+          },
+          {
+            "sourceId": "comp-mqku6knq1",
+            "targetId": "comp-mqku6knv1",
+            "stateNames": [
+              "variants-mqku6knv2"
+            ]
+          },
+          {
+            "sourceId": "comp-mqku6koe",
+            "targetId": "comp-mqku6koi2",
+            "stateNames": [
+              "variants-mqku6koi3"
+            ]
+          },
+          {
+            "sourceId": "comp-mqku6ko2",
+            "targetId": "comp-mqku6ko7",
+            "stateNames": [
+              "variants-mqku6ko71"
+            ]
+          },
+          {
+            "sourceId": "comp-mqku9cxy",
+            "targetId": "comp-mqku9cy5",
+            "stateNames": [
+              "variants-mqku9cy51"
+            ]
+          },
+          {
+            "sourceId": "comp-mqku9cvs",
+            "targetId": "comp-mqku9cvy6",
+            "stateNames": [
+              "variants-mqku9cvz"
+            ]
+          },
+          {
+            "sourceId": "comp-mruf9s08_r_comp-mruf8w8z3",
+            "targetId": "comp-mruf9s08_r_comp-mruf8w8z3",
+            "stateNames": [
+              "comp-mruf9s08_r_variants-mruf8w901"
+            ]
+          },
+          {
+            "sourceId": "comp-mruf9s08_r_comp-mruf8w921",
+            "targetId": "comp-mruf9s08_r_comp-mruf8w921",
+            "stateNames": [
+              "comp-mruf9s08_r_variants-mruf8w93"
+            ]
+          },
+          {
+            "sourceId": "comp-mruf9s08_r_comp-mruf8w95",
+            "targetId": "comp-mruf9s08_r_comp-mruf8w95",
+            "stateNames": [
+              "comp-mruf9s08_r_variants-mruf8w96"
+            ]
+          },
+          {
+            "sourceId": "comp-mruf9s08_r_comp-mruf8w98",
+            "targetId": "comp-mruf9s08_r_comp-mruf8w98",
+            "stateNames": [
+              "comp-mruf9s08_r_variants-mruf8w982"
+            ]
+          },
+          {
+            "sourceId": "comp-mruf9s08_r_comp-mruf8w9b",
+            "targetId": "comp-mruf9s08_r_comp-mruf8w9b",
+            "stateNames": [
+              "comp-mruf9s08_r_variants-mruf8w9c1"
+            ]
+          },
+          {
+            "sourceId": "comp-mruf9s08_r_comp-mruf8w9e1",
+            "targetId": "comp-mruf9s08_r_comp-mruf8w9e1",
+            "stateNames": [
+              "comp-mruf9s08_r_variants-mruf8w9f1"
+            ]
+          }
+        ],
+        "viewportTriggers": 18,
+        "progressTriggers": 12
+      },
+      "observed": {
+        "namedMotion": [
+          {
+            "name": "motion-fadeIn",
+            "target": "comp-mqks7qjl",
+            "duration": 960
+          },
+          {
+            "name": "motion-shapeIn",
+            "target": "comp-mqks7qjl",
+            "duration": 1200
+          },
+          {
+            "name": "motion-fadeIn",
+            "target": "comp-mqmk8hzp",
+            "duration": 1500
+          },
+          {
+            "name": "motion-foldIn",
+            "target": "comp-mqmk8hzp",
+            "duration": 1500
+          },
+          {
+            "name": "motion-breathe-1",
+            "target": "comp-mqmgf5o2",
+            "duration": 5000
+          },
+          {
+            "name": "motion-breathe-1",
+            "target": "comp-mqmg6mlh",
+            "duration": 5000
+          },
+          {
+            "name": "motion-fadeIn",
+            "target": "comp-mqmfx7ou2__item-mp3ozw9b",
+            "duration": 1200
+          },
+          {
+            "name": "motion-flipIn",
+            "target": "comp-mqmfx7ou2__item-mp3ozw9b",
+            "duration": 1200
+          },
+          {
+            "name": "motion-fadeIn",
+            "target": "comp-mqmfx7q11__item-mp3ozw9b",
+            "duration": 1200
+          },
+          {
+            "name": "motion-flipIn",
+            "target": "comp-mqmfx7q11__item-mp3ozw9b",
+            "duration": 1200
+          },
+          {
+            "name": "motion-fadeIn",
+            "target": "comp-mqmfx7ou2__item-mqmfyweb",
+            "duration": 1200
+          },
+          {
+            "name": "motion-flipIn",
+            "target": "comp-mqmfx7ou2__item-mqmfyweb",
+            "duration": 1200
+          },
+          {
+            "name": "motion-fadeIn",
+            "target": "comp-mqmfx7q11__item-mqmfyweb",
+            "duration": 1200
+          },
+          {
+            "name": "motion-flipIn",
+            "target": "comp-mqmfx7q11__item-mqmfyweb",
+            "duration": 1200
+          },
+          {
+            "name": "motion-fadeIn",
+            "target": "comp-mqmfx7ou2__item-mqmfyxxt",
+            "duration": 1200
+          },
+          {
+            "name": "motion-flipIn",
+            "target": "comp-mqmfx7ou2__item-mqmfyxxt",
+            "duration": 1200
+          },
+          {
+            "name": "motion-fadeIn",
+            "target": "comp-mqmfx7q11__item-mqmfyxxt",
+            "duration": 1200
+          },
+          {
+            "name": "motion-flipIn",
+            "target": "comp-mqmfx7q11__item-mqmfyxxt",
+            "duration": 1200
+          },
+          {
+            "name": "motion-fadeIn",
+            "target": "comp-mqmfx7ou2__item-mqmfyz64",
+            "duration": 1200
+          },
+          {
+            "name": "motion-flipIn",
+            "target": "comp-mqmfx7ou2__item-mqmfyz64",
+            "duration": 1200
+          },
+          {
+            "name": "motion-fadeIn",
+            "target": "comp-mqmfx7q11__item-mqmfyz64",
+            "duration": 1200
+          },
+          {
+            "name": "motion-flipIn",
+            "target": "comp-mqmfx7q11__item-mqmfyz64",
+            "duration": 1200
+          },
+          {
+            "name": "motion-breathe-1",
+            "target": "comp-mqmg7rru",
+            "duration": 5000
+          },
+          {
+            "name": "motion-breathe-1",
+            "target": "comp-mqmgewly",
+            "duration": 5000
+          },
+          {
+            "name": "SlideshowRepeater_slideNextOut",
+            "target": "comp-mqmfx7on",
+            "duration": 900
+          },
+          {
+            "name": "SlideshowRepeater_slideNextIn",
+            "target": "comp-mqmfx7on",
+            "duration": 900
+          }
+        ],
+        "scrubMotion": [
+          {
+            "name": "(scrub)",
+            "target": "comp-mqktx0np",
+            "duration": 1000
+          },
+          {
+            "name": "(scrub)",
+            "target": "comp-mql4n29r",
+            "duration": 1000
+          },
+          {
+            "name": "(scrub)",
+            "target": "comp-mqktx0oa",
+            "duration": 1000
+          },
+          {
+            "name": "(scrub)",
+            "target": "comp-mql57ff9",
+            "duration": 1000
+          },
+          {
+            "name": "(scrub)",
+            "target": "comp-mql5hyxn",
+            "duration": 1000
+          },
+          {
+            "name": "(scrub)",
+            "target": "comp-mql5hquv",
+            "duration": 1000
+          },
+          {
+            "name": "(scrub)",
+            "target": "comp-mqmhp9kh",
+            "duration": 1000
+          },
+          {
+            "name": "(scrub)",
+            "target": "comp-mqmhpx0p",
+            "duration": 1000
+          },
+          {
+            "name": "(scrub)",
+            "target": "comp-mql5q7my",
+            "duration": 1000
+          },
+          {
+            "name": "(scrub)",
+            "target": "comp-mql5qkxu",
+            "duration": 1000
+          },
+          {
+            "name": "(scrub)",
+            "target": "comp-mql5uiw7",
+            "duration": 1000
+          },
+          {
+            "name": "(scrub)",
+            "target": "comp-mql5v04u",
+            "duration": 1000
+          }
+        ],
+        "hoverResults": [
+          {
+            "sourceId": "comp-mql25lfy1",
+            "targetId": "comp-mql25lfy1",
+            "stateNames": [
+              "variants-mql25lfz"
+            ],
+            "status": "skipped",
+            "reason": "source-not-rendered-at-desktop-breakpoint"
+          },
+          {
+            "sourceId": "comp-mql25lg14",
+            "targetId": "comp-mql25lg14",
+            "stateNames": [
+              "variants-mql25lg2"
+            ],
+            "status": "skipped",
+            "reason": "source-not-rendered-at-desktop-breakpoint"
+          },
+          {
+            "sourceId": "comp-mql25lg37",
+            "targetId": "comp-mql25lg37",
+            "stateNames": [
+              "variants-mql25lg4"
+            ],
+            "status": "skipped",
+            "reason": "source-not-rendered-at-desktop-breakpoint"
+          },
+          {
+            "sourceId": "comp-mql262k7",
+            "targetId": "comp-mql262k7",
+            "stateNames": [
+              "variants-mql262k8"
+            ],
+            "status": "skipped",
+            "reason": "source-not-rendered-at-desktop-breakpoint"
+          },
+          {
+            "sourceId": "comp-mqmk8hzp",
+            "targetId": "comp-mqmk8hzp",
+            "stateNames": [
+              "variants-mqmk8hzr"
+            ],
+            "status": "skipped",
+            "reason": "source-not-rendered-at-desktop-breakpoint"
+          },
+          {
+            "sourceId": "comp-mqmi3w4b3",
+            "targetId": "comp-mqmi3w4b3",
+            "stateNames": [
+              "variants-mqmi3w4e"
+            ],
+            "status": "skipped",
+            "reason": "source-not-rendered-at-desktop-breakpoint"
+          },
+          {
+            "sourceId": "comp-mqmi6yoc4",
+            "targetId": "comp-mqmi6yoc4",
+            "stateNames": [
+              "variants-mqmi6yof"
+            ],
+            "status": "skipped",
+            "reason": "source-not-rendered-at-desktop-breakpoint"
+          },
+          {
+            "sourceId": "comp-mqmi8cy66",
+            "targetId": "comp-mqmi8cy66",
+            "stateNames": [
+              "variants-mqmi8cy9"
+            ],
+            "status": "skipped",
+            "reason": "source-not-rendered-at-desktop-breakpoint"
+          },
+          {
+            "sourceId": "comp-mqmi8sv12",
+            "targetId": "comp-mqmi8sv12",
+            "stateNames": [
+              "variants-mqmi8sv14"
+            ],
+            "status": "skipped",
+            "reason": "source-not-rendered-at-desktop-breakpoint"
+          },
+          {
+            "sourceId": "comp-mqku6knq1",
+            "targetId": "comp-mqku6knv1",
+            "stateNames": [
+              "variants-mqku6knv2"
+            ],
+            "status": "passed",
+            "changed": true,
+            "stateApplied": true
+          },
+          {
+            "sourceId": "comp-mqku6koe",
+            "targetId": "comp-mqku6koi2",
+            "stateNames": [
+              "variants-mqku6koi3"
+            ],
+            "status": "passed",
+            "changed": true,
+            "stateApplied": true
+          },
+          {
+            "sourceId": "comp-mqku6ko2",
+            "targetId": "comp-mqku6ko7",
+            "stateNames": [
+              "variants-mqku6ko71"
+            ],
+            "status": "passed",
+            "changed": true,
+            "stateApplied": true
+          },
+          {
+            "sourceId": "comp-mqku9cxy",
+            "targetId": "comp-mqku9cy5",
+            "stateNames": [
+              "variants-mqku9cy51"
+            ],
+            "status": "passed",
+            "changed": true,
+            "stateApplied": true
+          },
+          {
+            "sourceId": "comp-mqku9cvs",
+            "targetId": "comp-mqku9cvy6",
+            "stateNames": [
+              "variants-mqku9cvz"
+            ],
+            "status": "passed",
+            "changed": true,
+            "stateApplied": true
+          },
+          {
+            "sourceId": "comp-mruf9s08_r_comp-mruf8w8z3",
+            "targetId": "comp-mruf9s08_r_comp-mruf8w8z3",
+            "stateNames": [
+              "comp-mruf9s08_r_variants-mruf8w901"
+            ],
+            "status": "skipped",
+            "reason": "source-hidden-at-desktop-breakpoint"
+          },
+          {
+            "sourceId": "comp-mruf9s08_r_comp-mruf8w921",
+            "targetId": "comp-mruf9s08_r_comp-mruf8w921",
+            "stateNames": [
+              "comp-mruf9s08_r_variants-mruf8w93"
+            ],
+            "status": "skipped",
+            "reason": "source-hidden-at-desktop-breakpoint"
+          },
+          {
+            "sourceId": "comp-mruf9s08_r_comp-mruf8w95",
+            "targetId": "comp-mruf9s08_r_comp-mruf8w95",
+            "stateNames": [
+              "comp-mruf9s08_r_variants-mruf8w96"
+            ],
+            "status": "skipped",
+            "reason": "source-hidden-at-desktop-breakpoint"
+          },
+          {
+            "sourceId": "comp-mruf9s08_r_comp-mruf8w98",
+            "targetId": "comp-mruf9s08_r_comp-mruf8w98",
+            "stateNames": [
+              "comp-mruf9s08_r_variants-mruf8w982"
+            ],
+            "status": "skipped",
+            "reason": "source-hidden-at-desktop-breakpoint"
+          },
+          {
+            "sourceId": "comp-mruf9s08_r_comp-mruf8w9b",
+            "targetId": "comp-mruf9s08_r_comp-mruf8w9b",
+            "stateNames": [
+              "comp-mruf9s08_r_variants-mruf8w9c1"
+            ],
+            "status": "skipped",
+            "reason": "source-hidden-at-desktop-breakpoint"
+          },
+          {
+            "sourceId": "comp-mruf9s08_r_comp-mruf8w9e1",
+            "targetId": "comp-mruf9s08_r_comp-mruf8w9e1",
+            "stateNames": [
+              "comp-mruf9s08_r_variants-mruf8w9f1"
+            ],
+            "status": "skipped",
+            "reason": "source-hidden-at-desktop-breakpoint"
+          }
+        ]
+      },
+      "diagnostics": {
+        "pageErrors": [],
+        "requestFailures": [],
+        "consoleErrors": [
+          "suspense rendered fallback for - WIX_ADS - (FreemiumBannerResponsive_Studio)",
+          "suspense rendered fallback for - comp-mqkpjcte_r_comp-mb5540mw - (Menu)",
+          "suspense rendered fallback for - comp-mqkpjcte_r_comp-mp3rsqk1 - (VectorImage)",
+          "suspense rendered fallback for - comp-mqkpjcte_r_comp-mrriywbr - (Menu)",
+          "suspense rendered fallback for - comp-mqkpjcte_r_comp-mrriyw6n - (SiteButton_WrappingButton)",
+          "suspense rendered fallback for - comp-mql25lfk",
+          "suspense rendered fallback for - comp-mqksjwhn",
+          "suspense rendered fallback for - comp-mqmh352i",
+          "suspense rendered fallback for - comp-mqktsjdh",
+          "suspense rendered fallback for - comp-mqktx0nc",
+          "suspense rendered fallback for - comp-mqmk8ekq",
+          "suspense rendered fallback for - comp-mqmhuw20",
+          "suspense rendered fallback for - comp-mqmi6yn5",
+          "suspense rendered fallback for - comp-mqmi8cwy",
+          "suspense rendered fallback for - comp-mqmi8stx",
+          "suspense rendered fallback for - comp-mqku1yx4",
+          "suspense rendered fallback for - comp-mqktywoc",
+          "suspense rendered fallback for - comp-mruf9s08_r_comp-mruf9rqu",
+          "suspense rendered fallback for - comp-mqkpjcyc-pinned-layer - (PinnedLayer)",
+          "suspense rendered fallback for - comp-mqkpjcte_r_comp-mb5540nm5 - (HamburgerOpenButton_Default)",
+          "suspense rendered fallback for - WIX_ADS - (FreemiumBannerResponsive_Studio)",
+          "suspense rendered fallback for - comp-mqkpjcte_r_comp-mb5540mw - (Menu)",
+          "suspense rendered fallback for - comp-mqkpjcte_r_comp-mp3rsqk1 - (VectorImage)",
+          "suspense rendered fallback for - comp-mqkpjcte_r_comp-mrriywbr - (Menu)",
+          "suspense rendered fallback for - comp-mqkpjcte_r_comp-mrriyw6n - (SiteButton_WrappingButton)",
+          "suspense rendered fallback for - comp-mql25lfk",
+          "suspense rendered fallback for - comp-mqksjwhn",
+          "suspense rendered fallback for - comp-mqmh352i",
+          "suspense rendered fallback for - comp-mqktsjdh",
+          "suspense rendered fallback for - comp-mqktx0nc",
+          "suspense rendered fallback for - comp-mqmk8ekq",
+          "suspense rendered fallback for - comp-mqmhuw20",
+          "suspense rendered fallback for - comp-mqmi6yn5",
+          "suspense rendered fallback for - comp-mqmi8cwy",
+          "suspense rendered fallback for - comp-mqmi8stx",
+          "suspense rendered fallback for - comp-mqku1yx4",
+          "suspense rendered fallback for - comp-mqktywoc",
+          "suspense rendered fallback for - comp-mruf9s08_r_comp-mruf9rqu",
+          "suspense rendered fallback for - comp-mqkpjcyc-pinned-layer - (PinnedLayer)",
+          "suspense rendered fallback for - WIX_ADS - (FreemiumBannerResponsive_Studio)",
+          "suspense rendered fallback for - comp-mqkpjcte_r_comp-mb5540mw - (Menu)",
+          "suspense rendered fallback for - comp-mqkpjcte_r_comp-mp3rsqk1 - (VectorImage)",
+          "suspense rendered fallback for - comp-mqkpjcte_r_comp-mrriywbr - (Menu)",
+          "suspense rendered fallback for - comp-mqkpjcte_r_comp-mrriyw6n - (SiteButton_WrappingButton)",
+          "suspense rendered fallback for - comp-mql25lfk",
+          "suspense rendered fallback for - comp-mqksjwhn",
+          "suspense rendered fallback for - comp-mqmh352i",
+          "suspense rendered fallback for - comp-mqktsjdh",
+          "suspense rendered fallback for - comp-mqktx0nc",
+          "suspense rendered fallback for - comp-mqmk8ekq",
+          "suspense rendered fallback for - comp-mqmhuw20",
+          "suspense rendered fallback for - comp-mqmi6yn5",
+          "suspense rendered fallback for - comp-mqmi8cwy",
+          "suspense rendered fallback for - comp-mqmi8stx",
+          "suspense rendered fallback for - comp-mqku1yx4",
+          "suspense rendered fallback for - comp-mqktywoc",
+          "suspense rendered fallback for - comp-mruf9s08_r_comp-mruf9rqu",
+          "suspense rendered fallback for - comp-mqkpjcyc-pinned-layer - (PinnedLayer)",
+          "suspense rendered fallback for - comp-mqkpjcte_r_comp-mb5540nm5 - (HamburgerOpenButton_Default)",
+          "suspense rendered fallback for - comp-mqkpjcte_r_comp-mrriywd03 - (HamburgerOpenButton_Default)",
+          "suspense rendered fallback for - WIX_ADS - (FreemiumBannerResponsive_Studio)",
+          "suspense rendered fallback for - comp-mqkpjcte_r_comp-mb5540mw - (Menu)",
+          "suspense rendered fallback for - comp-mqkpjcte_r_comp-mp3rsqk1 - (VectorImage)",
+          "suspense rendered fallback for - comp-mqkpjcte_r_comp-mrriywbr - (Menu)",
+          "suspense rendered fallback for - comp-mqkpjcte_r_comp-mrriyw6n - (SiteButton_WrappingButton)",
+          "suspense rendered fallback for - comp-mql25lfk",
+          "suspense rendered fallback for - comp-mqksjwhn",
+          "suspense rendered fallback for - comp-mqmh352i",
+          "suspense rendered fallback for - comp-mqktsjdh",
+          "suspense rendered fallback for - comp-mqktx0nc",
+          "suspense rendered fallback for - comp-mqmk8ekq",
+          "suspense rendered fallback for - comp-mqmhuw20",
+          "suspense rendered fallback for - comp-mqmi6yn5",
+          "suspense rendered fallback for - comp-mqmi8cwy",
+          "suspense rendered fallback for - comp-mqmi8stx",
+          "suspense rendered fallback for - comp-mqku1yx4",
+          "suspense rendered fallback for - comp-mqktywoc",
+          "suspense rendered fallback for - comp-mruf9s08_r_comp-mruf9rqu",
+          "suspense rendered fallback for - comp-mqkpjcyc-pinned-layer - (PinnedLayer)",
+          "suspense rendered fallback for - comp-mqkpjcte_r_comp-mb5540nm5 - (HamburgerOpenButton_Default)",
+          "suspense rendered fallback for - comp-mqkpjcte_r_comp-mrriywd03 - (HamburgerOpenButton_Default)"
         ]
       }
     }

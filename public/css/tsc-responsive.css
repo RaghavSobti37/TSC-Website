@@ -548,9 +548,11 @@ footer.site-footer:has(.tsc-mobile-footer) {
 }
 
 @media (min-width: 1025px) {
-  /* Harshaduhita roster card commented out; Mohit Shankar stays visible. */
+  /* Harshaduhita and Mohit Shankar roster cards are hidden for now. */
   body[data-page="artists"] #comp-mqtpn27i,
-  body[data-page="artists"] [id^="comp-mqtpn27"] {
+  body[data-page="artists"] [id^="comp-mqtpn27"],
+  body[data-page="artists"] #comp-mqutenq5,
+  body[data-page="artists"] [id^="comp-mqutenq"] {
     display: none !important;
     width: 0 !important;
     min-width: 0 !important;
@@ -2190,171 +2192,20 @@ body:has(#comp-mr69hwoy) :is(#comp-mr69hwvf5, #comp-mr69hwvh) {
     --transition-property: none !important;
   }
 
-  body[data-page="about"] #comp-mp2vlkbh2,
-  body[data-page="about"] #comp-mp2vlkbh2 .comp-mp2vlkbh2-overflow-wrapper {
-    min-height: clamp(560px, 55.6svh, 640px) !important;
-    height: clamp(560px, 55.6svh, 640px) !important;
-    overflow: hidden !important;
+  body[data-page="about"] #comp-mr3iatty {
+    height: 250px !important;
+    min-height: 250px !important;
   }
 
-  body[data-page="about"] #comp-mp2vlkbh2 .comp-mp2vlkbh2-container {
-    align-items: center !important;
-    box-sizing: border-box !important;
-    display: flex !important;
-    flex-direction: column !important;
-    gap: clamp(16px, 1.6vw, 22px) !important;
-    height: 100% !important;
-    justify-content: center !important;
-    padding: clamp(26px, 4vh, 42px) 48px !important;
+  body[data-page="about"] #comp-mr3si7hw {
+    height: 1007px !important;
+    min-height: 1007px !important;
   }
 
-  body[data-page="about"] #comp-mp2vlkbh2 #comp-mr1ttkgk,
-  body[data-page="about"] #comp-mp2vlkbh2 #comp-mr1vbgc2,
-  body[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tvuqc,
-  body[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tv44l {
-    align-self: center !important;
-    justify-self: center !important;
-    left: auto !important;
-    margin: 0 !important;
-    max-width: min(86vw, 980px) !important;
-    position: relative !important;
-    right: auto !important;
-    top: auto !important;
-    transform: none !important;
-    z-index: 2 !important;
+  body[data-page="about"] #comp-mr3smd70 {
+    height: 1426px !important;
+    min-height: 1426px !important;
   }
-
-  body[data-page="about"] #comp-mp2vlkbh2 #comp-mr1ttkgk {
-    height: clamp(130px, 11vw, 150px) !important;
-    width: clamp(130px, 11vw, 150px) !important;
-  }
-
-  body[data-page="about"] #comp-mp2vlkbh2 #comp-mr1ttkgk svg {
-    height: 100% !important;
-    max-height: 100% !important;
-    max-width: 100% !important;
-    width: 100% !important;
-  }
-
-  body[data-page="about"] #comp-mp2vlkbh2,
-  body[data-page="about"] #comp-mp2vlkbh2 :is(#comp-mr1ttkgk, #comp-mr1vbgc2, #comp-mr1tvuqc, #comp-mr1tvuqc *, #comp-mr1tv44l, #comp-mr1tv44l *) {
-    animation: none !important;
-    filter: none !important;
-    opacity: 1 !important;
-    transition: none !important;
-  }
-
-  body[data-page="about"] #comp-mp2vlkbh2 #comp-mr1vbgc2 {
-    display: block !important;
-    grid-template-columns: none !important;
-    grid-template-rows: none !important;
-    height: auto !important;
-    overflow: visible !important;
-    width: min(48vw, 380px) !important;
-  }
-
-  body[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tvuqc,
-  body[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tvuqc svg {
-    aspect-ratio: 867.52 / 415.6 !important;
-    display: block !important;
-    grid-area: auto !important;
-    height: auto !important;
-    max-width: 100% !important;
-    position: relative !important;
-    width: 100% !important;
-  }
-
-  body[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tv44l,
-  body[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tv44l .wixui-rich-text__text {
-    height: auto !important;
-    line-height: 1.12 !important;
-    max-width: min(48vw, 420px) !important;
-    min-height: 64px !important;
-    overflow: visible !important;
-    text-align: center !important;
-    white-space: normal !important;
-    width: min(48vw, 420px) !important;
-  }
-
-  body[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tv44l .wixui-rich-text__text {
-    font-size: clamp(21px, 1.9vw, 27px) !important;
-  }
-
-  body[data-page="about"] [data-tsc-locked-desktop-header="true"],
-  body[data-page="about"] [data-tsc-locked-desktop-header="true"] #comp-mp2vlkc3_r_comp-kbgajy18 {
-    height: 177px !important;
-    min-height: 177px !important;
-  }
-
-  body[data-page="about"] [data-tsc-locked-desktop-header="true"] #comp-mp2vlkc3_r_comp-mp3rsqk1 {
-    height: 101px !important;
-    left: -91px !important;
-    top: 5px !important;
-    width: 246px !important;
-  }
-
-  body[data-page="about"] [data-tsc-locked-desktop-header="true"] #comp-mp2vlkc3_r_comp-mp3rsqk1 svg,
-  body[data-page="about"] [data-tsc-locked-desktop-header="true"] #comp-mp2vlkc3_r_comp-mp3rsqk1 a {
-    height: 100% !important;
-    width: 100% !important;
-  }
-
-  body[data-page="about"] [data-tsc-locked-desktop-header="true"] #comp-mp2vlkc3_r_comp-mrriywbr {
-    left: 24px !important;
-    top: 1px !important;
-  }
-
-  body[data-page="about"] [data-tsc-locked-desktop-header="true"] #comp-mp2vlkc3_r_comp-mrriyw6n {
-    left: 72px !important;
-    top: 0 !important;
-  }
-
-  body[data-page="about"] #comp-mr1u2p4j,
-  body[data-page="about"] #comp-mr1u2p4j .comp-mr1u2p4j-container {
-    min-height: 625px !important;
-    overflow: visible !important;
-  }
-
-  body[data-page="about"] #comp-mr1u2p4j .comp-mr1u2p4j-container {
-    box-sizing: border-box !important;
-    display: grid !important;
-    gap: 24px 56px !important;
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-    grid-template-rows: 112px auto !important;
-    margin-inline: auto !important;
-    max-width: min(84.4vw, 1586px) !important;
-    padding: 114px 0 72px !important;
-    width: min(84.4vw, 1586px) !important;
-  }
-
-  body[data-page="about"] #comp-mr1u2p4j .comp-mr1u2p4j-container > :is(#comp-mr1w88dl, #comp-mr1wb3oc, #comp-mr1wdo6d, #comp-mr1wdahh) {
-    left: auto !important;
-    margin: 0 !important;
-    max-width: none !important;
-    position: relative !important;
-    top: auto !important;
-    transform: none !important;
-    width: 100% !important;
-  }
-
-  body[data-page="about"] #comp-mr1w88dl {
-    grid-area: 1 / 1 / 2 / 2 !important;
-    height: 112px !important;
-  }
-
-  body[data-page="about"] #comp-mr1wdo6d {
-    grid-area: 1 / 2 / 2 / 3 !important;
-    height: 112px !important;
-  }
-
-  body[data-page="about"] #comp-mr1wb3oc {
-    grid-area: 2 / 1 / 3 / 2 !important;
-  }
-
-  body[data-page="about"] #comp-mr1wdahh {
-    grid-area: 2 / 2 / 3 / 3 !important;
-  }
-
 
 }
 
@@ -3458,36 +3309,144 @@ body.tsc-has-mobile-footer .tsc-legacy-footer-host:not(:has(.tsc-mobile-footer))
 @media (min-width: 1025px) {
   .tsc-desktop-footer,
   body[data-page] .tsc-desktop-footer {
-    --tsc-footer-bg: #0b4d47;
-    --tsc-footer-fg: #f4e9d3;
-    --tsc-footer-dim: #cfe3df;
-    --tsc-footer-accent: #f4d9a6;
-    --tsc-footer-rule: rgba(244, 233, 211, 0.28);
-    --tsc-footer-input-bg: #0e5a53;
-    --tsc-footer-icon-bg: #dcead0;
-    --tsc-footer-icon-fg: #0b4d47;
-    background: var(--tsc-footer-bg) !important;
+    --tsc-footer-font-ref: wfont_834fa9_d08c6fe9ca9b47ccb21ecdcb74412010, wf_d08c6fe9ca9b47ccb21ecdcb7, orig_alan_sans_light, Arial, Helvetica, sans-serif;
+    --tsc-footer-texture: url("/assets/mirror/static.wixstatic.com/media/0da768_8657a8f7766a4491ad2da38ae2f4f82f~mv2.png/v1/crop/x_0,y_0,w_300,h_225,q_85,enc_auto/0da768_8657a8f7766a4491ad2da38ae2f4f82f~mv2.png");
+    --tsc-footer-bg: #083d3a;
+    --tsc-footer-fg: #ffecd1;
+    --tsc-footer-dim: rgba(255, 236, 209, 0.72);
+    --tsc-footer-accent: #ffecd1;
+    --tsc-footer-rule: rgba(255, 236, 209, 0.25);
+    --tsc-footer-input-bg: transparent;
+    --tsc-footer-icon-bg: transparent;
+    --tsc-footer-icon-fg: #ffecd1;
+    --tsc-footer-bg-image:
+      radial-gradient(circle at 80.3008524576823% 81.2366231282552%, #083D3A 0%, 20%, rgba(8,61,58,0) 40%),
+      radial-gradient(circle at 10.919342041015625% 42.114003499348954%, #B74B02 0%, 30.865999999999996%, rgba(183,75,2,0) 46%),
+      radial-gradient(circle at 44.711100260416664% 57.187449137369796%, #126D5E 0%, 31.799999999999997%, rgba(18,109,94,0) 53%),
+      radial-gradient(circle at 64.90829467773438% 7.14691162109375%, #083D3A 0%, 42%, rgba(8,61,58,0) 70%),
+      radial-gradient(circle at 48.9013671875% 49.521484375%, #083D3A 0%, 100%, rgba(8,61,58,0) 100%);
+    background-color: var(--tsc-footer-bg) !important;
+    background-image: var(--tsc-footer-texture), var(--tsc-footer-bg-image) !important;
+    background-position: center center, center center !important;
+    background-repeat: repeat, no-repeat !important;
+    background-size: 300px 225px, cover !important;
     border: 0 !important;
     color: var(--tsc-footer-fg) !important;
+    font-family: var(--tsc-footer-font-ref) !important;
     min-height: 0 !important;
     overflow: hidden !important;
     padding: 64px 56px 24px !important;
   }
 
+  .tsc-desktop-footer * {
+    font-family: var(--tsc-footer-font-ref) !important;
+  }
+
   .tsc-desktop-footer-academy,
   body[data-page] .tsc-desktop-footer-academy {
-    --tsc-footer-bg: #fbe6c8;
-    --tsc-footer-fg: #12433f;
-    --tsc-footer-dim: #3a675f;
-    --tsc-footer-accent: #12433f;
-    --tsc-footer-rule: rgba(18, 67, 63, 0.25);
-    --tsc-footer-input-bg: #fdf0dc;
-    --tsc-footer-icon-bg: #12433f;
-    --tsc-footer-icon-fg: #fbe6c8;
+    --tsc-footer-texture: none;
+    --tsc-footer-bg: #08525f;
+    --tsc-footer-fg: #ffecd1;
+    --tsc-footer-dim: rgba(255, 236, 209, 0.72);
+    --tsc-footer-accent: #ffecd1;
+    --tsc-footer-rule: rgba(255, 236, 209, 0.25);
+    --tsc-footer-input-bg: transparent;
+    --tsc-footer-icon-bg: transparent;
+    --tsc-footer-icon-fg: #ffecd1;
+    --tsc-footer-logo-fg: #08525f;
+    --tsc-footer-bg-image:
+      radial-gradient(circle at 93.70498657226562% 63.596420288085945%, #08525F 0%, 47.06400000000001%, rgba(8,82,95,0) 74%),
+      radial-gradient(circle at 12.373097737630207% 43.813374837239586%, #FFECD1 0%, 31.62%, rgba(255,236,209,0) 62%),
+      radial-gradient(circle at 38.607076009114586% 95.28528849283853%, rgba(81,139,149,0.54) 0%, 47.302%, rgba(81,139,149,0) 67%),
+      radial-gradient(circle at 14.929097493489582% 50.28353373209635%, #FFECD1 0%, 40.757%, rgba(255,236,209,0) 53%),
+      radial-gradient(circle at 94.12206013997397% 52.778523763020836%, #08525F 0%, 42.535999999999994%, rgba(8,82,95,0) 52%),
+      radial-gradient(circle at 48.9013671875% 49.521484375%, #08525F 0%, 100%, rgba(8,82,95,0) 100%);
+  }
+
+  body[data-page="about"] .tsc-desktop-footer,
+  body[data-page="artists"] .tsc-desktop-footer,
+  body[data-page="artist-path"] .tsc-desktop-footer,
+  body[data-page="artist-query"] .tsc-desktop-footer,
+  body[data-page="book-an-artist"] .tsc-desktop-footer,
+  body[data-page="collab-query"] .tsc-desktop-footer,
+  body[data-page="yugm"] .tsc-desktop-footer,
+  body[data-page="harshad-duhita"] .tsc-desktop-footer,
+  body[data-page="mohit-shankar"] .tsc-desktop-footer {
+    --tsc-footer-bg: #083d3a;
+    --tsc-footer-fg: #ffecd1;
+    --tsc-footer-icon-fg: #ffecd1;
+  }
+
+  body[data-page="work"] .tsc-desktop-footer,
+  body[data-page="mba"] .tsc-desktop-footer,
+  body[data-page="mba-impact"] .tsc-desktop-footer,
+  body[data-page="havells-myousic"] .tsc-desktop-footer,
+  body[data-page="insta-music-league"] .tsc-desktop-footer,
+  body[data-page="young-gunns"] .tsc-desktop-footer {
+    --tsc-footer-bg: #083d3a;
+    --tsc-footer-fg: #ffecd1;
+    --tsc-footer-icon-fg: #ffecd1;
+  }
+
+  body[data-page="films"] .tsc-desktop-footer,
+  body[data-page="mahavatar-narsimha"] .tsc-desktop-footer,
+  body[data-page="mahavatar-narsimha-impact"] .tsc-desktop-footer,
+  body[data-page="hanuman-ansh"] .tsc-desktop-footer,
+  body[data-page="hanuman-ansh-impact"] .tsc-desktop-footer,
+  body[data-page="mahaprbhu"] .tsc-desktop-footer,
+  body[data-page="mahaprabhu-jagannath-impact"] .tsc-desktop-footer,
+  body[data-page="kalki"] .tsc-desktop-footer,
+  body[data-page="kalki-impact"] .tsc-desktop-footer {
+    --tsc-footer-bg: #083d3a;
+    --tsc-footer-fg: #ffecd1;
+    --tsc-footer-dim: rgba(255, 236, 209, 0.72);
+    --tsc-footer-accent: #ffecd1;
+    --tsc-footer-rule: rgba(255, 236, 209, 0.25);
+    --tsc-footer-input-bg: transparent;
+    --tsc-footer-icon-bg: transparent;
+    --tsc-footer-icon-fg: #ffecd1;
+    --tsc-footer-bg-image:
+      radial-gradient(circle at 80.3008524576823% 81.2366231282552%, #6D2034 0%, 20%, rgba(109,32,52,0) 40%),
+      radial-gradient(circle at 10.919342041015625% 42.114003499348954%, #592314 0%, 30.865999999999996%, rgba(89,35,20,0) 46%),
+      radial-gradient(circle at 64.90829467773438% 7.14691162109375%, #6D2034 0%, 42%, rgba(109,32,52,0) 70%),
+      radial-gradient(circle at 48.9013671875% 49.521484375%, #083D3A 0%, 100%, rgba(8,61,58,0) 100%);
+  }
+
+  body[data-page="resources"] .tsc-desktop-footer,
+  body[data-page="blog-1"] .tsc-desktop-footer,
+  body[data-page="blog-2"] .tsc-desktop-footer,
+  body[data-page="blog-3"] .tsc-desktop-footer,
+  body[data-page="start-making-music"] .tsc-desktop-footer,
+  body[data-page="online-music-course-worth-it"] .tsc-desktop-footer,
+  body[data-page="artist-release-playbook"] .tsc-desktop-footer,
+  body[data-page="from-bhajan-to-clubbing"] .tsc-desktop-footer,
+  body[data-page="you-released-a-song-now-what"] .tsc-desktop-footer,
+  body[data-page="how-i-curate-music-with-independent-artists"] .tsc-desktop-footer {
+    --tsc-footer-texture: none;
+    --tsc-footer-bg: #3f897d;
+    --tsc-footer-fg: #ffecd1;
+    --tsc-footer-dim: rgba(255, 236, 209, 0.72);
+    --tsc-footer-accent: #ffecd1;
+    --tsc-footer-rule: rgba(255, 236, 209, 0.25);
+    --tsc-footer-input-bg: transparent;
+    --tsc-footer-icon-bg: transparent;
+    --tsc-footer-icon-fg: #ffecd1;
+    --tsc-footer-bg-image:
+      radial-gradient(circle at 93.70498657226562% 63.596420288085945%, #083D3A 0%, 47.06400000000001%, rgba(8,61,58,0) 74%),
+      radial-gradient(circle at 12.373097737630207% 43.813374837239586%, #126D5E 0%, 31.62%, rgba(18,109,94,0) 62%),
+      radial-gradient(circle at 14.929097493489582% 50.28353373209635%, #126D5E 0%, 40.757%, rgba(18,109,94,0) 53%),
+      radial-gradient(circle at 94.12206013997397% 52.778523763020836%, #083D3A 0%, 42.535999999999994%, rgba(8,61,58,0) 52%),
+      radial-gradient(circle at 48.9013671875% 49.521484375%, #3F897D 0%, 100%, rgba(63,137,125,0) 100%);
   }
 
   .tsc-desktop-footer::before {
+    content: "" !important;
     display: none !important;
+    inset: 0 !important;
+    opacity: 0.32 !important;
+    pointer-events: none !important;
+    position: absolute !important;
+    z-index: -1 !important;
   }
 
   .tsc-desktop-footer-main {
@@ -3537,6 +3496,20 @@ body.tsc-has-mobile-footer .tsc-legacy-footer-host:not(:has(.tsc-mobile-footer))
     width: 260px !important;
   }
 
+  .tsc-desktop-footer-logo-legacy svg {
+    display: block !important;
+    height: 100% !important;
+    max-height: 108px !important;
+    max-width: 260px !important;
+    width: 100% !important;
+  }
+
+  .tsc-desktop-footer-logo-legacy svg,
+  .tsc-desktop-footer-logo-legacy svg * {
+    fill: var(--tsc-footer-logo-fg, var(--tsc-footer-fg)) !important;
+    stroke: var(--tsc-footer-logo-fg, var(--tsc-footer-fg)) !important;
+  }
+
   .tsc-desktop-footer-academy .tsc-desktop-footer-logo {
     filter: brightness(0) saturate(100%) invert(20%) sepia(36%) saturate(1088%) hue-rotate(134deg) brightness(94%) contrast(91%) !important;
   }
@@ -3546,8 +3519,8 @@ body.tsc-has-mobile-footer .tsc-legacy-footer-host:not(:has(.tsc-mobile-footer))
     box-sizing: border-box !important;
     color: inherit !important;
     font-size: 15px !important;
-    font-weight: 700 !important;
-    letter-spacing: 0.01em !important;
+    font-weight: 400 !important;
+    letter-spacing: 0 !important;
     line-height: 1.35 !important;
     margin: 0 !important;
     max-width: 260px !important;
@@ -3569,7 +3542,7 @@ body.tsc-has-mobile-footer .tsc-legacy-footer-host:not(:has(.tsc-mobile-footer))
     color: inherit !important;
     font-size: 13px !important;
     font-style: italic !important;
-    font-weight: 700 !important;
+    font-weight: 400 !important;
     line-height: 1.35 !important;
     margin: 0 !important;
     max-width: none !important;
@@ -3596,8 +3569,8 @@ body.tsc-has-mobile-footer .tsc-legacy-footer-host:not(:has(.tsc-mobile-footer))
   .tsc-desktop-footer-startbox h2 {
     color: inherit !important;
     font-size: 13px !important;
-    font-weight: 800 !important;
-    letter-spacing: 0.06em !important;
+    font-weight: 400 !important;
+    letter-spacing: 0 !important;
     line-height: 1.15 !important;
     margin: 0 0 4px !important;
     opacity: 1 !important;
@@ -3613,7 +3586,7 @@ body.tsc-has-mobile-footer .tsc-legacy-footer-host:not(:has(.tsc-mobile-footer))
   .tsc-desktop-footer-startlinks a {
     color: inherit !important;
     font-size: 15px !important;
-    font-weight: 700 !important;
+    font-weight: 400 !important;
     line-height: 1.25 !important;
     overflow-wrap: normal !important;
     text-decoration: underline !important;
@@ -3644,8 +3617,8 @@ body.tsc-has-mobile-footer .tsc-legacy-footer-host:not(:has(.tsc-mobile-footer))
   .tsc-desktop-footer-group h3 {
     color: inherit !important;
     font-size: 13px !important;
-    font-weight: 800 !important;
-    letter-spacing: 0.06em !important;
+    font-weight: 400 !important;
+    letter-spacing: 0 !important;
     line-height: 1.15 !important;
     margin: 0 0 4px !important;
     opacity: 1 !important;
@@ -3661,7 +3634,7 @@ body.tsc-has-mobile-footer .tsc-legacy-footer-host:not(:has(.tsc-mobile-footer))
   .tsc-desktop-footer-links a {
     color: inherit !important;
     font-size: 15px !important;
-    font-weight: 700 !important;
+    font-weight: 400 !important;
     line-height: 1.3 !important;
     opacity: 1 !important;
     overflow-wrap: anywhere !important;
@@ -3685,7 +3658,7 @@ body.tsc-has-mobile-footer .tsc-legacy-footer-host:not(:has(.tsc-mobile-footer))
   .tsc-desktop-footer-news h2 {
     color: inherit !important;
     font-size: 17px !important;
-    font-weight: 800 !important;
+    font-weight: 400 !important;
     line-height: 1.2 !important;
     margin: 0 0 16px !important;
     text-decoration: underline !important;
@@ -3696,7 +3669,7 @@ body.tsc-has-mobile-footer .tsc-legacy-footer-host:not(:has(.tsc-mobile-footer))
   .tsc-desktop-footer-news p {
     color: inherit !important;
     font-size: 13px !important;
-    font-weight: 700 !important;
+    font-weight: 400 !important;
     line-height: 1.35 !important;
     margin: 0 0 10px !important;
     opacity: 1 !important;
@@ -3722,7 +3695,7 @@ body.tsc-has-mobile-footer .tsc-legacy-footer-host:not(:has(.tsc-mobile-footer))
     color: var(--tsc-footer-fg) !important;
     flex: 1 1 0 !important;
     font-size: 14px !important;
-    font-weight: 700 !important;
+    font-weight: 400 !important;
     min-height: 60px !important;
     min-width: 0 !important;
     padding: 12px 14px !important;
@@ -3741,8 +3714,8 @@ body.tsc-has-mobile-footer .tsc-legacy-footer-host:not(:has(.tsc-mobile-footer))
     color: var(--tsc-footer-bg) !important;
     flex: 0 0 auto !important;
     font-size: 12px !important;
-    font-weight: 800 !important;
-    letter-spacing: 0.04em !important;
+    font-weight: 400 !important;
+    letter-spacing: 0 !important;
     min-height: 60px !important;
     min-width: 126px !important;
     padding: 0 16px !important;
@@ -3767,22 +3740,22 @@ body.tsc-has-mobile-footer .tsc-legacy-footer-host:not(:has(.tsc-mobile-footer))
     align-items: center !important;
     background: var(--tsc-footer-icon-bg) !important;
     border: 0 !important;
-    border-radius: 8px !important;
+    border-radius: 0 !important;
     color: var(--tsc-footer-icon-fg) !important;
     display: inline-flex !important;
-    height: 38px !important;
+    height: 33px !important;
     justify-content: center !important;
     opacity: 1 !important;
-    width: 38px !important;
+    width: 33px !important;
   }
 
   .tsc-desktop-footer-icon svg,
   body[data-page] .tsc-desktop-footer .tsc-desktop-footer-icon svg {
     color: var(--tsc-footer-icon-fg) !important;
     fill: var(--tsc-footer-icon-fg) !important;
-    height: 18px !important;
+    height: 100% !important;
     stroke: none !important;
-    width: 18px !important;
+    width: 100% !important;
   }
 
   .tsc-desktop-footer-icon svg *,

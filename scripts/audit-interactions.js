@@ -38,10 +38,20 @@ function parseArgs() {
 }
 
 function findFeatureConfig(pageFile) {
-  const file = fs.readdirSync(THUNDERBOLT_DIR).find(name =>
+  const files = fs.readdirSync(THUNDERBOLT_DIR).filter(name =>
     name.startsWith('thunderbolt-features--') && name.includes(pageFile));
-  if (!file) throw new Error(`Missing Thunderbolt feature payload for ${pageFile}`);
-  return JSON.parse(fs.readFileSync(path.join(THUNDERBOLT_DIR, file), 'utf8'));
+  if (!files.length) throw new Error(`Missing Thunderbolt feature payload for ${pageFile}`);
+  const scored = files.map(file => {
+    const payload = JSON.parse(fs.readFileSync(path.join(THUNDERBOLT_DIR, file), 'utf8'));
+    const reactions = (payload.props || {}).triggersAndReactions || payload.triggersAndReactions || {};
+    const motion = (payload.props || {}).motion || {};
+    const score =
+      Object.keys(reactions.compsToTriggers || {}).length +
+      (reactions.scrubReactionWithBpRanges || []).length +
+      Object.keys(motion.animationDataByCompId || {}).length;
+    return { file, payload, score };
+  }).sort((left, right) => right.score - left.score);
+  return scored[0].payload;
 }
 
 function interactionModel(route) {
@@ -74,6 +84,31 @@ async function sampleMotion(page, seen) {
     duration: animation.effect && animation.effect.getTiming ? animation.effect.getTiming().duration : null,
   })));
   for (const animation of animations) seen.set(`${animation.name}|${animation.target}`, animation);
+}
+
+function isBenignMotionAbort(message) {
+  return /AbortError: The user aborted a request/i.test(message || '') &&
+    /wix-thunderbolt\/dist\/motion|motion\.[\w.-]+\.chunk\.min\.js/i.test(message || '');
+}
+
+async function pageScrollHeight(page) {
+  return page.evaluate(() => {
+    const root = document.scrollingElement || document.documentElement || document.body;
+    return Math.max(
+      root?.scrollHeight || 0,
+      document.documentElement?.scrollHeight || 0,
+      document.body?.scrollHeight || 0
+    );
+  });
+}
+
+async function scrollPageTo(page, top) {
+  await page.evaluate(value => {
+    const root = document.scrollingElement || document.documentElement || document.body;
+    if (root) root.scrollTop = value;
+    window.scrollTo(0, value);
+    document.dispatchEvent(new Event('scroll', { bubbles: true }));
+  }, top);
 }
 
 async function waitForRuntime(page) {
@@ -161,7 +196,10 @@ async function auditRoute(browser, config, route) {
   await page.setViewport({ width: 1440, height: 1000, deviceScaleFactor: 1 });
   await page.setCacheEnabled(false);
   const diagnostics = { pageErrors: [], requestFailures: [], consoleErrors: [] };
-  page.on('pageerror', error => diagnostics.pageErrors.push(error.stack || error.message));
+  page.on('pageerror', error => {
+    const message = error.stack || error.message;
+    if (!isBenignMotionAbort(message)) diagnostics.pageErrors.push(message);
+  });
   page.on('requestfailed', request => {
     const navigationAbortedMedia = ['image', 'media'].includes(request.resourceType()) && request.failure()?.errorText === 'net::ERR_ABORTED';
     if (!navigationAbortedMedia && !/(?:frog\.wix\.com|panorama\.wixapps\.net|sentry-next\.wixpress\.com)/i.test(request.url())) {
@@ -182,9 +220,9 @@ async function auditRoute(browser, config, route) {
     await sampleMotion(page, seen);
     await new Promise(resolve => setTimeout(resolve, 80));
   }
-  const height = await page.evaluate(() => document.documentElement.scrollHeight);
+  const height = await pageScrollHeight(page);
   for (let y = 0; y < height; y += 500) {
-    await page.evaluate(top => window.scrollTo(0, top), y);
+    await scrollPageTo(page, y);
     for (let index = 0; index < 4; index += 1) {
       await sampleMotion(page, seen);
       await new Promise(resolve => setTimeout(resolve, 70));

@@ -3,7 +3,7 @@
   "html": "/pages/artists.html",
   "css": "/css/pages/artists.css",
   "animations": "/js/pages/artists.animations.js",
-  "generatedAt": "2026-08-10T11:16:54.139Z",
+  "generatedAt": "2026-08-11T10:02:53.335Z",
   "totals": {
     "assets": 102,
     "missing": 0
@@ -897,7 +897,7 @@
         "local": {
           "exists": true,
           "path": "/css/pages/artists.css",
-          "bytes": 798258
+          "bytes": 798297
         }
       }
     ],

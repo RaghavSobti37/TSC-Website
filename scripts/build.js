@@ -211,9 +211,10 @@ function ensurePageScript(html, src) {
 }
 
 function ensureHeadScript(html, src) {
-  if (html.includes(`src="${src}"`) || html.includes(`src='${src}'`)) return html;
+  const bareSrc = src.split('?')[0].replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  html = html.replace(new RegExp(`\\s*<script\\b[^>]*\\bsrc=["']${bareSrc}(?:\\?[^"']*)?["'][^>]*><\\/script>`, 'g'), '');
   if (html.includes('</head>')) {
-    return html.replace('</head>', `<script src="${src}"></script>\n</head>`);
+    return html.replace('</head>', `<script defer src="${src}"></script>\n</head>`);
   }
   return ensurePageScript(html, src);
 }
@@ -290,7 +291,7 @@ for (const file of htmlFiles) {
       fs.writeFileSync(file, guardedHtml, 'utf8');
       html = guardedHtml;
     }
-    const motionMappedHtml = ensureHeadScript(html, '/js/tsc-wix-authored-motion.js?v=payload-map-1');
+    const motionMappedHtml = ensureHeadScript(html, '/js/tsc-wix-authored-motion.js?v=payload-map-2');
     if (motionMappedHtml !== html) {
       fs.writeFileSync(file, motionMappedHtml, 'utf8');
       html = motionMappedHtml;

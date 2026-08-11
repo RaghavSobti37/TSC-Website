@@ -2992,7 +2992,7 @@
   // Play paused Wix enter/loop motions + slideshow word-swap (all viewports).
   ensureStylesheet('/css/tsc-wix-motion.css?v=hero-word-single-1');
   ensureScript('/js/tsc-wix-motion.js?v=testimonial-slide-1');
-  ensureScript('/js/tsc-wix-authored-motion.js?v=payload-map-1');
+  ensureScript('/js/tsc-wix-authored-motion.js?v=payload-map-2');
   function bootUi() {
     if (redirectLegacyLearnHub()) return;
     var path = canonicalPathname();

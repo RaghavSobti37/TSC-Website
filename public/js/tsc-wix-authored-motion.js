@@ -47,54 +47,159 @@
     return Math.max(0, Math.min(1, (raw - start) / range));
   }
 
+  function cssUnit(type) {
+    return type === 'percentage' ? '%' : type || 'px';
+  }
+
+  function rotateZ() {
+    return ' rotate(var(--comp-rotate-z, 0deg))';
+  }
+
+  function inverseDirection(direction) {
+    return { top: 'bottom', right: 'left', bottom: 'top', left: 'right' }[direction] || direction;
+  }
+
+  function clipFor(direction, range, end) {
+    if (range === 'continuous' && end === 'middle') return 'inset(0%)';
+    if ((range === 'in' && end) || (range === 'out' && !end)) return 'inset(0%)';
+    var side = range === 'out' ? inverseDirection(direction) : direction;
+    if (side === 'top') return 'inset(0% 0% 100% 0%)';
+    if (side === 'right') return 'inset(0% 0% 0% 100%)';
+    if (side === 'bottom') return 'inset(100% 0% 0% 0%)';
+    if (side === 'left') return 'inset(0% 100% 0% 0%)';
+    return 'inset(0%)';
+  }
+
+  function measureLeft(element) {
+    return element && element.getBoundingClientRect ? element.getBoundingClientRect().left : 0;
+  }
+
+  function offscreenPair(element, direction, distance) {
+    if (distance) {
+      var value = distance.value || 400;
+      var unit = cssUnit(distance.type || 'px');
+      var signed = value * (direction === 'left' ? 1 : -1);
+      return [(-signed) + unit, signed + unit];
+    }
+    var left = measureLeft(element);
+    var start = 'calc(' + left + 'px * -1 - 100%)';
+    var end = 'calc(100vw - ' + left + 'px)';
+    return direction === 'left' ? [start, end] : [end, start];
+  }
+
+  function motionPart(element, part) {
+    if (!element || !part) return element;
+    return element.matches && element.matches('[data-motion-part~="' + part + '"]')
+      ? element
+      : element.querySelector('[data-motion-part~="' + part + '"]') || element;
+  }
+
   function mediaTarget(element, effectType) {
     if (!element) return null;
     if (effectType === 'BgParallax') {
-      return element.querySelector('img, video, wow-image, wix-image') || element;
+      return motionPart(element, 'BG_MEDIA').querySelector('img, video, wow-image, wix-image') ||
+        motionPart(element, 'BG_MEDIA') ||
+        element.querySelector('img, video, wow-image, wix-image') ||
+        element;
+    }
+    if (effectType === 'BgFade') {
+      return motionPart(element, 'BG_LAYER');
     }
     return element;
   }
 
-  function keyframesFor(effect) {
+  function keyframesFor(effect, element) {
     var named = effect.namedEffect || {};
     var type = named.type;
     if (type === 'BgParallax' || type === 'ParallaxScroll') {
       var travel = 50 * (typeof named.speed === 'number' ? named.speed : 0.5);
       return [
-        { transform: 'translateY(' + (-travel) + 'vh)' },
-        { transform: 'translateY(' + travel + 'vh)' }
+        { transform: 'translateY(calc(-1 * ' + travel + 'vh))' + rotateZ() },
+        { transform: 'translateY(' + travel + 'vh)' + rotateZ() }
+      ];
+    }
+    if (type === 'BgFade') {
+      var bgOut = named.range === 'out';
+      return [
+        { opacity: bgOut ? 1 : 0 },
+        { opacity: bgOut ? 0 : 1 }
+      ];
+    }
+    if (type === 'ArcScroll') {
+      var arcRange = named.range || 'in';
+      var arcAxis = named.direction === 'vertical' ? 'X' : 'Y';
+      return [
+        { transform: 'perspective(500px) translateZ(-300px) rotate' + arcAxis + '(' + (arcRange === 'out' ? 0 : -68) + 'deg) translateZ(300px)' + rotateZ() },
+        { transform: 'perspective(500px) translateZ(-300px) rotate' + arcAxis + '(' + (arcRange === 'in' ? 0 : 68) + 'deg) translateZ(300px)' + rotateZ() }
+      ];
+    }
+    if (type === 'MoveScroll') {
+      var moveRange = named.range || 'in';
+      var distance = named.power === 'soft' ? { value: 150, type: 'px' } :
+        named.power === 'medium' ? { value: 400, type: 'px' } :
+        named.power === 'hard' ? { value: 800, type: 'px' } :
+        named.distance || { value: 400, type: 'px' };
+      var angle = (typeof named.angle === 'number' ? named.angle : 210) - 90;
+      var radians = angle * Math.PI / 180;
+      var x = Math.round(Math.cos(radians) * (distance.value || 0));
+      var y = Math.round(Math.sin(radians) * (distance.value || 0));
+      var unit = cssUnit(distance.type || 'px');
+      var fromX = moveRange === 'out' ? 0 : x;
+      var fromY = moveRange === 'out' ? 0 : y;
+      var toX = moveRange === 'in' ? 0 : moveRange === 'out' ? x : -x;
+      var toY = moveRange === 'in' ? 0 : moveRange === 'out' ? y : -y;
+      return [
+        { transform: 'translate(' + fromX + unit + ', ' + fromY + unit + ')' + rotateZ() },
+        { transform: 'translate(' + toX + unit + ', ' + toY + unit + ')' + rotateZ() }
       ];
     }
     if (type === 'SlideScroll') {
-      var distance = named.range === 'out' ? 0 : 48;
-      var axis = named.direction === 'left' || named.direction === 'right' ? 'X' : 'Y';
-      var sign = named.direction === 'top' || named.direction === 'left' ? -1 : 1;
+      var slideDirection = named.direction || 'bottom';
+      var slideRange = named.range || 'in';
+      var slideVectors = {
+        bottom: { x: '0', y: '100%' },
+        left: { x: '-100%', y: '0' },
+        top: { x: '0', y: '-100%' },
+        right: { x: '100%', y: '0' }
+      };
+      var opposite = inverseDirection(slideDirection);
+      var from = slideRange === 'out' ? { x: '0', y: '0' } : slideVectors[slideDirection];
+      var to = slideRange === 'in' ? { x: '0', y: '0' } : slideVectors[slideRange === 'out' ? slideDirection : opposite];
       return [
-        { transform: 'translate' + axis + '(' + (distance * sign) + 'px)' },
-        { transform: 'translate' + axis + '(0px)' }
+        { clipPath: clipFor(slideDirection, slideRange, false), transform: rotateZ().trim() + ' translate(' + from.x + ', ' + from.y + ')' },
+        { clipPath: clipFor(slideDirection, slideRange, true), transform: rotateZ().trim() + ' translate(' + to.x + ', ' + to.y + ')' }
       ];
     }
     if (type === 'SkewPanScroll') {
-      var skew = typeof named.skew === 'number' ? named.skew : 17;
-      var skewSign = named.direction === 'left' ? -1 : 1;
+      var skewRange = named.range || 'in';
+      var skewPower = { soft: 10, medium: 17, hard: 24 };
+      var skew = (named.power && skewPower[named.power] ? skewPower[named.power] : (typeof named.skew === 'number' ? named.skew : 10)) *
+        (named.direction === 'left' ? 1 : -1);
+      var pan = offscreenPair(element, named.direction || 'right');
+      var startX = skewRange === 'out' ? 0 : pan[0];
+      var endX = skewRange === 'in' ? 0 : skewRange === 'out' ? pan[0] : pan[1];
+      var fromSkew = skewRange === 'out' ? 0 : skew;
+      var toSkew = skewRange === 'in' ? 0 : -skew;
       return [
-        { transform: 'skewX(' + (skew * skewSign) + 'deg)' },
-        { transform: 'skewX(0deg)' }
+        { transform: 'translateX(' + startX + ') skewX(' + fromSkew + 'deg)' + rotateZ() },
+        { transform: 'translateX(' + endX + ') skewX(' + toSkew + 'deg)' + rotateZ() }
       ];
     }
     if (type === 'FlipScroll') {
-      var rotate = typeof named.rotate === 'number' ? named.rotate : 90;
+      var flipPower = { soft: 60, medium: 120, hard: 420 };
+      var rotate = named.power && flipPower[named.power] ? flipPower[named.power] : (typeof named.rotate === 'number' ? named.rotate : 240);
       var rotateAxis = named.direction === 'vertical' ? 'X' : 'Y';
+      var flipRange = named.range || 'continuous';
       return [
-        { transform: 'perspective(800px) rotate' + rotateAxis + '(0deg)' },
-        { transform: 'perspective(800px) rotate' + rotateAxis + '(' + rotate + 'deg)' }
+        { transform: 'perspective(800px) rotate' + rotateAxis + '(' + (flipRange === 'out' ? 0 : -rotate) + 'deg)' + rotateZ() },
+        { transform: 'perspective(800px) rotate' + rotateAxis + '(' + (flipRange === 'in' ? 0 : rotate) + 'deg)' + rotateZ() }
       ];
     }
     return null;
   }
 
   function makeScrollEffect(element, effect) {
-    var frames = keyframesFor(effect);
+    var frames = keyframesFor(effect, element);
     if (!frames || !element || !element.animate) return null;
     var target = mediaTarget(element, (effect.namedEffect || {}).type);
     var animation = target.animate(frames, {

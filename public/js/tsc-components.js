@@ -2985,7 +2985,7 @@
 
   /* Critical desktop nav lock BEFORE any header mount (stops size/colour flash). */
   ensureStylesheet('/css/tsc-nav-overrides.css?v=clone-faithful-1');
-  ensureStylesheet('/css/tsc-responsive.css?v=courses-roots-click-1');
+  ensureStylesheet('/css/tsc-responsive.css?v=about-canvas-1');
   ensureStylesheet('/css/tsc-desktop-nav-lock.css?v=nav-lock-noop-1');
   ensureStylesheet('/css/tsc-brand-card.css');
   ensureScript('/js/tsc-brand-cards.js?v=films-card-copy-1');

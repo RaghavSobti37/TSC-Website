@@ -494,3 +494,27 @@ body[data-page="yugm"] #comp-mqhqa6xg .comp-mqhqa6xg-container {
   height: 100% !important;
   min-height: 100% !important;
 }
+
+body[data-page="yugm"] #q5942 .q5942-container {
+  grid-template-rows: clamp(820px, 92svh, 960px) auto auto auto auto auto !important;
+}
+
+body[data-page="yugm"] #comp-mqhqa6yo {
+  grid-area: 2 / 1 / 3 / 2 !important;
+}
+
+body[data-page="yugm"] #comp-mqjigv1b {
+  grid-area: 3 / 1 / 4 / 2 !important;
+}
+
+body[data-page="yugm"] #comp-mqhqa6zr {
+  grid-area: 4 / 1 / 5 / 2 !important;
+}
+
+body[data-page="yugm"] #comp-mqhqa72r {
+  grid-area: 5 / 1 / 6 / 2 !important;
+}
+
+body[data-page="yugm"] #comp-mqhqa74u {
+  grid-area: 6 / 1 / 7 / 2 !important;
+}

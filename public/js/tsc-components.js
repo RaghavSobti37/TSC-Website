@@ -2325,6 +2325,50 @@
     return clone.outerHTML || fallback;
   }
 
+  function findFooterSectionInRoot(root) {
+    if (!root || !root.querySelectorAll) return null;
+    return Array.prototype.slice.call(root.querySelectorAll('.wixui-footer, section, [data-testid="section-container"]')).find(function (section) {
+      var text = (section.textContent || '').replace(/\s+/g, ' ').trim();
+      return /Quick Links/i.test(text) && /Join Our Community/i.test(text);
+    }) || null;
+  }
+
+  function referenceFooterPathForPage(config) {
+    var page = document.body && document.body.dataset && document.body.dataset.page || '';
+    if (config && config.academy) return '/academy';
+    if (/films|mahavatar|hanuman|mahaprbhu|mahaprabhu|kalki/i.test(page)) return '/films';
+    if (/resources|blog|music-course|release-playbook|bhajan|released-a-song|curate-music/i.test(page)) return '/resources';
+    return '/';
+  }
+
+  function hydrateReferenceFooterAssets(shell, config, sourceFooter) {
+    if (!shell || sourceFooter || !window.fetch || !window.DOMParser) return;
+    var referencePath = referenceFooterPathForPage(config);
+    window.fetch(referencePath, { credentials: 'same-origin' })
+      .then(function (response) {
+        if (!response.ok) throw new Error('Footer reference unavailable');
+        return response.text();
+      })
+      .then(function (html) {
+        var parsed = new DOMParser().parseFromString(html, 'text/html');
+        var footer = findFooterSectionInRoot(parsed);
+        if (!footer) return;
+        Array.prototype.forEach.call(shell.querySelectorAll('[data-tsc-social-id]'), function (link) {
+          var id = link.getAttribute('data-tsc-social-id');
+          var needle = id === 'email' ? 'mailto:' : id;
+          var svg = scrapeFooterSvgMarkup(footer, needle, '');
+          if (svg) link.innerHTML = svg;
+        });
+        var logoSvg = scrapeFooterLogoSvgMarkup(footer);
+        if (!logoSvg) return;
+        Array.prototype.forEach.call(shell.querySelectorAll('.tsc-desktop-footer-brand, .tsc-mobile-footer-brand'), function (brand) {
+          var isMobile = brand.classList.contains('tsc-mobile-footer-brand');
+          brand.innerHTML = '<span class="' + (isMobile ? 'tsc-mobile-footer-logo tsc-mobile-footer-logo-svg' : 'tsc-desktop-footer-logo tsc-desktop-footer-logo-legacy') + '" aria-hidden="true">' + logoSvg + '</span>';
+        });
+      })
+      .catch(function () {});
+  }
+
   function findLegacyFooterSections() {
     return Array.prototype.slice.call(document.querySelectorAll('.wixui-footer, section, [data-testid="section-container"]')).filter(function (section) {
       if (section.closest('.tsc-desktop-footer, .tsc-mobile-footer')) return false;
@@ -2462,6 +2506,7 @@
         : s.id === 'email' ? ('mailto:' + CONTACT_EMAIL)
           : scraped;
       return {
+        id: s.id,
         aria: s.aria,
         href: href,
         svg: scrapeFooterSvgMarkup(sourceFooter, s.needle, SOCIAL_SVGS[s.id])
@@ -2507,7 +2552,7 @@
       '<p class="tsc-desktop-footer-newsnote" role="status" hidden>Thanks, you are on the list.</p>',
       '<div class="tsc-desktop-footer-social">',
       socials.map(function (s) {
-        return '<a class="tsc-desktop-footer-icon" href="' + escapeHtml(s.href) + '" target="_blank" rel="noopener noreferrer" aria-label="' + escapeHtml(s.aria) + '">' + s.svg + '</a>';
+        return '<a class="tsc-desktop-footer-icon" data-tsc-social-id="' + escapeHtml(s.id) + '" href="' + escapeHtml(s.href) + '" target="_blank" rel="noopener noreferrer" aria-label="' + escapeHtml(s.aria) + '">' + s.svg + '</a>';
       }).join(''),
       '</div>',
       buildFooterCopyrightUnderSocials(brandName),
@@ -2524,6 +2569,7 @@
     document.body.classList.add('tsc-has-desktop-footer');
     var form = shell.querySelector('.tsc-desktop-footer-newsrow');
     bindNewsletterSubmit(form, shell);
+    hydrateReferenceFooterAssets(shell, config, sourceFooter);
     return shell;
   }
 
@@ -2563,6 +2609,7 @@
         : s.id === 'email' ? ('mailto:' + CONTACT_EMAIL)
           : scraped;
       return {
+        id: s.id,
         aria: s.aria,
         href: href,
         svg: scrapeFooterSvgMarkup(sourceFooter, s.needle, SOCIAL_SVGS[s.id])
@@ -2601,7 +2648,7 @@
       '</div>',
       '<div class="tsc-mobile-footer-social">',
       socials.map(function (s) {
-        return '<a class="tsc-mobile-footer-icon" href="' + escapeHtml(s.href) + '" target="_blank" rel="noopener noreferrer" aria-label="' + escapeHtml(s.aria) + '">' + s.svg + '</a>';
+        return '<a class="tsc-mobile-footer-icon" data-tsc-social-id="' + escapeHtml(s.id) + '" href="' + escapeHtml(s.href) + '" target="_blank" rel="noopener noreferrer" aria-label="' + escapeHtml(s.aria) + '">' + s.svg + '</a>';
       }).join(''),
       '</div>',
       buildMobileFooterCopyrightUnderSocials(brandName)
@@ -2616,6 +2663,7 @@
     document.body.classList.add('tsc-has-mobile-footer');
     var form = shell.querySelector('.tsc-mobile-footer-newsrow');
     bindNewsletterSubmit(form, shell);
+    hydrateReferenceFooterAssets(shell, config, sourceFooter);
     return shell;
   }
 

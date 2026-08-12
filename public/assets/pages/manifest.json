@@ -15,7 +15,7 @@
     {
       "page": "affiliate",
       "manifest": "/assets/pages/affiliate/manifest.json",
-      "assets": 117,
+      "assets": 116,
       "missing": 0
     },
     {
@@ -111,7 +111,7 @@
     {
       "page": "harshad-duhita",
       "manifest": "/assets/pages/harshad-duhita/manifest.json",
-      "assets": 114,
+      "assets": 113,
       "missing": 7
     },
     {
@@ -267,7 +267,7 @@
     {
       "page": "yugm",
       "manifest": "/assets/pages/yugm/manifest.json",
-      "assets": 121,
+      "assets": 120,
       "missing": 7
     }
   ]

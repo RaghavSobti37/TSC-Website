@@ -1,0 +1,1239 @@
+[
+  {
+    "route": "/",
+    "footerClass": "comp-kbgakxmn S829f_ comp-kbgakxmn-container",
+    "sectionId": "comp-kbgakxmn_r_comp-kbgakgyt",
+    "sectionClass": "ke5pl1 comp-kbgakxmn_r_comp-kbgakgyt-container comp-kbgakxmn_r_comp-kbgakgyt wixui-footer undefined fwXYgt",
+    "rect": {
+      "width": 1440,
+      "height": 300,
+      "top": 2685.75
+    },
+    "footerBg": "rgba(0, 0, 0, 0)",
+    "sectionBg": "rgba(255, 236, 209, 0)",
+    "underlayBg": "rgba(0, 0, 0, 0)",
+    "overlayInfo": {
+      "containerId": "comp-kbgakxmn_r_comp-kbgakgyt",
+      "fittingType": "tile",
+      "imageData": {
+        "width": 300,
+        "height": 225,
+        "uri": "0da768_8657a8f7766a4491ad2da38ae2f4f82f~mv2.png",
+        "displayMode": "tile"
+      }
+    },
+    "text": [
+      {
+        "text": "#comp-kbgakxmn_r_comp-mrsr3my7 svg [data-color=\"1\"] {fill: #FFECD1;}",
+        "tag": "A",
+        "className": "IT88M3",
+        "color": "rgb(0, 0, 238)",
+        "fontFamily": "Arial, Helvetica, sans-serif",
+        "fontSize": "10px",
+        "fontWeight": "400",
+        "lineHeight": "normal",
+        "textDecoration": "none"
+      },
+      {
+        "text": "Unfolding artist force.",
+        "tag": "DIV",
+        "className": "N8MGzv _v6ohL PO9MfV comp-kbgakxmn_r_comp-mrsrcxiz wixui-rich-text",
+        "color": "rgb(0, 0, 0)",
+        "fontFamily": "Arial, Helvetica, sans-serif",
+        "fontSize": "10px",
+        "fontWeight": "400",
+        "lineHeight": "normal",
+        "textDecoration": "none"
+      },
+      {
+        "text": "© 2026 The Shakti Collective. All rights reserved.",
+        "tag": "DIV",
+        "className": "N8MGzv _v6ohL PO9MfV comp-kbgakxmn_r_comp-mrsrbizc wixui-rich-text",
+        "color": "rgb(0, 0, 0)",
+        "fontFamily": "Arial, Helvetica, sans-serif",
+        "fontSize": "10px",
+        "fontWeight": "400",
+        "lineHeight": "normal",
+        "textDecoration": "none"
+      },
+      {
+        "text": "Quick Links",
+        "tag": "DIV",
+        "className": "N8MGzv _v6ohL PO9MfV comp-kbgakxmn_r_comp-mrsraiid wixui-rich-text",
+        "color": "rgb(0, 0, 0)",
+        "fontFamily": "Arial, Helvetica, sans-serif",
+        "fontSize": "10px",
+        "fontWeight": "400",
+        "lineHeight": "normal",
+        "textDecoration": "none"
+      },
+      {
+        "text": "About",
+        "tag": "DIV",
+        "className": "N8MGzv _v6ohL PO9MfV comp-kbgakxmn_r_comp-mrsrsp30 wixui-rich-text",
+        "color": "rgb(0, 0, 0)",
+        "fontFamily": "Arial, Helvetica, sans-serif",
+        "fontSize": "10px",
+        "fontWeight": "400",
+        "lineHeight": "normal",
+        "textDecoration": "none"
+      },
+      {
+        "text": "About",
+        "tag": "A",
+        "className": "wixui-rich-text__text",
+        "color": "rgb(255, 236, 209)",
+        "fontFamily": "wfont_834fa9_d08c6fe9ca9b47ccb21ecdcb74412010, wf_d08c6fe9ca9b47ccb21ecdcb7, orig_alan_sans_light",
+        "fontSize": "15.75px",
+        "fontWeight": "400",
+        "lineHeight": "25.2px",
+        "textDecoration": "none"
+      },
+      {
+        "text": "Work",
+        "tag": "DIV",
+        "className": "N8MGzv _v6ohL PO9MfV comp-kbgakxmn_r_comp-mrsrt92l wixui-rich-text",
+        "color": "rgb(0, 0, 0)",
+        "fontFamily": "Arial, Helvetica, sans-serif",
+        "fontSize": "10px",
+        "fontWeight": "400",
+        "lineHeight": "normal",
+        "textDecoration": "none"
+      },
+      {
+        "text": "Work",
+        "tag": "A",
+        "className": "wixui-rich-text__text",
+        "color": "rgb(255, 236, 209)",
+        "fontFamily": "wfont_834fa9_d08c6fe9ca9b47ccb21ecdcb74412010, wf_d08c6fe9ca9b47ccb21ecdcb7, orig_alan_sans_light",
+        "fontSize": "15.75px",
+        "fontWeight": "400",
+        "lineHeight": "25.2px",
+        "textDecoration": "none"
+      },
+      {
+        "text": "Artists",
+        "tag": "DIV",
+        "className": "N8MGzv _v6ohL PO9MfV comp-kbgakxmn_r_comp-mrsrtljy wixui-rich-text",
+        "color": "rgb(0, 0, 0)",
+        "fontFamily": "Arial, Helvetica, sans-serif",
+        "fontSize": "10px",
+        "fontWeight": "400",
+        "lineHeight": "normal",
+        "textDecoration": "none"
+      },
+      {
+        "text": "Artists",
+        "tag": "A",
+        "className": "wixui-rich-text__text",
+        "color": "rgb(255, 236, 209)",
+        "fontFamily": "wfont_834fa9_d08c6fe9ca9b47ccb21ecdcb74412010, wf_d08c6fe9ca9b47ccb21ecdcb7, orig_alan_sans_light",
+        "fontSize": "15.75px",
+        "fontWeight": "400",
+        "lineHeight": "25.2px",
+        "textDecoration": "none"
+      },
+      {
+        "text": "TSC Academy",
+        "tag": "DIV",
+        "className": "N8MGzv _v6ohL PO9MfV comp-kbgakxmn_r_comp-mrsru17u wixui-rich-text",
+        "color": "rgb(0, 0, 0)",
+        "fontFamily": "Arial, Helvetica, sans-serif",
+        "fontSize": "10px",
+        "fontWeight": "400",
+        "lineHeight": "normal",
+        "textDecoration": "none"
+      },
+      {
+        "text": "TSC Academy",
+        "tag": "A",
+        "className": "wixui-rich-text__text",
+        "color": "rgb(255, 236, 209)",
+        "fontFamily": "wfont_834fa9_d08c6fe9ca9b47ccb21ecdcb74412010, wf_d08c6fe9ca9b47ccb21ecdcb7, orig_alan_sans_light",
+        "fontSize": "15.75px",
+        "fontWeight": "400",
+        "lineHeight": "25.2px",
+        "textDecoration": "none"
+      },
+      {
+        "text": "Films",
+        "tag": "DIV",
+        "className": "N8MGzv _v6ohL PO9MfV comp-kbgakxmn_r_comp-mrsru1b9 wixui-rich-text",
+        "color": "rgb(0, 0, 0)",
+        "fontFamily": "Arial, Helvetica, sans-serif",
+        "fontSize": "10px",
+        "fontWeight": "400",
+        "lineHeight": "normal",
+        "textDecoration": "none"
+      },
+      {
+        "text": "Films",
+        "tag": "A",
+        "className": "wixui-rich-text__text",
+        "color": "rgb(255, 236, 209)",
+        "fontFamily": "wfont_834fa9_d08c6fe9ca9b47ccb21ecdcb74412010, wf_d08c6fe9ca9b47ccb21ecdcb7, orig_alan_sans_light",
+        "fontSize": "15.75px",
+        "fontWeight": "400",
+        "lineHeight": "25.2px",
+        "textDecoration": "none"
+      },
+      {
+        "text": "Join Our Community",
+        "tag": "DIV",
+        "className": "N8MGzv _v6ohL PO9MfV comp-kbgakxmn_r_comp-mrsr842o wixui-rich-text",
+        "color": "rgb(0, 0, 0)",
+        "fontFamily": "Arial, Helvetica, sans-serif",
+        "fontSize": "10px",
+        "fontWeight": "400",
+        "lineHeight": "normal",
+        "textDecoration": "none"
+      },
+      {
+        "text": "Join Our Community",
+        "tag": "A",
+        "className": "wixui-rich-text__text",
+        "color": "rgb(255, 236, 209)",
+        "fontFamily": "wfont_834fa9_d08c6fe9ca9b47ccb21ecdcb74412010, wf_d08c6fe9ca9b47ccb21ecdcb7, orig_alan_sans_light",
+        "fontSize": "15.75px",
+        "fontWeight": "400",
+        "lineHeight": "25.2px",
+        "textDecoration": "none"
+      },
+      {
+        "text": "",
+        "tag": "INPUT",
+        "className": "nbaJII has-custom-focus wixui-text-input__input",
+        "color": "rgb(255, 236, 209)",
+        "fontFamily": "wfont_834fa9_d08c6fe9ca9b47ccb21ecdcb74412010, wf_d08c6fe9ca9b47ccb21ecdcb7, orig_alan_sans_light",
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "lineHeight": "22.4px",
+        "textDecoration": "none"
+      },
+      {
+        "text": "",
+        "tag": "A",
+        "className": "IT88M3",
+        "color": "rgb(0, 0, 238)",
+        "fontFamily": "Arial, Helvetica, sans-serif",
+        "fontSize": "10px",
+        "fontWeight": "400",
+        "lineHeight": "normal",
+        "textDecoration": "none"
+      },
+      {
+        "text": "",
+        "tag": "A",
+        "className": "IT88M3",
+        "color": "rgb(0, 0, 238)",
+        "fontFamily": "Arial, Helvetica, sans-serif",
+        "fontSize": "10px",
+        "fontWeight": "400",
+        "lineHeight": "normal",
+        "textDecoration": "none"
+      },
+      {
+        "text": "",
+        "tag": "A",
+        "className": "IT88M3",
+        "color": "rgb(0, 0, 238)",
+        "fontFamily": "Arial, Helvetica, sans-serif",
+        "fontSize": "10px",
+        "fontWeight": "400",
+        "lineHeight": "normal",
+        "textDecoration": "none"
+      }
+    ],
+    "icons": [
+      {
+        "href": "/",
+        "label": "",
+        "color": "rgb(0, 0, 238)",
+        "fill": "rgb(0, 0, 0)",
+        "width": "0.019 -0.011 1239.577 506.509",
+        "svg": "<svg preserveAspectRatio=\"xMidYMid meet\" data-bbox=\"0.019 -0.011 1239.577 506.509\" viewBox=\"0.019 -0.011 1239.577 506.509\" xmlns=\"http://www.w3.org/2000/svg\" data-type=\"color\" role=\"presentation\" aria-hidden=\"true\" aria-label=\"\"><defs><style>#comp-kbgakxmn_r_comp-mrsr3my7 svg [data-color=\"1\"] {fill: #FFECD1;}</style></defs> <g> <path d=\"M308.9 305.85c-13.46-13.51-28.52-23.66-46.8-28.36-24-6.16-45.63-1.81-63.93 15.48-9.29 8.78-16.77 18.92-20.45 31.39-3.77 12.76-3.61 25.41 3.69 36.89 11.91 18.74 3"
+      },
+      {
+        "href": "https://www.instagram.com/the_shakti_collective/?hl=en",
+        "label": "",
+        "color": "rgb(0, 0, 238)",
+        "fill": "rgb(255, 236, 209)",
+        "width": "33 33 133.333 133.325",
+        "svg": "<svg preserveAspectRatio=\"xMidYMid meet\" data-bbox=\"33 33 133.333 133.325\" viewBox=\"33 33 133.333 133.325\" height=\"200\" width=\"200\" xmlns=\"http://www.w3.org/2000/svg\" data-type=\"shape\" role=\"presentation\" aria-hidden=\"true\" aria-label=\"\"> <g> <path d=\"M135.258 56.075c4.409 0 8 3.583 8 8s-3.591 8-8 8c-4.416 0-8.008-3.583-8.008-8s3.592-8 8.008-8ZM99.667 77.442c-12.275 0-22.217 9.95-22.217 22.216 0 12.275 9.942 22.225 22.217 22.225 12.275 0 22.225-9.95 22.225-22.225 0-12.266-9.95-22.216-22.225-22.2"
+      },
+      {
+        "href": "https://chat.whatsapp.com/IaS1GaJT7Gp7ufxHIjDkZu?mode=gi_t",
+        "label": "",
+        "color": "rgb(0, 0, 238)",
+        "fill": "rgb(255, 236, 209)",
+        "width": "33 33 133.333 133.333",
+        "svg": "<svg preserveAspectRatio=\"xMidYMid meet\" data-bbox=\"33 33 133.333 133.333\" viewBox=\"33 33 133.333 133.333\" height=\"200\" width=\"200\" xmlns=\"http://www.w3.org/2000/svg\" data-type=\"shape\" role=\"presentation\" aria-hidden=\"true\" aria-label=\"\"> <g> <path d=\"M130.212 112.901c-1.658-.826-9.814-4.82-11.334-5.371-1.521-.551-2.627-.826-3.733.826-1.105 1.652-4.284 5.371-5.252 6.473-.968 1.101-1.935 1.24-3.594.413-1.659-.826-7.004-2.569-13.34-8.194-4.931-4.377-8.26-9.783-9.228-11.436-.967-1.653-.103-2.546.72"
+      },
+      {
+        "href": "https://youtube.com/@theshakticollective?si=C19_B12XIRmsg5e7",
+        "label": "",
+        "color": "rgb(0, 0, 238)",
+        "fill": "rgb(255, 236, 209)",
+        "width": "33 53 133.333 93.933",
+        "svg": "<svg preserveAspectRatio=\"xMidYMid meet\" data-bbox=\"33 53 133.333 93.933\" viewBox=\"33 53 133.333 93.933\" height=\"200\" width=\"200\" xmlns=\"http://www.w3.org/2000/svg\" data-type=\"shape\" role=\"presentation\" aria-hidden=\"true\" aria-label=\"\"> <g> <path d=\"M86.025 80.142v39.65l34.85-19.825-34.85-19.825ZM102 53c8.933.05 40.842.392 49.758 2.8 5.734 1.542 10.25 6.092 11.784 11.867 2.475 9.3 2.75 27.583 2.783 31.533v.675l.008.092s0 .025-.008.083v.675c-.033 3.95-.308 22.242-2.783 31.542-1.534 5.766-6.05 10."
+      },
+      {
+        "href": "https://www.facebook.com/people/The-Shakti-Collective/61575006284507/#",
+        "label": "",
+        "color": "rgb(0, 0, 238)",
+        "fill": "rgb(255, 236, 209)",
+        "width": "33.333 34 133.334 132.525",
+        "svg": "<svg preserveAspectRatio=\"xMidYMid meet\" data-bbox=\"33.333 34 133.334 132.525\" viewBox=\"33.333 34 133.334 132.525\" height=\"200\" width=\"200\" xmlns=\"http://www.w3.org/2000/svg\" data-type=\"shape\" role=\"presentation\" aria-hidden=\"true\" aria-label=\"\"> <g> <path d=\"M166.667 100.667C166.667 63.85 136.817 34 100 34s-66.667 29.85-66.667 66.667c0 33.275 24.384 60.858 56.25 65.858v-46.583H72.658v-19.275h16.925V85.983c0-16.708 9.95-25.941 25.184-25.941 7.291 0 14.925 1.3 14.925 1.3V77.75h-8.409c-8.283 0-10."
+      },
+      {
+        "href": "https://www.linkedin.com/company/theshakticollective",
+        "label": "",
+        "color": "rgb(0, 0, 238)",
+        "fill": "rgb(255, 236, 209)",
+        "width": "33 33 133.333 133.333",
+        "svg": "<svg preserveAspectRatio=\"xMidYMid meet\" data-bbox=\"33 33 133.333 133.333\" viewBox=\"33 33 133.333 133.333\" height=\"200\" width=\"200\" xmlns=\"http://www.w3.org/2000/svg\" data-type=\"shape\" role=\"presentation\" aria-hidden=\"true\" aria-label=\"\"> <g> <path d=\"M156.467 33H42.833C37.408 33 33 37.308 33 42.617v114.1c0 5.3 4.408 9.616 9.833 9.616h113.634c5.441 0 9.866-4.316 9.866-9.616v-114.1c0-5.309-4.425-9.617-9.866-9.617ZM52.758 146.617h19.784V82.983H52.758v63.634Zm9.892-72.325c-6.342 0-11.458-5.142-11.4"
+      },
+      {
+        "href": "mailto:Artist@theshakticollective.in",
+        "label": "",
+        "color": "rgb(0, 0, 238)",
+        "fill": "rgb(255, 236, 209)",
+        "width": "20 44.5 160 110.999",
+        "svg": "<svg preserveAspectRatio=\"xMidYMid meet\" data-bbox=\"20 44.5 160 110.999\" viewBox=\"20 44.5 160 110.999\" height=\"200\" width=\"200\" xmlns=\"http://www.w3.org/2000/svg\" data-type=\"shape\" role=\"presentation\" aria-hidden=\"true\" aria-label=\"\"> <g> <path d=\"M109.336 104.331a17.481 17.481 0 0 1-18.671 0L20.222 59.784H20v78.442c0 9.54 7.784 17.273 17.386 17.273h125.228c9.602 0 17.386-7.733 17.386-17.273V59.784h-.222l-70.442 44.547z\"></path> <path d=\"M22.578 44.5l.215.125 68.173 43.111a16.917 16.917 0 0 0 18"
+      }
+    ]
+  },
+  {
+    "route": "/work",
+    "footerClass": null,
+    "sectionId": null,
+    "sectionClass": null,
+    "rect": null,
+    "footerBg": null,
+    "sectionBg": null,
+    "underlayBg": null,
+    "overlayInfo": null,
+    "text": null,
+    "icons": null
+  },
+  {
+    "route": "/films",
+    "footerClass": "comp-mruf9s08 S829f_ comp-mruf9s08-container",
+    "sectionId": "comp-mruf9s08_r_comp-mruf9rqu",
+    "sectionClass": "ke5pl1 comp-mruf9s08_r_comp-mruf9rqu-container comp-mruf9s08_r_comp-mruf9rqu wixui-footer undefined fwXYgt",
+    "rect": {
+      "width": 1440,
+      "height": 300,
+      "top": 8066.515625
+    },
+    "footerBg": "rgba(0, 0, 0, 0)",
+    "sectionBg": "rgba(255, 236, 209, 0)",
+    "underlayBg": "rgba(0, 0, 0, 0)",
+    "overlayInfo": {
+      "containerId": "comp-mruf9s08_r_comp-mruf9rqu",
+      "fittingType": "tile",
+      "imageData": {
+        "width": 300,
+        "height": 225,
+        "uri": "0da768_8657a8f7766a4491ad2da38ae2f4f82f~mv2.png",
+        "displayMode": "tile"
+      }
+    },
+    "text": [
+      {
+        "text": "#comp-mruf9s08_r_comp-mruf8w8h svg [data-color=\"1\"] {fill: #FFECD1;}",
+        "tag": "A",
+        "className": "IT88M3",
+        "color": "rgb(0, 0, 238)",
+        "fontFamily": "Arial, Helvetica, sans-serif",
+        "fontSize": "10px",
+        "fontWeight": "400",
+        "lineHeight": "normal",
+        "textDecoration": "none"
+      },
+      {
+        "text": "Quick Links",
+        "tag": "DIV",
+        "className": "N8MGzv _v6ohL PO9MfV comp-mruf9s08_r_comp-mruf8w8j3 wixui-rich-text",
+        "color": "rgb(0, 0, 0)",
+        "fontFamily": "Arial, Helvetica, sans-serif",
+        "fontSize": "10px",
+        "fontWeight": "400",
+        "lineHeight": "normal",
+        "textDecoration": "none"
+      },
+      {
+        "text": "About",
+        "tag": "DIV",
+        "className": "N8MGzv _v6ohL PO9MfV comp-mruf9s08_r_comp-mruf8w8o wixui-rich-text",
+        "color": "rgb(0, 0, 0)",
+        "fontFamily": "Arial, Helvetica, sans-serif",
+        "fontSize": "10px",
+        "fontWeight": "400",
+        "lineHeight": "normal",
+        "textDecoration": "none"
+      },
+      {
+        "text": "About",
+        "tag": "A",
+        "className": "wixui-rich-text__text",
+        "color": "rgb(255, 236, 209)",
+        "fontFamily": "wfont_834fa9_d08c6fe9ca9b47ccb21ecdcb74412010, wf_d08c6fe9ca9b47ccb21ecdcb7, orig_alan_sans_light",
+        "fontSize": "15.75px",
+        "fontWeight": "400",
+        "lineHeight": "25.2px",
+        "textDecoration": "none"
+      },
+      {
+        "text": "Join Our Community",
+        "tag": "DIV",
+        "className": "N8MGzv _v6ohL PO9MfV comp-mruf9s08_r_comp-mruf8w8u wixui-rich-text",
+        "color": "rgb(0, 0, 0)",
+        "fontFamily": "Arial, Helvetica, sans-serif",
+        "fontSize": "10px",
+        "fontWeight": "400",
+        "lineHeight": "normal",
+        "textDecoration": "none"
+      },
+      {
+        "text": "Join Our Community",
+        "tag": "A",
+        "className": "wixui-rich-text__text",
+        "color": "rgb(255, 236, 209)",
+        "fontFamily": "wfont_834fa9_d08c6fe9ca9b47ccb21ecdcb74412010, wf_d08c6fe9ca9b47ccb21ecdcb7, orig_alan_sans_light",
+        "fontSize": "15.75px",
+        "fontWeight": "400",
+        "lineHeight": "25.2px",
+        "textDecoration": "none"
+      },
+      {
+        "text": "",
+        "tag": "INPUT",
+        "className": "nbaJII has-custom-focus wixui-text-input__input",
+        "color": "rgb(255, 236, 209)",
+        "fontFamily": "wfont_834fa9_d08c6fe9ca9b47ccb21ecdcb74412010, wf_d08c6fe9ca9b47ccb21ecdcb7, orig_alan_sans_light",
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "lineHeight": "22.4px",
+        "textDecoration": "none"
+      },
+      {
+        "text": "",
+        "tag": "A",
+        "className": "IT88M3",
+        "color": "rgb(0, 0, 238)",
+        "fontFamily": "Arial, Helvetica, sans-serif",
+        "fontSize": "10px",
+        "fontWeight": "400",
+        "lineHeight": "normal",
+        "textDecoration": "none"
+      },
+      {
+        "text": "",
+        "tag": "A",
+        "className": "IT88M3",
+        "color": "rgb(0, 0, 238)",
+        "fontFamily": "Arial, Helvetica, sans-serif",
+        "fontSize": "10px",
+        "fontWeight": "400",
+        "lineHeight": "normal",
+        "textDecoration": "none"
+      },
+      {
+        "text": "",
+        "tag": "A",
+        "className": "IT88M3",
+        "color": "rgb(0, 0, 238)",
+        "fontFamily": "Arial, Helvetica, sans-serif",
+        "fontSize": "10px",
+        "fontWeight": "400",
+        "lineHeight": "normal",
+        "textDecoration": "none"
+      },
+      {
+        "text": "",
+        "tag": "A",
+        "className": "IT88M3",
+        "color": "rgb(0, 0, 238)",
+        "fontFamily": "Arial, Helvetica, sans-serif",
+        "fontSize": "10px",
+        "fontWeight": "400",
+        "lineHeight": "normal",
+        "textDecoration": "none"
+      },
+      {
+        "text": "",
+        "tag": "A",
+        "className": "IT88M3",
+        "color": "rgb(0, 0, 238)",
+        "fontFamily": "Arial, Helvetica, sans-serif",
+        "fontSize": "10px",
+        "fontWeight": "400",
+        "lineHeight": "normal",
+        "textDecoration": "none"
+      },
+      {
+        "text": "",
+        "tag": "A",
+        "className": "IT88M3",
+        "color": "rgb(0, 0, 238)",
+        "fontFamily": "Arial, Helvetica, sans-serif",
+        "fontSize": "10px",
+        "fontWeight": "400",
+        "lineHeight": "normal",
+        "textDecoration": "none"
+      },
+      {
+        "text": "Work",
+        "tag": "DIV",
+        "className": "N8MGzv _v6ohL PO9MfV comp-mruf9s08_r_comp-mruf8w9h wixui-rich-text",
+        "color": "rgb(0, 0, 0)",
+        "fontFamily": "Arial, Helvetica, sans-serif",
+        "fontSize": "10px",
+        "fontWeight": "400",
+        "lineHeight": "normal",
+        "textDecoration": "none"
+      },
+      {
+        "text": "Work",
+        "tag": "A",
+        "className": "wixui-rich-text__text",
+        "color": "rgb(255, 236, 209)",
+        "fontFamily": "wfont_834fa9_d08c6fe9ca9b47ccb21ecdcb74412010, wf_d08c6fe9ca9b47ccb21ecdcb7, orig_alan_sans_light",
+        "fontSize": "15.75px",
+        "fontWeight": "400",
+        "lineHeight": "25.2px",
+        "textDecoration": "none"
+      },
+      {
+        "text": "Unfolding artist force.",
+        "tag": "DIV",
+        "className": "N8MGzv _v6ohL PO9MfV comp-mruf9s08_r_comp-mruf8w9j2 wixui-rich-text",
+        "color": "rgb(0, 0, 0)",
+        "fontFamily": "Arial, Helvetica, sans-serif",
+        "fontSize": "10px",
+        "fontWeight": "400",
+        "lineHeight": "normal",
+        "textDecoration": "none"
+      },
+      {
+        "text": "Artists",
+        "tag": "DIV",
+        "className": "N8MGzv _v6ohL PO9MfV comp-mruf9s08_r_comp-mruf8w9l2 wixui-rich-text",
+        "color": "rgb(0, 0, 0)",
+        "fontFamily": "Arial, Helvetica, sans-serif",
+        "fontSize": "10px",
+        "fontWeight": "400",
+        "lineHeight": "normal",
+        "textDecoration": "none"
+      },
+      {
+        "text": "Artists",
+        "tag": "A",
+        "className": "wixui-rich-text__text",
+        "color": "rgb(255, 236, 209)",
+        "fontFamily": "wfont_834fa9_d08c6fe9ca9b47ccb21ecdcb74412010, wf_d08c6fe9ca9b47ccb21ecdcb7, orig_alan_sans_light",
+        "fontSize": "15.75px",
+        "fontWeight": "400",
+        "lineHeight": "25.2px",
+        "textDecoration": "none"
+      },
+      {
+        "text": "© 2026 The Shakti Collective. All rights reserved.",
+        "tag": "DIV",
+        "className": "N8MGzv _v6ohL PO9MfV comp-mruf9s08_r_comp-mruf8w9n1 wixui-rich-text",
+        "color": "rgb(0, 0, 0)",
+        "fontFamily": "Arial, Helvetica, sans-serif",
+        "fontSize": "10px",
+        "fontWeight": "400",
+        "lineHeight": "normal",
+        "textDecoration": "none"
+      },
+      {
+        "text": "TSC Academy",
+        "tag": "DIV",
+        "className": "N8MGzv _v6ohL PO9MfV comp-mruf9s08_r_comp-mruf8w9p wixui-rich-text",
+        "color": "rgb(0, 0, 0)",
+        "fontFamily": "Arial, Helvetica, sans-serif",
+        "fontSize": "10px",
+        "fontWeight": "400",
+        "lineHeight": "normal",
+        "textDecoration": "none"
+      }
+    ],
+    "icons": [
+      {
+        "href": "/",
+        "label": "",
+        "color": "rgb(0, 0, 238)",
+        "fill": "rgb(0, 0, 0)",
+        "width": "0.019 -0.011 1239.577 506.509",
+        "svg": "<svg preserveAspectRatio=\"xMidYMid meet\" data-bbox=\"0.019 -0.011 1239.577 506.509\" viewBox=\"0.019 -0.011 1239.577 506.509\" xmlns=\"http://www.w3.org/2000/svg\" data-type=\"color\" role=\"presentation\" aria-hidden=\"true\" aria-label=\"\"><defs><style>#comp-mruf9s08_r_comp-mruf8w8h svg [data-color=\"1\"] {fill: #FFECD1;}</style></defs> <g> <path d=\"M308.9 305.85c-13.46-13.51-28.52-23.66-46.8-28.36-24-6.16-45.63-1.81-63.93 15.48-9.29 8.78-16.77 18.92-20.45 31.39-3.77 12.76-3.61 25.41 3.69 36.89 11.91 18.74 3"
+      },
+      {
+        "href": "https://www.instagram.com/the_shakti_collective/?hl=en",
+        "label": "",
+        "color": "rgb(0, 0, 238)",
+        "fill": "rgb(255, 236, 209)",
+        "width": "33 33 133.333 133.325",
+        "svg": "<svg preserveAspectRatio=\"xMidYMid meet\" data-bbox=\"33 33 133.333 133.325\" viewBox=\"33 33 133.333 133.325\" height=\"200\" width=\"200\" xmlns=\"http://www.w3.org/2000/svg\" data-type=\"shape\" role=\"presentation\" aria-hidden=\"true\" aria-label=\"\"> <g> <path d=\"M135.258 56.075c4.409 0 8 3.583 8 8s-3.591 8-8 8c-4.416 0-8.008-3.583-8.008-8s3.592-8 8.008-8ZM99.667 77.442c-12.275 0-22.217 9.95-22.217 22.216 0 12.275 9.942 22.225 22.217 22.225 12.275 0 22.225-9.95 22.225-22.225 0-12.266-9.95-22.216-22.225-22.2"
+      },
+      {
+        "href": "https://chat.whatsapp.com/IaS1GaJT7Gp7ufxHIjDkZu?mode=gi_t",
+        "label": "",
+        "color": "rgb(0, 0, 238)",
+        "fill": "rgb(255, 236, 209)",
+        "width": "33 33 133.333 133.333",
+        "svg": "<svg preserveAspectRatio=\"xMidYMid meet\" data-bbox=\"33 33 133.333 133.333\" viewBox=\"33 33 133.333 133.333\" height=\"200\" width=\"200\" xmlns=\"http://www.w3.org/2000/svg\" data-type=\"shape\" role=\"presentation\" aria-hidden=\"true\" aria-label=\"\"> <g> <path d=\"M130.212 112.901c-1.658-.826-9.814-4.82-11.334-5.371-1.521-.551-2.627-.826-3.733.826-1.105 1.652-4.284 5.371-5.252 6.473-.968 1.101-1.935 1.24-3.594.413-1.659-.826-7.004-2.569-13.34-8.194-4.931-4.377-8.26-9.783-9.228-11.436-.967-1.653-.103-2.546.72"
+      },
+      {
+        "href": "https://youtube.com/@theshakticollective?si=C19_B12XIRmsg5e7",
+        "label": "",
+        "color": "rgb(0, 0, 238)",
+        "fill": "rgb(255, 236, 209)",
+        "width": "33 53 133.333 93.933",
+        "svg": "<svg preserveAspectRatio=\"xMidYMid meet\" data-bbox=\"33 53 133.333 93.933\" viewBox=\"33 53 133.333 93.933\" height=\"200\" width=\"200\" xmlns=\"http://www.w3.org/2000/svg\" data-type=\"shape\" role=\"presentation\" aria-hidden=\"true\" aria-label=\"\"> <g> <path d=\"M86.025 80.142v39.65l34.85-19.825-34.85-19.825ZM102 53c8.933.05 40.842.392 49.758 2.8 5.734 1.542 10.25 6.092 11.784 11.867 2.475 9.3 2.75 27.583 2.783 31.533v.675l.008.092s0 .025-.008.083v.675c-.033 3.95-.308 22.242-2.783 31.542-1.534 5.766-6.05 10."
+      },
+      {
+        "href": "https://www.facebook.com/people/The-Shakti-Collective/61575006284507/#",
+        "label": "",
+        "color": "rgb(0, 0, 238)",
+        "fill": "rgb(255, 236, 209)",
+        "width": "33.333 34 133.334 132.525",
+        "svg": "<svg preserveAspectRatio=\"xMidYMid meet\" data-bbox=\"33.333 34 133.334 132.525\" viewBox=\"33.333 34 133.334 132.525\" height=\"200\" width=\"200\" xmlns=\"http://www.w3.org/2000/svg\" data-type=\"shape\" role=\"presentation\" aria-hidden=\"true\" aria-label=\"\"> <g> <path d=\"M166.667 100.667C166.667 63.85 136.817 34 100 34s-66.667 29.85-66.667 66.667c0 33.275 24.384 60.858 56.25 65.858v-46.583H72.658v-19.275h16.925V85.983c0-16.708 9.95-25.941 25.184-25.941 7.291 0 14.925 1.3 14.925 1.3V77.75h-8.409c-8.283 0-10."
+      },
+      {
+        "href": "https://www.linkedin.com/company/theshakticollective",
+        "label": "",
+        "color": "rgb(0, 0, 238)",
+        "fill": "rgb(255, 236, 209)",
+        "width": "33 33 133.333 133.333",
+        "svg": "<svg preserveAspectRatio=\"xMidYMid meet\" data-bbox=\"33 33 133.333 133.333\" viewBox=\"33 33 133.333 133.333\" height=\"200\" width=\"200\" xmlns=\"http://www.w3.org/2000/svg\" data-type=\"shape\" role=\"presentation\" aria-hidden=\"true\" aria-label=\"\"> <g> <path d=\"M156.467 33H42.833C37.408 33 33 37.308 33 42.617v114.1c0 5.3 4.408 9.616 9.833 9.616h113.634c5.441 0 9.866-4.316 9.866-9.616v-114.1c0-5.309-4.425-9.617-9.866-9.617ZM52.758 146.617h19.784V82.983H52.758v63.634Zm9.892-72.325c-6.342 0-11.458-5.142-11.4"
+      },
+      {
+        "href": "mailto:Artist@theshakticollective.in",
+        "label": "",
+        "color": "rgb(0, 0, 238)",
+        "fill": "rgb(255, 236, 209)",
+        "width": "20 44.5 160 110.999",
+        "svg": "<svg preserveAspectRatio=\"xMidYMid meet\" data-bbox=\"20 44.5 160 110.999\" viewBox=\"20 44.5 160 110.999\" height=\"200\" width=\"200\" xmlns=\"http://www.w3.org/2000/svg\" data-type=\"shape\" role=\"presentation\" aria-hidden=\"true\" aria-label=\"\"> <g> <path d=\"M109.336 104.331a17.481 17.481 0 0 1-18.671 0L20.222 59.784H20v78.442c0 9.54 7.784 17.273 17.386 17.273h125.228c9.602 0 17.386-7.733 17.386-17.273V59.784h-.222l-70.442 44.547z\"></path> <path d=\"M22.578 44.5l.215.125 68.173 43.111a16.917 16.917 0 0 0 18"
+      }
+    ]
+  },
+  {
+    "route": "/resources",
+    "footerClass": "comp-mrxc4y5k S829f_ comp-mrxc4y5k-container",
+    "sectionId": "comp-mrxc4y5k_r_comp-mruf64uf",
+    "sectionClass": "ke5pl1 comp-mrxc4y5k_r_comp-mruf64uf-container comp-mrxc4y5k_r_comp-mruf64uf wixui-footer undefined fwXYgt",
+    "rect": {
+      "width": 1440,
+      "height": 300,
+      "top": 3713.5
+    },
+    "footerBg": "rgba(0, 0, 0, 0)",
+    "sectionBg": "rgba(255, 236, 209, 0)",
+    "underlayBg": "rgba(0, 0, 0, 0)",
+    "overlayInfo": null,
+    "text": [
+      {
+        "text": "#comp-mrxc4y5k_r_comp-mruf3zp24 svg [data-color=\"1\"] {fill: #FFECD1;}",
+        "tag": "A",
+        "className": "IT88M3",
+        "color": "rgb(0, 0, 238)",
+        "fontFamily": "Arial, Helvetica, sans-serif",
+        "fontSize": "10px",
+        "fontWeight": "400",
+        "lineHeight": "normal",
+        "textDecoration": "none"
+      },
+      {
+        "text": "Quick Links",
+        "tag": "DIV",
+        "className": "N8MGzv _v6ohL PO9MfV comp-mrxc4y5k_r_comp-mruf3zp7 wixui-rich-text",
+        "color": "rgb(0, 0, 0)",
+        "fontFamily": "Arial, Helvetica, sans-serif",
+        "fontSize": "10px",
+        "fontWeight": "400",
+        "lineHeight": "normal",
+        "textDecoration": "none"
+      },
+      {
+        "text": "About",
+        "tag": "DIV",
+        "className": "N8MGzv _v6ohL PO9MfV comp-mrxc4y5k_r_comp-mruf3zp9 wixui-rich-text",
+        "color": "rgb(0, 0, 0)",
+        "fontFamily": "Arial, Helvetica, sans-serif",
+        "fontSize": "10px",
+        "fontWeight": "400",
+        "lineHeight": "normal",
+        "textDecoration": "none"
+      },
+      {
+        "text": "About",
+        "tag": "A",
+        "className": "wixui-rich-text__text",
+        "color": "rgb(255, 236, 209)",
+        "fontFamily": "wfont_834fa9_d08c6fe9ca9b47ccb21ecdcb74412010, wf_d08c6fe9ca9b47ccb21ecdcb7, orig_alan_sans_light",
+        "fontSize": "15.75px",
+        "fontWeight": "400",
+        "lineHeight": "25.2px",
+        "textDecoration": "none"
+      },
+      {
+        "text": "Join Our Community",
+        "tag": "DIV",
+        "className": "N8MGzv _v6ohL PO9MfV comp-mrxc4y5k_r_comp-mruf3zpe4 wixui-rich-text",
+        "color": "rgb(0, 0, 0)",
+        "fontFamily": "Arial, Helvetica, sans-serif",
+        "fontSize": "10px",
+        "fontWeight": "400",
+        "lineHeight": "normal",
+        "textDecoration": "none"
+      },
+      {
+        "text": "Join Our Community",
+        "tag": "A",
+        "className": "wixui-rich-text__text",
+        "color": "rgb(255, 236, 209)",
+        "fontFamily": "wfont_834fa9_d08c6fe9ca9b47ccb21ecdcb74412010, wf_d08c6fe9ca9b47ccb21ecdcb7, orig_alan_sans_light",
+        "fontSize": "15.75px",
+        "fontWeight": "400",
+        "lineHeight": "25.2px",
+        "textDecoration": "none"
+      },
+      {
+        "text": "",
+        "tag": "INPUT",
+        "className": "nbaJII has-custom-focus wixui-text-input__input",
+        "color": "rgb(255, 236, 209)",
+        "fontFamily": "wfont_834fa9_d08c6fe9ca9b47ccb21ecdcb74412010, wf_d08c6fe9ca9b47ccb21ecdcb7, orig_alan_sans_light",
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "lineHeight": "22.4px",
+        "textDecoration": "none"
+      },
+      {
+        "text": "",
+        "tag": "A",
+        "className": "IT88M3",
+        "color": "rgb(0, 0, 238)",
+        "fontFamily": "Arial, Helvetica, sans-serif",
+        "fontSize": "10px",
+        "fontWeight": "400",
+        "lineHeight": "normal",
+        "textDecoration": "none"
+      },
+      {
+        "text": "",
+        "tag": "A",
+        "className": "IT88M3",
+        "color": "rgb(0, 0, 238)",
+        "fontFamily": "Arial, Helvetica, sans-serif",
+        "fontSize": "10px",
+        "fontWeight": "400",
+        "lineHeight": "normal",
+        "textDecoration": "none"
+      },
+      {
+        "text": "",
+        "tag": "A",
+        "className": "IT88M3",
+        "color": "rgb(0, 0, 238)",
+        "fontFamily": "Arial, Helvetica, sans-serif",
+        "fontSize": "10px",
+        "fontWeight": "400",
+        "lineHeight": "normal",
+        "textDecoration": "none"
+      },
+      {
+        "text": "",
+        "tag": "A",
+        "className": "IT88M3",
+        "color": "rgb(0, 0, 238)",
+        "fontFamily": "Arial, Helvetica, sans-serif",
+        "fontSize": "10px",
+        "fontWeight": "400",
+        "lineHeight": "normal",
+        "textDecoration": "none"
+      },
+      {
+        "text": "",
+        "tag": "A",
+        "className": "IT88M3",
+        "color": "rgb(0, 0, 238)",
+        "fontFamily": "Arial, Helvetica, sans-serif",
+        "fontSize": "10px",
+        "fontWeight": "400",
+        "lineHeight": "normal",
+        "textDecoration": "none"
+      },
+      {
+        "text": "",
+        "tag": "A",
+        "className": "IT88M3",
+        "color": "rgb(0, 0, 238)",
+        "fontFamily": "Arial, Helvetica, sans-serif",
+        "fontSize": "10px",
+        "fontWeight": "400",
+        "lineHeight": "normal",
+        "textDecoration": "none"
+      },
+      {
+        "text": "Work",
+        "tag": "DIV",
+        "className": "N8MGzv _v6ohL PO9MfV comp-mrxc4y5k_r_comp-mruf3zq99 wixui-rich-text",
+        "color": "rgb(0, 0, 0)",
+        "fontFamily": "Arial, Helvetica, sans-serif",
+        "fontSize": "10px",
+        "fontWeight": "400",
+        "lineHeight": "normal",
+        "textDecoration": "none"
+      },
+      {
+        "text": "Work",
+        "tag": "A",
+        "className": "wixui-rich-text__text",
+        "color": "rgb(255, 236, 209)",
+        "fontFamily": "wfont_834fa9_d08c6fe9ca9b47ccb21ecdcb74412010, wf_d08c6fe9ca9b47ccb21ecdcb7, orig_alan_sans_light",
+        "fontSize": "15.75px",
+        "fontWeight": "400",
+        "lineHeight": "25.2px",
+        "textDecoration": "none"
+      },
+      {
+        "text": "Unfolding artist force.",
+        "tag": "DIV",
+        "className": "N8MGzv _v6ohL PO9MfV comp-mrxc4y5k_r_comp-mruf3zqb3 wixui-rich-text",
+        "color": "rgb(0, 0, 0)",
+        "fontFamily": "Arial, Helvetica, sans-serif",
+        "fontSize": "10px",
+        "fontWeight": "400",
+        "lineHeight": "normal",
+        "textDecoration": "none"
+      },
+      {
+        "text": "Artists",
+        "tag": "DIV",
+        "className": "N8MGzv _v6ohL PO9MfV comp-mrxc4y5k_r_comp-mruf3zqd2 wixui-rich-text",
+        "color": "rgb(0, 0, 0)",
+        "fontFamily": "Arial, Helvetica, sans-serif",
+        "fontSize": "10px",
+        "fontWeight": "400",
+        "lineHeight": "normal",
+        "textDecoration": "none"
+      },
+      {
+        "text": "Artists",
+        "tag": "A",
+        "className": "wixui-rich-text__text",
+        "color": "rgb(255, 236, 209)",
+        "fontFamily": "wfont_834fa9_d08c6fe9ca9b47ccb21ecdcb74412010, wf_d08c6fe9ca9b47ccb21ecdcb7, orig_alan_sans_light",
+        "fontSize": "15.75px",
+        "fontWeight": "400",
+        "lineHeight": "25.2px",
+        "textDecoration": "none"
+      },
+      {
+        "text": "© 2026 The Shakti Collective. All rights reserved.",
+        "tag": "DIV",
+        "className": "N8MGzv _v6ohL PO9MfV comp-mrxc4y5k_r_comp-mruf3zqf4 wixui-rich-text",
+        "color": "rgb(0, 0, 0)",
+        "fontFamily": "Arial, Helvetica, sans-serif",
+        "fontSize": "10px",
+        "fontWeight": "400",
+        "lineHeight": "normal",
+        "textDecoration": "none"
+      },
+      {
+        "text": "TSC Academy",
+        "tag": "DIV",
+        "className": "N8MGzv _v6ohL PO9MfV comp-mrxc4y5k_r_comp-mruf3zqh6 wixui-rich-text",
+        "color": "rgb(0, 0, 0)",
+        "fontFamily": "Arial, Helvetica, sans-serif",
+        "fontSize": "10px",
+        "fontWeight": "400",
+        "lineHeight": "normal",
+        "textDecoration": "none"
+      }
+    ],
+    "icons": [
+      {
+        "href": "/",
+        "label": "",
+        "color": "rgb(0, 0, 238)",
+        "fill": "rgb(0, 0, 0)",
+        "width": "0.019 -0.011 1239.577 506.509",
+        "svg": "<svg preserveAspectRatio=\"xMidYMid meet\" data-bbox=\"0.019 -0.011 1239.577 506.509\" viewBox=\"0.019 -0.011 1239.577 506.509\" xmlns=\"http://www.w3.org/2000/svg\" data-type=\"color\" role=\"presentation\" aria-hidden=\"true\" aria-label=\"\"><defs><style>#comp-mrxc4y5k_r_comp-mruf3zp24 svg [data-color=\"1\"] {fill: #FFECD1;}</style></defs> <g> <path d=\"M308.9 305.85c-13.46-13.51-28.52-23.66-46.8-28.36-24-6.16-45.63-1.81-63.93 15.48-9.29 8.78-16.77 18.92-20.45 31.39-3.77 12.76-3.61 25.41 3.69 36.89 11.91 18.74 "
+      },
+      {
+        "href": "https://www.instagram.com/the_shakti_collective/?hl=en",
+        "label": "",
+        "color": "rgb(0, 0, 238)",
+        "fill": "rgb(255, 236, 209)",
+        "width": "33 33 133.333 133.325",
+        "svg": "<svg preserveAspectRatio=\"xMidYMid meet\" data-bbox=\"33 33 133.333 133.325\" viewBox=\"33 33 133.333 133.325\" height=\"200\" width=\"200\" xmlns=\"http://www.w3.org/2000/svg\" data-type=\"shape\" role=\"presentation\" aria-hidden=\"true\" aria-label=\"\"> <g> <path d=\"M135.258 56.075c4.409 0 8 3.583 8 8s-3.591 8-8 8c-4.416 0-8.008-3.583-8.008-8s3.592-8 8.008-8ZM99.667 77.442c-12.275 0-22.217 9.95-22.217 22.216 0 12.275 9.942 22.225 22.217 22.225 12.275 0 22.225-9.95 22.225-22.225 0-12.266-9.95-22.216-22.225-22.2"
+      },
+      {
+        "href": "https://chat.whatsapp.com/IaS1GaJT7Gp7ufxHIjDkZu?mode=gi_t",
+        "label": "",
+        "color": "rgb(0, 0, 238)",
+        "fill": "rgb(255, 236, 209)",
+        "width": "33 33 133.333 133.333",
+        "svg": "<svg preserveAspectRatio=\"xMidYMid meet\" data-bbox=\"33 33 133.333 133.333\" viewBox=\"33 33 133.333 133.333\" height=\"200\" width=\"200\" xmlns=\"http://www.w3.org/2000/svg\" data-type=\"shape\" role=\"presentation\" aria-hidden=\"true\" aria-label=\"\"> <g> <path d=\"M130.212 112.901c-1.658-.826-9.814-4.82-11.334-5.371-1.521-.551-2.627-.826-3.733.826-1.105 1.652-4.284 5.371-5.252 6.473-.968 1.101-1.935 1.24-3.594.413-1.659-.826-7.004-2.569-13.34-8.194-4.931-4.377-8.26-9.783-9.228-11.436-.967-1.653-.103-2.546.72"
+      },
+      {
+        "href": "https://youtube.com/@theshakticollective?si=C19_B12XIRmsg5e7",
+        "label": "",
+        "color": "rgb(0, 0, 238)",
+        "fill": "rgb(255, 236, 209)",
+        "width": "33 53 133.333 93.933",
+        "svg": "<svg preserveAspectRatio=\"xMidYMid meet\" data-bbox=\"33 53 133.333 93.933\" viewBox=\"33 53 133.333 93.933\" height=\"200\" width=\"200\" xmlns=\"http://www.w3.org/2000/svg\" data-type=\"shape\" role=\"presentation\" aria-hidden=\"true\" aria-label=\"\"> <g> <path d=\"M86.025 80.142v39.65l34.85-19.825-34.85-19.825ZM102 53c8.933.05 40.842.392 49.758 2.8 5.734 1.542 10.25 6.092 11.784 11.867 2.475 9.3 2.75 27.583 2.783 31.533v.675l.008.092s0 .025-.008.083v.675c-.033 3.95-.308 22.242-2.783 31.542-1.534 5.766-6.05 10."
+      },
+      {
+        "href": "https://www.facebook.com/people/The-Shakti-Collective/61575006284507/#",
+        "label": "",
+        "color": "rgb(0, 0, 238)",
+        "fill": "rgb(255, 236, 209)",
+        "width": "33.333 34 133.334 132.525",
+        "svg": "<svg preserveAspectRatio=\"xMidYMid meet\" data-bbox=\"33.333 34 133.334 132.525\" viewBox=\"33.333 34 133.334 132.525\" height=\"200\" width=\"200\" xmlns=\"http://www.w3.org/2000/svg\" data-type=\"shape\" role=\"presentation\" aria-hidden=\"true\" aria-label=\"\"> <g> <path d=\"M166.667 100.667C166.667 63.85 136.817 34 100 34s-66.667 29.85-66.667 66.667c0 33.275 24.384 60.858 56.25 65.858v-46.583H72.658v-19.275h16.925V85.983c0-16.708 9.95-25.941 25.184-25.941 7.291 0 14.925 1.3 14.925 1.3V77.75h-8.409c-8.283 0-10."
+      },
+      {
+        "href": "https://www.linkedin.com/company/theshakticollective",
+        "label": "",
+        "color": "rgb(0, 0, 238)",
+        "fill": "rgb(255, 236, 209)",
+        "width": "33 33 133.333 133.333",
+        "svg": "<svg preserveAspectRatio=\"xMidYMid meet\" data-bbox=\"33 33 133.333 133.333\" viewBox=\"33 33 133.333 133.333\" height=\"200\" width=\"200\" xmlns=\"http://www.w3.org/2000/svg\" data-type=\"shape\" role=\"presentation\" aria-hidden=\"true\" aria-label=\"\"> <g> <path d=\"M156.467 33H42.833C37.408 33 33 37.308 33 42.617v114.1c0 5.3 4.408 9.616 9.833 9.616h113.634c5.441 0 9.866-4.316 9.866-9.616v-114.1c0-5.309-4.425-9.617-9.866-9.617ZM52.758 146.617h19.784V82.983H52.758v63.634Zm9.892-72.325c-6.342 0-11.458-5.142-11.4"
+      },
+      {
+        "href": "mailto:Artist@theshakticollective.in",
+        "label": "",
+        "color": "rgb(0, 0, 238)",
+        "fill": "rgb(255, 236, 209)",
+        "width": "20 44.5 160 110.999",
+        "svg": "<svg preserveAspectRatio=\"xMidYMid meet\" data-bbox=\"20 44.5 160 110.999\" viewBox=\"20 44.5 160 110.999\" height=\"200\" width=\"200\" xmlns=\"http://www.w3.org/2000/svg\" data-type=\"shape\" role=\"presentation\" aria-hidden=\"true\" aria-label=\"\"> <g> <path d=\"M109.336 104.331a17.481 17.481 0 0 1-18.671 0L20.222 59.784H20v78.442c0 9.54 7.784 17.273 17.386 17.273h125.228c9.602 0 17.386-7.733 17.386-17.273V59.784h-.222l-70.442 44.547z\"></path> <path d=\"M22.578 44.5l.215.125 68.173 43.111a16.917 16.917 0 0 0 18"
+      }
+    ]
+  },
+  {
+    "route": "/academy",
+    "footerClass": "comp-mrsu3d73 S829f_ comp-mrsu3d73-container",
+    "sectionId": "comp-mrsu3d73_r_comp-mrsu3cyg",
+    "sectionClass": "ke5pl1 comp-mrsu3d73_r_comp-mrsu3cyg-container comp-mrsu3d73_r_comp-mrsu3cyg wixui-footer undefined fwXYgt",
+    "rect": {
+      "width": 1440,
+      "height": 300,
+      "top": 6402.890625
+    },
+    "footerBg": "rgba(0, 0, 0, 0)",
+    "sectionBg": "rgba(255, 236, 209, 0)",
+    "underlayBg": "rgba(0, 0, 0, 0)",
+    "overlayInfo": null,
+    "text": [
+      {
+        "text": "#comp-mrsu3d73_r_comp-mrstm9j04 svg [data-color=\"1\"] {fill: #08525F;}",
+        "tag": "A",
+        "className": "IT88M3",
+        "color": "rgb(0, 0, 238)",
+        "fontFamily": "Arial, Helvetica, sans-serif",
+        "fontSize": "10px",
+        "fontWeight": "400",
+        "lineHeight": "normal",
+        "textDecoration": "none"
+      },
+      {
+        "text": "Quick Links",
+        "tag": "DIV",
+        "className": "N8MGzv _v6ohL PO9MfV comp-mrsu3d73_r_comp-mrstm9je1 wixui-rich-text",
+        "color": "rgb(0, 0, 0)",
+        "fontFamily": "Arial, Helvetica, sans-serif",
+        "fontSize": "10px",
+        "fontWeight": "400",
+        "lineHeight": "normal",
+        "textDecoration": "none"
+      },
+      {
+        "text": "About",
+        "tag": "DIV",
+        "className": "N8MGzv _v6ohL PO9MfV comp-mrsu3d73_r_comp-mrstm9jp wixui-rich-text",
+        "color": "rgb(0, 0, 0)",
+        "fontFamily": "Arial, Helvetica, sans-serif",
+        "fontSize": "10px",
+        "fontWeight": "400",
+        "lineHeight": "normal",
+        "textDecoration": "none"
+      },
+      {
+        "text": "About",
+        "tag": "A",
+        "className": "wixui-rich-text__text",
+        "color": "rgb(255, 236, 209)",
+        "fontFamily": "wfont_834fa9_d08c6fe9ca9b47ccb21ecdcb74412010, wf_d08c6fe9ca9b47ccb21ecdcb7, orig_alan_sans_light",
+        "fontSize": "15.75px",
+        "fontWeight": "400",
+        "lineHeight": "25.2px",
+        "textDecoration": "none"
+      },
+      {
+        "text": "Join Our Community",
+        "tag": "DIV",
+        "className": "N8MGzv _v6ohL PO9MfV comp-mrsu3d73_r_comp-mrstm9jy3 wixui-rich-text",
+        "color": "rgb(0, 0, 0)",
+        "fontFamily": "Arial, Helvetica, sans-serif",
+        "fontSize": "10px",
+        "fontWeight": "400",
+        "lineHeight": "normal",
+        "textDecoration": "none"
+      },
+      {
+        "text": "Join Our Community",
+        "tag": "A",
+        "className": "wixui-rich-text__text",
+        "color": "rgb(255, 236, 209)",
+        "fontFamily": "wfont_834fa9_d08c6fe9ca9b47ccb21ecdcb74412010, wf_d08c6fe9ca9b47ccb21ecdcb7, orig_alan_sans_light",
+        "fontSize": "15.75px",
+        "fontWeight": "400",
+        "lineHeight": "25.2px",
+        "textDecoration": "none"
+      },
+      {
+        "text": "",
+        "tag": "INPUT",
+        "className": "nbaJII has-custom-focus wixui-text-input__input",
+        "color": "rgb(255, 236, 209)",
+        "fontFamily": "wfont_834fa9_d08c6fe9ca9b47ccb21ecdcb74412010, wf_d08c6fe9ca9b47ccb21ecdcb7, orig_alan_sans_light",
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "lineHeight": "22.4px",
+        "textDecoration": "none"
+      },
+      {
+        "text": "",
+        "tag": "A",
+        "className": "IT88M3",
+        "color": "rgb(0, 0, 238)",
+        "fontFamily": "Arial, Helvetica, sans-serif",
+        "fontSize": "10px",
+        "fontWeight": "400",
+        "lineHeight": "normal",
+        "textDecoration": "none"
+      },
+      {
+        "text": "",
+        "tag": "A",
+        "className": "IT88M3",
+        "color": "rgb(0, 0, 238)",
+        "fontFamily": "Arial, Helvetica, sans-serif",
+        "fontSize": "10px",
+        "fontWeight": "400",
+        "lineHeight": "normal",
+        "textDecoration": "none"
+      },
+      {
+        "text": "",
+        "tag": "A",
+        "className": "IT88M3",
+        "color": "rgb(0, 0, 238)",
+        "fontFamily": "Arial, Helvetica, sans-serif",
+        "fontSize": "10px",
+        "fontWeight": "400",
+        "lineHeight": "normal",
+        "textDecoration": "none"
+      },
+      {
+        "text": "",
+        "tag": "A",
+        "className": "IT88M3",
+        "color": "rgb(0, 0, 238)",
+        "fontFamily": "Arial, Helvetica, sans-serif",
+        "fontSize": "10px",
+        "fontWeight": "400",
+        "lineHeight": "normal",
+        "textDecoration": "none"
+      },
+      {
+        "text": "",
+        "tag": "A",
+        "className": "IT88M3",
+        "color": "rgb(0, 0, 238)",
+        "fontFamily": "Arial, Helvetica, sans-serif",
+        "fontSize": "10px",
+        "fontWeight": "400",
+        "lineHeight": "normal",
+        "textDecoration": "none"
+      },
+      {
+        "text": "",
+        "tag": "A",
+        "className": "IT88M3",
+        "color": "rgb(0, 0, 238)",
+        "fontFamily": "Arial, Helvetica, sans-serif",
+        "fontSize": "10px",
+        "fontWeight": "400",
+        "lineHeight": "normal",
+        "textDecoration": "none"
+      },
+      {
+        "text": "Work",
+        "tag": "DIV",
+        "className": "N8MGzv _v6ohL PO9MfV comp-mrsu3d73_r_comp-mrstm9lf1 wixui-rich-text",
+        "color": "rgb(0, 0, 0)",
+        "fontFamily": "Arial, Helvetica, sans-serif",
+        "fontSize": "10px",
+        "fontWeight": "400",
+        "lineHeight": "normal",
+        "textDecoration": "none"
+      },
+      {
+        "text": "Work",
+        "tag": "A",
+        "className": "wixui-rich-text__text",
+        "color": "rgb(255, 236, 209)",
+        "fontFamily": "wfont_834fa9_d08c6fe9ca9b47ccb21ecdcb74412010, wf_d08c6fe9ca9b47ccb21ecdcb7, orig_alan_sans_light",
+        "fontSize": "15.75px",
+        "fontWeight": "400",
+        "lineHeight": "25.2px",
+        "textDecoration": "none"
+      },
+      {
+        "text": "Unfolding artist force.",
+        "tag": "DIV",
+        "className": "N8MGzv _v6ohL PO9MfV comp-mrsu3d73_r_comp-mrstm9lh1 wixui-rich-text",
+        "color": "rgb(0, 0, 0)",
+        "fontFamily": "Arial, Helvetica, sans-serif",
+        "fontSize": "10px",
+        "fontWeight": "400",
+        "lineHeight": "normal",
+        "textDecoration": "none"
+      },
+      {
+        "text": "Artists",
+        "tag": "DIV",
+        "className": "N8MGzv _v6ohL PO9MfV comp-mrsu3d73_r_comp-mrstm9lj1 wixui-rich-text",
+        "color": "rgb(0, 0, 0)",
+        "fontFamily": "Arial, Helvetica, sans-serif",
+        "fontSize": "10px",
+        "fontWeight": "400",
+        "lineHeight": "normal",
+        "textDecoration": "none"
+      },
+      {
+        "text": "Artists",
+        "tag": "A",
+        "className": "wixui-rich-text__text",
+        "color": "rgb(255, 236, 209)",
+        "fontFamily": "wfont_834fa9_d08c6fe9ca9b47ccb21ecdcb74412010, wf_d08c6fe9ca9b47ccb21ecdcb7, orig_alan_sans_light",
+        "fontSize": "15.75px",
+        "fontWeight": "400",
+        "lineHeight": "25.2px",
+        "textDecoration": "none"
+      },
+      {
+        "text": "© 2026 The Shakti Collective. All rights reserved.",
+        "tag": "DIV",
+        "className": "N8MGzv _v6ohL PO9MfV comp-mrsu3d73_r_comp-mrstm9ll wixui-rich-text",
+        "color": "rgb(0, 0, 0)",
+        "fontFamily": "Arial, Helvetica, sans-serif",
+        "fontSize": "10px",
+        "fontWeight": "400",
+        "lineHeight": "normal",
+        "textDecoration": "none"
+      },
+      {
+        "text": "TSC Academy",
+        "tag": "DIV",
+        "className": "N8MGzv _v6ohL PO9MfV comp-mrsu3d73_r_comp-mrstm9lm8 wixui-rich-text",
+        "color": "rgb(0, 0, 0)",
+        "fontFamily": "Arial, Helvetica, sans-serif",
+        "fontSize": "10px",
+        "fontWeight": "400",
+        "lineHeight": "normal",
+        "textDecoration": "none"
+      }
+    ],
+    "icons": [
+      {
+        "href": "/",
+        "label": "",
+        "color": "rgb(0, 0, 238)",
+        "fill": "rgb(0, 0, 0)",
+        "width": "0.019 -0.011 1239.577 506.509",
+        "svg": "<svg preserveAspectRatio=\"xMidYMid meet\" data-bbox=\"0.019 -0.011 1239.577 506.509\" viewBox=\"0.019 -0.011 1239.577 506.509\" xmlns=\"http://www.w3.org/2000/svg\" data-type=\"color\" role=\"presentation\" aria-hidden=\"true\" aria-label=\"\"><defs><style>#comp-mrsu3d73_r_comp-mrstm9j04 svg [data-color=\"1\"] {fill: #08525F;}</style></defs> <g> <path d=\"M308.9 305.85c-13.46-13.51-28.52-23.66-46.8-28.36-24-6.16-45.63-1.81-63.93 15.48-9.29 8.78-16.77 18.92-20.45 31.39-3.77 12.76-3.61 25.41 3.69 36.89 11.91 18.74 "
+      },
+      {
+        "href": "https://www.instagram.com/the_shakti_collective/?hl=en",
+        "label": "",
+        "color": "rgb(0, 0, 238)",
+        "fill": "rgb(255, 236, 209)",
+        "width": "33 33 133.333 133.325",
+        "svg": "<svg preserveAspectRatio=\"xMidYMid meet\" data-bbox=\"33 33 133.333 133.325\" viewBox=\"33 33 133.333 133.325\" height=\"200\" width=\"200\" xmlns=\"http://www.w3.org/2000/svg\" data-type=\"shape\" role=\"presentation\" aria-hidden=\"true\" aria-label=\"\"> <g> <path d=\"M135.258 56.075c4.409 0 8 3.583 8 8s-3.591 8-8 8c-4.416 0-8.008-3.583-8.008-8s3.592-8 8.008-8ZM99.667 77.442c-12.275 0-22.217 9.95-22.217 22.216 0 12.275 9.942 22.225 22.217 22.225 12.275 0 22.225-9.95 22.225-22.225 0-12.266-9.95-22.216-22.225-22.2"
+      },
+      {
+        "href": "https://chat.whatsapp.com/IaS1GaJT7Gp7ufxHIjDkZu?mode=gi_t",
+        "label": "",
+        "color": "rgb(0, 0, 238)",
+        "fill": "rgb(255, 236, 209)",
+        "width": "33 33 133.333 133.333",
+        "svg": "<svg preserveAspectRatio=\"xMidYMid meet\" data-bbox=\"33 33 133.333 133.333\" viewBox=\"33 33 133.333 133.333\" height=\"200\" width=\"200\" xmlns=\"http://www.w3.org/2000/svg\" data-type=\"shape\" role=\"presentation\" aria-hidden=\"true\" aria-label=\"\"> <g> <path d=\"M130.212 112.901c-1.658-.826-9.814-4.82-11.334-5.371-1.521-.551-2.627-.826-3.733.826-1.105 1.652-4.284 5.371-5.252 6.473-.968 1.101-1.935 1.24-3.594.413-1.659-.826-7.004-2.569-13.34-8.194-4.931-4.377-8.26-9.783-9.228-11.436-.967-1.653-.103-2.546.72"
+      },
+      {
+        "href": "https://youtube.com/@theshakticollective?si=C19_B12XIRmsg5e7",
+        "label": "",
+        "color": "rgb(0, 0, 238)",
+        "fill": "rgb(255, 236, 209)",
+        "width": "33 53 133.333 93.933",
+        "svg": "<svg preserveAspectRatio=\"xMidYMid meet\" data-bbox=\"33 53 133.333 93.933\" viewBox=\"33 53 133.333 93.933\" height=\"200\" width=\"200\" xmlns=\"http://www.w3.org/2000/svg\" data-type=\"shape\" role=\"presentation\" aria-hidden=\"true\" aria-label=\"\"> <g> <path d=\"M86.025 80.142v39.65l34.85-19.825-34.85-19.825ZM102 53c8.933.05 40.842.392 49.758 2.8 5.734 1.542 10.25 6.092 11.784 11.867 2.475 9.3 2.75 27.583 2.783 31.533v.675l.008.092s0 .025-.008.083v.675c-.033 3.95-.308 22.242-2.783 31.542-1.534 5.766-6.05 10."
+      },
+      {
+        "href": "https://www.facebook.com/people/The-Shakti-Collective/61575006284507/#",
+        "label": "",
+        "color": "rgb(0, 0, 238)",
+        "fill": "rgb(255, 236, 209)",
+        "width": "33.333 34 133.334 132.525",
+        "svg": "<svg preserveAspectRatio=\"xMidYMid meet\" data-bbox=\"33.333 34 133.334 132.525\" viewBox=\"33.333 34 133.334 132.525\" height=\"200\" width=\"200\" xmlns=\"http://www.w3.org/2000/svg\" data-type=\"shape\" role=\"presentation\" aria-hidden=\"true\" aria-label=\"\"> <g> <path d=\"M166.667 100.667C166.667 63.85 136.817 34 100 34s-66.667 29.85-66.667 66.667c0 33.275 24.384 60.858 56.25 65.858v-46.583H72.658v-19.275h16.925V85.983c0-16.708 9.95-25.941 25.184-25.941 7.291 0 14.925 1.3 14.925 1.3V77.75h-8.409c-8.283 0-10."
+      },
+      {
+        "href": "https://www.linkedin.com/company/theshakticollective",
+        "label": "",
+        "color": "rgb(0, 0, 238)",
+        "fill": "rgb(255, 236, 209)",
+        "width": "33 33 133.333 133.333",
+        "svg": "<svg preserveAspectRatio=\"xMidYMid meet\" data-bbox=\"33 33 133.333 133.333\" viewBox=\"33 33 133.333 133.333\" height=\"200\" width=\"200\" xmlns=\"http://www.w3.org/2000/svg\" data-type=\"shape\" role=\"presentation\" aria-hidden=\"true\" aria-label=\"\"> <g> <path d=\"M156.467 33H42.833C37.408 33 33 37.308 33 42.617v114.1c0 5.3 4.408 9.616 9.833 9.616h113.634c5.441 0 9.866-4.316 9.866-9.616v-114.1c0-5.309-4.425-9.617-9.866-9.617ZM52.758 146.617h19.784V82.983H52.758v63.634Zm9.892-72.325c-6.342 0-11.458-5.142-11.4"
+      },
+      {
+        "href": "mailto:Artist@theshakticollective.in",
+        "label": "",
+        "color": "rgb(0, 0, 238)",
+        "fill": "rgb(255, 236, 209)",
+        "width": "20 44.5 160 110.999",
+        "svg": "<svg preserveAspectRatio=\"xMidYMid meet\" data-bbox=\"20 44.5 160 110.999\" viewBox=\"20 44.5 160 110.999\" height=\"200\" width=\"200\" xmlns=\"http://www.w3.org/2000/svg\" data-type=\"shape\" role=\"presentation\" aria-hidden=\"true\" aria-label=\"\"> <g> <path d=\"M109.336 104.331a17.481 17.481 0 0 1-18.671 0L20.222 59.784H20v78.442c0 9.54 7.784 17.273 17.386 17.273h125.228c9.602 0 17.386-7.733 17.386-17.273V59.784h-.222l-70.442 44.547z\"></path> <path d=\"M22.578 44.5l.215.125 68.173 43.111a16.917 16.917 0 0 0 18"
+      }
+    ]
+  },
+  {
+    "route": "/mahavatar-narsimha-impact",
+    "footerClass": null,
+    "sectionId": null,
+    "sectionClass": null,
+    "rect": null,
+    "footerBg": null,
+    "sectionBg": null,
+    "underlayBg": null,
+    "overlayInfo": null,
+    "text": null,
+    "icons": null
+  },
+  {
+    "route": "/mba-impact",
+    "footerClass": null,
+    "sectionId": null,
+    "sectionClass": null,
+    "rect": null,
+    "footerBg": null,
+    "sectionBg": null,
+    "underlayBg": null,
+    "overlayInfo": null,
+    "text": null,
+    "icons": null
+  }
+]

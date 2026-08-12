@@ -518,3 +518,15 @@ body[data-page="yugm"] #comp-mqhqa72r {
 body[data-page="yugm"] #comp-mqhqa74u {
   grid-area: 6 / 1 / 7 / 2 !important;
 }
+
+/* tsc-aspect-ratio-override-start */
+#comp-mqji4hyt,
+#comp-mqji4hyt_img,
+#comp-mqhqa6zn5 {
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  aspect-ratio: 9 / 16 !important;
+  overflow: hidden !important;
+}
+/* tsc-aspect-ratio-override-end */

@@ -1,0 +1,2167 @@
+{
+  "title": "About The Shakti Collective | Culture-First Artist Ecosystem",
+  "href": "http://127.0.0.1:3000/about",
+  "height": 1200,
+  "bodyText": "Building India's Culture-Forward Artist Ecosystem\nWho We Are\n\nThe Shakti Collective is a culture-forward artist ecosystem company built to discover, develop and scale artists, stories and cultural movements.\n\n​\n\nWorking across music, films, live experiences, learning, artist partnerships & original IPs, we create the ecosystems that help artists grow, audiences connect & culture move forward.\n\nArtists today have more access than ever before, but building a lasting career still requires the right ecosystem.\n\n​\n\nTSC exists to bridge the gap between:\n\nTalent & Opportunity\n\nArtists & Audiences\n\nStories & Culture\n\nCreativity & Sustainable Growth\n\nWhy We Exist\nOur long-term vision is to serve 10 million artists and take 100 stories to the globe.\nOur Beliefs\nOur Vision\nArtist-first.\n\nLong-term partnerships over short-term campaigns.\n\nCulture-forward.\n\nWork that is meaningful, relevant, and timeless.\n\nRooted, yet global.\n\nTaking Indian stories and artists to the world.\n\nPurpose with progress.\n\nWhere creativity, culture, and business grow together.\n\nTo build the world's most trusted culture company by empowering artists & stories that create lasting cultural impact.\n\nSUSTAINABLE CAREER\n\nOPPORTUNITY\n\nCULTURE\n\nCOMMUNITY\n\nAUDIENCE\n\nART\n\nCONSCIOUS ENTERTAINMENT. LASTING IMPACT.\n\nOur Philosophy\n\nEntertainment can be meaningful, commercially successful, and culturally relevant—all at once.\n\nOur work follows a simple journey:\n\nHUMAN\n\nARTIST\n\nWe discover talent, develop identities, curate experiences, launch ideas, and help artists and stories grow into lasting cultural movements.\n\nBUILDING SUSTAINABLE ARTIST CAREERS\nArtist Partnerships\nAudience Growth\nLive Opportunities\nCareer Management\nMore than artist management, TSC Artists is a culture-forward partnership platform designed to help independent artists build sustainable careers.\n\nFrom live opportunities and strategic representation to audience growth, collaborations, and career development, we work alongside artists to create journeys that are creatively fulfilling, culturally relevant, and commercially sustainable.\nKnow More\nWhat We Build\nLEARNING BEYOND CLASSROOMS\nExpert Mentorship\nIndustry Learning\nCreative Community\nProfessional Growth\nTSC Academy is designed for artists who want more than just skill development. Through expert-led courses, mentorship, community learning, and industry insights, we equip musicians, singers, composers, producers, and creative professionals with the knowledge, confidence, and directio",
+  "ids": [
+    {
+      "id": "wixDesktopViewport",
+      "tag": "META",
+      "cls": "",
+      "text": "",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      }
+    },
+    {
+      "id": "wix-essential-viewer-model",
+      "tag": "SCRIPT",
+      "cls": "",
+      "text": "{\"fleetConfig\":{\"fleetName\":\"thunderbolt-renderer\",\"type\":\"GA\",\"code\":0},\"mode\":{\"qa\":false,\"enableT",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      }
+    },
+    {
+      "id": "pageHtmlEmbeds.head start",
+      "tag": "SCRIPT",
+      "cls": "",
+      "text": "",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      }
+    },
+    {
+      "id": "pageHtmlEmbeds.head end",
+      "tag": "SCRIPT",
+      "cls": "",
+      "text": "",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      }
+    },
+    {
+      "id": "a11y-contrast",
+      "tag": "STYLE",
+      "cls": "",
+      "text": "\n    @media (forced-colors: active) {\n      #SITE_CONTAINER.focus-ring-active\n        :not(.has-cust",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      }
+    },
+    {
+      "id": "wix-skip-played-animations-setup",
+      "tag": "SCRIPT",
+      "cls": "",
+      "text": "\n    (function() {\n        var navEntry = performance.getEntriesByType('navigation')[0];\n        if ",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      }
+    },
+    {
+      "id": "page-transitions",
+      "tag": "STYLE",
+      "cls": "",
+      "text": "@view-transition {navigation: auto;types: OutIn}",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      }
+    },
+    {
+      "id": "css_masterPage",
+      "tag": "STYLE",
+      "cls": "",
+      "text": "@font-face {\nfont-display: swap;\nfont-family: wf_d08c6fe9ca9b47ccb21ecdcb7;\nsrc: url(\"/assets/mirror",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      }
+    },
+    {
+      "id": "css_zem60",
+      "tag": "STYLE",
+      "cls": "",
+      "text": "@font-face {\nfont-display: swap;\nfont-family: wf_0df54c350288431ea34bee746;\nsrc: url(\"/assets/mirror",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      }
+    },
+    {
+      "id": "stylableCss_zem60",
+      "tag": "STYLE",
+      "cls": "",
+      "text": "/* END STYLABLE DIRECTIVE RULES */\n\n:is(#comp-mp2vlkc3_r_comp-mb5540nm5, [id^=\"comp-mp2vlkc3_r_comp-",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      }
+    },
+    {
+      "id": "compCssMappers_zem60",
+      "tag": "STYLE",
+      "cls": "",
+      "text": "#zem60{--shc-mutated-brightness:128,118,105;justify-self:unset;}#comp-mp2vlkc3_r_comp-kbgajy18{--bg-",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      }
+    },
+    {
+      "id": "tsc-about-philosophy-parallax-style",
+      "tag": "STYLE",
+      "cls": "",
+      "text": "#comp-mr1ychhq .tsc-philosophy-parallax-layer {\n  will-change: transform !important;\n  backface-visi",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      }
+    },
+    {
+      "id": "tsc-about-build-scroll-style",
+      "tag": "STYLE",
+      "cls": "",
+      "text": "#comp-mr355d93.tsc-build-scroll-title,\n.tsc-build-stop-card {\n  will-change: transform !important;\n ",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      }
+    },
+    {
+      "id": "tsc-desktop-nav-lock-inline",
+      "tag": "STYLE",
+      "cls": "",
+      "text": "body:has([data-tsc-locked-desktop-header=\"true\"]) .tsc-desktop-site-header:not([data-tsc-forced-head",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      }
+    },
+    {
+      "id": "tsc-brand-card-runtime-mobile-style",
+      "tag": "STYLE",
+      "cls": "",
+      "text": "@media (max-width: 1024px){body[data-page=\"about\"] :is(#comp-mr38xqqo,#comp-mr3axlwa,#comp-mr3fzsjq)",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      }
+    },
+    {
+      "id": "pageHtmlEmbeds.bodyStart start",
+      "tag": "SCRIPT",
+      "cls": "",
+      "text": "",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      }
+    },
+    {
+      "id": "pageHtmlEmbeds.bodyStart end",
+      "tag": "SCRIPT",
+      "cls": "",
+      "text": "",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      }
+    },
+    {
+      "id": "wix-first-paint",
+      "tag": "SCRIPT",
+      "cls": "",
+      "text": "\n    if (window.ResizeObserver &&\n        (!window.PerformanceObserver || !PerformanceObserver.suppo",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      }
+    },
+    {
+      "id": "scroll-bar-width-calculation",
+      "tag": "SCRIPT",
+      "cls": "",
+      "text": "\n    const div = document.createElement('div')\n    div.style.overflowY = 'scroll'\n    div.style.widt",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      }
+    },
+    {
+      "id": "dom-store-defs",
+      "tag": "defs",
+      "cls": "[object SVGAnimatedString]",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      }
+    },
+    {
+      "id": "SITE_CONTAINER",
+      "tag": "DIV",
+      "cls": "",
+      "text": "Building India's Culture-Forward Artist Ecosystem\nWho We Are\n\nThe Shakti Collective is a culture-for",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 390,
+        "h": 7877
+      }
+    },
+    {
+      "id": "main_MF",
+      "tag": "DIV",
+      "cls": "main_MF",
+      "text": "Building India's Culture-Forward Artist Ecosystem\nWho We Are\n\nThe Shakti Collective is a culture-for",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 390,
+        "h": 7877
+      }
+    },
+    {
+      "id": "SCROLL_TO_TOP",
+      "tag": "DIV",
+      "cls": "qe3oTb ignore-focus SCROLL_TO_TOP",
+      "text": "",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 390,
+        "h": 0
+      }
+    },
+    {
+      "id": "WIX_ADS",
+      "tag": "DIV",
+      "cls": "WIX_ADS ub230c YY89bY aD8jGL",
+      "text": "",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      }
+    },
+    {
+      "id": "site-root",
+      "tag": "DIV",
+      "cls": "site-root",
+      "text": "Building India's Culture-Forward Artist Ecosystem\nWho We Are\n\nThe Shakti Collective is a culture-for",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 390,
+        "h": 7877
+      }
+    },
+    {
+      "id": "masterPage",
+      "tag": "DIV",
+      "cls": "masterPage css-editing-scope",
+      "text": "Building India's Culture-Forward Artist Ecosystem\nWho We Are\n\nThe Shakti Collective is a culture-for",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 390,
+        "h": 7877
+      }
+    },
+    {
+      "id": "SITE_PAGES",
+      "tag": "DIV",
+      "cls": "Y3K28_ SITE_PAGES",
+      "text": "Building India's Culture-Forward Artist Ecosystem\nWho We Are\n\nThe Shakti Collective is a culture-for",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 390,
+        "h": 7877
+      }
+    },
+    {
+      "id": "SITE_PAGES_TRANSITION_GROUP",
+      "tag": "DIV",
+      "cls": "uvik8H",
+      "text": "Building India's Culture-Forward Artist Ecosystem\nWho We Are\n\nThe Shakti Collective is a culture-for",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 390,
+        "h": 7877
+      }
+    },
+    {
+      "id": "zem60",
+      "tag": "DIV",
+      "cls": "ETqrjz theme-vars zem60",
+      "text": "Building India's Culture-Forward Artist Ecosystem\nWho We Are\n\nThe Shakti Collective is a culture-for",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 390,
+        "h": 7877
+      }
+    },
+    {
+      "id": "comp-mp2vlkc3",
+      "tag": "HEADER",
+      "cls": "comp-mp2vlkc3 S829f_ comp-mp2vlkc3-container",
+      "text": "",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 390,
+        "h": 150
+      }
+    },
+    {
+      "id": "comp-mp2vlkc3_r_comp-kbgajy18",
+      "tag": "SECTION",
+      "cls": "Lnr3dj comp-mp2vlkc3_r_comp-kbgajy18 Lnr3dj wixui-header fwXYgt",
+      "text": "",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 390,
+        "h": 150
+      }
+    },
+    {
+      "id": "bgLayers_comp-mp2vlkc3_r_comp-kbgajy18",
+      "tag": "DIV",
+      "cls": "QG9w8P",
+      "text": "",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 390,
+        "h": 150
+      }
+    },
+    {
+      "id": "bgMedia_comp-mp2vlkc3_r_comp-kbgajy18",
+      "tag": "DIV",
+      "cls": "ROWgFb",
+      "text": "",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 390,
+        "h": 150
+      }
+    },
+    {
+      "id": "comp-mp2vlkc3_r_comp-mb5540mw",
+      "tag": "DIV",
+      "cls": "comp-mp2vlkc3_r_comp-mb5540mw-container comp-mp2vlkc3_r_comp-mb5540mw",
+      "text": "",
+      "rect": {
+        "x": 315,
+        "y": 50,
+        "w": 50,
+        "h": 50
+      }
+    },
+    {
+      "id": "comp-mp2vlkc3_r_comp-mb5540mw-menu-content",
+      "tag": "DIV",
+      "cls": "h75ntl",
+      "text": "AboutWorkArtistsTSC ArtistsArtist PathLearn With TSCTSC ArtistsArtist PathLearn With TSCFilmsResourc",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      }
+    },
+    {
+      "id": "dataItem-mrxd1yr8-dropdown",
+      "tag": "DIV",
+      "cls": "rpHatU ",
+      "text": "TSC ArtistsArtist PathLearn With TSC",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      }
+    },
+    {
+      "id": "dataItem-mrxd1yr8-submenu",
+      "tag": "DIV",
+      "cls": "toi7Rj x0UOau",
+      "text": "TSC ArtistsArtist PathLearn With TSC",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      }
+    },
+    {
+      "id": "dataItem-mrxd1yr8-dropdown",
+      "tag": "DIV",
+      "cls": "t_wvYI ",
+      "text": "TSC ArtistsArtist PathLearn With TSC",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      }
+    },
+    {
+      "id": "dataItem-mrxd1yr8-submenu",
+      "tag": "DIV",
+      "cls": "toi7Rj x0UOau",
+      "text": "TSC ArtistsArtist PathLearn With TSC",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      }
+    },
+    {
+      "id": "comp-mp2vlkc3_r_comp-mb5540nl1",
+      "tag": "DIV",
+      "cls": "comp-mp2vlkc3_r_comp-mb5540nl1-container wiZmhC",
+      "text": "",
+      "rect": {
+        "x": 315,
+        "y": 50,
+        "w": 50,
+        "h": 50
+      }
+    },
+    {
+      "id": "comp-mp2vlkc3_r_comp-mb5540nm5",
+      "tag": "DIV",
+      "cls": "HamburgerOpenButton3537389287__root StylableButton2545352419__root comp-mp2vlkc3_r_comp-mb5540nm5",
+      "text": "",
+      "rect": {
+        "x": 315,
+        "y": 50,
+        "w": 50,
+        "h": 50
+      }
+    },
+    {
+      "id": "comp-mp2vlkc3_r_comp-mp3rsqk1",
+      "tag": "DIV",
+      "cls": "comp-mp2vlkc3_r_comp-mp3rsqk1 wixui-vector-image",
+      "text": "",
+      "rect": {
+        "x": 19,
+        "y": 64,
+        "w": 52,
+        "h": 21
+      }
+    },
+    {
+      "id": "comp-mp2vlkc3_r_comp-mrriywbr",
+      "tag": "DIV",
+      "cls": "comp-mp2vlkc3_r_comp-mrriywbr-container comp-mp2vlkc3_r_comp-mrriywbr",
+      "text": "",
+      "rect": {
+        "x": 273,
+        "y": 50,
+        "w": 50,
+        "h": 50
+      }
+    },
+    {
+      "id": "comp-mp2vlkc3_r_comp-mrriywbr-menu-content",
+      "tag": "DIV",
+      "cls": "h75ntl",
+      "text": "AboutWorkArtistsTSC ArtistsArtist PathLearn With TSCTSC ArtistsArtist PathLearn With TSCFilmsResourc",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      }
+    },
+    {
+      "id": "dataItem-mrxd1yr8-dropdown",
+      "tag": "DIV",
+      "cls": "rpHatU ",
+      "text": "TSC ArtistsArtist PathLearn With TSC",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      }
+    },
+    {
+      "id": "dataItem-mrxd1yr8-submenu",
+      "tag": "DIV",
+      "cls": "toi7Rj x0UOau",
+      "text": "TSC ArtistsArtist PathLearn With TSC",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      }
+    },
+    {
+      "id": "dataItem-mrxd1yr8-dropdown",
+      "tag": "DIV",
+      "cls": "t_wvYI ",
+      "text": "TSC ArtistsArtist PathLearn With TSC",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      }
+    },
+    {
+      "id": "dataItem-mrxd1yr8-submenu",
+      "tag": "DIV",
+      "cls": "toi7Rj x0UOau",
+      "text": "TSC ArtistsArtist PathLearn With TSC",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      }
+    },
+    {
+      "id": "comp-mp2vlkc3_r_comp-mrriywcx",
+      "tag": "DIV",
+      "cls": "comp-mp2vlkc3_r_comp-mrriywcx-container wiZmhC",
+      "text": "",
+      "rect": {
+        "x": 273,
+        "y": 50,
+        "w": 50,
+        "h": 50
+      }
+    },
+    {
+      "id": "comp-mp2vlkc3_r_comp-mrriywd03",
+      "tag": "DIV",
+      "cls": "HamburgerOpenButton3537389287__root StylableButton2545352419__root comp-mp2vlkc3_r_comp-mrriywd03",
+      "text": "",
+      "rect": {
+        "x": 273,
+        "y": 50,
+        "w": 50,
+        "h": 50
+      }
+    },
+    {
+      "id": "comp-mp2vlkc3_r_comp-mrriyw6n",
+      "tag": "DIV",
+      "cls": "comp-mp2vlkc3_r_comp-mrriyw6n lIkFMb",
+      "text": "",
+      "rect": {
+        "x": 329,
+        "y": 68,
+        "w": 47,
+        "h": 14
+      }
+    },
+    {
+      "id": "PAGE_SECTIONSzem60",
+      "tag": "MAIN",
+      "cls": "PAGE_SECTIONSzem60 ooGRUo",
+      "text": "Building India's Culture-Forward Artist Ecosystem\nWho We Are\n\nThe Shakti Collective is a culture-for",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      }
+    },
+    {
+      "id": "comp-mp2vlkbh2",
+      "tag": "SECTION",
+      "cls": "ke5pl1 comp-mp2vlkbh2 wixui-section fwXYgt",
+      "text": "Building India's Culture-Forward Artist Ecosystem",
+      "rect": {
+        "x": 0,
+        "y": 150,
+        "w": 390,
+        "h": 560
+      }
+    },
+    {
+      "id": "bgLayers_comp-mp2vlkbh2",
+      "tag": "DIV",
+      "cls": "QG9w8P",
+      "text": "",
+      "rect": {
+        "x": 0,
+        "y": 150,
+        "w": 390,
+        "h": 560
+      }
+    },
+    {
+      "id": "bgMedia_comp-mp2vlkbh2",
+      "tag": "DIV",
+      "cls": "ROWgFb",
+      "text": "",
+      "rect": {
+        "x": 0,
+        "y": 150,
+        "w": 390,
+        "h": 560
+      }
+    },
+    {
+      "id": "img_comp-mp2vlkbh2",
+      "tag": "WOW-IMAGE",
+      "cls": "Qh0lWW ayCf9D fO4mKs NgeJ4N bgImage",
+      "text": "",
+      "rect": {
+        "x": 0,
+        "y": 150,
+        "w": 390,
+        "h": 560
+      }
+    },
+    {
+      "id": "comp-mp2vlkbh2webglcanvas",
+      "tag": "CANVAS",
+      "cls": "g4gDzl webglcanvas",
+      "text": "",
+      "rect": {
+        "x": 0,
+        "y": 150,
+        "w": 390,
+        "h": 560
+      }
+    },
+    {
+      "id": "bgImgOverlay_comp-mp2vlkbh2",
+      "tag": "WIX-BG-IMAGE",
+      "cls": "OAmk_6",
+      "text": "",
+      "rect": {
+        "x": 0,
+        "y": 150,
+        "w": 390,
+        "h": 560
+      }
+    },
+    {
+      "id": "comp-mr1ttkgk",
+      "tag": "DIV",
+      "cls": "comp-mr1ttkgk wixui-vector-image",
+      "text": "",
+      "rect": {
+        "x": 152,
+        "y": 268,
+        "w": 86,
+        "h": 86
+      }
+    },
+    {
+      "id": "comp-mr1vbgc2",
+      "tag": "DIV",
+      "cls": "HFEOE3 NaeT1r comp-mr1vbgc2-container comp-mr1vbgc2 wixui-box",
+      "text": "Building India's Culture-Forward Artist Ecosystem",
+      "rect": {
+        "x": 45,
+        "y": 384,
+        "w": 300,
+        "h": 197
+      }
+    },
+    {
+      "id": "comp-mr1tvuqc",
+      "tag": "DIV",
+      "cls": "comp-mr1tvuqc wixui-vector-image",
+      "text": "",
+      "rect": {
+        "x": 45,
+        "y": 384,
+        "w": 300,
+        "h": 144
+      }
+    },
+    {
+      "id": "comp-mr1tv44l",
+      "tag": "DIV",
+      "cls": "N8MGzv _v6ohL PO9MfV comp-mr1tv44l wixui-rich-text",
+      "text": "Building India's Culture-Forward Artist Ecosystem",
+      "rect": {
+        "x": 45,
+        "y": 543,
+        "w": 320,
+        "h": 37
+      }
+    },
+    {
+      "id": "comp-mr1u2p4j",
+      "tag": "SECTION",
+      "cls": "ke5pl1 comp-mr1u2p4j wixui-section fwXYgt",
+      "text": "Who We Are\n\nThe Shakti Collective is a culture-forward artist ecosystem company built to discover, d",
+      "rect": {
+        "x": 0,
+        "y": 710,
+        "w": 390,
+        "h": 723
+      }
+    },
+    {
+      "id": "bgLayers_comp-mr1u2p4j",
+      "tag": "DIV",
+      "cls": "QG9w8P",
+      "text": "",
+      "rect": {
+        "x": 0,
+        "y": 710,
+        "w": 390,
+        "h": 723
+      }
+    },
+    {
+      "id": "bgMedia_comp-mr1u2p4j",
+      "tag": "DIV",
+      "cls": "ROWgFb",
+      "text": "",
+      "rect": {
+        "x": 0,
+        "y": 710,
+        "w": 390,
+        "h": 723
+      }
+    },
+    {
+      "id": "comp-mr1w88dl",
+      "tag": "DIV",
+      "cls": "HFEOE3 NaeT1r comp-mr1w88dl-container comp-mr1w88dl wixui-box",
+      "text": "Who We Are",
+      "rect": {
+        "x": 20,
+        "y": 738,
+        "w": 350,
+        "h": 42
+      }
+    },
+    {
+      "id": "comp-mr1w27qq",
+      "tag": "DIV",
+      "cls": "N8MGzv _v6ohL PO9MfV comp-mr1w27qq wixui-rich-text",
+      "text": "Who We Are",
+      "rect": {
+        "x": 48,
+        "y": 744,
+        "w": 294,
+        "h": 30
+      }
+    },
+    {
+      "id": "comp-mr1wb3oc",
+      "tag": "DIV",
+      "cls": "HFEOE3 NaeT1r comp-mr1wb3oc-container comp-mr1wb3oc wixui-box",
+      "text": "The Shakti Collective is a culture-forward artist ecosystem company built to discover, develop and s",
+      "rect": {
+        "x": 20,
+        "y": 802,
+        "w": 350,
+        "h": 263
+      }
+    },
+    {
+      "id": "comp-mr1u55rt",
+      "tag": "DIV",
+      "cls": "N8MGzv _v6ohL PO9MfV comp-mr1u55rt wixui-rich-text",
+      "text": "The Shakti Collective is a culture-forward artist ecosystem company built to discover, develop and s",
+      "rect": {
+        "x": 49,
+        "y": 821,
+        "w": 295,
+        "h": 227
+      }
+    },
+    {
+      "id": "comp-mr1wdahh",
+      "tag": "DIV",
+      "cls": "HFEOE3 NaeT1r comp-mr1wdahh-container comp-mr1wdahh wixui-box",
+      "text": "Artists today have more access than ever before, but building a lasting career still requires the ri",
+      "rect": {
+        "x": 20,
+        "y": 1152,
+        "w": 350,
+        "h": 246
+      }
+    },
+    {
+      "id": "comp-mr1wdahm",
+      "tag": "DIV",
+      "cls": "N8MGzv _v6ohL PO9MfV comp-mr1wdahm wixui-rich-text",
+      "text": "Artists today have more access than ever before, but building a lasting career still requires the ri",
+      "rect": {
+        "x": 49,
+        "y": 1170,
+        "w": 291,
+        "h": 209
+      }
+    },
+    {
+      "id": "comp-mr1wdo6d",
+      "tag": "DIV",
+      "cls": "HFEOE3 NaeT1r comp-mr1wdo6d-container comp-mr1wdo6d wixui-box",
+      "text": "Why We Exist",
+      "rect": {
+        "x": 20,
+        "y": 1088,
+        "w": 350,
+        "h": 42
+      }
+    },
+    {
+      "id": "comp-mr1wdo6f3",
+      "tag": "DIV",
+      "cls": "N8MGzv _v6ohL PO9MfV comp-mr1wdo6f3 wixui-rich-text",
+      "text": "Why We Exist",
+      "rect": {
+        "x": 48,
+        "y": 1094,
+        "w": 294,
+        "h": 30
+      }
+    },
+    {
+      "id": "comp-mr1whees",
+      "tag": "SECTION",
+      "cls": "ke5pl1 comp-mr1whees wixui-section fwXYgt",
+      "text": "Our long-term vision is to serve 10 million artists and take 100 stories to the globe.\nOur Beliefs\nO",
+      "rect": {
+        "x": 0,
+        "y": 1433,
+        "w": 390,
+        "h": 1234
+      }
+    },
+    {
+      "id": "bgLayers_comp-mr1whees",
+      "tag": "DIV",
+      "cls": "QG9w8P",
+      "text": "",
+      "rect": {
+        "x": 0,
+        "y": 1433,
+        "w": 390,
+        "h": 1234
+      }
+    },
+    {
+      "id": "bgMedia_comp-mr1whees",
+      "tag": "DIV",
+      "cls": "ROWgFb",
+      "text": "",
+      "rect": {
+        "x": 0,
+        "y": 1433,
+        "w": 390,
+        "h": 1234
+      }
+    },
+    {
+      "id": "comp-mr1y8j13",
+      "tag": "DIV",
+      "cls": "HFEOE3 NaeT1r comp-mr1y8j13-container comp-mr1y8j13 wixui-box",
+      "text": "Our long-term vision is to serve 10 million artists and take 100 stories to the globe.",
+      "rect": {
+        "x": 16,
+        "y": 1613,
+        "w": 358,
+        "h": 84
+      }
+    },
+    {
+      "id": "comp-mr1y8j19",
+      "tag": "DIV",
+      "cls": "N8MGzv _v6ohL PO9MfV comp-mr1y8j19 wixui-rich-text",
+      "text": "Our long-term vision is to serve 10 million artists and take 100 stories to the globe.",
+      "rect": {
+        "x": 33,
+        "y": 1631,
+        "w": 326,
+        "h": 48
+      }
+    },
+    {
+      "id": "comp-mr1wpwmx",
+      "tag": "DIV",
+      "cls": "N8MGzv _v6ohL PO9MfV comp-mr1wpwmx wixui-rich-text",
+      "text": "Our Beliefs",
+      "rect": {
+        "x": 16,
+        "y": 1709,
+        "w": 358,
+        "h": 29
+      }
+    },
+    {
+      "id": "comp-mr1wm4n4",
+      "tag": "DIV",
+      "cls": "N8MGzv _v6ohL PO9MfV comp-mr1wm4n4 wixui-rich-text",
+      "text": "Our Vision",
+      "rect": {
+        "x": 16,
+        "y": 1453,
+        "w": 358,
+        "h": 29
+      }
+    },
+    {
+      "id": "comp-mr1ybwmh",
+      "tag": "DIV",
+      "cls": "HFEOE3 NaeT1r comp-mr1ybwmh-container comp-mr1ybwmh wixui-box",
+      "text": "Artist-first.\n\nLong-term partnerships over short-term campaigns.\n\nCulture-forward.\n\nWork that is mea",
+      "rect": {
+        "x": 16,
+        "y": 1750,
+        "w": 358,
+        "h": 893
+      }
+    },
+    {
+      "id": "comp-mr1wvwvr",
+      "tag": "DIV",
+      "cls": "HFEOE3 NaeT1r comp-mr1wvwvr-container comp-mr1wvwvr wixui-box",
+      "text": "Artist-first.\n\nLong-term partnerships over short-term campaigns.",
+      "rect": {
+        "x": 32,
+        "y": 1750,
+        "w": 326,
+        "h": 214
+      }
+    },
+    {
+      "id": "comp-mr1wvwvv5",
+      "tag": "DIV",
+      "cls": "HFEOE3 NaeT1r comp-mr1wvwvv5-container comp-mr1wvwvv5 wixui-box",
+      "text": "Artist-first.\n\nLong-term partnerships over short-term campaigns.",
+      "rect": {
+        "x": 50,
+        "y": 1772,
+        "w": 290,
+        "h": 168
+      }
+    },
+    {
+      "id": "comp-mr1wvwvx2",
+      "tag": "DIV",
+      "cls": "comp-mr1wvwvx2 wixui-vector-image",
+      "text": "",
+      "rect": {
+        "x": 159,
+        "y": 1772,
+        "w": 72,
+        "h": 72
+      }
+    },
+    {
+      "id": "comp-mr1wvww1",
+      "tag": "DIV",
+      "cls": "N8MGzv _v6ohL PO9MfV comp-mr1wvww1 wixui-rich-text",
+      "text": "Artist-first.",
+      "rect": {
+        "x": 50,
+        "y": 1852,
+        "w": 290,
+        "h": 30
+      }
+    },
+    {
+      "id": "comp-mr1wvww3",
+      "tag": "DIV",
+      "cls": "N8MGzv _v6ohL PO9MfV comp-mr1wvww3 wixui-rich-text",
+      "text": "Long-term partnerships over short-term campaigns.",
+      "rect": {
+        "x": 50,
+        "y": 1890,
+        "w": 290,
+        "h": 50
+      }
+    },
+    {
+      "id": "comp-mr1wvwym",
+      "tag": "DIV",
+      "cls": "HFEOE3 NaeT1r comp-mr1wvwym-container comp-mr1wvwym wixui-box",
+      "text": "Culture-forward.\n\nWork that is meaningful, relevant, and timeless.",
+      "rect": {
+        "x": 32,
+        "y": 1978,
+        "w": 326,
+        "h": 214
+      }
+    },
+    {
+      "id": "comp-mr1wvwyq3",
+      "tag": "DIV",
+      "cls": "HFEOE3 NaeT1r comp-mr1wvwyq3-container comp-mr1wvwyq3 wixui-box",
+      "text": "Culture-forward.\n\nWork that is meaningful, relevant, and timeless.",
+      "rect": {
+        "x": 50,
+        "y": 2000,
+        "w": 290,
+        "h": 168
+      }
+    },
+    {
+      "id": "comp-mr1wvwys2",
+      "tag": "DIV",
+      "cls": "comp-mr1wvwys2 wixui-vector-image",
+      "text": "",
+      "rect": {
+        "x": 159,
+        "y": 2000,
+        "w": 72,
+        "h": 72
+      }
+    },
+    {
+      "id": "comp-mr1wvwyw",
+      "tag": "DIV",
+      "cls": "N8MGzv _v6ohL PO9MfV comp-mr1wvwyw wixui-rich-text",
+      "text": "Culture-forward.",
+      "rect": {
+        "x": 50,
+        "y": 2080,
+        "w": 290,
+        "h": 30
+      }
+    },
+    {
+      "id": "comp-mr1wvwyy1",
+      "tag": "DIV",
+      "cls": "N8MGzv _v6ohL PO9MfV comp-mr1wvwyy1 wixui-rich-text",
+      "text": "Work that is meaningful, relevant, and timeless.",
+      "rect": {
+        "x": 50,
+        "y": 2117,
+        "w": 290,
+        "h": 50
+      }
+    },
+    {
+      "id": "comp-mr1wvwst",
+      "tag": "DIV",
+      "cls": "HFEOE3 NaeT1r comp-mr1wvwst-container comp-mr1wvwst wixui-box",
+      "text": "Rooted, yet global.\n\nTaking Indian stories and artists to the world.",
+      "rect": {
+        "x": 32,
+        "y": 2206,
+        "w": 326,
+        "h": 211
+      }
+    },
+    {
+      "id": "comp-mr1wvwsy2",
+      "tag": "DIV",
+      "cls": "HFEOE3 NaeT1r comp-mr1wvwsy2-container comp-mr1wvwsy2 wixui-box",
+      "text": "Rooted, yet global.\n\nTaking Indian stories and artists to the world.",
+      "rect": {
+        "x": 50,
+        "y": 2228,
+        "w": 290,
+        "h": 165
+      }
+    },
+    {
+      "id": "comp-mr1wvwt1",
+      "tag": "DIV",
+      "cls": "comp-mr1wvwt1 wixui-vector-image",
+      "text": "",
+      "rect": {
+        "x": 159,
+        "y": 2228,
+        "w": 72,
+        "h": 72
+      }
+    },
+    {
+      "id": "comp-mr1wvwt43",
+      "tag": "DIV",
+      "cls": "N8MGzv _v6ohL PO9MfV comp-mr1wvwt43 wixui-rich-text",
+      "text": "Rooted, yet global.",
+      "rect": {
+        "x": 50,
+        "y": 2308,
+        "w": 290,
+        "h": 26
+      }
+    },
+    {
+      "id": "comp-mr1wvwt64",
+      "tag": "DIV",
+      "cls": "N8MGzv _v6ohL PO9MfV comp-mr1wvwt64 wixui-rich-text",
+      "text": "Taking Indian stories and artists to the world.",
+      "rect": {
+        "x": 50,
+        "y": 2342,
+        "w": 290,
+        "h": 50
+      }
+    },
+    {
+      "id": "comp-mr1wvwpv",
+      "tag": "DIV",
+      "cls": "HFEOE3 NaeT1r comp-mr1wvwpv-container comp-mr1wvwpv wixui-box",
+      "text": "Purpose with progress.\n\nWhere creativity, culture, and business grow together.",
+      "rect": {
+        "x": 32,
+        "y": 2430,
+        "w": 326,
+        "h": 214
+      }
+    },
+    {
+      "id": "comp-mr1wvwqf",
+      "tag": "DIV",
+      "cls": "HFEOE3 NaeT1r comp-mr1wvwqf-container comp-mr1wvwqf wixui-box",
+      "text": "Purpose with progress.\n\nWhere creativity, culture, and business grow together.",
+      "rect": {
+        "x": 50,
+        "y": 2452,
+        "w": 290,
+        "h": 168
+      }
+    },
+    {
+      "id": "comp-mr1wvwqh",
+      "tag": "DIV",
+      "cls": "comp-mr1wvwqh wixui-vector-image",
+      "text": "",
+      "rect": {
+        "x": 159,
+        "y": 2452,
+        "w": 72,
+        "h": 72
+      }
+    },
+    {
+      "id": "comp-mr1wvwqm1",
+      "tag": "DIV",
+      "cls": "N8MGzv _v6ohL PO9MfV comp-mr1wvwqm1 wixui-rich-text",
+      "text": "Purpose with progress.",
+      "rect": {
+        "x": 50,
+        "y": 2532,
+        "w": 290,
+        "h": 30
+      }
+    },
+    {
+      "id": "comp-mr1wvwqp",
+      "tag": "DIV",
+      "cls": "N8MGzv _v6ohL PO9MfV comp-mr1wvwqp wixui-rich-text",
+      "text": "Where creativity, culture, and business grow together.",
+      "rect": {
+        "x": 50,
+        "y": 2570,
+        "w": 290,
+        "h": 50
+      }
+    },
+    {
+      "id": "comp-mr1xvn1d",
+      "tag": "DIV",
+      "cls": "HFEOE3 NaeT1r comp-mr1xvn1d-container comp-mr1xvn1d wixui-box",
+      "text": "To build the world's most trusted culture company by empowering artists & stories that create lastin",
+      "rect": {
+        "x": 16,
+        "y": 1494,
+        "w": 358,
+        "h": 107
+      }
+    },
+    {
+      "id": "comp-mr1wnsbb",
+      "tag": "DIV",
+      "cls": "N8MGzv _v6ohL PO9MfV comp-mr1wnsbb wixui-rich-text",
+      "text": "To build the world's most trusted culture company by empowering artists & stories that create lastin",
+      "rect": {
+        "x": 31,
+        "y": 1512,
+        "w": 326,
+        "h": 71
+      }
+    },
+    {
+      "id": "comp-mr1ychhq",
+      "tag": "SECTION",
+      "cls": "ke5pl1 comp-mr1ychhq wixui-section fwXYgt",
+      "text": "SUSTAINABLE CAREER\n\nOPPORTUNITY\n\nCULTURE\n\nCOMMUNITY\n\nAUDIENCE\n\nART\n\nCONSCIOUS ENTERTAINMENT. LASTING",
+      "rect": {
+        "x": 0,
+        "y": 2668,
+        "w": 390,
+        "h": 656
+      }
+    },
+    {
+      "id": "bgLayers_comp-mr1ychhq",
+      "tag": "DIV",
+      "cls": "QG9w8P",
+      "text": "",
+      "rect": {
+        "x": 0,
+        "y": 2668,
+        "w": 390,
+        "h": 656
+      }
+    },
+    {
+      "id": "bgMedia_comp-mr1ychhq",
+      "tag": "DIV",
+      "cls": "ROWgFb",
+      "text": "",
+      "rect": {
+        "x": 0,
+        "y": 2668,
+        "w": 390,
+        "h": 656
+      }
+    },
+    {
+      "id": "bgImg_comp-mr1ychhq",
+      "tag": "WIX-BG-IMAGE",
+      "cls": "ayCf9D fO4mKs NgeJ4N bgImage",
+      "text": "",
+      "rect": {
+        "x": 0,
+        "y": 2668,
+        "w": 390,
+        "h": 656
+      }
+    },
+    {
+      "id": "comp-mr225jy2",
+      "tag": "DIV",
+      "cls": "HFEOE3 NaeT1r comp-mr225jy2-container comp-mr225jy2 wixui-box",
+      "text": "SUSTAINABLE CAREER",
+      "rect": {
+        "x": 20,
+        "y": 3152,
+        "w": 350,
+        "h": 37
+      }
+    },
+    {
+      "id": "comp-mr21xdu1",
+      "tag": "DIV",
+      "cls": "G7WLYH comp-mr21xdu1",
+      "text": "",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      }
+    },
+    {
+      "id": "comp-mr222vrk",
+      "tag": "DIV",
+      "cls": "HFEOE3 NaeT1r comp-mr222vrk-container comp-mr222vrk wixui-box",
+      "text": "SUSTAINABLE CAREER",
+      "rect": {
+        "x": 101,
+        "y": 3152,
+        "w": 188,
+        "h": 37
+      }
+    },
+    {
+      "id": "comp-mr21ri7x",
+      "tag": "DIV",
+      "cls": "HFEOE3 NaeT1r comp-mr21ri7x-container comp-mr21ri7x wixui-box",
+      "text": "",
+      "rect": {
+        "x": 190,
+        "y": 3152,
+        "w": 10,
+        "h": 10
+      }
+    },
+    {
+      "id": "comp-mr21j3i6",
+      "tag": "DIV",
+      "cls": "N8MGzv _v6ohL PO9MfV comp-mr21j3i6 wixui-rich-text",
+      "text": "SUSTAINABLE CAREER",
+      "rect": {
+        "x": 101,
+        "y": 3170,
+        "w": 188,
+        "h": 19
+      }
+    },
+    {
+      "id": "comp-mr225fky",
+      "tag": "DIV",
+      "cls": "HFEOE3 NaeT1r comp-mr225fky-container comp-mr225fky wixui-box",
+      "text": "OPPORTUNITY",
+      "rect": {
+        "x": 20,
+        "y": 3116,
+        "w": 350,
+        "h": 37
+      }
+    },
+    {
+      "id": "comp-mr21xdp5",
+      "tag": "DIV",
+      "cls": "G7WLYH comp-mr21xdp5",
+      "text": "",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      }
+    },
+    {
+      "id": "comp-mr222ny2",
+      "tag": "DIV",
+      "cls": "HFEOE3 NaeT1r comp-mr222ny2-container comp-mr222ny2 wixui-box",
+      "text": "OPPORTUNITY",
+      "rect": {
+        "x": 133,
+        "y": 3116,
+        "w": 123,
+        "h": 37
+      }
+    },
+    {
+      "id": "comp-mr21ri9p",
+      "tag": "DIV",
+      "cls": "HFEOE3 NaeT1r comp-mr21ri9p-container comp-mr21ri9p wixui-box",
+      "text": "",
+      "rect": {
+        "x": 190,
+        "y": 3116,
+        "w": 10,
+        "h": 10
+      }
+    },
+    {
+      "id": "comp-mr21j3gm",
+      "tag": "DIV",
+      "cls": "N8MGzv _v6ohL PO9MfV comp-mr21j3gm wixui-rich-text",
+      "text": "OPPORTUNITY",
+      "rect": {
+        "x": 133,
+        "y": 3134,
+        "w": 123,
+        "h": 19
+      }
+    },
+    {
+      "id": "comp-mr225awb",
+      "tag": "DIV",
+      "cls": "HFEOE3 NaeT1r comp-mr225awb-container comp-mr225awb wixui-box",
+      "text": "CULTURE",
+      "rect": {
+        "x": 20,
+        "y": 3079,
+        "w": 350,
+        "h": 37
+      }
+    },
+    {
+      "id": "comp-mr21xdqs",
+      "tag": "DIV",
+      "cls": "G7WLYH comp-mr21xdqs",
+      "text": "",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      }
+    },
+    {
+      "id": "comp-mr222fm8",
+      "tag": "DIV",
+      "cls": "HFEOE3 NaeT1r comp-mr222fm8-container comp-mr222fm8 wixui-box",
+      "text": "CULTURE",
+      "rect": {
+        "x": 157,
+        "y": 3079,
+        "w": 76,
+        "h": 37
+      }
+    },
+    {
+      "id": "comp-mr21rdhl",
+      "tag": "DIV",
+      "cls": "HFEOE3 NaeT1r comp-mr21rdhl-container comp-mr21rdhl wixui-box",
+      "text": "",
+      "rect": {
+        "x": 190,
+        "y": 3079,
+        "w": 10,
+        "h": 10
+      }
+    },
+    {
+      "id": "comp-mr21j3f6",
+      "tag": "DIV",
+      "cls": "N8MGzv _v6ohL PO9MfV comp-mr21j3f6 wixui-rich-text",
+      "text": "CULTURE",
+      "rect": {
+        "x": 157,
+        "y": 3097,
+        "w": 76,
+        "h": 19
+      }
+    },
+    {
+      "id": "comp-mr225543",
+      "tag": "DIV",
+      "cls": "HFEOE3 NaeT1r comp-mr225543-container comp-mr225543 wixui-box",
+      "text": "COMMUNITY",
+      "rect": {
+        "x": 20,
+        "y": 3043,
+        "w": 350,
+        "h": 37
+      }
+    },
+    {
+      "id": "comp-mr21wvke",
+      "tag": "DIV",
+      "cls": "G7WLYH comp-mr21wvke",
+      "text": "",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      }
+    },
+    {
+      "id": "comp-mr2229jt",
+      "tag": "DIV",
+      "cls": "HFEOE3 NaeT1r comp-mr2229jt-container comp-mr2229jt wixui-box",
+      "text": "COMMUNITY",
+      "rect": {
+        "x": 142,
+        "y": 3043,
+        "w": 106,
+        "h": 37
+      }
+    },
+    {
+      "id": "comp-mr21rdjh",
+      "tag": "DIV",
+      "cls": "HFEOE3 NaeT1r comp-mr21rdjh-container comp-mr21rdjh wixui-box",
+      "text": "",
+      "rect": {
+        "x": 190,
+        "y": 3043,
+        "w": 10,
+        "h": 10
+      }
+    },
+    {
+      "id": "comp-mr21j3dd",
+      "tag": "DIV",
+      "cls": "N8MGzv _v6ohL PO9MfV comp-mr21j3dd wixui-rich-text",
+      "text": "COMMUNITY",
+      "rect": {
+        "x": 142,
+        "y": 3061,
+        "w": 106,
+        "h": 19
+      }
+    },
+    {
+      "id": "comp-mr224yhj",
+      "tag": "DIV",
+      "cls": "HFEOE3 NaeT1r comp-mr224yhj-container comp-mr224yhj wixui-box",
+      "text": "AUDIENCE",
+      "rect": {
+        "x": 20,
+        "y": 3006,
+        "w": 350,
+        "h": 37
+      }
+    },
+    {
+      "id": "comp-mr21wvm4",
+      "tag": "DIV",
+      "cls": "G7WLYH comp-mr21wvm4",
+      "text": "",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      }
+    },
+    {
+      "id": "comp-mr2224rg",
+      "tag": "DIV",
+      "cls": "HFEOE3 NaeT1r comp-mr2224rg-container comp-mr2224rg wixui-box",
+      "text": "AUDIENCE",
+      "rect": {
+        "x": 152,
+        "y": 3006,
+        "w": 86,
+        "h": 37
+      }
+    },
+    {
+      "id": "comp-mr21rdl3",
+      "tag": "DIV",
+      "cls": "HFEOE3 NaeT1r comp-mr21rdl3-container comp-mr21rdl3 wixui-box",
+      "text": "",
+      "rect": {
+        "x": 190,
+        "y": 3006,
+        "w": 10,
+        "h": 10
+      }
+    },
+    {
+      "id": "comp-mr21ilad",
+      "tag": "DIV",
+      "cls": "N8MGzv _v6ohL PO9MfV comp-mr21ilad wixui-rich-text",
+      "text": "AUDIENCE",
+      "rect": {
+        "x": 152,
+        "y": 3024,
+        "w": 86,
+        "h": 19
+      }
+    },
+    {
+      "id": "comp-mr224td1",
+      "tag": "DIV",
+      "cls": "HFEOE3 NaeT1r comp-mr224td1-container comp-mr224td1 wixui-box",
+      "text": "ART",
+      "rect": {
+        "x": 20,
+        "y": 2970,
+        "w": 350,
+        "h": 37
+      }
+    },
+    {
+      "id": "comp-mr21v00h",
+      "tag": "DIV",
+      "cls": "G7WLYH comp-mr21v00h",
+      "text": "",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      }
+    },
+    {
+      "id": "comp-mr221vov",
+      "tag": "DIV",
+      "cls": "HFEOE3 NaeT1r comp-mr221vov-container comp-mr221vov wixui-box",
+      "text": "ART",
+      "rect": {
+        "x": 178,
+        "y": 2970,
+        "w": 35,
+        "h": 37
+      }
+    },
+    {
+      "id": "comp-mr21r4ju",
+      "tag": "DIV",
+      "cls": "HFEOE3 NaeT1r comp-mr21r4ju-container comp-mr21r4ju wixui-box",
+      "text": "",
+      "rect": {
+        "x": 190,
+        "y": 2970,
+        "w": 10,
+        "h": 10
+      }
+    },
+    {
+      "id": "comp-mr21il8u",
+      "tag": "DIV",
+      "cls": "N8MGzv _v6ohL PO9MfV comp-mr21il8u wixui-rich-text",
+      "text": "ART",
+      "rect": {
+        "x": 178,
+        "y": 2988,
+        "w": 35,
+        "h": 19
+      }
+    },
+    {
+      "id": "comp-mr21dej7",
+      "tag": "DIV",
+      "cls": "N8MGzv _v6ohL PO9MfV comp-mr21dej7 wixui-rich-text",
+      "text": "CONSCIOUS ENTERTAINMENT. LASTING IMPACT.",
+      "rect": {
+        "x": 20,
+        "y": 2733,
+        "w": 350,
+        "h": 97
+      }
+    },
+    {
+      "id": "comp-mr2144w5",
+      "tag": "DIV",
+      "cls": "N8MGzv _v6ohL PO9MfV comp-mr2144w5 wixui-rich-text",
+      "text": "Our Philosophy",
+      "rect": {
+        "x": 20,
+        "y": 2716,
+        "w": 350,
+        "h": 17
+      }
+    },
+    {
+      "id": "comp-mr21gqyx",
+      "tag": "DIV",
+      "cls": "N8MGzv _v6ohL PO9MfV comp-mr21gqyx wixui-rich-text",
+      "text": "Entertainment can be meaningful, commercially successful, and culturally relevant—all at once.",
+      "rect": {
+        "x": 20,
+        "y": 2830,
+        "w": 350,
+        "h": 46
+      }
+    },
+    {
+      "id": "comp-mr21hcdd",
+      "tag": "DIV",
+      "cls": "N8MGzv _v6ohL PO9MfV comp-mr21hcdd wixui-rich-text",
+      "text": "Our work follows a simple journey:",
+      "rect": {
+        "x": 20,
+        "y": 2875,
+        "w": 350,
+        "h": 23
+      }
+    },
+    {
+      "id": "comp-mr22200q",
+      "tag": "DIV",
+      "cls": "HFEOE3 NaeT1r comp-mr22200q-container comp-mr22200q wixui-box",
+      "text": "HUMAN",
+      "rect": {
+        "x": 20,
+        "y": 2898,
+        "w": 350,
+        "h": 35
+      }
+    },
+    {
+      "id": "comp-mr21p6l8",
+      "tag": "DIV",
+      "cls": "HFEOE3 NaeT1r comp-mr21p6l8-container comp-mr21p6l8 wixui-box",
+      "text": "",
+      "rect": {
+        "x": 190,
+        "y": 2898,
+        "w": 10,
+        "h": 10
+      }
+    },
+    {
+      "id": "comp-mr21hw96",
+      "tag": "DIV",
+      "cls": "N8MGzv _v6ohL PO9MfV comp-mr21hw96 wixui-rich-text",
+      "text": "HUMAN",
+      "rect": {
+        "x": 163,
+        "y": 2914,
+        "w": 63,
+        "h": 19
+      }
+    },
+    {
+      "id": "comp-mr224lmj",
+      "tag": "DIV",
+      "cls": "HFEOE3 NaeT1r comp-mr224lmj-container comp-mr224lmj wixui-box",
+      "text": "ARTIST",
+      "rect": {
+        "x": 20,
+        "y": 2933,
+        "w": 350,
+        "h": 37
+      }
+    },
+    {
+      "id": "comp-mr21tilf",
+      "tag": "DIV",
+      "cls": "G7WLYH comp-mr21tilf",
+      "text": "",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      }
+    },
+    {
+      "id": "comp-mr221puc",
+      "tag": "DIV",
+      "cls": "HFEOE3 NaeT1r comp-mr221puc-container comp-mr221puc wixui-box",
+      "text": "ARTIST",
+      "rect": {
+        "x": 164,
+        "y": 2933,
+        "w": 61,
+        "h": 37
+      }
+    },
+    {
+      "id": "comp-mr21qzzh",
+      "tag": "DIV",
+      "cls": "HFEOE3 NaeT1r comp-mr21qzzh-container comp-mr21qzzh wixui-box",
+      "text": "",
+      "rect": {
+        "x": 190,
+        "y": 2933,
+        "w": 10,
+        "h": 10
+      }
+    },
+    {
+      "id": "comp-mr21ibrk",
+      "tag": "DIV",
+      "cls": "N8MGzv _v6ohL PO9MfV comp-mr21ibrk wixui-rich-text",
+      "text": "ARTIST",
+      "rect": {
+        "x": 164,
+        "y": 2951,
+        "w": 61,
+        "h": 19
+      }
+    },
+    {
+      "id": "comp-mr22rg0b",
+      "tag": "DIV",
+      "cls": "N8MGzv _v6ohL PO9MfV comp-mr22rg0b wixui-rich-text",
+      "text": "We discover talent, develop identities, curate experiences, launch ideas, and help artists and stori",
+      "rect": {
+        "x": 20,
+        "y": 3189,
+        "w": 350,
+        "h": 78
+      }
+    },
+    {
+      "id": "comp-mr22tzwu",
+      "tag": "DIV",
+      "cls": "comp-mr22tzwu wixui-vector-image",
+      "text": "\n#comp-mr22tzwu svg [data-color=\"1\"] {fill: #FFECD1;}\n    \n        \n    \n\n",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      }
+    },
+    {
+      "id": "comp-mr234332",
+      "tag": "DIV",
+      "cls": "comp-mr234332 wixui-vector-image",
+      "text": "\n#comp-mr234332 svg [data-color=\"1\"] {fill: #FFECD1;}\n    \n        \n    \n\n",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      }
+    },
+    {
+      "id": "comp-mr2db8fa",
+      "tag": "SECTION",
+      "cls": "ke5pl1 comp-mr2db8fa wixui-section fwXYgt",
+      "text": "",
+      "rect": {
+        "x": 0,
+        "y": 3323,
+        "w": 390,
+        "h": 44
+      }
+    },
+    {
+      "id": "bgLayers_comp-mr2db8fa",
+      "tag": "DIV",
+      "cls": "QG9w8P",
+      "text": "",
+      "rect": {
+        "x": 0,
+        "y": 3323,
+        "w": 390,
+        "h": 44
+      }
+    },
+    {
+      "id": "bgMedia_comp-mr2db8fa",
+      "tag": "DIV",
+      "cls": "ROWgFb",
+      "text": "",
+      "rect": {
+        "x": 0,
+        "y": 3323,
+        "w": 390,
+        "h": 44
+      }
+    },
+    {
+      "id": "comp-mr38xqqo",
+      "tag": "SECTION",
+      "cls": "ke5pl1 comp-mr38xqqo wixui-section fwXYgt",
+      "text": "BUILDING SUSTAINABLE ARTIST CAREERS\nArtist Partnerships\nAudience Growth\nLive Opportunities\nCareer Ma",
+      "rect": {
+        "x": 0,
+        "y": 3368,
+        "w": 390,
+        "h": 836
+      }
+    },
+    {
+      "id": "bgLayers_comp-mr38xqqo",
+      "tag": "DIV",
+      "cls": "QG9w8P",
+      "text": "",
+      "rect": {
+        "x": 0,
+        "y": 3368,
+        "w": 390,
+        "h": 836
+      }
+    },
+    {
+      "id": "bgMedia_comp-mr38xqqo",
+      "tag": "DIV",
+      "cls": "ROWgFb",
+      "text": "",
+      "rect": {
+        "x": 0,
+        "y": 3368,
+        "w": 390,
+        "h": 836
+      }
+    },
+    {
+      "id": "comp-mr3ifogb",
+      "tag": "DIV",
+      "cls": "HFEOE3 NaeT1r comp-mr3ifogb-container comp-mr3ifogb wixui-box",
+      "text": "BUILDING SUSTAINABLE ARTIST CAREERS\nArtist Partnerships\nAudience Growth\nLive Opportunities\nCareer Ma",
+      "rect": {
+        "x": 20,
+        "y": 3457,
+        "w": 350,
+        "h": 700
+      }
+    },
+    {
+      "id": "comp-mr38xqqs",
+      "tag": "DIV",
+      "cls": "HFEOE3 NaeT1r comp-mr38xqqs wixui-box tsc-brand-card",
+      "text": "BUILDING SUSTAINABLE ARTIST CAREERS\nArtist Partnerships\nAudience Growth\nLive Opportunities\nCareer Ma",
+      "rect": {
+        "x": 36,
+        "y": 3473,
+        "w": 318,
+        "h": 668
+      }
+    },
+    {
+      "id": "comp-mr3a7k38",
+      "tag": "DIV",
+      "cls": "HFEOE3 NaeT1r comp-mr3a7k38 wixui-box tsc-brand-card__list",
+      "text": "Artist Partnerships\n\nIndependent Artists\n\n\n​Live Experiences\n\n\nBrand Collaborations\n\n",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      }
+    },
+    {
+      "id": "comp-mr38xqri6",
+      "tag": "DIV",
+      "cls": "N8MGzv _v6ohL PO9MfV comp-mr38xqri6 wixui-rich-text tsc-brand-card__list-title",
+      "text": "Artist Partnerships",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      }
+    },
+    {
+      "id": "comp-mr38xqr7",
+      "tag": "DIV",
+      "cls": "N8MGzv _v6ohL PO9MfV comp-mr38xqr7 wixui-rich-text tsc-brand-card__list-items",
+      "text": "\n\nIndependent Artists\n\n\n​Live Experiences\n\n\nBrand Collaborations\n\n",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      }
+    },
+    {
+      "id": "comp-mr39ngdp",
+      "tag": "DIV",
+      "cls": "HFEOE3 NaeT1r comp-mr39ngdp wixui-box tsc-brand-card__eyebrow",
+      "text": "BUILDING SUSTAINABLE ARTIST CAREERS",
+      "rect": {
+        "x": 64,
+        "y": 3613,
+        "w": 262,
+        "h": 63
+      }
+    },
+    {
+      "id": "comp-mr39ngds",
+      "tag": "DIV",
+      "cls": "N8MGzv _v6ohL PO9MfV comp-mr39ngds wixui-rich-text",
+      "text": "BUILDING SUSTAINABLE ARTIST CAREERS",
+      "rect": {
+        "x": 80,
+        "y": 3631,
+        "w": 230,
+        "h": 27
+      }
+    },
+    {
+      "id": "comp-mr38xqqu",
+      "tag": "DIV",
+      "cls": "HFEOE3 NaeT1r comp-mr38xqqu wixui-box tsc-brand-card__tags",
+      "text": "Artist Partnerships\nAudience Growth\nLive Opportunities\nCareer Management",
+      "rect": {
+        "x": 64,
+        "y": 3961,
+        "w": 262,
+        "h": 92
+      }
+    },
+    {
+      "id": "comp-mr38xqqv2",
+      "tag": "DIV",
+      "cls": "N8MGzv _v6ohL PO9MfV comp-mr38xqqv2 wixui-rich-text tsc-brand-card__pill",
+      "text": "Artist Partnerships",
+      "rect": {
+        "x": 80,
+        "y": 3979,
+        "w": 110,
+        "h": 25
+      }
+    },
+    {
+      "id": "comp-mr39t2vt",
+      "tag": "DIV",
+      "cls": "N8MGzv _v6ohL PO9MfV comp-mr39t2vt wixui-rich-text tsc-brand-card__pill",
+      "text": "Audience Growth",
+      "rect": {
+        "x": 196,
+        "y": 3979,
+        "w": 102,
+        "h": 25
+      }
+    },
+    {
+      "id": "comp-mr39t915",
+      "tag": "DIV",
+      "cls": "N8MGzv _v6ohL PO9MfV comp-mr39t915 wixui-rich-text tsc-brand-card__pill",
+      "text": "Live Opportunities",
+      "rect": {
+        "x": 80,
+        "y": 4010,
+        "w": 108,
+        "h": 25
+      }
+    },
+    {
+      "id": "comp-mr39t938",
+      "tag": "DIV",
+      "cls": "N8MGzv _v6ohL PO9MfV comp-mr39t938 wixui-rich-text tsc-brand-card__pill",
+      "text": "Career Management",
+      "rect": {
+        "x": 194,
+        "y": 4010,
+        "w": 115,
+        "h": 25
+      }
+    },
+    {
+      "id": "comp-mr35c58m",
+      "tag": "DIV",
+      "cls": "HFEOE3 NaeT1r comp-mr35c58m wixui-box tsc-brand-card__media",
+      "text": "",
+      "rect": {
+        "x": 64,
+        "y": 3501,
+        "w": 262,
+        "h": 100
+      }
+    },
+    {
+      "id": "comp-mr35edcj",
+      "tag": "DIV",
+      "cls": "comp-mr35edcj wixui-vector-image",
+      "text": "",
+      "rect": {
+        "x": 99,
+        "y": 3513,
+        "w": 192,
+        "h": 76
+      }
+    },
+    {
+      "id": "comp-mr38xqr6",
+      "tag": "DIV",
+      "cls": "HFEOE3 NaeT1r comp-mr38xqr6 wixui-box tsc-brand-card__body",
+      "text": "More than artist management, TSC Artists is a culture-forward partnership platform designed to help ",
+      "rect": {
+        "x": 64,
+        "y": 3688,
+        "w": 262,
+        "h": 261
+      }
+    },
+    {
+      "id": "comp-mr38xqr84",
+      "tag": "DIV",
+      "cls": "N8MGzv _v6ohL PO9MfV comp-mr38xqr84 wixui-rich-text",
+      "text": "More than artist management, TSC Artists is a culture-forward partnership platform designed to help ",
+      "rect": {
+        "x": 80,
+        "y": 3706,
+        "w": 230,
+        "h": 214
+      }
+    },
+    {
+      "id": "comp-mr38xqr96",
+      "tag": "DIV",
+      "cls": "i4P7Vt comp-mr38xqr96 ZYZJBv wixui-image tsc-brand-card__hide",
+      "text": "",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      }
+    },
+    {
+      "id": "img-comp-mr38xqr96",
+      "tag": "WOW-IMAGE",
+      "cls": "qR3Oj6",
+      "text": "",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      }
+    },
+    {
+      "id": "comp-mr35f98m",
+      "tag": "DIV",
+      "cls": "comp-mr35f98m lIkFMb tsc-brand-card__cta",
+      "text": "Know More",
+      "rect": {
+        "x": 64,
+        "y": 4064,
+        "w": 262,
+        "h": 48
+      }
+    },
+    {
+      "id": "comp-mr355d93",
+      "tag": "DIV",
+      "cls": "N8MGzv _v6ohL PO9MfV comp-mr355d93 wixui-rich-text",
+      "text": "What We Build",
+      "rect": {
+        "x": 20,
+        "y": 3404,
+        "w": 350,
+        "h": 37
+      }
+    },
+    {
+      "id": "comp-mr3axlwa",
+      "tag": "SECTION",
+      "cls": "ke5pl1 comp-mr3axlwa wixui-section fwXYgt",
+      "text": "LEARNING BEYOND CLASSROOMS\nExpert Mentorship\nIndustry Learning\nCreative Community\nProfessional Growt",
+      "rect": {
+        "x": 0,
+        "y": 4204,
+        "w": 390,
+        "h": 630
+      }
+    },
+    {
+      "id": "bgLayers_comp-mr3axlwa",
+      "tag": "DIV",
+      "cls": "QG9w8P",
+      "text": "",
+      "rect": {
+        "x": 0,
+        "y": 4204,
+        "w": 390,
+        "h": 630
+      }
+    }
+  ]
+}

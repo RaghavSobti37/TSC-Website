@@ -1,0 +1,107 @@
+[
+  {
+    "path": "/about",
+    "headers": [
+      {
+        "tag": "HEADER",
+        "classes": "comp-mp2vlkc3 S829f_ comp-mp2vlkc3-container",
+        "locked": "",
+        "forced": "",
+        "theme": "",
+        "text": "About Work Artists Films Resources TSC ACADEMY",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(0, 0, 0)",
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "w": 1866,
+          "h": 150
+        }
+      }
+    ]
+  },
+  {
+    "path": "/work",
+    "headers": [
+      {
+        "tag": "HEADER",
+        "classes": "comp-mp2vlxyv S829f_ comp-mp2vlxyv-container",
+        "locked": "true",
+        "forced": "",
+        "theme": "",
+        "text": "About Work Artists Films Resources TSC ACADEMY",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(0, 0, 0)",
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "w": 1866,
+          "h": 150
+        }
+      }
+    ]
+  },
+  {
+    "path": "/artists",
+    "headers": [
+      {
+        "tag": "HEADER",
+        "classes": "tsc-desktop-site-header",
+        "locked": "",
+        "forced": "true",
+        "theme": "main",
+        "text": "About Work Artists Films Resources TSC ACADEMY",
+        "bg": "rgb(255, 236, 209)",
+        "color": "rgb(183, 75, 2)",
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "w": 1866,
+          "h": 164
+        }
+      }
+    ]
+  },
+  {
+    "path": "/academy",
+    "headers": [
+      {
+        "tag": "HEADER",
+        "classes": "comp-mrsu5g8j S829f_ comp-mrsu5g8j-container",
+        "locked": "true",
+        "forced": "",
+        "theme": "",
+        "text": "Resources Courses Testimonials Know More MAIN WEBSITE",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(0, 0, 0)",
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "w": 1866,
+          "h": 219
+        }
+      }
+    ]
+  },
+  {
+    "path": "/music-production",
+    "headers": [
+      {
+        "tag": "HEADER",
+        "classes": "comp-mrsu5xvq S829f_ comp-mrsu5xvq-container",
+        "locked": "true",
+        "forced": "",
+        "theme": "",
+        "text": "Resources Courses Testimonials Know More MAIN WEBSITE",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(0, 0, 0)",
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "w": 1866,
+          "h": 219
+        }
+      }
+    ]
+  }
+]

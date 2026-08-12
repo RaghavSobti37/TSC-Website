@@ -3,9 +3,9 @@
   "html": "/pages/affiliate.html",
   "css": "/css/pages/affiliate.css",
   "animations": "/js/pages/affiliate.animations.js",
-  "generatedAt": "2026-08-11T12:32:27.375Z",
+  "generatedAt": "2026-08-12T05:54:57.562Z",
   "totals": {
-    "assets": 117,
+    "assets": 116,
     "missing": 0
   },
   "assetsByType": {
@@ -1035,15 +1035,6 @@
           "exists": true,
           "path": "/assets/mirror/static.wixstatic.com/original-media/0da768_8657a8f7766a4491ad2da38ae2f4f82f~mv2.png",
           "bytes": 33884
-        }
-      },
-      {
-        "type": "images",
-        "url": "/assets/mirror/static.wixstatic.com/media/19f989_5cab5667eba246c1b70c62b2d76061a1~mv2.jpg/v1/crop/x_0,y_311,w_965,h_780/fill/w_860,h_860,fp_0.50_0.50,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/19f989_5cab5667eba246c1b70c62b2d76061a1~mv2.jpg",
-        "local": {
-          "exists": true,
-          "path": "/assets/mirror/static.wixstatic.com/original-media/19f989_5cab5667eba246c1b70c62b2d76061a1~mv2.jpg",
-          "bytes": 76907
         }
       },
       {

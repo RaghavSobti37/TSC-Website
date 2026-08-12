@@ -136,7 +136,7 @@ replaceInnerRichText('comp-mqwdnovu', '<p class="font_7 wixui-rich-text__text"><
 // - CTA Button Link, Label, Target
 replaceExact(
   '<div class="comp-mqwe17k6 lIkFMb" id="comp-mqwe17k6" aria-disabled="false"><a data-testid="linkElement" data-anchor="anchors-mpjyp1g0" href="/academy" target="_self" class="PoVCDy wixui-button ZhVEJq" aria-disabled="false" aria-label="Explore Courses"><span class="Gf1CuA wixui-button__label">Explore Courses</span></a></div>',
-  '<div class="comp-mqwe17k6 lIkFMb" id="comp-mqwe17k6" aria-disabled="false"><a data-testid="linkElement" href="https://tscacademy.exlyapp.com/affiliate/onboarding/login" target="_blank" rel="noopener" class="PoVCDy wixui-button ZhVEJq" aria-disabled="false" aria-label="Apply to Affiliate"><span class="Gf1CuA wixui-button__label">Apply to Affiliate</span></a></div>'
+  '<div class="comp-mqwe17k6 lIkFMb" id="comp-mqwe17k6" aria-disabled="false"><a data-testid="linkElement" href="https://tscacademy.exlyapp.com/affiliate/onboarding" target="_blank" rel="noopener" class="PoVCDy wixui-button ZhVEJq" aria-disabled="false" aria-label="Apply to Affiliate"><span class="Gf1CuA wixui-button__label">Apply to Affiliate</span></a></div>'
 );
 
 // - Hero Image URL & structure in wow-image/picture
@@ -189,7 +189,7 @@ if (sectionStart !== -1 && mainEnd !== -1 && sectionStart > mainStart && section
       <p>Affiliate rhythm</p>
       <h2 id="affiliate-band-title">Simple enough to share. Serious enough for artists.</h2>
     </div>
-    <a class="affiliate-primary-cta" href="https://tscacademy.exlyapp.com/affiliate/onboarding/login" target="_blank" rel="noopener">Start Affiliate Onboarding</a>
+    <a class="affiliate-primary-cta" href="https://tscacademy.exlyapp.com/affiliate/onboarding" target="_blank" rel="noopener">Start Affiliate Onboarding</a>
   </section>
   `;
   html = html.slice(0, sectionStart) + affiliateBandHtml + html.slice(mainEnd);

@@ -171,14 +171,18 @@ body.affiliate-page {
   border-radius: 8px;
   color: var(--affiliate-cream);
   display: inline-flex;
-  font-size: 16px;
-  font-weight: 600;
+  font-size: 18px;
+  font-weight: 700;
   justify-content: center;
-  min-height: 52px;
-  min-width: 180px;
-  padding: 14px 30px;
+  min-height: 58px;
+  min-width: 250px;
+  padding: 16px 36px;
   text-decoration: none;
   transition: all 0.2s ease;
+  white-space: nowrap;
+  position: relative;
+  z-index: 102;
+  cursor: pointer;
 }
 
 .affiliate-primary-cta:hover {
@@ -304,6 +308,8 @@ body.affiliate-page {
   justify-content: space-between;
   margin: 0 clamp(22px, 5vw, 72px) clamp(54px, 7vw, 86px);
   padding: clamp(34px, 5vw, 58px);
+  position: relative;
+  z-index: 100;
 }
 
 .affiliate-band p {

@@ -3,7 +3,7 @@
   "html": "/pages/yugm.html",
   "css": "/css/pages/yugm.css",
   "animations": "/js/pages/yugm.animations.js",
-  "generatedAt": "2026-08-12T07:06:48.394Z",
+  "generatedAt": "2026-08-12T07:41:43.566Z",
   "totals": {
     "assets": 120,
     "missing": 7
@@ -661,7 +661,7 @@
         "local": {
           "exists": true,
           "path": "/css/pages/yugm.css",
-          "bytes": 1138621
+          "bytes": 1138622
         }
       }
     ],
@@ -897,7 +897,7 @@
         "local": {
           "exists": true,
           "path": "/js/pages/yugm.animations.js",
-          "bytes": 3051
+          "bytes": 2396
         }
       }
     ],

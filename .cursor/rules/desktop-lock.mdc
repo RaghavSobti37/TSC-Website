@@ -1,14 +1,19 @@
 ---
-description: Permanent desktop design lock for the 9 primary pages
+description: Permanent desktop design lock — FINAL stamp desktop-lock-final-2026-08-12
 alwaysApply: true
 ---
 
-# DESKTOP DESIGN LOCK — PERMANENT (clone-faithful)
+# DESKTOP DESIGN LOCK — FINAL (`desktop-lock-final-2026-08-12`)
+
+**Status:** LOCKED FINAL (2026-08-12). Full write-up: `docs/DESKTOP_LOCK_FINAL.md` · stamp: `DESKTOP_LOCK.json`.
 
 The desktop design (viewport width >= 1025px) of the 9 primary pages —
 `public/pages/home.html`, `about.html`, `work.html`, `artists.html`, `artist-path.html`,
 `learn-with-tsc.html`, `films.html`, `resources.html`, `academy.html` — is **locked forever**
-to the Wix clone baseline (commit `faf9dea` / live clone look).
+to the Wix clone baseline (live [Wix Studio site](https://meghanabhawalkarwo.wixstudio.com/my-site)).
+
+Site-wide Wix **motion** (enter / loop / scrub) is also locked to mirrored Thunderbolt payloads —
+do not invent timings. Runtime: `tsc-wix-motion.js` + `tsc-wix-authored-motion.js`.
 
 ## Zero tolerance
 
@@ -19,14 +24,15 @@ to the Wix clone baseline (commit `faf9dea` / live clone look).
 - Logo box resizing or swapping Wix SVG for PNG
 - Navbar redesign
 - Layout / spacing / animation style changes
-- Any CSS/JS that restyles clone chrome outside ads-strip kill
+- `opacity: 1 !important`, `transform: none !important`, or `animation: none !important` on Wix motion comps
+- Empty `{}` overwrites of `thunderbolt-features--*--desktop--*.json` for pages that need motion data
 
 **Allowed (content / behavior only):**
 
 - Footer **link labels and hrefs** (keep per-page footer colors + clone fonts/icons)
 - Text/copy updates that do not change typography
 - Form submit wiring
-- Hiding owner-rejected sections (e.g. Films TSC Originals `#comp-mqmh352i`) with collapse-only CSS
+- Hiding owner-rejected sections with collapse-only CSS
 - Mobile-only work inside `@media (max-width: 1024px)` / `matchMedia('(max-width: 1024px)')`
 
 ## Files that must stay no-op for desktop visuals
@@ -34,10 +40,17 @@ to the Wix clone baseline (commit `faf9dea` / live clone look).
 - `public/css/tsc-desktop-nav-lock.css` — intentionally empty / no-op
 - Do not reintroduce logo size/filter rules in `tsc-components.js` `injectDesktopNavLockInline` or `tsc-responsive.css`
 
+## Media crops
+
+Hero / cropped assets must use Wix CDN crop URLs (`static.wixstatic.com/media/.../v1/...`),
+proxied by `scripts/serve-mirror.js` and `vercel.json` — never substitute uncropped `original-media`.
+
 ## Agent rules
 
 1. Never modify desktop markup/styles of the 9 primaries for “polish”.
 2. Mobile-only changes stay in max-width 1024 guards.
 3. `scripts/inject-responsive-assets.js` stays a no-op.
 4. After any change that could touch these pages, verify desktop at 1280px before finishing.
-5. See `docs/FORMS_GUIDE.md` for form destinations (Taskmaster — not Sheets).
+5. After motion-related edits: `node artifacts/_verify-motion-all-pages.mjs` (expect `failed:0`).
+6. See `docs/FORMS_GUIDE.md` for form destinations (Taskmaster — not Sheets).
+7. Do not bump / clear `DESKTOP_LOCK.json` unless the owner re-opens the lock.

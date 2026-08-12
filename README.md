@@ -1,10 +1,12 @@
 # The Shakti Collective Static Site
 
-> **DESKTOP DESIGN LOCK — PERMANENT (clone-faithful).** The desktop design (viewport >= 1025px) of the 9 primary pages
-> (`/`, `/about`, `/work`, `/artists`, `/artist-path`, `/learn-with-tsc`, `/films`, `/resources`, `/academy`)
-> is locked to the Wix clone. **Zero tolerance** for fonts, colors, logo sizing, navbar redesign, or animation style changes.
+> **DESKTOP LOCK — FINAL** · stamp `desktop-lock-final-2026-08-12` · [`DESKTOP_LOCK.json`](DESKTOP_LOCK.json) · [`docs/DESKTOP_LOCK_FINAL.md`](docs/DESKTOP_LOCK_FINAL.md)
+>
+> Desktop (≥1025px) for the 9 primaries (`/`, `/about`, `/work`, `/artists`, `/artist-path`, `/learn-with-tsc`, `/films`, `/resources`, `/academy`)
+> is locked to the [Wix clone](https://meghanabhawalkarwo.wixstudio.com/my-site). **Zero tolerance** for fonts, colors, logo sizing, navbar redesign, layout, or invented animation styles.
+> Site-wide Wix enter/loop/scrub motion is locked to mirrored Thunderbolt payloads (`tsc-wix-motion.js` + `tsc-wix-authored-motion.js`).
 > Allowed only: content/copy, footer link labels/hrefs (keep clone fonts/icons/per-page colors), form wiring, and owner-approved section hides.
-> Mobile work stays inside `@media (max-width: 1024px)`. See `.cursor/rules/desktop-lock.mdc`.
+> Mobile work stays inside `@media (max-width: 1024px)`. Rule: `.cursor/rules/desktop-lock.mdc`.
 
 Static mirror + cleaned local runtime for The Shakti Collective website.
 
@@ -74,3 +76,14 @@ Full form → API → Taskmaster destination map: [`docs/FORMS_GUIDE.md`](docs/F
 - `npm run audit:original` - compare against original Wix source
 - `npm run audit:interactions` - interaction checks
 - `npm run audit:navigation` - navigation checks
+
+## Desktop lock + motion verify
+
+With the mirror server on port 3001:
+
+```bash
+node artifacts/_verify-motion-all-pages.mjs
+node artifacts/_spotcheck-motion-parity.mjs
+```
+
+Expect `failed:0` / local `paused:0`. Evidence: `artifacts/motion-verify-all-local.json`.

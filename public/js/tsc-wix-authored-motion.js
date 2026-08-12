@@ -9,16 +9,38 @@
   if (window.__tscWixAuthoredMotion) return;
   window.__tscWixAuthoredMotion = true;
 
+  /* Generated from mirrored features_* links — keep in sync with artifacts/route-payloads.generated.json */
   var routePayloads = {
     '/': 'thunderbolt-features--19f989_ee80f317bf89e6216cc9c510c9e545d7_1360.json--desktop--f145183b.bundle.min.json',
     '/about': 'thunderbolt-features--19f989_ed01b585eb5b79e5069c93f6d6ccf82c_1342.json--desktop--f145183b.bundle.min.json',
-    '/work': 'thunderbolt-features--19f989_a89e6d8c684584a5a5841afdb9e1d6eb_1316.json--desktop--f145183b.bundle.min.json',
-    '/artists': 'thunderbolt-features--19f989_363e917e98e6d1f48f732c46aef87fd1_1362.json--desktop--f145183b.bundle.min.json',
+    '/academy': 'thunderbolt-features--19f989_2989b66cd25e783b84617171c4c13822_1362.json--desktop--f145183b.bundle.min.json',
+    '/affiliate': 'thunderbolt-features--19f989_2989b66cd25e783b84617171c4c13822_1362.json--desktop--f145183b.bundle.min.json',
     '/artist-path': 'thunderbolt-features--19f989_0acee9e71a994e6d376e0bba81dfa461_1365.json--desktop--f145183b.bundle.min.json',
-    '/learn-with-tsc': 'thunderbolt-features--19f989_ecfdda4745d283863acf8267776ef2fd_1305.json--desktop--f145183b.bundle.min.json',
+    '/artist-query': 'thunderbolt-features--19f989_582085e8f8b2f163dc3849874cef420f_1365.json--desktop--f145183b.bundle.min.json',
+    '/artist-release-playbook': 'thunderbolt-features--19f989_df587d921245179a5f91a120c42b5e3c_1302.json--desktop--f145183b.bundle.min.json',
+    '/artists': 'thunderbolt-features--19f989_363e917e98e6d1f48f732c46aef87fd1_1362.json--desktop--f145183b.bundle.min.json',
+    '/blog-1': 'thunderbolt-features--19f989_a451290c3da98b8d15fd3b35a8549bba_1302.json--desktop--f145183b.bundle.min.json',
+    '/blog-2': 'thunderbolt-features--19f989_9a71a4a566d157f7a48fa6f8380db332_1302.json--desktop--f145183b.bundle.min.json',
+    '/blog-3': 'thunderbolt-features--19f989_df587d921245179a5f91a120c42b5e3c_1302.json--desktop--f145183b.bundle.min.json',
+    '/book-a-call': 'thunderbolt-features--19f989_b3b96389e6d7ee2eb64d73d1e9ba78fd_1365.json--desktop--f145183b.bundle.min.json',
+    '/book-an-artist': 'thunderbolt-features--19f989_6fc61f33831c7e5608a053f8b818810c_1365.json--desktop--f145183b.bundle.min.json',
+    '/collab-query': 'thunderbolt-features--19f989_8a3bb3174434cf84b08bcd79ad2c2867_1268.json--desktop--f145183b.bundle.min.json',
     '/films': 'thunderbolt-features--19f989_6e16e7b8d427e689039e2c59c89523fa_1301.json--desktop--f145183b.bundle.min.json',
+    '/hanuman-ansh': 'thunderbolt-features--19f989_9a034fb01b2d43a789a62866927b9a74_1301.json--desktop--f145183b.bundle.min.json',
+    '/harshad-duhita': 'thunderbolt-features--19f989_159d929017716035d5a9369ee49213df_1362.json--desktop--f145183b.bundle.min.json',
+    '/kalki': 'thunderbolt-features--19f989_7c937655e7ab137187d08926452b60a8_1301.json--desktop--f145183b.bundle.min.json',
+    '/learn-with-tsc': 'thunderbolt-features--19f989_ecfdda4745d283863acf8267776ef2fd_1305.json--desktop--f145183b.bundle.min.json',
+    '/mahaprbhu': 'thunderbolt-features--19f989_e33a0bd7154441c71c1946be490b97e7_1301.json--desktop--f145183b.bundle.min.json',
+    '/mahavatar-narsimha': 'thunderbolt-features--19f989_de432b7357c5512267c7e6c3d4ef6ed6_1302.json--desktop--f145183b.bundle.min.json',
+    '/mohit-shankar': 'thunderbolt-features--19f989_159d929017716035d5a9369ee49213df_1362.json--desktop--f145183b.bundle.min.json',
+    '/music-production': 'thunderbolt-features--19f989_ecc6d2e2b7a3a7e5fd966f757c8d0099_1301.json--desktop--f145183b.bundle.min.json',
+    '/online-music-course-worth-it': 'thunderbolt-features--19f989_9a71a4a566d157f7a48fa6f8380db332_1302.json--desktop--f145183b.bundle.min.json',
     '/resources': 'thunderbolt-features--19f989_a2ea6c0a2625ceae9b9c795b2052630f_1336.json--desktop--f145183b.bundle.min.json',
-    '/academy': 'thunderbolt-features--19f989_2989b66cd25e783b84617171c4c13822_1362.json--desktop--f145183b.bundle.min.json'
+    '/roots-of-hindustani-classical': 'thunderbolt-features--19f989_15c5fbd619ffa74eaf593eeb9d2c9a6b_1254.json--desktop--f145183b.bundle.min.json',
+    '/start-making-music': 'thunderbolt-features--19f989_a451290c3da98b8d15fd3b35a8549bba_1302.json--desktop--f145183b.bundle.min.json',
+    '/the-heart-of-composition': 'thunderbolt-features--19f989_ecc6d2e2b7a3a7e5fd966f757c8d0099_1301.json--desktop--f145183b.bundle.min.json',
+    '/work': 'thunderbolt-features--19f989_a89e6d8c684584a5a5841afdb9e1d6eb_1316.json--desktop--f145183b.bundle.min.json',
+    '/yugm': 'thunderbolt-features--19f989_dc1d76e58ecbad2de8aa4285466030bb_1362.json--desktop--f145183b.bundle.min.json'
   };
 
   function canonicalPath() {
@@ -30,9 +52,36 @@
     return path;
   }
 
+  function fileFromHref(href) {
+    if (!href) return '';
+    var named = href.match(/thunderbolt-features--19f989_[a-f0-9]+_\d+\.json--(?:desktop|mobile)--[a-f0-9]+\.bundle\.min\.json/);
+    if (named) return named[0].replace(/--mobile--/, '--desktop--');
+    var pageId = href.match(/[?&]pageId=(19f989_[a-f0-9]+_\d+\.json)/);
+    if (pageId) {
+      return 'thunderbolt-features--' + pageId[1] + '--desktop--f145183b.bundle.min.json';
+    }
+    return '';
+  }
+
+  function discoverPayloadFromDom() {
+    var links = document.querySelectorAll('link[id^="features_"]');
+    var i;
+    for (i = 0; i < links.length; i++) {
+      if (links[i].id === 'features_masterPage') continue;
+      var file = fileFromHref(links[i].getAttribute('href') || '');
+      if (file && file.indexOf('c8466e696b35fc1b5a4e28bc1ad3d620') === -1) return file;
+    }
+    for (i = 0; i < links.length; i++) {
+      var fallback = fileFromHref(links[i].getAttribute('href') || '');
+      if (fallback) return fallback;
+    }
+    return '';
+  }
+
   function payloadUrl() {
-    var file = routePayloads[canonicalPath()];
-    return file ? '/assets/mirror/siteassets.parastorage.com/pages/pages/thunderbolt/' + file : '';
+    var file = routePayloads[canonicalPath()] || discoverPayloadFromDom();
+    if (!file) return '';
+    return '/assets/mirror/siteassets.parastorage.com/pages/pages/thunderbolt/' + file;
   }
 
   function offsetPercent(offset, fallback) {

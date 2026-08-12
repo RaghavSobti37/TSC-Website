@@ -1,5 +1,6 @@
 const fs = require('fs');
 const http = require('http');
+const https = require('https');
 const path = require('path');
 
 const publicDir = path.resolve(__dirname, '..', 'public');
@@ -69,23 +70,20 @@ function requestPath(url) {
     return `/assets/mirror/siteassets.parastorage.com/pages/pages/thunderbolt/${file}.json`;
   }
 
-  const mediaMatch = pathname.match(/^\/assets\/mirror\/static\.wixstatic\.com\/media\/([^/]+)\/v1\//);
-  if (mediaMatch) return `/assets/mirror/static.wixstatic.com/original-media/${mediaMatch[1]}`;
+  const mediaMatch = pathname.match(/^\/assets\/mirror\/static\.wixstatic\.com\/media\/(.+)$/);
+  if (mediaMatch && pathname.includes('/v1/')) {
+    const asset = pathname.match(/^\/assets\/mirror\/static\.wixstatic\.com\/media\/([^/]+)\/v1\//);
+    return {
+      proxy: `https://static.wixstatic.com/media/${mediaMatch[1]}${url.search}`,
+      fallback: asset ? `/assets/mirror/static.wixstatic.com/original-media/${asset[1]}` : null,
+    };
+  }
   if (pathname.endsWith('/')) return `${pathname}index.html`;
   if (!path.extname(pathname)) return `${pathname}/index.html`;
   return pathname;
 }
 
-http.createServer((request, response) => {
-  const url = new URL(request.url, `http://${request.headers.host || `127.0.0.1:${port}`}`);
-  const resolved = requestPath(url);
-  if (resolved.json !== undefined) {
-    response.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'no-store' });
-    response.end(resolved.json);
-    return;
-  }
-
-  const absolutePath = path.resolve(publicDir, `.${resolved}`);
+function sendFile(absolutePath, request, response) {
   if (absolutePath !== publicDir && !absolutePath.startsWith(`${publicDir}${path.sep}`)) {
     response.writeHead(403).end('Forbidden');
     return;
@@ -116,6 +114,53 @@ http.createServer((request, response) => {
   }
   response.writeHead(200, { ...headers, 'Content-Length': stat.size });
   fs.createReadStream(absolutePath).pipe(response);
+}
+
+function proxyWixMedia(proxyUrl, fallbackPath, request, response, hops) {
+  if ((hops || 0) > 4) {
+    if (fallbackPath) return sendFile(path.resolve(publicDir, `.${fallbackPath}`), request, response);
+    response.writeHead(502).end('Too many redirects');
+    return;
+  }
+  https.get(proxyUrl, { headers: { 'User-Agent': 'Mozilla/5.0 TSC-mirror' } }, (up) => {
+    const loc = up.headers.location;
+    if (up.statusCode >= 300 && up.statusCode < 400 && loc) {
+      up.resume();
+      const next = loc.startsWith('http') ? loc : new URL(loc, proxyUrl).href;
+      proxyWixMedia(next, fallbackPath, request, response, (hops || 0) + 1);
+      return;
+    }
+    if (up.statusCode !== 200) {
+      up.resume();
+      if (fallbackPath) return sendFile(path.resolve(publicDir, `.${fallbackPath}`), request, response);
+      response.writeHead(up.statusCode || 502).end('Upstream image error');
+      return;
+    }
+    response.writeHead(200, {
+      'Content-Type': up.headers['content-type'] || 'image/jpeg',
+      'Cache-Control': 'no-store',
+    });
+    up.pipe(response);
+  }).on('error', () => {
+    if (fallbackPath) return sendFile(path.resolve(publicDir, `.${fallbackPath}`), request, response);
+    response.writeHead(502).end('Upstream image error');
+  });
+}
+
+http.createServer((request, response) => {
+  const url = new URL(request.url, `http://${request.headers.host || `127.0.0.1:${port}`}`);
+  const resolved = requestPath(url);
+  if (resolved.json !== undefined) {
+    response.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'no-store' });
+    response.end(resolved.json);
+    return;
+  }
+  if (resolved.proxy) {
+    proxyWixMedia(resolved.proxy, resolved.fallback, request, response, 0);
+    return;
+  }
+
+  sendFile(path.resolve(publicDir, `.${resolved}`), request, response);
 }).listen(port, '127.0.0.1', () => {
   console.log(`Mirror server ready at http://127.0.0.1:${port}`);
 });

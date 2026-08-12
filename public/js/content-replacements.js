@@ -194,7 +194,7 @@
       titleSelector: '#comp-mqmi3w46',
       blurbSelector: '#comp-mqmi3w4a',
       imageSelector: '#comp-mqmi3w4b3 img',
-      fallbackImage: '/assets/mirror/static.wixstatic.com/media/19f989_a9399d943c794787aa9a5a4babaa82b7~mv2.jpg/v1/fill/w_720,h_720,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/9_edited_edited.jpg'
+      fallbackImage: '/assets/films/mahavatar-narsimha.jpg'
     },
     {
       num: '02',
@@ -213,8 +213,8 @@
       href: '/mahaprabhu-jagannath-impact',
       titleSelector: '#comp-mqmi8cy13',
       blurbSelector: '#comp-mqmi8cy52',
-      imageSelector: '#comp-mqmi8cy66 img',
-      fallbackImage: '/assets/mirror/static.wixstatic.com/media/19f989_3f14ef87c77647c6bac92fc2415274ad~mv2.png/v1/fill/w_720,h_720,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/12_edited.png'
+      imageSelector: '#comp-mrbzj9mg img',
+      fallbackImage: '/assets/films/mahaprabhu-jagannath.png'
     },
     {
       num: '04',
@@ -1578,8 +1578,16 @@
 
   function upscaleMirrorImage(src, size) {
     if (!src) return src;
+    if (src.indexOf('/assets/films/') === 0) return src;
     size = size || 720;
     return src.replace(/\/fill\/w_\d+,h_\d+/i, '/fill/w_' + size + ',h_' + size);
+  }
+
+  function filmCardImageSrc(card, size) {
+    if (card.fallbackImage && card.fallbackImage.indexOf('/assets/films/') === 0) {
+      return card.fallbackImage;
+    }
+    return upscaleMirrorImage(localImageSrc(card.imageSelector, card.fallbackImage), size || 720);
   }
 
   function suppressDuplicateFilmsPartnerships() {
@@ -1748,7 +1756,7 @@
       cases.innerHTML = [
         '<div class="tsc-mobile-films-list">',
         mobileFilmCards.map(function (card) {
-          var src = upscaleMirrorImage(localImageSrc(card.imageSelector, card.fallbackImage), 720);
+          var src = filmCardImageSrc(card, 720);
           return [
             '<a class="tsc-mobile-films-card" href="' + ui.escapeHtml(card.href) + '">',
             '<span class="tsc-mobile-films-bar">',

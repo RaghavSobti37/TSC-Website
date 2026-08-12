@@ -227,6 +227,93 @@
     container.appendChild(grid);
   }
 
+  function mountYugmBandCardToggles(path) {
+    if (path !== '/yugm') return;
+    if (window.__tscYugmBandTogglesBound) return;
+    var cards = [
+      {
+        panel: 'comp-mqjigv265',
+        arrow: 'comp-mqjigv2l',
+        bio: 'comp-mqjigv2e3',
+        panelExpanded: 'variants-mqjigv271',
+        arrowExpanded: 'variants-mqjigv2q',
+        bioExpanded: 'variants-mqjigv2f'
+      },
+      {
+        panel: 'comp-mqjigv3q',
+        arrow: 'comp-mqjigv45',
+        bio: 'comp-mqjigv3y4',
+        panelExpanded: 'variants-mqjigv3r2',
+        arrowExpanded: 'variants-mqjigv451',
+        bioExpanded: 'variants-mqjigv3z'
+      }
+    ];
+    var ready = cards.every(function (cfg) {
+      return document.getElementById(cfg.panel) && document.getElementById(cfg.arrow);
+    });
+    if (!ready) return;
+
+    function setExpanded(cfg, expanded) {
+      var panel = document.getElementById(cfg.panel);
+      var arrow = document.getElementById(cfg.arrow);
+      var bio = document.getElementById(cfg.bio);
+      if (!panel || !arrow) return;
+      panel.classList.toggle(cfg.panelExpanded, expanded);
+      arrow.classList.toggle(cfg.arrowExpanded, expanded);
+      if (bio && cfg.bioExpanded) bio.classList.toggle(cfg.bioExpanded, expanded);
+      panel.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+    }
+
+    cards.forEach(function (cfg) {
+      var panel = document.getElementById(cfg.panel);
+      var arrow = document.getElementById(cfg.arrow);
+      if (!panel || !arrow || panel.getAttribute('data-tsc-yugm-band-bound') === 'true') return;
+      panel.setAttribute('data-tsc-yugm-band-bound', 'true');
+      arrow.setAttribute('data-tsc-yugm-band-bound', 'true');
+      panel.setAttribute('role', 'button');
+      panel.setAttribute('tabindex', '0');
+      arrow.setAttribute('role', 'button');
+      arrow.setAttribute('tabindex', '0');
+      setExpanded(cfg, false);
+      function toggle(evt) {
+        if (evt) {
+          evt.preventDefault();
+        }
+        var open = !panel.classList.contains(cfg.panelExpanded);
+        setExpanded(cfg, open);
+      }
+      panel.addEventListener('click', toggle);
+      panel.addEventListener('keydown', function (evt) {
+        if (evt.key === 'Enter' || evt.key === ' ') toggle(evt);
+      });
+    });
+    window.__tscYugmBandTogglesBound = true;
+  }
+
+  function mountYugmHeroMedia(path) {
+    if (path !== '/yugm') return;
+    function rewriteUrl(value) {
+      return String(value || '')
+        .replace(/^https?:\/\/[^/]+\/assets\/mirror\/static\.wixstatic\.com/i, 'https://static.wixstatic.com')
+        .replace(/^\/assets\/mirror\/static\.wixstatic\.com/i, 'https://static.wixstatic.com');
+    }
+    function rewriteNode(node) {
+      if (!node) return;
+      ['src', 'srcset', 'data-src'].forEach(function (attr) {
+        var current = node.getAttribute && node.getAttribute(attr);
+        if (!current || current.indexOf('static.wixstatic.com') === -1) return;
+        var next = rewriteUrl(current);
+        if (next !== current) node.setAttribute(attr, next);
+      });
+      if (node.src && node.src.indexOf('/assets/mirror/static.wixstatic.com') !== -1) {
+        node.src = rewriteUrl(node.src);
+      }
+    }
+    document.querySelectorAll('#comp-mqhqa6xg img, #comp-mqhqa6xg source, #comp-mqhqa6y01 img').forEach(rewriteNode);
+    var overlay = document.getElementById('bgImgOverlay_comp-mqhqa6xg');
+    if (overlay) overlay.style.marginBottom = '0px';
+  }
+
   function mountYugmIplYearFix(path) {
     if (path !== '/yugm') return;
     var timelineYears = [
@@ -765,6 +852,105 @@
 
   function isAcademyPath(path) {
     return !!DEFAULT_ACADEMY_PATHS[path || canonicalPathname()];
+  }
+
+  /** Native Wix header (About / Academy home) — not TSC-injected chrome. */
+  function usesNativeWixNav(path) {
+    if (document.querySelector('.report-page')) return false;
+    return true;
+  }
+
+  function removeInjectedTscHeaders() {
+    var desktop = document.querySelector('.tsc-desktop-site-header');
+    if (desktop && desktop.parentNode) desktop.parentNode.removeChild(desktop);
+    var mobile = document.querySelector('.tsc-mobile-site-header');
+    if (mobile && mobile.parentNode) mobile.parentNode.removeChild(mobile);
+    document.body.classList.remove('tsc-has-mobile-chrome');
+  }
+
+  function clearNativeHeaderLockState() {
+    document.querySelectorAll('.tsc-legacy-header, .tsc-locked-desktop-header-hidden').forEach(function (node) {
+      node.classList.remove('tsc-legacy-header', 'tsc-locked-desktop-header-hidden');
+      node.removeAttribute('aria-hidden');
+    });
+    document.querySelectorAll('[data-tsc-locked-desktop-header="true"]').forEach(function (node) {
+      node.removeAttribute('data-tsc-locked-desktop-header');
+    });
+  }
+
+  function restoreNativeWixNavChrome() {
+    removeInjectedTscHeaders();
+    clearNativeHeaderLockState();
+    document.querySelectorAll('[data-tsc-wix-nav-hidden="true"]').forEach(function (node) {
+      node.removeAttribute('data-tsc-wix-nav-hidden');
+      node.style.removeProperty('display');
+      node.style.removeProperty('pointer-events');
+    });
+    document.querySelectorAll('.tsc-hidden-duplicate-nav').forEach(function (node) {
+      node.classList.remove('tsc-hidden-duplicate-nav');
+      node.removeAttribute('aria-hidden');
+    });
+  }
+
+  var wixHeaderScrollBound = false;
+
+  function getPageScrollY() {
+    var y = window.scrollY || window.pageYOffset || 0;
+    if (!y && document.body) y = document.body.scrollTop || 0;
+    if (!y && document.documentElement) y = document.documentElement.scrollTop || 0;
+    return y;
+  }
+
+  /** ponytail: Wix sticky header scroll classes when Thunderbolt hydrate is thin/offline. */
+  function ensureWixHeaderScrollAnimation() {
+    if (wixHeaderScrollBound) return;
+    wixHeaderScrollBound = true;
+
+    var update = function () {
+      var scrolled = getPageScrollY() > 12;
+      var headerRoot = document.querySelector('[data-tsc-locked-desktop-header="true"]') ||
+        document.querySelector('header:not(.tsc-locked-desktop-header-hidden):not(.tsc-hidden-main-site-header)');
+
+      if (headerRoot) {
+        headerRoot.querySelectorAll('section.wixui-header[id$="_r_comp-kbgajy18"], section.Lnr3dj.wixui-header').forEach(function (section) {
+          section.classList.toggle('aBo_xL', scrolled);
+        });
+        headerRoot.querySelectorAll('section[id$="_r_comp-mrqgho3a"].w2JesW, section[id$="_r_comp-mrqgho3a"] .w2JesW').forEach(function (node) {
+          node.classList.toggle('VHnL1N', scrolled);
+        });
+      }
+    };
+
+    window.addEventListener('scroll', update, { passive: true });
+    document.addEventListener('scroll', update, { passive: true, capture: true });
+    if (document.body) document.body.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update, { passive: true });
+    update();
+  }
+
+  /** mrriywbr = desktop horizontal nav (About, Work, …). Never hide it. */
+  function ensurePrimaryWixNavVisible() {
+    document.querySelectorAll('[id$="_r_comp-mrriywbr"], [id^="portal-comp-"][id$="_r_comp-mrriywbr"]').forEach(function (node) {
+      node.classList.remove('tsc-hidden-duplicate-nav');
+      node.removeAttribute('aria-hidden');
+      node.style.removeProperty('display');
+      node.style.removeProperty('visibility');
+      node.style.removeProperty('height');
+      node.style.removeProperty('max-height');
+      node.style.removeProperty('overflow');
+      node.style.removeProperty('pointer-events');
+    });
+  }
+
+  function hideAcademyMainSiteHeaders() {
+    document.querySelectorAll('header, #SITE_HEADER, [data-testid="siteHeader"]').forEach(function (header) {
+      if (header.classList.contains('tsc-desktop-site-header') || header.classList.contains('tsc-mobile-site-header')) return;
+      if (header.querySelector('[id$="_r_comp-mrrjao68"]')) return;
+      if (header.querySelector('[id$="_r_comp-mb5540mw"]') || header.querySelector('[id$="_r_comp-mrriywbr"]')) {
+        header.classList.add('tsc-hidden-main-site-header');
+        header.setAttribute('aria-hidden', 'true');
+      }
+    });
   }
 
   var SOCIAL_SVGS = {
@@ -2085,17 +2271,28 @@
   }
 
   function mountDesktopHeader(opts) {
-    if (document.body && document.body.dataset && document.body.dataset.page === 'about') {
-      var aboutDesktopHeader = document.querySelector('.tsc-desktop-site-header');
-      if (aboutDesktopHeader && aboutDesktopHeader.parentNode) aboutDesktopHeader.parentNode.removeChild(aboutDesktopHeader);
-      document.querySelectorAll('.tsc-legacy-header, .tsc-locked-desktop-header-hidden').forEach(function (node) {
-        node.classList.remove('tsc-legacy-header', 'tsc-locked-desktop-header-hidden');
-        node.removeAttribute('aria-hidden');
-      });
-      document.querySelectorAll('[data-tsc-locked-desktop-header="true"]').forEach(function (node) {
-        node.removeAttribute('data-tsc-locked-desktop-header');
-      });
-      return null;
+    var config = componentOptions(opts);
+    var forceCustomHeader = !!(opts && opts.forceCustomHeader) || !!document.querySelector('.report-page');
+    if (usesNativeWixNav(config.path) && !forceCustomHeader) {
+      removeInjectedTscHeaders();
+      var nativeDesktop = !window.matchMedia || window.matchMedia('(min-width: 1025px)').matches;
+      var lockedNative = null;
+      if (nativeDesktop) {
+        lockedNative = activateLockedDesktopHeader();
+        if (lockedNative) {
+          syncLockedDesktopHeaderBrand(lockedNative, config);
+          applyLockedDesktopActiveState(lockedNative, config);
+        }
+      } else {
+        clearNativeHeaderLockState();
+      }
+      ensurePrimaryWixNavVisible();
+      ensureWixHeaderScrollAnimation();
+      if (isAcademyPath(config.path)) {
+        hideAcademyMainSiteHeaders();
+        ensureAcademyCoursesInWixMenus();
+      }
+      return lockedNative;
     }
     var desktop = !window.matchMedia || window.matchMedia('(min-width: 1025px)').matches;
     var existing = document.querySelector('.tsc-desktop-site-header');
@@ -2103,13 +2300,8 @@
       if (existing && existing.parentNode) existing.parentNode.removeChild(existing);
       return null;
     }
-    var config = componentOptions(opts);
     var variant = config.academy ? 'academy' : 'main';
     var activePage = opts && opts.activePage || academyActivePage(config.path);
-    var forceCustomHeader = !!(opts && opts.forceCustomHeader) ||
-      !!ARTISTS_PATHS[config.path] ||
-      !!document.querySelector('.report-page') ||
-      !!IMPACT_PATHS[config.path];
     /* Prefer any native Wix header in DOM (even pre-layout) over injecting a second custom bar. */
     var nativeHeaders = document.querySelectorAll('header:not(.tsc-desktop-site-header):not(.tsc-mobile-site-header), #SITE_HEADER, [data-testid="siteHeader"]');
     var locked = forceCustomHeader ? null : (nativeHeaders.length ? activateLockedDesktopHeader() : null);
@@ -2213,14 +2405,15 @@
       unmountCustomMobileChrome();
       return null;
     }
-    if (document.body && document.body.dataset && document.body.dataset.page === 'about') {
-      var aboutMobileHeader = document.querySelector('.tsc-mobile-site-header');
-      if (aboutMobileHeader && aboutMobileHeader.parentNode) aboutMobileHeader.parentNode.removeChild(aboutMobileHeader);
-      document.body.classList.remove('tsc-has-mobile-chrome');
-      document.querySelectorAll('.tsc-legacy-header').forEach(function (node) {
-        node.classList.remove('tsc-legacy-header');
-        node.removeAttribute('aria-hidden');
-      });
+    var mobileConfig = componentOptions(opts);
+    var mobileForceCustom = !!(opts && opts.forceCustomHeader) || !!document.querySelector('.report-page');
+    if (usesNativeWixNav(mobileConfig.path) && !mobileForceCustom) {
+      removeInjectedTscHeaders();
+      var compactNative = window.matchMedia && window.matchMedia('(max-width: 1024px)').matches;
+      if (compactNative) clearNativeHeaderLockState();
+      ensurePrimaryWixNavVisible();
+      ensureWixHeaderScrollAnimation();
+      if (isAcademyPath(mobileConfig.path)) hideAcademyMainSiteHeaders();
       return null;
     }
     // Tablet + phone: Wix hamburger is broken 701–1024px — use TSC chrome through 1024.
@@ -2390,6 +2583,26 @@
     });
   }
 
+  /** Hide mirrored Wix page footers once TSC shared footer is active (About, Work, etc.). */
+  function suppressNativeWixFooters() {
+    markLegacyFooters();
+    document.querySelectorAll('footer:not(.tsc-shared-footer-host)').forEach(function (footer) {
+      if (footer.querySelector('.tsc-desktop-footer, .tsc-mobile-footer')) return;
+      var text = (footer.textContent || '').replace(/\s+/g, ' ').trim();
+      var looksLikeWixFooter = /Quick Links/i.test(text) &&
+        (/Join Our Community/i.test(text) || /Unfolding artist force/i.test(text));
+      if (!looksLikeWixFooter) return;
+      footer.classList.add('tsc-legacy-footer-host');
+      footer.setAttribute('aria-hidden', 'true');
+      footer.style.setProperty('display', 'none', 'important');
+      footer.style.setProperty('visibility', 'hidden', 'important');
+      footer.style.setProperty('height', '0', 'important');
+      footer.style.setProperty('min-height', '0', 'important');
+      footer.style.setProperty('overflow', 'hidden', 'important');
+      footer.style.setProperty('pointer-events', 'none', 'important');
+    });
+  }
+
   /* Nav header: Collective on main, Academy mark on Academy chrome. Same CSS size box. */
   function logoSrcForConfig(config) {
     return config && config.academy ? ACADEMY_LOGO_SRC : TSC_LOGO_SRC;
@@ -2478,7 +2691,11 @@
     markLegacyFooters();
     var config = componentOptions(opts);
     var variant = config.academy ? 'academy' : 'main';
-    if (existing && existing.dataset.tscVariant === variant) return existing;
+    if (existing && existing.dataset.tscVariant === variant) {
+      document.body.classList.add('tsc-has-desktop-footer');
+      suppressNativeWixFooters();
+      return existing;
+    }
     if (existing && existing.parentNode) existing.parentNode.removeChild(existing);
 
     var sourceFooter = findSiteFooter();
@@ -2560,6 +2777,7 @@
       }
     });
     document.body.classList.add('tsc-has-desktop-footer');
+    suppressNativeWixFooters();
     var form = shell.querySelector('.tsc-desktop-footer-newsrow');
     bindNewsletterSubmit(form, shell);
     hydrateReferenceFooterAssets(shell, config, sourceFooter);
@@ -2582,7 +2800,11 @@
     markLegacyFooters();
     var config = componentOptions(opts);
     var variant = config.academy ? 'academy' : 'main';
-    if (existing && existing.dataset.tscVariant === variant) return existing;
+    if (existing && existing.dataset.tscVariant === variant) {
+      document.body.classList.add('tsc-has-mobile-footer');
+      suppressNativeWixFooters();
+      return existing;
+    }
     if (existing && existing.parentNode) existing.parentNode.removeChild(existing);
 
     var sourceFooter = findSiteFooter();
@@ -2654,6 +2876,7 @@
       }
     });
     document.body.classList.add('tsc-has-mobile-footer');
+    suppressNativeWixFooters();
     var form = shell.querySelector('.tsc-mobile-footer-newsrow');
     bindNewsletterSubmit(form, shell);
     hydrateReferenceFooterAssets(shell, config, sourceFooter);
@@ -2990,15 +3213,16 @@
   }
 
   /* Critical desktop nav lock BEFORE any header mount (stops size/colour flash). */
-  ensureStylesheet('/css/tsc-nav-overrides.css?v=clone-faithful-1');
-  ensureStylesheet('/css/tsc-responsive.css?v=about-canvas-1');
+  ensureStylesheet('/css/tsc-nav-overrides.css?v=nav-restore-links-1');
+  ensureStylesheet('/css/tsc-responsive.css?v=yugm-hero-exact-1');
+  ensureStylesheet('/css/pages/yugm-fixes.css?v=yugm-hero-exact-1');
   ensureStylesheet('/css/tsc-desktop-nav-lock.css?v=nav-lock-noop-1');
   ensureStylesheet('/css/tsc-brand-card.css');
   ensureScript('/js/tsc-brand-cards.js?v=films-card-copy-1');
   // Play paused Wix enter/loop motions + slideshow word-swap (all viewports).
   ensureStylesheet('/css/tsc-wix-motion.css?v=hero-word-single-1');
-  ensureScript('/js/tsc-wix-motion.js?v=testimonial-slide-1');
-  ensureScript('/js/tsc-wix-authored-motion.js?v=payload-map-2');
+  ensureScript('/js/tsc-wix-motion.js?v=motion-replay-all-3');
+  ensureScript('/js/tsc-wix-authored-motion.js?v=motion-payload-auto-3');
   function bootUi() {
     if (redirectLegacyLearnHub()) return;
     var path = canonicalPathname();
@@ -3010,7 +3234,14 @@
       mountBlogChrome(path);
       mountMobileHeader({ path: path });
       mountMobileFooter({ path: path });
-      if (isAcademyPath(path) || ACADEMY_COURSE_HREFS[path]) {
+      if (usesNativeWixNav(path)) {
+        ensurePrimaryWixNavVisible();
+        ensureWixHeaderScrollAnimation();
+        if (isAcademyPath(path)) {
+          hideAcademyMainSiteHeaders();
+          ensureAcademyCoursesInWixMenus();
+        }
+      } else if (isAcademyPath(path) || ACADEMY_COURSE_HREFS[path]) {
         ensureAcademyCoursesInWixMenus();
         var lockedHeader = document.querySelector('[data-tsc-locked-desktop-header="true"]');
         if (lockedHeader) {
@@ -3018,6 +3249,7 @@
         }
       }
       linkHomeClosingCtas();
+      ensureWixHeaderScrollAnimation();
     };
     wireLearnHubClickGuard();
     wireLockedArtistsDropdownClickGuard();
@@ -3061,6 +3293,8 @@
     linkHomeClosingCtas();
     mountHarshadDigitalPresenceLinks(path);
     mountYugmIplYearFix(path);
+    mountYugmHeroMedia(path);
+    mountYugmBandCardToggles(path);
     mountWorkImpactLinks(path);
     mountFilmReportCards(path);
     mountFilmBottomCtas(path);
@@ -3076,6 +3310,8 @@
         linkHomeClosingCtas();
         mountHarshadDigitalPresenceLinks(path);
         mountYugmIplYearFix(path);
+        mountYugmHeroMedia(path);
+        mountYugmBandCardToggles(path);
         mountWorkImpactLinks(path);
         mountFilmReportCards(path);
         mountFilmBottomCtas(path);
@@ -3092,11 +3328,14 @@
             mountFilmBottomCtas(path);
           }, 80);
         }
-        var missing = compact
-          ? !document.querySelector('.tsc-mobile-site-header') || !document.querySelector('.tsc-mobile-footer')
-          : !document.querySelector('[data-tsc-locked-desktop-header="true"], .tsc-desktop-site-header') ||
-          !document.querySelector('.tsc-desktop-brand-logo-unified') ||
-          !document.querySelector('.tsc-desktop-footer');
+        var nativeNav = usesNativeWixNav(path);
+        var missing = nativeNav
+          ? !document.querySelector('.tsc-desktop-footer')
+          : compact
+            ? !document.querySelector('.tsc-mobile-site-header') || !document.querySelector('.tsc-mobile-footer')
+            : !document.querySelector('[data-tsc-locked-desktop-header="true"], .tsc-desktop-site-header') ||
+            !document.querySelector('.tsc-desktop-brand-logo-unified') ||
+            !document.querySelector('.tsc-desktop-footer');
         if (!missing) return;
         window.clearTimeout(window.__tscSharedChromeRepairTimer);
         window.__tscSharedChromeRepairTimer = window.setTimeout(function () {

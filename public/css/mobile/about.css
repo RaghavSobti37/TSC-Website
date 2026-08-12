@@ -357,20 +357,7 @@
     align-self: stretch !important;
   }
 
-  /* Zero motion in this section (Wix/GSAP/CSS/reveal) */
-  #comp-mr1ychhq,
-  #comp-mr1ychhq * {
-    animation: none !important;
-    transition: none !important;
-    scroll-timeline: none !important;
-  }
-
-  #comp-mr1ychhq .tsc-reveal-pending,
-  #comp-mr1ychhq .tsc-reveal-ready {
-    opacity: 1 !important;
-    transform: none !important;
-    transition: none !important;
-  }
+  /* ponytail: keep Wix motion — do not zero animation on this section */
 
   /* Side spirals crowd phone — hide */
   #comp-mr22tzwu,
@@ -667,14 +654,7 @@
     transform: none !important;
   }
 
-  #comp-mr3axlwa,
-  #comp-mr3axlwa *,
-  #comp-mr3fzsjq,
-  #comp-mr3fzsjq * {
-    animation: none !important;
-  }
-
-  /* —— What We Build / TSC Artists bento: stack mesh cards —— */
+  /* ponytail: allow Wix pulse/enter on artist cards */
   #comp-mr38xqqo {
     height: auto !important;
     min-height: 0 !important;
@@ -730,17 +710,7 @@
     z-index: auto !important;
   }
 
-  #comp-mr38xqqo,
-  #comp-mr38xqqo *,
-  #comp-mr3axlwa,
-  #comp-mr3axlwa *,
-  #comp-mr3fzsjq,
-  #comp-mr3fzsjq * {
-    animation: none !important;
-    transition: none !important;
-  }
-
-  #comp-mr38xqqs {
+  /* ponytail: layout only — preserve Wix motion on bento cards */
     position: relative !important;
     top: auto !important;
     bottom: auto !important;
@@ -2393,13 +2363,7 @@
     margin: 0 !important;
   }
 
-  html body.responsive[data-page="about"] #comp-mp2vlkbh2 :is(#comp-mr1ttkgk, #comp-mr1vbgc2, #comp-mr1tvuqc, #comp-mr1tvuqc *, #comp-mr1tv44l, #comp-mr1tv44l *) {
-    animation: none !important;
-    filter: none !important;
-    opacity: 1 !important;
-    transition: none !important;
-  }
-}
+  /* ponytail: keep Wix enter motion on about hero marks */
 
 @media (max-width: 600px) {
   html body.responsive[data-page="about"] #comp-mp2vlkbh2,

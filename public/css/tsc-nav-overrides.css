@@ -73,3 +73,15 @@ header,
     top: 0 !important;
   }
 }
+
+/* Academy course pages: hide stray main-site header when academy strip is present. */
+header.tsc-hidden-main-site-header,
+.tsc-hidden-main-site-header {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  max-height: 0 !important;
+  min-height: 0 !important;
+  overflow: hidden !important;
+  pointer-events: none !important;
+}

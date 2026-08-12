@@ -4,3 +4,36 @@ node_modules/
 .env.*
 *.pem
 VIDEO EPK- HARSHADUHITA COLLECTIVE.mp4
+
+# Local one-off debug probes (keep curated verify scripts)
+artifacts/_footer-*-debug*.mjs
+artifacts/_footer-*-test.mjs
+artifacts/_scroll-debug*.mjs
+artifacts/_scroll-test.mjs
+artifacts/_home-*-debug.mjs
+artifacts/_hero-*.mjs
+artifacts/_hero-*.js
+artifacts/_probe-*.mjs
+artifacts/_gate-*.mjs
+artifacts/_motion-parity-pass-patch.json
+artifacts/_check-*.mjs
+artifacts/_dump-*.mjs
+artifacts/_extract-*.mjs
+artifacts/_parse-*.mjs
+artifacts/_patch-*.mjs
+artifacts/_map-motion-payloads.mjs
+artifacts/_map-page-payloads.mjs
+artifacts/_yugm-extract.mjs
+artifacts/_verify-about-yugm-motion.mjs
+artifacts/_verify-films-meta-pipe.mjs
+artifacts/_verify-native-nav.mjs
+artifacts/_verify-nav-*.mjs
+artifacts/_verify-single-footer.mjs
+artifacts/_verify-yugm-desktop.js
+artifacts/_verify-motion-local.mjs
+artifacts/yugm-hero-compare/
+artifacts/page-payload-map.json
+artifacts/motion-payload-map.json
+artifacts/motion-route-payloads.json
+artifacts/motion-route-payloads-full.json
+*.bundle.min.js.map

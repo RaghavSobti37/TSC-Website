@@ -1,0 +1,535 @@
+[
+  {
+    "route": "/",
+    "payload": {
+      "payload": "thunderbolt-features--19f989_ee80f317bf89e6216cc9c510c9e545d7_1360.json--desktop--f145183b.bundle.min.json",
+      "exists": true,
+      "pageId": "19f989_ee80f317bf89e6216cc9c510c9e545d7_1360.json"
+    },
+    "ref": {
+      "motionNamed": 3,
+      "paused": 3,
+      "running": 0,
+      "enterDone": 0,
+      "enterPending": 0,
+      "authoredBound": 0,
+      "motionScript": false,
+      "authoredScript": false,
+      "samples": [
+        {
+          "id": "comp-mrge27je",
+          "names": "motion-breathe-1",
+          "play": "paused",
+          "enter": "",
+          "op": "1"
+        },
+        {
+          "id": "comp-mrjjl5k8",
+          "names": "motion-pulse-064",
+          "play": "paused",
+          "enter": "",
+          "op": "1"
+        },
+        {
+          "id": "comp-mrji91a8",
+          "names": "motion-wiggle-043",
+          "play": "paused",
+          "enter": "",
+          "op": "1"
+        }
+      ]
+    },
+    "local": {
+      "motionNamed": 3,
+      "paused": 0,
+      "running": 3,
+      "enterDone": 0,
+      "enterPending": 0,
+      "authoredBound": 8,
+      "motionScript": true,
+      "authoredScript": true,
+      "samples": [
+        {
+          "id": "comp-mrge27je",
+          "names": "motion-breathe-1",
+          "play": "running",
+          "enter": "",
+          "op": "1"
+        },
+        {
+          "id": "comp-mrjjl5k8",
+          "names": "motion-pulse-064",
+          "play": "running",
+          "enter": "",
+          "op": "1"
+        },
+        {
+          "id": "comp-mrji91a8",
+          "names": "motion-wiggle-043",
+          "play": "running",
+          "enter": "",
+          "op": "1"
+        }
+      ]
+    },
+    "ok": true
+  },
+  {
+    "route": "/about",
+    "payload": {
+      "payload": "thunderbolt-features--19f989_ed01b585eb5b79e5069c93f6d6ccf82c_1342.json--desktop--f145183b.bundle.min.json",
+      "exists": true,
+      "pageId": "19f989_ed01b585eb5b79e5069c93f6d6ccf82c_1342.json"
+    },
+    "ref": {
+      "motionNamed": 7,
+      "paused": 7,
+      "running": 0,
+      "enterDone": 0,
+      "enterPending": 0,
+      "authoredBound": 0,
+      "motionScript": false,
+      "authoredScript": false,
+      "samples": [
+        {
+          "id": "comp-mr1y8j19",
+          "names": "motion-slideIn",
+          "play": "paused, paused",
+          "enter": "",
+          "op": "0"
+        },
+        {
+          "id": "comp-mr1wnsbb",
+          "names": "motion-slideIn",
+          "play": "paused, paused",
+          "enter": "",
+          "op": "0"
+        },
+        {
+          "id": "comp-mr35f98m",
+          "names": "motion-pulse-025",
+          "play": "paused",
+          "enter": "",
+          "op": "1"
+        },
+        {
+          "id": "comp-mr3axlzv3",
+          "names": "motion-pulse-025",
+          "play": "paused",
+          "enter": "",
+          "op": "1"
+        },
+        {
+          "id": "comp-mr3hvoo22",
+          "names": "motion-pulse-025",
+          "play": "paused",
+          "enter": "",
+          "op": "1"
+        },
+        {
+          "id": "comp-mr3fzsla",
+          "names": "motion-pulse-025",
+          "play": "paused",
+          "enter": "",
+          "op": "1"
+        },
+        {
+          "id": "comp-mr3hknzi1",
+          "names": "motion-pulse-025",
+          "play": "paused",
+          "enter": "",
+          "op": "1"
+        }
+      ]
+    },
+    "local": {
+      "motionNamed": 1,
+      "paused": 0,
+      "running": 1,
+      "enterDone": 0,
+      "enterPending": 0,
+      "authoredBound": 20,
+      "motionScript": true,
+      "authoredScript": true,
+      "samples": [
+        {
+          "id": "comp-mr35f98m",
+          "names": "motion-pulse-025",
+          "play": "running",
+          "enter": "",
+          "op": "1"
+        }
+      ]
+    },
+    "ok": true
+  },
+  {
+    "route": "/work",
+    "payload": {
+      "payload": "thunderbolt-features--19f989_a89e6d8c684584a5a5841afdb9e1d6eb_1316.json--desktop--f145183b.bundle.min.json",
+      "exists": true,
+      "pageId": "19f989_a89e6d8c684584a5a5841afdb9e1d6eb_1316.json"
+    },
+    "ref": {
+      "motionNamed": 0,
+      "paused": 0,
+      "running": 0,
+      "enterDone": 0,
+      "enterPending": 0,
+      "authoredBound": 0,
+      "motionScript": false,
+      "authoredScript": false,
+      "samples": []
+    },
+    "local": {
+      "motionNamed": 0,
+      "paused": 0,
+      "running": 0,
+      "enterDone": 0,
+      "enterPending": 0,
+      "authoredBound": 1,
+      "motionScript": true,
+      "authoredScript": true,
+      "samples": []
+    },
+    "ok": true
+  },
+  {
+    "route": "/artists",
+    "payload": {
+      "payload": "thunderbolt-features--19f989_363e917e98e6d1f48f732c46aef87fd1_1362.json--desktop--f145183b.bundle.min.json",
+      "exists": true,
+      "pageId": "19f989_363e917e98e6d1f48f732c46aef87fd1_1362.json"
+    },
+    "ref": {
+      "motionNamed": 0,
+      "paused": 0,
+      "running": 0,
+      "enterDone": 0,
+      "enterPending": 0,
+      "authoredBound": 0,
+      "motionScript": false,
+      "authoredScript": false,
+      "samples": []
+    },
+    "local": {
+      "motionNamed": 0,
+      "paused": 0,
+      "running": 0,
+      "enterDone": 0,
+      "enterPending": 0,
+      "authoredBound": 2,
+      "motionScript": true,
+      "authoredScript": true,
+      "samples": []
+    },
+    "ok": true
+  },
+  {
+    "route": "/films",
+    "payload": {
+      "payload": "thunderbolt-features--19f989_6e16e7b8d427e689039e2c59c89523fa_1301.json--desktop--f145183b.bundle.min.json",
+      "exists": true,
+      "pageId": "19f989_6e16e7b8d427e689039e2c59c89523fa_1301.json"
+    },
+    "ref": {
+      "error": "Navigation timeout of 90000 ms exceeded"
+    },
+    "local": {
+      "motionNamed": 10,
+      "paused": 6,
+      "running": 4,
+      "enterDone": 0,
+      "enterPending": 0,
+      "authoredBound": 23,
+      "motionScript": true,
+      "authoredScript": true,
+      "samples": [
+        {
+          "id": "comp-mqmgf5o2",
+          "names": "motion-breathe-1",
+          "play": "running",
+          "enter": "",
+          "op": "1"
+        },
+        {
+          "id": "comp-mqmg6mlh",
+          "names": "motion-breathe-1",
+          "play": "running",
+          "enter": "",
+          "op": "1"
+        },
+        {
+          "id": "comp-mqmfx7ou2__item-mqmfyweb",
+          "names": "motion-fadeIn",
+          "play": "paused, paused",
+          "enter": "",
+          "op": "0"
+        },
+        {
+          "id": "comp-mqmfx7q11__item-mqmfyweb",
+          "names": "motion-fadeIn",
+          "play": "paused, paused",
+          "enter": "",
+          "op": "0"
+        },
+        {
+          "id": "comp-mqmfx7ou2__item-mqmfyxxt",
+          "names": "motion-fadeIn",
+          "play": "paused, paused",
+          "enter": "",
+          "op": "0"
+        },
+        {
+          "id": "comp-mqmfx7q11__item-mqmfyxxt",
+          "names": "motion-fadeIn",
+          "play": "paused, paused",
+          "enter": "",
+          "op": "0"
+        },
+        {
+          "id": "comp-mqmfx7ou2__item-mqmfyz64",
+          "names": "motion-fadeIn",
+          "play": "paused, paused",
+          "enter": "",
+          "op": "0"
+        },
+        {
+          "id": "comp-mqmfx7q11__item-mqmfyz64",
+          "names": "motion-fadeIn",
+          "play": "paused, paused",
+          "enter": "",
+          "op": "0"
+        }
+      ]
+    },
+    "ok": false
+  },
+  {
+    "route": "/yugm",
+    "payload": {
+      "payload": "thunderbolt-features--19f989_dc1d76e58ecbad2de8aa4285466030bb_1362.json--desktop--f145183b.bundle.min.json",
+      "exists": true,
+      "pageId": "19f989_dc1d76e58ecbad2de8aa4285466030bb_1362.json"
+    },
+    "ref": {
+      "motionNamed": 9,
+      "paused": 9,
+      "running": 0,
+      "enterDone": 0,
+      "enterPending": 0,
+      "authoredBound": 0,
+      "motionScript": false,
+      "authoredScript": false,
+      "samples": [
+        {
+          "id": "comp-mqhqa6zv",
+          "names": "motion-breathe-1",
+          "play": "paused",
+          "enter": "",
+          "op": "1"
+        },
+        {
+          "id": "comp-mqhqa700",
+          "names": "motion-breathe-1",
+          "play": "paused",
+          "enter": "",
+          "op": "1"
+        },
+        {
+          "id": "comp-mqhqa711",
+          "names": "motion-fold",
+          "play": "paused",
+          "enter": "",
+          "op": "1"
+        },
+        {
+          "id": "comp-mqjlugs0",
+          "names": "motion-breathe-1",
+          "play": "paused",
+          "enter": "",
+          "op": "1"
+        },
+        {
+          "id": "comp-mqjigv3l",
+          "names": "motion-glideIn",
+          "play": "paused",
+          "enter": "",
+          "op": "0"
+        },
+        {
+          "id": "comp-mqjigv3o",
+          "names": "motion-fadeIn",
+          "play": "paused, paused",
+          "enter": "",
+          "op": "0"
+        },
+        {
+          "id": "comp-mqjigv24",
+          "names": "motion-fadeIn",
+          "play": "paused, paused",
+          "enter": "",
+          "op": "0"
+        },
+        {
+          "id": "comp-mqhqa72z1",
+          "names": "motion-fadeIn",
+          "play": "paused, paused",
+          "enter": "",
+          "op": "0"
+        }
+      ]
+    },
+    "local": {
+      "motionNamed": 4,
+      "paused": 1,
+      "running": 3,
+      "enterDone": 0,
+      "enterPending": 0,
+      "authoredBound": 0,
+      "motionScript": true,
+      "authoredScript": true,
+      "samples": [
+        {
+          "id": "comp-mqhqa6zv",
+          "names": "motion-breathe-1",
+          "play": "running",
+          "enter": "",
+          "op": "1"
+        },
+        {
+          "id": "comp-mqhqa700",
+          "names": "motion-breathe-1",
+          "play": "running",
+          "enter": "",
+          "op": "1"
+        },
+        {
+          "id": "comp-mqhqa711",
+          "names": "motion-fold",
+          "play": "paused",
+          "enter": "",
+          "op": "1"
+        },
+        {
+          "id": "comp-mqjlugs0",
+          "names": "motion-breathe-1",
+          "play": "running",
+          "enter": "",
+          "op": "1"
+        }
+      ]
+    },
+    "ok": false
+  },
+  {
+    "route": "/harshad-duhita",
+    "payload": {
+      "payload": "thunderbolt-features--19f989_159d929017716035d5a9369ee49213df_1362.json--desktop--f145183b.bundle.min.json",
+      "exists": true,
+      "pageId": "19f989_159d929017716035d5a9369ee49213df_1362.json"
+    },
+    "ref": {
+      "motionNamed": 9,
+      "paused": 9,
+      "running": 0,
+      "enterDone": 0,
+      "enterPending": 0,
+      "authoredBound": 0,
+      "motionScript": false,
+      "authoredScript": false,
+      "samples": [
+        {
+          "id": "comp-mq9cuzxm",
+          "names": "motion-breathe-1",
+          "play": "paused",
+          "enter": "",
+          "op": "1"
+        },
+        {
+          "id": "comp-mq9cl9si",
+          "names": "motion-breathe-1",
+          "play": "paused",
+          "enter": "",
+          "op": "1"
+        },
+        {
+          "id": "comp-mq7po6fn",
+          "names": "motion-fold",
+          "play": "paused",
+          "enter": "",
+          "op": "1"
+        },
+        {
+          "id": "comp-mq7s0gcm",
+          "names": "motion-fadeIn",
+          "play": "paused, paused",
+          "enter": "",
+          "op": "0"
+        },
+        {
+          "id": "comp-mq7yikhp",
+          "names": "motion-slideIn",
+          "play": "paused, paused",
+          "enter": "",
+          "op": "0"
+        },
+        {
+          "id": "comp-mq7yjd9r",
+          "names": "motion-slideIn",
+          "play": "paused, paused",
+          "enter": "",
+          "op": "0"
+        },
+        {
+          "id": "comp-mq83uwjc",
+          "names": "motion-slideIn",
+          "play": "paused, paused",
+          "enter": "",
+          "op": "0"
+        },
+        {
+          "id": "comp-mq835zjp",
+          "names": "motion-fadeIn",
+          "play": "paused, paused",
+          "enter": "",
+          "op": "0"
+        }
+      ]
+    },
+    "local": {
+      "motionNamed": 3,
+      "paused": 1,
+      "running": 2,
+      "enterDone": 0,
+      "enterPending": 0,
+      "authoredBound": 0,
+      "motionScript": true,
+      "authoredScript": true,
+      "samples": [
+        {
+          "id": "comp-mq9cuzxm",
+          "names": "motion-breathe-1",
+          "play": "running",
+          "enter": "",
+          "op": "1"
+        },
+        {
+          "id": "comp-mq9cl9si",
+          "names": "motion-breathe-1",
+          "play": "running",
+          "enter": "",
+          "op": "1"
+        },
+        {
+          "id": "comp-mq7po6fn",
+          "names": "motion-fold",
+          "play": "paused",
+          "enter": "",
+          "op": "1"
+        }
+      ]
+    },
+    "ok": false
+  }
+]

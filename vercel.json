@@ -311,7 +311,7 @@
     },
     {
       "source": "/assets/mirror/static.wixstatic.com/media/:asset/v1/:transform*",
-      "destination": "/assets/mirror/static.wixstatic.com/original-media/:asset"
+      "destination": "https://static.wixstatic.com/media/:asset/v1/:transform*"
     }
   ],
   "headers": [

@@ -1,0 +1,587 @@
+[
+  {
+    "route": "/",
+    "ok": true,
+    "motion": 3,
+    "paused": 0,
+    "running": 3,
+    "authored": 8,
+    "scripts": {
+      "motion": true,
+      "authored": true
+    },
+    "pausedSamples": []
+  },
+  {
+    "route": "/about",
+    "ok": true,
+    "motion": 5,
+    "paused": 0,
+    "running": 5,
+    "authored": 20,
+    "scripts": {
+      "motion": true,
+      "authored": true
+    },
+    "pausedSamples": []
+  },
+  {
+    "route": "/academy",
+    "ok": true,
+    "motion": 0,
+    "paused": 0,
+    "running": 0,
+    "authored": 4,
+    "scripts": {
+      "motion": true,
+      "authored": true
+    },
+    "pausedSamples": []
+  },
+  {
+    "route": "/affiliate",
+    "ok": true,
+    "motion": 0,
+    "paused": 0,
+    "running": 0,
+    "authored": 1,
+    "scripts": {
+      "motion": true,
+      "authored": true
+    },
+    "pausedSamples": []
+  },
+  {
+    "route": "/artist-path",
+    "ok": true,
+    "motion": 1,
+    "paused": 0,
+    "running": 1,
+    "authored": 19,
+    "scripts": {
+      "motion": true,
+      "authored": true
+    },
+    "pausedSamples": []
+  },
+  {
+    "route": "/artist-query",
+    "ok": true,
+    "motion": 0,
+    "paused": 0,
+    "running": 0,
+    "authored": 0,
+    "scripts": {
+      "motion": true,
+      "authored": true
+    },
+    "pausedSamples": []
+  },
+  {
+    "route": "/artist-release-playbook",
+    "ok": true,
+    "motion": 0,
+    "paused": 0,
+    "running": 0,
+    "authored": 3,
+    "scripts": {
+      "motion": true,
+      "authored": true
+    },
+    "pausedSamples": []
+  },
+  {
+    "route": "/artists",
+    "ok": true,
+    "motion": 0,
+    "paused": 0,
+    "running": 0,
+    "authored": 2,
+    "scripts": {
+      "motion": true,
+      "authored": true
+    },
+    "pausedSamples": []
+  },
+  {
+    "route": "/blog-1",
+    "ok": true,
+    "motion": 0,
+    "paused": 0,
+    "running": 0,
+    "authored": 3,
+    "scripts": {
+      "motion": true,
+      "authored": true
+    },
+    "pausedSamples": []
+  },
+  {
+    "route": "/blog-2",
+    "ok": true,
+    "motion": 0,
+    "paused": 0,
+    "running": 0,
+    "authored": 3,
+    "scripts": {
+      "motion": true,
+      "authored": true
+    },
+    "pausedSamples": []
+  },
+  {
+    "route": "/blog-3",
+    "ok": true,
+    "motion": 0,
+    "paused": 0,
+    "running": 0,
+    "authored": 3,
+    "scripts": {
+      "motion": true,
+      "authored": true
+    },
+    "pausedSamples": []
+  },
+  {
+    "route": "/book-a-call",
+    "ok": true,
+    "motion": 0,
+    "paused": 0,
+    "running": 0,
+    "authored": 0,
+    "scripts": {
+      "motion": true,
+      "authored": true
+    },
+    "pausedSamples": []
+  },
+  {
+    "route": "/book-an-artist",
+    "ok": true,
+    "motion": 0,
+    "paused": 0,
+    "running": 0,
+    "authored": 0,
+    "scripts": {
+      "motion": true,
+      "authored": true
+    },
+    "pausedSamples": []
+  },
+  {
+    "route": "/classicalreview",
+    "ok": true,
+    "motion": 0,
+    "paused": 0,
+    "running": 0,
+    "authored": 0,
+    "scripts": {
+      "motion": false,
+      "authored": false
+    },
+    "pausedSamples": []
+  },
+  {
+    "route": "/collab-query",
+    "ok": true,
+    "motion": 0,
+    "paused": 0,
+    "running": 0,
+    "authored": 0,
+    "scripts": {
+      "motion": true,
+      "authored": true
+    },
+    "pausedSamples": []
+  },
+  {
+    "route": "/films",
+    "ok": true,
+    "motion": 6,
+    "paused": 0,
+    "running": 6,
+    "authored": 23,
+    "scripts": {
+      "motion": true,
+      "authored": true
+    },
+    "pausedSamples": []
+  },
+  {
+    "route": "/from-bhajan-to-clubbing",
+    "ok": true,
+    "motion": 0,
+    "paused": 0,
+    "running": 0,
+    "authored": 0,
+    "scripts": {
+      "motion": true,
+      "authored": true
+    },
+    "pausedSamples": []
+  },
+  {
+    "route": "/hanuman-ansh",
+    "ok": true,
+    "motion": 0,
+    "paused": 0,
+    "running": 0,
+    "authored": 4,
+    "scripts": {
+      "motion": true,
+      "authored": true
+    },
+    "pausedSamples": []
+  },
+  {
+    "route": "/hanuman-ansh-impact",
+    "ok": true,
+    "motion": 0,
+    "paused": 0,
+    "running": 0,
+    "authored": 0,
+    "scripts": {
+      "motion": true,
+      "authored": true
+    },
+    "pausedSamples": []
+  },
+  {
+    "route": "/harshad-duhita",
+    "ok": true,
+    "motion": 2,
+    "paused": 0,
+    "running": 2,
+    "authored": 13,
+    "scripts": {
+      "motion": true,
+      "authored": true
+    },
+    "pausedSamples": []
+  },
+  {
+    "route": "/havells-myousic",
+    "ok": true,
+    "motion": 0,
+    "paused": 0,
+    "running": 0,
+    "authored": 0,
+    "scripts": {
+      "motion": true,
+      "authored": true
+    },
+    "pausedSamples": []
+  },
+  {
+    "route": "/how-i-curate-music-with-independent-artists",
+    "ok": true,
+    "motion": 0,
+    "paused": 0,
+    "running": 0,
+    "authored": 0,
+    "scripts": {
+      "motion": true,
+      "authored": true
+    },
+    "pausedSamples": []
+  },
+  {
+    "route": "/insta-music-league",
+    "ok": true,
+    "motion": 0,
+    "paused": 0,
+    "running": 0,
+    "authored": 0,
+    "scripts": {
+      "motion": true,
+      "authored": true
+    },
+    "pausedSamples": []
+  },
+  {
+    "route": "/kalki",
+    "ok": true,
+    "motion": 0,
+    "paused": 0,
+    "running": 0,
+    "authored": 4,
+    "scripts": {
+      "motion": true,
+      "authored": true
+    },
+    "pausedSamples": []
+  },
+  {
+    "route": "/kalki-impact",
+    "ok": true,
+    "motion": 0,
+    "paused": 0,
+    "running": 0,
+    "authored": 0,
+    "scripts": {
+      "motion": true,
+      "authored": true
+    },
+    "pausedSamples": []
+  },
+  {
+    "route": "/learn-with-tsc",
+    "ok": true,
+    "motion": 0,
+    "paused": 0,
+    "running": 0,
+    "authored": 4,
+    "scripts": {
+      "motion": true,
+      "authored": true
+    },
+    "pausedSamples": []
+  },
+  {
+    "route": "/mahaprabhu-jagannath-impact",
+    "ok": true,
+    "motion": 0,
+    "paused": 0,
+    "running": 0,
+    "authored": 0,
+    "scripts": {
+      "motion": true,
+      "authored": true
+    },
+    "pausedSamples": []
+  },
+  {
+    "route": "/mahaprbhu",
+    "ok": true,
+    "motion": 0,
+    "paused": 0,
+    "running": 0,
+    "authored": 4,
+    "scripts": {
+      "motion": true,
+      "authored": true
+    },
+    "pausedSamples": []
+  },
+  {
+    "route": "/mahavatar-narsimha",
+    "ok": true,
+    "motion": 0,
+    "paused": 0,
+    "running": 0,
+    "authored": 4,
+    "scripts": {
+      "motion": true,
+      "authored": true
+    },
+    "pausedSamples": []
+  },
+  {
+    "route": "/mahavatar-narsimha-impact",
+    "ok": true,
+    "motion": 0,
+    "paused": 0,
+    "running": 0,
+    "authored": 0,
+    "scripts": {
+      "motion": true,
+      "authored": true
+    },
+    "pausedSamples": []
+  },
+  {
+    "route": "/masterclass-review01",
+    "ok": true,
+    "motion": 0,
+    "paused": 0,
+    "running": 0,
+    "authored": 0,
+    "scripts": {
+      "motion": false,
+      "authored": false
+    },
+    "pausedSamples": []
+  },
+  {
+    "route": "/masterclass-review02",
+    "ok": true,
+    "motion": 0,
+    "paused": 0,
+    "running": 0,
+    "authored": 0,
+    "scripts": {
+      "motion": false,
+      "authored": false
+    },
+    "pausedSamples": []
+  },
+  {
+    "route": "/mba",
+    "ok": true,
+    "motion": 0,
+    "paused": 0,
+    "running": 0,
+    "authored": 0,
+    "scripts": {
+      "motion": true,
+      "authored": true
+    },
+    "pausedSamples": []
+  },
+  {
+    "route": "/mba-impact",
+    "ok": true,
+    "motion": 0,
+    "paused": 0,
+    "running": 0,
+    "authored": 0,
+    "scripts": {
+      "motion": true,
+      "authored": true
+    },
+    "pausedSamples": []
+  },
+  {
+    "route": "/mohit-shankar",
+    "ok": true,
+    "motion": 2,
+    "paused": 0,
+    "running": 2,
+    "authored": 13,
+    "scripts": {
+      "motion": true,
+      "authored": true
+    },
+    "pausedSamples": []
+  },
+  {
+    "route": "/music-production",
+    "ok": true,
+    "motion": 0,
+    "paused": 0,
+    "running": 0,
+    "authored": 9,
+    "scripts": {
+      "motion": true,
+      "authored": true
+    },
+    "pausedSamples": []
+  },
+  {
+    "route": "/online-music-course-worth-it",
+    "ok": true,
+    "motion": 0,
+    "paused": 0,
+    "running": 0,
+    "authored": 3,
+    "scripts": {
+      "motion": true,
+      "authored": true
+    },
+    "pausedSamples": []
+  },
+  {
+    "route": "/resources",
+    "ok": true,
+    "motion": 0,
+    "paused": 0,
+    "running": 0,
+    "authored": 0,
+    "scripts": {
+      "motion": true,
+      "authored": true
+    },
+    "pausedSamples": []
+  },
+  {
+    "route": "/roots-of-hindustani-classical",
+    "ok": true,
+    "motion": 0,
+    "paused": 0,
+    "running": 0,
+    "authored": 6,
+    "scripts": {
+      "motion": true,
+      "authored": true
+    },
+    "pausedSamples": []
+  },
+  {
+    "route": "/start-making-music",
+    "ok": true,
+    "motion": 0,
+    "paused": 0,
+    "running": 0,
+    "authored": 3,
+    "scripts": {
+      "motion": true,
+      "authored": true
+    },
+    "pausedSamples": []
+  },
+  {
+    "route": "/the-heart-of-composition",
+    "ok": true,
+    "motion": 0,
+    "paused": 0,
+    "running": 0,
+    "authored": 9,
+    "scripts": {
+      "motion": true,
+      "authored": true
+    },
+    "pausedSamples": []
+  },
+  {
+    "route": "/work",
+    "ok": true,
+    "motion": 0,
+    "paused": 0,
+    "running": 0,
+    "authored": 1,
+    "scripts": {
+      "motion": true,
+      "authored": true
+    },
+    "pausedSamples": []
+  },
+  {
+    "route": "/you-released-a-song-now-what",
+    "ok": true,
+    "motion": 0,
+    "paused": 0,
+    "running": 0,
+    "authored": 0,
+    "scripts": {
+      "motion": true,
+      "authored": true
+    },
+    "pausedSamples": []
+  },
+  {
+    "route": "/young-gunns",
+    "ok": true,
+    "motion": 0,
+    "paused": 0,
+    "running": 0,
+    "authored": 0,
+    "scripts": {
+      "motion": true,
+      "authored": true
+    },
+    "pausedSamples": []
+  },
+  {
+    "route": "/yugm",
+    "ok": true,
+    "motion": 3,
+    "paused": 0,
+    "running": 3,
+    "authored": 13,
+    "scripts": {
+      "motion": true,
+      "authored": true
+    },
+    "pausedSamples": []
+  }
+]

@@ -481,7 +481,7 @@ url("/assets/mirror/static.wixstatic.com/ufonts/834fa9_d08c6fe9ca9b47ccb21ecdcb7
 :root,body,#SITE_CONTAINER,#site-root{--wix-ads-height:0px!important;}
 #WIX_ADS{display:none!important;height:0!important;max-height:0!important;min-height:0!important;opacity:0!important;overflow:hidden!important;pointer-events:none!important;visibility:hidden!important;}
 #site-root{top:0!important;}
-#comp-mqfgsqjf{opacity:1!important;--comp-opacity:1!important;}
+#comp-mqfgsqjf{opacity:1;--comp-opacity:1;}
 
 /* tsc-aspect-ratio-override-start */
 #comp-mqhv0mup,

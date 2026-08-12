@@ -1,19 +1,4 @@
-/* Final page-level fixes for the Yugm mirrored Wix profile. */
-#comp-mqhqa6vo {
-  display: none !important;
-  height: 0 !important;
-  min-height: 0 !important;
-  overflow: hidden !important;
-}
-
-#comp-mqhqa6xg {
-  grid-area: 1 / 1 / 2 / 2 !important;
-  height: clamp(820px, 92svh, 960px) !important;
-  min-height: clamp(820px, 92svh, 960px) !important;
-  overflow: hidden !important;
-}
-
-#comp-mqhqa6xg .comp-mqhqa6xg-container {
-  height: 100% !important;
-  min-height: 100% !important;
+/* Yugm hero — match Wix sticky overlay + keep motion free to animate title. */
+body[data-page="yugm"] #bgImgOverlay_comp-mqhqa6xg {
+  margin-bottom: 0 !important;
 }

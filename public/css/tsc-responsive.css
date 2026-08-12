@@ -304,10 +304,40 @@ body[data-page="films"] :is(
   #comp-mqmi8suk2
 ) [class*="-container"] {
   display: flex !important;
-  flex-wrap: wrap !important;
-  align-items: stretch !important;
-  gap: 8px !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 0 !important;
   overflow: visible !important;
+  width: 100% !important;
+}
+
+body[data-page="films"] .tsc-film-meta-sep {
+  flex: 0 0 auto !important;
+  font-size: clamp(16px, 1.25vw, 20px) !important;
+  font-weight: 600 !important;
+  line-height: 1 !important;
+  opacity: 0.92 !important;
+  padding: 0 clamp(4px, 0.55vw, 10px) !important;
+  pointer-events: none !important;
+  user-select: none !important;
+}
+
+body[data-page="films"] .tsc-film-meta-item {
+  flex: 1 1 0 !important;
+  min-width: 0 !important;
+  text-align: center !important;
+}
+
+body[data-page="films"] .tsc-film-meta-item .wixui-rich-text__text,
+body[data-page="films"] .tsc-film-meta-item p {
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  overflow-wrap: normal !important;
+  word-break: normal !important;
+  text-align: center !important;
 }
 
 body[data-page="films"] :is(
@@ -841,31 +871,20 @@ footer.site-footer:has(.tsc-mobile-footer) {
     display: grid !important;
   }
 
+  /* Yugm hero is comp-mqhqa6xg (grid row 3), not stale row-2 comp-mqhqa6vo. */
   body[data-page="yugm"] #comp-mqhqa6vo {
-    --l_display: flex !important;
+    --l_display: none !important;
+    display: none !important;
+    min-height: 0 !important;
+    height: 0 !important;
+    visibility: hidden !important;
+    overflow: hidden !important;
+    pointer-events: none !important;
+  }
+
+  body[data-page="yugm"] #comp-mqhqa75y {
     display: flex !important;
-    min-height: min(640px, calc(100vh - 72px)) !important;
     visibility: visible !important;
-  }
-
-  body[data-page="yugm"] .q5942-container {
-    grid-template-rows:
-      0
-      minmax(min(640px, calc(100vh - 72px)), auto)
-      28px
-      auto
-      auto
-      auto
-      auto
-      auto
-      0
-      0 !important;
-  }
-
-  body[data-page="yugm"] #comp-mqhqa6vo .comp-mqhqa6vo-container,
-  body[data-page="yugm"] #comp-mqhqa6vo > [data-testid="responsive-container-content"] {
-    --l_display: grid !important;
-    display: grid !important;
   }
 
   .tsc-desktop-site-header-academy .tsc-desktop-site-nav {
@@ -1377,23 +1396,7 @@ body:has(#comp-mr69hwoy) :is(
   z-index: 5 !important;
 }
 
-body:has(#comp-mr69hwoy) :is(
-  #comp-mr69hww9,
-  #comp-mr69hwwa4,
-  #comp-mr6b08we,
-  #comp-mr6b08wh3,
-  #comp-mr6b08ww3,
-  #comp-mrupljhl,
-  #comp-mr69hwvf5,
-  #comp-mr69hwvh,
-  #comp-mr6by9ei,
-  #comp-mr6by9ek3,
-  #comp-mr6by9ep,
-  #comp-mruporeg
-) {
-  opacity: 1 !important;
-  transform: none !important;
-}
+/* ponytail: do not force opacity/transform here — kills Wix enter/hover motion on these comps */
 
 body:has(#comp-mr69hwoy) #comp-mr69hwvf5,
 body:has(#comp-mr69hwoy) #comp-mr69hwvh {
@@ -1813,10 +1816,20 @@ body:has(#comp-mr69hwoy) :is(#comp-mr69hwvf5, #comp-mr69hwvh) {
   /* --- desktop overrides (was 2nd min-width:901 block) --- */
 
   body.tsc-has-desktop-footer .tsc-legacy-footer,
+  body.tsc-has-desktop-footer footer.tsc-legacy-footer-host,
   body.tsc-has-desktop-footer .tsc-legacy-footer-host:not(:has(.tsc-desktop-footer)),
   body.tsc-has-mobile-footer .tsc-legacy-footer,
+  body.tsc-has-mobile-footer footer.tsc-legacy-footer-host,
   body.tsc-has-mobile-footer .tsc-legacy-footer-host:not(:has(.tsc-mobile-footer)) {
     display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    min-height: 0 !important;
+    max-height: 0 !important;
+    overflow: hidden !important;
+    pointer-events: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
 
   body.tsc-has-desktop-footer footer:has(.tsc-desktop-footer),
@@ -2190,22 +2203,18 @@ body:has(#comp-mr69hwoy) :is(#comp-mr69hwvf5, #comp-mr69hwvh) {
 
   /* --- desktop page fixes (was 3rd min-width:901 block) --- */
 
-  body[data-page="home"] #comp-mrqgho75_r_comp-mrqgho3a {
-    --scrolled-transform: none !important;
-    --transition-property: none !important;
-  }
-
   body[data-page="about"] #comp-mr3iatty {
     height: 250px !important;
     min-height: 250px !important;
   }
 
+  /* ponytail: Wix reference hero is 721px — clamp was clipping comp-mr1tvuqc (587px) + tagline */
   body[data-page="about"] #comp-mp2vlkbh2,
   body[data-page="about"] #comp-mp2vlkbh2 .comp-mp2vlkbh2-overflow-wrapper {
-    height: clamp(560px, calc(100svh - 279px), 760px) !important;
-    min-height: clamp(560px, calc(100svh - 279px), 760px) !important;
+    height: 721px !important;
+    min-height: 721px !important;
     max-height: none !important;
-    overflow: hidden !important;
+    overflow: visible !important;
   }
 
   body[data-page="about"] #comp-mp2vlkbh2 .comp-mp2vlkbh2-container {
@@ -2226,10 +2235,20 @@ body:has(#comp-mr69hwoy) :is(#comp-mr69hwvf5, #comp-mr69hwvh) {
 
 
 body.tsc-has-desktop-footer .tsc-legacy-footer,
+body.tsc-has-desktop-footer footer.tsc-legacy-footer-host,
 body.tsc-has-desktop-footer .tsc-legacy-footer-host:not(:has(.tsc-desktop-footer)),
 body.tsc-has-mobile-footer .tsc-legacy-footer,
+body.tsc-has-mobile-footer footer.tsc-legacy-footer-host,
 body.tsc-has-mobile-footer .tsc-legacy-footer-host:not(:has(.tsc-mobile-footer)) {
   display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  min-height: 0 !important;
+  max-height: 0 !important;
+  overflow: hidden !important;
+  pointer-events: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 
@@ -2394,13 +2413,7 @@ body.tsc-has-mobile-footer .tsc-legacy-footer-host:not(:has(.tsc-mobile-footer))
     fill: #ffecd1 !important;
   }
 
-  body[data-page="about"] #comp-mp2vlkbh2,
-  body[data-page="about"] #comp-mp2vlkbh2 :is(#comp-mr1ttkgk, #comp-mr1vbgc2, #comp-mr1tvuqc, #comp-mr1tvuqc *, #comp-mr1tv44l, #comp-mr1tv44l *) {
-    animation: none !important;
-    filter: none !important;
-    opacity: 1 !important;
-    transition: none !important;
-  }
+  /* ponytail: keep layout sizing only — do not kill Wix motion with animation:none */
 
   body[data-page="about"] #comp-mp2vlkbh2 #comp-mr1vbgc2 {
     width: min(86vw, 300px) !important;

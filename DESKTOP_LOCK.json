@@ -1,0 +1,55 @@
+{
+  "status": "LOCKED_FINAL",
+  "stamp": "desktop-lock-final-2026-08-12",
+  "lockedAt": "2026-08-12",
+  "viewport": {
+    "minWidthPx": 1025,
+    "verifyWidthPx": 1280,
+    "verifyHeightPx": 900
+  },
+  "referenceUrl": "https://meghanabhawalkarwo.wixstudio.com/my-site",
+  "docs": "docs/DESKTOP_LOCK_FINAL.md",
+  "rule": ".cursor/rules/desktop-lock.mdc",
+  "primaryPages": [
+    "/",
+    "/about",
+    "/work",
+    "/artists",
+    "/artist-path",
+    "/learn-with-tsc",
+    "/films",
+    "/resources",
+    "/academy"
+  ],
+  "motion": {
+    "enterLoopScript": "public/js/tsc-wix-motion.js",
+    "authoredScrubScript": "public/js/tsc-wix-authored-motion.js",
+    "routePayloadMap": "artifacts/route-payloads.generated.json",
+    "verifyAll": "artifacts/_verify-motion-all-pages.mjs",
+    "spotcheck": "artifacts/_spotcheck-motion-parity.mjs",
+    "lastVerify": {
+      "date": "2026-08-12",
+      "routesChecked": 45,
+      "failed": 0,
+      "evidence": "artifacts/motion-verify-all-local.json"
+    }
+  },
+  "media": {
+    "note": "Wix crop/fill URLs must hit live static.wixstatic.com — not uncropped original-media",
+    "serveMirror": "scripts/serve-mirror.js",
+    "vercelRewrite": "vercel.json"
+  },
+  "allowed": [
+    "content/copy without typography change",
+    "footer link labels/hrefs",
+    "form wiring",
+    "owner-approved section hides",
+    "mobile-only @media (max-width: 1024px)"
+  ],
+  "forbidden": [
+    "desktop visual polish without owner ask",
+    "invented animation timings",
+    "CSS that freezes motion comps (opacity/transform/animation !important)",
+    "empty features JSON for motion pages"
+  ]
+}

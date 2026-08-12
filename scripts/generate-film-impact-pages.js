@@ -13,7 +13,7 @@ const reports = [
     kicker: 'Mythology-led animation',
     headline: 'Mounting a film. Building a cultural movement.',
     subtitle: 'TSC Films supported Mahavatar Narsimha across film mounting, marketing, promotions, influencer strategy, execution and non-theatrical rights monetisation.',
-    image: `${media}19f989_a9399d943c794787aa9a5a4babaa82b7~mv2.jpg`,
+    image: '/assets/films/mahavatar-narsimha.jpg',
     imageCaption: 'A mythology-led animated feature mounted as a culture-first cinematic IP.',
     stats: [
       ['All', 'non-theatrical rights monetised'],
@@ -93,7 +93,7 @@ const reports = [
     kicker: 'Devotional culture',
     headline: 'Mounting a film. Building a community.',
     subtitle: 'TSC Films supported Mahaprabhu Jagannath across strategy, community activation, school and college outreach, influencer activation, PR and a landmark trailer launch.',
-    image: `${media}19f989_3f14ef87c77647c6bac92fc2415274ad~mv2.png`,
+    image: '/assets/films/mahaprabhu-jagannath.png',
     imageCaption: 'A devotional film mounted through faith, community, institutions and trusted cultural voices.',
     stats: [
       ['10,000', 'devotees at trailer launch'],

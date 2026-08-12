@@ -1,8 +1,8 @@
 # Site structure
 
-> **DESKTOP DESIGN LOCK — PERMANENT.** The desktop design (viewport >= 1025px) of the 9 primary pages in
-> `public/pages/` is locked forever to commit `faf9dea`. Never change desktop rendering unless the site owner
-> explicitly and specifically asks. Mobile work only inside `@media (max-width: 1024px)`.
+> **DESKTOP LOCK — FINAL** (`desktop-lock-final-2026-08-12`). See [`DESKTOP_LOCK_FINAL.md`](DESKTOP_LOCK_FINAL.md) and `DESKTOP_LOCK.json`.
+> Desktop (≥1025px) of the 9 primaries is locked to the Wix clone. Motion uses mirrored Thunderbolt payloads only.
+> Mobile work only inside `@media (max-width: 1024px)`.
 
 Human/AI-readable map of The Shakti Collective public site.
 

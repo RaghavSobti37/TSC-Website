@@ -405,7 +405,8 @@ function injectStandaloneRuntime(html) {
   const cleaned = html
     .replace(/<style data-tsc-standalone-runtime>[\s\S]*?<\/style>\s*/g, '')
     .replace(/<script data-tsc-standalone-runtime>[\s\S]*?<\/script>\s*/g, '');
-  const routesJson = JSON.stringify(routes.map(route => route.path));
+  const forceNavRoutes = ['/book-a-call', '/book-an-artist', '/artist-query', '/collab-query', '/query'];
+  const routesJson = JSON.stringify([...routes.map(route => route.path), ...forceNavRoutes]);
   const runtime = [
     '<style data-tsc-standalone-runtime>',
     ':root, body { --wix-ads-height: 0px !important; }',

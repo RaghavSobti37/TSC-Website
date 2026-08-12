@@ -1,9 +1,8 @@
 # TSC Page Design Map
 
-> **DESKTOP DESIGN LOCK — PERMANENT.** The desktop design (viewport >= 1025px) of the 9 primary pages is locked
-> forever to commit `faf9dea`. Descriptions below that concern desktop layout reflect that locked state. Never
-> change desktop rendering unless the site owner explicitly and specifically asks. Mobile work only inside
-> `@media (max-width: 1024px)`.
+> **DESKTOP LOCK — FINAL** (`desktop-lock-final-2026-08-12`). See [`DESKTOP_LOCK_FINAL.md`](DESKTOP_LOCK_FINAL.md).
+> Desktop (≥1025px) of the 9 primaries is locked to the Wix clone. Descriptions below reflect that locked state.
+> Mobile work only inside `@media (max-width: 1024px)`.
 
 Generated from the local static site at `http://127.0.0.1:3000` after crawling every route in `public/pages/routes.manifest.json`.
 

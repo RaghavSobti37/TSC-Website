@@ -5,7 +5,7 @@
  */
 (function () {
   var STORAGE_KEY = 'wix-motion-played-animations';
-  var ENTER_RE = /motion-(fadeIn|blurIn|flipIn|glideIn)/;
+  var ENTER_RE = /motion-(fadeIn|blurIn|flipIn|glideIn|slideIn|fold|expandIn|dropIn|spinIn|arcIn|reveal|floatIn|turnIn)/;
   var LOOP_RE = /motion-(breathe|pulse|wiggle)/;
 
   function isCoursePagePath() {
@@ -20,12 +20,15 @@
     );
   }
 
-  /* Course pages: always replay enters this load (session flag freezes motion). */
-  if (isCoursePagePath()) {
-    try {
-      sessionStorage.removeItem(STORAGE_KEY);
-    } catch (e) {}
+  function isReplayMotionPagePath() {
+    /* ponytail: every mirrored page needs enter/loop replay — Wix Thunderbolt never marks done here */
+    return true;
   }
+
+  /* Static mirror pages: clear stale played flags so Wix enter motions can run. */
+  try {
+    sessionStorage.removeItem(STORAGE_KEY);
+  } catch (e) {}
   if (!document.querySelector('link[data-tsc-wix-motion-css]')) {
     var css = document.createElement('link');
     css.rel = 'stylesheet';
@@ -36,7 +39,7 @@
   if (!document.querySelector('link[data-tsc-nav-overrides]')) {
     var navCss = document.createElement('link');
     navCss.rel = 'stylesheet';
-    navCss.href = '/css/tsc-nav-overrides.css?v=kill-ads-strip-2';
+    navCss.href = '/css/tsc-nav-overrides.css?v=nav-native-unified-1';
     navCss.setAttribute('data-tsc-nav-overrides', '1');
     (document.head || document.documentElement).appendChild(navCss);
   }
@@ -115,12 +118,16 @@
 
       var isEnter = ENTER_RE.test(names);
       var isLoop = LOOP_RE.test(names);
+      /* Any other paused motion-* = enter-style unless clearly a loop */
+      if (!isEnter && !isLoop && playState.indexOf('paused') !== -1) {
+        isEnter = true;
+      }
 
       if (isEnter && el.dataset.motionEnter !== 'done') {
         if (reduceMotion) {
           finalizeEnter(el, played);
-        } else if (isCoursePagePath()) {
-          /* Course pages: force a visible enter even when Wix left play-state running/idle. */
+        } else if (isReplayMotionPagePath()) {
+          /* Course + about/yugm: force visible enter when Thunderbolt left motion paused. */
           if (el.dataset.tscMotionBoot !== '1') {
             el.dataset.tscMotionBoot = '1';
             el.style.setProperty('animation-play-state', 'running', 'important');

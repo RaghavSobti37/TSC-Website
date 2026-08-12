@@ -24,12 +24,22 @@
 
 .tsc-local-form h1,
 .tsc-local-form h2 {
-  /* Title lives outside the cream box (page hero). Hide duplicate inside. */
+  display: block !important;
+  margin: 0 auto clamp(22px, 3vw, 32px) !important;
+  color: #00535a !important;
+  font-size: clamp(28px, 4vw, 44px) !important;
+  font-weight: 700 !important;
+  line-height: 1.08 !important;
+  text-align: center !important;
+  height: auto !important;
+  overflow: visible !important;
+}
+
+/* Hide outer Wix page headings to prevent duplicates */
+#comp-mrxjb3tn,
+#comp-mrxmc0za1,
+#comp-mrxv5lfw {
   display: none !important;
-  margin: 0 !important;
-  height: 0 !important;
-  overflow: hidden !important;
-  font-size: 0 !important;
 }
 
 .tsc-required-note {
@@ -173,8 +183,18 @@
   pointer-events: none;
 }
 
+.tsc-date-picker:has(input:focus)::after,
 .tsc-date-picker:has(input:valid)::after {
-  display: none;
+  display: none !important;
+}
+
+/* Hide native browser date format text until focused or valid to prevent overlapping */
+.tsc-date-picker input[type="date"] {
+  color: transparent !important;
+}
+.tsc-date-picker input[type="date"]:focus,
+.tsc-date-picker input[type="date"]:valid {
+  color: #053f40 !important;
 }
 
 .tsc-time-picker .tsc-picker-icon {
@@ -625,9 +645,7 @@ body:has(.tsc-local-form) main [data-motion-part*="BG_MEDIA"] {
     max-width: 100% !important;
   }
 
-  /* Hide duplicate title + * Required inside cream box when outer Wix H1 exists */
-  body:has(main h1.font_0) .tsc-local-form > h1,
-  body:has(main h1.font_0) .tsc-local-form > h2,
+  /* Hide duplicate * Required inside cream box on mobile */
   body:has(main h1.font_0) .tsc-local-form > .tsc-required-note {
     display: none !important;
   }

@@ -1,0 +1,13 @@
+# Large local files that must not be uploaded to Vercel.
+# NOTE: keep these anchored to the repo root — a bare "VIDEO*" glob also
+# case-insensitively matches public/assets/mirror/video.wixstatic.com/**,
+# which would strip the site's own videos from the deploy.
+/VIDEO EPK- HARSHADUHITA COLLECTIVE.mp4
+
+# Audit output (screenshots/logs) — not needed by the site build
+/artifacts/
+
+# VCS and local tooling
+.git/
+node_modules/
+.vercel/

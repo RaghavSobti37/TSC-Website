@@ -537,3 +537,45 @@ body.affiliate-page #comp-mqwcozxs h1 {
   }
 }
 
+/* Affiliate Band Actions Layout */
+.affiliate-band-actions {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.affiliate-secondary-cta {
+  align-items: center;
+  background: transparent;
+  border: 1.5px solid var(--affiliate-cream);
+  border-radius: 8px;
+  color: var(--affiliate-cream);
+  display: inline-flex;
+  font-size: 18px;
+  font-weight: 700;
+  justify-content: center;
+  min-height: 58px;
+  min-width: 250px;
+  padding: 16px 36px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  position: relative;
+  z-index: 102;
+  cursor: pointer;
+}
+
+.affiliate-secondary-cta:hover {
+  background: var(--affiliate-cream);
+  color: var(--affiliate-teal);
+}
+
+@media (max-width: 768px) {
+  .affiliate-band-actions {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+}
+

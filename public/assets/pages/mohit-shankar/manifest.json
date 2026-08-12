@@ -3,7 +3,7 @@
   "html": "/pages/mohit-shankar.html",
   "css": "/css/pages/mohit-shankar.css",
   "animations": "/js/pages/mohit-shankar.animations.js",
-  "generatedAt": "2026-08-12T05:54:57.758Z",
+  "generatedAt": "2026-08-12T07:06:48.317Z",
   "totals": {
     "assets": 48,
     "missing": 0
@@ -180,7 +180,7 @@
         "local": {
           "exists": true,
           "path": "/assets/mirror/static.parastorage.com/services/wix-thunderbolt/dist/main.32313191.bundle.min.js",
-          "bytes": 229186
+          "bytes": 229189
         }
       },
       {
@@ -225,7 +225,7 @@
         "local": {
           "exists": true,
           "path": "/assets/mirror/static.parastorage.com/services/wix-thunderbolt/dist/thunderbolt-commons.47744264.bundle.min.js",
-          "bytes": 153918
+          "bytes": 153954
         }
       },
       {
@@ -234,7 +234,7 @@
         "local": {
           "exists": true,
           "path": "/assets/mirror/static.parastorage.com/services/wix-thunderbolt/dist/webpack-runtime.20f8e58a.bundle.min.js",
-          "bytes": 15906
+          "bytes": 15907
         }
       },
       {

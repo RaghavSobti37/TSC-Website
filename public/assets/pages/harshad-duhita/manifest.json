@@ -3,7 +3,7 @@
   "html": "/pages/harshad-duhita.html",
   "css": "/css/pages/harshad-duhita.css",
   "animations": "/js/pages/harshad-duhita.animations.js",
-  "generatedAt": "2026-08-12T05:54:57.685Z",
+  "generatedAt": "2026-08-12T07:06:48.255Z",
   "totals": {
     "assets": 113,
     "missing": 7
@@ -652,7 +652,7 @@
         "local": {
           "exists": true,
           "path": "/css/pages/harshad-duhita.css",
-          "bytes": 1129805
+          "bytes": 1130306
         }
       }
     ],
@@ -762,7 +762,7 @@
         "local": {
           "exists": true,
           "path": "/assets/mirror/static.parastorage.com/services/wix-thunderbolt/dist/main.32313191.bundle.min.js",
-          "bytes": 229186
+          "bytes": 229189
         }
       },
       {
@@ -807,7 +807,7 @@
         "local": {
           "exists": true,
           "path": "/assets/mirror/static.parastorage.com/services/wix-thunderbolt/dist/thunderbolt-commons.47744264.bundle.min.js",
-          "bytes": 153918
+          "bytes": 153954
         }
       },
       {
@@ -816,7 +816,7 @@
         "local": {
           "exists": true,
           "path": "/assets/mirror/static.parastorage.com/services/wix-thunderbolt/dist/webpack-runtime.20f8e58a.bundle.min.js",
-          "bytes": 15906
+          "bytes": 15907
         }
       },
       {
@@ -888,7 +888,7 @@
         "local": {
           "exists": true,
           "path": "/js/pages/harshad-duhita.animations.js",
-          "bytes": 4756
+          "bytes": 2990
         }
       }
     ],

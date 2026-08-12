@@ -20,82 +20,34 @@ window.__pageRevealPromise && window.__pageRevealPromise.then(function() {
 // tsc-epk-video-patched-start
 (function() {
   var EPK_SRC = '/assets/pages/harshad-duhita/epk.mp4';
-  var EPK_GIF = '/assets/pages/harshad-duhita/epk.gif';
   var EPK_POSTER = '/assets/pages/harshad-duhita/epk-poster.jpg';
   var VIDEO_ID = 'comp-mqhv0mup_video';
 
-  function isEpkSrc(value) {
-    return typeof value === 'string' && (value.indexOf(EPK_SRC) !== -1 || value.indexOf(EPK_GIF) !== -1);
-  }
-
   function applyEpkVideo() {
     var video = document.getElementById(VIDEO_ID);
-    if (!video) return false;
-
-    // Check if we should use GIF directly (via query param or autoplay block fallback)
-    var useGif = window.location.search.indexOf('gif=true') !== -1;
-
-    if (useGif) {
-      if (video.tagName.toLowerCase() === 'video') {
-        var img = document.createElement('img');
-        img.id = video.id;
-        img.className = video.className;
-        img.src = EPK_GIF;
-        img.alt = "Artist EPK";
-        img.style.width = '100%';
-        img.style.height = '100%';
-        img.style.objectFit = 'cover';
-        img.style.position = 'absolute';
-        img.style.top = '0';
-        img.style.left = '0';
-        video.parentNode.replaceChild(img, video);
-        
-        var playBtn = document.querySelector('#comp-mqhv0muu');
-        if (playBtn) playBtn.style.display = 'none';
-      }
-      return true;
-    }
+    if (!video || video.tagName.toLowerCase() !== 'video') return false;
 
     video.removeAttribute('crossorigin');
     video.setAttribute('data-tsc-epk', '1');
     video.setAttribute('playsinline', '');
     video.setAttribute('webkit-playsinline', '');
     video.setAttribute('poster', EPK_POSTER);
+    video.setAttribute('muted', '');
+    video.setAttribute('autoplay', '');
+    video.setAttribute('loop', '');
     video.playsInline = true;
     video.loop = true;
     video.muted = true;
     video.defaultMuted = true;
+    video.volume = 0;
     video.controls = true;
 
-    if (!isEpkSrc(video.getAttribute('src')) && !isEpkSrc(video.currentSrc)) {
+    if (video.getAttribute('src') !== EPK_SRC) {
       video.src = EPK_SRC;
       try { video.load(); } catch (e) {}
     }
 
-    // Try autoplay and fallback to GIF if blocked (e.g. low power mode)
-    var playPromise = video.play();
-    if (playPromise !== undefined) {
-      playPromise.catch(function(err) {
-        console.warn("Video play failed, falling back to GIF:", err);
-        if (video.tagName.toLowerCase() === 'video') {
-          var img = document.createElement('img');
-          img.id = video.id;
-          img.className = video.className;
-          img.src = EPK_GIF;
-          img.alt = "Artist EPK";
-          img.style.width = '100%';
-          img.style.height = '100%';
-          img.style.objectFit = 'cover';
-          img.style.position = 'absolute';
-          img.style.top = '0';
-          img.style.left = '0';
-          video.parentNode.replaceChild(img, video);
-          
-          var playBtn = document.querySelector('#comp-mqhv0muu');
-          if (playBtn) playBtn.style.display = 'none';
-        }
-      });
-    }
+    try { video.play(); } catch (e) {}
 
     var posterImg = document.querySelector('#comp-mqhv0mup_img img');
     if (posterImg && posterImg.getAttribute('src') !== EPK_POSTER) {
@@ -112,7 +64,7 @@ window.__pageRevealPromise && window.__pageRevealPromise.then(function() {
       video.__tscEpkGuard = true;
       if (window.MutationObserver) {
         new MutationObserver(function() {
-          if (!isEpkSrc(video.getAttribute('src'))) {
+          if (video.getAttribute('src') !== EPK_SRC) {
             video.src = EPK_SRC;
             try { video.load(); } catch (e) {}
           }
@@ -125,7 +77,7 @@ window.__pageRevealPromise && window.__pageRevealPromise.then(function() {
 
   function boot() {
     applyEpkVideo();
-    [100, 400, 1000, 2500, 5000, 10000].forEach(function(delay) {
+    [100, 400, 1000, 2500, 5000].forEach(function(delay) {
       window.setTimeout(applyEpkVideo, delay);
     });
   }

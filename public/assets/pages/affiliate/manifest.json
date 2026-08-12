@@ -3,7 +3,7 @@
   "html": "/pages/affiliate.html",
   "css": "/css/pages/affiliate.css",
   "animations": "/js/pages/affiliate.animations.js",
-  "generatedAt": "2026-08-12T05:54:57.562Z",
+  "generatedAt": "2026-08-12T07:06:48.142Z",
   "totals": {
     "assets": 116,
     "missing": 0
@@ -1023,7 +1023,7 @@
         "local": {
           "exists": true,
           "path": "/css/pages/affiliate.css",
-          "bytes": 12254
+          "bytes": 13263
         }
       }
     ],

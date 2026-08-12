@@ -3,7 +3,7 @@
   "html": "/pages/yugm.html",
   "css": "/css/pages/yugm.css",
   "animations": "/js/pages/yugm.animations.js",
-  "generatedAt": "2026-08-12T05:54:57.845Z",
+  "generatedAt": "2026-08-12T07:06:48.394Z",
   "totals": {
     "assets": 120,
     "missing": 7
@@ -661,7 +661,7 @@
         "local": {
           "exists": true,
           "path": "/css/pages/yugm.css",
-          "bytes": 1138089
+          "bytes": 1138621
         }
       }
     ],
@@ -771,7 +771,7 @@
         "local": {
           "exists": true,
           "path": "/assets/mirror/static.parastorage.com/services/wix-thunderbolt/dist/main.32313191.bundle.min.js",
-          "bytes": 229186
+          "bytes": 229189
         }
       },
       {
@@ -816,7 +816,7 @@
         "local": {
           "exists": true,
           "path": "/assets/mirror/static.parastorage.com/services/wix-thunderbolt/dist/thunderbolt-commons.47744264.bundle.min.js",
-          "bytes": 153918
+          "bytes": 153954
         }
       },
       {
@@ -825,7 +825,7 @@
         "local": {
           "exists": true,
           "path": "/assets/mirror/static.parastorage.com/services/wix-thunderbolt/dist/webpack-runtime.20f8e58a.bundle.min.js",
-          "bytes": 15906
+          "bytes": 15907
         }
       },
       {
@@ -897,7 +897,7 @@
         "local": {
           "exists": true,
           "path": "/js/pages/yugm.animations.js",
-          "bytes": 4716
+          "bytes": 3051
         }
       }
     ],

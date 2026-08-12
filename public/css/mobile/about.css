@@ -2529,3 +2529,8 @@
     font-size: clamp(15px, 2.3vw, 20px) !important;
   }
 }
+
+/* Remove TSC Films / Filmmakers card from About page */
+#comp-mr3si7jh {
+  display: none !important;
+}

@@ -3,7 +3,7 @@
   "html": "/pages/hanuman-ansh-impact.html",
   "css": "/css/pages/hanuman-ansh-impact.css",
   "animations": "/js/pages/hanuman-ansh-impact.animations.js",
-  "generatedAt": "2026-08-12T05:54:57.666Z",
+  "generatedAt": "2026-08-12T07:06:48.239Z",
   "totals": {
     "assets": 1,
     "missing": 0
@@ -12,11 +12,11 @@
     "images": [
       {
         "type": "images",
-        "url": "/assets/mirror/static.wixstatic.com/original-media/19f989_37dd615d12dc4f47a7b34f4415d58195~mv2.png",
+        "url": "/assets/mirror/static.wixstatic.com/original-media/19f989_ca20c3bfe20b447fb264a2d00c44069e~mv2.png",
         "local": {
           "exists": true,
-          "path": "/assets/mirror/static.wixstatic.com/original-media/19f989_37dd615d12dc4f47a7b34f4415d58195~mv2.png",
-          "bytes": 512272
+          "path": "/assets/mirror/static.wixstatic.com/original-media/19f989_ca20c3bfe20b447fb264a2d00c44069e~mv2.png",
+          "bytes": 428141
         }
       }
     ]

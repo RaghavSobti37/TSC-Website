@@ -3,7 +3,7 @@
   "html": "/pages/artist-release-playbook.html",
   "css": "/css/pages/artist-release-playbook.css",
   "animations": "/js/pages/artist-release-playbook.animations.js",
-  "generatedAt": "2026-08-12T05:54:57.594Z",
+  "generatedAt": "2026-08-12T07:06:48.172Z",
   "totals": {
     "assets": 97,
     "missing": 0
@@ -877,7 +877,7 @@
         "local": {
           "exists": true,
           "path": "/js/pages/artist-release-playbook.animations.js",
-          "bytes": 781
+          "bytes": 799
         }
       }
     ],

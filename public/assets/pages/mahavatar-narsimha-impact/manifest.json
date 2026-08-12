@@ -3,7 +3,7 @@
   "html": "/pages/mahavatar-narsimha-impact.html",
   "css": "/css/pages/mahavatar-narsimha-impact.css",
   "animations": "/js/pages/mahavatar-narsimha-impact.animations.js",
-  "generatedAt": "2026-08-12T05:54:57.739Z",
+  "generatedAt": "2026-08-12T07:06:48.300Z",
   "totals": {
     "assets": 1,
     "missing": 0
@@ -12,11 +12,11 @@
     "images": [
       {
         "type": "images",
-        "url": "/assets/mirror/static.wixstatic.com/original-media/19f989_01fbf21307914b75b11b8e5190c8f023~mv2.png",
+        "url": "/assets/mirror/static.wixstatic.com/original-media/19f989_a9399d943c794787aa9a5a4babaa82b7~mv2.jpg",
         "local": {
           "exists": true,
-          "path": "/assets/mirror/static.wixstatic.com/original-media/19f989_01fbf21307914b75b11b8e5190c8f023~mv2.png",
-          "bytes": 958100
+          "path": "/assets/mirror/static.wixstatic.com/original-media/19f989_a9399d943c794787aa9a5a4babaa82b7~mv2.jpg",
+          "bytes": 102871
         }
       }
     ]

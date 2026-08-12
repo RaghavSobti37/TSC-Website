@@ -13,7 +13,7 @@ const reports = [
     kicker: 'Mythology-led animation',
     headline: 'Mounting a film. Building a cultural movement.',
     subtitle: 'TSC Films supported Mahavatar Narsimha across film mounting, marketing, promotions, influencer strategy, execution and non-theatrical rights monetisation.',
-    image: `${media}19f989_01fbf21307914b75b11b8e5190c8f023~mv2.png`,
+    image: `${media}19f989_a9399d943c794787aa9a5a4babaa82b7~mv2.jpg`,
     imageCaption: 'A mythology-led animated feature mounted as a culture-first cinematic IP.',
     stats: [
       ['All', 'non-theatrical rights monetised'],
@@ -53,7 +53,7 @@ const reports = [
     kicker: 'Spiritual entertainment IP',
     headline: 'Building the RAM RAM Universe.',
     subtitle: 'TSC Films supported Hanuman Ansh across strategic positioning, poster concept, teaser and trailer idea, music rights, music marketing and long-term IP strategy.',
-    image: `${media}19f989_37dd615d12dc4f47a7b34f4415d58195~mv2.png`,
+    image: `${media}19f989_ca20c3bfe20b447fb264a2d00c44069e~mv2.png`,
     imageCaption: 'A faith-led cultural IP built around devotion, music and long-term universe thinking.',
     stats: [
       ['Times Music', 'music rights deal'],
@@ -93,7 +93,7 @@ const reports = [
     kicker: 'Devotional culture',
     headline: 'Mounting a film. Building a community.',
     subtitle: 'TSC Films supported Mahaprabhu Jagannath across strategy, community activation, school and college outreach, influencer activation, PR and a landmark trailer launch.',
-    image: `${media}19f989_455089248e404ce8a8410dc7c2db5331~mv2.png`,
+    image: `${media}19f989_3f14ef87c77647c6bac92fc2415274ad~mv2.png`,
     imageCaption: 'A devotional film mounted through faith, community, institutions and trusted cultural voices.',
     stats: [
       ['10,000', 'devotees at trailer launch'],
@@ -133,7 +133,7 @@ const reports = [
     kicker: 'IP, licensing and monetisation',
     headline: 'The value of a film beyond the screen.',
     subtitle: 'Past film IP, licensing, merchandising and monetisation work across major Indian film properties informs the current TSC Films approach.',
-    image: `${media}19f989_6592546481f648a68d7dde078ace15ea~mv2.png`,
+    image: `${media}19f989_f84950fe51a84d3baf15f59a5c864731~mv2.jpg`,
     imageCaption: 'Film IP thinking across licensing, merchandise, animation, music and long-term audience experiences.',
     stats: [
       ['2009-2015', 'Yash Raj Films IP experience'],
@@ -208,7 +208,7 @@ function render(report) {
   <title>${htmlEscape(report.title)} | Film Impact Report | The Shakti Collective</title>
   <meta name="description" content="${htmlEscape(report.subtitle)}">
   <link rel="canonical" href="/${report.slug}">
-  <link rel="stylesheet" href="/css/pages/impact-report.css?v=readability-nav-1">
+  <link rel="stylesheet" href="/css/pages/impact-report.css?v=readability-nav-2">
   <link rel="stylesheet" href="/css/tsc-responsive.css">
   <link rel="stylesheet" href="/css/tsc-mobile-system.css">
   <link rel="stylesheet" href="/css/mobile/_safe-base.css">
@@ -284,7 +284,7 @@ function render(report) {
     </nav>
   </main>
   <script src="/js/tsc-components.js?v=nav-component-1" defer></script>
-  <script src="/js/pages/impact-report-components.js?v=readability-nav-1" defer></script>
+  <script src="/js/pages/impact-report-components.js?v=readability-nav-2" defer></script>
 </body>
 </html>
 `;

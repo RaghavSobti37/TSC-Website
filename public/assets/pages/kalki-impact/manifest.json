@@ -3,7 +3,7 @@
   "html": "/pages/kalki-impact.html",
   "css": "/css/pages/kalki-impact.css",
   "animations": "/js/pages/kalki-impact.animations.js",
-  "generatedAt": "2026-08-12T05:54:57.705Z",
+  "generatedAt": "2026-08-12T07:06:48.270Z",
   "totals": {
     "assets": 1,
     "missing": 0
@@ -12,11 +12,11 @@
     "images": [
       {
         "type": "images",
-        "url": "/assets/mirror/static.wixstatic.com/original-media/19f989_6592546481f648a68d7dde078ace15ea~mv2.png",
+        "url": "/assets/mirror/static.wixstatic.com/original-media/19f989_f84950fe51a84d3baf15f59a5c864731~mv2.jpg",
         "local": {
           "exists": true,
-          "path": "/assets/mirror/static.wixstatic.com/original-media/19f989_6592546481f648a68d7dde078ace15ea~mv2.png",
-          "bytes": 274632
+          "path": "/assets/mirror/static.wixstatic.com/original-media/19f989_f84950fe51a84d3baf15f59a5c864731~mv2.jpg",
+          "bytes": 55354
         }
       }
     ]

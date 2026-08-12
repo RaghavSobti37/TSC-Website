@@ -268,10 +268,10 @@ for (const file of htmlFiles) {
     }
   }
   if (html.includes('/js/pages/impact-report-components.js')) {
-    html = html.replace(/\/css\/pages\/impact-report\.css(?:\?[^"']*)?/g, '/css/pages/impact-report.css?v=readability-nav-1');
-    html = html.replace(/\/js\/pages\/impact-report-components\.js(?:\?[^"']*)?/g, '/js/pages/impact-report-components.js?v=readability-nav-1');
+    html = html.replace(/\/css\/pages\/impact-report\.css(?:\?[^"']*)?/g, '/css/pages/impact-report.css?v=readability-nav-2');
+    html = html.replace(/\/js\/pages\/impact-report-components\.js(?:\?[^"']*)?/g, '/js/pages/impact-report-components.js?v=readability-nav-2');
     const cleanedHtml = html.replace(/\s*<script\s+src=["']\/js\/tsc-components\.js(?:\?[^"']*)?["']\s+defer><\/script>/g, '');
-    const marker = '<script src="/js/pages/impact-report-components.js?v=readability-nav-1" defer></script>';
+    const marker = '<script src="/js/pages/impact-report-components.js?v=readability-nav-2" defer></script>';
     const scriptedHtml = cleanedHtml.includes(marker)
       ? cleanedHtml.replace(marker, '<script src="/js/tsc-components.js?v=nav-component-1" defer></script>\n  ' + marker)
       : ensurePageScript(cleanedHtml, '/js/tsc-components.js?v=nav-component-1');

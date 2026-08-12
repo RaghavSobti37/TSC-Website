@@ -3,7 +3,7 @@
   "html": "/pages/academy.html",
   "css": "/css/pages/academy.css",
   "animations": "/js/pages/academy.animations.js",
-  "generatedAt": "2026-08-12T05:54:57.552Z",
+  "generatedAt": "2026-08-12T07:06:48.132Z",
   "totals": {
     "assets": 128,
     "missing": 0
@@ -250,7 +250,7 @@
         "local": {
           "exists": true,
           "path": "/js/pages/academy.animations.js",
-          "bytes": 1900
+          "bytes": 1926
         }
       }
     ],

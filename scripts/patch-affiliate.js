@@ -189,7 +189,10 @@ if (sectionStart !== -1 && mainEnd !== -1 && sectionStart > mainStart && section
       <p>Affiliate rhythm</p>
       <h2 id="affiliate-band-title">Simple enough to share. Serious enough for artists.</h2>
     </div>
-    <a class="affiliate-primary-cta" href="https://tscacademy.exlyapp.com/affiliate/onboarding" target="_blank" rel="noopener">Start Affiliate Onboarding</a>
+    <div class="affiliate-band-actions">
+      <a class="affiliate-primary-cta" href="https://tscacademy.exlyapp.com/affiliate/onboarding" target="_blank" rel="noopener">Start Affiliate Onboarding</a>
+      <a class="affiliate-secondary-cta" href="/assets/pages/affiliate/beginners-guide-affiliate-program.pdf" download="beginners-guide-affiliate-program.pdf">Download Beginners Guide</a>
+    </div>
   </section>
   `;
   html = html.slice(0, sectionStart) + affiliateBandHtml + html.slice(mainEnd);

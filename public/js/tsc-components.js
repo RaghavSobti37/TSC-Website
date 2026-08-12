@@ -2703,10 +2703,23 @@
     video.controls = true;
     video.muted = true;
     video.defaultMuted = true;
+    video.loop = true;
+    video.playsInline = true;
     video.volume = 0;
     video.setAttribute('controls', '');
     video.setAttribute('muted', '');
     video.setAttribute('playsinline', '');
+    video.setAttribute('webkit-playsinline', '');
+    video.setAttribute('autoplay', '');
+    video.setAttribute('loop', '');
+    video.removeAttribute('crossorigin');
+
+    try {
+      var playPromise = video.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(function () {});
+      }
+    } catch (e) {}
 
     var wrapper = video.closest('wix-video, wix-media-canvas, [id*="videoContainer"], .LH0J3M') || video.parentElement;
     if (wrapper) {

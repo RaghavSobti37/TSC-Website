@@ -3207,10 +3207,12 @@
   }
 
   function mountMobileCoursePage(path) {
-    var data = MOBILE_COURSE_PAGES[path || canonicalPathname()];
+    var route = path || canonicalPathname();
+    var data = MOBILE_COURSE_PAGES[route];
     var mobile = !window.matchMedia || window.matchMedia('(max-width: 1024px)').matches;
+    var renderCourseShell = data && (mobile || route === '/course-bundle');
     var existing = document.querySelector('.tsc-mobile-course-page');
-    if (!data || !mobile) {
+    if (!renderCourseShell) {
       document.body.classList.remove('tsc-mobile-course-rendered');
       if (existing) existing.remove();
       return;
@@ -3219,7 +3221,7 @@
     if (!main) return;
 
     var html = [
-      '<section class="tsc-mobile-course-page" data-tsc-mobile-course="' + escapeHtml(path) + '">',
+      '<section class="tsc-mobile-course-page" data-tsc-mobile-course="' + escapeHtml(route) + '">',
       '<div class="tsc-mobile-course-marquee"><span>Enroll Now</span><span>Enroll Now</span><span>Enroll Now</span><span>Enroll Now</span></div>',
       '<article class="tsc-mobile-course-hero-card">',
       '<p class="tsc-mobile-course-kicker">Course ' + escapeHtml(data.number) + '</p>',
@@ -3257,7 +3259,7 @@
     ].join('');
 
     if (existing) {
-      if (existing.getAttribute('data-tsc-mobile-course') !== path) existing.outerHTML = html;
+      if (existing.getAttribute('data-tsc-mobile-course') !== route) existing.outerHTML = html;
     } else {
       main.insertAdjacentHTML('afterbegin', html);
     }

@@ -3,7 +3,7 @@
   "html": "/pages/course-bundle.html",
   "css": "/css/pages/course-bundle.css",
   "animations": "/js/pages/course-bundle.animations.js",
-  "generatedAt": "2026-08-13T08:20:10.023Z",
+  "generatedAt": "2026-08-13T10:26:51.612Z",
   "totals": {
     "assets": 2,
     "missing": 0
@@ -27,7 +27,7 @@
         "local": {
           "exists": true,
           "path": "/css/pages/course-bundle.css",
-          "bytes": 6677
+          "bytes": 15829
         }
       }
     ]

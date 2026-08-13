@@ -1,0 +1,438 @@
+{
+  "base": "http://127.0.0.1:3001",
+  "port": 3001,
+  "driver": "puppeteer",
+  "server": {
+    "started": false,
+    "url": "http://127.0.0.1:3001"
+  },
+  "results": [
+    {
+      "route": "/",
+      "check": "desktop-media-gate",
+      "ok": true,
+      "links": 0,
+      "badLinks": [],
+      "appliedLeak": []
+    },
+    {
+      "route": "/about",
+      "check": "desktop-media-gate",
+      "ok": true,
+      "links": 0,
+      "badLinks": [],
+      "appliedLeak": []
+    },
+    {
+      "route": "/work",
+      "check": "desktop-media-gate",
+      "ok": true,
+      "links": 0,
+      "badLinks": [],
+      "appliedLeak": []
+    },
+    {
+      "route": "/artists",
+      "check": "desktop-media-gate",
+      "ok": true,
+      "links": 0,
+      "badLinks": [],
+      "appliedLeak": []
+    },
+    {
+      "route": "/yugm",
+      "check": "desktop-media-gate",
+      "ok": true,
+      "links": 0,
+      "badLinks": [],
+      "appliedLeak": []
+    },
+    {
+      "route": "/learn-with-tsc",
+      "check": "desktop-media-gate",
+      "ok": true,
+      "links": 0,
+      "badLinks": [],
+      "appliedLeak": []
+    },
+    {
+      "route": "/films",
+      "check": "desktop-media-gate",
+      "ok": true,
+      "links": 0,
+      "badLinks": [],
+      "appliedLeak": []
+    },
+    {
+      "route": "/resources",
+      "check": "desktop-media-gate",
+      "ok": true,
+      "links": 0,
+      "badLinks": [],
+      "appliedLeak": []
+    },
+    {
+      "route": "/academy",
+      "check": "desktop-media-gate",
+      "ok": true,
+      "links": 0,
+      "badLinks": [],
+      "appliedLeak": []
+    },
+    {
+      "route": "/mba",
+      "check": "desktop-media-gate",
+      "ok": true,
+      "links": 0,
+      "badLinks": [],
+      "appliedLeak": []
+    },
+    {
+      "route": "/",
+      "check": "phone-390",
+      "ok": true,
+      "expectedBare": "/css/mobile/home.css",
+      "ownerHrefs": [
+        "/css/mobile/home.css"
+      ],
+      "distinctPageCss": [
+        "/css/mobile/home.css"
+      ],
+      "scrollWidth": 390,
+      "innerWidth": 390,
+      "hScrollOk": true,
+      "mapPresent": true,
+      "failures": []
+    },
+    {
+      "route": "/about",
+      "check": "phone-390",
+      "ok": true,
+      "expectedBare": "/css/mobile/about.css",
+      "ownerHrefs": [
+        "/css/mobile/about.css"
+      ],
+      "distinctPageCss": [
+        "/css/mobile/about.css"
+      ],
+      "scrollWidth": 390,
+      "innerWidth": 390,
+      "hScrollOk": true,
+      "mapPresent": true,
+      "failures": []
+    },
+    {
+      "route": "/work",
+      "check": "phone-390",
+      "ok": true,
+      "expectedBare": "/css/mobile/work.css",
+      "ownerHrefs": [
+        "/css/mobile/work.css"
+      ],
+      "distinctPageCss": [
+        "/css/mobile/work.css"
+      ],
+      "scrollWidth": 390,
+      "innerWidth": 390,
+      "hScrollOk": true,
+      "mapPresent": true,
+      "failures": []
+    },
+    {
+      "route": "/artists",
+      "check": "phone-390",
+      "ok": true,
+      "expectedBare": "/css/mobile/artists.css",
+      "ownerHrefs": [
+        "/css/mobile/artists.css"
+      ],
+      "distinctPageCss": [
+        "/css/mobile/artists.css"
+      ],
+      "scrollWidth": 390,
+      "innerWidth": 390,
+      "hScrollOk": true,
+      "mapPresent": true,
+      "failures": []
+    },
+    {
+      "route": "/yugm",
+      "check": "phone-390",
+      "ok": true,
+      "expectedBare": "/css/mobile/yugm.css",
+      "ownerHrefs": [
+        "/css/mobile/yugm.css"
+      ],
+      "distinctPageCss": [
+        "/css/mobile/yugm.css"
+      ],
+      "scrollWidth": 390,
+      "innerWidth": 390,
+      "hScrollOk": true,
+      "mapPresent": true,
+      "failures": []
+    },
+    {
+      "route": "/learn-with-tsc",
+      "check": "phone-390",
+      "ok": false,
+      "expectedBare": "/css/mobile/learn-with-tsc.css",
+      "ownerHrefs": [
+        "/css/mobile/academy.css"
+      ],
+      "distinctPageCss": [
+        "/css/mobile/academy.css"
+      ],
+      "scrollWidth": 390,
+      "innerWidth": 390,
+      "hScrollOk": true,
+      "mapPresent": true,
+      "failures": [
+        "owner-mismatch"
+      ]
+    },
+    {
+      "route": "/films",
+      "check": "phone-390",
+      "ok": true,
+      "expectedBare": "/css/mobile/films.css",
+      "ownerHrefs": [
+        "/css/mobile/films.css"
+      ],
+      "distinctPageCss": [
+        "/css/mobile/films.css"
+      ],
+      "scrollWidth": 390,
+      "innerWidth": 390,
+      "hScrollOk": true,
+      "mapPresent": true,
+      "failures": []
+    },
+    {
+      "route": "/resources",
+      "check": "phone-390",
+      "ok": true,
+      "expectedBare": "/css/mobile/resources.css",
+      "ownerHrefs": [
+        "/css/mobile/resources.css"
+      ],
+      "distinctPageCss": [
+        "/css/mobile/resources.css"
+      ],
+      "scrollWidth": 390,
+      "innerWidth": 390,
+      "hScrollOk": true,
+      "mapPresent": true,
+      "failures": []
+    },
+    {
+      "route": "/academy",
+      "check": "phone-390",
+      "ok": true,
+      "expectedBare": "/css/mobile/academy.css",
+      "ownerHrefs": [
+        "/css/mobile/academy.css"
+      ],
+      "distinctPageCss": [
+        "/css/mobile/academy.css"
+      ],
+      "scrollWidth": 390,
+      "innerWidth": 390,
+      "hScrollOk": true,
+      "mapPresent": true,
+      "failures": []
+    },
+    {
+      "route": "/mba",
+      "check": "phone-390",
+      "ok": true,
+      "expectedBare": "/css/mobile/mba.css",
+      "ownerHrefs": [
+        "/css/mobile/mba.css"
+      ],
+      "distinctPageCss": [
+        "/css/mobile/mba.css"
+      ],
+      "scrollWidth": 390,
+      "innerWidth": 390,
+      "hScrollOk": true,
+      "mapPresent": true,
+      "failures": []
+    },
+    {
+      "route": "/",
+      "check": "tablet-768",
+      "ok": true,
+      "expectedBare": "/css/mobile/home.css",
+      "ownerHrefs": [
+        "/css/mobile/home.css"
+      ],
+      "distinctPageCss": [
+        "/css/mobile/home.css"
+      ],
+      "scrollWidth": 768,
+      "innerWidth": 768,
+      "hScrollOk": true,
+      "mapPresent": true,
+      "failures": []
+    },
+    {
+      "route": "/about",
+      "check": "tablet-768",
+      "ok": true,
+      "expectedBare": "/css/mobile/about.css",
+      "ownerHrefs": [
+        "/css/mobile/about.css"
+      ],
+      "distinctPageCss": [
+        "/css/mobile/about.css"
+      ],
+      "scrollWidth": 768,
+      "innerWidth": 768,
+      "hScrollOk": true,
+      "mapPresent": true,
+      "failures": []
+    },
+    {
+      "route": "/work",
+      "check": "tablet-768",
+      "ok": true,
+      "expectedBare": "/css/mobile/work.css",
+      "ownerHrefs": [
+        "/css/mobile/work.css"
+      ],
+      "distinctPageCss": [
+        "/css/mobile/work.css"
+      ],
+      "scrollWidth": 768,
+      "innerWidth": 768,
+      "hScrollOk": true,
+      "mapPresent": true,
+      "failures": []
+    },
+    {
+      "route": "/artists",
+      "check": "tablet-768",
+      "ok": true,
+      "expectedBare": "/css/mobile/artists.css",
+      "ownerHrefs": [
+        "/css/mobile/artists.css"
+      ],
+      "distinctPageCss": [
+        "/css/mobile/artists.css"
+      ],
+      "scrollWidth": 768,
+      "innerWidth": 768,
+      "hScrollOk": true,
+      "mapPresent": true,
+      "failures": []
+    },
+    {
+      "route": "/yugm",
+      "check": "tablet-768",
+      "ok": true,
+      "expectedBare": "/css/mobile/yugm.css",
+      "ownerHrefs": [
+        "/css/mobile/yugm.css"
+      ],
+      "distinctPageCss": [
+        "/css/mobile/yugm.css"
+      ],
+      "scrollWidth": 768,
+      "innerWidth": 768,
+      "hScrollOk": true,
+      "mapPresent": true,
+      "failures": []
+    },
+    {
+      "route": "/learn-with-tsc",
+      "check": "tablet-768",
+      "ok": false,
+      "expectedBare": "/css/mobile/learn-with-tsc.css",
+      "ownerHrefs": [
+        "/css/mobile/academy.css"
+      ],
+      "distinctPageCss": [
+        "/css/mobile/academy.css"
+      ],
+      "scrollWidth": 768,
+      "innerWidth": 768,
+      "hScrollOk": true,
+      "mapPresent": true,
+      "failures": [
+        "owner-mismatch"
+      ]
+    },
+    {
+      "route": "/films",
+      "check": "tablet-768",
+      "ok": true,
+      "expectedBare": "/css/mobile/films.css",
+      "ownerHrefs": [
+        "/css/mobile/films.css"
+      ],
+      "distinctPageCss": [
+        "/css/mobile/films.css"
+      ],
+      "scrollWidth": 768,
+      "innerWidth": 768,
+      "hScrollOk": true,
+      "mapPresent": true,
+      "failures": []
+    },
+    {
+      "route": "/resources",
+      "check": "tablet-768",
+      "ok": true,
+      "expectedBare": "/css/mobile/resources.css",
+      "ownerHrefs": [
+        "/css/mobile/resources.css"
+      ],
+      "distinctPageCss": [
+        "/css/mobile/resources.css"
+      ],
+      "scrollWidth": 768,
+      "innerWidth": 768,
+      "hScrollOk": true,
+      "mapPresent": true,
+      "failures": []
+    },
+    {
+      "route": "/academy",
+      "check": "tablet-768",
+      "ok": true,
+      "expectedBare": "/css/mobile/academy.css",
+      "ownerHrefs": [
+        "/css/mobile/academy.css"
+      ],
+      "distinctPageCss": [
+        "/css/mobile/academy.css"
+      ],
+      "scrollWidth": 768,
+      "innerWidth": 768,
+      "hScrollOk": true,
+      "mapPresent": true,
+      "failures": []
+    },
+    {
+      "route": "/mba",
+      "check": "tablet-768",
+      "ok": true,
+      "expectedBare": "/css/mobile/mba.css",
+      "ownerHrefs": [
+        "/css/mobile/mba.css"
+      ],
+      "distinctPageCss": [
+        "/css/mobile/mba.css"
+      ],
+      "scrollWidth": 768,
+      "innerWidth": 768,
+      "hScrollOk": true,
+      "mapPresent": true,
+      "failures": []
+    }
+  ],
+  "failed": 2,
+  "passed": 28,
+  "exit": 1
+}

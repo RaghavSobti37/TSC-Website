@@ -153,6 +153,15 @@
     if (host.dataset.bound === 'true') return;
     host.dataset.bound = 'true';
     host.addEventListener('click', function (event) {
+      var cta = event.target.closest('.tsc-artist-acc__cta');
+      if (!cta) return;
+      var href = cta.getAttribute('href');
+      if (!href || href === '#') return;
+      event.preventDefault();
+      event.stopPropagation();
+      window.location.assign(href);
+    }, true);
+    host.addEventListener('click', function (event) {
       var collapse = event.target.closest('.tsc-artist-acc__collapse');
       if (collapse) {
         event.preventDefault();

@@ -26,4 +26,326 @@
     width: 100% !important;
     max-width: 100% !important;
   }
+
+  /* Films About Us: prevent the desktop card grid from squeezing into columns on phones. */
+  body[data-page="films"] #comp-mqksjwhn,
+  body[data-page="films"] #comp-mqksjwhn_relative {
+    display: block !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    overflow: visible !important;
+    background: #ffecd1 !important;
+  }
+
+  body[data-page="films"] #comp-mqksjwhn > [data-testid="responsive-container-content"],
+  body[data-page="films"] #comp-mqksjwhn > .comp-mqksjwhn-container {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 14px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    padding: 22px 18px 28px !important;
+    box-sizing: border-box !important;
+    grid-template-columns: none !important;
+    grid-template-rows: none !important;
+  }
+
+  body[data-page="films"] #comp-mqksjwhn :is(
+    #comp-mqkt0pl5,
+    #comp-mqkt0pln,
+    #comp-mqkt1dhr,
+    #comp-mqkt94ql,
+    #comp-mqktaucr,
+    #comp-mqktbh9q,
+    #comp-mqks7qjl,
+    #comp-mqksu27c,
+    #comp-mqksqdxe
+  ) {
+    position: relative !important;
+    inset: auto !important;
+    left: auto !important;
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    transform: none !important;
+    grid-area: auto !important;
+    overflow: visible !important;
+    box-sizing: border-box !important;
+  }
+
+  body[data-page="films"] #comp-mqksjwhn :is(#comp-mqkt0pl5, #comp-mqkt0pln, #comp-mqkt1dhr) {
+    border: 1px solid rgba(101, 36, 21, 0.38) !important;
+    border-radius: 12px !important;
+    padding: 16px !important;
+  }
+
+  body[data-page="films"] #comp-mqksjwhn :is(#comp-mqkt0pl5, #comp-mqkt0pln, #comp-mqkt1dhr) > .inner-box {
+    display: none !important;
+  }
+
+  body[data-page="films"] #comp-mqksjwhn :is(#comp-mqkt0pl5, #comp-mqkt0pln, #comp-mqkt1dhr) > [data-testid="responsive-container-content"],
+  body[data-page="films"] #comp-mqksjwhn :is(#comp-mqkt0pl5, #comp-mqkt0pln, #comp-mqkt1dhr) > [class*="-container"] {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 10px !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  body[data-page="films"] #comp-mqkt0pl5 {
+    order: 1 !important;
+    align-items: center !important;
+    background: #ffecd1 !important;
+  }
+
+  body[data-page="films"] #comp-mqkt0pln {
+    order: 2 !important;
+    background: #652415 !important;
+    color: #ffecd1 !important;
+  }
+
+  body[data-page="films"] #comp-mqkt1dhr {
+    order: 3 !important;
+    background: #652415 !important;
+    color: #ffecd1 !important;
+  }
+
+  body[data-page="films"] #comp-mqks7qjl {
+    width: min(150px, 58vw) !important;
+    margin: 0 auto !important;
+  }
+
+  body[data-page="films"] #comp-mqks7qjl svg,
+  body[data-page="films"] #comp-mqks7qjl img {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  body[data-page="films"] #comp-mqksjwhn [data-testid="richTextElement"],
+  body[data-page="films"] #comp-mqksjwhn .wixui-rich-text__text {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+    overflow-wrap: break-word !important;
+    word-break: normal !important;
+    white-space: normal !important;
+    text-align: left !important;
+    box-sizing: border-box !important;
+  }
+
+  body[data-page="films"] #comp-mqksjwhn :is(h1, h2, h3, p, span, li, div).wixui-rich-text__text {
+    color: inherit !important;
+    font-size: 16px !important;
+    line-height: 1.42 !important;
+    letter-spacing: 0 !important;
+    margin: 0 !important;
+  }
+
+  body[data-page="films"] #comp-mqksjwhn #comp-mqksu27c :is(h1, h2, h3, p, span, div).wixui-rich-text__text,
+  body[data-page="films"] #comp-mqksjwhn #comp-mqksu27c :is(h1, h2, h3, p, span, div) {
+    color: #ffecd1 !important;
+    font-size: clamp(24px, 8vw, 34px) !important;
+    line-height: 1.12 !important;
+    font-weight: 700 !important;
+  }
+
+  body[data-page="films"] #comp-mqksjwhn #comp-mqksqdxe :is(p, span, div).wixui-rich-text__text,
+  body[data-page="films"] #comp-mqksjwhn #comp-mqksqdxe :is(p, span, div) {
+    color: #ffecd1 !important;
+    font-size: 16px !important;
+    line-height: 1.45 !important;
+  }
+
+  body[data-page="films"].tsc-films-mobile-about-mounted #comp-mqksjwhn {
+    display: none !important;
+    height: 0 !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    visibility: hidden !important;
+  }
+
+  body[data-page="films"] .tsc-mobile-films-about {
+    display: grid !important;
+    gap: 16px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 24px 18px 30px !important;
+    background: #ffecd1 !important;
+    box-sizing: border-box !important;
+  }
+
+  body[data-page="films"] .tsc-mobile-films-about__logo,
+  body[data-page="films"] .tsc-mobile-films-about__panel {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    border: 1px solid rgba(101, 36, 21, 0.48) !important;
+    border-radius: 12px !important;
+  }
+
+  body[data-page="films"] .tsc-mobile-films-about__logo {
+    min-height: 112px !important;
+    display: grid !important;
+    place-items: center !important;
+    color: #652415 !important;
+    font-size: 24px !important;
+    font-weight: 700 !important;
+    line-height: 0.95 !important;
+    text-align: center !important;
+  }
+
+  body[data-page="films"] .tsc-mobile-films-about__panel {
+    display: grid !important;
+    gap: 12px !important;
+    padding: 18px !important;
+    background: #652415 !important;
+    color: #ffecd1 !important;
+  }
+
+  body[data-page="films"] .tsc-mobile-films-about__panel h2,
+  body[data-page="films"] .tsc-mobile-films-about__panel p {
+    margin: 0 !important;
+    color: inherit !important;
+    letter-spacing: 0 !important;
+    overflow-wrap: break-word !important;
+    word-break: normal !important;
+    white-space: normal !important;
+  }
+
+  body[data-page="films"] .tsc-mobile-films-about__panel h2 {
+    font-size: clamp(26px, 8vw, 34px) !important;
+    line-height: 1.1 !important;
+    font-weight: 700 !important;
+  }
+
+  body[data-page="films"] .tsc-mobile-films-about__panel p {
+    font-size: 16px !important;
+    line-height: 1.45 !important;
+    font-weight: 500 !important;
+  }
+
+  body[data-page="films"].tsc-films-mobile-originals-mounted #comp-mqmh352i,
+  body[data-page="films"].tsc-films-mobile-originals-mounted #comp-mqmh352i_relative,
+  body[data-page="films"].tsc-films-mobile-originals-mounted :is(#comp-mqmhowf1, #comp-mqmhp1sq, #comp-mqmhpx0p) {
+    display: none !important;
+    height: 0 !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    visibility: hidden !important;
+  }
+
+  body[data-page="films"] .tsc-mobile-films-originals {
+    display: grid !important;
+    gap: 14px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 24px 18px 32px !important;
+    background: #7a1830 !important;
+    color: #ffecd1 !important;
+    box-sizing: border-box !important;
+  }
+
+  body[data-page="films"] .tsc-mobile-films-originals__logo,
+  body[data-page="films"] .tsc-mobile-films-originals__content {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    border: 1px solid rgba(255, 236, 209, 0.72) !important;
+    border-radius: 12px !important;
+  }
+
+  body[data-page="films"] .tsc-mobile-films-originals__logo {
+    min-height: 96px !important;
+    display: grid !important;
+    place-items: center !important;
+    background: #ffecd1 !important;
+    color: #652415 !important;
+    font-size: 22px !important;
+    font-weight: 700 !important;
+    line-height: 0.95 !important;
+    text-align: center !important;
+  }
+
+  body[data-page="films"] .tsc-mobile-films-originals__content {
+    display: grid !important;
+    gap: 14px !important;
+    padding: 18px !important;
+    background: rgba(101, 36, 21, 0.44) !important;
+  }
+
+  body[data-page="films"] .tsc-mobile-films-originals__eyebrow,
+  body[data-page="films"] .tsc-mobile-films-originals h2,
+  body[data-page="films"] .tsc-mobile-films-originals p,
+  body[data-page="films"] .tsc-mobile-films-originals strong,
+  body[data-page="films"] .tsc-mobile-films-originals li {
+    margin: 0 !important;
+    color: inherit !important;
+    letter-spacing: 0 !important;
+    overflow-wrap: break-word !important;
+    word-break: normal !important;
+    white-space: normal !important;
+  }
+
+  body[data-page="films"] .tsc-mobile-films-originals__eyebrow,
+  body[data-page="films"] .tsc-mobile-films-originals strong {
+    font-size: 14px !important;
+    line-height: 1.25 !important;
+    font-weight: 700 !important;
+  }
+
+  body[data-page="films"] .tsc-mobile-films-originals h2 {
+    font-size: clamp(24px, 7.6vw, 32px) !important;
+    line-height: 1.12 !important;
+    font-weight: 700 !important;
+    text-transform: none !important;
+  }
+
+  body[data-page="films"] .tsc-mobile-films-originals p {
+    font-size: 16px !important;
+    line-height: 1.48 !important;
+    font-weight: 500 !important;
+  }
+
+  body[data-page="films"] .tsc-mobile-films-originals__impact {
+    display: grid !important;
+    gap: 10px !important;
+    padding: 14px !important;
+    border: 1px solid rgba(255, 236, 209, 0.48) !important;
+    border-radius: 10px !important;
+  }
+
+  body[data-page="films"] .tsc-mobile-films-originals ul {
+    display: grid !important;
+    gap: 8px !important;
+    margin: 0 !important;
+    padding-left: 20px !important;
+  }
+
+  body[data-page="films"] .tsc-mobile-films-originals li {
+    font-size: 15px !important;
+    line-height: 1.35 !important;
+  }
 }

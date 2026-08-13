@@ -7,6 +7,10 @@ const {
   trim,
 } = require('./_lib/taskmaster.cjs');
 
+function isEmail(value) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+}
+
 module.exports = async function query(req, res) {
   if (req.method === 'OPTIONS') return sendJson(res, 204, {});
   if (req.method !== 'POST') return sendJson(res, 405, { success: false, error: 'Method not allowed' });
@@ -21,7 +25,7 @@ module.exports = async function query(req, res) {
     const email = trim(body.email).toLowerCase();
     const phone = normalizeIndiaPhone(body.phone || body.mobile);
     if (!name) return sendJson(res, 400, { success: false, error: 'Name is required' });
-    if (!email) return sendJson(res, 400, { success: false, error: 'Email is required' });
+    if (!isEmail(email)) return sendJson(res, 400, { success: false, error: 'Valid email is required' });
     if (!phone) return sendJson(res, 400, { success: false, error: 'Phone is required' });
 
     const secret = (process.env.ARTIST_ENQUIRY_WEBHOOK_SECRET || '').trim();

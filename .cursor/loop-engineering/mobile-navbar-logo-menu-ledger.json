@@ -1,0 +1,46 @@
+{
+  "iteration": 1,
+  "phase": "verify",
+  "goal": "Mobile-only navbar change: make shared TSC/TSC Academy logo bigger and place hamburger at right edge without touching desktop code.",
+  "satisfaction": "pending",
+  "slices": [
+    {
+      "id": "mobile-navbar",
+      "agentSlug": "frontend-developer",
+      "agentRule": ".cursor/rules/agency/frontend-developer.mdc",
+      "status": "in_progress",
+      "ownsFiles": [
+        "public/js/tsc-components.js",
+        "public/css/mobile/_tokens.css",
+        "public/css/tsc-mobile-system.css",
+        "public/css/pages/academy.css",
+        "public/css/tsc-responsive.css"
+      ]
+    }
+  ],
+  "verifyCommands": [
+    "node -c public/js/tsc-components.js",
+    "puppeteer mobile smoke: / and /academy at 390px",
+    "puppeteer desktop guard: / and /academy at 1280px",
+    "npm run build"
+  ],
+  "lastVerifyEvidence": {
+    "passed": [
+      "node -c public/js/tsc-components.js exited 0",
+      "Mobile smoke /: header width 390, logo 166x44 at x=18, menu 44x44 at x=328, variant main",
+      "Mobile smoke /academy: header width 390, logo 166x44 at x=18, menu 44x44 at x=328, variant academy",
+      "Desktop guard / and /academy: hasMobileHeader=false, mobileChrome=false at 1280px"
+    ],
+    "failed": [
+      "npm run build exited 1: Invalid Thunderbolt bootstrap scripts found in pages/about.html"
+    ]
+  },
+  "discoveries": [
+    {
+      "id": "d-001",
+      "severity": "P2",
+      "summary": "Full site build is blocked by existing generated-page validation: Invalid Thunderbolt bootstrap scripts found in pages/about.html.",
+      "status": "open"
+    }
+  ]
+}

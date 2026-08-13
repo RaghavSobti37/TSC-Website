@@ -3,13 +3,20 @@ const {
   resolveWebhookUrl,
   readJsonBody,
   sendJson,
+  normalizeIndiaPhone,
   trim,
 } = require('./_lib/taskmaster.cjs');
+
+function isEmail(value) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+}
 
 function buildArtistPathPayload(data) {
   const firstName = trim(data.firstName);
   const lastName = trim(data.lastName);
   const fullName = `${firstName} ${lastName}`.trim() || trim(data.fullName || data.name);
+  const email = trim(data.email).toLowerCase();
+  const mobile = normalizeIndiaPhone(data.mobile || data.phone);
   return {
     source: 'tsc-website',
     sourceSite: 'tsc-website',
@@ -21,8 +28,8 @@ function buildArtistPathPayload(data) {
     instagram: data.instagram,
     spotify: data.spotify,
     youtube: data.youtube,
-    mobile: data.mobile || data.phone,
-    email: data.email,
+    mobile,
+    email,
     artistIdentity: data.artistIdentity,
     trainingDetails: data.trainingDetails,
     coreSkills: data.coreSkills,
@@ -51,7 +58,14 @@ module.exports = async function artistPath(req, res) {
   try {
     const body = typeof req.body === 'object' && req.body ? req.body : await readJsonBody(req);
     const payload = buildArtistPathPayload(body);
+    if (!payload.fullName) return sendJson(res, 400, { success: false, error: 'Name is required' });
+    if (!isEmail(payload.email)) return sendJson(res, 400, { success: false, error: 'Valid email is required' });
+    if (!payload.mobile) return sendJson(res, 400, { success: false, error: 'Mobile number is required' });
+
     const secret = (process.env.ARTIST_PATH_WEBHOOK_SECRET || '').trim();
+    if (!secret) {
+      return sendJson(res, 500, { success: false, error: 'ARTIST_PATH_WEBHOOK_SECRET is not set' });
+    }
 
     const { ok, status, body: tm } = await forwardToTaskmaster({
       url: resolveWebhookUrl('TASKMASTER_ARTIST_PATH_WEBHOOK_URL', '/api/webhooks/artist-path'),

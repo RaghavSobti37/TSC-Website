@@ -14,9 +14,9 @@ Human/AI-readable map of The Shakti Collective public site.
 | Route shells | `public/**/index.html` | Pretty-route entry files that redirect/boot into `public/pages/*.html` |
 | Route map | `public/pages/routes.manifest.json` | Canonical routes, aliases, `allRoutes` |
 | Site index | `public/site/**` | Nested taxonomy + `meta.json` / README per page |
-| CSS | `public/css/pages/*.css` | Per-page styles |
-| Responsive CSS | `public/css/tsc-responsive.css` | Shared responsive/mobile overrides |
-| Mobile CSS | `public/css/mobile/*` + `public/css/tsc-mobile-system.css` | Mobile design system (runtime-injected) |
+| CSS (archive) | `public/css/pages/*.css` | **Archive-only** for primaries — not live owners. Desktop = Wix inline in `pages/*.html` |
+| Responsive CSS | `public/css/tsc-responsive.css` | Slim shared chrome + lock patches (no new page reflow) |
+| Mobile CSS | `public/css/mobile/<slug>.css` + `tsc-mobile-system.css` | **One owner per route** ≤1024px (`tsc-mobile-route-map.js`, media-gated) |
 | JS | `public/js/pages/*.animations.js` | Per-page animations |
 | Runtime polish | `public/js/content-replacements.js` | Header/footer/mobile shells, card swaps, CTA repairs, page-specific fixes |
 | Prod routes | `vercel.json` | Rewrites, redirects, headers, cache rules |
@@ -33,21 +33,20 @@ Human/AI-readable map of The Shakti Collective public site.
 
 ## Mobile CSS map
 
-Runtime wire lives in `public/js/tsc-components.js` via `wireMobileAssets()` (loaded by every page animations script). No HTML patcher.
+**Ownership:** desktop = Wix inline in HTML; slim = `tsc-responsive.css`; mobile = `css/mobile/<slug>.css` (1:1 via `tsc-mobile-route-map.js`). Sheets load with `media="(max-width: 1024px)"` only.
+
+Runtime wire: early boot in `pages/*.html` + `tsc-components.js` `wireMobileAssets()`. Source of truth: `public/js/tsc-mobile-route-map.js`.
 
 | Asset | Path |
 |-------|------|
 | Tokens | `public/css/mobile/_tokens.css` (`@import` from system) |
 | System | `public/css/tsc-mobile-system.css` + `public/js/tsc-mobile-system.js` |
-| Home | `public/css/mobile/home.css` -> `/` |
-| About | `public/css/mobile/about.css` -> `/about` |
-| Work | `public/css/mobile/work.css` -> `/work`, `/mba`, `/havells-myousic`, `/insta-music-league`, `/young-gunns` |
-| Artists | `public/css/mobile/artists.css` -> `/artists`, roster, `/artist-path` |
-| Learn | `public/css/mobile/learn.css` -> `/learn-with-tsc`, `/academy`, course pages, `/book-a-call`, review forms |
-| Films | `public/css/mobile/films.css` -> `/films`, film cases |
-| Resources | `public/css/mobile/resources.css` -> `/resources`, blogs/articles |
+| Per-route owner | `public/css/mobile/<slug>.css` — e.g. `home.css` → `/`, `mba.css` → `/mba`, `yugm.css` → `/yugm` |
+| Families | `public/css/mobile/_family-*.css` (imported by owners; not link targets) |
 
-Also sets `body[data-page]` (`home` for `/`; learn/course pages -> `learn-with-tsc`) and injects `.tsc-sticky-cta` if missing.
+Also sets `body[data-page]` and injects `.tsc-sticky-cta` when applicable.
+
+Verify: `node artifacts/_verify-mobile-ownership.mjs` (server on `:3001` or `PORT`).
 
 ## Canonical URL policy
 

@@ -10,4 +10,58 @@
   body[data-page="course-bundle"] main {
     overflow-x: clip !important;
   }
+
+  body[data-page="course-bundle"] .tsc-mobile-course-page {
+    background: var(--tsc-mobile-cream, #ffecd1);
+  }
+
+  body[data-page="course-bundle"] .tsc-mobile-course-marquee a {
+    flex: 0 0 auto !important;
+    color: #ffecd1 !important;
+    text-decoration: none !important;
+  }
+
+  body[data-page="course-bundle"] .tsc-mobile-course-hero-card figure {
+    background: #083d3a !important;
+  }
+
+  body[data-page="course-bundle"] .tsc-mobile-course-hero-card figure img {
+    object-fit: contain !important;
+  }
+
+  body[data-page="course-bundle"] .tsc-mobile-course-section,
+  body[data-page="course-bundle"] .tsc-mobile-course-section-dark {
+    position: relative;
+    border-radius: 0 !important;
+  }
+
+  body[data-page="course-bundle"] .tsc-mobile-course-section {
+    background: var(--tsc-mobile-cream, #ffecd1) !important;
+  }
+
+  body[data-page="course-bundle"] .tsc-mobile-course-section-dark {
+    background: var(--tsc-mobile-deep, #00535a) !important;
+  }
+
+  body[data-page="course-bundle"] .tsc-mobile-course-section::before {
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: 0;
+    right: 0;
+    height: 34px;
+    pointer-events: none;
+    background: inherit;
+    clip-path: polygon(0 0, 100% 0, 100% 58%, 85% 44%, 72% 62%, 58% 45%, 44% 62%, 30% 46%, 15% 61%, 0 45%);
+  }
+
+  body[data-page="course-bundle"] .tsc-mobile-course-link-enroll,
+  body[data-page="course-bundle"] .tsc-mobile-course-link-enroll:visited,
+  body[data-page="course-bundle"] .tsc-mobile-course-link-enroll:hover,
+  body[data-page="course-bundle"] .tsc-mobile-course-link-enroll:focus {
+    background: #005b53 !important;
+    color: #ffecd1 !important;
+    font-size: 16px !important;
+    font-weight: 900 !important;
+  }
 }

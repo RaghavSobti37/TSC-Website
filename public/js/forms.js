@@ -2,7 +2,7 @@
   var ui = window.TSCComponents;
   if (!ui) return;
 
-  ui.ensureStylesheet('/css/forms.css?v=selected-state-1');
+  ui.ensureStylesheet('/css/forms.css?v=form-picker-hitarea-1');
 
   var shared = {
     defaultCountryCode: '+91 India',
@@ -111,8 +111,8 @@
         { label: 'First Name', type: 'text', required: true },
         { label: 'Last Name', type: 'text', required: true },
         { label: 'Where are you based?', type: 'text', full: true },
-        { label: 'Mobile Number', type: 'tel' },
-        { label: 'Email Address', type: 'email' },
+        { label: 'Mobile Number', type: 'tel', required: true },
+        { label: 'Email Address', type: 'email', required: true },
         { label: 'Stage Name / Identity', type: 'text', full: true },
         { label: 'Instagram URL', type: 'url' },
         { label: 'Spotify URL', type: 'url' },

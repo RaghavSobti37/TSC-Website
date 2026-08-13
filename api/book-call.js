@@ -7,12 +7,30 @@ const {
   trim,
 } = require('./_lib/taskmaster.cjs');
 
+function isEmail(value) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+}
+
 module.exports = async function bookCall(req, res) {
   if (req.method === 'OPTIONS') return sendJson(res, 204, {});
   if (req.method !== 'POST') return sendJson(res, 405, { success: false, error: 'Method not allowed' });
 
   try {
     const body = typeof req.body === 'object' && req.body ? req.body : await readJsonBody(req);
+    const name = trim(body.name);
+    const email = trim(body.email).toLowerCase();
+    const phone = normalizeIndiaPhone(body.phone || body.mobile);
+    const course = trim(body.course);
+    const date = trim(body.date);
+    const time = trim(body.time);
+
+    if (!name) return sendJson(res, 400, { success: false, error: 'Name is required' });
+    if (!isEmail(email)) return sendJson(res, 400, { success: false, error: 'Valid email is required' });
+    if (!phone) return sendJson(res, 400, { success: false, error: 'Phone is required' });
+    if (!course) return sendJson(res, 400, { success: false, error: 'Course is required' });
+    if (!date) return sendJson(res, 400, { success: false, error: 'Date is required' });
+    if (!time) return sendJson(res, 400, { success: false, error: 'Time is required' });
+
     const secret = (process.env.BOOK_CALL_WEBHOOK_SECRET || '').trim();
     if (!secret) {
       return sendJson(res, 500, { success: false, error: 'BOOK_CALL_WEBHOOK_SECRET is not set' });
@@ -20,9 +38,12 @@ module.exports = async function bookCall(req, res) {
 
     const payload = {
       ...body,
-      name: trim(body.name),
-      email: trim(body.email).toLowerCase(),
-      phone: normalizeIndiaPhone(body.phone || body.mobile),
+      name,
+      email,
+      phone,
+      course,
+      date,
+      time,
       source: 'tsc-website',
       sourceSite: 'tsc-website',
     };

@@ -57,13 +57,33 @@ Inactive slideshow `__item-*` slides may stay paused (Wix behavior).
 
 ---
 
+## CSS ownership (desktop vs mobile)
+
+| Layer | Where | Applies | Rule |
+|-------|--------|---------|------|
+| **Desktop (locked)** | Wix Thunderbolt CSS **inline** in `public/pages/*.html` (`<style data-url=…>` / standalone runtime) | ≥1025px (and baseline all viewports until mobile overrides) | Clone-faithful. Do not “polish.” |
+| **Slim shared** | `public/css/tsc-responsive.css` | Shared chrome + intentional `@media (min-width: 1025px)` lock patches; mobile bands only inside `max-width: 1024px` | Keep slim. No new page `#comp-*` reflow here. |
+| **Mobile owner (1:1)** | `public/css/mobile/<slug>.css` + `public/css/tsc-mobile-system.css` | **Only** via `media="(max-width: 1024px)"` — see `public/js/tsc-mobile-route-map.js` | One owner file per route slug. No desktop leak. |
+| **Archive** | `public/css/pages/*.css` (primaries) | Not loaded for live ownership | Historical / offline reference only. Do not re-link for mobile. |
+
+Route → file map: `public/js/tsc-mobile-route-map.js` (`SLUG_TO_CSS`, `MEDIA`).
+
+Verify:
+
+```bash
+node artifacts/_verify-mobile-ownership.mjs
+# expects server at http://127.0.0.1:3001 (or PORT); auto-starts serve-mirror if down
+```
+
+---
+
 ## Allowed after this lock
 
 - Content / copy that does not change typography
 - Footer link labels / hrefs (keep clone fonts/icons/per-page colors)
 - Form wiring
 - Owner-approved section hides (collapse-only)
-- Mobile-only work inside `@media (max-width: 1024px)`
+- Mobile-only work inside `@media (max-width: 1024px)` / `public/css/mobile/<slug>.css`
 
 ## Forbidden without explicit owner ask
 

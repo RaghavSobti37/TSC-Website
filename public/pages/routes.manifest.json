@@ -130,6 +130,15 @@
       "file": "music-production.html"
     },
     {
+      "title": "All Courses Bundle",
+      "route": "/course-bundle",
+      "aliases": [
+        "/academy/course-bundle",
+        "/courses/course-bundle"
+      ],
+      "file": "course-bundle.html"
+    },
+    {
       "title": "How Do I Start Making Music If I Have No Experience?",
       "route": "/start-making-music",
       "aliases": [
@@ -414,6 +423,14 @@
       "route": "/music-production"
     },
     {
+      "alias": "/academy/course-bundle",
+      "route": "/course-bundle"
+    },
+    {
+      "alias": "/courses/course-bundle",
+      "route": "/course-bundle"
+    },
+    {
       "alias": "/blog-1",
       "route": "/start-making-music"
     },
@@ -641,6 +658,7 @@
     "/roots-of-hindustani-classical",
     "/the-heart-of-composition",
     "/music-production",
+    "/course-bundle",
     "/start-making-music",
     "/yugm",
     "/mahaprbhu",

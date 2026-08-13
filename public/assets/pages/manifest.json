@@ -85,6 +85,12 @@
       "missing": 0
     },
     {
+      "page": "course-bundle",
+      "manifest": "/assets/pages/course-bundle/manifest.json",
+      "assets": 2,
+      "missing": 0
+    },
+    {
       "page": "films",
       "manifest": "/assets/pages/films/manifest.json",
       "assets": 151,
@@ -111,7 +117,7 @@
     {
       "page": "harshad-duhita",
       "manifest": "/assets/pages/harshad-duhita/manifest.json",
-      "assets": 113,
+      "assets": 119,
       "missing": 7
     },
     {
@@ -159,7 +165,7 @@
     {
       "page": "mahaprabhu-jagannath-impact",
       "manifest": "/assets/pages/mahaprabhu-jagannath-impact/manifest.json",
-      "assets": 1,
+      "assets": 0,
       "missing": 0
     },
     {
@@ -171,7 +177,7 @@
     {
       "page": "mahavatar-narsimha-impact",
       "manifest": "/assets/pages/mahavatar-narsimha-impact/manifest.json",
-      "assets": 1,
+      "assets": 0,
       "missing": 0
     },
     {
@@ -267,7 +273,7 @@
     {
       "page": "yugm",
       "manifest": "/assets/pages/yugm/manifest.json",
-      "assets": 120,
+      "assets": 129,
       "missing": 7
     }
   ]

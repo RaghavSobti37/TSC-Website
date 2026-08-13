@@ -1,6 +1,84 @@
 <!doctype html>
 <html lang="en">
 <head>
+<script data-tsc-mobile-boot>/* DESKTOP LOCK: early mobile CSS — no desktop FOUC */
+(function () {
+  var mq = window.matchMedia && window.matchMedia('(max-width: 1024px)');
+  if (!mq || !mq.matches) return;
+  var html = document.documentElement;
+  html.classList.add('tsc-boot-mobile');
+  function link(href) {
+    var bare = href.split('?')[0];
+    if (document.querySelector('link[data-tsc-boot][data-tsc-href="' + bare + '"]')) return;
+    var l = document.createElement('link');
+    l.rel = 'stylesheet';
+    l.href = href;
+    l.media = '(max-width: 1024px)';
+    l.setAttribute('data-tsc-boot', '1');
+    l.setAttribute('data-tsc-href', bare);
+    (document.head || document.documentElement).appendChild(l);
+  }
+  link('/css/mobile/boot.css?v=mobile-own-1');
+  link('/css/tsc-mobile-system.css?v=mobile-own-1');
+  var p = (location.pathname || '/').replace(/\/+$/, '') || '/';
+  if (p.indexOf('/pages/') === 0) p = '/' + p.split('/').pop().replace(/\.html$/i, '');
+  if (p === '/home') p = '/';
+  var parts = p.split('/').filter(Boolean);
+  if (parts.length >= 2) p = '/' + parts[parts.length - 1];
+  var seg = p === '/' ? 'home' : p.replace(/^\//, '').split('/')[0];
+  var map = {
+    home: 'home.css',
+    about: 'about.css',
+    work: 'work.css',
+    artists: 'artists.css',
+    'artist-path': 'artist-path.css',
+    'learn-with-tsc': 'learn-with-tsc.css',
+    films: 'films.css',
+    resources: 'resources.css',
+    academy: 'academy.css',
+    affiliate: 'affiliate.css',
+    'harshad-duhita': 'harshad-duhita.css',
+    'mohit-shankar': 'mohit-shankar.css',
+    yugm: 'yugm.css',
+    'book-an-artist': 'book-an-artist.css',
+    'artist-query': 'artist-query.css',
+    'collab-query': 'collab-query.css',
+    'the-heart-of-composition': 'the-heart-of-composition.css',
+    'roots-of-hindustani-classical': 'roots-of-hindustani-classical.css',
+    'music-production': 'music-production.css',
+    'book-a-call': 'book-a-call.css',
+    'mahavatar-narsimha': 'mahavatar-narsimha.css',
+    'hanuman-ansh': 'hanuman-ansh.css',
+    mahaprbhu: 'mahaprbhu.css',
+    kalki: 'kalki.css',
+    'mahavatar-narsimha-impact': 'mahavatar-narsimha-impact.css',
+    'hanuman-ansh-impact': 'hanuman-ansh-impact.css',
+    'mahaprabhu-jagannath-impact': 'mahaprabhu-jagannath-impact.css',
+    'kalki-impact': 'kalki-impact.css',
+    mba: 'mba.css',
+    'mba-impact': 'mba-impact.css',
+    'havells-myousic': 'havells-myousic.css',
+    'insta-music-league': 'insta-music-league.css',
+    'young-gunns': 'young-gunns.css',
+    'blog-1': 'blog-1.css',
+    'blog-2': 'blog-2.css',
+    'blog-3': 'blog-3.css',
+    'start-making-music': 'start-making-music.css',
+    'online-music-course-worth-it': 'online-music-course-worth-it.css',
+    'artist-release-playbook': 'artist-release-playbook.css',
+    'from-bhajan-to-clubbing': 'from-bhajan-to-clubbing.css',
+    'you-released-a-song-now-what': 'you-released-a-song-now-what.css',
+    'how-i-curate-music-with-independent-artists': 'how-i-curate-music-with-independent-artists.css',
+    classicalreview: 'classicalreview.css',
+    'masterclass-review01': 'masterclass-review01.css',
+    'masterclass-review02': 'masterclass-review02.css'
+  };
+  var file = map[seg] || 'home.css';
+  link('/css/mobile/' + file + '?v=mobile-own-1');
+  html.classList.add('tsc-mobile-ready');
+  html.classList.add('tsc-skel-revealed');
+})();
+</script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>How I Curate Music With Independent Artists | The Shakti Collective</title>
@@ -80,6 +158,7 @@
   <footer class="site-footer">
     <p>The Shakti Collective · <a href="mailto:Artist@theshakticollective.in">Artist@theshakticollective.in</a></p>
   </footer>
+<script defer src="/js/tsc-mobile-route-map.js?v=mobile-own-1"></script>
 <script src="/js/tsc-components.js?v=blog-hero-3" defer></script>
 </body>
 </html>

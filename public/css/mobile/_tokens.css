@@ -98,9 +98,9 @@
   --tsc-progress-inset: 16px;
 
   /* Mobile chrome logos — flush-trimmed assets, contain (no crop-zoom) */
-  --tsc-nav-logo-h: 40px;
-  --tsc-nav-logo-w: 148px;
-  --tsc-nav-bar-h: 56px;
+  --tsc-nav-logo-h: 44px;
+  --tsc-nav-logo-w: 166px;
+  --tsc-nav-bar-h: 64px;
   --tsc-footer-logo-w: 180px;
   --tsc-footer-logo-h: 74px;
   --tsc-phone-fab-size: 56px;

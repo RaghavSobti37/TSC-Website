@@ -3,9 +3,9 @@
   "html": "/pages/harshad-duhita.html",
   "css": "/css/pages/harshad-duhita.css",
   "animations": "/js/pages/harshad-duhita.animations.js",
-  "generatedAt": "2026-08-12T07:41:43.393Z",
+  "generatedAt": "2026-08-13T08:20:10.069Z",
   "totals": {
-    "assets": 113,
+    "assets": 119,
     "missing": 7
   },
   "assetsByType": {
@@ -17,6 +17,33 @@
           "exists": true,
           "virtual": true,
           "path": "/assets/mirror/disabled-telemetry"
+        }
+      },
+      {
+        "type": "other",
+        "url": "/assets/mirror/meghanabhawalkarwo.wixstudio.com/my-site",
+        "local": {
+          "exists": true,
+          "path": "/assets/mirror/meghanabhawalkarwo.wixstudio.com/my-site",
+          "bytes": 0
+        }
+      },
+      {
+        "type": "other",
+        "url": "/assets/mirror/siteassets.parastorage.com/pages/pages/thunderbolt",
+        "local": {
+          "exists": true,
+          "path": "/assets/mirror/siteassets.parastorage.com/pages/pages/thunderbolt",
+          "bytes": 0
+        }
+      },
+      {
+        "type": "other",
+        "url": "/assets/mirror/siteassets.parastorage.com/pages/pages/thunderbolt/",
+        "local": {
+          "exists": true,
+          "path": "/assets/mirror/siteassets.parastorage.com/pages/pages/thunderbolt",
+          "bytes": 0
         }
       },
       {
@@ -48,10 +75,28 @@
       },
       {
         "type": "other",
+        "url": "/assets/mirror/static.parastorage.com/services",
+        "local": {
+          "exists": true,
+          "path": "/assets/mirror/static.parastorage.com/services",
+          "bytes": 0
+        }
+      },
+      {
+        "type": "other",
         "url": "/assets/mirror/static.parastorage.com/services/wix-thunderbolt/dist/",
         "local": {
           "exists": true,
           "path": "/assets/mirror/static.parastorage.com/services/wix-thunderbolt/dist",
+          "bytes": 0
+        }
+      },
+      {
+        "type": "other",
+        "url": "/assets/mirror/static.parastorage.com/unpkg",
+        "local": {
+          "exists": true,
+          "path": "/assets/mirror/static.parastorage.com/unpkg",
           "bytes": 0
         }
       },
@@ -71,6 +116,17 @@
           "exists": true,
           "path": "/assets/mirror/static.wixstatic.com/media",
           "bytes": 0
+        }
+      }
+    ],
+    "runtime": [
+      {
+        "type": "runtime",
+        "url": "/assets/mirror/meghanabhawalkarwo.wixstudio.com/my-site/_api/v1/access-tokens.json",
+        "local": {
+          "exists": true,
+          "path": "/assets/mirror/meghanabhawalkarwo.wixstudio.com/my-site/_api/v1/access-tokens.json",
+          "bytes": 53802
         }
       }
     ],
@@ -652,7 +708,7 @@
         "local": {
           "exists": true,
           "path": "/css/pages/harshad-duhita.css",
-          "bytes": 1130306
+          "bytes": 1130286
         }
       }
     ],

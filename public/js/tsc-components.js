@@ -19,13 +19,37 @@
     return String(value).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
   }
 
-  function ensureStylesheet(href) {
-    if (!document.querySelector('link[href="' + href + '"]')) {
-      var link = document.createElement('link');
-      link.rel = 'stylesheet';
-      link.href = href;
-      document.head.appendChild(link);
+  function stylesheetBareHref(href) {
+    return String(href || '').split('?')[0];
+  }
+
+  /**
+   * Inject stylesheet once (dedupe by path, ignore ?v=).
+   * opts.media — set on link (required for mobile sheets).
+   * Never upgrade a media-gated sheet to all-media.
+   */
+  function ensureStylesheet(href, opts) {
+    opts = opts || {};
+    var bare = stylesheetBareHref(href);
+    var existing =
+      document.querySelector('link[data-tsc-href="' + bare + '"]') ||
+      document.querySelector('link[rel="stylesheet"][href^="' + bare + '"]');
+    if (existing) {
+      if (opts.media && !existing.media) {
+        existing.media = opts.media;
+      }
+      if (opts.media && existing.getAttribute('data-tsc-boot') === '1') {
+        /* boot already media-gated — leave alone */
+      }
+      return existing;
     }
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = href;
+    if (opts.media) link.media = opts.media;
+    link.setAttribute('data-tsc-href', bare);
+    document.head.appendChild(link);
+    return link;
   }
 
   /** Clone-faithful: no logo size/colour CSS. Keep mentor-card hide only. */
@@ -386,10 +410,10 @@
   function mountWorkImpactLinks(path) {
     if (path !== '/work') return;
     var reports = [
-      { label: 'Main Bhi Artist', href: '/mba-impact' },
-      { label: 'Havells mYOUsic', href: '/havells-myousic' },
-      { label: 'Insta Music League', href: '/insta-music-league' },
-      { label: 'The Young Gunns', href: '/young-gunns' }
+      { label: 'Main Bhi Artist', href: '/mba', root: '#comp-mr69hwvs2' },
+      { label: 'Havells mYOUsic', href: '/havells-myousic', root: '#comp-mr69hwub' },
+      { label: 'Insta Music League', href: '/insta-music-league', root: '#comp-mr69hww9' },
+      { label: 'The Young Gunns', href: '/young-gunns', root: '#comp-mr69hwvf5' }
     ];
     var textNodes = Array.prototype.slice.call(document.querySelectorAll('.wixui-rich-text, [data-testid="richTextElement"], h1, h2, h3, p'));
 
@@ -430,7 +454,7 @@
 
     reports.forEach(function (report) {
       var title = findTitle(report.label);
-      var card = title && findCard(title, report.label);
+      var card = (report.root && document.querySelector(report.root)) || (title && findCard(title, report.label));
       if (!card) return;
       card.classList.add('tsc-work-report-link');
       card.setAttribute('role', 'link');
@@ -731,22 +755,15 @@
     return path.replace(/^\//, '').split('/')[0] || 'home';
   }
 
-  var MOBILE_PAGE_CSS = {
-    home: '/css/mobile/home.css',
-    about: '/css/mobile/about.css?v=about-hero-sep-2',
-    work: '/css/mobile/work.css',
-    artists: '/css/mobile/artists.css',
-    learn: '/css/mobile/learn.css',
-    academy: '/css/mobile/academy.css?v=academy-stack-3',
-    films: '/css/mobile/films.css?v=films-num-cards-1',
-    resources: '/css/mobile/resources.css',
-    impact: '/css/mobile/impact-report.css'
-  };
+  /* 1:1 slug → mobile CSS; prefer window.TSCMobileRouteMap when loaded */
+  var MOBILE_CSS_VERSION = 'mobile-own-1';
+  var MOBILE_CSS_MEDIA = '(max-width: 1024px)';
 
   var LEARN_PATHS = {
     '/roots-of-hindustani-classical': true,
     '/the-heart-of-composition': true,
     '/music-production': true,
+    '/course-bundle': true,
     '/book-a-call': true,
     '/masterclass-review01': true,
     '/masterclass-review02': true,
@@ -836,6 +853,7 @@
     '/the-heart-of-composition': true,
     '/roots-of-hindustani-classical': true,
     '/music-production': true,
+    '/course-bundle': true,
     '/affiliate': true,
     '/book-a-call': true,
     '/artist-query': true,
@@ -857,6 +875,7 @@
   /** Native Wix header (About / Academy home) — not TSC-injected chrome. */
   function usesNativeWixNav(path) {
     if (document.querySelector('.report-page')) return false;
+    if ((path || canonicalPathname()) === '/course-bundle') return false;
     return true;
   }
 
@@ -969,17 +988,13 @@
     '/music-production': true
   };
 
-  function mobileCssBucket(path) {
-    if (path === '/' || path === '/home') return 'home';
-    if (path === '/about') return 'about';
-    if (path === '/academy' || path === '/affiliate') return 'academy';
-    if (IMPACT_PATHS[path]) return 'impact';
-    if (WORK_PATHS[path]) return 'work';
-    if (ARTISTS_PATHS[path]) return 'artists';
-    if (LEARN_PATHS[path]) return 'learn';
-    if (FILMS_PATHS[path]) return 'films';
-    if (RESOURCES_PATHS[path]) return 'resources';
-    return null;
+  function mobilePageCssHref(path) {
+    if (window.TSCMobileRouteMap && typeof window.TSCMobileRouteMap.hrefForPath === 'function') {
+      return window.TSCMobileRouteMap.hrefForPath(path);
+    }
+    var slug = pathBasename(path);
+    if (path === '/' || path === '/home') slug = 'home';
+    return '/css/mobile/' + slug + '.css?v=' + MOBILE_CSS_VERSION;
   }
 
   function pageDatasetSlug(path) {
@@ -1058,26 +1073,11 @@
       var path = canonicalPathname();
       setBodyPage(path);
       normalizeInternalProtocolRelativeLinks();
-      // Drop stale course-hub CSS if soft-nav left learn.css on /academy
-      if (path === '/academy') {
-        var stripLearnCss = function () {
-          document.querySelectorAll('link[rel="stylesheet"][href*="/css/mobile/learn.css"]').forEach(function (link) {
-            if (link.parentNode) link.parentNode.removeChild(link);
-          });
-        };
-        stripLearnCss();
-        [300, 1200].forEach(function (delay) {
-          window.setTimeout(stripLearnCss, delay);
-        });
-      }
-      // tsc-mobile-system.css @imports ./mobile/_tokens.css — no separate tokens link
-      ensureStylesheet('/css/tsc-mobile-system.css?v=kill-ads-strip-2');
-      var bucket = mobileCssBucket(path);
-      if (bucket && MOBILE_PAGE_CSS[bucket]) {
-        // ponytail: paths may already carry ?v= — don't double-append
-        var href = MOBILE_PAGE_CSS[bucket];
-        ensureStylesheet(href.indexOf('?') >= 0 ? href : href + '?v=academy-one-2');
-      }
+      var media =
+        (window.TSCMobileRouteMap && window.TSCMobileRouteMap.MEDIA) || MOBILE_CSS_MEDIA;
+      // tsc-mobile-system.css @imports tokens + safe-base — media-gated (no desktop leak)
+      ensureStylesheet('/css/tsc-mobile-system.css?v=' + MOBILE_CSS_VERSION, { media: media });
+      ensureStylesheet(mobilePageCssHref(path), { media: media });
       injectStickyCta(path);
       // Keep cloned Wix chrome as baseline across breakpoints.
       // Custom mobile header/footer changed layout too far from source design.
@@ -1253,6 +1253,22 @@
     });
     form.addEventListener('reset', function () {
       window.setTimeout(function () { syncChoiceState(form); }, 0);
+    });
+  }
+
+  function bindDatePickers(form) {
+    if (!form || form.dataset.datePickersBound) return;
+    form.dataset.datePickersBound = 'true';
+    form.querySelectorAll('.tsc-date-picker input[type="date"]').forEach(function (input) {
+      input.addEventListener('click', function () {
+        if (typeof input.showPicker === 'function') input.showPicker();
+      });
+      var shell = input.closest('.tsc-date-picker');
+      if (!shell) return;
+      shell.addEventListener('click', function (event) {
+        if (event.target !== input) input.focus();
+        if (typeof input.showPicker === 'function') input.showPicker();
+      });
     });
   }
 
@@ -1580,6 +1596,7 @@
     target.hidden = true;
     target.style.display = 'none';
     bindChoiceState(form);
+    bindDatePickers(form);
     bindLocalSubmit(form);
   }
 
@@ -1589,6 +1606,7 @@
     target.innerHTML = formMarkup(def, name, shared);
     var form = target.querySelector('form');
     bindChoiceState(form);
+    bindDatePickers(form);
     bindLocalSubmit(form);
   }
 
@@ -1674,16 +1692,139 @@
   ];
 
   var ACADEMY_COURSE_ITEMS = [
+    { href: '/course-bundle', label: 'All Courses Bundle' },
     { href: '/music-production', label: 'A to Z of Music Production' },
     { href: '/the-heart-of-composition', label: 'The HeART of Composition' },
     { href: '/roots-of-hindustani-classical', label: 'Roots of Hindustani Classical' }
   ];
 
   var ACADEMY_COURSE_HREFS = {
+    '/course-bundle': true,
     '/music-production': true,
     '/the-heart-of-composition': true,
     '/roots-of-hindustani-classical': true
   };
+
+  var COURSE_CHECKOUT_URL = 'https://tscacademy.exlyapp.com/checkout/55bdc656-c92d-4812-a775-944d5becf544?dynamic_link=ad961260-1373-49a9-9307-241497380256';
+  var COURSE_BUNDLE_CHECKOUT_URL = 'https://shakticollectivellp.exlyapp.com/combo/ae855d75-c65f-4ea5-b5aa-dd2f5e4042f4';
+
+  var MOBILE_COURSE_PAGES = {
+    '/course-bundle': {
+      number: 'Bundle',
+      title: 'All Three Courses Bundle',
+      shortTitle: 'All Courses Bundle',
+      mentor: 'Sandesh Shandilya + Pt. Prasad Khaparde + Luca Petracca',
+      image: '/assets/course-bundle/all-mentors.jpg?v=bundle-mentors-1',
+      imageAlt: 'Sandesh Shandilya, Prasad Khaparde, and Luca Petracca',
+      intro: 'Composition, Hindustani classical foundations, and music production brought together as one complete artist learning path.',
+      stats: ['3 Courses', '₹12,000 Value', 'Now ₹9,999', 'One Enrollment'],
+      learn: ['The heART of Music Composition', 'The Roots of Hindustani Classical', 'A to Z of Music Production', 'A clear path across craft, voice, and production'],
+      outcomes: ['Build stronger original compositions', 'Develop classical grounding and disciplined practice', 'Finish cleaner, release-ready tracks'],
+      checkout: COURSE_BUNDLE_CHECKOUT_URL
+    },
+    '/the-heart-of-composition': {
+      number: '001',
+      title: 'The heART of Music Composition',
+      shortTitle: 'The heART of Composition',
+      mentor: 'Sandesh Shandilya',
+      image: '/assets/mirror/static.wixstatic.com/media/19f989_3583e149066b4ebf9a6f37cc7d80382a~mv2.jpg/v1/crop/x_0,y_7,w_677,h_461/fill/w_960,h_640,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/sandesh_edited.jpg',
+      imageAlt: 'Sandesh Shandilya leading a music session',
+      intro: 'Dive deeper into advanced composition techniques with this comprehensive 6-month course. Learn the art of imagination, emotion to expression, and mainstream mastery directly from a legend.',
+      stats: ['6 Months', '200+ Mins Content', '3 Live Sessions', 'Industry Mentorship'],
+      learn: ['Composition foundations', 'Melody and emotion mapping', 'Film and independent song structure', 'Creative discipline for original music'],
+      outcomes: ['Build a stronger composition process', 'Translate ideas into complete songs', 'Create music with sharper emotional intent']
+    },
+    '/roots-of-hindustani-classical': {
+      number: '002',
+      title: 'The Roots of Hindustani Classical',
+      shortTitle: 'Roots of Hindustani Classical',
+      mentor: 'Pt. Prasad Khaparde',
+      image: '/assets/mirror/static.wixstatic.com/media/19f989_07c6e896e4a54fcc99b08a98ceccaff4~mv2.jpg/v1/fill/w_960,h_720,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/prasad-hero.jpg',
+      imageAlt: 'Pandit Prasad Khaparde performing Hindustani classical music',
+      intro: 'Immerse yourself in the timeless art of Hindustani classical singing. Build your foundation through focused group sessions, quality assessments, and guidance from Pandit Prasad Khaparde.',
+      stats: ['6 Months', '300+ Mins Content', '3+ Live Sessions', 'Certification'],
+      learn: ['Voice culture and riyaaz', 'Raag foundations', 'Classical phrasing and expression', 'Performance confidence'],
+      outcomes: ['Strengthen classical fundamentals', 'Develop disciplined vocal practice', 'Understand raag-based expression']
+    },
+    '/music-production': {
+      number: '003',
+      title: 'A to Z of Music Production',
+      shortTitle: 'A to Z of Music Production',
+      mentor: 'Luca Petracca',
+      image: '/assets/luca/luca-production-session.jpg?v=luca-blu05000-3',
+      imageAlt: 'Luca Petracca in a music production studio',
+      intro: 'Master the end-to-end process of producing professional music for your songs. From recording and arrangement to mixing and mastering, learn the technical and creative steps of modern music production.',
+      stats: ['DAW Training', 'Film Music', 'Orchestration', 'Certification'],
+      learn: ['Recording workflow', 'Arrangement and programming', 'Mixing and mastering basics', 'Production for release-ready songs'],
+      outcomes: ['Build a complete production workflow', 'Understand modern studio tools', 'Finish cleaner, stronger tracks']
+    }
+  };
+
+  function courseCheckoutHref(href) {
+    var data = MOBILE_COURSE_PAGES[href];
+    return data && data.checkout ? data.checkout : COURSE_CHECKOUT_URL;
+  }
+
+  function mountAcademyMobileBundleCard(path) {
+    path = path || canonicalPathname();
+    if (path !== '/academy') return;
+    if (window.matchMedia && !window.matchMedia('(max-width: 1024px)').matches) return;
+
+    var lucaMedia = document.querySelector('#comp-mrg3xrfp');
+    var lucaImageHost = document.querySelector('#comp-mrg3zuhs');
+    if (lucaImageHost && !lucaImageHost.querySelector('.tsc-luca-course-thumb')) {
+      lucaImageHost.innerHTML =
+        '<img class="tsc-luca-course-thumb" src="' +
+        escapeHtml(MOBILE_COURSE_PAGES['/music-production'].image) +
+        '" alt="' +
+        escapeHtml(MOBILE_COURSE_PAGES['/music-production'].imageAlt) +
+        '">';
+    }
+    [lucaMedia, lucaImageHost].forEach(function (node) {
+      if (!node) return;
+      node.removeAttribute('aria-hidden');
+      node.style.setProperty('display', 'block', 'important');
+      node.style.setProperty('visibility', 'visible', 'important');
+      node.style.setProperty('opacity', '1', 'important');
+    });
+    var lucaContainer = document.querySelector('.comp-mpjxxerb1-container');
+    if (lucaContainer && !lucaContainer.querySelector('.tsc-luca-inline-thumb')) {
+      var lucaFigure = document.createElement('figure');
+      lucaFigure.className = 'tsc-luca-inline-thumb';
+      lucaFigure.innerHTML =
+        '<img src="' +
+        escapeHtml(MOBILE_COURSE_PAGES['/music-production'].image) +
+        '" alt="' +
+        escapeHtml(MOBILE_COURSE_PAGES['/music-production'].imageAlt) +
+        '">';
+      var title = lucaContainer.querySelector('#comp-mpjz6jkk');
+      if (title && title.nextSibling) lucaContainer.insertBefore(lucaFigure, title.nextSibling);
+      else lucaContainer.insertBefore(lucaFigure, lucaContainer.firstChild);
+    }
+
+    if (document.querySelector('.tsc-academy-bundle-card')) return;
+    var lucaCard = document.querySelector('#comp-mpjxxeqt');
+    if (!lucaCard || !lucaCard.parentNode) return;
+    var bundle = MOBILE_COURSE_PAGES['/course-bundle'];
+    var card = document.createElement('article');
+    card.className = 'tsc-academy-bundle-card';
+    card.setAttribute('aria-label', bundle.shortTitle);
+    card.innerHTML = [
+      '<div class="tsc-academy-bundle-card__title"><span>04</span><strong>' + escapeHtml(bundle.shortTitle) + '</strong></div>',
+      '<div class="tsc-academy-bundle-card__media tsc-academy-bundle-card__media-single">',
+      '<img src="' + escapeHtml(bundle.image) + '" alt="' + escapeHtml(bundle.imageAlt) + '">',
+      '</div>',
+      '<div class="tsc-academy-bundle-card__mentor"><span>Mentors</span><strong>SANDESH + PRASAD + LUCA</strong></div>',
+      '<div class="tsc-academy-bundle-card__copy"><p>' + escapeHtml(bundle.intro) + '</p></div>',
+      '<div class="tsc-academy-bundle-card__stats">',
+      bundle.stats.map(function (stat) {
+        return '<span>' + escapeHtml(stat) + '</span>';
+      }).join(''),
+      '</div>',
+      '<a class="tsc-academy-bundle-card__cta" href="/course-bundle">Know More</a>'
+    ].join('');
+    lucaCard.insertAdjacentElement('afterend', card);
+  }
 
   var ACADEMY_NAV_ITEMS = [
     { href: '/resources', key: 'resources', label: 'Resources' },
@@ -2011,6 +2152,8 @@
     if (window.__tscCoursesDropdownClickGuard) return;
     window.__tscCoursesDropdownClickGuard = true;
     var targets = {
+      'All Courses Bundle': '/course-bundle',
+      'Course Bundle': '/course-bundle',
       'A to Z of Music Production': '/music-production',
       'A-Z of Music Production': '/music-production',
       'A to Z Course': '/music-production',
@@ -2360,6 +2503,7 @@
         ['Academy', [
           ['/academy', 'Academy Home'],
           ['/academy#courses', 'Courses'],
+          ['/course-bundle', 'All Courses Bundle'],
           ['/music-production', 'A-Z of Music Production'],
           ['/the-heart-of-composition', 'The HeART of Composition'],
           ['/roots-of-hindustani-classical', 'Roots of Hindustani Classical'],
@@ -2407,17 +2551,16 @@
     }
     var mobileConfig = componentOptions(opts);
     var mobileForceCustom = !!(opts && opts.forceCustomHeader) || !!document.querySelector('.report-page');
-    if (usesNativeWixNav(mobileConfig.path) && !mobileForceCustom) {
+    // Mobile-only: componentized header handles both main TSC + Academy navs.
+    var compact = window.matchMedia && window.matchMedia('(max-width: 1024px)').matches;
+    if (usesNativeWixNav(mobileConfig.path) && !mobileForceCustom && !compact) {
       removeInjectedTscHeaders();
-      var compactNative = window.matchMedia && window.matchMedia('(max-width: 1024px)').matches;
-      if (compactNative) clearNativeHeaderLockState();
       ensurePrimaryWixNavVisible();
       ensureWixHeaderScrollAnimation();
       if (isAcademyPath(mobileConfig.path)) hideAcademyMainSiteHeaders();
       return null;
     }
     // Tablet + phone: Wix hamburger is broken 701–1024px — use TSC chrome through 1024.
-    var compact = window.matchMedia && window.matchMedia('(max-width: 1024px)').matches;
     var existing = document.querySelector('.tsc-mobile-site-header');
     if (!compact) {
       if (existing && existing.parentNode) existing.parentNode.removeChild(existing);
@@ -2469,6 +2612,15 @@
       menu.querySelectorAll('nav a').forEach(function (link) {
         link.addEventListener('click', function () {
           menu.removeAttribute('open');
+        });
+      });
+      menu.querySelectorAll('.tsc-mobile-academy-courses > summary').forEach(function (summary) {
+        summary.addEventListener('click', function (event) {
+          var courses = summary.parentElement;
+          if (!courses) return;
+          event.preventDefault();
+          event.stopPropagation();
+          courses.open = !courses.open;
         });
       });
       document.addEventListener('click', function (event) {
@@ -2552,6 +2704,7 @@
           var svg = scrapeFooterSvgMarkup(footer, needle, '');
           if (svg) link.innerHTML = svg;
         });
+        if (config && config.academy) return;
         var logoSvg = scrapeFooterLogoSvgMarkup(footer);
         if (!logoSvg) return;
         Array.prototype.forEach.call(shell.querySelectorAll('.tsc-desktop-footer-brand, .tsc-mobile-footer-brand'), function (brand) {
@@ -2635,13 +2788,13 @@
   }
 
   function mobileFooterLogoMarkup(config, brandName, sourceFooter) {
-    var svgMarkup = scrapeFooterLogoSvgMarkup(sourceFooter);
+    var svgMarkup = config && config.academy ? '' : scrapeFooterLogoSvgMarkup(sourceFooter);
     if (svgMarkup) return '<span class="tsc-mobile-footer-logo tsc-mobile-footer-logo-svg" aria-hidden="true">' + svgMarkup + '</span>';
     return '<img class="tsc-mobile-footer-logo" src="' + footerLogoSrcForConfig(config) + '" alt="' + escapeHtml(brandName) + '" width="180" height="74" decoding="async">';
   }
 
   function mobileHeaderLogoMarkup(config) {
-    return '<img class="tsc-mobile-brand-logo tsc-mobile-brand-logo-unified" src="' + logoSrcForConfig(config) + '" alt="" width="148" height="40" decoding="async">';
+    return '<img class="tsc-mobile-brand-logo tsc-mobile-brand-logo-unified" src="' + logoSrcForConfig(config) + '" alt="" width="166" height="44" decoding="async">';
   }
 
   function buildFooterLinks(group) {
@@ -3047,6 +3200,70 @@
   }
 
   /** Legacy duplicate hub → canonical /academy (local preview + stale caches). */
+  function mobileCourseList(items) {
+    return '<ul>' + (items || []).map(function (item) {
+      return '<li>' + escapeHtml(item) + '</li>';
+    }).join('') + '</ul>';
+  }
+
+  function mountMobileCoursePage(path) {
+    var data = MOBILE_COURSE_PAGES[path || canonicalPathname()];
+    var mobile = !window.matchMedia || window.matchMedia('(max-width: 1024px)').matches;
+    var existing = document.querySelector('.tsc-mobile-course-page');
+    if (!data || !mobile) {
+      document.body.classList.remove('tsc-mobile-course-rendered');
+      if (existing) existing.remove();
+      return;
+    }
+    var main = document.querySelector('main[data-main-content-parent="true"], main, #SITE_PAGES');
+    if (!main) return;
+
+    var html = [
+      '<section class="tsc-mobile-course-page" data-tsc-mobile-course="' + escapeHtml(path) + '">',
+      '<div class="tsc-mobile-course-marquee"><span>Enroll Now</span><span>Enroll Now</span><span>Enroll Now</span><span>Enroll Now</span></div>',
+      '<article class="tsc-mobile-course-hero-card">',
+      '<p class="tsc-mobile-course-kicker">Course ' + escapeHtml(data.number) + '</p>',
+      '<h1>' + escapeHtml(data.title) + '</h1>',
+      '<p class="tsc-mobile-course-mentor">Mentor: <strong>' + escapeHtml(data.mentor) + '</strong></p>',
+      '<figure><img src="' + escapeHtml(data.image) + '" alt="' + escapeHtml(data.imageAlt) + '"></figure>',
+      '<p class="tsc-mobile-course-intro">' + escapeHtml(data.intro) + '</p>',
+      '<div class="tsc-mobile-course-stats">' + data.stats.map(function (stat) {
+        return '<span>' + escapeHtml(stat) + '</span>';
+      }).join('') + '</div>',
+      '<a class="tsc-mobile-course-enroll" href="' + escapeHtml(data.checkout || COURSE_CHECKOUT_URL) + '" target="_blank" rel="noreferrer noopener">Enroll Now</a>',
+      '</article>',
+      '<section class="tsc-mobile-course-section">',
+      '<h2>What You Will Learn</h2>',
+      mobileCourseList(data.learn),
+      '</section>',
+      '<section class="tsc-mobile-course-section tsc-mobile-course-section-dark">',
+      '<h2>Outcomes</h2>',
+      mobileCourseList(data.outcomes),
+      '</section>',
+      '<section class="tsc-mobile-course-section">',
+      '<h2>Explore More Courses</h2>',
+      '<div class="tsc-mobile-course-links">',
+      ACADEMY_COURSE_ITEMS.map(function (item) {
+        return [
+          '<article class="tsc-mobile-course-link-card">',
+          '<a class="tsc-mobile-course-link-title" href="' + escapeHtml(item.href) + '">' + escapeHtml(item.label) + '</a>',
+          '<a class="tsc-mobile-course-link-enroll" href="' + escapeHtml(courseCheckoutHref(item.href)) + '" target="_blank" rel="noreferrer noopener">Enroll Now</a>',
+          '</article>'
+        ].join('');
+      }).join(''),
+      '</div>',
+      '</section>',
+      '</section>'
+    ].join('');
+
+    if (existing) {
+      if (existing.getAttribute('data-tsc-mobile-course') !== path) existing.outerHTML = html;
+    } else {
+      main.insertAdjacentHTML('afterbegin', html);
+    }
+    document.body.classList.add('tsc-mobile-course-rendered');
+  }
+
   function redirectLegacyLearnHub() {
     var path = (location.pathname || '/').replace(/\/+$/, '') || '/';
     if (
@@ -3290,6 +3507,8 @@
       watchWixChoiceState();
     }
     mountSharedChrome();
+    mountMobileCoursePage(path);
+    mountAcademyMobileBundleCard(path);
     linkHomeClosingCtas();
     mountHarshadDigitalPresenceLinks(path);
     mountYugmIplYearFix(path);
@@ -3307,6 +3526,8 @@
     [250, 900, 1800, 3200, 6000, 9000].forEach(function (delay) {
       window.setTimeout(function () {
         mountSharedChrome();
+        mountMobileCoursePage(path);
+        mountAcademyMobileBundleCard(path);
         linkHomeClosingCtas();
         mountHarshadDigitalPresenceLinks(path);
         mountYugmIplYearFix(path);
@@ -3328,7 +3549,7 @@
             mountFilmBottomCtas(path);
           }, 80);
         }
-        var nativeNav = usesNativeWixNav(path);
+        var nativeNav = usesNativeWixNav(path) && !compact;
         var missing = nativeNav
           ? !document.querySelector('.tsc-desktop-footer')
           : compact
@@ -3351,6 +3572,23 @@
     if (path === '/academy' || path === '/learn-with-tsc') {
     }
     wireMobileAssets();
+    if (window.matchMedia && !window.__tscMobileMqBound) {
+      window.__tscMobileMqBound = true;
+      var mobileMq = window.matchMedia('(max-width: 1024px)');
+      var onMq = function () {
+        if (mobileMq.matches) {
+          window.__tscMobileWired = false;
+          wireMobileAssets();
+          mountMobileCoursePage(canonicalPathname());
+          mountAcademyMobileBundleCard(canonicalPathname());
+        } else {
+          mountMobileCoursePage(canonicalPathname());
+          mountAcademyMobileBundleCard(canonicalPathname());
+        }
+      };
+      if (mobileMq.addEventListener) mobileMq.addEventListener('change', onMq);
+      else if (mobileMq.addListener) mobileMq.addListener(onMq);
+    }
     if (path === '/artist-path') {
       mountDesktopFooter({ path: '/artist-path' });
     }

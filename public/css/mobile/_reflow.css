@@ -1,0 +1,111 @@
+/**
+ * Shared mobile reflow of locked desktop look.
+ * DESKTOP LOCK: entire file scoped to max-width 1024px only.
+ * No new typefaces — fluid scale of existing Wix fonts.
+ */
+@media (max-width: 1024px) {
+  html.tsc-boot-mobile,
+  html.tsc-mobile-ready {
+    overflow-x: clip;
+  }
+
+  body {
+    overflow-x: clip;
+    max-width: 100%;
+  }
+
+  main,
+  #SITE_PAGES,
+  #SITE_PAGES_TRANSITION_GROUP,
+  [data-testid="page-bg"],
+  [data-testid="MESH_CONTAINER"] {
+    overflow-x: clip !important;
+    max-width: 100% !important;
+  }
+
+  main section.wixui-section,
+  main [data-testid="section"] {
+    overflow-x: clip !important;
+    max-width: 100% !important;
+  }
+
+  main img,
+  main video,
+  main wow-image,
+  main wix-image,
+  main picture,
+  main .wixui-image img,
+  main [data-testid="imageX"] img {
+    max-width: 100% !important;
+    height: auto;
+  }
+
+  /* Stack typical Wix multi-column meshes */
+  main [data-testid="responsive-container-content"],
+  main .MW5TWV {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  main [data-testid="richTextElement"] .wixui-rich-text__text,
+  main .wixui-rich-text__text {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    font-size: clamp(14px, 3.6vw, 18px);
+    line-height: 1.55;
+  }
+
+  main h1 .wixui-rich-text__text,
+  main [data-testid="richTextElement"] h1 {
+    font-size: clamp(28px, 8vw, 48px) !important;
+    line-height: 1.15 !important;
+  }
+
+  main h2 .wixui-rich-text__text,
+  main [data-testid="richTextElement"] h2 {
+    font-size: clamp(22px, 6vw, 36px) !important;
+    line-height: 1.2 !important;
+  }
+
+  main h3 .wixui-rich-text__text {
+    font-size: clamp(18px, 4.5vw, 28px) !important;
+    line-height: 1.25 !important;
+  }
+
+  /* Buttons / CTAs — full width when narrow */
+  main .wixui-button,
+  main [data-testid="buttonElement"],
+  main a.StylableButton2545352419__root {
+    max-width: 100%;
+  }
+
+  /* Touch targets — mobile chrome */
+  .tsc-mobile-site-header a,
+  .tsc-mobile-site-header button,
+  .tsc-mobile-footer a,
+  .tsc-sticky-cta,
+  .tsc-phone-fab {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Tablet: keep 1–2 col card rows where mesh already rows */
+  @media (min-width: 768px) and (max-width: 1024px) {
+    main [data-testid="MESH_CONTAINER"] {
+      padding-inline: clamp(16px, 3vw, 32px);
+    }
+  }
+
+  @media (max-width: 767px) {
+    main .wixui-button,
+    main [data-testid="buttonElement"] {
+      width: 100% !important;
+      max-width: 100% !important;
+    }
+
+    main [data-testid="MESH_CONTAINER"],
+    main section.wixui-section {
+      padding-inline: clamp(12px, 4vw, 20px);
+    }
+  }
+}

@@ -132,6 +132,7 @@ const academyFaviconRoutes = new Set([
   '/academy',
   '/learn-with-tsc',
   '/the-heart-of-composition',
+  '/course-bundle',
   '/blank-9',
   '/about-9',
   '/roots-of-hindustani-classical',
@@ -342,7 +343,8 @@ for (const file of htmlFiles) {
       console.error(`Clean Thunderbolt route ${routeKey} is missing in ${relativeFile}`);
       process.exit(1);
     }
-    const externalScripts = (html.match(/<script\b[^>]*\bsrc=/gi) || []).length;
+    const externalScripts = Array.from(html.matchAll(/<script\b[^>]*\bsrc=["']([^"']+)/gi))
+      .filter((match) => !match[1].startsWith('/js/')).length;
     const hasReactCallback = /onload="resolveExternalsRegistryModule\('react'\)"[^>]*react@18\.3\.1/i.test(html);
     const hasReactDomCallback = /onload="resolveExternalsRegistryModule\('reactDOM'\)"[^>]*react-dom@18\.3\.1/i.test(html);
     if (externalScripts > 15 || !hasReactCallback || !hasReactDomCallback || /crossorigin=""(?:react|reactDOM)/i.test(html)) {

@@ -7,6 +7,7 @@
   var SECTION = '#comp-mqtnpars';
   var CAROUSEL = '#comp-mqutig8q';
   var HOST_ATTR = 'data-tsc-artists-accordion';
+  var observerStarted = false;
 
   var CARD_SPECS = [
     {
@@ -195,6 +196,22 @@
     bind(host);
   }
 
+  function ensureMounted() {
+    if (!window.matchMedia(MQ).matches) return;
+    if (document.querySelector(SECTION + ' [' + HOST_ATTR + ']')) return;
+    mount();
+  }
+
+  function startObserver() {
+    if (observerStarted || !window.MutationObserver) return;
+    observerStarted = true;
+    var tick;
+    new MutationObserver(function () {
+      window.clearTimeout(tick);
+      tick = window.setTimeout(ensureMounted, 80);
+    }).observe(document.documentElement, { childList: true, subtree: true });
+  }
+
   function unmount() {
     document.querySelectorAll('[' + HOST_ATTR + ']').forEach(function (node) {
       node.remove();
@@ -206,6 +223,7 @@
 
   function init() {
     if (document.body && document.body.getAttribute('data-page') !== 'artists') return;
+    startObserver();
     mount();
   }
 
@@ -217,7 +235,7 @@
     init();
   }
   window.addEventListener('load', init);
-  [400, 1200, 3000].forEach(function (ms) {
+  [400, 1200, 3000, 5000, 8000].forEach(function (ms) {
     window.setTimeout(init, ms);
   });
   if (window.matchMedia) {

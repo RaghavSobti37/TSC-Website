@@ -1,0 +1,21 @@
+/**
+ * Mobile owner for /from-bhajan-to-clubbing
+ * DESKTOP LOCK: do not add rules outside @media (max-width: 1024px).
+ * Shared reflow + family partial; page-specific overrides below.
+ */
+@import url("./_reflow.css");
+@import url("./_family-resources.css");
+
+@media (max-width: 1024px) {
+  body[data-page="from-bhajan-to-clubbing"] main {
+    overflow-x: clip !important;
+  }
+}
+
+@media (max-width: 767px) {
+  body[data-page="from-bhajan-to-clubbing"] main .wixui-button,
+  body[data-page="from-bhajan-to-clubbing"] main [data-testid="buttonElement"] {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}

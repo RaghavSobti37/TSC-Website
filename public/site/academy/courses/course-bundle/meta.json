@@ -1,0 +1,12 @@
+{
+  "title": "All Courses Bundle",
+  "canonicalRoute": "/course-bundle",
+  "pageFile": "pages/course-bundle.html",
+  "css": "css/pages/course-bundle.css",
+  "js": "",
+  "section": "academy",
+  "aliases": [
+    "/academy/course-bundle",
+    "/courses/course-bundle"
+  ]
+}

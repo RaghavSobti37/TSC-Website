@@ -26,6 +26,8 @@ Full corpus for LLMs: [llms-full.txt](https://wix-site-clone-psi.vercel.app/llms
 - [Roots of Hindustani Classical](https://wix-site-clone-psi.vercel.app/roots-of-hindustani-classical): Mentored by Pandit Prasad Khaparde — raag, sur, voice culture, riyaaz
 - [The HeART of Composition](https://wix-site-clone-psi.vercel.app/the-heart-of-composition): Mentored by Sandesh Shandilya — emotional architecture of composition and songwriting
 
+- [All Courses Bundle](https://wix-site-clone-psi.vercel.app/course-bundle): All three TSC Academy courses bundled from ₹12,000 to ₹9,999
+
 ## Artists
 
 - [Harshad Duhita](https://wix-site-clone-psi.vercel.app/harshad-duhita): TSC artist profile

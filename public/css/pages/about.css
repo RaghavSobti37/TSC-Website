@@ -1,3 +1,8 @@
+/* ARCHIVE-ONLY — not a live CSS owner.
+ * Desktop look: Wix styles inline in public/pages/<slug>.html
+ * Mobile owner: public/css/mobile/<slug>.css (media max-width: 1024px)
+ * Do not re-link this file for production ownership.
+ */
 /* style 1: data-tsc-standalone-runtime */
 :root, body { --wix-ads-height: 0px !important; }
 #WIX_ADS, a[href*="wix.com/studio"] { display: none !important; visibility: hidden !important; height: 0 !important; }

@@ -3,7 +3,7 @@
   "html": "/pages/resources.html",
   "css": "/css/pages/resources.css",
   "animations": "/js/pages/resources.animations.js",
-  "generatedAt": "2026-08-12T07:41:43.511Z",
+  "generatedAt": "2026-08-13T08:20:10.206Z",
   "totals": {
     "assets": 151,
     "missing": 0
@@ -1149,7 +1149,7 @@
         "local": {
           "exists": true,
           "path": "/css/pages/resources.css",
-          "bytes": 882084
+          "bytes": 882317
         }
       }
     ],

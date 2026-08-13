@@ -4,7 +4,39 @@ const https = require('https');
 const path = require('path');
 
 const publicDir = path.resolve(__dirname, '..', 'public');
+const projectDir = path.resolve(__dirname, '..');
 const port = Number(process.argv[2] || 3100);
+const apiRoutes = new Map([
+  ['/api/book-call', '../api/book-call.js'],
+  ['/api/query', '../api/query.js'],
+  ['/api/artist-path', '../api/artist-path.js'],
+  ['/api/leads', '../api/leads.js'],
+  ['/api/newsletter', '../api/newsletter.js'],
+  ['/api/reviews', '../api/reviews.js'],
+  ['/api/reviews02', '../api/reviews02.js'],
+]);
+
+function loadLocalEnv() {
+  for (const file of ['.env.local', '.env']) {
+    const envPath = path.join(projectDir, file);
+    if (!fs.existsSync(envPath)) continue;
+    const lines = fs.readFileSync(envPath, 'utf8').split(/\r?\n/);
+    for (const line of lines) {
+      const trimmed = line.trim();
+      if (!trimmed || trimmed.startsWith('#')) continue;
+      const eq = trimmed.indexOf('=');
+      if (eq < 1) continue;
+      const key = trimmed.slice(0, eq).trim();
+      let value = trimmed.slice(eq + 1).trim();
+      if ((value.startsWith('"') && value.endsWith('"')) || (value.startsWith("'") && value.endsWith("'"))) {
+        value = value.slice(1, -1);
+      }
+      if (process.env[key] === undefined) process.env[key] = value;
+    }
+  }
+}
+
+loadLocalEnv();
 const pageRoutes = new Map([
   ['/', '/pages/home.html'],
   ['/about', '/pages/about.html'],
@@ -116,6 +148,20 @@ function sendFile(absolutePath, request, response) {
   fs.createReadStream(absolutePath).pipe(response);
 }
 
+function handleApi(request, response, pathname) {
+  const route = apiRoutes.get(pathname);
+  if (!route) return false;
+  try {
+    const handler = require(path.resolve(__dirname, route));
+    handler(request, response);
+  } catch (error) {
+    console.error('[serve-mirror api]', pathname, error.message || error);
+    response.writeHead(500, { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'no-store' });
+    response.end(JSON.stringify({ success: false, error: 'Local API handler failed' }));
+  }
+  return true;
+}
+
 function proxyWixMedia(proxyUrl, fallbackPath, request, response, hops) {
   if ((hops || 0) > 4) {
     if (fallbackPath) return sendFile(path.resolve(publicDir, `.${fallbackPath}`), request, response);
@@ -149,6 +195,7 @@ function proxyWixMedia(proxyUrl, fallbackPath, request, response, hops) {
 
 http.createServer((request, response) => {
   const url = new URL(request.url, `http://${request.headers.host || `127.0.0.1:${port}`}`);
+  if (handleApi(request, response, url.pathname)) return;
   const resolved = requestPath(url);
   if (resolved.json !== undefined) {
     response.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'no-store' });

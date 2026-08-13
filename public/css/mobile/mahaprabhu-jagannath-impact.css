@@ -1,0 +1,21 @@
+/**
+ * Mobile owner for /mahaprabhu-jagannath-impact
+ * DESKTOP LOCK: do not add rules outside @media (max-width: 1024px).
+ * Shared reflow + family partial; page-specific overrides below.
+ */
+@import url("./_reflow.css");
+@import url("./_family-impact.css");
+
+@media (max-width: 1024px) {
+  body[data-page="mahaprabhu-jagannath-impact"] main {
+    overflow-x: clip !important;
+  }
+}
+
+@media (max-width: 767px) {
+  body[data-page="mahaprabhu-jagannath-impact"] main .wixui-button,
+  body[data-page="mahaprabhu-jagannath-impact"] main [data-testid="buttonElement"] {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}

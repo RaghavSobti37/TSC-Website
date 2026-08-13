@@ -63,6 +63,9 @@
 
 .tsc-field {
   min-width: 0;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -119,10 +122,14 @@
 .tsc-picker-shell {
   position: relative;
   display: block;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .tsc-picker-shell input,
 .tsc-picker-shell select {
+  min-width: 0 !important;
   min-height: 56px !important;
   padding-left: 52px !important;
   border-color: rgba(0, 83, 90, 0.55);
@@ -170,33 +177,6 @@
   top: 10px;
 }
 
-.tsc-date-picker::after {
-  content: "Select date";
-  position: absolute;
-  left: 52px;
-  top: 50%;
-  color: rgba(5, 63, 64, 0.72);
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 1;
-  transform: translateY(-50%);
-  pointer-events: none;
-}
-
-.tsc-date-picker:has(input:focus)::after,
-.tsc-date-picker:has(input:valid)::after {
-  display: none !important;
-}
-
-/* Hide native browser date format text until focused or valid to prevent overlapping */
-.tsc-date-picker input[type="date"] {
-  color: transparent !important;
-}
-.tsc-date-picker input[type="date"]:focus,
-.tsc-date-picker input[type="date"]:valid {
-  color: #053f40 !important;
-}
-
 .tsc-time-picker .tsc-picker-icon {
   border: 1.5px solid #00535a;
   border-radius: 50%;
@@ -221,10 +201,10 @@
 }
 
 .tsc-date-picker input::-webkit-calendar-picker-indicator {
-  width: 24px;
-  height: 24px;
+  width: 32px;
+  height: 32px;
   margin: 0;
-  opacity: 0;
+  opacity: 1;
   cursor: pointer;
 }
 
@@ -478,8 +458,8 @@ body:has(.tsc-local-form) main [data-motion-part*="BG_MEDIA"] {
 
 @media (max-width: 420px) {
   .tsc-local-form {
-    width: calc(100vw - 8px);
-    max-width: calc(100vw - 8px);
+    width: calc(100vw - 32px);
+    max-width: calc(100vw - 32px);
     padding: 20px 14px;
   }
 
@@ -537,8 +517,8 @@ body:has(.tsc-local-form) main [data-motion-part*="BG_MEDIA"] {
   }
 
   .tsc-local-form {
-    width: calc(100vw - 8px) !important;
-    max-width: calc(100vw - 8px) !important;
+    width: min(820px, calc(100vw - 36px)) !important;
+    max-width: calc(100vw - 36px) !important;
     margin-left: auto;
     margin-right: auto;
     box-sizing: border-box;
@@ -548,8 +528,8 @@ body:has(.tsc-local-form) main [data-motion-part*="BG_MEDIA"] {
   #comp-mrxe1crw,
   #comp-mrxmc0z9,
   #comp-mrxv5lfu2 {
-    width: calc(100vw - 8px) !important;
-    max-width: calc(100vw - 8px) !important;
+    width: min(820px, calc(100vw - 36px)) !important;
+    max-width: calc(100vw - 36px) !important;
     min-width: 0 !important;
     height: auto !important;
     min-height: 0 !important;
@@ -666,10 +646,16 @@ body:has(.tsc-local-form) main [data-motion-part*="BG_MEDIA"] {
 
   .tsc-form-grid {
     grid-template-columns: 1fr;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
   .tsc-phone-row {
     grid-template-columns: 1fr;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
   .tsc-choices {
@@ -691,6 +677,8 @@ body:has(.tsc-local-form) main [data-motion-part*="BG_MEDIA"] {
   .tsc-field input,
   .tsc-field select,
   .tsc-field textarea {
+    width: 100%;
+    min-width: 0;
     max-width: 100%;
     box-sizing: border-box;
     font-size: 16px;

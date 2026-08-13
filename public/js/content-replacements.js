@@ -313,6 +313,7 @@
     '/blank-9': true,
     '/about-9': true,
     '/music-production': true,
+    '/course-bundle': true,
     '/roots-of-hindustani-classical': true,
     '/blank-9-1': true,
     '/about-9-1': true,
@@ -578,8 +579,9 @@
 
   function repairAcademyCourseDropdownLinks() {
     var path = normalizedPath();
-    if (path !== '/academy' && path !== '/learn-with-tsc' && path !== '/music-production' && path !== '/the-heart-of-composition' && path !== '/roots-of-hindustani-classical') return;
+    if (path !== '/academy' && path !== '/learn-with-tsc' && path !== '/course-bundle' && path !== '/music-production' && path !== '/the-heart-of-composition' && path !== '/roots-of-hindustani-classical') return;
     var courses = [
+      { href: '/course-bundle', label: 'All Courses Bundle', match: /bundle|all courses/i },
       { href: '/music-production', label: 'A-Z of Music Production', match: /a[\s-]*z|music production/i },
       { href: '/the-heart-of-composition', label: 'The HeART of Composition', match: /heart|composition/i },
       { href: '/roots-of-hindustani-classical', label: 'Roots of Hindustani Classical', match: /roots|hindustani|classical/i }
@@ -654,6 +656,8 @@
   /* Card thumb = BLU05000 (converted ARW preview). Cache-bust when RAWs refresh. */
   var LUCA_COURSE_CARD_IMAGE = '/assets/luca/luca-production-session.jpg?v=luca-blu05000-3';
   var LUCA_COURSE_CARD_ALT = 'Luca Petracca in a music production studio';
+  var BUNDLE_COURSE_CARD_IMAGE = '/assets/course-bundle/all-mentors.jpg?v=bundle-mentors-1';
+  var BUNDLE_COURSE_CARD_ALT = 'Sandesh Shandilya, Prasad Khaparde, and Luca Petracca';
   var LUCA_COURSE_IMAGES = {
     hero: '/assets/luca/luca-hero.jpg?v=luca-blu04463-2',
     portrait: '/assets/luca/luca-petracca-studio-portrait.jpg?v=luca-blu04151-3',
@@ -662,6 +666,20 @@
     laptop: '/assets/luca/luca-production-session.jpg?v=luca-blu05000-3',
     teaching: '/assets/luca/luca-petracca-studio-portrait.jpg?v=luca-blu04151-3'
   };
+  var ACADEMY_BUNDLE_IMAGES = [
+    {
+      src: '/assets/mirror/static.wixstatic.com/media/19f989_731e678e8fce4048864da9ec987ec897~mv2.jpg/v1/fill/w_454,h_182,fp_0.47_0.40,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/sandesh.jpg',
+      alt: 'Sandesh Shandilya composition course'
+    },
+    {
+      src: '/assets/mirror/static.wixstatic.com/media/19f989_07c6e896e4a54fcc99b08a98ceccaff4~mv2.jpg/v1/fill/w_640,h_640,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/prasad-hero.jpg',
+      alt: 'Prasad Khaparde Hindustani classical course'
+    },
+    {
+      src: LUCA_COURSE_CARD_IMAGE,
+      alt: LUCA_COURSE_CARD_ALT
+    }
+  ];
 
   /* Surgical Luca card image only — allowed on desktop; does not rewrite other Academy cards. */
   function ensureLucaCourseCardImage() {
@@ -834,7 +852,46 @@
       '#comp-mrg3zuhs',
       '<img class="tsc-luca-course-thumb" src="' + LUCA_COURSE_CARD_IMAGE + '" alt="' + LUCA_COURSE_CARD_ALT + '">'
     );
+    ['#comp-mrg3xrfp', '#comp-mrg3zuhs'].forEach(function (selector) {
+      var node = document.querySelector(selector);
+      if (!node) return;
+      node.removeAttribute('aria-hidden');
+      node.style.setProperty('display', 'block', 'important');
+      node.style.setProperty('visibility', 'visible', 'important');
+      node.style.setProperty('opacity', '1', 'important');
+    });
     ensureLucaCourseCardImage();
+    ensureAcademyBundleCourseCard();
+  }
+
+  function ensureAcademyBundleCourseCard() {
+    if (normalizedPath() !== '/academy') return;
+    if (!window.matchMedia || !window.matchMedia('(max-width: 1024px)').matches) return;
+    if (document.querySelector('.tsc-academy-bundle-card')) return;
+    var lucaCard = document.querySelector('#comp-mpjxxeqt') || document.querySelector('.tsc-luca-course-card');
+    if (!lucaCard || !lucaCard.parentNode) return;
+
+    var card = document.createElement('article');
+    card.className = 'tsc-academy-bundle-card';
+    card.setAttribute('aria-label', 'All Courses Bundle');
+    card.innerHTML = [
+      '<div class="tsc-academy-bundle-card__title"><span>04</span><strong>All Courses Bundle</strong></div>',
+      '<div class="tsc-academy-bundle-card__media tsc-academy-bundle-card__media-single">',
+      '<img src="' + ui.escapeHtml(BUNDLE_COURSE_CARD_IMAGE) + '" alt="' + ui.escapeHtml(BUNDLE_COURSE_CARD_ALT) + '">',
+      '</div>',
+      '<div class="tsc-academy-bundle-card__mentor"><span>Mentors</span><strong>SANDESH + PRASAD + LUCA</strong></div>',
+      '<div class="tsc-academy-bundle-card__copy">',
+      '<p>Composition, Hindustani classical foundations, and music production brought together as one complete artist learning path.</p>',
+      '</div>',
+      '<div class="tsc-academy-bundle-card__stats">',
+      '<span>3 Courses</span>',
+      '<span>₹12,000 Value</span>',
+      '<span>Now ₹9,999</span>',
+      '<span>One Enrollment</span>',
+      '</div>',
+      '<a class="tsc-academy-bundle-card__cta" href="/course-bundle">Know More</a>'
+    ].join('');
+    lucaCard.insertAdjacentElement('afterend', card);
   }
 
   var academyDesktopCourseCards = [
@@ -921,6 +978,7 @@
   function repairAcademyCourseCards() {
     var path = normalizedPath();
     if (path !== '/academy' && path !== '/learn-with-tsc') return;
+    var compact = window.matchMedia && window.matchMedia('(max-width: 1024px)').matches;
     ensureLucaCourseCardImage();
     academyDesktopCourseCards.forEach(function (card) {
       card.fields.forEach(function (field) {
@@ -945,6 +1003,7 @@
         mediaLink.setAttribute('target', '_self');
       }
       (card.hideSelectors || []).forEach(function (selector) {
+        if (compact) return;
         var node = document.querySelector(selector);
         if (!node) return;
         node.style.setProperty('display', 'none', 'important');
@@ -1234,6 +1293,7 @@
     var navLinks = academyMode
       ? [
         ['/resources', 'Resources'],
+        ['/course-bundle', 'All Courses Bundle'],
         ['/music-production', 'A-Z of Music Production'],
         ['/the-heart-of-composition', 'The HeART of Composition'],
         ['/roots-of-hindustani-classical', 'Roots of Hindustani Classical'],
@@ -2275,6 +2335,7 @@
         repairAcademyCourseDropdownLinks();
         ensureLucaCourseCardImage();
         ensureLucaCourseCardLinks();
+        ensureAcademyBundleCourseCard();
         polishMobileMusicProductionPage();
       }, 80);
     });

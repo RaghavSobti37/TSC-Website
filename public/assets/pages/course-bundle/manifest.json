@@ -1,0 +1,35 @@
+{
+  "page": "course-bundle",
+  "html": "/pages/course-bundle.html",
+  "css": "/css/pages/course-bundle.css",
+  "animations": "/js/pages/course-bundle.animations.js",
+  "generatedAt": "2026-08-13T08:20:10.023Z",
+  "totals": {
+    "assets": 2,
+    "missing": 0
+  },
+  "assetsByType": {
+    "images": [
+      {
+        "type": "images",
+        "url": "/assets/mirror/static.wixstatic.com/media/19f989_aa253abda5504ab6bd9aec467737fd29~mv2.png/v1/fill/w_1200,h_800,al_c,q_80,enc_avif,quality_auto/19f989_aa253abda5504ab6bd9aec467737fd29~mv2.png",
+        "local": {
+          "exists": true,
+          "path": "/assets/mirror/static.wixstatic.com/original-media/19f989_aa253abda5504ab6bd9aec467737fd29~mv2.png",
+          "bytes": 297470
+        }
+      }
+    ],
+    "styles": [
+      {
+        "type": "styles",
+        "url": "/css/pages/course-bundle.css",
+        "local": {
+          "exists": true,
+          "path": "/css/pages/course-bundle.css",
+          "bytes": 6677
+        }
+      }
+    ]
+  }
+}

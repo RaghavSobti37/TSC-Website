@@ -19,6 +19,7 @@ const subpages = [
   { title: 'Roots of Hindustani Classical', route: '/roots-of-hindustani-classical', aliases: ['/blank-9-1', '/about-9-1', '/academy/roots-of-hindustani-classical'] },
   { title: 'The HeART of Composition', route: '/the-heart-of-composition', aliases: ['/blank-9', '/about-9', '/academy/the-heart-of-composition'] },
   { title: 'A-Z of Music Production', route: '/music-production', aliases: ['/academy/music-production', '/courses/music-production'] },
+  { title: 'All Courses Bundle', route: '/course-bundle', aliases: ['/academy/course-bundle', '/courses/course-bundle'] },
   { title: 'How Do I Start Making Music If I Have No Experience?', route: '/start-making-music', aliases: ['/blog-1', '/blank-13', '/resources/blog-1', '/resources/start-making-music'] },
   { title: 'YUGM', route: '/yugm', aliases: ['/blank-10-1', '/work0-1', '/artists/yugm'] },
   { title: 'Mahaprbhu', route: '/mahaprbhu', aliases: ['/blank-12-1-1', '/work2-1-1', '/films/mahaprbhu'] },

@@ -2,6 +2,14 @@
  * DESKTOP DESIGN LOCK — PERMANENT. Desktop (>=1025px) of the 9 primary pages is locked to commit faf9dea.
  * Rules in this file must NOT affect viewports >= 1025px on those pages. Mobile-only changes belong inside
  * @media (max-width: 1024px). Never change desktop unless the site owner explicitly asks.
+ *
+ * WHAT REMAINS HERE (Slice B):
+ *   - Always-on chrome: scrollbars, Wix ads kill, overflow-x, footer margin, films promo hides
+ *   - Desktop lock patches: @media (min-width: 1025px) / (min-width: 1001px) footer, nav, about/work/artists
+ *   - Shared mobile chrome: header/footer shells, .tsc-mobile-* course/work shells, form chrome
+ *   - Page-specific #comp-* that apply on desktop (outside max-1024) — intentional lock patches
+ *
+ * Page-specific #comp-* inside max-1024 / phone bands → public/css/mobile/_family-*.css
  */
 /*
  * TSC responsive system
@@ -520,19 +528,6 @@ body[data-page="academy"] #comp-mpjxmot0,
 body[data-page="academy"] #comp-mpjxxere2,
 body[data-page="learn-with-tsc"] #comp-mpjxxere2 {
   transition: mix-blend-mode 0.3s ease-in-out, opacity 0.3s ease-in-out !important;
-}
-
-/* Mobile Luca thumb (injected into #comp-mrg3zuhs) — same blue→colour hover. */
-@media (hover: hover) and (pointer: fine) and (max-width: 1024px) {
-  body[data-page="academy"] #comp-mpjxxeqt:hover .tsc-luca-course-thumb,
-  body[data-page="academy"] .tsc-luca-course-card:hover .tsc-luca-course-thumb {
-    filter: none !important;
-  }
-  body[data-page="academy"] #comp-mpjxxeqt .tsc-luca-course-thumb,
-  body[data-page="academy"] .tsc-luca-course-card .tsc-luca-course-thumb {
-    filter: grayscale(0.15) sepia(0.55) saturate(2.4) hue-rotate(155deg) brightness(0.92);
-    transition: filter 0.3s ease-in-out;
-  }
 }
 
 body[data-page="work"] .tsc-work-report-anchor {
@@ -1294,26 +1289,6 @@ body[data-page="harshad-duhita"] .tsc-hd-social-card svg {
   flex: 0 0 auto;
   height: 44px;
   width: 44px;
-}
-
-@media (max-width: 1024px) {
-  body[data-page="harshad-duhita"] #comp-mq84m6ve,
-  body[data-page="harshad-duhita"] #comp-mq84m6ve .comp-mq84m6ve-container {
-    min-height: 1040px !important;
-  }
-
-  body[data-page="harshad-duhita"] .tsc-hd-social-extra-grid {
-    grid-template-columns: 1fr;
-    left: 24px;
-    right: 24px;
-    top: 712px;
-  }
-
-  body[data-page="harshad-duhita"] .tsc-hd-social-card {
-    font-size: 28px;
-    height: 96px;
-    padding: 0 28px;
-  }
 }
 
 /* Who This Is For CTAs — match Discover Artist Path Alan Sans (desktop tokens not loaded) */
@@ -2221,9 +2196,21 @@ body:has(#comp-mr69hwoy) :is(#comp-mr69hwvf5, #comp-mr69hwvh) {
     height: 100% !important;
   }
 
+  body[data-page="about"] #comp-mr3si7jh {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    min-height: 0 !important;
+    max-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    pointer-events: none !important;
+  }
+
   body[data-page="about"] #comp-mr3si7hw {
-    height: 1007px !important;
-    min-height: 1007px !important;
+    height: 807px !important;
+    min-height: 807px !important;
   }
 
   body[data-page="about"] #comp-mr3smd70 {
@@ -2232,7 +2219,6 @@ body:has(#comp-mr69hwoy) :is(#comp-mr69hwvf5, #comp-mr69hwvh) {
   }
 
 }
-
 
 body.tsc-has-desktop-footer .tsc-legacy-footer,
 body.tsc-has-desktop-footer footer.tsc-legacy-footer-host,
@@ -2250,8 +2236,6 @@ body.tsc-has-mobile-footer .tsc-legacy-footer-host:not(:has(.tsc-mobile-footer))
   margin: 0 !important;
   padding: 0 !important;
 }
-
-
 
 @media (min-width: 1025px) and (max-width: 1500px) {
   .tsc-desktop-footer {
@@ -2293,8 +2277,6 @@ body.tsc-has-mobile-footer .tsc-legacy-footer-host:not(:has(.tsc-mobile-footer))
   }
 }
 
-
-
 @media (max-width: 1024px) {
   body > .tsc-mobile-site-header {
     margin-left: calc(50% - 50vw) !important;
@@ -2309,134 +2291,6 @@ body.tsc-has-mobile-footer .tsc-legacy-footer-host:not(:has(.tsc-mobile-footer))
 
   body {
     overflow-x: hidden;
-  }
-
-  /*
-   * About hero — MOBILE ONLY (max-width: 1024px).
-   * Same elements as desktop (shell → wordmark → tagline) on portrait stage.
-   * Banner media stays full-bleed cover so ornate pattern + cream brushstroke remain.
-   */
-  body[data-page="about"] #comp-mp2vlkbh2,
-  body[data-page="about"] #comp-mp2vlkbh2 .comp-mp2vlkbh2-overflow-wrapper {
-    height: clamp(420px, calc(100svh - 72px), 620px) !important;
-    min-height: clamp(420px, calc(100svh - 72px), 620px) !important;
-    max-height: none !important;
-    overflow: hidden !important;
-  }
-
-  body[data-page="about"] #comp-mp2vlkbh2 .comp-mp2vlkbh2-container {
-    align-items: center !important;
-    box-sizing: border-box !important;
-    display: flex !important;
-    flex-direction: column !important;
-    gap: clamp(12px, 2.6vh, 20px) !important;
-    height: 100% !important;
-    justify-content: center !important;
-    padding: clamp(40px, 7vh, 64px) 24px clamp(52px, 9vh, 72px) !important;
-  }
-
-  body[data-page="about"] #comp-mp2vlkbh2 #bgLayers_comp-mp2vlkbh2,
-  body[data-page="about"] #comp-mp2vlkbh2 #bgMedia_comp-mp2vlkbh2 {
-    inset: 0 !important;
-    width: 100% !important;
-    height: 100% !important;
-    overflow: hidden !important;
-  }
-
-  body[data-page="about"] #comp-mp2vlkbh2 wix-media-canvas,
-  body[data-page="about"] #comp-mp2vlkbh2 wow-image,
-  body[data-page="about"] #comp-mp2vlkbh2 #img_comp-mp2vlkbh2,
-  body[data-page="about"] #comp-mp2vlkbh2 #img_comp-mp2vlkbh2 img,
-  body[data-page="about"] #comp-mp2vlkbh2 canvas.webglcanvas {
-    position: absolute !important;
-    inset: 0 !important;
-    left: 0 !important;
-    top: 0 !important;
-    right: 0 !important;
-    bottom: 0 !important;
-    width: 100% !important;
-    max-width: none !important;
-    height: 100% !important;
-    max-height: none !important;
-    transform: none !important;
-    object-fit: cover !important;
-    object-position: center bottom !important;
-    opacity: 1 !important;
-    pointer-events: none !important;
-    z-index: 0 !important;
-  }
-
-  body[data-page="about"] #comp-mp2vlkbh2 #comp-mr1ttkgk,
-  body[data-page="about"] #comp-mp2vlkbh2 #comp-mr1vbgc2,
-  body[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tvuqc,
-  body[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tv44l {
-    align-self: center !important;
-    display: block !important;
-    height: auto !important;
-    left: auto !important;
-    margin: 0 auto !important;
-    max-width: calc(100vw - 44px) !important;
-    position: relative !important;
-    right: auto !important;
-    top: auto !important;
-    transform: none !important;
-    z-index: 2 !important;
-  }
-
-  body[data-page="about"] #comp-mp2vlkbh2 #comp-mr1ttkgk {
-    height: clamp(80px, 22vw, 104px) !important;
-    width: clamp(80px, 22vw, 104px) !important;
-    min-width: clamp(80px, 22vw, 104px) !important;
-    min-height: clamp(80px, 22vw, 104px) !important;
-    max-width: clamp(80px, 22vw, 104px) !important;
-    max-height: clamp(80px, 22vw, 104px) !important;
-  }
-
-  body[data-page="about"] #comp-mp2vlkbh2 #comp-mr1ttkgk svg {
-    height: 100% !important;
-    max-height: 100% !important;
-    max-width: 100% !important;
-    width: 100% !important;
-  }
-
-  body[data-page="about"] #comp-mp2vlkbh2 #comp-mr1ttkgk .tsc-about-shankha {
-    display: block !important;
-    height: 100% !important;
-    max-height: 100% !important;
-    max-width: 100% !important;
-    object-fit: contain !important;
-    width: 100% !important;
-  }
-
-  body[data-page="about"] #comp-mp2vlkbh2 #comp-mr1ttkgk svg path,
-  body[data-page="about"] #comp-mp2vlkbh2 #comp-mr1ttkgk svg [data-color="1"] {
-    fill: #ffecd1 !important;
-  }
-
-  /* ponytail: keep layout sizing only — do not kill Wix motion with animation:none */
-
-  body[data-page="about"] #comp-mp2vlkbh2 #comp-mr1vbgc2 {
-    width: min(86vw, 300px) !important;
-  }
-
-  body[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tvuqc,
-  body[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tvuqc svg {
-    aspect-ratio: 867.52 / 415.6 !important;
-    height: auto !important;
-    max-width: 100% !important;
-    width: 100% !important;
-  }
-
-  body[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tv44l,
-  body[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tv44l .wixui-rich-text__text {
-    max-width: min(90vw, 320px) !important;
-    text-align: center !important;
-    white-space: normal !important;
-  }
-
-  body[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tv44l .wixui-rich-text__text {
-    font-size: clamp(14px, 3.8vw, 17px) !important;
-    line-height: 1.3 !important;
   }
 
   /* scroll-behavior:auto under 900px — load-bearing: avoid scroll-jank with Wix sticky/animations on mobile */
@@ -2462,48 +2316,6 @@ body.tsc-has-mobile-footer .tsc-legacy-footer-host:not(:has(.tsc-mobile-footer))
     margin-right: auto;
     width: calc(100vw - 8px);
     max-width: calc(100vw - 8px);
-  }
-
-  /* Form pages: widen Wix widgets + stack TAGS (course) options */
-  #comp-mrxe1crw,
-  #comp-mrxmc0z9,
-  #comp-mrxv5lfu2 {
-    width: calc(100vw - 8px) !important;
-    max-width: calc(100vw - 8px) !important;
-    min-width: 0 !important;
-    height: auto !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    justify-self: center !important;
-  }
-
-  #comp-mrxjb3tn,
-  #comp-mrxmc0za1,
-  #comp-mrxv5lfw {
-    width: calc(100vw - 8px) !important;
-    max-width: calc(100vw - 8px) !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    justify-self: center !important;
-  }
-
-  #comp-mrxjb3tn h1,
-  #comp-mrxmc0za1 h1,
-  #comp-mrxv5lfw h1,
-  #comp-mrxjb3tn .font_0,
-  #comp-mrxmc0za1 .font_0,
-  #comp-mrxv5lfw .font_0,
-  #comp-mrxjb3tn h1.font_0.wixui-rich-text__text,
-  #comp-mrxmc0za1 h1.font_0.wixui-rich-text__text,
-  #comp-mrxv5lfw h1.font_0.wixui-rich-text__text,
-  #comp-mrxjb3tn :is(h1, h2, .font_0, .wixui-rich-text__text),
-  #comp-mrxmc0za1 :is(h1, h2, .font_0, .wixui-rich-text__text),
-  #comp-mrxv5lfw :is(h1, h2, .font_0, .wixui-rich-text__text) {
-    font-size: clamp(48px, 13vw, 64px) !important;
-    line-height: 1.05 !important;
-    font-weight: 800 !important;
-    text-align: center !important;
-    white-space: normal !important;
   }
 
   .PODJy5,
@@ -2700,12 +2512,17 @@ body.tsc-has-mobile-footer .tsc-legacy-footer-host:not(:has(.tsc-mobile-footer))
     box-sizing: border-box;
     color: var(--tsc-cream);
     display: flex;
-    gap: 12px;
+    gap: 16px;
     justify-content: space-between;
-    min-height: 56px;
-    height: 56px;
-    padding: 0 14px;
+    min-height: var(--tsc-nav-bar-h, 64px);
+    height: var(--tsc-nav-bar-h, 64px);
+    max-height: var(--tsc-nav-bar-h, 64px);
+    width: 100vw;
+    max-width: 100vw;
+    padding: 0 18px;
     position: sticky;
+    left: 0;
+    right: 0;
     top: 0;
     z-index: 800;
   }
@@ -2725,13 +2542,13 @@ body.tsc-has-mobile-footer .tsc-legacy-footer-host:not(:has(.tsc-mobile-footer))
     color: inherit;
     display: flex;
     flex: 0 0 auto;
-    height: 40px;
+    height: var(--tsc-nav-logo-h, 44px);
     justify-content: flex-start;
     margin-right: 0;
     padding: 0;
     text-decoration: none;
-    width: 148px;
-    max-width: min(58vw, 180px);
+    width: var(--tsc-nav-logo-w, 166px);
+    max-width: min(62vw, 190px);
   }
 
   .tsc-mobile-brand-logo {
@@ -2830,10 +2647,10 @@ body.tsc-has-mobile-footer .tsc-legacy-footer-host:not(:has(.tsc-mobile-footer))
     overflow-y: auto;
     padding: 10px;
     position: fixed;
-    left: 14px;
-    right: auto;
-    top: 64px;
-    width: min(280px, calc(100vw - 28px));
+    left: auto;
+    right: 18px;
+    top: calc(var(--tsc-nav-bar-h, 64px) + 8px);
+    width: min(280px, calc(100vw - 36px));
     z-index: 950;
   }
 
@@ -2928,55 +2745,6 @@ body.tsc-has-mobile-footer .tsc-legacy-footer-host:not(:has(.tsc-mobile-footer))
     pointer-events: none;
   }
 
-  body[data-page="about"] #comp-mr1ttkgk,
-  body[data-page="resources"] #comp-mrxbyc0t,
-  body[data-page="academy"] #comp-mqwhzev1,
-  body[data-page="mba"] #comp-mrexxzfm,
-  body[data-page="harshad-duhita"] #comp-mqfgozm3,
-  body[data-page="yugm"] #comp-mqhqa6zv {
-    max-width: calc(100vw - 40px) !important;
-    left: auto !important;
-    right: auto !important;
-    transform: none !important;
-  }
-
-  body[data-page="artists"] #comp-mqtox1kf,
-  body[data-page="artists"] #comp-mqtnjiix,
-  body[data-page="artists"] #comp-mqtnkgu3 {
-    max-width: calc(100vw - 40px) !important;
-    left: auto !important;
-    right: auto !important;
-    transform: none !important;
-  }
-
-  body[data-page="artist-path"] .wixui-text-marquee,
-  body[data-page="artist-path"] .wixui-text-marquee [data-testid="marquee-unit"],
-  body[data-page="artist-path"] .wixui-text-marquee [data-testid="marquee-item-text"] {
-    max-width: calc(100vw - 40px) !important;
-    overflow: hidden !important;
-  }
-
-  body[data-page="work"] #comp-mr68qf6k,
-  body[data-page="resources"] #comp-mrxbyc0t,
-  body[data-page="resources"] #comp-mrxbw8e8,
-  body[data-page="mba"] #comp-mrexxzfm,
-  body[data-page="artist-path"] #comp-mqpivr5t,
-  body[data-page="artist-path"] #comp-mqrxopeb,
-  body[data-page="academy"] :is(#comp-mqwhzev1, #comp-mpjwvo70),
-  body[data-page="harshad-duhita"] :is(#comp-mqfgozm3, #comp-mq9cuzxm),
-  body[data-page="yugm"] :is(#comp-mqhqa6zv, #comp-mqhqa700) {
-    display: none !important;
-  }
-
-  body[data-page="about"] :is(#comp-mr3axlyx5, #comp-mr3axlyz1, #comp-mr3axlz06) {
-    box-sizing: border-box !important;
-    left: auto !important;
-    right: auto !important;
-    width: 100% !important;
-    max-width: calc(100vw - 40px) !important;
-    transform: none !important;
-  }
-
   .tsc-mobile-course-shell,
   .tsc-mobile-work-cases {
     box-sizing: border-box;
@@ -3054,7 +2822,6 @@ body.tsc-has-mobile-footer .tsc-legacy-footer-host:not(:has(.tsc-mobile-footer))
     border-width: 1.5px;
     box-sizing: border-box;
   }
-
 
   .tsc-mobile-course-card {
     background: var(--tsc-cream);
@@ -3143,12 +2910,6 @@ body.tsc-has-mobile-footer .tsc-legacy-footer-host:not(:has(.tsc-mobile-footer))
     height: auto;
     object-fit: cover;
     width: 100%;
-  }
-
-  /* Cases shell mounts inside #comp-mr69hwoy — do not hide the host.
-     Original mesh children get .tsc-mobile-work-hide (see work.css). */
-  body:has(.tsc-mobile-work-cases) #comp-mruek03p {
-    display: none !important;
   }
 
   .tsc-mobile-work-cases {
@@ -3329,9 +3090,6 @@ body.tsc-has-mobile-footer .tsc-legacy-footer-host:not(:has(.tsc-mobile-footer))
     display: none !important;
   }
 
-  body:has(#comp-mr69hwoy) #comp-mr69hwoy {
-    min-height: 1240px !important;
-  }
 }
 
 @media (min-width: 1025px) {

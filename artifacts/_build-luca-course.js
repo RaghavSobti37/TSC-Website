@@ -77,8 +77,8 @@ const chapters = [
   ['10 : WRITING MELODIES WITH LYRICS', '10 : Mixing and Mastering'],
   ['11 : COLLABORATIONS', '10 : Mixing and Mastering'],
   ['12 : COMPOSING A SONG TOGETHER', '10 : Mixing and Mastering'],
-  ['13 : UNFOLDING ARTIST FORCE: FINAL CAPSTONE', '10 : Mixing and Mastering'],
-  ['13 : UNFOLDING ARTIST FORCE', '10 : Mixing and Mastering']
+  ['13 : Unfolding Artist Force : FINAL CAPSTONE', '10 : Mixing and Mastering'],
+  ['13 : Unfolding Artist Force ', '10 : Mixing and Mastering']
 ];
 
 // Discover actual accordion titles first

@@ -4,7 +4,7 @@ URL: https://theshakticollective.in/how-i-curate-music-with-independent-artists
 
 # How I Curate Music With Independent Artists
 
-Editorial essay by Rohit Sobti on curating music with independent artists — lessons from Lost;Found with Faheem Abdullah.
+Editorial essay by Rohith Sobti on curating music with independent artists — lessons from Lost;Found with Faheem Abdullah.
 
 Canonical: https://theshakticollective.in/how-i-curate-music-with-independent-artists  
 Alias: `/resources/how-i-curate-music-with-independent-artists`

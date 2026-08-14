@@ -1,96 +1,101 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-<script data-tsc-mobile-boot>/* DESKTOP LOCK: early mobile CSS — no desktop FOUC */
-(function () {
-  var mq = window.matchMedia && window.matchMedia('(max-width: 1024px)');
-  if (!mq || !mq.matches) return;
-  var html = document.documentElement;
-  html.classList.add('tsc-boot-mobile');
-  function link(href) {
-    var bare = href.split('?')[0];
-    if (document.querySelector('link[data-tsc-boot][data-tsc-href="' + bare + '"]')) return;
-    var l = document.createElement('link');
-    l.rel = 'stylesheet';
-    l.href = href;
-    l.media = '(max-width: 1024px)';
-    l.setAttribute('data-tsc-boot', '1');
-    l.setAttribute('data-tsc-href', bare);
-    (document.head || document.documentElement).appendChild(l);
-  }
-  link('/css/mobile/boot.css?v=mobile-own-1');
-  link('/css/tsc-mobile-system.css?v=mobile-own-1');
-  var p = (location.pathname || '/').replace(/\/+$/, '') || '/';
-  if (p.indexOf('/pages/') === 0) p = '/' + p.split('/').pop().replace(/\.html$/i, '');
-  if (p === '/home') p = '/';
-  var parts = p.split('/').filter(Boolean);
-  if (parts.length >= 2) p = '/' + parts[parts.length - 1];
-  var seg = p === '/' ? 'home' : p.replace(/^\//, '').split('/')[0];
-  var map = {
-    home: 'home.css',
-    about: 'about.css',
-    work: 'work.css',
-    artists: 'artists.css',
-    'artist-path': 'artist-path.css',
-    'learn-with-tsc': 'learn-with-tsc.css',
-    films: 'films.css',
-    resources: 'resources.css',
-    academy: 'academy.css',
-    affiliate: 'affiliate.css',
-    'harshad-duhita': 'harshad-duhita.css',
-    'mohit-shankar': 'mohit-shankar.css',
-    yugm: 'yugm.css',
-    'book-an-artist': 'book-an-artist.css',
-    'artist-query': 'artist-query.css',
-    'collab-query': 'collab-query.css',
-    'the-heart-of-composition': 'the-heart-of-composition.css',
-    'roots-of-hindustani-classical': 'roots-of-hindustani-classical.css',
-    'music-production': 'music-production.css',
-    'book-a-call': 'book-a-call.css',
-    'mahavatar-narsimha': 'mahavatar-narsimha.css',
-    'hanuman-ansh': 'hanuman-ansh.css',
-    mahaprbhu: 'mahaprbhu.css',
-    kalki: 'kalki.css',
-    'mahavatar-narsimha-impact': 'mahavatar-narsimha-impact.css',
-    'hanuman-ansh-impact': 'hanuman-ansh-impact.css',
-    'mahaprabhu-jagannath-impact': 'mahaprabhu-jagannath-impact.css',
-    'kalki-impact': 'kalki-impact.css',
-    mba: 'mba.css',
-    'mba-impact': 'mba-impact.css',
-    'havells-myousic': 'havells-myousic.css',
-    'insta-music-league': 'insta-music-league.css',
-    'young-gunns': 'young-gunns.css',
-    'blog-1': 'blog-1.css',
-    'blog-2': 'blog-2.css',
-    'blog-3': 'blog-3.css',
-    'start-making-music': 'start-making-music.css',
-    'online-music-course-worth-it': 'online-music-course-worth-it.css',
-    'artist-release-playbook': 'artist-release-playbook.css',
-    'from-bhajan-to-clubbing': 'from-bhajan-to-clubbing.css',
-    'you-released-a-song-now-what': 'you-released-a-song-now-what.css',
-    'how-i-curate-music-with-independent-artists': 'how-i-curate-music-with-independent-artists.css',
-    classicalreview: 'classicalreview.css',
-    'masterclass-review01': 'masterclass-review01.css',
-    'masterclass-review02': 'masterclass-review02.css'
-  };
-  var file = map[seg] || 'home.css';
-  link('/css/mobile/' + file + '?v=mobile-own-1');
-  html.classList.add('tsc-mobile-ready');
-  html.classList.add('tsc-skel-revealed');
-})();
-</script>
+  <script data-tsc-mobile-boot>/* DESKTOP LOCK: early mobile CSS — no desktop FOUC */
+    (function () {
+      var mq = window.matchMedia && window.matchMedia('(max-width: 1024px)');
+      if (!mq || !mq.matches) return;
+      var html = document.documentElement;
+      html.classList.add('tsc-boot-mobile');
+      function link(href) {
+        var bare = href.split('?')[0];
+        if (document.querySelector('link[data-tsc-boot][data-tsc-href="' + bare + '"]')) return;
+        var l = document.createElement('link');
+        l.rel = 'stylesheet';
+        l.href = href;
+        l.media = '(max-width: 1024px)';
+        l.setAttribute('data-tsc-boot', '1');
+        l.setAttribute('data-tsc-href', bare);
+        (document.head || document.documentElement).appendChild(l);
+      }
+      link('/css/mobile/boot.css?v=mobile-own-1');
+      link('/css/tsc-mobile-system.css?v=mobile-own-1');
+      var p = (location.pathname || '/').replace(/\/+$/, '') || '/';
+      if (p.indexOf('/pages/') === 0) p = '/' + p.split('/').pop().replace(/\.html$/i, '');
+      if (p === '/home') p = '/';
+      var parts = p.split('/').filter(Boolean);
+      if (parts.length >= 2) p = '/' + parts[parts.length - 1];
+      var seg = p === '/' ? 'home' : p.replace(/^\//, '').split('/')[0];
+      var map = {
+        home: 'home.css',
+        about: 'about.css',
+        work: 'work.css',
+        artists: 'artists.css',
+        'artist-path': 'artist-path.css',
+        'learn-with-tsc': 'learn-with-tsc.css',
+        films: 'films.css',
+        resources: 'resources.css',
+        academy: 'academy.css',
+        affiliate: 'affiliate.css',
+        'harshad-duhita': 'harshad-duhita.css',
+        'mohit-shankar': 'mohit-shankar.css',
+        yugm: 'yugm.css',
+        'book-an-artist': 'book-an-artist.css',
+        'artist-query': 'artist-query.css',
+        'collab-query': 'collab-query.css',
+        'the-heart-of-composition': 'the-heart-of-composition.css',
+        'roots-of-hindustani-classical': 'roots-of-hindustani-classical.css',
+        'music-production': 'music-production.css',
+        'book-a-call': 'book-a-call.css',
+        'mahavatar-narsimha': 'mahavatar-narsimha.css',
+        'hanuman-ansh': 'hanuman-ansh.css',
+        mahaprbhu: 'mahaprbhu.css',
+        kalki: 'kalki.css',
+        'mahavatar-narsimha-impact': 'mahavatar-narsimha-impact.css',
+        'hanuman-ansh-impact': 'hanuman-ansh-impact.css',
+        'mahaprabhu-jagannath-impact': 'mahaprabhu-jagannath-impact.css',
+        'kalki-impact': 'kalki-impact.css',
+        mba: 'mba.css',
+        'mba-impact': 'mba-impact.css',
+        'havells-myousic': 'havells-myousic.css',
+        'insta-music-league': 'insta-music-league.css',
+        'young-gunns': 'young-gunns.css',
+        'blog-1': 'blog-1.css',
+        'blog-2': 'blog-2.css',
+        'blog-3': 'blog-3.css',
+        'start-making-music': 'start-making-music.css',
+        'online-music-course-worth-it': 'online-music-course-worth-it.css',
+        'artist-release-playbook': 'artist-release-playbook.css',
+        'from-bhajan-to-clubbing': 'from-bhajan-to-clubbing.css',
+        'you-released-a-song-now-what': 'you-released-a-song-now-what.css',
+        'how-i-curate-music-with-independent-artists': 'how-i-curate-music-with-independent-artists.css',
+        classicalreview: 'classicalreview.css',
+        'masterclass-review01': 'masterclass-review01.css',
+        'masterclass-review02': 'masterclass-review02.css'
+      };
+      var file = map[seg] || 'home.css';
+      link('/css/mobile/' + file + '?v=mobile-own-1');
+      html.classList.add('tsc-mobile-ready');
+      html.classList.add('tsc-skel-revealed');
+    })();
+  </script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>How I Curate Music With Independent Artists | The Shakti Collective</title>
-  <meta name="description" content="A TSC editorial preview of Rohit Sobti's lessons from Lost;Found with Faheem Abdullah — how curation reveals the artist, not just the songs.">
-  <meta property="og:title" content="How I Curate Music With Independent Artists: Lessons From Lost;Found With Faheem Abdullah">
-  <meta property="og:description" content="Good music releases songs. Great curation reveals the artist — lessons from Lost;Found with Faheem Abdullah.">
+  <meta name="description"
+    content="A TSC editorial preview of Rohith Sobti's lessons from Lost;Found with Faheem Abdullah — how curation reveals the artist, not just the songs.">
+  <meta property="og:title"
+    content="How I Curate Music With Independent Artists: Lessons From Lost;Found With Faheem Abdullah">
+  <meta property="og:description"
+    content="Good music releases songs. Great curation reveals the artist — lessons from Lost;Found with Faheem Abdullah.">
   <meta property="og:image" content="/assets/blogs/curate-music-independent-artists.jpeg">
   <link rel="canonical" href="https://theshakticollective.in/how-i-curate-music-with-independent-artists">
   <link rel="stylesheet" href="/css/pages/editorial-blog.css">
   <link rel="icon" href="/assets/brand/tsc-favicon-32.png" type="image/png" sizes="32x32">
   <link rel="apple-touch-icon" href="/assets/brand/tsc-apple-touch-icon.png" sizes="180x180">
 </head>
+
 <body>
   <header class="site-header">
     <a class="brand" href="/">The Shakti Collective</a>
@@ -111,31 +116,38 @@
       <div class="hero-copy">
         <p class="eyebrow">Artist Curation</p>
         <h1>How I Curate Music With Independent Artists</h1>
-        <p class="dek">Lessons from Lost;Found with Faheem Abdullah — why breakthroughs come from journey, belief, and mounting, not only more releases.</p>
+        <p class="dek">Lessons from Lost;Found with Faheem Abdullah — why breakthroughs come from journey, belief, and
+          mounting, not only more releases.</p>
         <div class="meta">
-          <span>Rohit Sobti</span>
+          <span>Rohith Sobti</span>
           <span>Jul 29, 2026</span>
           <span>14 min read on Medium</span>
         </div>
       </div>
       <figure class="hero-media">
-        <img loading="eager" fetchpriority="high" src="/assets/blogs/curate-music-independent-artists.jpeg" alt="Lost;Found album visual for an essay on curating music with independent artists">
+        <img loading="eager" fetchpriority="high" src="/assets/blogs/curate-music-independent-artists.jpeg"
+          alt="Lost;Found album visual for an essay on curating music with independent artists">
       </figure>
     </section>
 
     <section class="article-wrap">
       <aside class="article-aside">
         <p>This local version presents the essay as a TSC editorial preview. The full article remains on Medium.</p>
-        <a href="https://rohitsobti1.medium.com/how-i-curate-music-with-independent-artists-lessons-from-lost-found-with-faheem-abdullah-9d2c76cb8418" target="_blank" rel="noopener noreferrer">Read on Medium</a>
+        <a href="https://rohitsobti1.medium.com/how-i-curate-music-with-independent-artists-lessons-from-lost-found-with-faheem-abdullah-9d2c76cb8418"
+          target="_blank" rel="noopener noreferrer">Read on Medium</a>
       </aside>
       <article class="article-body">
         <h2>The Core Idea</h2>
-        <p>Independent artists often keep releasing songs, videos, and collabs. A breakthrough rarely comes from volume alone. It comes when songs form a journey — when sound, visuals, collaborators, audience signals, timing, and belief move in one direction.</p>
+        <p>Independent artists often keep releasing songs, videos, and collabs. A breakthrough rarely comes from volume
+          alone. It comes when songs form a journey — when sound, visuals, collaborators, audience signals, timing, and
+          belief move in one direction.</p>
         <p class="quote">"Good music releases songs. Great curation reveals the artist."</p>
-        <p>Music curation is not only track selection. It is understanding the artist deeply enough to know which songs become their bridge to the world — as the Lost;Found journey with Faheem Abdullah showed.</p>
+        <p>Music curation is not only track selection. It is understanding the artist deeply enough to know which songs
+          become their bridge to the world — as the Lost;Found journey with Faheem Abdullah showed.</p>
 
         <h2>What Artists Can Take Away</h2>
-        <p>The essay walks through Faheem’s path from early signals like Jhelum, through album shaping, Sajde, the Srinagar launch, and Ishq — then extracts a practical playbook for independents.</p>
+        <p>The essay walks through Faheem’s path from early signals like Jhelum, through album shaping, Sajde, the
+          Srinagar launch, and Ishq — then extracts a practical playbook for independents.</p>
         <ul>
           <li>Find your why before you release more songs.</li>
           <li>Study audience signals and build a body of work, not only singles.</li>
@@ -143,7 +155,9 @@
         </ul>
 
         <h2>TSC Lens</h2>
-        <p>The Shakti Collective treats curation as revelation, not control. The artist already carries the world. The work is to listen, shape the concept, protect what is sacred, and mount it so that truth can travel — with belief as the real success factor.</p>
+        <p>The Shakti Collective treats curation as revelation, not control. The artist already carries the world. The
+          work is to listen, shape the concept, protect what is sacred, and mount it so that truth can travel — with
+          belief as the real success factor.</p>
       </article>
     </section>
 
@@ -158,7 +172,8 @@
   <footer class="site-footer">
     <p>The Shakti Collective · <a href="mailto:Artist@theshakticollective.in">Artist@theshakticollective.in</a></p>
   </footer>
-<script defer src="/js/tsc-mobile-route-map.js?v=mobile-own-1"></script>
-<script src="/js/tsc-components.js?v=blog-hero-3" defer></script>
+  <script defer src="/js/tsc-mobile-route-map.js?v=mobile-own-1"></script>
+  <script src="/js/tsc-components.js?v=blog-hero-3" defer></script>
 </body>
+
 </html>

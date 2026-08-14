@@ -2,7 +2,7 @@
 
 > The Shakti Collective is a culture-first artist development ecosystem for singers, musicians, producers, storytellers, and conscious creative communities. We build systems for learning, collaboration, storytelling, films, and sustainable creative careers.
 
-The Shakti Collective (TSC) is a culture-forward artist ecosystem company founded and curated by Rohit Sobti. TSC works across music education (TSC Academy), artist partnerships (TSC Artists / Artist Path), film mounting and IP (TSC Films), brand collaborations, and editorial resources for independent artists.
+The Shakti Collective (TSC) is a culture-forward artist ecosystem company founded and curated by Rohith Sobti. TSC works across music education (TSC Academy), artist partnerships (TSC Artists / Artist Path), film mounting and IP (TSC Films), brand collaborations, and editorial resources for independent artists.
 
 Canonical site: https://wix-site-clone-psi.vercel.app  
 Contact: Artist@theshakticollective.in  
@@ -11,7 +11,7 @@ Full corpus for LLMs: [llms-full.txt](https://wix-site-clone-psi.vercel.app/llms
 ## Core pages
 
 - [Home](https://wix-site-clone-psi.vercel.app/): Culture-first ecosystem overview — mentorship, collaboration, learning, and go-to-market for artists
-- [About](https://wix-site-clone-psi.vercel.app/about): Who TSC is, why it exists, verticals, philosophy, and founder Rohit Sobti
+- [About](https://wix-site-clone-psi.vercel.app/about): Who TSC is, why it exists, verticals, philosophy, and founder Rohith Sobti
 - [About (Markdown)](https://wix-site-clone-psi.vercel.app/about.md): Plain-text About page for AI parsers (preferred over Wix HTML)
 - [Work](https://wix-site-clone-psi.vercel.app/work): Platforms, partnerships, and cultural initiatives (brand IPs, artist programs, films)
 - [TSC Artists](https://wix-site-clone-psi.vercel.app/artists): Independent artist partnerships — development, audiences, live, PR, career support
@@ -44,7 +44,7 @@ Full corpus for LLMs: [llms-full.txt](https://wix-site-clone-psi.vercel.app/llms
 
 ## Editorial
 
-- [From Bhajan to Clubbing, From Mythology to Cinema](https://wix-site-clone-psi.vercel.app/from-bhajan-to-clubbing): Rohit Sobti essay on Indian culture finding mainstream forms
+- [From Bhajan to Clubbing, From Mythology to Cinema](https://wix-site-clone-psi.vercel.app/from-bhajan-to-clubbing): Rohith Sobti essay on Indian culture finding mainstream forms
 - [You Released a Song. Now What?](https://wix-site-clone-psi.vercel.app/you-released-a-song-now-what): Independent artist post-release playbook
 - [How I Curate Music With Independent Artists](https://wix-site-clone-psi.vercel.app/how-i-curate-music-with-independent-artists): Lessons from Lost;Found with Faheem Abdullah
 

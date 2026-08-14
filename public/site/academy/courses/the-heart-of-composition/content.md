@@ -8,7 +8,7 @@ URL: https://wix-site-clone-psi.vercel.app/the-heart-of-composition
 
 Explores emotional and technical architecture of composition — bhaav, melody, lyrics, collaboration, hooks, motifs, nature, samarpan, and original creation.
 
-**Curriculum themes (representative):** It All Starts Here · Aamad · Bhaav & Emotions · Learning from Nature · Samarpan · Subconscious Mind · Composing with Artists · Extension of Melody · Characteristics of a Good Composition · Breath of Music · Writing Melodies with Lyrics · Collaborations · Composing a Song Together · Unfolding Artist Force (capstone)
+**Curriculum themes (representative):** It All Starts Here · Aamad · Bhaav & Emotions · Learning from Nature · Samarpan · Subconscious Mind · Composing with Artists · Extension of Melody · Characteristics of a Good Composition · Breath of Music · Writing Melodies with Lyrics · Collaborations · Composing a Song Together · Unfolding Artist Force  (capstone)
 
 ## Copy
 
@@ -50,7 +50,7 @@ Collaborations
 
 Composing a Song Together
 
-Unfolding Artist Force: Final Capstone
+Unfolding Artist Force : Final Capstone
 
 Course: Roots of Hindustani Classical
 
@@ -90,7 +90,7 @@ Bandish
 
 Advanced Ragas
 
-Unfolding Artist Force
+Unfolding Artist Force 
 
 Course: A–Z of Music Production
 

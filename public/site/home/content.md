@@ -6,7 +6,7 @@ URL: https://wix-site-clone-psi.vercel.app/
 
 The Shakti Collective is a culture-first artist development ecosystem for singers, musicians, producers, storytellers, and conscious creative communities.
 
-**Positioning:** Unfolding Artist Force — a living ecosystem where artists learn, create, collaborate, and bring their craft into the world.
+**Positioning:** Unfolding Artist Force  — a living ecosystem where artists learn, create, collaborate, and bring their craft into the world.
 
 **About (home):** Not just a platform — an ecosystem for artistic growth. TSC helps artists build foundations and visibility through mentorship, collaboration, learning, storytelling, and culture-first systems. The future of culture belongs to what connects, not only what is loudest.
 
@@ -27,7 +27,7 @@ The Shakti Collective is a culture-first artist development ecosystem for singer
 
 Unfolding Possibilities.
 
-Unfolding Artist Force.
+Unfolding Artist Force .
 
 Unfolding Yourself.
 

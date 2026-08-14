@@ -8,6 +8,7 @@
 
 @media (max-width: 1024px) {
   /* Films: clip mesh; tablet section air */
+  /* Films hero glow */
   body[data-page="films"] main {
     overflow-x: clip !important;
   }

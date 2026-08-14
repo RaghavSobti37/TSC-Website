@@ -77,7 +77,7 @@
       }
     }
   ];
-  var whatsappCommunityUrl = 'https://chat.whatsapp.com/IaS1GaJT7Gp7ufxHIjDkZu?mode=gi_t';
+  var whatsappCommunityUrl = 'https://wa.me/919168665455';
   var TSC_LOGO_SRC = '/assets/brand/tsc-logo-trim-nav.png?v=nav-lock-3';
   var ACADEMY_LOGO_SRC = '/assets/brand/tsc-academy-logo-trim-nav.png?v=nav-lock-3';
   var TSC_FOOTER_LOGO_SRC = '/assets/brand/tsc-logo-trim-footer.png?v=flush-1';
@@ -1917,7 +1917,7 @@
       return ui.mountMobileFooter({
         path: normalizedPath(),
         brandAssets: {
-          main: Object.assign({ name: 'The Shakti Collective', tagline: 'Unfolding artist force.' }, brandAssets.main),
+          main: Object.assign({ name: 'The Shakti Collective', tagline: 'Unfolding Artist Force .' }, brandAssets.main),
           academy: Object.assign({ name: 'TSC Academy', tagline: 'Mentorship-led learning for serious artists.' }, brandAssets.academy)
         },
         whatsappCommunityUrl: whatsappCommunityUrl
@@ -2254,7 +2254,7 @@
       ui.mountDesktopFooter({
         path: normalizedPath(),
         brandAssets: {
-          main: Object.assign({ name: 'The Shakti Collective', tagline: 'Unfolding artist force.' }, brandAssets.main),
+          main: Object.assign({ name: 'The Shakti Collective', tagline: 'Unfolding Artist Force .' }, brandAssets.main),
           academy: Object.assign({ name: 'TSC Academy', tagline: 'Mentorship-led learning for serious artists.' }, brandAssets.academy)
         },
         whatsappCommunityUrl: whatsappCommunityUrl
@@ -2304,7 +2304,7 @@
       ui.mountDesktopFooter({
         path: normalizedPath(),
         brandAssets: {
-          main: Object.assign({ name: 'The Shakti Collective', tagline: 'Unfolding artist force.' }, brandAssets.main),
+          main: Object.assign({ name: 'The Shakti Collective', tagline: 'Unfolding Artist Force .' }, brandAssets.main),
           academy: Object.assign({ name: 'TSC Academy', tagline: 'Mentorship-led learning for serious artists.' }, brandAssets.academy)
         },
         whatsappCommunityUrl: whatsappCommunityUrl

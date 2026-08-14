@@ -4,7 +4,7 @@ URL: https://wix-site-clone-psi.vercel.app/about
 
 # About The Shakti Collective
 
-**Tagline:** Unfolding Artist Force  
+**Tagline:** Unfolding Artist Force   
 **Headline:** Building India’s Culture-Forward Artist Ecosystem
 
 The Shakti Collective is a culture-forward artist ecosystem company built to discover, develop, and scale artists, stories, and cultural movements. Work spans music, films, learning, live experiences, artist partnerships, original IPs, and culture-led collaborations.
@@ -24,14 +24,14 @@ The Shakti Collective is a culture-forward artist ecosystem company built to dis
 **Verticals:**
 - **TSC Artists** — culture-forward artist partnerships (identity, repertoire, live, brands, audience, career)
 - **TSC Academy** — learning, mentorship, courses, masterclasses for serious artists
-- **The Artist Path** — selective accelerator curated by Rohit Sobti
+- **The Artist Path** — selective accelerator curated by Rohith Sobti
 - **TSC Films** — film mounting, audiences, partnerships, monetisation, IP growth
 - **TSC Originals** — cultural IPs and living story worlds
 - **TSC Collaborations** — brands, institutions, governments, culture partners
 
 **Ecosystem model:** Discover → Develop → Curate → Launch → Scale
 
-**Founder:** Rohit Sobti — Founder & Curator. Entertainment strategist with nearly three decades across music, films, artist development, brand partnerships, and cultural IP. Leadership roles at Yash Raj Films, Sony Music India, and Universal Music India.
+**Founder:** Rohith Sobti — Founder & Curator. Entertainment strategist with nearly three decades across music, films, artist development, brand partnerships, and cultural IP. Leadership roles at Yash Raj Films, Sony Music India, and Universal Music India.
 
 ## Copy
 
@@ -39,7 +39,7 @@ ABOUT US
 
 The Shakti Collective
 
-Unfolding Artist Force
+Unfolding Artist Force 
 
 Building India’s Culture-Forward Artist Ecosystem
 
@@ -149,9 +149,9 @@ Conscious and contemporary. Depth and scale can co-exist.
 
 Business with meaning. Creative businesses should create value for artists, audiences, partners and society.
 
-Rohit Sobti
+Rohith Sobti
 
-Rohit Sobti is an entertainment strategist with nearly three decades of experience across music, films, artist development, brand partnerships and cultural IP creation.
+Rohith Sobti is an entertainment strategist with nearly three decades of experience across music, films, artist development, brand partnerships and cultural IP creation.
 
 Over the years, he has held leadership roles at Yash Raj Films, Sony Music India and Universal Music India, working with some of India’s most recognised artists, music properties, films and entertainment brands.
 
@@ -165,7 +165,7 @@ Every initiative at TSC — whether in music, films, learning, live experiences,
 
 This is our commitment. This is The Shakti Collective.
 
-Rohit Sobti
+Rohith Sobti
 
 Where Indian stories travel to the world with emotion, confidence and cultural power.
 

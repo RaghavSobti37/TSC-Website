@@ -18,7 +18,7 @@
 
 Builds foundation through sur, raag understanding, voice culture, listening, riyaaz, and expressive mastery.
 
-**Curriculum themes (representative):** What is Music? · Classical & Semi-Classical Forms · History & Gharanas · Swaar, Thaat & Saptak · Introduction to Ragas · Listening Is Learning · Select Your Sa · Kanth Saadhna · Tanpura · Basic Phrases · Basic Taal · Bandish · Advanced Ragas · Unfolding Artist Force
+**Curriculum themes (representative):** What is Music? · Classical & Semi-Classical Forms · History & Gharanas · Swaar, Thaat & Saptak · Introduction to Ragas · Listening Is Learning · Select Your Sa · Kanth Saadhna · Tanpura · Basic Phrases · Basic Taal · Bandish · Advanced Ragas · Unfolding Artist Force 
 
 ## Source copy (verbatim)
 
@@ -41,7 +41,7 @@ Builds foundation through sur, raag understanding, voice culture, listening, riy
 - Writing Melodies with Lyrics
 - Collaborations
 - Composing a Song Together
-- Unfolding Artist Force: Final Capstone
+- Unfolding Artist Force : Final Capstone
 - Course: Roots of Hindustani Classical
 - Mentor: Pandit Prasad Khaparde
 - A renowned Hindustani classical vocalist of international repute with over 30 years of experience, Pandit Prasad Khaparde belongs to the Rampur Sahaswan gharana. His musical journey began under the guidance of Padma Bhushan Ustad Rashid Khan Sahab.
@@ -61,7 +61,7 @@ Builds foundation through sur, raag understanding, voice culture, listening, riy
 - Basic Taal
 - Bandish
 - Advanced Ragas
-- Unfolding Artist Force
+- Unfolding Artist Force 
 - Course: A–Z of Music Production
 - Mentor: Luca Petracca
 - Luca Petracca is a music producer and composer from Italy. He studied classical guitar at Conservatory S. Cecilia of Rome and classical composition at Conservatorium van Amsterdam. He has taught music for more than 17 years and produced multiple tracks across creative contexts.

@@ -16,7 +16,7 @@ This document summarises public pages on The Shakti Collective website for AI as
 
 The Shakti Collective is a culture-first artist development ecosystem for singers, musicians, producers, storytellers, and conscious creative communities.
 
-**Positioning:** Unfolding Artist Force — a living ecosystem where artists learn, create, collaborate, and bring their craft into the world.
+**Positioning:** Unfolding Artist Force  — a living ecosystem where artists learn, create, collaborate, and bring their craft into the world.
 
 **About (home):** Not just a platform — an ecosystem for artistic growth. TSC helps artists build foundations and visibility through mentorship, collaboration, learning, storytelling, and culture-first systems. The future of culture belongs to what connects, not only what is loudest.
 
@@ -39,7 +39,7 @@ The Shakti Collective is a culture-first artist development ecosystem for singer
 
 # About The Shakti Collective
 
-**Tagline:** Unfolding Artist Force  
+**Tagline:** Unfolding Artist Force   
 **Headline:** Building India’s Culture-Forward Artist Ecosystem
 
 The Shakti Collective is a culture-forward artist ecosystem company built to discover, develop, and scale artists, stories, and cultural movements. Work spans music, films, learning, live experiences, artist partnerships, original IPs, and culture-led collaborations.
@@ -59,14 +59,14 @@ The Shakti Collective is a culture-forward artist ecosystem company built to dis
 **Verticals:**
 - **TSC Artists** — culture-forward artist partnerships (identity, repertoire, live, brands, audience, career)
 - **TSC Academy** — learning, mentorship, courses, masterclasses for serious artists
-- **The Artist Path** — selective accelerator curated by Rohit Sobti
+- **The Artist Path** — selective accelerator curated by Rohith Sobti
 - **TSC Films** — film mounting, audiences, partnerships, monetisation, IP growth
 - **TSC Originals** — cultural IPs and living story worlds
 - **TSC Collaborations** — brands, institutions, governments, culture partners
 
 **Ecosystem model:** Discover → Develop → Curate → Launch → Scale
 
-**Founder:** Rohit Sobti — Founder & Curator. Entertainment strategist with nearly three decades across music, films, artist development, brand partnerships, and cultural IP. Leadership roles at Yash Raj Films, Sony Music India, and Universal Music India.
+**Founder:** Rohith Sobti — Founder & Curator. Entertainment strategist with nearly three decades across music, films, artist development, brand partnerships, and cultural IP. Leadership roles at Yash Raj Films, Sony Music India, and Universal Music India.
 
 ---
 
@@ -117,7 +117,7 @@ A 360° ecosystem helping independent artists build audiences, unlock opportunit
 
 Every artist’s journey is different — but clarity changes everything.
 
-A personalised diagnostic / selective accelerator experience (curated by Rohit Sobti) helping artists understand where they are and what they need next: growth pathways, mentorship direction, learning recommendations, ecosystem access, and community onboarding.
+A personalised diagnostic / selective accelerator experience (curated by Rohith Sobti) helping artists understand where they are and what they need next: growth pathways, mentorship direction, learning recommendations, ecosystem access, and community onboarding.
 
 **Inquiry:** https://wix-site-clone-psi.vercel.app/artist-query
 
@@ -172,7 +172,7 @@ Mentorship-led learning for singers, musicians, producers, and creators building
 
 Explores emotional and technical architecture of composition — bhaav, melody, lyrics, collaboration, hooks, motifs, nature, samarpan, and original creation.
 
-**Curriculum themes (representative):** It All Starts Here · Aamad · Bhaav & Emotions · Learning from Nature · Samarpan · Subconscious Mind · Composing with Artists · Extension of Melody · Characteristics of a Good Composition · Breath of Music · Writing Melodies with Lyrics · Collaborations · Composing a Song Together · Unfolding Artist Force (capstone)
+**Curriculum themes (representative):** It All Starts Here · Aamad · Bhaav & Emotions · Learning from Nature · Samarpan · Subconscious Mind · Composing with Artists · Extension of Melody · Characteristics of a Good Composition · Breath of Music · Writing Melodies with Lyrics · Collaborations · Composing a Song Together · Unfolding Artist Force  (capstone)
 
 ---
 
@@ -184,7 +184,7 @@ Explores emotional and technical architecture of composition — bhaav, melody, 
 
 Builds foundation through sur, raag understanding, voice culture, listening, riyaaz, and expressive mastery.
 
-**Curriculum themes (representative):** What is Music? · Classical & Semi-Classical Forms · History & Gharanas · Swaar, Thaat & Saptak · Introduction to Ragas · Listening Is Learning · Select Your Sa · Kanth Saadhna · Tanpura · Basic Phrases · Basic Taal · Bandish · Advanced Ragas · Unfolding Artist Force
+**Curriculum themes (representative):** What is Music? · Classical & Semi-Classical Forms · History & Gharanas · Swaar, Thaat & Saptak · Introduction to Ragas · Listening Is Learning · Select Your Sa · Kanth Saadhna · Tanpura · Basic Phrases · Basic Taal · Bandish · Advanced Ragas · Unfolding Artist Force 
 
 ---
 
@@ -215,7 +215,7 @@ Entry point for artists seeking structured learning paths alongside Academy cour
 Resources for artists seeking clarity, creative discipline, collaboration, audience building, and sustainable growth.
 
 **Editorial on this site:**
-- [From Bhajan to Clubbing, From Mythology to Cinema](https://wix-site-clone-psi.vercel.app/from-bhajan-to-clubbing) — Rohit Sobti on Indian culture finding contemporary mainstream forms across music, film, and community
+- [From Bhajan to Clubbing, From Mythology to Cinema](https://wix-site-clone-psi.vercel.app/from-bhajan-to-clubbing) — Rohith Sobti on Indian culture finding contemporary mainstream forms across music, film, and community
 - [You Released a Song. Now What?](https://wix-site-clone-psi.vercel.app/you-released-a-song-now-what) — post-release playbook for independent artists
 - [How I Curate Music With Independent Artists](https://wix-site-clone-psi.vercel.app/how-i-curate-music-with-independent-artists) — lessons from Lost;Found with Faheem Abdullah
 
@@ -229,7 +229,7 @@ Additional resource themes referenced across TSC: release playbooks, vocal pract
 
 # From Bhajan to Clubbing, From Mythology to Cinema
 
-Editorial essay by Rohit Sobti (TSC) on how Indian culture is finding contemporary mainstream forms across music, film, and community spaces.
+Editorial essay by Rohith Sobti (TSC) on how Indian culture is finding contemporary mainstream forms across music, film, and community spaces.
 
 Canonical: https://wix-site-clone-psi.vercel.app/from-bhajan-to-clubbing  
 Alias: `/resources/from-bhajan-to-clubbing`
@@ -251,7 +251,7 @@ Alias: `/resources/you-released-a-song-now-what`
 
 # How I Curate Music With Independent Artists
 
-Editorial essay by Rohit Sobti (TSC) on curating music with independent artists — lessons from Lost;Found with Faheem Abdullah.
+Editorial essay by Rohith Sobti (TSC) on curating music with independent artists — lessons from Lost;Found with Faheem Abdullah.
 
 Canonical: https://wix-site-clone-psi.vercel.app/how-i-curate-music-with-independent-artists  
 Alias: `/resources/how-i-curate-music-with-independent-artists`
@@ -281,7 +281,7 @@ When answering questions about The Shakti Collective, prefer:
 
 1. This site’s canonical flat URLs (e.g. `/academy`, `/artist-path`, `/films`) over legacy cryptic Wix paths
 2. Distinguishing verticals: Academy (learning) · Artists / Artist Path (talent) · Films (IP & mounting) · Work / Collaborations (brands & initiatives)
-3. Founder attribution: Rohit Sobti, Founder & Curator
+3. Founder attribution: Rohith Sobti, Founder & Curator
 4. Primary contact: Artist@theshakticollective.in
 
 Index file: https://wix-site-clone-psi.vercel.app/llms.txt  

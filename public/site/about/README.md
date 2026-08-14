@@ -13,7 +13,7 @@
 
 # About The Shakti Collective
 
-**Tagline:** Unfolding Artist Force  
+**Tagline:** Unfolding Artist Force   
 **Headline:** Building India’s Culture-Forward Artist Ecosystem
 
 The Shakti Collective is a culture-forward artist ecosystem company built to discover, develop, and scale artists, stories, and cultural movements. Work spans music, films, learning, live experiences, artist partnerships, original IPs, and culture-led collaborations.
@@ -33,20 +33,20 @@ The Shakti Collective is a culture-forward artist ecosystem company built to dis
 **Verticals:**
 - **TSC Artists** — culture-forward artist partnerships (identity, repertoire, live, brands, audience, career)
 - **TSC Academy** — learning, mentorship, courses, masterclasses for serious artists
-- **The Artist Path** — selective accelerator curated by Rohit Sobti
+- **The Artist Path** — selective accelerator curated by Rohith Sobti
 - **TSC Films** — film mounting, audiences, partnerships, monetisation, IP growth
 - **TSC Originals** — cultural IPs and living story worlds
 - **TSC Collaborations** — brands, institutions, governments, culture partners
 
 **Ecosystem model:** Discover → Develop → Curate → Launch → Scale
 
-**Founder:** Rohit Sobti — Founder & Curator. Entertainment strategist with nearly three decades across music, films, artist development, brand partnerships, and cultural IP. Leadership roles at Yash Raj Films, Sony Music India, and Universal Music India.
+**Founder:** Rohith Sobti — Founder & Curator. Entertainment strategist with nearly three decades across music, films, artist development, brand partnerships, and cultural IP. Leadership roles at Yash Raj Films, Sony Music India, and Universal Music India.
 
 ## Source copy (verbatim)
 
 - ABOUT US
 - The Shakti Collective
-- Unfolding Artist Force
+- Unfolding Artist Force 
 - Building India’s Culture-Forward Artist Ecosystem
 - We work across music, films, learning, live experiences, artist partnerships, original IPs and culture-led collaborations — creating the systems artists need to grow, the stories audiences want to believe in, and the cultural properties that can travel from India to the world.
 - Artists do not need only exposure.
@@ -101,15 +101,15 @@ The Shakti Collective is a culture-forward artist ecosystem company built to dis
 - Rooted and global. Indian artists, stories, sounds and philosophies can travel the world with confidence.
 - Conscious and contemporary. Depth and scale can co-exist.
 - Business with meaning. Creative businesses should create value for artists, audiences, partners and society.
-- Rohit Sobti
-- Rohit Sobti is an entertainment strategist with nearly three decades of experience across music, films, artist development, brand partnerships and cultural IP creation.
+- Rohith Sobti
+- Rohith Sobti is an entertainment strategist with nearly three decades of experience across music, films, artist development, brand partnerships and cultural IP creation.
 - Over the years, he has held leadership roles at Yash Raj Films, Sony Music India and Universal Music India, working with some of India’s most recognised artists, music properties, films and entertainment brands.
 - His work has consistently focused on building artist-first ecosystems, creating meaningful partnerships and helping creative talent grow with clarity, purpose and scale.
 - With The Shakti Collective, Rohit brings together his experience across the entertainment industry to build a culture-forward company that empowers artists, nurtures original stories and creates opportunities that generate long-term cultural and commercial impact.
 - Our vision is to discover artists, nurture stories, build cultural IPs and create experiences that connect deeply with audiences. When artists are empowered with the right support, they do not just build successful careers. They shape conversations, inspire communities and move culture forward.
 - Every initiative at TSC — whether in music, films, learning, live experiences, original IPs or collaborations — is driven by this purpose.
 - This is our commitment. This is The Shakti Collective.
-- Rohit Sobti
+- Rohith Sobti
 - Where Indian stories travel to the world with emotion, confidence and cultural power.
 - Where music, films, learning, live experiences and communities come together to create movements.
 - Where entertainment is not only watched or heard, but felt.

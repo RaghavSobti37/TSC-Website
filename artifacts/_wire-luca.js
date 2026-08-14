@@ -13,7 +13,7 @@ function write(p, c) { fs.writeFileSync(p, c); }
     ['08 : COMPOSITION FUNDAMENTALS', '08 : Production Techniques'],
     ['11  : COLLABORATION', '11 : Studio Workflow'],
     ['12 : COMPOSING A SONG TOGETHER', '12 : Hands-on Project'],
-    ['13 : UNFOLDING ARTIST FORCE', '13 : Final Track'],
+    ['13 : Unfolding Artist Force ', '13 : Final Track'],
     ['05 : Song Forms ', '05 : Song Forms']
   ];
   for (const [a, b] of accordionFix) mp = mp.split(a).join(b);

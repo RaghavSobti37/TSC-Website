@@ -16,8 +16,8 @@
 Resources for artists seeking clarity, creative discipline, collaboration, audience building, and sustainable growth.
 
 **Editorial on this site:**
-- [From Bhajan to Clubbing, From Mythology to Cinema](https://theshakticollective.in/from-bhajan-to-clubbing) — Rohit Sobti on Indian culture finding contemporary mainstream forms across music, film, and community
-- [How I Curate Music With Independent Artists](https://theshakticollective.in/how-i-curate-music-with-independent-artists) — Rohit Sobti on lessons from Lost;Found with Faheem Abdullah
+- [From Bhajan to Clubbing, From Mythology to Cinema](https://theshakticollective.in/from-bhajan-to-clubbing) — Rohith Sobti on Indian culture finding contemporary mainstream forms across music, film, and community
+- [How I Curate Music With Independent Artists](https://theshakticollective.in/how-i-curate-music-with-independent-artists) — Rohith Sobti on lessons from Lost;Found with Faheem Abdullah
 - [You Released a Song. Now What?](https://theshakticollective.in/you-released-a-song-now-what) — post-release playbook for independent artists
 
 Additional resource themes referenced across TSC: release playbooks, vocal practice, riyaaz routines, beginner music-making guides, free production tools and templates.

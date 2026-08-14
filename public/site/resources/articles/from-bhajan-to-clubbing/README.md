@@ -13,7 +13,7 @@
 
 # From Bhajan to Clubbing, From Mythology to Cinema
 
-Editorial essay by Rohit Sobti (TSC) on how Indian culture is finding contemporary mainstream forms across music, film, and community spaces.
+Editorial essay by Rohith Sobti (TSC) on how Indian culture is finding contemporary mainstream forms across music, film, and community spaces.
 
 Canonical: https://theshakticollective.in/from-bhajan-to-clubbing  
 Alias: `/resources/from-bhajan-to-clubbing`

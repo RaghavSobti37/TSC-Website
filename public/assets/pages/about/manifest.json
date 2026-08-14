@@ -3,7 +3,7 @@
   "html": "/pages/about.html",
   "css": "/css/pages/about.css",
   "animations": "/js/pages/about.animations.js",
-  "generatedAt": "2026-08-13T10:26:51.493Z",
+  "generatedAt": "2026-08-14T07:28:19.702Z",
   "totals": {
     "assets": 113,
     "missing": 0
@@ -371,7 +371,7 @@
         "local": {
           "exists": true,
           "path": "/assets/mirror/siteassets.parastorage.com/pages/pages/thunderbolt/thunderbolt-features--19f989_ed01b585eb5b79e5069c93f6d6ccf82c_1342.json--desktop--f145183b.bundle.min.json",
-          "bytes": 903369
+          "bytes": 903309
         }
       },
       {
@@ -380,7 +380,7 @@
         "local": {
           "exists": true,
           "path": "/assets/mirror/siteassets.parastorage.com/pages/pages/thunderbolt/thunderbolt-platform--19f989_ed01b585eb5b79e5069c93f6d6ccf82c_1342.json--desktop--1645f6a3.bundle.min.json",
-          "bytes": 246658
+          "bytes": 246594
         }
       }
     ],

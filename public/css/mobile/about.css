@@ -12,10 +12,15 @@
     overflow-x: clip !important;
   }
 
-  body[data-page="about"] main section.wixui-section {
+  body[data-page="about"] main section.wixui-section:not(#comp-mp2vlkbh2) {
     padding-left: max(16px, env(safe-area-inset-left, 0px)) !important;
     padding-right: max(16px, env(safe-area-inset-right, 0px)) !important;
     box-sizing: border-box !important;
+  }
+
+  body[data-page="about"] main #comp-mp2vlkbh2 {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
   }
 }
 

@@ -2223,9 +2223,19 @@ body:has(#comp-mr69hwoy) :is(#comp-mr69hwvf5, #comp-mr69hwvh) {
 body.tsc-has-desktop-footer .tsc-legacy-footer,
 body.tsc-has-desktop-footer footer.tsc-legacy-footer-host,
 body.tsc-has-desktop-footer .tsc-legacy-footer-host:not(:has(.tsc-desktop-footer)),
+body.tsc-has-desktop-footer footer > section,
+body.tsc-has-desktop-footer footer section.wixui-footer,
 body.tsc-has-mobile-footer .tsc-legacy-footer,
 body.tsc-has-mobile-footer footer.tsc-legacy-footer-host,
-body.tsc-has-mobile-footer .tsc-legacy-footer-host:not(:has(.tsc-mobile-footer)) {
+body.tsc-has-mobile-footer .tsc-legacy-footer-host:not(:has(.tsc-mobile-footer)),
+body.tsc-has-mobile-footer footer > section,
+body.tsc-has-mobile-footer footer section.wixui-footer,
+.tsc-legacy-footer,
+#comp-mr3hvomh,
+#comp-mr3hvomh_relative,
+#comp-mqmh352i,
+#comp-mqmh352i_relative,
+.tsc-mobile-films-originals {
   display: none !important;
   visibility: hidden !important;
   height: 0 !important;

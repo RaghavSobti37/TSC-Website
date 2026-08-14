@@ -152,7 +152,7 @@ const reports = [
         'A film can travel across music, merchandise, fashion, gaming, consumer products, animation, television and long-term audience experiences.'
       ]],
       ['02 / YRF Years', 'Music, licensing, merchandising and commerce.', [
-        'Between <mark>2009 and 2015</mark>, Rohit Sobti worked extensively on music monetisation, licensing, merchandising and consumer product strategy for Yash Raj Films.',
+        'Between <mark>2009 and 2015</mark>, Rohith Sobti worked extensively on music monetisation, licensing, merchandising and consumer product strategy for Yash Raj Films.',
         'Work across Dhoom 3, DDLJ and other YRF titles helped establish how Indian film properties can become multi-format IPs.'
       ]],
       ['03 / Kalki', 'A world that can travel beyond cinema.', [

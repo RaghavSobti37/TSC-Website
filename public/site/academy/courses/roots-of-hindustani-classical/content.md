@@ -8,7 +8,7 @@ URL: https://wix-site-clone-psi.vercel.app/roots-of-hindustani-classical
 
 Builds foundation through sur, raag understanding, voice culture, listening, riyaaz, and expressive mastery.
 
-**Curriculum themes (representative):** What is Music? · Classical & Semi-Classical Forms · History & Gharanas · Swaar, Thaat & Saptak · Introduction to Ragas · Listening Is Learning · Select Your Sa · Kanth Saadhna · Tanpura · Basic Phrases · Basic Taal · Bandish · Advanced Ragas · Unfolding Artist Force
+**Curriculum themes (representative):** What is Music? · Classical & Semi-Classical Forms · History & Gharanas · Swaar, Thaat & Saptak · Introduction to Ragas · Listening Is Learning · Select Your Sa · Kanth Saadhna · Tanpura · Basic Phrases · Basic Taal · Bandish · Advanced Ragas · Unfolding Artist Force 
 
 ## Copy
 
@@ -50,7 +50,7 @@ Collaborations
 
 Composing a Song Together
 
-Unfolding Artist Force: Final Capstone
+Unfolding Artist Force : Final Capstone
 
 Course: Roots of Hindustani Classical
 
@@ -90,7 +90,7 @@ Bandish
 
 Advanced Ragas
 
-Unfolding Artist Force
+Unfolding Artist Force 
 
 Course: A–Z of Music Production
 

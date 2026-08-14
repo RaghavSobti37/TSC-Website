@@ -16,6 +16,24 @@
   color: #053f40;
   font-family: var(--wix-font-Paragraph, Arial, sans-serif);
   pointer-events: auto;
+.tsc-local-form {
+  box-sizing: border-box;
+  position: relative;
+  z-index: 20;
+  grid-area: 1 / 1 / 2 / 2;
+  align-self: start;
+  justify-self: center;
+  width: min(820px, calc(100vw - 56px));
+  /* Title sits above in red-box zone; form starts closer */
+  margin: clamp(28px, 5vw, 56px) auto clamp(40px, 6vw, 72px);
+  padding: clamp(24px, 4vw, 42px);
+  border: 1px solid rgba(255, 236, 209, 0.85);
+  border-radius: 8px;
+  background: #ffecd1;
+  box-shadow: 0 18px 46px rgba(0, 28, 30, 0.18);
+  color: #053f40;
+  font-family: var(--wix-font-Paragraph, Arial, sans-serif);
+  pointer-events: auto;
 }
 
 .tsc-local-form * {
@@ -25,21 +43,79 @@
 .tsc-local-form h1,
 .tsc-local-form h2 {
   display: block !important;
-  margin: 0 auto clamp(22px, 3vw, 32px) !important;
-  color: #00535a !important;
-  font-size: clamp(28px, 4vw, 44px) !important;
+  margin: 0 auto clamp(20px, 3vw, 28px) !important;
+  color: #053f40 !important;
+  font-family: 'Signika', 'Syne', 'Outfit', var(--wix-font-Paragraph, sans-serif) !important;
+  font-size: clamp(26px, 3.8vw, 42px) !important;
   font-weight: 700 !important;
-  line-height: 1.08 !important;
+  line-height: 1.15 !important;
   text-align: center !important;
+  letter-spacing: -0.01em !important;
   height: auto !important;
   overflow: visible !important;
 }
 
-/* Hide outer Wix page headings to prevent duplicates */
-#comp-mrxjb3tn,
-#comp-mrxmc0za1,
-#comp-mrxv5lfw {
-  display: none !important;
+/* Multi-step form pagination */
+
+/* Multi-step form pagination */
+.tsc-step-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.tsc-step-badge {
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: 1px solid rgba(0, 83, 90, 0.35);
+  background: rgba(255, 248, 236, 0.7);
+  color: #053f40;
+  font-size: 13px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.tsc-step-badge.is-active {
+  background: #00535a;
+  color: #ffecd1;
+  border-color: #00535a;
+  font-weight: 700;
+}
+
+.tsc-form-step {
+  width: 100%;
+}
+
+.tsc-step-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 24px;
+  grid-column: 1 / -1;
+}
+
+.tsc-prev-btn {
+  padding: 12px 24px;
+  border-radius: 6px;
+  border: 1.5px solid #00535a;
+  background: transparent;
+  color: #00535a;
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.tsc-prev-btn:hover {
+  background: rgba(0, 83, 90, 0.08);
+}
+
+.tsc-next-btn {
+  margin-left: auto;
 }
 
 .tsc-required-note {
@@ -94,12 +170,15 @@
   border: 1.5px solid rgba(0, 83, 90, 0.55);
   border-radius: 7px;
   background: #fff8ec;
-  color: #053f40;
+  color: #053f40 !important;
   min-height: 48px;
   padding: 12px 13px;
   font: inherit;
   font-size: 15px;
   line-height: 1.35;
+  pointer-events: auto !important;
+  z-index: 5;
+  position: relative;
 }
 
 .tsc-field textarea {
@@ -117,6 +196,7 @@
     calc(100% - 12px) 50%;
   background-repeat: no-repeat;
   background-size: 6px 6px, 6px 6px;
+  cursor: pointer;
 }
 
 .tsc-picker-shell {
@@ -134,8 +214,10 @@
   padding-left: 52px !important;
   border-color: rgba(0, 83, 90, 0.55);
   background-color: #fff8ec;
-  color: #053f40;
+  color: #053f40 !important;
   font-weight: 700;
+  pointer-events: auto !important;
+  z-index: 5;
 }
 
 .tsc-date-picker input[type="date"] {
@@ -144,12 +226,13 @@
   color-scheme: light;
   cursor: pointer;
   position: relative;
-  z-index: 2;
+  z-index: 5;
+  color: #053f40 !important;
   padding-right: 16px !important;
 }
 
 .tsc-date-picker.is-empty input[type="date"] {
-  color: transparent;
+  color: #053f40 !important;
 }
 
 .tsc-date-picker.is-empty::after {
@@ -164,6 +247,7 @@
   font-weight: 700;
   line-height: 1;
   pointer-events: none;
+  display: none;
 }
 
 .tsc-date-picker input[type="date"]::-webkit-date-and-time-value {
@@ -859,6 +943,145 @@ body:has(.tsc-local-form) main [data-motion-part*="BG_MEDIA"] {
   letter-spacing: 0.02em;
 }
 
+/* Artist Path post-submit recommendation (from prior Next.js artist-path success UI) */
+.tsc-artist-path-result {
+  box-sizing: border-box;
+  width: min(820px, calc(100vw - 56px));
+  margin: clamp(28px, 5vw, 56px) auto clamp(40px, 6vw, 72px);
+  display: grid;
+  gap: 28px;
+  font-family: var(--wix-font-Paragraph, Arial, sans-serif);
+  color: #053f40;
+}
+
+.tsc-artist-path-thanks,
+.tsc-artist-path-card {
+  background: #ffecd1;
+  border: 1px solid rgba(255, 236, 209, 0.85);
+  border-radius: 16px;
+  box-shadow: 0 18px 46px rgba(0, 28, 30, 0.18);
+}
+
+.tsc-artist-path-thanks {
+  padding: clamp(28px, 4vw, 42px);
+  text-align: center;
+}
+
+.tsc-artist-path-check {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 16px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: rgba(34, 197, 94, 0.12);
+  color: #16a34a;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.tsc-artist-path-thanks h2 {
+  margin: 0 0 12px;
+  font-size: clamp(28px, 4vw, 36px);
+  line-height: 1.15;
+  color: #001c1e;
+}
+
+.tsc-artist-path-thanks p {
+  margin: 0 0 22px;
+  font-size: 17px;
+  line-height: 1.5;
+  color: rgba(5, 63, 64, 0.88);
+}
+
+.tsc-artist-path-whatsapp,
+.tsc-artist-path-explore,
+.tsc-artist-path-book {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 52px;
+  padding: 12px 18px;
+  border-radius: 14px;
+  font-size: 17px;
+  font-weight: 700;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+.tsc-artist-path-whatsapp {
+  background: #25d366;
+  color: #fff;
+}
+
+.tsc-artist-path-whatsapp:hover {
+  background: #20ba5a;
+}
+
+.tsc-artist-path-recommend {
+  text-align: center;
+}
+
+.tsc-artist-path-kicker {
+  margin: 0 0 16px;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #001c1e;
+}
+
+.tsc-artist-path-card {
+  overflow: hidden;
+  text-align: left;
+}
+
+.tsc-artist-path-banner {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: rgba(0, 28, 30, 0.06);
+}
+
+.tsc-artist-path-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.tsc-artist-path-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: #b74b02;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.tsc-artist-path-card-body {
+  padding: clamp(22px, 4vw, 36px);
+}
+
+.tsc-artist-path-card-body h3 {
+  margin: 0 0 8px;
+  font-size: clamp(24px, 3.5vw, 30px);
+  line-height: 1.2;
+  color: #001c1e;
+}
+
+.tsc-artist-path-mentor {
+  margin: 0 0 22px;
+  color: #b74b02;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
 .tsc-artist-path-explore {
   background: #001c1e;
   color: #fff;
@@ -879,3 +1102,168 @@ body:has(.tsc-local-form) main [data-motion-part*="BG_MEDIA"] {
   border-color: #b74b02;
   color: #b74b02;
 }
+
+/* =========================================================
+   NATIVE WIX FORMS ENHANCEMENTS & INTERACTIVE STYLES
+   ========================================================= */
+
+/* Ensure native forms stay visible and centered */
+form[id^="form-"] {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
+
+form[id^="form-"] * {
+  pointer-events: auto;
+}
+
+/* Option Cards / Checkbox Selection (e.g. Book a Call courses) */
+[data-hook="box-selection-option-wrapper"] {
+  cursor: pointer !important;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  user-select: none !important;
+  border-radius: 6px !important;
+}
+
+[data-hook="box-selection-option-wrapper"]:hover {
+  border-color: #053f40 !important;
+  transform: translateY(-1px);
+}
+
+[data-hook="box-selection-option-wrapper"][data-checked="true"] {
+  background-color: #053f40 !important;
+  color: #ffecd1 !important;
+  border-color: #053f40 !important;
+  box-shadow: 0 4px 14px rgba(5, 63, 64, 0.25) !important;
+}
+
+[data-hook="box-selection-option-wrapper"][data-checked="true"] label,
+[data-hook="box-selection-option-wrapper"][data-checked="true"] div,
+[data-hook="box-selection-option-wrapper"][data-checked="true"] span {
+  color: #ffecd1 !important;
+}
+
+/* Radio Buttons (e.g. Book an Artist talent selection) */
+.siroRCe,
+[data-hook="core-radio-button"] {
+  cursor: pointer !important;
+  user-select: none !important;
+}
+
+.siroRCe:hover .sCFV0aQ,
+[data-hook="core-radio-button"]:hover .sCFV0aQ {
+  border-color: #053f40 !important;
+}
+
+.siroRCe[data-checked="true"] .sCFV0aQ,
+[data-hook="core-radio-button"][data-checked="true"] .sCFV0aQ {
+  border-color: #053f40 !important;
+  background: transparent !important;
+}
+
+.siroRCe[data-checked="true"] .sNqmRTw,
+[data-hook="core-radio-button"][data-checked="true"] .sNqmRTw {
+  background-color: #053f40 !important;
+  border-radius: 50% !important;
+  width: 8px !important;
+  height: 8px !important;
+  opacity: 1 !important;
+  transform: scale(1) !important;
+  transition: transform 0.15s ease !important;
+}
+
+/* Custom dropdown popup for native select triggers */
+.native-dropdown-menu {
+  position: absolute !important;
+  top: calc(100% + 4px) !important;
+  left: 0 !important;
+  width: 100% !important;
+  max-height: 250px !important;
+  overflow-y: auto !important;
+  background: #ffecd1 !important;
+  border: 1.5px solid #053f40 !important;
+  border-radius: 8px !important;
+  box-shadow: 0 12px 30px rgba(0, 28, 30, 0.2) !important;
+  z-index: 99999 !important;
+  box-sizing: border-box !important;
+  padding: 6px 0 !important;
+}
+
+.native-dropdown-item {
+  padding: 10px 16px !important;
+  font-size: 15px !important;
+  color: #053f40 !important;
+  font-weight: 500 !important;
+  cursor: pointer !important;
+  transition: all 0.15s ease !important;
+}
+
+.native-dropdown-item:hover {
+  background: #053f40 !important;
+  color: #ffecd1 !important;
+}
+
+/* Hidden date input for native picker triggering */
+.native-hidden-date-picker {
+  position: absolute !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  border: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  clip: rect(0 0 0 0) !important;
+  clip-path: inset(50%) !important;
+}
+
+/* Form Feedback Toasts */
+.native-form-feedback {
+  padding: 14px 20px !important;
+  margin: 16px 0 !important;
+  border-radius: 8px !important;
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  line-height: 1.4 !important;
+  text-align: center !important;
+  animation: fadeInFeedback 0.3s ease forwards;
+}
+
+@keyframes fadeInFeedback {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.native-form-feedback.is-success {
+  background: #053f40 !important;
+  color: #ffecd1 !important;
+  border: 1px solid #053f40 !important;
+  box-shadow: 0 6px 20px rgba(5, 63, 64, 0.25) !important;
+}
+
+.native-form-feedback.is-error {
+  background: #fdf0ec !important;
+  color: #c64f20 !important;
+  border: 1.5px solid #c64f20 !important;
+}
+
+/* Submit button cursor and interactions */
+button[data-hook="submit-button"],
+button[data-hook="dropdown-base"],
+button[data-hook="date-picker-calendar-icon"],
+button[data-hook="ampm"] {
+  cursor: pointer !important;
+}
+
+button[data-hook="submit-button"]:hover {
+  opacity: 0.92;
+  transform: translateY(-1px);
+}
+
+button[data-hook="submit-button"]:disabled {
+  opacity: 0.6 !important;
+  cursor: not-allowed !important;
+}
+

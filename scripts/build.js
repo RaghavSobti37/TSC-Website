@@ -15,7 +15,10 @@ ${filmsCssOverrideMarker}
 }
 
 #comp-mqmh352i,
-#comp-mqmh352i_relative {
+#comp-mqmh352i_relative,
+#comp-mr3hvomh,
+#comp-mr3hvomh_relative,
+.tsc-mobile-films-originals {
   display: none !important;
   height: 0 !important;
   min-height: 0 !important;

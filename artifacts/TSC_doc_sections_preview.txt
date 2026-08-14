@@ -42,7 +42,7 @@ URL / Placement: /
 Design note: Use the same hero slots, grid cards and CTA buttons.
 Hero Headline Series
 Unfolding Possibilities.
-Unfolding Artist Force.
+Unfolding Artist Force .
 Unfolding Yourself.
 Unfolding Potential.
 Unfolding Your Journey.
@@ -132,7 +132,7 @@ ABOUT US
 Hero Title
 The Shakti Collective
 Hero Tagline
-Unfolding Artist Force
+Unfolding Artist Force 
 Hero Headline
 Building India’s Culture-Forward Artist Ecosystem
 Hero Body
@@ -176,7 +176,7 @@ Learning, mentorship and incubation for serious artists
 TSC Academy is our learning and development platform for artists, musicians, composers, singers, producers and creative professionals. Through structured courses, masterclasses, mentorship, community, resources and industry exposure, we help artists build clarity, confidence and craft.
 The Artist Path
 A curated artist accelerator
-The Artist Path is a selective artist accelerator curated by Rohit Sobti for artists ready to share their craft with audiences and build a serious professional journey. It works across discovery, identity, repertoire, release strategy, live readiness, audience building and long-term roadmap creation.
+The Artist Path is a selective artist accelerator curated by Rohith Sobti for artists ready to share their craft with audiences and build a serious professional journey. It works across discovery, identity, repertoire, release strategy, live readiness, audience building and long-term roadmap creation.
 TSC Films
 Mounting films. Building audiences. Creating lasting IPs.
 TSC Films works with filmmakers, producers and studios to build audience demand, cultural relevance and commercial opportunities around films. We support stories through film mounting, audience research, positioning, community building, partnerships, release planning, monetisation and long-term IP growth.
@@ -205,9 +205,9 @@ Rooted and global. Indian artists, stories, sounds and philosophies can travel t
 Conscious and contemporary. Depth and scale can co-exist.
 Business with meaning. Creative businesses should create value for artists, audiences, partners and society.
 Founder Bio
-Rohit Sobti
+Rohith Sobti
 Founder & Curator, The Shakti Collective
-Rohit Sobti is an entertainment strategist with nearly three decades of experience across music, films, artist development, brand partnerships and cultural IP creation.
+Rohith Sobti is an entertainment strategist with nearly three decades of experience across music, films, artist development, brand partnerships and cultural IP creation.
 Over the years, he has held leadership roles at Yash Raj Films, Sony Music India and Universal Music India, working with some of India’s most recognised artists, music properties, films and entertainment brands.
 His work has consistently focused on building artist-first ecosystems, creating meaningful partnerships and helping creative talent grow with clarity, purpose and scale.
 With The Shakti Collective, Rohit brings together his experience across the entertainment industry to build a culture-forward company that empowers artists, nurtures original stories and creates opportunities that generate long-term cultural and commercial impact.
@@ -217,7 +217,7 @@ The Shakti Collective was born from a simple belief that extraordinary talent de
 Our vision is to discover artists, nurture stories, build cultural IPs and create experiences that connect deeply with audiences. When artists are empowered with the right support, they do not just build successful careers. They shape conversations, inspire communities and move culture forward.
 Every initiative at TSC — whether in music, films, learning, live experiences, original IPs or collaborations — is driven by this purpose.
 This is our commitment. This is The Shakti Collective.
-Rohit Sobti
+Rohith Sobti
 Founder & Curator, The Shakti Collective
 Closing CTA
 The Future Belongs to Artist Forces
@@ -425,7 +425,7 @@ Breath of Music
 Writing Melodies with Lyrics
 Collaborations
 Composing a Song Together
-Unfolding Artist Force: Final Capstone
+Unfolding Artist Force : Final Capstone
 Course: Roots of Hindustani Classical
 Mentor: Pandit Prasad Khaparde
 A renowned Hindustani classical vocalist of international repute with over 30 years of experience, Pandit Prasad Khaparde belongs to the Rampur Sahaswan gharana. His musical journey began under the guidance of Padma Bhushan Ustad Rashid Khan Sahab.
@@ -446,7 +446,7 @@ Basic Phrases
 Basic Taal
 Bandish
 Advanced Ragas
-Unfolding Artist Force
+Unfolding Artist Force 
 Course: A–Z of Music Production
 Mentor: Luca Petracca
 Luca Petracca is a music producer and composer from Italy. He studied classical guitar at Conservatory S. Cecilia of Rome and classical composition at Conservatorium van Amsterdam. He has taught music for more than 17 years and produced multiple tracks across creative contexts.
@@ -757,4 +757,4 @@ Paste only the copy assigned to each slot.
 Do not reintroduce older language such as “1 million artists” or “Artiste Force.” Use “10 million artists” and “Artist Force.”
 Prefer “TSC Originals” only if the live design still uses that page label; in business language, TSC is also developing TSC Records and original music/IP distribution.
 Keep TSC Academy separate where relevant; Sandesh Shandilya is only a partner in TSC Academy, not all TSC ventures.
-Use “Rohit Sobti” spelling consistently on public website unless a legal/profile-specific spelling is required elsewhere.
+Use “Rohith Sobti” spelling consistently on public website unless a legal/profile-specific spelling is required elsewhere.

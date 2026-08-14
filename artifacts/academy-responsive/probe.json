@@ -14,7 +14,7 @@
     "mobileHeader": false,
     "lockedHeader": true,
     "offenders": [],
-    "title": "Unfolding Artist Force"
+    "title": "Unfolding Artist Force "
   },
   {
     "vp": "tablet",
@@ -40,7 +40,7 @@
     "mobileHeader": true,
     "lockedHeader": false,
     "offenders": [],
-    "title": "Unfolding Artist Force"
+    "title": "Unfolding Artist Force "
   },
   {
     "vp": "mobile",
@@ -66,6 +66,6 @@
     "mobileHeader": true,
     "lockedHeader": false,
     "offenders": [],
-    "title": "Unfolding Artist Force"
+    "title": "Unfolding Artist Force "
   }
 ]

@@ -1,96 +1,100 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-<script data-tsc-mobile-boot>/* DESKTOP LOCK: early mobile CSS — no desktop FOUC */
-(function () {
-  var mq = window.matchMedia && window.matchMedia('(max-width: 1024px)');
-  if (!mq || !mq.matches) return;
-  var html = document.documentElement;
-  html.classList.add('tsc-boot-mobile');
-  function link(href) {
-    var bare = href.split('?')[0];
-    if (document.querySelector('link[data-tsc-boot][data-tsc-href="' + bare + '"]')) return;
-    var l = document.createElement('link');
-    l.rel = 'stylesheet';
-    l.href = href;
-    l.media = '(max-width: 1024px)';
-    l.setAttribute('data-tsc-boot', '1');
-    l.setAttribute('data-tsc-href', bare);
-    (document.head || document.documentElement).appendChild(l);
-  }
-  link('/css/mobile/boot.css?v=mobile-own-1');
-  link('/css/tsc-mobile-system.css?v=mobile-own-1');
-  var p = (location.pathname || '/').replace(/\/+$/, '') || '/';
-  if (p.indexOf('/pages/') === 0) p = '/' + p.split('/').pop().replace(/\.html$/i, '');
-  if (p === '/home') p = '/';
-  var parts = p.split('/').filter(Boolean);
-  if (parts.length >= 2) p = '/' + parts[parts.length - 1];
-  var seg = p === '/' ? 'home' : p.replace(/^\//, '').split('/')[0];
-  var map = {
-    home: 'home.css',
-    about: 'about.css',
-    work: 'work.css',
-    artists: 'artists.css',
-    'artist-path': 'artist-path.css',
-    'learn-with-tsc': 'learn-with-tsc.css',
-    films: 'films.css',
-    resources: 'resources.css',
-    academy: 'academy.css',
-    affiliate: 'affiliate.css',
-    'harshad-duhita': 'harshad-duhita.css',
-    'mohit-shankar': 'mohit-shankar.css',
-    yugm: 'yugm.css',
-    'book-an-artist': 'book-an-artist.css',
-    'artist-query': 'artist-query.css',
-    'collab-query': 'collab-query.css',
-    'the-heart-of-composition': 'the-heart-of-composition.css',
-    'roots-of-hindustani-classical': 'roots-of-hindustani-classical.css',
-    'music-production': 'music-production.css',
-    'book-a-call': 'book-a-call.css',
-    'mahavatar-narsimha': 'mahavatar-narsimha.css',
-    'hanuman-ansh': 'hanuman-ansh.css',
-    mahaprbhu: 'mahaprbhu.css',
-    kalki: 'kalki.css',
-    'mahavatar-narsimha-impact': 'mahavatar-narsimha-impact.css',
-    'hanuman-ansh-impact': 'hanuman-ansh-impact.css',
-    'mahaprabhu-jagannath-impact': 'mahaprabhu-jagannath-impact.css',
-    'kalki-impact': 'kalki-impact.css',
-    mba: 'mba.css',
-    'mba-impact': 'mba-impact.css',
-    'havells-myousic': 'havells-myousic.css',
-    'insta-music-league': 'insta-music-league.css',
-    'young-gunns': 'young-gunns.css',
-    'blog-1': 'blog-1.css',
-    'blog-2': 'blog-2.css',
-    'blog-3': 'blog-3.css',
-    'start-making-music': 'start-making-music.css',
-    'online-music-course-worth-it': 'online-music-course-worth-it.css',
-    'artist-release-playbook': 'artist-release-playbook.css',
-    'from-bhajan-to-clubbing': 'from-bhajan-to-clubbing.css',
-    'you-released-a-song-now-what': 'you-released-a-song-now-what.css',
-    'how-i-curate-music-with-independent-artists': 'how-i-curate-music-with-independent-artists.css',
-    classicalreview: 'classicalreview.css',
-    'masterclass-review01': 'masterclass-review01.css',
-    'masterclass-review02': 'masterclass-review02.css'
-  };
-  var file = map[seg] || 'home.css';
-  link('/css/mobile/' + file + '?v=mobile-own-1');
-  html.classList.add('tsc-mobile-ready');
-  html.classList.add('tsc-skel-revealed');
-})();
-</script>
+  <script data-tsc-mobile-boot>/* DESKTOP LOCK: early mobile CSS — no desktop FOUC */
+    (function () {
+      var mq = window.matchMedia && window.matchMedia('(max-width: 1024px)');
+      if (!mq || !mq.matches) return;
+      var html = document.documentElement;
+      html.classList.add('tsc-boot-mobile');
+      function link(href) {
+        var bare = href.split('?')[0];
+        if (document.querySelector('link[data-tsc-boot][data-tsc-href="' + bare + '"]')) return;
+        var l = document.createElement('link');
+        l.rel = 'stylesheet';
+        l.href = href;
+        l.media = '(max-width: 1024px)';
+        l.setAttribute('data-tsc-boot', '1');
+        l.setAttribute('data-tsc-href', bare);
+        (document.head || document.documentElement).appendChild(l);
+      }
+      link('/css/mobile/boot.css?v=mobile-own-1');
+      link('/css/tsc-mobile-system.css?v=mobile-own-1');
+      var p = (location.pathname || '/').replace(/\/+$/, '') || '/';
+      if (p.indexOf('/pages/') === 0) p = '/' + p.split('/').pop().replace(/\.html$/i, '');
+      if (p === '/home') p = '/';
+      var parts = p.split('/').filter(Boolean);
+      if (parts.length >= 2) p = '/' + parts[parts.length - 1];
+      var seg = p === '/' ? 'home' : p.replace(/^\//, '').split('/')[0];
+      var map = {
+        home: 'home.css',
+        about: 'about.css',
+        work: 'work.css',
+        artists: 'artists.css',
+        'artist-path': 'artist-path.css',
+        'learn-with-tsc': 'learn-with-tsc.css',
+        films: 'films.css',
+        resources: 'resources.css',
+        academy: 'academy.css',
+        affiliate: 'affiliate.css',
+        'harshad-duhita': 'harshad-duhita.css',
+        'mohit-shankar': 'mohit-shankar.css',
+        yugm: 'yugm.css',
+        'book-an-artist': 'book-an-artist.css',
+        'artist-query': 'artist-query.css',
+        'collab-query': 'collab-query.css',
+        'the-heart-of-composition': 'the-heart-of-composition.css',
+        'roots-of-hindustani-classical': 'roots-of-hindustani-classical.css',
+        'music-production': 'music-production.css',
+        'book-a-call': 'book-a-call.css',
+        'mahavatar-narsimha': 'mahavatar-narsimha.css',
+        'hanuman-ansh': 'hanuman-ansh.css',
+        mahaprbhu: 'mahaprbhu.css',
+        kalki: 'kalki.css',
+        'mahavatar-narsimha-impact': 'mahavatar-narsimha-impact.css',
+        'hanuman-ansh-impact': 'hanuman-ansh-impact.css',
+        'mahaprabhu-jagannath-impact': 'mahaprabhu-jagannath-impact.css',
+        'kalki-impact': 'kalki-impact.css',
+        mba: 'mba.css',
+        'mba-impact': 'mba-impact.css',
+        'havells-myousic': 'havells-myousic.css',
+        'insta-music-league': 'insta-music-league.css',
+        'young-gunns': 'young-gunns.css',
+        'blog-1': 'blog-1.css',
+        'blog-2': 'blog-2.css',
+        'blog-3': 'blog-3.css',
+        'start-making-music': 'start-making-music.css',
+        'online-music-course-worth-it': 'online-music-course-worth-it.css',
+        'artist-release-playbook': 'artist-release-playbook.css',
+        'from-bhajan-to-clubbing': 'from-bhajan-to-clubbing.css',
+        'you-released-a-song-now-what': 'you-released-a-song-now-what.css',
+        'how-i-curate-music-with-independent-artists': 'how-i-curate-music-with-independent-artists.css',
+        classicalreview: 'classicalreview.css',
+        'masterclass-review01': 'masterclass-review01.css',
+        'masterclass-review02': 'masterclass-review02.css'
+      };
+      var file = map[seg] || 'home.css';
+      link('/css/mobile/' + file + '?v=mobile-own-1');
+      html.classList.add('tsc-mobile-ready');
+      html.classList.add('tsc-skel-revealed');
+    })();
+  </script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>From Bhajan to Clubbing, From Mythology to Cinema | The Shakti Collective</title>
-  <meta name="description" content="A TSC editorial preview of Rohit Sobti's essay on how Indian culture is finding contemporary mainstream forms across music, film, and community spaces.">
+  <meta name="description"
+    content="A TSC editorial preview of Rohith Sobti's essay on how Indian culture is finding contemporary mainstream forms across music, film, and community spaces.">
   <meta property="og:title" content="From Bhajan to Clubbing, From Mythology to Cinema">
-  <meta property="og:description" content="Indian cultural expression is moving through new mainstream forms without leaving its roots behind.">
+  <meta property="og:description"
+    content="Indian cultural expression is moving through new mainstream forms without leaving its roots behind.">
   <meta property="og:image" content="/assets/blogs/indian-culture-mainstream.jpeg">
   <link rel="canonical" href="https://theshakticollective.in/from-bhajan-to-clubbing">
   <link rel="stylesheet" href="/css/pages/editorial-blog.css">
   <link rel="icon" href="/assets/brand/tsc-favicon-32.png" type="image/png" sizes="32x32">
   <link rel="apple-touch-icon" href="/assets/brand/tsc-apple-touch-icon.png" sizes="180x180">
 </head>
+
 <body>
   <header class="site-header">
     <a class="brand" href="/">The Shakti Collective</a>
@@ -111,31 +115,39 @@
       <div class="hero-copy">
         <p class="eyebrow">Culture Essay</p>
         <h1>From Bhajan to Clubbing, From Mythology to Cinema</h1>
-        <p class="dek">How Indian culture is finding new mainstream forms across music, screens, gatherings, and everyday identity.</p>
+        <p class="dek">How Indian culture is finding new mainstream forms across music, screens, gatherings, and
+          everyday identity.</p>
         <div class="meta">
-          <span>Rohit Sobti</span>
+          <span>Rohith Sobti</span>
           <span>Jul 27, 2026</span>
           <span>11 min read on Medium</span>
         </div>
       </div>
       <figure class="hero-media">
-        <img loading="eager" fetchpriority="high" src="/assets/blogs/indian-culture-mainstream.jpeg" alt="Abstract cultural stage imagery for an essay on Indian culture entering new mainstream spaces">
+        <img loading="eager" fetchpriority="high" src="/assets/blogs/indian-culture-mainstream.jpeg"
+          alt="Abstract cultural stage imagery for an essay on Indian culture entering new mainstream spaces">
       </figure>
     </section>
 
     <section class="article-wrap">
       <aside class="article-aside">
         <p>This local version presents the essay as a TSC editorial preview. The full article remains on Medium.</p>
-        <a href="https://rohitsobti1.medium.com/from-bhajan-to-clubbing-from-mythology-to-cinema-how-indian-culture-is-finding-new-mainstream-161432be0966" target="_blank" rel="noopener noreferrer">Read on Medium</a>
+        <a href="https://rohitsobti1.medium.com/from-bhajan-to-clubbing-from-mythology-to-cinema-how-indian-culture-is-finding-new-mainstream-161432be0966"
+          target="_blank" rel="noopener noreferrer">Read on Medium</a>
       </aside>
       <article class="article-body">
         <h2>The Core Idea</h2>
-        <p>The essay argues that Indian culture is not being newly discovered. It is being re-staged, remixed, and re-entered through formats that contemporary audiences already understand: nightlife, cinema, streaming, festivals, social media, and community rituals.</p>
+        <p>The essay argues that Indian culture is not being newly discovered. It is being re-staged, remixed, and
+          re-entered through formats that contemporary audiences already understand: nightlife, cinema, streaming,
+          festivals, social media, and community rituals.</p>
         <p class="quote">"Indian culture is not suddenly becoming relevant."</p>
-        <p>That distinction matters. Culture does not become powerful only when it becomes fashionable. It becomes visible when the formats around it make space for its meaning, rhythm, memory, and emotional force.</p>
+        <p>That distinction matters. Culture does not become powerful only when it becomes fashionable. It becomes
+          visible when the formats around it make space for its meaning, rhythm, memory, and emotional force.</p>
 
         <h2>Why It Matters</h2>
-        <p>For artists and cultural builders, the opportunity is not to dilute tradition for scale. The opportunity is to build new containers for old intelligence. A bhajan can sit beside bass. Mythology can move through cinema. Devotion, identity, sound, and story can travel into rooms that once seemed disconnected from them.</p>
+        <p>For artists and cultural builders, the opportunity is not to dilute tradition for scale. The opportunity is
+          to build new containers for old intelligence. A bhajan can sit beside bass. Mythology can move through cinema.
+          Devotion, identity, sound, and story can travel into rooms that once seemed disconnected from them.</p>
         <ul>
           <li>Rooted ideas can reach mass audiences when they are designed with present-day behavior in mind.</li>
           <li>Popular culture works best when it creates belonging, not just spectacle.</li>
@@ -143,7 +155,9 @@
         </ul>
 
         <h2>TSC Lens</h2>
-        <p>This is close to The Shakti Collective's larger belief: sustainable creative work grows from identity. Artists do not need to choose between heritage and relevance. The stronger path is to understand the source deeply, then shape it with craft, courage, and contemporary fluency.</p>
+        <p>This is close to The Shakti Collective's larger belief: sustainable creative work grows from identity.
+          Artists do not need to choose between heritage and relevance. The stronger path is to understand the source
+          deeply, then shape it with craft, courage, and contemporary fluency.</p>
       </article>
     </section>
 
@@ -158,7 +172,8 @@
   <footer class="site-footer">
     <p>The Shakti Collective · <a href="mailto:Artist@theshakticollective.in">Artist@theshakticollective.in</a></p>
   </footer>
-<script defer src="/js/tsc-mobile-route-map.js?v=mobile-own-1"></script>
-<script src="/js/tsc-components.js?v=blog-hero-3" defer></script>
+  <script defer src="/js/tsc-mobile-route-map.js?v=mobile-own-1"></script>
+  <script src="/js/tsc-components.js?v=blog-hero-3" defer></script>
 </body>
+
 </html>

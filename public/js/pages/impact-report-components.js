@@ -1,4 +1,4 @@
-(function() {
+(function () {
   var IMPACT_PATHS = {
     '/mba': true,
     '/mba-impact': true,
@@ -39,7 +39,7 @@
           icon: '/assets/brand/tsc-favicon-32.png',
           touchIcon: '/assets/brand/tsc-apple-touch-icon.png',
           name: 'The Shakti Collective',
-          tagline: 'Unfolding artist force.'
+          tagline: 'Unfolding Artist Force .'
         },
         academy: {
           logo: '/assets/brand/academy-logo.png',
@@ -49,7 +49,7 @@
           tagline: 'Mentorship-led learning for serious artists.'
         }
       },
-      whatsappCommunityUrl: 'https://chat.whatsapp.com/IaS1GaJT7Gp7ufxHIjDkZu?mode=gi_t'
+      whatsappCommunityUrl: 'https://wa.me/919168665455'
     };
 
     document.body.dataset.page = path.replace(/^\//, '') || 'home';
@@ -66,7 +66,7 @@
   } else {
     mountImpactComponents();
     window.addEventListener('load', mountImpactComponents);
-    [250, 1000, 2500].forEach(function(delay) {
+    [250, 1000, 2500].forEach(function (delay) {
       window.setTimeout(mountImpactComponents, delay);
     });
   }

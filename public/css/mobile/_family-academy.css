@@ -6,6 +6,7 @@
  */
 
 @media (max-width: 1024px) {
+
   /* Full-bleed shell — kill Wix fixed desktop widths */
   body[data-page="academy"],
   body[data-page="academy"] #SITE_CONTAINER,
@@ -256,7 +257,7 @@
     grid-template-columns: none !important;
   }
 
-  body[data-page="academy"] .comp-mqwcognj-container > [id^="comp-"] {
+  body[data-page="academy"] .comp-mqwcognj-container>[id^="comp-"] {
     position: relative !important;
     inset: auto !important;
     width: 100% !important;
@@ -269,15 +270,36 @@
     transform: none !important;
   }
 
-  body[data-page="academy"] #comp-mqz7149p { display: none !important; } /* hairline spacer */
-  body[data-page="academy"] #comp-mqwe8zdd { order: 1 !important; } /* WELCOME TO TSC ACADEMY */
-  body[data-page="academy"] #comp-mqwcozxs { order: 2 !important; } /* Unfolding Artist Force */
+  body[data-page="academy"] #comp-mqz7149p {
+    display: none !important;
+  }
+
+  /* hairline spacer */
+  body[data-page="academy"] #comp-mqwe8zdd {
+    order: 1 !important;
+  }
+
+  /* WELCOME TO TSC ACADEMY */
+  body[data-page="academy"] #comp-mqwcozxs {
+    order: 2 !important;
+  }
+
+  /* Unfolding Artist Force  */
   body[data-page="academy"] #comp-mqwcozxs .wixui-rich-text__text {
     font-size: clamp(2.25rem, 10.5vw, 3rem) !important;
     line-height: 1.08 !important;
   }
-  body[data-page="academy"] #comp-mqwdnovu { order: 3 !important; } /* body copy */
-  body[data-page="academy"] #comp-mqwe17k6 { order: 4 !important; align-self: flex-start !important; width: auto !important; }
+
+  body[data-page="academy"] #comp-mqwdnovu {
+    order: 3 !important;
+  }
+
+  /* body copy */
+  body[data-page="academy"] #comp-mqwe17k6 {
+    order: 4 !important;
+    align-self: flex-start !important;
+    width: auto !important;
+  }
 
   /*
    * Hero photo (#comp-mqwhzev1): tsc-responsive hides it only ≤700px.
@@ -305,6 +327,7 @@
   }
 
   @media (max-width: 700px) {
+
     /* Match tsc-responsive phone hide — keep hero copy-first on small screens */
     body[data-page="academy"] #comp-mqwhzev1,
     body[data-page="academy"] #comp-mpjwvo70 {
@@ -341,7 +364,7 @@
     grid-template-columns: none !important;
   }
 
-  body[data-page="academy"] .comp-mqwe6h8s-container > [id^="comp-"],
+  body[data-page="academy"] .comp-mqwe6h8s-container>[id^="comp-"],
   body[data-page="academy"] #comp-mqweukbe,
   body[data-page="academy"] #comp-mqweuv8n {
     position: relative !important;
@@ -356,8 +379,13 @@
     transform: none !important;
   }
 
-  body[data-page="academy"] #comp-mqweukbe { order: 1 !important; }
-  body[data-page="academy"] #comp-mqweuv8n { order: 2 !important; }
+  body[data-page="academy"] #comp-mqweukbe {
+    order: 1 !important;
+  }
+
+  body[data-page="academy"] #comp-mqweuv8n {
+    order: 2 !important;
+  }
 
   body[data-page="academy"] #comp-mqwe6h8s [data-testid="richTextElement"] .wixui-rich-text__text,
   body[data-page="academy"] #comp-mqwe6h8s .wixui-rich-text__text {
@@ -397,7 +425,7 @@
     grid-template-columns: none !important;
   }
 
-  body[data-page="academy"] .comp-mqwg28rw-container > [id^="comp-"],
+  body[data-page="academy"] .comp-mqwg28rw-container>[id^="comp-"],
   body[data-page="academy"] #comp-mqwg32ov,
   body[data-page="academy"] #comp-mqwg32pf,
   body[data-page="academy"] #comp-mqwg3bhc,
@@ -417,12 +445,29 @@
     flex: 1 1 100% !important;
   }
 
-  body[data-page="academy"] #comp-mqwg32ov { order: 1 !important; }
-  body[data-page="academy"] #comp-mqwg32pf { order: 2 !important; }
-  body[data-page="academy"] #comp-mqwg3bhc { order: 3 !important; }
-  body[data-page="academy"] #comp-mqwg32q3 { order: 4 !important; }
-  body[data-page="academy"] #comp-mqwg32qr { order: 5 !important; }
-  body[data-page="academy"] #comp-mqwg4pmn { order: 6 !important; }
+  body[data-page="academy"] #comp-mqwg32ov {
+    order: 1 !important;
+  }
+
+  body[data-page="academy"] #comp-mqwg32pf {
+    order: 2 !important;
+  }
+
+  body[data-page="academy"] #comp-mqwg3bhc {
+    order: 3 !important;
+  }
+
+  body[data-page="academy"] #comp-mqwg32q3 {
+    order: 4 !important;
+  }
+
+  body[data-page="academy"] #comp-mqwg32qr {
+    order: 5 !important;
+  }
+
+  body[data-page="academy"] #comp-mqwg4pmn {
+    order: 6 !important;
+  }
 
   /* flatten nested meshes — keep body stacks vertical */
   body[data-page="academy"] .comp-mqwg28rw-container .HFEOE3,
@@ -439,8 +484,8 @@
     grid-template-columns: none !important;
   }
 
-  body[data-page="academy"] .comp-mqwg28rw-container .HFEOE3 > [id^="comp-"],
-  body[data-page="academy"] .comp-mqwg28rw-container [class*="-container"] > [id^="comp-"] {
+  body[data-page="academy"] .comp-mqwg28rw-container .HFEOE3>[id^="comp-"],
+  body[data-page="academy"] .comp-mqwg28rw-container [class*="-container"]>[id^="comp-"] {
     position: relative !important;
     inset: auto !important;
     width: 100% !important;
@@ -490,7 +535,7 @@
   }
 
   body[data-page="academy"] .comp-mqwg28rw-container [id^="comp-mqwg5ldx"],
-  body[data-page="academy"] .comp-mqwg28rw-container [id^="comp-mqwg5ldx"] > [id^="comp-"],
+  body[data-page="academy"] .comp-mqwg28rw-container [id^="comp-mqwg5ldx"]>[id^="comp-"],
   body[data-page="academy"] .comp-mqwg28rw-container [id^="comp-mqwh3"],
   body[data-page="academy"] .comp-mqwg28rw-container [id^="comp-mqwh4"],
   body[data-page="academy"] .comp-mqwg28rw-container [id^="comp-mqwh7"],
@@ -596,7 +641,7 @@
     grid-template-columns: minmax(0, 1fr) !important;
   }
 
-  body[data-page="academy"] .comp-mpjyp1e7-container > [id^="comp-"],
+  body[data-page="academy"] .comp-mpjyp1e7-container>[id^="comp-"],
   body[data-page="academy"] #comp-mpjyp5wu {
     position: relative !important;
     inset: auto !important;
@@ -683,9 +728,9 @@
     border-radius: 14px !important;
   }
 
-  body[data-page="academy"] .comp-mpjvo1xd-container > [id^="comp-"],
-  body[data-page="academy"] .comp-mpjxmosy-container > [id^="comp-"],
-  body[data-page="academy"] .comp-mpjxxerb1-container > [id^="comp-"] {
+  body[data-page="academy"] .comp-mpjvo1xd-container>[id^="comp-"],
+  body[data-page="academy"] .comp-mpjxmosy-container>[id^="comp-"],
+  body[data-page="academy"] .comp-mpjxxerb1-container>[id^="comp-"] {
     position: relative !important;
     inset: auto !important;
     width: 100% !important;
@@ -718,28 +763,79 @@
   }
 
   /* ---------- Course 1: The heART of Composition ---------- */
-  body[data-page="academy"] #comp-mpk54qtl { order: 1 !important; }
-  body[data-page="academy"] #comp-mpjo65q32 { order: 2 !important; }
-  body[data-page="academy"] #comp-mpjwxij6 { order: 3 !important; }
-  body[data-page="academy"] #comp-mpk52xro { order: 4 !important; }
-  body[data-page="academy"] #comp-mpk57dp3 { order: 5 !important; }
-  body[data-page="academy"] #comp-mpjo65qn { order: 6 !important; }
+  body[data-page="academy"] #comp-mpk54qtl {
+    order: 1 !important;
+  }
+
+  body[data-page="academy"] #comp-mpjo65q32 {
+    order: 2 !important;
+  }
+
+  body[data-page="academy"] #comp-mpjwxij6 {
+    order: 3 !important;
+  }
+
+  body[data-page="academy"] #comp-mpk52xro {
+    order: 4 !important;
+  }
+
+  body[data-page="academy"] #comp-mpk57dp3 {
+    order: 5 !important;
+  }
+
+  body[data-page="academy"] #comp-mpjo65qn {
+    order: 6 !important;
+  }
 
   /* ---------- Course 2: Roots of Hindustani Classical ---------- */
-  body[data-page="academy"] #comp-mpk4u9v1 { order: 1 !important; }
-  body[data-page="academy"] #comp-mpjxmot0 { order: 2 !important; }
-  body[data-page="academy"] #comp-mpjxmote { order: 3 !important; }
-  body[data-page="academy"] #comp-mpk507k4 { order: 4 !important; }
-  body[data-page="academy"] #comp-mpk4wrdy { order: 5 !important; }
-  body[data-page="academy"] #comp-mpjxmotk { order: 6 !important; }
+  body[data-page="academy"] #comp-mpk4u9v1 {
+    order: 1 !important;
+  }
+
+  body[data-page="academy"] #comp-mpjxmot0 {
+    order: 2 !important;
+  }
+
+  body[data-page="academy"] #comp-mpjxmote {
+    order: 3 !important;
+  }
+
+  body[data-page="academy"] #comp-mpk507k4 {
+    order: 4 !important;
+  }
+
+  body[data-page="academy"] #comp-mpk4wrdy {
+    order: 5 !important;
+  }
+
+  body[data-page="academy"] #comp-mpjxmotk {
+    order: 6 !important;
+  }
 
   /* ---------- Course 3: A-Z of Music Production (Coming Soon) ---------- */
-  body[data-page="academy"] #comp-mpjz6jkk { order: 1 !important; }
-  body[data-page="academy"] #comp-mrg3xrfp { order: 2 !important; }
-  body[data-page="academy"] #comp-mpjxxers6 { order: 3 !important; }
-  body[data-page="academy"] #comp-mpjzwem7 { order: 4 !important; }
-  body[data-page="academy"] #comp-mpjz94ph { order: 5 !important; }
-  body[data-page="academy"] #comp-mpjxxery4 { order: 6 !important; }
+  body[data-page="academy"] #comp-mpjz6jkk {
+    order: 1 !important;
+  }
+
+  body[data-page="academy"] #comp-mrg3xrfp {
+    order: 2 !important;
+  }
+
+  body[data-page="academy"] #comp-mpjxxers6 {
+    order: 3 !important;
+  }
+
+  body[data-page="academy"] #comp-mpjzwem7 {
+    order: 4 !important;
+  }
+
+  body[data-page="academy"] #comp-mpjz94ph {
+    order: 5 !important;
+  }
+
+  body[data-page="academy"] #comp-mpjxxery4 {
+    order: 6 !important;
+  }
 
   /* course images: compact height */
   body[data-page="academy"] #comp-mpjo65q32,
@@ -750,10 +846,10 @@
     border-radius: 10px !important;
   }
 
-  body[data-page="academy"] #comp-mpjo65q32 > a,
-  body[data-page="academy"] #comp-mpjxmot0 > a,
-  body[data-page="academy"] #comp-mpjo65q32 > a > div,
-  body[data-page="academy"] #comp-mpjxmot0 > a > div {
+  body[data-page="academy"] #comp-mpjo65q32>a,
+  body[data-page="academy"] #comp-mpjxmot0>a,
+  body[data-page="academy"] #comp-mpjo65q32>a>div,
+  body[data-page="academy"] #comp-mpjxmot0>a>div {
     width: 100% !important;
     height: 100% !important;
     inset: 0 !important;
@@ -781,9 +877,9 @@
     text-align: center !important;
   }
 
-  body[data-page="academy"] .comp-mpk54qtl-container > [id^="comp-"],
-  body[data-page="academy"] .comp-mpjz6jkk-container > [id^="comp-"],
-  body[data-page="academy"] .comp-mpk4u9v1-container > [id^="comp-"] {
+  body[data-page="academy"] .comp-mpk54qtl-container>[id^="comp-"],
+  body[data-page="academy"] .comp-mpjz6jkk-container>[id^="comp-"],
+  body[data-page="academy"] .comp-mpk4u9v1-container>[id^="comp-"] {
     position: relative !important;
     inset: auto !important;
     width: auto !important;
@@ -807,9 +903,9 @@
     grid-template-columns: none !important;
   }
 
-  body[data-page="academy"] .comp-mpk54qtl-container .HFEOE3 > [id^="comp-"],
-  body[data-page="academy"] .comp-mpjz6jkk-container .HFEOE3 > [id^="comp-"],
-  body[data-page="academy"] .comp-mpk4u9v1-container .HFEOE3 > [id^="comp-"] {
+  body[data-page="academy"] .comp-mpk54qtl-container .HFEOE3>[id^="comp-"],
+  body[data-page="academy"] .comp-mpjz6jkk-container .HFEOE3>[id^="comp-"],
+  body[data-page="academy"] .comp-mpk4u9v1-container .HFEOE3>[id^="comp-"] {
     position: relative !important;
     inset: auto !important;
     width: auto !important;
@@ -849,9 +945,9 @@
     grid-template-columns: none !important;
   }
 
-  body[data-page="academy"] .comp-mpk52xro-container > [id^="comp-"],
-  body[data-page="academy"] .comp-mpk507k4-container > [id^="comp-"],
-  body[data-page="academy"] .comp-mpjzwem7-container > [id^="comp-"] {
+  body[data-page="academy"] .comp-mpk52xro-container>[id^="comp-"],
+  body[data-page="academy"] .comp-mpk507k4-container>[id^="comp-"],
+  body[data-page="academy"] .comp-mpjzwem7-container>[id^="comp-"] {
     position: relative !important;
     inset: auto !important;
     width: 100% !important;
@@ -905,7 +1001,7 @@
     grid-template-columns: none !important;
   }
 
-  body[data-page="academy"] .comp-mpjxxers6-container > [id^="comp-"] {
+  body[data-page="academy"] .comp-mpjxxers6-container>[id^="comp-"] {
     position: relative !important;
     inset: auto !important;
     grid-area: auto !important;
@@ -917,8 +1013,16 @@
     flex: 0 1 auto !important;
   }
 
-  body[data-page="academy"] #comp-mpjxxert4 { order: 1 !important; } /* "Mentor" label */
-  body[data-page="academy"] #comp-mpjxxerv { order: 2 !important; } /* mentor name */
+  body[data-page="academy"] #comp-mpjxxert4 {
+    order: 1 !important;
+  }
+
+  /* "Mentor" label */
+  body[data-page="academy"] #comp-mpjxxerv {
+    order: 2 !important;
+  }
+
+  /* mentor name */
 
   /* stats: 2x2 tile grid */
   body[data-page="academy"] .comp-mpk57dp3-container,
@@ -932,9 +1036,9 @@
     width: 100% !important;
   }
 
-  body[data-page="academy"] .comp-mpk57dp3-container > [id^="comp-"],
-  body[data-page="academy"] .comp-mpk4wrdy-container > [id^="comp-"],
-  body[data-page="academy"] .comp-mpjz94ph-container > [id^="comp-"] {
+  body[data-page="academy"] .comp-mpk57dp3-container>[id^="comp-"],
+  body[data-page="academy"] .comp-mpk4wrdy-container>[id^="comp-"],
+  body[data-page="academy"] .comp-mpjz94ph-container>[id^="comp-"] {
     position: relative !important;
     inset: auto !important;
     width: 100% !important;
@@ -972,9 +1076,9 @@
     grid-template-columns: none !important;
   }
 
-  body[data-page="academy"] #comp-mpjwxij6 > [id^="comp-"],
-  body[data-page="academy"] #comp-mpjxmote > [id^="comp-"],
-  body[data-page="academy"] .comp-mpjxxers6-container > [id^="comp-"] {
+  body[data-page="academy"] #comp-mpjwxij6>[id^="comp-"],
+  body[data-page="academy"] #comp-mpjxmote>[id^="comp-"],
+  body[data-page="academy"] .comp-mpjxxers6-container>[id^="comp-"] {
     position: relative !important;
     inset: auto !important;
     width: auto !important;
@@ -985,7 +1089,9 @@
     flex: 0 1 auto !important;
   }
 
-  body[data-page="academy"] #comp-mpjxxers6 { height: auto !important; }
+  body[data-page="academy"] #comp-mpjxxers6 {
+    height: auto !important;
+  }
 
   /* center course body / creds / stats text */
   body[data-page="academy"] .comp-mpk52xro-container,
@@ -1035,7 +1141,7 @@
     height: auto !important;
   }
 
-  body[data-page="academy"] .comp-mrg3xrfp-container > [id^="comp-"] {
+  body[data-page="academy"] .comp-mrg3xrfp-container>[id^="comp-"] {
     position: relative !important;
     inset: auto !important;
     width: auto !important;
@@ -1065,9 +1171,9 @@
     grid-template-columns: none !important;
   }
 
-  body[data-page="academy"] .comp-mpk57dp3-container > [id^="comp-"],
-  body[data-page="academy"] .comp-mpk4wrdy-container > [id^="comp-"],
-  body[data-page="academy"] .comp-mpjz94ph-container > [id^="comp-"] {
+  body[data-page="academy"] .comp-mpk57dp3-container>[id^="comp-"],
+  body[data-page="academy"] .comp-mpk4wrdy-container>[id^="comp-"],
+  body[data-page="academy"] .comp-mpjz94ph-container>[id^="comp-"] {
     position: relative !important;
     inset: auto !important;
     grid-area: auto !important;
@@ -1143,9 +1249,9 @@
   body[data-page="academy"] #comp-mpjwxij6 .inner-box,
   body[data-page="academy"] #comp-mpjxmote .inner-box,
   body[data-page="academy"] #comp-mpjxxers6 .inner-box,
-  body[data-page="academy"] #comp-mpk52xro > .inner-box,
-  body[data-page="academy"] #comp-mpk507k4 > .inner-box,
-  body[data-page="academy"] #comp-mpjzwem7 > .inner-box {
+  body[data-page="academy"] #comp-mpk52xro>.inner-box,
+  body[data-page="academy"] #comp-mpk507k4>.inner-box,
+  body[data-page="academy"] #comp-mpjzwem7>.inner-box {
     inset: 0 !important;
   }
 
@@ -1236,7 +1342,7 @@
     z-index: 2 !important;
   }
 
-  body[data-page="academy"] #comp-mrg3xrfp > .inner-box {
+  body[data-page="academy"] #comp-mrg3xrfp>.inner-box {
     display: none !important;
   }
 
@@ -1287,7 +1393,7 @@
     max-width: 100% !important;
   }
 
-  body[data-page="academy"] .comp-mpl384rr-container > [id^="comp-"] {
+  body[data-page="academy"] .comp-mpl384rr-container>[id^="comp-"] {
     position: relative !important;
     inset: auto !important;
     left: auto !important;
@@ -1321,8 +1427,8 @@
     box-sizing: border-box !important;
   }
 
-  body[data-page="academy"] #comp-mqwl0xfz > .p9hNc1,
-  body[data-page="academy"] .comp-mqwl0xfz-container > .p9hNc1 {
+  body[data-page="academy"] #comp-mqwl0xfz>.p9hNc1,
+  body[data-page="academy"] .comp-mqwl0xfz-container>.p9hNc1 {
     position: relative !important;
     inset: auto !important;
     left: auto !important;
@@ -1370,8 +1476,8 @@
     box-sizing: border-box !important;
   }
 
-  body[data-page="academy"] .comp-mqwl0xfz-container .HFEOE3 > [id^="comp-"],
-  body[data-page="academy"] #comp-mqwl0xfz .HFEOE3 > [id^="comp-"] {
+  body[data-page="academy"] .comp-mqwl0xfz-container .HFEOE3>[id^="comp-"],
+  body[data-page="academy"] #comp-mqwl0xfz .HFEOE3>[id^="comp-"] {
     position: relative !important;
     inset: auto !important;
     grid-area: auto !important;
@@ -1381,8 +1487,8 @@
     margin: 0 !important;
   }
 
-  body[data-page="academy"] .comp-mqwl0xfz-container .HFEOE3 > [id^="comp-mqwn76zz"],
-  body[data-page="academy"] #comp-mqwl0xfz .HFEOE3 > [id^="comp-mqwn76zz"] {
+  body[data-page="academy"] .comp-mqwl0xfz-container .HFEOE3>[id^="comp-mqwn76zz"],
+  body[data-page="academy"] #comp-mqwl0xfz .HFEOE3>[id^="comp-mqwn76zz"] {
     grid-column: 1 / -1 !important;
     grid-row: 1 !important;
     width: 28px !important;
@@ -1391,14 +1497,14 @@
     justify-self: start !important;
   }
 
-  body[data-page="academy"] .comp-mqwl0xfz-container .HFEOE3 > [id^="comp-mqwm5vfv"],
-  body[data-page="academy"] #comp-mqwl0xfz .HFEOE3 > [id^="comp-mqwm5vfv"] {
+  body[data-page="academy"] .comp-mqwl0xfz-container .HFEOE3>[id^="comp-mqwm5vfv"],
+  body[data-page="academy"] #comp-mqwl0xfz .HFEOE3>[id^="comp-mqwm5vfv"] {
     grid-column: 1 / -1 !important;
     grid-row: 2 !important;
   }
 
-  body[data-page="academy"] .comp-mqwl0xfz-container .HFEOE3 > [id^="comp-mqwmac0q"],
-  body[data-page="academy"] #comp-mqwl0xfz .HFEOE3 > [id^="comp-mqwmac0q"] {
+  body[data-page="academy"] .comp-mqwl0xfz-container .HFEOE3>[id^="comp-mqwmac0q"],
+  body[data-page="academy"] #comp-mqwl0xfz .HFEOE3>[id^="comp-mqwmac0q"] {
     grid-column: 1 !important;
     grid-row: 3 / 5 !important;
     width: 48px !important;
@@ -1412,10 +1518,10 @@
     justify-self: start !important;
   }
 
-  body[data-page="academy"] .comp-mqwl0xfz-container .HFEOE3 > [id^="comp-mqwmac0q"] .YX2qkL,
-  body[data-page="academy"] .comp-mqwl0xfz-container .HFEOE3 > [id^="comp-mqwmac0q"] wow-image,
-  body[data-page="academy"] .comp-mqwl0xfz-container .HFEOE3 > [id^="comp-mqwmac0q"] img,
-  body[data-page="academy"] #comp-mqwl0xfz .HFEOE3 > [id^="comp-mqwmac0q"] img {
+  body[data-page="academy"] .comp-mqwl0xfz-container .HFEOE3>[id^="comp-mqwmac0q"] .YX2qkL,
+  body[data-page="academy"] .comp-mqwl0xfz-container .HFEOE3>[id^="comp-mqwmac0q"] wow-image,
+  body[data-page="academy"] .comp-mqwl0xfz-container .HFEOE3>[id^="comp-mqwmac0q"] img,
+  body[data-page="academy"] #comp-mqwl0xfz .HFEOE3>[id^="comp-mqwmac0q"] img {
     width: 48px !important;
     height: 48px !important;
     max-width: 48px !important;
@@ -1424,16 +1530,16 @@
     position: relative !important;
   }
 
-  body[data-page="academy"] .comp-mqwl0xfz-container .HFEOE3 > [id^="comp-mqwm596c"],
-  body[data-page="academy"] #comp-mqwl0xfz .HFEOE3 > [id^="comp-mqwm596c"] {
+  body[data-page="academy"] .comp-mqwl0xfz-container .HFEOE3>[id^="comp-mqwm596c"],
+  body[data-page="academy"] #comp-mqwl0xfz .HFEOE3>[id^="comp-mqwm596c"] {
     grid-column: 2 !important;
     grid-row: 3 !important;
     align-self: end !important;
     width: auto !important;
   }
 
-  body[data-page="academy"] .comp-mqwl0xfz-container .HFEOE3 > [id^="comp-mqwmrdzh"],
-  body[data-page="academy"] #comp-mqwl0xfz .HFEOE3 > [id^="comp-mqwmrdzh"] {
+  body[data-page="academy"] .comp-mqwl0xfz-container .HFEOE3>[id^="comp-mqwmrdzh"],
+  body[data-page="academy"] #comp-mqwl0xfz .HFEOE3>[id^="comp-mqwmrdzh"] {
     grid-column: 2 !important;
     grid-row: 4 !important;
     align-self: start !important;
@@ -1491,7 +1597,9 @@
   }
 
   /* ---------- Final CTA (Personal guidance): stack ---------- */
-  body[data-page="academy"] #comp-mqz5bgg8 { height: auto !important; }
+  body[data-page="academy"] #comp-mqz5bgg8 {
+    height: auto !important;
+  }
 
   body[data-page="academy"] .comp-mqz5bgg8-container {
     display: flex !important;
@@ -1505,7 +1613,7 @@
     grid-template-columns: none !important;
   }
 
-  body[data-page="academy"] .comp-mqz5bgg8-container > [id^="comp-"] {
+  body[data-page="academy"] .comp-mqz5bgg8-container>[id^="comp-"] {
     position: relative !important;
     inset: auto !important;
     flex: 1 1 100% !important;
@@ -1528,16 +1636,45 @@
     left: auto !important;
   }
 
-  body[data-page="academy"] #comp-mqz5v8l2 { order: 1 !important; }
-  body[data-page="academy"] #comp-mqz5tdw3 { order: 2 !important; }
-  body[data-page="academy"] #comp-mqz5w5p4 { order: 3 !important; }
-  body[data-page="academy"] #comp-mqz5xh42 { order: 4 !important; }
-  body[data-page="academy"] #comp-mqz65olf { order: 5 !important; }
-  body[data-page="academy"] #comp-mqz6s6cn { order: 6 !important; }
-  body[data-page="academy"] #comp-mqz6saz5 { order: 7 !important; }
-  body[data-page="academy"] #comp-mqz6sh3u { order: 8 !important; }
-  body[data-page="academy"] #comp-mr0g6wg2 { order: 9 !important; }
-  body[data-page="academy"] #comp-mr0g77kb { order: 10 !important; }
+  body[data-page="academy"] #comp-mqz5v8l2 {
+    order: 1 !important;
+  }
+
+  body[data-page="academy"] #comp-mqz5tdw3 {
+    order: 2 !important;
+  }
+
+  body[data-page="academy"] #comp-mqz5w5p4 {
+    order: 3 !important;
+  }
+
+  body[data-page="academy"] #comp-mqz5xh42 {
+    order: 4 !important;
+  }
+
+  body[data-page="academy"] #comp-mqz65olf {
+    order: 5 !important;
+  }
+
+  body[data-page="academy"] #comp-mqz6s6cn {
+    order: 6 !important;
+  }
+
+  body[data-page="academy"] #comp-mqz6saz5 {
+    order: 7 !important;
+  }
+
+  body[data-page="academy"] #comp-mqz6sh3u {
+    order: 8 !important;
+  }
+
+  body[data-page="academy"] #comp-mr0g6wg2 {
+    order: 9 !important;
+  }
+
+  body[data-page="academy"] #comp-mr0g77kb {
+    order: 10 !important;
+  }
 
   /* CTA image: natural aspect */
   body[data-page="academy"] #comp-mqz5xh42 img {
@@ -1562,10 +1699,10 @@
     box-sizing: border-box !important;
   }
 
-  body[data-page="academy"] #comp-mqz65olf > [id^="comp-"],
-  body[data-page="academy"] #comp-mqz6s6cn > [id^="comp-"],
-  body[data-page="academy"] #comp-mqz6saz5 > [id^="comp-"],
-  body[data-page="academy"] #comp-mqz6sh3u > [id^="comp-"] {
+  body[data-page="academy"] #comp-mqz65olf>[id^="comp-"],
+  body[data-page="academy"] #comp-mqz6s6cn>[id^="comp-"],
+  body[data-page="academy"] #comp-mqz6saz5>[id^="comp-"],
+  body[data-page="academy"] #comp-mqz6sh3u>[id^="comp-"] {
     position: relative !important;
     inset: auto !important;
     width: 100% !important;
@@ -1576,10 +1713,12 @@
     transform: none !important;
   }
 
-  body[data-page="academy"] #comp-mqz65olf > .jdJeEr,
-  body[data-page="academy"] #comp-mqz6s6cn > .jdJeEr,
-  body[data-page="academy"] #comp-mqz6saz5 > .jdJeEr,
-  body[data-page="academy"] #comp-mqz6sh3u > .jdJeEr { display: none !important; }
+  body[data-page="academy"] #comp-mqz65olf>.jdJeEr,
+  body[data-page="academy"] #comp-mqz6s6cn>.jdJeEr,
+  body[data-page="academy"] #comp-mqz6saz5>.jdJeEr,
+  body[data-page="academy"] #comp-mqz6sh3u>.jdJeEr {
+    display: none !important;
+  }
 
   body[data-page="academy"] #comp-mqz66jjj,
   body[data-page="academy"] #comp-mqz6s6cq1,
@@ -1695,10 +1834,12 @@
 
 /* tsc-responsive extract: mobile-only Luca thumb hover (max-1024) */
 @media (hover: hover) and (pointer: fine) and (max-width: 1024px) {
+
   body[data-page="academy"] #comp-mpjxxeqt:hover .tsc-luca-course-thumb,
   body[data-page="academy"] .tsc-luca-course-card:hover .tsc-luca-course-thumb {
     filter: none !important;
   }
+
   body[data-page="academy"] #comp-mpjxxeqt .tsc-luca-course-thumb,
   body[data-page="academy"] .tsc-luca-course-card .tsc-luca-course-thumb {
     filter: grayscale(0.15) sepia(0.55) saturate(2.4) hue-rotate(155deg) brightness(0.92);
@@ -1717,6 +1858,7 @@
 }
 
 @media (max-width: 1024px) {
+
   body[data-page="academy"] #comp-mpjvjuos,
   body[data-page="academy"] #comp-mpjxmose,
   body[data-page="academy"] #comp-mpjxxeqt {
@@ -1771,9 +1913,9 @@
     justify-content: stretch !important;
   }
 
-  body[data-page="academy"] .comp-mpk57dp3-container > [id^="comp-"],
-  body[data-page="academy"] .comp-mpk4wrdy-container > [id^="comp-"],
-  body[data-page="academy"] .comp-mpjz94ph-container > [id^="comp-"] {
+  body[data-page="academy"] .comp-mpk57dp3-container>[id^="comp-"],
+  body[data-page="academy"] .comp-mpk4wrdy-container>[id^="comp-"],
+  body[data-page="academy"] .comp-mpjz94ph-container>[id^="comp-"] {
     width: 100% !important;
     max-width: 100% !important;
     min-height: 48px !important;

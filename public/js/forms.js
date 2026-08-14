@@ -2,7 +2,7 @@
   var ui = window.TSCComponents;
   if (!ui) return;
 
-  ui.ensureStylesheet('/css/forms.css?v=form-picker-hitarea-1');
+  ui.ensureStylesheet('/css/forms.css?v=form-picker-hitarea-2');
 
   var shared = {
     defaultCountryCode: '+91 India',
@@ -22,13 +22,15 @@
     courses: [
       'The heART of Composition',
       'Roots of Hindustani Classical',
-      'A to Z of Music Production'
+      'A to Z of Music Production',
+      'Other'
     ],
     timeSlots: [
       '12:00 PM', '12:30 PM', '01:00 PM', '01:30 PM',
       '02:00 PM', '02:30 PM', '03:00 PM', '03:30 PM',
       '04:00 PM', '04:30 PM', '05:00 PM', '05:30 PM',
-      '06:00 PM', '06:30 PM', '07:00 PM', '07:30 PM'
+      '06:00 PM', '06:30 PM', '07:00 PM', '07:30 PM',
+      'Other'
     ],
     engagement: [
       'Live Performance',
@@ -75,7 +77,7 @@
     bookCall: {
       title: 'Book A Call',
       mount: '#comp-mrxe1crw',
-      routes: ['/book-a-call'],
+      routes: ['/book-a-call', '/pages/book-a-call.html', '/forms/book-a-call', '/blank-8', '/about-8'],
       fields: [
         { label: 'Which course are you interested in?', type: 'radios', options: options.courses, required: true, full: true },
         { label: "What's your name?", type: 'text', required: true },
@@ -88,7 +90,7 @@
     bookArtist: {
       title: 'Book An Artist',
       mount: '#comp-mrxmc0z9',
-      routes: ['/book-an-artist', '/query'],
+      routes: ['/book-an-artist', '/pages/book-an-artist.html', '/query', '/forms/book-an-artist'],
       fields: [
         { label: 'Full Name', type: 'text', required: true },
         { label: 'Organization', type: 'text', required: true },
@@ -106,35 +108,48 @@
     artistPath: {
       title: 'Apply for Artist Path',
       mount: '#comp-mrxv5lfu2',
-      routes: ['/artist-query'],
+      routes: ['/artist-query', '/pages/artist-query.html', '/artist-path', '/pages/artist-path.html', '/forms/artist-query'],
+      multiStep: true,
       fields: [
-        { label: 'First Name', type: 'text', required: true },
-        { label: 'Last Name', type: 'text', required: true },
-        { label: 'Where are you based?', type: 'text', full: true },
-        { label: 'Mobile Number', type: 'tel', required: true },
+        { label: 'First Name', type: 'text', required: true, step: 1 },
+        { label: 'Last Name', type: 'text', required: true, step: 1 },
+        { label: 'Where are you based?', type: 'text', full: true, step: 1 },
+        { label: 'Mobile Number', type: 'tel', required: true, step: 1 },
+        { label: 'Email Address', type: 'email', required: true, step: 1 },
+        { label: 'Stage Name / Identity', type: 'text', full: true, step: 1 },
+        { label: 'Instagram URL', type: 'url', step: 1 },
+        { label: 'Spotify URL', type: 'url', step: 1 },
+        { label: 'YouTube URL', type: 'url', step: 1 },
+        { label: 'I am an artist because...', type: 'textarea', full: true, step: 2 },
+        { label: 'The Foundation (Training Backstory)', type: 'textarea', full: true, step: 2 },
+        { label: 'Core Skills (Primary Weapon)', type: 'textarea', full: true, step: 2 },
+        { label: 'Your X-Factor', type: 'textarea', full: true, step: 2 },
+        { label: 'Daily Dedication', type: 'textarea', full: true, step: 2 },
+        { label: 'Mentor / Guruji', type: 'text', full: true, step: 2 },
+        { label: 'Songs Released', type: 'number', step: 2 },
+        { label: 'Live Shows', type: 'number', step: 2 },
+        { label: 'Your Tribe (Fanbase)', type: 'textarea', full: true, step: 2 },
+        { label: 'Toolkit & Setup', type: 'textarea', full: true, step: 2 },
+        { label: 'Current Projects', type: 'textarea', full: true, step: 2 },
+        { label: 'Daily Rituals (Riyaaz)', type: 'textarea', full: true, step: 2 },
+        { label: 'Skill Gaps (What to learn?)', type: 'textarea', full: true, step: 3 },
+        { label: 'Guidance & Mentorship', type: 'textarea', full: true, step: 3 },
+        { label: 'Curation Needs (Audio/Video/Stage)', type: 'textarea', full: true, step: 3 },
+        { label: 'Fandom Engine (Growth missing?)', type: 'textarea', full: true, step: 3 },
+        { label: 'Your North Star (Next 12 Months)', type: 'textarea', full: true, step: 3 },
+        { label: 'Anything Else? (Open Mic)', type: 'textarea', full: true, step: 3 }
+      ]
+    },
+    affiliateApp: {
+      title: 'Apply for Affiliate Program',
+      mount: '#comp-mqz7149p',
+      routes: ['/affiliate', '/pages/affiliate.html', '/forms/affiliate'],
+      fields: [
+        { label: 'Full Name', type: 'text', required: true },
         { label: 'Email Address', type: 'email', required: true },
-        { label: 'Stage Name / Identity', type: 'text', full: true },
-        { label: 'Instagram URL', type: 'url' },
-        { label: 'Spotify URL', type: 'url' },
-        { label: 'YouTube URL', type: 'url' },
-        { label: 'I am an artist because...', type: 'textarea', full: true },
-        { label: 'The Foundation (Training Backstory)', type: 'textarea', full: true },
-        { label: 'Core Skills (Primary Weapon)', type: 'textarea', full: true },
-        { label: 'Your X-Factor', type: 'textarea', full: true },
-        { label: 'Daily Dedication', type: 'textarea', full: true },
-        { label: 'Mentor / Guruji', type: 'text', full: true },
-        { label: 'Songs Released', type: 'number' },
-        { label: 'Live Shows', type: 'number' },
-        { label: 'Your Tribe (Fanbase)', type: 'textarea', full: true },
-        { label: 'Toolkit & Setup', type: 'textarea', full: true },
-        { label: 'Current Projects', type: 'textarea', full: true },
-        { label: 'Daily Rituals (Riyaaz)', type: 'textarea', full: true },
-        { label: 'Skill Gaps (What to learn?)', type: 'textarea', full: true },
-        { label: 'Guidance & Mentorship', type: 'textarea', full: true },
-        { label: 'Curation Needs (Audio/Video/Stage)', type: 'textarea', full: true },
-        { label: 'Fandom Engine (Growth missing?)', type: 'textarea', full: true },
-        { label: 'Your North Star (Next 12 Months)', type: 'textarea', full: true },
-        { label: 'Anything Else? (Open Mic)', type: 'textarea', full: true }
+        { label: 'Phone / WhatsApp Number', type: 'phoneCountry', required: true },
+        { label: 'Website / Social Media Profile', type: 'url', required: true, full: true },
+        { label: 'Why do you want to join the TSC Affiliate Program?', type: 'textarea', required: true, full: true }
       ]
     },
     review01: { title: 'Masterclass Review 01', standalone: true, routes: ['/masterclass-review01', '/pages/masterclass-review01.html'], fields: reviewFields() },
@@ -143,7 +158,7 @@
     collabQuery: {
       title: 'Collaborate With TSC',
       mount: '#comp-mp2w3ngp2',
-      routes: ['/collab-query', '/blank-6', '/forms/collab-query'],
+      routes: ['/collab-query', '/pages/collab-query.html', '/blank-6', '/forms/collab-query'],
       fields: [
         { label: 'I am a', name: 'i-am-a', type: 'radios', options: ['Brand', 'Artist', 'Institution', 'Other'], required: true, full: true },
         { label: 'Full Name', type: 'text', required: true },
@@ -175,6 +190,22 @@
     }
     var artist = normalizeArtistNameParam(params.get('artist') || params.get('talent'));
     if (!artist) return;
+
+    // Check native radio option first
+    var nativeRadio = document.querySelector('input[type="radio"][value*="' + artist + '"]') || document.querySelector('input[type="radio"][aria-label*="' + artist + '"]');
+    if (nativeRadio) {
+      nativeRadio.checked = true;
+      var w = nativeRadio.closest('.siroRCe') || nativeRadio.closest('[data-hook="core-radio-button"]');
+      if (w) {
+        var groupRadios = document.querySelectorAll('input[type="radio"][name="' + nativeRadio.name + '"]');
+        groupRadios.forEach(function(r) {
+          var other = r.closest('.siroRCe') || r.closest('[data-hook="core-radio-button"]');
+          if (other) other.setAttribute('data-checked', r.checked ? 'true' : 'false');
+        });
+      }
+    }
+
+    // Check dropdown or select fallback
     var select = document.querySelector('[data-tsc-form="bookArtist"] select[name="which-artist-talent"]');
     if (!select) return;
     var hasOption = Array.prototype.some.call(select.options || [], function(option) {
@@ -186,17 +217,25 @@
   }
 
   function boot() {
-    var path = location.pathname.replace(/\/$/, '') || '/';
+    var rawPath = location.pathname || '/';
+    var canonical = (typeof ui.canonicalPathname === 'function' ? ui.canonicalPathname() : rawPath).replace(/\/+$/, '') || '/';
     ui.normalizeNewsletter();
     ui.normalizeArtistLinks();
     ui.normalizeAcademyLogoLinks();
     Object.keys(forms).forEach(function(name) {
       var def = forms[name];
-      if (def.routes.indexOf(path) === -1) return;
+      var matches = (def.routes || []).some(function(r) {
+        return r === canonical || r === rawPath || rawPath.indexOf(r) === 0 || canonical.indexOf(r) === 0;
+      });
+      if (!matches) return;
       if (def.standalone) {
         ui.mountStandaloneForm(document.querySelector('[data-tsc-standalone-form]'), def, name, shared);
       } else {
-        ui.mountFormInto(document.querySelector(def.mount), def, name, shared);
+        var container = document.querySelector(def.mount);
+        if (!container && (name === 'bookCall' || name === 'bookArtist' || name === 'artistPath' || name === 'collabQuery' || name === 'affiliateApp')) {
+          container = document.querySelector('form[id^="form-"]') || document.querySelector('main section') || document.querySelector('[data-testid="responsive-container"]');
+        }
+        ui.mountFormInto(container, def, name, shared);
       }
     });
     prefillBookArtistForm();

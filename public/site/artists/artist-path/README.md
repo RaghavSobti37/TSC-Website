@@ -16,7 +16,7 @@
 
 Every artist’s journey is different — but clarity changes everything.
 
-A personalised diagnostic / selective accelerator experience (curated by Rohit Sobti) helping artists understand where they are and what they need next: growth pathways, mentorship direction, learning recommendations, ecosystem access, and community onboarding.
+A personalised diagnostic / selective accelerator experience (curated by Rohith Sobti) helping artists understand where they are and what they need next: growth pathways, mentorship direction, learning recommendations, ecosystem access, and community onboarding.
 
 **Inquiry:** https://wix-site-clone-psi.vercel.app/artist-query
 

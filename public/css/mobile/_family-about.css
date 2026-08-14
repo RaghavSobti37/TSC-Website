@@ -2197,6 +2197,200 @@
   }
 
   #comp-mr1xvn1d,
+  #comp-mr1wvwvv5,
+  #comp-mr1wvwyq3,
+  #comp-mr1wvwsy2,
+  #comp-mr1wvwqf {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 8px !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+  }
+
+  #comp-mr1wvww1,
+  #comp-mr1wvww3,
+  #comp-mr1wvwyy1,
+  #comp-mr1wvwt64,
+  #comp-mr1wvwqp,
+  #comp-mr1wvwqm1 {
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* Icon wrappers — keep mark-sized (do not inherit 100% from text siblings) */
+  #comp-mr1wvwvv5 > #comp-mr1wvwvx2,
+  #comp-mr1wvwyq3 > #comp-mr1wvwys2,
+  #comp-mr1wvwsy2 > #comp-mr1wvwt1,
+  #comp-mr1wvwqf > #comp-mr1wvwqh,
+  #comp-mr1wvwvx2,
+  #comp-mr1wvwys2,
+  #comp-mr1wvwt1,
+  #comp-mr1wvwqh {
+    width: 72px !important;
+    max-width: 72px !important;
+    height: 72px !important;
+    max-height: 72px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  #comp-mr1wvwvr [id^="comp-"],
+  #comp-mr1wvwym [id^="comp-"],
+  #comp-mr1wvwst [id^="comp-"],
+  #comp-mr1wvwpv [id^="comp-"],
+  #comp-mr1wvww3,
+  #comp-mr1wvwyy1,
+  #comp-mr1wvwt64,
+  #comp-mr1wvwqp,
+  #comp-mr1wvwvv5,
+  #comp-mr1wvwyq3,
+  #comp-mr1wvwsy2,
+  #comp-mr1wvwqf,
+  #comp-mr1wvwqm1 {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    height: auto !important;
+    min-height: 0 !important;
+    transform: none !important;
+    grid-area: auto !important;
+    box-sizing: border-box !important;
+  }
+
+  #comp-mr1wvwvr .wixui-rich-text__text,
+  #comp-mr1wvwym .wixui-rich-text__text,
+  #comp-mr1wvwst .wixui-rich-text__text,
+  #comp-mr1wvwpv .wixui-rich-text__text {
+    max-width: 100% !important;
+    overflow-wrap: break-word !important;
+  }
+
+  /* Vision copy: readable size once stacked / twin */
+  #comp-mr1xvn1d h1,
+  #comp-mr1y8j13 h1,
+  #comp-mr1xvn1d .wixui-rich-text__text,
+  #comp-mr1y8j13 .wixui-rich-text__text {
+    font-size: 15px !important;
+    line-height: 1.5 !important;
+  }
+
+  #comp-mr1xvn1d,
+  #comp-mr1y8j13 {
+    --section-height: auto !important;
+    align-content: center !important;
+  }
+
+  /* Kill leftover Wix mesh heights on Vision/Beliefs headings + stack */
+  body[data-page="about"] #comp-mr1wm4n4,
+  body[data-page="about"] #comp-mr1wpwmx,
+  body[data-page="about"] #comp-mr1ybwmh,
+  body[data-page="about"] #comp-mr1whees {
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    --section-height: auto !important;
+  }
+
+  body[data-page="about"] #comp-mr1wm4n4 .wixui-rich-text__text,
+  body[data-page="about"] #comp-mr1wpwmx .wixui-rich-text__text {
+    min-height: 0 !important;
+  }
+
+  /* Audience cards — more side air */
+  #comp-mr3si7ip2,
+  #comp-mr3si7jh,
+  #comp-mr3si7jv1,
+  #comp-mr3sl540,
+  #comp-mr3t0ceh {
+    padding: 22px 20px !important;
+  }
+
+  #comp-mr3tcilz,
+  #comp-mr3si7jj5,
+  #comp-mr3si7jy,
+  #comp-mr3sldhg,
+  #comp-mr3t0ifj {
+    padding: 4px 6px !important;
+  }
+
+  /* Brand tag chips — wrap with breathing room */
+  body[data-page="about"] .tsc-brand-card__tags [data-testid="responsive-container-content"],
+  body[data-page="about"] .tsc-brand-card__tags [class*="-container"] {
+    gap: 8px !important;
+    row-gap: 8px !important;
+  }
+
+  body[data-page="about"] .tsc-brand-card__tags [data-testid="responsive-container-content"] > [id^="comp-"],
+  body[data-page="about"] .tsc-brand-card__tags [class*="-container"] > [id^="comp-"] {
+    flex: 0 1 auto !important;
+    max-width: calc(50% - 6px) !important;
+  }
+
+  body[data-page="about"] .tsc-brand-card__tags .wixui-rich-text__text,
+  body[data-page="about"] .tsc-brand-card__tags h2,
+  body[data-page="about"] .tsc-brand-card__pill .wixui-rich-text__text {
+    white-space: normal !important;
+    overflow-wrap: break-word !important;
+  }
+
+  /* Who/Why title pills — don’t clip descenders */
+  #comp-mr1w88dl,
+  #comp-mr1wdo6d {
+    height: auto !important;
+    min-height: 36px !important;
+    padding: 6px 14px !important;
+    overflow: visible !important;
+  }
+
+  #comp-mr1w88dl .wixui-rich-text__text,
+  #comp-mr1wdo6d .wixui-rich-text__text {
+    line-height: 1.2 !important;
+  }
+
+  /* Who/Why body boxes — pad for readability */
+  #comp-mr1wb3oc,
+  #comp-mr1wdahh {
+    padding: 18px 16px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Journey step labels — less cramped stack */
+  #comp-mr22200q,
+  #comp-mr224lmj,
+  #comp-mr224td1,
+  #comp-mr224yhj,
+  #comp-mr225543,
+  #comp-mr225awb,
+  #comp-mr225fky,
+  #comp-mr225jy2 {
+    margin: 0 0 14px !important;
+    gap: 6px !important;
+  }
+}
+
+/* Tablet: vision twins side-by-side once wide enough */
+@media (min-width: 641px) and (max-width: 1024px) {
+  #comp-mr1whees [data-testid="responsive-container-content"],
+  #comp-mr1whees .comp-mr1whees-container {
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    align-items: stretch !important;
+    gap: 14px !important;
+  }
+
+  #comp-mr1xvn1d,
   #comp-mr1y8j13 {
     width: calc(50% - 7px) !important;
     max-width: calc(50% - 7px) !important;
@@ -2222,276 +2416,7 @@
   }
 }
 
-/*
- * About hero mobile — portrait stage, same desktop elements.
- * Desktop lock lives in tsc-responsive @media (min-width: 1025px).
- * Banner media stays full-bleed cover (pattern + cream brushstroke) — never motif-shrink.
- * Specificity must beat tsc-responsive (loads after mobile/about.css).
- */
-@media (max-width: 1024px) {
-  html body.responsive[data-page="about"] #comp-mp2vlkbh2,
-  html body.responsive[data-page="about"] #comp-mp2vlkbh2 .comp-mp2vlkbh2-overflow-wrapper {
-    height: clamp(420px, calc(100svh - 72px), 620px) !important;
-    min-height: clamp(420px, calc(100svh - 72px), 620px) !important;
-    max-height: none !important;
-    overflow: hidden !important;
-  }
 
-  html body.responsive[data-page="about"] #comp-mp2vlkbh2 .comp-mp2vlkbh2-container,
-  html body.responsive[data-page="about"] #comp-mp2vlkbh2 [data-testid="responsive-container-content"] {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center !important;
-    height: 100% !important;
-    min-height: 100% !important;
-    max-height: none !important;
-    padding: clamp(40px, 7vh, 64px) 24px clamp(52px, 9vh, 72px) !important;
-    box-sizing: border-box !important;
-    gap: clamp(12px, 2.6vh, 20px) !important;
-  }
-
-  html body.responsive[data-page="about"] #comp-mp2vlkbh2 #bgLayers_comp-mp2vlkbh2,
-  html body.responsive[data-page="about"] #comp-mp2vlkbh2 #bgMedia_comp-mp2vlkbh2 {
-    inset: 0 !important;
-    width: 100% !important;
-    height: 100% !important;
-    overflow: hidden !important;
-  }
-
-  html body.responsive[data-page="about"] #comp-mp2vlkbh2 wix-media-canvas,
-  html body.responsive[data-page="about"] #comp-mp2vlkbh2 wow-image,
-  html body.responsive[data-page="about"] #comp-mp2vlkbh2 #img_comp-mp2vlkbh2,
-  html body.responsive[data-page="about"] #comp-mp2vlkbh2 #img_comp-mp2vlkbh2 img,
-  html body.responsive[data-page="about"] #comp-mp2vlkbh2 canvas.webglcanvas {
-    position: absolute !important;
-    inset: 0 !important;
-    left: 0 !important;
-    top: 0 !important;
-    right: 0 !important;
-    bottom: 0 !important;
-    width: 100% !important;
-    max-width: none !important;
-    height: 100% !important;
-    max-height: none !important;
-    transform: none !important;
-    object-fit: cover !important;
-    object-position: center bottom !important;
-    pointer-events: none !important;
-    opacity: 1 !important;
-    z-index: 0 !important;
-  }
-
-  html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1ttkgk.comp-mr1ttkgk,
-  html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1vbgc2.comp-mr1vbgc2,
-  html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tvuqc.comp-mr1tvuqc,
-  html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tv44l.comp-mr1tv44l {
-    position: relative !important;
-    top: auto !important;
-    left: auto !important;
-    right: auto !important;
-    bottom: auto !important;
-    transform: none !important;
-    margin: 0 auto !important;
-    align-self: center !important;
-    justify-self: center !important;
-    z-index: 2 !important;
-  }
-
-  /* Shell — desktop ~130–150px scaled for phone */
-  html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1ttkgk.comp-mr1ttkgk {
-    order: 1 !important;
-    width: clamp(88px, 24vw, 120px) !important;
-    height: clamp(88px, 24vw, 120px) !important;
-    min-width: clamp(88px, 24vw, 120px) !important;
-    min-height: clamp(88px, 24vw, 120px) !important;
-    max-width: clamp(88px, 24vw, 120px) !important;
-    max-height: clamp(88px, 24vw, 120px) !important;
-    flex: 0 0 auto !important;
-  }
-
-  html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1ttkgk.comp-mr1ttkgk svg {
-    width: 100% !important;
-    height: 100% !important;
-    max-width: 100% !important;
-    max-height: 100% !important;
-    display: block !important;
-  }
-
-  /* Brand wordmark — hero-level signal */
-  html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1vbgc2.comp-mr1vbgc2 {
-    order: 2 !important;
-    display: block !important;
-    width: min(84vw, 320px) !important;
-    max-width: min(84vw, 320px) !important;
-    height: auto !important;
-    overflow: visible !important;
-    grid-template-columns: none !important;
-    grid-template-rows: none !important;
-  }
-
-  html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tvuqc.comp-mr1tvuqc,
-  html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tvuqc.comp-mr1tvuqc svg {
-    aspect-ratio: 867.52 / 415.6 !important;
-    display: block !important;
-    width: 100% !important;
-    height: auto !important;
-    max-width: 100% !important;
-    position: relative !important;
-    grid-area: auto !important;
-  }
-
-  /* Tagline — supporting line under brand */
-  html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tv44l.comp-mr1tv44l {
-    order: 3 !important;
-    width: min(88vw, 340px) !important;
-    max-width: min(88vw, 340px) !important;
-    height: auto !important;
-    margin-top: 2px !important;
-  }
-
-  html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tv44l.comp-mr1tv44l .wixui-rich-text__text,
-  html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tv44l.comp-mr1tv44l h1,
-  html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tv44l.comp-mr1tv44l p {
-    font-size: clamp(15px, 4vw, 18px) !important;
-    line-height: 1.25 !important;
-    letter-spacing: 0.01em !important;
-    text-align: center !important;
-    white-space: normal !important;
-    max-width: 100% !important;
-    margin: 0 !important;
-  }
-
-  /* ponytail: keep Wix enter motion on about hero marks */
-
-@media (max-width: 600px) {
-  html body.responsive[data-page="about"] #comp-mp2vlkbh2,
-  html body.responsive[data-page="about"] #comp-mp2vlkbh2 .comp-mp2vlkbh2-overflow-wrapper {
-    height: clamp(400px, calc(100svh - 64px), 560px) !important;
-    min-height: clamp(400px, calc(100svh - 64px), 560px) !important;
-  }
-
-  html body.responsive[data-page="about"] #comp-mp2vlkbh2 .comp-mp2vlkbh2-container,
-  html body.responsive[data-page="about"] #comp-mp2vlkbh2 [data-testid="responsive-container-content"] {
-    padding: clamp(36px, 6vh, 52px) 20px clamp(48px, 8vh, 64px) !important;
-    gap: clamp(10px, 2.2vh, 16px) !important;
-  }
-
-  html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1ttkgk.comp-mr1ttkgk {
-    width: clamp(80px, 22vw, 104px) !important;
-    height: clamp(80px, 22vw, 104px) !important;
-    min-width: clamp(80px, 22vw, 104px) !important;
-    min-height: clamp(80px, 22vw, 104px) !important;
-    max-width: clamp(80px, 22vw, 104px) !important;
-    max-height: clamp(80px, 22vw, 104px) !important;
-  }
-
-  html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1vbgc2.comp-mr1vbgc2 {
-    width: min(86vw, 300px) !important;
-    max-width: min(86vw, 300px) !important;
-  }
-
-  html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tv44l.comp-mr1tv44l {
-    width: min(90vw, 320px) !important;
-    max-width: min(90vw, 320px) !important;
-  }
-
-  html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tv44l.comp-mr1tv44l .wixui-rich-text__text,
-  html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tv44l.comp-mr1tv44l h1,
-  html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tv44l.comp-mr1tv44l p {
-    font-size: clamp(14px, 3.9vw, 17px) !important;
-  }
-}
-
-@media (min-width: 601px) and (max-width: 1024px) {
-  html body.responsive[data-page="about"] #comp-mp2vlkbh2,
-  html body.responsive[data-page="about"] #comp-mp2vlkbh2 .comp-mp2vlkbh2-overflow-wrapper {
-    height: clamp(480px, calc(100svh - 80px), 680px) !important;
-    min-height: clamp(480px, calc(100svh - 80px), 680px) !important;
-  }
-
-  html body.responsive[data-page="about"] #comp-mp2vlkbh2 .comp-mp2vlkbh2-container,
-  html body.responsive[data-page="about"] #comp-mp2vlkbh2 [data-testid="responsive-container-content"] {
-    padding: clamp(48px, 8vh, 72px) 40px clamp(56px, 9vh, 80px) !important;
-    gap: clamp(14px, 2.8vh, 22px) !important;
-  }
-
-  html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1ttkgk.comp-mr1ttkgk {
-    width: clamp(100px, 14vw, 128px) !important;
-    height: clamp(100px, 14vw, 128px) !important;
-    min-width: clamp(100px, 14vw, 128px) !important;
-    min-height: clamp(100px, 14vw, 128px) !important;
-    max-width: clamp(100px, 14vw, 128px) !important;
-    max-height: clamp(100px, 14vw, 128px) !important;
-  }
-
-  html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1vbgc2.comp-mr1vbgc2 {
-    width: min(52vw, 360px) !important;
-    max-width: min(52vw, 360px) !important;
-  }
-
-  html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tv44l.comp-mr1tv44l {
-    width: min(64vw, 400px) !important;
-    max-width: min(64vw, 400px) !important;
-  }
-
-  html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tv44l.comp-mr1tv44l .wixui-rich-text__text,
-  html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tv44l.comp-mr1tv44l h1,
-  html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tv44l.comp-mr1tv44l p {
-    font-size: clamp(17px, 2.6vw, 22px) !important;
-  }
-}
-
-/* Final mobile hero guard: keep subtitle below wordmark, never over it. */
-@media (max-width: 1024px) {
-  html body.responsive[data-page="about"] main a.wixui-button,
-  html body.responsive[data-page="about"] main .wixui-button {
-    box-sizing: border-box !important;
-    min-height: 46px !important;
-  }
-
-  html body.responsive[data-page="about"] #comp-mp2vlkbh2 .comp-mp2vlkbh2-container,
-  html body.responsive[data-page="about"] #comp-mp2vlkbh2 [data-testid="responsive-container-content"] {
-    justify-content: center !important;
-    gap: clamp(18px, 3.4vh, 30px) !important;
-  }
-
-  html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1vbgc2.comp-mr1vbgc2,
-  html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tvuqc.comp-mr1tvuqc,
-  html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tv44l.comp-mr1tv44l {
-    flex: 0 0 auto !important;
-    display: block !important;
-    overflow: visible !important;
-  }
-
-  html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tv44l.comp-mr1tv44l {
-    margin-top: clamp(6px, 1.6vh, 16px) !important;
-    padding: 0 10px !important;
-    box-sizing: border-box !important;
-    background: transparent !important;
-  }
-
-  html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tv44l.comp-mr1tv44l .wixui-rich-text__text,
-  html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tv44l.comp-mr1tv44l h1,
-  html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tv44l.comp-mr1tv44l p {
-    display: block !important;
-    font-size: clamp(13px, 3.4vw, 17px) !important;
-    line-height: 1.35 !important;
-    text-align: center !important;
-    white-space: normal !important;
-    overflow-wrap: normal !important;
-    word-break: normal !important;
-    text-wrap: balance !important;
-  }
-}
-
-@media (min-width: 601px) and (max-width: 1024px) {
-  html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tv44l.comp-mr1tv44l .wixui-rich-text__text,
-  html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tv44l.comp-mr1tv44l h1,
-  html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tv44l.comp-mr1tv44l p {
-    font-size: clamp(15px, 2.3vw, 20px) !important;
-  }
-}
 
 /* Founder card - mobile flow repair. */
 @media (max-width: 1024px) {
@@ -2874,7 +2799,7 @@
   }
 }
 
-/* About mobile hero polish: desktop-inspired composition, mobile-only. */
+/* About mobile hero: Exact proportional replica of desktop layout */
 @media (max-width: 1024px) {
   html body.responsive[data-page="about"] .tsc-mobile-site-header {
     background: #ffecd1 !important;
@@ -2894,82 +2819,155 @@
 
   html body.responsive[data-page="about"] #comp-mp2vlkbh2,
   html body.responsive[data-page="about"] #comp-mp2vlkbh2 .comp-mp2vlkbh2-overflow-wrapper {
-    height: clamp(500px, calc(100svh - var(--tsc-nav-bar-h, 64px)), 680px) !important;
-    min-height: clamp(500px, calc(100svh - var(--tsc-nav-bar-h, 64px)), 680px) !important;
+    height: auto !important;
+    width: 100% !important;
+    aspect-ratio: 1266 / 721 !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    position: relative !important;
     overflow: hidden !important;
+    display: flex !important;
+    flex-direction: column !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
   }
 
   html body.responsive[data-page="about"] #comp-mp2vlkbh2 .comp-mp2vlkbh2-container,
   html body.responsive[data-page="about"] #comp-mp2vlkbh2 [data-testid="responsive-container-content"] {
     position: relative !important;
-    display: block !important;
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    grid-template-rows: 1fr !important;
     width: 100% !important;
     height: 100% !important;
     min-height: 100% !important;
+    max-height: none !important;
     padding: 0 !important;
-    overflow: hidden !important;
-  }
-
-  html body.responsive[data-page="about"] #comp-mp2vlkbh2 wix-media-canvas,
-  html body.responsive[data-page="about"] #comp-mp2vlkbh2 wow-image,
-  html body.responsive[data-page="about"] #comp-mp2vlkbh2 #img_comp-mp2vlkbh2,
-  html body.responsive[data-page="about"] #comp-mp2vlkbh2 #img_comp-mp2vlkbh2 img,
-  html body.responsive[data-page="about"] #comp-mp2vlkbh2 canvas.webglcanvas {
-    filter: brightness(0.62) saturate(0.95) contrast(0.92) !important;
-    object-position: center center !important;
-  }
-
-  html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1ttkgk.comp-mr1ttkgk,
-  html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1vbgc2.comp-mr1vbgc2,
-  html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tvuqc.comp-mr1tvuqc,
-  html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tv44l.comp-mr1tv44l {
-    position: absolute !important;
     margin: 0 !important;
-    z-index: 2 !important;
+    box-sizing: border-box !important;
+    pointer-events: none !important;
+    z-index: 1 !important;
+  }
+
+  html body.responsive[data-page="about"] #comp-mp2vlkbh2 #bgLayers_comp-mp2vlkbh2 {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    overflow: hidden !important;
+    z-index: 0 !important;
+  }
+
+  html body.responsive[data-page="about"] #comp-mp2vlkbh2 #bgMedia_comp-mp2vlkbh2,
+  html body.responsive[data-page="about"] #comp-mp2vlkbh2 #bgMedia_comp-mp2vlkbh2 * {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+  }
+
+  html body.responsive[data-page="about"] #comp-mp2vlkbh2 [data-testid="colorUnderlay"] {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: radial-gradient(circle at 55.8857% 83.1848%, rgb(18, 109, 94) 0%, 27.384%, rgba(18, 109, 94, 0) 56%), radial-gradient(circle at 18.7959% 51.7182%, rgb(183, 75, 2) 0%, 43.2%, rgba(183, 75, 2, 0) 72%), radial-gradient(circle at 90.9484% 18.9747%, rgb(8, 61, 58) 0%, 64.3%, rgba(8, 61, 58, 0) 100%), radial-gradient(circle at 48.9014% 49.5215%, rgb(183, 75, 2) 0%, 100%, rgba(183, 75, 2, 0) 100%) !important;
+    opacity: 1 !important;
+    z-index: 0 !important;
+  }
+
+  html body.responsive[data-page="about"] #comp-mp2vlkbh2 [data-testid="bgOverlay"],
+  html body.responsive[data-page="about"] #comp-mp2vlkbh2 #bgImgOverlay_comp-mp2vlkbh2 {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background-image: url("/assets/mirror/static.wixstatic.com/media/0da768_8657a8f7766a4491ad2da38ae2f4f82f~mv2.png") !important;
+    background-repeat: repeat !important;
+    background-size: 300px 225px !important;
+    background-position: center center !important;
+    opacity: 0.35 !important;
+    mix-blend-mode: overlay !important;
+    z-index: 1 !important;
   }
 
   html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1ttkgk.comp-mr1ttkgk {
-    left: clamp(-250px, -45vw, -160px) !important;
-    top: 50% !important;
-    width: clamp(300px, 78vw, 460px) !important;
-    height: clamp(300px, 78vw, 460px) !important;
-    min-width: clamp(300px, 78vw, 460px) !important;
-    min-height: clamp(300px, 78vw, 460px) !important;
-    max-width: clamp(300px, 78vw, 460px) !important;
-    max-height: clamp(300px, 78vw, 460px) !important;
-    overflow: hidden !important;
-    transform: translateY(-48%) !important;
+    grid-area: 1/1/2/2 !important;
+    position: absolute !important;
+    left: -27.4vw !important;
+    top: -17.37vw !important;
+    width: 67.666vw !important;
+    height: 67.666vw !important;
+    aspect-ratio: 1 / 1 !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+    max-width: none !important;
+    max-height: none !important;
+    margin: 0 !important;
+    transform: rotate(90.0001deg) !important;
+    opacity: 1 !important;
+    display: block !important;
+    z-index: 2 !important;
+    pointer-events: auto !important;
   }
 
   html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1ttkgk.comp-mr1ttkgk svg {
-    overflow: hidden !important;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    display: block !important;
   }
 
   html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1vbgc2.comp-mr1vbgc2 {
-    left: clamp(128px, 32vw, 220px) !important;
-    top: 50% !important;
-    width: clamp(220px, 48vw, 360px) !important;
-    max-width: clamp(220px, 48vw, 360px) !important;
+    grid-area: 1/1/2/2 !important;
+    position: absolute !important;
+    top: 4.4vw !important;
+    right: 11.55vw !important;
+    left: auto !important;
+    bottom: auto !important;
+    width: 56.84vw !important;
+    max-width: 56.84vw !important;
     height: auto !important;
-    transform: translateY(-34%) !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    transform: none !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
     overflow: visible !important;
+    z-index: 2 !important;
+    pointer-events: auto !important;
   }
 
-  html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tvuqc.comp-mr1tvuqc,
-  html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tvuqc.comp-mr1tvuqc svg {
+  html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tvuqc.comp-mr1tvuqc {
     position: relative !important;
     display: block !important;
-    width: 100% !important;
+    width: 71.74% !important;
+    max-width: 100% !important;
     height: auto !important;
     aspect-ratio: 867.52 / 415.6 !important;
+    margin: 0 !important;
+    align-self: flex-start !important;
+  }
+
+  html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tvuqc.comp-mr1tvuqc svg {
+    width: 100% !important;
+    height: 100% !important;
+    display: block !important;
   }
 
   html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tv44l.comp-mr1tv44l {
-    left: 0 !important;
-    top: calc(100% + 10px) !important;
+    position: relative !important;
+    display: block !important;
     width: 100% !important;
     max-width: 100% !important;
     height: auto !important;
+    margin-top: clamp(2px, 1.2vw, 8px) !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    margin-bottom: 0 !important;
     padding: 0 !important;
     transform: none !important;
   }
@@ -2978,31 +2976,23 @@
   html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tv44l.comp-mr1tv44l h1,
   html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1tv44l.comp-mr1tv44l p {
     color: #ffecd1 !important;
-    font-size: clamp(14px, 3.4vw, 21px) !important;
-    font-weight: 700 !important;
-    line-height: 1.18 !important;
+    font-size: clamp(8px, 1.83vw, 23px) !important;
+    font-weight: 400 !important;
+    line-height: 1.2 !important;
     letter-spacing: 0 !important;
     text-align: left !important;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.32) !important;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4) !important;
     white-space: normal !important;
-    text-wrap: balance !important;
+  }
+
+  html body.responsive[data-page="about"] #comp-mp2vlkbh2 [data-testid="bottom-divider"] {
+    position: absolute !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    z-index: 3 !important;
+    pointer-events: none !important;
   }
 }
 
-@media (max-width: 480px) {
-  html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1ttkgk.comp-mr1ttkgk {
-    left: -168px !important;
-    width: 330px !important;
-    height: 330px !important;
-    min-width: 330px !important;
-    min-height: 330px !important;
-    max-width: 330px !important;
-    max-height: 330px !important;
-  }
 
-  html body.responsive[data-page="about"] #comp-mp2vlkbh2 #comp-mr1vbgc2.comp-mr1vbgc2 {
-    left: 128px !important;
-    width: min(232px, calc(100vw - 150px)) !important;
-    max-width: min(232px, calc(100vw - 150px)) !important;
-  }
-}

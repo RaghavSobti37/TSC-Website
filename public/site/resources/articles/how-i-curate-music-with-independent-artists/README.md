@@ -13,7 +13,7 @@
 
 # How I Curate Music With Independent Artists
 
-Editorial essay by Rohit Sobti (TSC) on lessons from Lost;Found with Faheem Abdullah — curation that reveals the artist.
+Editorial essay by Rohith Sobti (TSC) on lessons from Lost;Found with Faheem Abdullah — curation that reveals the artist.
 
 Canonical: https://theshakticollective.in/how-i-curate-music-with-independent-artists  
 Alias: `/resources/how-i-curate-music-with-independent-artists`

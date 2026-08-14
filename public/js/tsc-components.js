@@ -161,7 +161,7 @@
     };
     var externalPathMap = {
       '/the_shakti_collective': 'https://www.instagram.com/the_shakti_collective/',
-      '/IaS1GaJT7Gp7ufxHIjDkZu': 'https://chat.whatsapp.com/IaS1GaJT7Gp7ufxHIjDkZu',
+      '/IaS1GaJT7Gp7ufxHIjDkZu': 'https://wa.me/919168665455',
       '/@theshakticollective': 'https://youtube.com/@theshakticollective',
       '/people/The-Shakti-Collective/61575006284507': 'https://www.facebook.com/people/The-Shakti-Collective/61575006284507/',
       '/company/theshakticollective': 'https://www.linkedin.com/company/the-shakti-collective/',
@@ -576,41 +576,9 @@
   }
 
   function mountFilmsMobileOriginals(path) {
-    if (path !== '/films') return;
-    var compact = window.matchMedia && window.matchMedia('(max-width: 1024px)').matches;
     var existing = document.querySelector('.tsc-mobile-films-originals');
-    var source = document.querySelector('#comp-mqmh352i');
-    if (!compact) {
-      if (existing && existing.parentNode) existing.parentNode.removeChild(existing);
-      if (source) source.removeAttribute('aria-hidden');
-      document.body.classList.remove('tsc-films-mobile-originals-mounted');
-      return;
-    }
-    if (existing) return;
-    var anchor = source || document.querySelector('.tsc-mobile-films-about') || document.querySelector('#comp-mqksjwhn');
-    if (!anchor || !anchor.parentNode) return;
-    var shell = document.createElement('section');
-    shell.className = 'tsc-mobile-films-originals';
-    shell.setAttribute('aria-label', 'TSC Films Originals');
-    shell.innerHTML = [
-      '<div class="tsc-mobile-films-originals__logo">TSC<br>Films</div>',
-      '<article class="tsc-mobile-films-originals__content">',
-      '<p class="tsc-mobile-films-originals__eyebrow">TSC Originals</p>',
-      '<h2>Creating tomorrow&rsquo;s cultural IPs</h2>',
-      '<p>Every IP is designed as a living ecosystem that can evolve across platforms, communities, collaborations, and experiences to create long-term cultural relevance.</p>',
-      '<div class="tsc-mobile-films-originals__impact">',
-      '<strong>Original impact.</strong>',
-      '<ul>',
-      '<li>Music &amp; Culture</li>',
-      '<li>Live Experiences</li>',
-      '<li>Community-Led IPs</li>',
-      '</ul>',
-      '</div>',
-      '</article>'
-    ].join('');
-    anchor.insertAdjacentElement('afterend', shell);
-    if (source) source.setAttribute('aria-hidden', 'true');
-    document.body.classList.add('tsc-films-mobile-originals-mounted');
+    if (existing && existing.parentNode) existing.parentNode.removeChild(existing);
+    document.body.classList.remove('tsc-films-mobile-originals-mounted');
   }
 
   function mountFilmBottomCtas(path) {
@@ -892,7 +860,7 @@
       icon: '/assets/brand/tsc-favicon-32.png',
       touchIcon: '/assets/brand/tsc-apple-touch-icon.png',
       name: 'The Shakti Collective',
-      tagline: 'Unfolding artist force.'
+      tagline: 'Unfolding Artist Force .'
     },
     academy: {
       logo: ACADEMY_LOGO_SRC,
@@ -1268,6 +1236,34 @@
   }
 
   function formMarkup(def, name, shared) {
+    if (def.multiStep) {
+      var step1Fields = (def.fields || []).filter(function (f) { return (f.step || 1) === 1; });
+      var step2Fields = (def.fields || []).filter(function (f) { return f.step === 2; });
+      var step3Fields = (def.fields || []).filter(function (f) { return f.step === 3; });
+
+      return '<form class="tsc-local-form tsc-multistep-form" data-tsc-form="' + name + '">' +
+        '<h2>' + escapeHtml(def.title) + '</h2>' +
+        '<div class="tsc-step-nav" aria-label="Form progress">' +
+        '<span class="tsc-step-badge is-active" data-step-badge="1">Step 1: Personal</span>' +
+        '<span class="tsc-step-badge" data-step-badge="2">Step 2: Craft & Story</span>' +
+        '<span class="tsc-step-badge" data-step-badge="3">Step 3: Vision</span>' +
+        '</div>' +
+        '<div class="tsc-form-step is-active" data-step="1">' +
+        '<div class="tsc-form-grid">' + step1Fields.map(function (f) { return fieldMarkup(f, name, shared || {}); }).join('') + '</div>' +
+        '<div class="tsc-step-actions"><button type="button" class="tsc-submit tsc-next-btn" data-goto="2">Next Step →</button></div>' +
+        '</div>' +
+        '<div class="tsc-form-step" data-step="2" hidden>' +
+        '<div class="tsc-form-grid">' + step2Fields.map(function (f) { return fieldMarkup(f, name, shared || {}); }).join('') + '</div>' +
+        '<div class="tsc-step-actions"><button type="button" class="tsc-prev-btn" data-goto="1">← Back</button><button type="button" class="tsc-submit tsc-next-btn" data-goto="3">Next Step →</button></div>' +
+        '</div>' +
+        '<div class="tsc-form-step" data-step="3" hidden>' +
+        '<div class="tsc-form-grid">' + step3Fields.map(function (f) { return fieldMarkup(f, name, shared || {}); }).join('') + '</div>' +
+        '<div class="tsc-step-actions"><button type="button" class="tsc-prev-btn" data-goto="2">← Back</button><button class="tsc-submit" type="submit">Submit Application</button></div>' +
+        '</div>' +
+        '<p class="tsc-form-note" role="status" hidden></p>' +
+        '</form>';
+    }
+
     return '<form class="tsc-local-form" data-tsc-form="' + name + '"><h2>' + escapeHtml(def.title) + '</h2><p class="tsc-required-note"><span class="tsc-required-mark" aria-hidden="true">*</span> Required</p><div class="tsc-form-grid">' + (def.fields || []).map(function (field) {
       return fieldMarkup(field, name, shared || {});
     }).join('') + '<div class="tsc-field tsc-field-full"><button class="tsc-submit" type="submit">Submit</button><p class="tsc-form-note" role="status" hidden></p></div></div></form>';
@@ -1279,6 +1275,7 @@
       bookArtist: '/api/query',
       artistPath: '/api/artist-path',
       collabQuery: '/api/leads',
+      affiliateApp: '/api/leads',
       review01: '/api/reviews',
       review02: '/api/reviews02',
       classicalReview: '/api/reviews'
@@ -1340,7 +1337,7 @@
         try {
           input.showPicker();
           return;
-        } catch (e) {}
+        } catch (e) { }
       }
       if (document.activeElement !== input) input.focus();
     }
@@ -1439,6 +1436,21 @@
         source: 'tsc-website-collab'
       };
     }
+    if (name === 'affiliateApp') {
+      var why = values['why-do-you-want-to-join-the-tsc-affiliate-program'] || '';
+      var website = values['website-social-media-profile'] || '';
+      var affiliateMessage = why;
+      if (website) affiliateMessage = affiliateMessage ? affiliateMessage + '\n\nWebsite / Social Media Profile: ' + website : website;
+      return {
+        userType: 'Affiliate',
+        name: values['full-name'],
+        email: values['email-address'],
+        phone: phoneWithCountryCode(values['country-code'], values['phone-whatsapp-number']),
+        countryCode: countryCodeFromValue(values['country-code']) || values['country-code'],
+        message: affiliateMessage,
+        source: 'tsc-website-affiliate'
+      };
+    }
     if (name === 'review01' || name === 'review02' || name === 'classicalReview') {
       return {
         firstName: values['first-name'],
@@ -1498,7 +1510,7 @@
     }
   ];
 
-  var ARTIST_PATH_WHATSAPP = 'https://chat.whatsapp.com/IaS1GaJT7Gp7ufxHIjDkZu?mode=gi_t';
+  var ARTIST_PATH_WHATSAPP = 'https://wa.me/919168665455';
 
   /** Home closing CTAs: keep Join → WhatsApp community; keep Build → /films. */
   function linkHomeClosingCtas() {
@@ -1654,6 +1666,13 @@
       event.preventDefault();
       var button = form.querySelector('[type="submit"]');
       var input = form.querySelector('input[type="email"]');
+      var rawEmail = input ? String(input.value || '').trim() : '';
+      var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!rawEmail || !emailRegex.test(rawEmail)) {
+        setFormStatus(shell || form, 'Please enter a valid email address (e.g. name@domain.com)', 'error');
+        if (input) input.focus();
+        return;
+      }
       if (button) {
         button.disabled = true;
         button.dataset.originalText = button.innerHTML;
@@ -1663,11 +1682,11 @@
         var response = await fetch('/api/newsletter', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-          body: JSON.stringify({ email: input && input.value, source: form.dataset.source || 'footer' })
+          body: JSON.stringify({ email: rawEmail, source: form.dataset.source || 'footer' })
         });
         var body = await response.json().catch(function () { return {}; });
         if (!response.ok || body.success !== true) throw new Error(body.error || body.message || 'Subscription failed');
-        setFormStatus(shell || form, body.message || 'Thanks, you are on the list.', 'success');
+        setFormStatus(shell || form, body.message || 'Welcome to the TSC Family!', 'success');
         form.reset();
       } catch (error) {
         setFormStatus(shell || form, (error && error.message) || 'Could not subscribe. Please try again.', 'error');
@@ -1680,27 +1699,551 @@
     });
   }
 
+  function switchFormStep(form, targetStep) {
+    if (!form) return;
+    var steps = form.querySelectorAll('.tsc-form-step');
+    steps.forEach(function (step) {
+      var stepNum = step.dataset.step;
+      var isActive = String(stepNum) === String(targetStep);
+      step.classList.toggle('is-active', isActive);
+      step.hidden = !isActive;
+      step.style.display = isActive ? 'block' : 'none';
+    });
+    form.querySelectorAll('.tsc-step-badge').forEach(function (badge) {
+      badge.classList.toggle('is-active', String(badge.dataset.stepBadge) === String(targetStep));
+    });
+    try {
+      form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } catch (e) { }
+  }
+
+  function bindMultiStepNav(form) {
+    if (!form || form.dataset.multiStepBound) return;
+    form.dataset.multiStepBound = 'true';
+    form.addEventListener('click', function (event) {
+      var nextBtn = event.target && event.target.closest ? event.target.closest('.tsc-next-btn') : null;
+      if (nextBtn) {
+        event.preventDefault();
+        var currentStep = form.querySelector('.tsc-form-step.is-active');
+        if (currentStep) {
+          var inputs = Array.prototype.slice.call(currentStep.querySelectorAll('input, select, textarea'));
+          var isValid = true;
+          for (var i = 0; i < inputs.length; i++) {
+            var input = inputs[i];
+            if (typeof input.checkValidity === 'function' && !input.checkValidity()) {
+              isValid = false;
+              if (typeof input.reportValidity === 'function') input.reportValidity();
+              break;
+            }
+          }
+          if (!isValid) return;
+        }
+        var targetStep = nextBtn.dataset.goto || '2';
+        switchFormStep(form, targetStep);
+        return;
+      }
+      var prevBtn = event.target && event.target.closest ? event.target.closest('.tsc-prev-btn') : null;
+      if (prevBtn) {
+        event.preventDefault();
+        var prevTarget = prevBtn.dataset.goto || '1';
+        switchFormStep(form, prevTarget);
+      }
+    });
+  }
+
+  function bindNativeForm(wixForm, def, name, shared) {
+    if (!wixForm || wixForm.dataset.tscNativeBound) return;
+    wixForm.dataset.tscNativeBound = 'true';
+
+    // Ensure form and all ancestor containers stay visible
+    wixForm.hidden = false;
+    wixForm.style.display = '';
+    var p = wixForm.parentElement;
+    while (p && p !== document.body) {
+      p.hidden = false;
+      if (p.style.display === 'none') p.style.display = '';
+      p = p.parentElement;
+    }
+
+    // 1. Text & Email & Tel & Textarea inputs
+    var textInputs = wixForm.querySelectorAll('input, textarea');
+    textInputs.forEach(function(input) {
+      function updateState() {
+        var root = input.closest('[data-hook="text-field-root"]') || input.closest('.s__72lfJk') || input;
+        if (root) {
+          root.setAttribute('data-empty-state', input.value.trim() ? 'false' : 'true');
+          root.setAttribute('data-error', 'false');
+        }
+      }
+      input.addEventListener('input', updateState);
+      input.addEventListener('change', updateState);
+      input.addEventListener('blur', updateState);
+      updateState();
+    });
+
+    // 2. Checkbox option wrappers (e.g. Course selection on /book-a-call)
+    var boxWrappers = wixForm.querySelectorAll('[data-hook="box-selection-option-wrapper"]');
+    boxWrappers.forEach(function(wrapper) {
+      var cb = wrapper.querySelector('input[type="checkbox"]');
+      function toggleCheckbox(checked) {
+        if (typeof checked !== 'boolean') checked = wrapper.getAttribute('data-checked') !== 'true';
+        wrapper.setAttribute('data-checked', checked ? 'true' : 'false');
+        wrapper.setAttribute('aria-checked', checked ? 'true' : 'false');
+        if (cb) {
+          cb.checked = checked;
+          cb.dispatchEvent(new Event('change', { bubbles: true }));
+        }
+      }
+      wrapper.addEventListener('click', function(e) {
+        if (e.target !== cb) {
+          e.preventDefault();
+          toggleCheckbox();
+        }
+      });
+      if (cb) {
+        cb.addEventListener('change', function() {
+          wrapper.setAttribute('data-checked', cb.checked ? 'true' : 'false');
+        });
+      }
+    });
+
+    // 3. Radio buttons (e.g. Artist selection on /book-an-artist)
+    var radioWrappers = wixForm.querySelectorAll('.siroRCe, [data-hook="core-radio-button"]');
+    radioWrappers.forEach(function(wrapper) {
+      var radio = wrapper.querySelector('input[type="radio"]');
+      var radioName = radio ? radio.name : null;
+      wrapper.addEventListener('click', function(e) {
+        if (e.target !== radio) {
+          e.preventDefault();
+          if (radio) {
+            radio.checked = true;
+            radio.dispatchEvent(new Event('change', { bubbles: true }));
+          }
+        }
+        if (radioName) {
+          var groupRadios = wixForm.querySelectorAll('input[type="radio"][name="' + radioName + '"]');
+          groupRadios.forEach(function(r) {
+            var w = r.closest('.siroRCe') || r.closest('[data-hook="core-radio-button"]');
+            if (w) {
+              w.setAttribute('data-checked', r.checked ? 'true' : 'false');
+              w.setAttribute('aria-checked', r.checked ? 'true' : 'false');
+            }
+          });
+        }
+      });
+    });
+
+    // 4. Dropdowns (e.g. Type of Engagement on /book-an-artist)
+    var dropdownWrappers = wixForm.querySelectorAll('[data-field-type="DROPDOWN"]');
+    dropdownWrappers.forEach(function(dd) {
+      var trigger = dd.querySelector('[data-hook="dropdown-base"]');
+      var textEl = dd.querySelector('[data-hook="dropdown-base-text"]');
+      var fieldLabel = dd.closest('.GLWhGq') ? dd.closest('.GLWhGq').querySelector('.shszO9W') : null;
+      var labelText = (fieldLabel ? fieldLabel.textContent.trim() : '').toLowerCase();
+
+      var optionsList = ['Select'];
+      if (/engagement/i.test(labelText)) {
+        optionsList = ['Live Performance', 'Brand Collaboration', 'Social Media Content', 'Music Production / Feature', 'Other'];
+      } else if (/talent|artist/i.test(labelText)) {
+        optionsList = ['Harshad and Duhita Golesar', 'YUGM', 'Open to Recommendations'];
+      } else if (/logistics/i.test(labelText)) {
+        optionsList = ['Yes - Full Travel & Stay', 'Partially Provided', 'To be Negotiated', 'Not Provided'];
+      } else if (/collaboration/i.test(labelText)) {
+        optionsList = ['Music-led Campaign', 'Cultural Storytelling', 'Branded Experience', 'Talent Program', 'Other'];
+      } else {
+        optionsList = ['Live Performance', 'Brand Collaboration', 'Cultural Storytelling', 'Other'];
+      }
+
+      if (textEl && !textEl.textContent.trim()) {
+        textEl.textContent = 'Select';
+        textEl.style.color = '#7d7a75';
+      }
+
+      if (trigger) {
+        trigger.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          var existingMenu = dd.querySelector('.native-dropdown-menu');
+          if (existingMenu) {
+            existingMenu.remove();
+            return;
+          }
+          document.querySelectorAll('.native-dropdown-menu').forEach(function(m) { m.remove(); });
+          var menu = document.createElement('div');
+          menu.className = 'native-dropdown-menu';
+          optionsList.forEach(function(opt) {
+            var item = document.createElement('div');
+            item.className = 'native-dropdown-item';
+            item.textContent = opt;
+            item.addEventListener('click', function(ev) {
+              ev.stopPropagation();
+              if (textEl) {
+                textEl.textContent = opt;
+                textEl.style.color = '#053f40';
+              }
+              dd.dataset.selectedValue = opt;
+              dd.setAttribute('data-empty-state', opt === 'Select' ? 'true' : 'false');
+              menu.remove();
+            });
+            menu.appendChild(item);
+          });
+          dd.style.position = 'relative';
+          dd.appendChild(menu);
+        });
+      }
+    });
+
+    document.addEventListener('click', function() {
+      document.querySelectorAll('.native-dropdown-menu').forEach(function(m) { m.remove(); });
+    });
+
+    // 5. Date Picker (e.g. /book-a-call)
+    var dateFields = wixForm.querySelectorAll('[data-field-type="DATE_PICKER"]');
+    dateFields.forEach(function(df) {
+      var dateInput = df.querySelector('[data-hook="date-picker-input"]');
+      var calButton = df.querySelector('[data-hook="date-picker-calendar-icon"]');
+      var hiddenDate = document.createElement('input');
+      hiddenDate.type = 'date';
+      hiddenDate.className = 'native-hidden-date-picker';
+      df.appendChild(hiddenDate);
+
+      function triggerDatePicker() {
+        if (typeof hiddenDate.showPicker === 'function') {
+          try { hiddenDate.showPicker(); return; } catch(err){}
+        }
+        hiddenDate.focus();
+        hiddenDate.click();
+      }
+
+      if (dateInput) {
+        dateInput.readOnly = true;
+        dateInput.style.cursor = 'pointer';
+        dateInput.addEventListener('click', triggerDatePicker);
+      }
+      if (calButton) {
+        calButton.addEventListener('click', function(e) {
+          e.preventDefault();
+          triggerDatePicker();
+        });
+      }
+      hiddenDate.addEventListener('change', function() {
+        if (hiddenDate.value) {
+          if (dateInput) {
+            dateInput.value = hiddenDate.value;
+            dateInput.dispatchEvent(new Event('input', { bubbles: true }));
+            dateInput.dispatchEvent(new Event('change', { bubbles: true }));
+          }
+        }
+      });
+    });
+
+    // 6. Time Input (e.g. /book-a-call)
+    var timeFields = wixForm.querySelectorAll('[data-field-type="TIME_INPUT"]');
+    timeFields.forEach(function(tf) {
+      var hoursInput = tf.querySelector('[data-hook="hours"]');
+      var minutesInput = tf.querySelector('[data-hook="minutes"]');
+      var ampmBtn = tf.querySelector('[data-hook="ampm"]');
+
+      if (hoursInput && !hoursInput.value) hoursInput.placeholder = '10';
+      if (minutesInput && !minutesInput.value) minutesInput.placeholder = '00';
+
+      if (ampmBtn) {
+        ampmBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          var label = ampmBtn.querySelector('.sezcxt9') || ampmBtn;
+          var current = (label.textContent || '').trim().toUpperCase();
+          var next = current === 'PM' ? 'AM' : 'PM';
+          label.textContent = next;
+          ampmBtn.dataset.ampm = next;
+        });
+      }
+
+      if (hoursInput) {
+        hoursInput.addEventListener('input', function() {
+          hoursInput.value = hoursInput.value.replace(/[^0-9]/g, '').slice(0, 2);
+          if (hoursInput.value.length === 2 && minutesInput) {
+            minutesInput.focus();
+          }
+        });
+      }
+      if (minutesInput) {
+        minutesInput.addEventListener('input', function() {
+          minutesInput.value = minutesInput.value.replace(/[^0-9]/g, '').slice(0, 2);
+        });
+      }
+    });
+
+    // 7. Submit Button and Submission handling
+    var submitBtn = wixForm.querySelector('button[data-hook="submit-button"], button[data-hook="next-button"], button[type="submit"], [data-field-type="SUBMIT_BUTTON"] button');
+
+    function showFeedback(msg, isSuccess) {
+      var existing = wixForm.querySelector('.native-form-feedback');
+      if (existing) existing.remove();
+      var box = document.createElement('div');
+      box.className = 'native-form-feedback ' + (isSuccess ? 'is-success' : 'is-error');
+      box.textContent = msg;
+      if (submitBtn && submitBtn.closest('.GLWhGq')) {
+        var row = submitBtn.closest('.GLWhGq');
+        row.parentNode.insertBefore(box, row);
+      } else {
+        wixForm.appendChild(box);
+      }
+    }
+
+    function handleNativeSubmit() {
+      var endpoint = formEndpoint(name);
+      if (!endpoint) return;
+
+      var payload = {};
+      var isValid = true;
+      var errorMsg = '';
+
+      if (name === 'bookCall') {
+        var firstNameInput = wixForm.querySelector('[data-hook="form-field-first_name_e937"] input') || wixForm.querySelector('input[aria-label*="First name"]');
+        var lastNameInput = wixForm.querySelector('[data-hook="form-field-last_name_24e1"] input') || wixForm.querySelector('input[aria-label*="Last name"]');
+        var phoneInput = wixForm.querySelector('[data-hook="form-field-phone_9f79"] input') || wixForm.querySelector('input[type="phone"], input[inputmode="tel"]');
+        var emailInput = wixForm.querySelector('[data-hook="form-field-email_3810"] input') || wixForm.querySelector('input[type="email"]');
+        var dateInput = wixForm.querySelector('[data-hook="date-picker-input"]') || wixForm.querySelector('input[type="date"]');
+        var hoursInput = wixForm.querySelector('[data-hook="hours"]');
+        var minutesInput = wixForm.querySelector('[data-hook="minutes"]');
+        var ampmBtn = wixForm.querySelector('[data-hook="ampm"]');
+        var ampmVal = ampmBtn ? (ampmBtn.querySelector('.sezcxt9') || ampmBtn).textContent.trim() : 'AM';
+
+        var checkedCourses = [];
+        wixForm.querySelectorAll('[data-hook="form-field-which_course_are_you_interested_in"] [data-checked="true"]').forEach(function(item) {
+          checkedCourses.push(item.getAttribute('data-id') || item.textContent.trim());
+        });
+
+        var firstName = firstNameInput ? firstNameInput.value.trim() : '';
+        var lastName = lastNameInput ? lastNameInput.value.trim() : '';
+        var nameVal = (firstName + ' ' + lastName).trim() || firstName;
+        var phoneVal = phoneInput ? phoneInput.value.trim() : '';
+        var emailVal = emailInput ? emailInput.value.trim() : '';
+        var courseVal = checkedCourses.join(', ') || 'The heART of Composition';
+        var dateVal = dateInput ? dateInput.value.trim() : '';
+        var hoursVal = hoursInput && hoursInput.value.trim() ? hoursInput.value.trim() : '10';
+        var minutesVal = minutesInput && minutesInput.value.trim() ? minutesInput.value.trim() : '00';
+        var timeVal = hoursVal + ':' + minutesVal + ' ' + ampmVal;
+
+        if (!firstName) {
+          isValid = false;
+          errorMsg = 'Please enter your First Name';
+          if (firstNameInput) firstNameInput.focus();
+        } else if (!phoneVal) {
+          isValid = false;
+          errorMsg = 'Please enter your Phone Number';
+          if (phoneInput) phoneInput.focus();
+        } else if (!emailVal || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailVal)) {
+          isValid = false;
+          errorMsg = 'Please enter a valid Email Address';
+          if (emailInput) emailInput.focus();
+        } else if (checkedCourses.length === 0) {
+          isValid = false;
+          errorMsg = 'Please select which course you are interested in';
+        } else if (!dateVal) {
+          isValid = false;
+          errorMsg = 'Please select a date for the call';
+          if (dateInput) dateInput.click();
+        }
+
+        payload = {
+          name: nameVal,
+          firstName: firstName,
+          lastName: lastName,
+          phone: phoneVal,
+          email: emailVal,
+          course: courseVal,
+          date: dateVal,
+          time: timeVal,
+          source: 'tsc-website'
+        };
+      } else if (name === 'bookArtist') {
+        var nameInput = wixForm.querySelector('[data-hook="form-field-first_name_e937"] input') || wixForm.querySelector('input[aria-label*="Full Name"]');
+        var orgInput = wixForm.querySelector('[data-hook="form-field-organisation_name"] input');
+        var emailInput = wixForm.querySelector('[data-hook="form-field-email_3810"] input');
+        var phoneInput = wixForm.querySelector('[data-hook="form-field-phone_9f79"] input');
+        var engagementDd = wixForm.querySelector('[data-hook="form-field-type_of_engagement"]');
+        var artistRadio = wixForm.querySelector('[data-hook="form-field-select_artist_talent"] [data-checked="true"]');
+        
+        var natureInput = wixForm.querySelector('[data-hook="form-field-nature_of_project"] textarea, textarea[aria-label*="Nature"]');
+        var whenWhereInput = wixForm.querySelector('[data-hook="form-field-when_and_where"] textarea, textarea[aria-label*="When"]');
+        var scaleInput = wixForm.querySelector('[data-hook="form-field-expected_scale_reach"] input, input[aria-label*="Scale"]');
+        var logisticsDd = wixForm.querySelector('[data-hook="form-field-logistics_provided"]');
+        var visionInput = wixForm.querySelector('[data-hook="form-field-additional_vision_details"] textarea, textarea[aria-label*="Vision"]');
+
+        var nameVal = nameInput ? nameInput.value.trim() : '';
+        var orgVal = orgInput ? orgInput.value.trim() : '';
+        var emailVal = emailInput ? emailInput.value.trim() : '';
+        var phoneVal = phoneInput ? phoneInput.value.trim() : '';
+        var engagementVal = (engagementDd && engagementDd.dataset.selectedValue) || 'Live Performance';
+        var artistVal = (artistRadio ? (artistRadio.getAttribute('data-id') || artistRadio.textContent.trim()) : '') || 'Harshad and Duhita Golesar';
+        var natureVal = natureInput ? natureInput.value.trim() : '';
+        var whenWhereVal = whenWhereInput ? whenWhereInput.value.trim() : '';
+        var scaleVal = scaleInput ? scaleInput.value.trim() : '';
+        var logisticsVal = (logisticsDd && logisticsDd.dataset.selectedValue) || 'Yes - Full Travel & Stay';
+        var visionVal = visionInput ? visionInput.value.trim() : '';
+
+        if (!nameVal) {
+          isValid = false;
+          errorMsg = 'Please enter your Full Name';
+          if (nameInput) nameInput.focus();
+        } else if (!emailVal || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailVal)) {
+          isValid = false;
+          errorMsg = 'Please enter a valid Email Address';
+          if (emailInput) emailInput.focus();
+        } else if (!phoneVal) {
+          isValid = false;
+          errorMsg = 'Please enter your Contact Number';
+          if (phoneInput) phoneInput.focus();
+        }
+
+        payload = {
+          name: nameVal,
+          company: orgVal,
+          organization: orgVal,
+          email: emailVal,
+          phone: phoneVal,
+          collabType: engagementVal,
+          collaborationType: engagementVal,
+          artist: artistVal,
+          projectNature: natureVal,
+          nature: natureVal,
+          whenWhere: whenWhereVal,
+          scale: scaleVal,
+          scaleReach: scaleVal,
+          logisticsSupport: logisticsVal,
+          logistics: logisticsVal,
+          additionalVision: visionVal,
+          vision: visionVal,
+          source: 'tsc-website'
+        };
+      } else if (name === 'artistPath') {
+        var fNameInput = wixForm.querySelector('[data-hook="form-field-first_name_c985"] input') || wixForm.querySelector('input[aria-label*="First name"]');
+        var lNameInput = wixForm.querySelector('[data-hook="form-field-last_name_2463"] input') || wixForm.querySelector('input[aria-label*="Last name"]');
+        var placeInput = wixForm.querySelector('[data-hook="form-field-where_are_you_based"] input') || wixForm.querySelector('input[aria-label*="Where"]');
+        var mobInput = wixForm.querySelector('[data-hook="form-field-mobile_no"] input') || wixForm.querySelector('input[aria-label*="Mobile"]');
+        var emInput = wixForm.querySelector('[data-hook="form-field-email_6410"] input') || wixForm.querySelector('input[aria-label*="Email"]');
+        var stageInput = wixForm.querySelector('[data-hook="form-field-stage_name"] input') || wixForm.querySelector('input[aria-label*="Stage"]');
+
+        var fName = fNameInput ? fNameInput.value.trim() : '';
+        var lName = lNameInput ? lNameInput.value.trim() : '';
+        var fullName = (fName + ' ' + lName).trim() || fName;
+        var mob = mobInput ? mobInput.value.trim() : '';
+        var em = emInput ? emInput.value.trim() : '';
+
+        if (!fName) {
+          isValid = false;
+          errorMsg = 'Please enter your First Name';
+          if (fNameInput) fNameInput.focus();
+        } else if (!em || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)) {
+          isValid = false;
+          errorMsg = 'Please enter a valid Email Address';
+          if (emInput) emInput.focus();
+        } else if (!mob) {
+          isValid = false;
+          errorMsg = 'Please enter your Mobile Number';
+          if (mobInput) mobInput.focus();
+        }
+
+        payload = {
+          firstName: fName,
+          lastName: lName,
+          fullName: fullName,
+          mobile: mob,
+          email: em,
+          place: placeInput ? placeInput.value.trim() : '',
+          stageName: stageInput ? stageInput.value.trim() : '',
+          source: 'tsc-website'
+        };
+      }
+
+      if (!isValid) {
+        showFeedback(errorMsg, false);
+        return;
+      }
+
+      var submitSpan = submitBtn ? (submitBtn.querySelector('.sezcxt9') || submitBtn) : null;
+      var originalBtnText = submitSpan ? submitSpan.textContent : 'Submit';
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        if (submitSpan) submitSpan.textContent = 'Submitting...';
+      }
+
+      fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      })
+      .then(function(res) {
+        return res.json().then(function(data) {
+          return { ok: res.ok, data: data };
+        });
+      })
+      .then(function(result) {
+        if (result.ok && result.data && result.data.success !== false) {
+          showFeedback(result.data.message || 'Thank you! We have received your submission.', true);
+          if (submitSpan) submitSpan.textContent = 'Submitted ✓';
+          wixForm.reset();
+        } else {
+          var err = (result.data && result.data.error) || 'Submission failed. Please try again.';
+          showFeedback(err, false);
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            if (submitSpan) submitSpan.textContent = originalBtnText;
+          }
+        }
+      })
+      .catch(function(err) {
+        showFeedback('Network error. Please try again.', false);
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          if (submitSpan) submitSpan.textContent = originalBtnText;
+        }
+      });
+    }
+
+    if (submitBtn) {
+      submitBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        handleNativeSubmit();
+      });
+    }
+    wixForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      handleNativeSubmit();
+    });
+  }
+
   function mountFormInto(target, def, name, shared) {
-    if (!target || target.dataset.tscFormMounted === name) return;
+    if (!target) return;
+    var wixNativeForm = document.querySelector('form[id^="form-"]') || (target.tagName === 'FORM' ? target : target.querySelector('form'));
+    if (wixNativeForm) {
+      bindNativeForm(wixNativeForm, def, name, shared);
+      return;
+    }
+    var existingForm = document.querySelector('.tsc-local-form[data-tsc-form="' + name + '"]');
+    if (existingForm) return;
     target.dataset.tscFormMounted = name;
     var holder = document.createElement('div');
     holder.innerHTML = formMarkup(def, name, shared);
     var form = holder.firstElementChild;
     target.parentNode.insertBefore(form, target);
     target.hidden = true;
-    target.style.display = 'none';
+    target.style.setProperty('display', 'none', 'important');
     bindChoiceState(form);
     bindDatePickers(form);
+    if (def.multiStep) bindMultiStepNav(form);
     bindLocalSubmit(form);
   }
 
   function mountStandaloneForm(target, def, name, shared) {
-    if (!target || target.dataset.tscFormMounted === name) return;
+    if (!target) return;
     target.dataset.tscFormMounted = name;
     target.innerHTML = formMarkup(def, name, shared);
     var form = target.querySelector('form');
     bindChoiceState(form);
     bindDatePickers(form);
+    if (def.multiStep) bindMultiStepNav(form);
     bindLocalSubmit(form);
   }
 
@@ -1766,7 +2309,7 @@
       brand: academy ? assets.academy : assets.main,
       assets: assets,
       path: path,
-      whatsapp: opts.whatsappCommunityUrl || 'https://chat.whatsapp.com/IaS1GaJT7Gp7ufxHIjDkZu?mode=gi_t'
+      whatsapp: opts.whatsappCommunityUrl || 'https://wa.me/919168665455'
     };
   }
 
@@ -2961,7 +3504,7 @@
           brand.innerHTML = '<span class="' + (isMobile ? 'tsc-mobile-footer-logo tsc-mobile-footer-logo-svg' : 'tsc-desktop-footer-logo tsc-desktop-footer-logo-legacy') + '" aria-hidden="true">' + logoSvg + '</span>';
         });
       })
-      .catch(function () {});
+      .catch(function () { });
   }
 
   function findLegacyFooterSections() {
@@ -2969,7 +3512,7 @@
       if (section.closest('.tsc-desktop-footer, .tsc-mobile-footer')) return false;
       var text = (section.textContent || '').replace(/\s+/g, ' ').trim();
       var footerText = /©\s*2026\s*The Shakti Collective|All rights reserved/i.test(text);
-      var legacyFooterCluster = /Quick Links/i.test(text) && /Join Our Community/i.test(text) && /Unfolding artist force/i.test(text);
+      var legacyFooterCluster = /Quick Links/i.test(text) && /Join Our Community/i.test(text) && /Unfolding Artist Force /i.test(text);
       if (!section.classList.contains('wixui-footer') && !footerText && !legacyFooterCluster) return false;
       return !section.closest('.tsc-desktop-footer, .tsc-mobile-footer');
     });
@@ -2992,7 +3535,7 @@
       if (footer.querySelector('.tsc-desktop-footer, .tsc-mobile-footer')) return;
       var text = (footer.textContent || '').replace(/\s+/g, ' ').trim();
       var looksLikeWixFooter = /Quick Links/i.test(text) &&
-        (/Join Our Community/i.test(text) || /Unfolding artist force/i.test(text));
+        (/Join Our Community/i.test(text) || /Unfolding Artist Force /i.test(text));
       if (!looksLikeWixFooter) return;
       footer.classList.add('tsc-legacy-footer-host');
       footer.setAttribute('aria-hidden', 'true');
@@ -3002,6 +3545,25 @@
       footer.style.setProperty('min-height', '0', 'important');
       footer.style.setProperty('overflow', 'hidden', 'important');
       footer.style.setProperty('pointer-events', 'none', 'important');
+    });
+
+    document.querySelectorAll('footer').forEach(function (footer) {
+      if (!footer.querySelector('.tsc-desktop-footer, .tsc-mobile-footer')) return;
+      Array.prototype.slice.call(footer.children).forEach(function (child) {
+        if (!child.classList.contains('tsc-desktop-footer') && !child.classList.contains('tsc-mobile-footer')) {
+          child.classList.add('tsc-legacy-footer');
+          child.setAttribute('aria-hidden', 'true');
+          child.style.setProperty('display', 'none', 'important');
+          child.style.setProperty('visibility', 'hidden', 'important');
+          child.style.setProperty('height', '0', 'important');
+          child.style.setProperty('min-height', '0', 'important');
+          child.style.setProperty('max-height', '0', 'important');
+          child.style.setProperty('overflow', 'hidden', 'important');
+          child.style.setProperty('pointer-events', 'none', 'important');
+          child.style.setProperty('margin', '0', 'important');
+          child.style.setProperty('padding', '0', 'important');
+        }
+      });
     });
   }
 
@@ -3147,7 +3709,7 @@
       '<a class="tsc-desktop-footer-brand" href="' + (config.academy ? '/academy' : '/') + '" aria-label="' + escapeHtml(brandName) + '">',
       logoMarkup,
       '</a>',
-      '<p class="tsc-desktop-footer-tagline">' + escapeHtml(config.brand.tagline || (config.academy ? 'Mentorship-led learning for serious artists.' : 'Unfolding artist force.')) + '</p>',
+      '<p class="tsc-desktop-footer-tagline">' + escapeHtml(config.brand.tagline || (config.academy ? 'Mentorship-led learning for serious artists.' : 'Unfolding Artist Force .')) + '</p>',
       '</div>',
       buildFooterStartHereBox(startGroup),
       '<nav class="tsc-desktop-footer-nav" aria-label="Footer navigation">',
@@ -3176,6 +3738,16 @@
     Array.prototype.slice.call(footer.children).forEach(function (child) {
       if (child !== shell && !child.classList.contains('tsc-mobile-footer')) {
         child.classList.add('tsc-legacy-footer');
+        child.setAttribute('aria-hidden', 'true');
+        child.style.setProperty('display', 'none', 'important');
+        child.style.setProperty('visibility', 'hidden', 'important');
+        child.style.setProperty('height', '0', 'important');
+        child.style.setProperty('min-height', '0', 'important');
+        child.style.setProperty('max-height', '0', 'important');
+        child.style.setProperty('overflow', 'hidden', 'important');
+        child.style.setProperty('pointer-events', 'none', 'important');
+        child.style.setProperty('margin', '0', 'important');
+        child.style.setProperty('padding', '0', 'important');
       }
     });
     document.body.classList.add('tsc-has-desktop-footer');
@@ -3275,6 +3847,16 @@
     Array.prototype.slice.call(footer.children).forEach(function (child) {
       if (child !== shell && !child.classList.contains('tsc-desktop-footer')) {
         child.classList.add('tsc-legacy-footer');
+        child.setAttribute('aria-hidden', 'true');
+        child.style.setProperty('display', 'none', 'important');
+        child.style.setProperty('visibility', 'hidden', 'important');
+        child.style.setProperty('height', '0', 'important');
+        child.style.setProperty('min-height', '0', 'important');
+        child.style.setProperty('max-height', '0', 'important');
+        child.style.setProperty('overflow', 'hidden', 'important');
+        child.style.setProperty('pointer-events', 'none', 'important');
+        child.style.setProperty('margin', '0', 'important');
+        child.style.setProperty('padding', '0', 'important');
       }
     });
     document.body.classList.add('tsc-has-mobile-footer');
@@ -3342,9 +3924,9 @@
     try {
       var playPromise = video.play();
       if (playPromise !== undefined) {
-        playPromise.catch(function () {});
+        playPromise.catch(function () { });
       }
-    } catch (e) {}
+    } catch (e) { }
 
     var wrapper = video.closest('wix-video, wix-media-canvas, [id*="videoContainer"], .LH0J3M') || video.parentElement;
     if (wrapper) {
@@ -3756,6 +4338,7 @@
       '/artist-query': true,
       '/collab-query': true,
       '/query': true,
+      '/affiliate': true,
       '/masterclass-review01': true,
       '/masterclass-review02': true,
       '/classicalreview': true

@@ -18,7 +18,7 @@
 
 Explores emotional and technical architecture of composition — bhaav, melody, lyrics, collaboration, hooks, motifs, nature, samarpan, and original creation.
 
-**Curriculum themes (representative):** It All Starts Here · Aamad · Bhaav & Emotions · Learning from Nature · Samarpan · Subconscious Mind · Composing with Artists · Extension of Melody · Characteristics of a Good Composition · Breath of Music · Writing Melodies with Lyrics · Collaborations · Composing a Song Together · Unfolding Artist Force (capstone)
+**Curriculum themes (representative):** It All Starts Here · Aamad · Bhaav & Emotions · Learning from Nature · Samarpan · Subconscious Mind · Composing with Artists · Extension of Melody · Characteristics of a Good Composition · Breath of Music · Writing Melodies with Lyrics · Collaborations · Composing a Song Together · Unfolding Artist Force  (capstone)
 
 ## Source copy (verbatim)
 
@@ -41,7 +41,7 @@ Explores emotional and technical architecture of composition — bhaav, melody, 
 - Writing Melodies with Lyrics
 - Collaborations
 - Composing a Song Together
-- Unfolding Artist Force: Final Capstone
+- Unfolding Artist Force : Final Capstone
 - Course: Roots of Hindustani Classical
 - Mentor: Pandit Prasad Khaparde
 - A renowned Hindustani classical vocalist of international repute with over 30 years of experience, Pandit Prasad Khaparde belongs to the Rampur Sahaswan gharana. His musical journey began under the guidance of Padma Bhushan Ustad Rashid Khan Sahab.
@@ -61,7 +61,7 @@ Explores emotional and technical architecture of composition — bhaav, melody, 
 - Basic Taal
 - Bandish
 - Advanced Ragas
-- Unfolding Artist Force
+- Unfolding Artist Force 
 - Course: A–Z of Music Production
 - Mentor: Luca Petracca
 - Luca Petracca is a music producer and composer from Italy. He studied classical guitar at Conservatory S. Cecilia of Rome and classical composition at Conservatorium van Amsterdam. He has taught music for more than 17 years and produced multiple tracks across creative contexts.

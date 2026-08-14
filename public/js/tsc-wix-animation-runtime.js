@@ -41,7 +41,13 @@
     if (
       reason &&
       reason.name === 'AbortError' &&
-      /wix-thunderbolt\/dist\/motion|motion\.[\w.-]+\.chunk\.min\.js/i.test(message)
+      (
+        /wix-thunderbolt\/dist\/motion|motion\.[\w.-]+\.chunk\.min\.js/i.test(message) ||
+        // Autoplay interrupted by a new load request (mirrored hero videos are
+        // injected client-side by initCustomElements, so play() can be aborted
+        // once during hydration while the video still recovers and plays).
+        /play\(\) request was interrupted/i.test(message)
+      )
     ) {
       event.preventDefault();
     }

@@ -324,6 +324,10 @@
     {
       "source": "/assets/mirror/static.wixstatic.com/media/:asset/v1/:transform*",
       "destination": "https://static.wixstatic.com/media/:asset/v1/:transform*"
+    },
+    {
+      "source": "/assets/mirror/static.wixstatic.com/media/:asset",
+      "destination": "https://static.wixstatic.com/media/:asset"
     }
   ],
   "headers": [

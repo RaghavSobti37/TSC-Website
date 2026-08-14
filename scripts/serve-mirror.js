@@ -110,6 +110,15 @@ function requestPath(url) {
       fallback: asset ? `/assets/mirror/static.wixstatic.com/original-media/${asset[1]}` : null,
     };
   }
+  // Bare media uri (e.g. wix-bg-image tiled backgrounds resolve to the uri
+  // without a /v1/ transform path): proxy the original from the CDN like the
+  // /v1/ variants, falling back to the mirrored original-media copy.
+  if (mediaMatch && !pathname.includes('/v1/')) {
+    return {
+      proxy: `https://static.wixstatic.com/media/${mediaMatch[1]}${url.search}`,
+      fallback: `/assets/mirror/static.wixstatic.com/original-media/${mediaMatch[1]}`,
+    };
+  }
   if (pathname.endsWith('/')) return `${pathname}index.html`;
   if (!path.extname(pathname)) return `${pathname}/index.html`;
   return pathname;

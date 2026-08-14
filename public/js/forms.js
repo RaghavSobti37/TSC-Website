@@ -2,7 +2,7 @@
   var ui = window.TSCComponents;
   if (!ui) return;
 
-  ui.ensureStylesheet('/css/forms.css?v=form-picker-hitarea-2');
+  ui.ensureStylesheet('/css/forms.css?v=form-picker-hitarea-3');
 
   var shared = {
     defaultCountryCode: '+91 India',

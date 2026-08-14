@@ -4344,8 +4344,8 @@
       '/classicalreview': true
     };
     if (formPages[path]) {
-      ensureStylesheet('/css/forms.css?v=form-picker-hitarea-1');
-      ensureScript('/js/forms.js?v=form-picker-hitarea-1');
+      ensureStylesheet('/css/forms.css?v=form-picker-hitarea-3');
+      ensureScript('/js/forms.js?v=form-picker-hitarea-3');
       watchWixChoiceState();
     }
     mountSharedChrome();

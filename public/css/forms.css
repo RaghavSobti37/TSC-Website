@@ -16,6 +16,7 @@
   color: #053f40;
   font-family: var(--wix-font-Paragraph, Arial, sans-serif);
   pointer-events: auto;
+}
 .tsc-local-form {
   box-sizing: border-box;
   position: relative;

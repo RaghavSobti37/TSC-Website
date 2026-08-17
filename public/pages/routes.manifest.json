@@ -26,11 +26,6 @@
       "file": "artist-path.html"
     },
     {
-      "title": "Learn With TSC",
-      "route": "/learn-with-tsc",
-      "file": "learn-with-tsc.html"
-    },
-    {
       "title": "Films",
       "route": "/films",
       "file": "films.html"
@@ -645,7 +640,6 @@
     "/work",
     "/artists",
     "/artist-path",
-    "/learn-with-tsc",
     "/films",
     "/resources",
     "/academy",

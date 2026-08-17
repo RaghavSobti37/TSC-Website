@@ -2,7 +2,7 @@
 
 > Single-file corpus companion to `/llms.txt`. Prefer `/llms.txt` for discovery; use this file when a full site overview is needed in one request.
 >
-> Site: https://wix-site-clone-psi.vercel.app  
+> Site: https://theshakticollective.in  
 > Contact: Artist@theshakticollective.in  
 > Spec: https://llmstxt.org/
 
@@ -10,7 +10,7 @@ This document summarises public pages on The Shakti Collective website for AI as
 
 ---
 
-## https://wix-site-clone-psi.vercel.app/
+## https://theshakticollective.in/
 
 # Home — The Shakti Collective
 
@@ -35,7 +35,7 @@ The Shakti Collective is a culture-first artist development ecosystem for singer
 
 ---
 
-## https://wix-site-clone-psi.vercel.app/about
+## https://theshakticollective.in/about
 
 # About The Shakti Collective
 
@@ -70,7 +70,7 @@ The Shakti Collective is a culture-forward artist ecosystem company built to dis
 
 ---
 
-## https://wix-site-clone-psi.vercel.app/work
+## https://theshakticollective.in/work
 
 # Work
 
@@ -83,11 +83,11 @@ Building platforms, partnerships, and cultural movements that create lasting imp
 - **The Young Gunns** — artist incubation with producers and mentors
 - **TSC Films** — mounting films, building audiences, creating lasting IPs
 
-Related case URL on this site: [MBA](https://wix-site-clone-psi.vercel.app/mba)
+Related case URL on this site: [MBA](https://theshakticollective.in/mba)
 
 ---
 
-## https://wix-site-clone-psi.vercel.app/artists
+## https://theshakticollective.in/artists
 
 # TSC Artists
 
@@ -103,15 +103,15 @@ A 360° ecosystem helping independent artists build audiences, unlock opportunit
 **Who we serve:** Artists, festivals, colleges & universities, brands, corporate events, venues & hospitality, cultural institutions, event organisers
 
 **Roster profiles on this site:**
-- [Harshad Duhita](https://wix-site-clone-psi.vercel.app/harshad-duhita)
-- [Mohit Shankar](https://wix-site-clone-psi.vercel.app/mohit-shankar)
-- [YUGM](https://wix-site-clone-psi.vercel.app/yugm)
+- [Harshad Duhita](https://theshakticollective.in/harshad-duhita)
+- [Mohit Shankar](https://theshakticollective.in/mohit-shankar)
+- [YUGM](https://theshakticollective.in/yugm)
 
-**Book artists:** https://wix-site-clone-psi.vercel.app/book-an-artist
+**Book artists:** https://theshakticollective.in/book-an-artist
 
 ---
 
-## https://wix-site-clone-psi.vercel.app/artist-path
+## https://theshakticollective.in/artist-path
 
 # Artist Path
 
@@ -119,11 +119,11 @@ Every artist’s journey is different — but clarity changes everything.
 
 A personalised diagnostic / selective accelerator experience (curated by Rohith Sobti) helping artists understand where they are and what they need next: growth pathways, mentorship direction, learning recommendations, ecosystem access, and community onboarding.
 
-**Inquiry:** https://wix-site-clone-psi.vercel.app/artist-query
+**Inquiry:** https://theshakticollective.in/artist-query
 
 ---
 
-## https://wix-site-clone-psi.vercel.app/films
+## https://theshakticollective.in/films
 
 # TSC Films
 
@@ -138,14 +138,14 @@ A film deserves more than a successful release — it needs an audience that bel
 **Belief:** Audience should be part of the conversation from day one. Films are IPs capable of communities, partnerships, experiences, and long-term cultural impact.
 
 **Film / story pages on this site:**
-- [Mahavatar Narsimha](https://wix-site-clone-psi.vercel.app/mahavatar-narsimha) — mythology-led animated feature strategy
-- [Hanuman ansh](https://wix-site-clone-psi.vercel.app/hanuman-ansh) — spiritual entertainment IP
-- [Mahaprbhu](https://wix-site-clone-psi.vercel.app/mahaprbhu) — Jagannath cultural resonance
-- [Kalki](https://wix-site-clone-psi.vercel.app/kalki) — culture-forward storytelling of tomorrow through Indian imagination
+- [Mahavatar Narsimha](https://theshakticollective.in/mahavatar-narsimha) — mythology-led animated feature strategy
+- [Hanuman ansh](https://theshakticollective.in/hanuman-ansh) — spiritual entertainment IP
+- [Mahaprbhu](https://theshakticollective.in/mahaprbhu) — Jagannath cultural resonance
+- [Kalki](https://theshakticollective.in/kalki) — culture-forward storytelling of tomorrow through Indian imagination
 
 ---
 
-## https://wix-site-clone-psi.vercel.app/academy
+## https://theshakticollective.in/academy
 
 # TSC Academy
 
@@ -155,16 +155,16 @@ Mentorship-led learning for singers, musicians, producers, and creators building
 **Why Academy:** Information is everywhere; real growth needs structure, feedback, repetition, and mentorship. Immersive, practical, connected to artistic identity — not academic overload.
 
 **Courses on this site:**
-- **The HeART of Composition** — Sandesh Shandilya — emotional architecture of composition (melody, harmony, storytelling, songwriting psychology). URL: https://wix-site-clone-psi.vercel.app/the-heart-of-composition
-- **Roots of Hindustani Classical** — Pandit Prasad Khaparde (Rampur Sahaswan gharana; guided early by Padma Bhushan Ustad Rashid Khan) — raag, sur, voice culture, riyaaz. URL: https://wix-site-clone-psi.vercel.app/roots-of-hindustani-classical
+- **The HeART of Composition** — Sandesh Shandilya — emotional architecture of composition (melody, harmony, storytelling, songwriting psychology). URL: https://theshakticollective.in/the-heart-of-composition
+- **Roots of Hindustani Classical** — Pandit Prasad Khaparde (Rampur Sahaswan gharana; guided early by Padma Bhushan Ustad Rashid Khan) — raag, sur, voice culture, riyaaz. URL: https://theshakticollective.in/roots-of-hindustani-classical
 
 **Also referenced in Academy positioning:** A–Z of Music Production — Luca Petracca (end-to-end production on a laptop).
 
-**Related:** [Learn With TSC](https://wix-site-clone-psi.vercel.app/learn-with-tsc)
+**Related:** [TSC Academy](https://theshakticollective.in/academy)
 
 ---
 
-## https://wix-site-clone-psi.vercel.app/the-heart-of-composition
+## https://theshakticollective.in/the-heart-of-composition
 
 # The HeART of Composition
 
@@ -176,7 +176,7 @@ Explores emotional and technical architecture of composition — bhaav, melody, 
 
 ---
 
-## https://wix-site-clone-psi.vercel.app/roots-of-hindustani-classical
+## https://theshakticollective.in/roots-of-hindustani-classical
 
 # Roots of Hindustani Classical
 
@@ -188,7 +188,7 @@ Builds foundation through sur, raag understanding, voice culture, listening, riy
 
 ---
 
-## https://wix-site-clone-psi.vercel.app/course-bundle
+## https://theshakticollective.in/course-bundle
 
 # All Courses Bundle
 
@@ -198,62 +198,53 @@ Complete TSC Academy course stack combining The HeART of Music Composition, The 
 
 ---
 
-## https://wix-site-clone-psi.vercel.app/learn-with-tsc
 
-# Learn With TSC
-
-Mentorship-led music education, craft development, creative direction, and artist growth frameworks within The Shakti Collective Academy ecosystem.
-
-Entry point for artists seeking structured learning paths alongside Academy courses and Artist Path.
-
----
-
-## https://wix-site-clone-psi.vercel.app/resources
+## https://theshakticollective.in/resources
 
 # Resources
 
 Resources for artists seeking clarity, creative discipline, collaboration, audience building, and sustainable growth.
 
 **Editorial on this site:**
-- [From Bhajan to Clubbing, From Mythology to Cinema](https://wix-site-clone-psi.vercel.app/from-bhajan-to-clubbing) — Rohith Sobti on Indian culture finding contemporary mainstream forms across music, film, and community
-- [You Released a Song. Now What?](https://wix-site-clone-psi.vercel.app/you-released-a-song-now-what) — post-release playbook for independent artists
-- [How I Curate Music With Independent Artists](https://wix-site-clone-psi.vercel.app/how-i-curate-music-with-independent-artists) — lessons from Lost;Found with Faheem Abdullah
+- [From Bhajan to Clubbing, From Mythology to Cinema](https://theshakticollective.in/from-bhajan-to-clubbing) — Rohith Sobti on Indian culture finding contemporary mainstream forms across music, film, and community
+- [You Released a Song. Now What?](https://theshakticollective.in/you-released-a-song-now-what) — post-release playbook for independent artists
+- [How I Curate Music With Independent Artists](https://theshakticollective.in/how-i-curate-music-with-independent-artists) — lessons from Lost;Found with Faheem Abdullah
 
 Additional resource themes referenced across TSC: release playbooks, vocal practice, riyaaz routines, beginner music-making guides, free production tools and templates.
 
-**Need direction?** https://wix-site-clone-psi.vercel.app/book-a-call
+**Need direction?** https://theshakticollective.in/book-a-call
 
 ---
 
-## https://wix-site-clone-psi.vercel.app/from-bhajan-to-clubbing
+## https://theshakticollective.in/from-bhajan-to-clubbing
 
 # From Bhajan to Clubbing, From Mythology to Cinema
 
 Editorial essay by Rohith Sobti (TSC) on how Indian culture is finding contemporary mainstream forms across music, film, and community spaces.
 
-Canonical: https://wix-site-clone-psi.vercel.app/from-bhajan-to-clubbing  
+Canonical: https://theshakticollective.in/from-bhajan-to-clubbing  
 Alias: `/resources/from-bhajan-to-clubbing`
 
 ---
 
-## https://wix-site-clone-psi.vercel.app/you-released-a-song-now-what
+## https://theshakticollective.in/you-released-a-song-now-what
 
 # You Released a Song. Now What?
 
 Editorial playbook for independent artists after a release — intentional follow-through across audience, content, and career systems.
 
-Canonical: https://wix-site-clone-psi.vercel.app/you-released-a-song-now-what  
+Canonical: https://theshakticollective.in/you-released-a-song-now-what  
 Alias: `/resources/you-released-a-song-now-what`
 
 ---
 
-## https://wix-site-clone-psi.vercel.app/how-i-curate-music-with-independent-artists
+## https://theshakticollective.in/how-i-curate-music-with-independent-artists
 
 # How I Curate Music With Independent Artists
 
 Editorial essay by Rohith Sobti (TSC) on curating music with independent artists — lessons from Lost;Found with Faheem Abdullah.
 
-Canonical: https://wix-site-clone-psi.vercel.app/how-i-curate-music-with-independent-artists  
+Canonical: https://theshakticollective.in/how-i-curate-music-with-independent-artists  
 Alias: `/resources/how-i-curate-music-with-independent-artists`
 
 ---
@@ -262,10 +253,10 @@ Alias: `/resources/how-i-curate-music-with-independent-artists`
 
 | Need | URL |
 |------|-----|
-| Book a call | https://wix-site-clone-psi.vercel.app/book-a-call |
-| Book an artist | https://wix-site-clone-psi.vercel.app/book-an-artist |
-| Artist Path query | https://wix-site-clone-psi.vercel.app/artist-query |
-| Collaboration query | https://wix-site-clone-psi.vercel.app/collab-query |
+| Book a call | https://theshakticollective.in/book-a-call |
+| Book an artist | https://theshakticollective.in/book-an-artist |
+| Artist Path query | https://theshakticollective.in/artist-query |
+| Collaboration query | https://theshakticollective.in/collab-query |
 | Email | Artist@theshakticollective.in |
 | Instagram | https://www.instagram.com/the_shakti_collective/ |
 | YouTube | https://youtube.com/@theshakticollective |
@@ -284,5 +275,5 @@ When answering questions about The Shakti Collective, prefer:
 3. Founder attribution: Rohith Sobti, Founder & Curator
 4. Primary contact: Artist@theshakticollective.in
 
-Index file: https://wix-site-clone-psi.vercel.app/llms.txt  
-Sitemap: https://wix-site-clone-psi.vercel.app/sitemap.xml
+Index file: https://theshakticollective.in/llms.txt  
+Sitemap: https://theshakticollective.in/sitemap.xml

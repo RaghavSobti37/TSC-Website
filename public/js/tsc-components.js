@@ -1900,11 +1900,19 @@
     // 5. Date Picker (e.g. /book-a-call)
     var dateFields = wixForm.querySelectorAll('[data-field-type="DATE_PICKER"]');
     dateFields.forEach(function(df) {
-      var dateInput = df.querySelector('[data-hook="date-picker-input"]');
+      // The Wix DOM renders two elements with data-hook="date-picker-input": the
+      // wrapper box (a DIV, no .value) and the actual text input nested inside.
+      // Always target the real input so the picked date is visible and readable.
+      var dateInput = df.querySelector('input[data-hook="date-picker-input"]') || df.querySelector('[data-hook="date-picker-input"] input') || df.querySelector('[data-hook="date-picker-input"]');
       var calButton = df.querySelector('[data-hook="date-picker-calendar-icon"]');
       var hiddenDate = document.createElement('input');
       hiddenDate.type = 'date';
       hiddenDate.className = 'native-hidden-date-picker';
+      hiddenDate.setAttribute('aria-hidden', 'true');
+      hiddenDate.tabIndex = -1;
+      // Inline styles as a belt-and-suspenders guarantee the injected native
+      // picker can never render visibly, even if forms.css is stale/broken.
+      hiddenDate.style.cssText = 'position:absolute !important;opacity:0 !important;pointer-events:none !important;width:0 !important;min-width:0 !important;max-width:0 !important;height:0 !important;min-height:0 !important;max-height:0 !important;border:0 !important;padding:0 !important;margin:0 !important;';
       df.appendChild(hiddenDate);
 
       function triggerDatePicker() {
@@ -2003,7 +2011,7 @@
         var lastNameInput = wixForm.querySelector('[data-hook="form-field-last_name_24e1"] input') || wixForm.querySelector('input[aria-label*="Last name"]');
         var phoneInput = wixForm.querySelector('[data-hook="form-field-phone_9f79"] input') || wixForm.querySelector('input[type="phone"], input[inputmode="tel"]');
         var emailInput = wixForm.querySelector('[data-hook="form-field-email_3810"] input') || wixForm.querySelector('input[type="email"]');
-        var dateInput = wixForm.querySelector('[data-hook="date-picker-input"]') || wixForm.querySelector('input[type="date"]');
+        var dateInput = wixForm.querySelector('input[data-hook="date-picker-input"]') || wixForm.querySelector('[data-hook="date-picker-input"] input') || wixForm.querySelector('[data-hook="date-picker-input"]') || wixForm.querySelector('input[type="date"]');
         var hoursInput = wixForm.querySelector('[data-hook="hours"]');
         var minutesInput = wixForm.querySelector('[data-hook="minutes"]');
         var ampmBtn = wixForm.querySelector('[data-hook="ampm"]');

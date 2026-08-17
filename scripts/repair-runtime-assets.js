@@ -7,6 +7,8 @@ const pagesDir = path.join(publicDir, 'pages');
 const directAssets = [
   '/assets/mirror/static.parastorage.com/services/wix-thunderbolt/dist/webpack-runtime.e9817151.bundle.min.js',
   '/assets/mirror/static.parastorage.com/services/wix-thunderbolt/dist/thunderbolt-css.80a7df57.bundle.min.js',
+  '/assets/mirror/static.parastorage.com/services/editor-elements/1.15349.0/rb_wixui.corvid.manifest.min.json',
+  '/assets/mirror/static.parastorage.com/services/editor-elements/1.15349.0/rb_dsgnsys.corvid.manifest.min.json',
 ];
 
 function walk(dir) {

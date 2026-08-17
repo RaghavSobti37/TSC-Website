@@ -27,8 +27,8 @@
     {
       "page": "artist-query",
       "manifest": "/assets/pages/artist-query/manifest.json",
-      "assets": 104,
-      "missing": 2
+      "assets": 109,
+      "missing": 1
     },
     {
       "page": "artist-release-playbook",
@@ -43,34 +43,16 @@
       "missing": 0
     },
     {
-      "page": "blog-1",
-      "manifest": "/assets/pages/blog-1/manifest.json",
-      "assets": 97,
-      "missing": 0
-    },
-    {
-      "page": "blog-2",
-      "manifest": "/assets/pages/blog-2/manifest.json",
-      "assets": 97,
-      "missing": 0
-    },
-    {
-      "page": "blog-3",
-      "manifest": "/assets/pages/blog-3/manifest.json",
-      "assets": 97,
-      "missing": 0
-    },
-    {
       "page": "book-a-call",
       "manifest": "/assets/pages/book-a-call/manifest.json",
-      "assets": 114,
-      "missing": 6
+      "assets": 119,
+      "missing": 5
     },
     {
       "page": "book-an-artist",
       "manifest": "/assets/pages/book-an-artist/manifest.json",
-      "assets": 115,
-      "missing": 7
+      "assets": 120,
+      "missing": 6
     },
     {
       "page": "classicalreview",
@@ -81,7 +63,7 @@
     {
       "page": "collab-query",
       "manifest": "/assets/pages/collab-query/manifest.json",
-      "assets": 91,
+      "assets": 96,
       "missing": 0
     },
     {
@@ -157,12 +139,6 @@
       "missing": 0
     },
     {
-      "page": "learn-with-tsc",
-      "manifest": "/assets/pages/learn-with-tsc/manifest.json",
-      "assets": 127,
-      "missing": 0
-    },
-    {
       "page": "mahaprabhu-jagannath-impact",
       "manifest": "/assets/pages/mahaprabhu-jagannath-impact/manifest.json",
       "assets": 0,
@@ -195,12 +171,6 @@
     {
       "page": "masterclass-review02",
       "manifest": "/assets/pages/masterclass-review02/manifest.json",
-      "assets": 2,
-      "missing": 0
-    },
-    {
-      "page": "mba-impact",
-      "manifest": "/assets/pages/mba-impact/manifest.json",
       "assets": 2,
       "missing": 0
     },

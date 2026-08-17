@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const puppeteer = require('puppeteer');
+const shared = require('./mirror-shared.cjs');
 
 const publicDir = path.join(__dirname, '..', 'public');
 const pagesDir = path.join(publicDir, 'pages');
@@ -8,6 +9,25 @@ const cssDir = path.join(publicDir, 'css', 'pages');
 const jsDir = path.join(publicDir, 'js', 'pages');
 const sourceBase = 'https://meghanabhawalkarwo.wixstudio.com/my-site';
 const productionOrigin = 'https://wix-site-clone-psi.vercel.app';
+
+// Routes handled by the standalone runtime's SPA-navigation interceptor.
+const subpageRoutes = [
+  '/',
+  '/about',
+  '/work',
+  '/artists',
+  '/artist-path',
+  '/learn-with-tsc',
+  '/films',
+  '/resources',
+  '/academy',
+  '/book-a-call',
+  '/book-an-artist',
+  '/artist-query',
+  '/collab-query',
+  '/yugm',
+  '/harshad-duhita',
+];
 
 const subpages = [
   { title: 'MBA', route: '/mba', sourcePath: '/blank-7' },
@@ -150,142 +170,33 @@ function extractAnimationScript(html, pageSlug) {
   return rewritten;
 }
 
-const mirrorRuntimeScript = `
-<style data-tsc-standalone-runtime>
-:root, body { --wix-ads-height: 0px !important; }
-#WIX_ADS, a[href*="wix.com/studio"] { display: none !important; visibility: hidden !important; height: 0 !important; }
-</style>
-<script data-tsc-standalone-runtime>
-(function () {
-  var siteRoutes = new Set(["/","/about","/work","/artists","/artist-path","/learn-with-tsc","/films","/resources","/academy","/book-a-call","/book-an-artist","/artist-query","/collab-query","/yugm","/harshad-duhita"]);
-  var clearPlatformBadge = function () {
-    var ads = document.getElementById("WIX_ADS");
-    if (ads) {
-      if (ads.childNodes.length) ads.replaceChildren();
-      ads.setAttribute("aria-hidden", "true");
-    }
-    document.querySelectorAll('a[href*="wix.com/studio"]').forEach(function (link) { link.remove(); });
-  };
-  window.addEventListener("click", function (event) {
-    if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
-    var target = event.target instanceof Element ? event.target.closest("a[href]") : null;
-    if (!target || target.target === "_blank" || target.hasAttribute("download")) return;
-    var destination;
-    try { destination = new URL(target.href, location.href); } catch (_) { return; }
-    if (destination.origin !== location.origin || !siteRoutes.has(destination.pathname)) return;
-    if (destination.pathname === location.pathname) return;
-    event.preventDefault();
-    event.stopImmediatePropagation();
-    location.assign(destination.pathname + destination.search + destination.hash);
-  }, true);
-  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", clearPlatformBadge);
-  else clearPlatformBadge();
-  new MutationObserver(clearPlatformBadge).observe(document.documentElement, { childList: true, subtree: true });
-})();
-<\/script>`;
 
-const mirrorFetchPatchScript = `<script>
-(function () {
-  var mirrorBase = "/assets/mirror/meghanabhawalkarwo.wixstudio.com/my-site";
-  var thunderboltVariantUrl = function (url) {
-    try {
-      var parsed = new URL(String(url || ""), location.origin);
-      if (parsed.pathname !== "/assets/mirror/siteassets.parastorage.com/pages/pages/thunderbolt" || !parsed.search) return url;
-      var safe = function (value, fallback) { return String(value || fallback).replace(/[^a-zA-Z0-9._-]+/g, "_"); };
-      var params = parsed.searchParams;
-      var variant = [
-        safe(params.get("module"), "module"),
-        safe(params.get("pageId"), "page"),
-        safe(params.get("formFactor") || params.get("deviceType"), "responsive"),
-        safe(params.get("fileId"), "file")
-      ].join("--");
-      return "/assets/mirror/siteassets.parastorage.com/pages/pages/thunderbolt/" + variant + ".json";
-    } catch (_) {
-      return url;
-    }
-  };
-  var normalizeLocalUrl = function (url) {
-    var text = String(url || "");
-    if (/^https?:\\/\\/_partials\\//i.test(text)) return text.replace(/^https?:\\/\\/_partials/i, mirrorBase + "/_partials");
-    if (/^\\/\\/\\_partials\\//i.test(text)) return text.replace(/^\\/\\/\\_partials/i, mirrorBase + "/_partials");
-    if (/^https?:\\/\\/[^/]+\\/_partials\\//i.test(text)) return text.replace(/^https?:\\/\\/[^/]+\\/_partials/i, mirrorBase + "/_partials");
-    if (/^\\/\\_partials\\//i.test(text)) return text.replace(/^\\/\\_partials/i, mirrorBase + "/_partials");
-    if (/^https:\\/\\/meghanabhawalkarwo\\.wixstudio\\.com\\/my-site\\/_(?:partials|api)\\//i.test(text)) {
-      return text.replace(/^https:\\/\\/meghanabhawalkarwo\\.wixstudio\\.com\\/my-site/i, mirrorBase);
-    }
-    return thunderboltVariantUrl(url);
-  };
-  var blocked = /(?:frog\\.wix\\.com|panorama\\.wixapps\\.net|sentry-next\\.wixpress\\.com|wix\\.com\\/studio|\\/_api\\/|\\/my-site\\/_api\\/)/i;
-  var isBlockedUrl = function (url) {
-    try {
-      var parsed = new URL(String(url || ""), location.origin);
-      if (parsed.origin === location.origin && parsed.pathname.indexOf("/assets/mirror/") === 0) return false;
-    } catch (_) {}
-    return blocked.test(String(url));
-  };
-  var okJson = function () {
-    return Promise.resolve(new Response("{}", { status: 200, headers: { "content-type": "application/json" } }));
-  };
-  if (navigator.sendBeacon) {
-    var originalBeacon = navigator.sendBeacon.bind(navigator);
-    navigator.sendBeacon = function (url, data) {
-      return isBlockedUrl(url) ? true : originalBeacon(url, data);
-    };
-  }
-  if (window.fetch) {
-    var originalFetch = window.fetch.bind(window);
-    window.fetch = function (input, init) {
-      var url = typeof input === "string" ? input : input && input.url;
-      var normalized = normalizeLocalUrl(url);
-      if (typeof input === "string") input = normalized;
-      else if (input && normalized !== url) input = new Request(normalized, input);
-      return isBlockedUrl(url) ? okJson() : originalFetch(input, init);
-    };
-  }
-  if (window.XMLHttpRequest) {
-    var OriginalXhr = window.XMLHttpRequest;
-    var originalOpen = OriginalXhr.prototype.open;
-    OriginalXhr.prototype.open = function (method, url) {
-      this.__blockedUrl = isBlockedUrl(url);
-      arguments[1] = this.__blockedUrl ? "/api/disabled-telemetry" : normalizeLocalUrl(url);
-      return originalOpen.apply(this, arguments);
-    };
-    var originalSend = OriginalXhr.prototype.send;
-    OriginalXhr.prototype.send = function () {
-      return originalSend.apply(this, arguments);
-    };
-  }
-  if (window.Worker) {
-    var OriginalWorker = window.Worker;
-    window.Worker = function (url, options) {
-      url = normalizeLocalUrl(url);
-      if (blocked.test(String(url))) {
-        return { postMessage: function () {}, terminate: function () {}, addEventListener: function () {}, removeEventListener: function () {}, dispatchEvent: function () { return false; } };
-      }
-      return new OriginalWorker(url, options);
-    };
-  }
-  var imageDescriptor = Object.getOwnPropertyDescriptor(HTMLImageElement.prototype, "src");
-  if (imageDescriptor && imageDescriptor.set) {
-    Object.defineProperty(HTMLImageElement.prototype, "src", {
-      get: imageDescriptor.get,
-      set: function (value) {
-        value = normalizeLocalUrl(value);
-        if (blocked.test(String(value))) return;
-        return imageDescriptor.set.call(this, value);
-      }
-    });
-  }
-})();
-<\/script>`;
+
+// NOTE: normalizeRuntime() below only bakes in the production origin at
+// scrape time. Without the two patches after it, any page served from a domain
+// other than productionOrigin (e.g. the theshakticollective.in custom domain)
+// ends up with a stale externalBaseUrl, which makes wix-thunderbolt construct
+// a cross-origin Worker URL for clientWorker.*.bundle.min.js. Browsers block
+// cross-origin Worker construction, the platform worker never boots, and any
+// widget that depends on it (including Wix Forms) silently fails to init.
+// This mirrors the fix already applied to the core routes in mirror-wix-site.js.
+function injectDynamicViewerModel(html) {
+  return shared.injectDynamicViewerModel(html);
+}
+
+function injectFetchGuard(html) {
+  return shared.injectFetchGuardAfterViewerModel(html);
+}
+
+function injectDynamicSiteConfig(html) {
+  return shared.injectDynamicSiteConfig(html);
+}
 
 function normalizeRuntime(html, page) {
   const escapedOrigin = productionOrigin.replace(/\//g, '\\/');
   const escapedRoute = page.route.replace(/\//g, '\\/');
-  // Remove any existing standalone runtime injections
-  let result = html
-    .replace(/<style data-tsc-standalone-runtime>[\s\S]*?<\/style>\s*/g, '')
-    .replace(/<script data-tsc-standalone-runtime>[\s\S]*?<\/script>\s*/g, '');
+
+  let result = html;
   // Fix viewer model URLs
   result = result
     .replace(/"externalBaseUrl":"(?:\\.|[^"\\])*"/g, `"externalBaseUrl":"${escapedOrigin}"`)
@@ -293,13 +204,9 @@ function normalizeRuntime(html, page) {
     .replace(/"siteUrl":"(?:\\.|[^"\\])*"/g, `"siteUrl":"${escapedOrigin}"`)
     .replace(/"requestUrl":"(?:\\.|[^"\\])*"/g, `"requestUrl":"${escapedOrigin}${escapedRoute}"`)
     .replace(/"accessTokensUrl":"(?:\\.|[^"\\])*"/g, `"accessTokensUrl":"\\/assets\\/mirror\\/meghanabhawalkarwo.wixstudio.com\\/my-site\\/_api\\/v1\\/access-tokens.json"`);
-  // Inject standalone routing script into <head>
-  result = result.replace(/<head([^>]*)>/i, `<head$1>\n${mirrorRuntimeScript}`);
-  // Inject fetch/XHR patch right after window.viewerModel = JSON.parse(...)
-  result = result.replace(
-    /(<script>window\.viewerModel = JSON\.parse\(document\.getElementById\('wix-essential-viewer-model'\)\.textContent\)<\/script>)/,
-    `<script>\nwindow.viewerModel = JSON.parse(document.getElementById('wix-essential-viewer-model').textContent);\n(function () {\n  var model = window.viewerModel;\n  if (!model) return;\n  var origin = location.origin;\n  model.site = model.site || {};\n  model.site.externalBaseUrl = origin;\n  model.requestUrl = new URL(location.pathname + location.search, origin).href;\n  model.accessTokensUrl = '/assets/mirror/meghanabhawalkarwo.wixstudio.com/my-site/_api/v1/access-tokens.json';\n  var topology = model.siteAssets && model.siteAssets.clientTopology;\n  if (topology) {\n    topology.moduleRepoUrl = origin + "/assets/mirror/static.parastorage.com/unpkg";\n    topology.fileRepoUrl = origin + "/assets/mirror/static.parastorage.com/services";\n  }\n})();\n<\/script>\n${mirrorFetchPatchScript}`
-  );
+
+  // Inject standalone routing script into <head> (also strips any previous injections)
+  result = shared.injectStandaloneRuntime(result, JSON.stringify(subpageRoutes));
   // Inject tsc-components.js before </body>
   result = result.replace(/<\/body>/, `\n<script src="/js/tsc-components.js?v=subpage-mirror-1" defer></script>\n</body>`);
   return result;
@@ -354,7 +261,7 @@ async function main() {
       if (!response || !response.ok()) throw new Error(`Failed ${url}: ${response ? response.status() : 'no response'}`);
       let html = await response.text();
       const pageSlug = slug(subpage.route);
-      html = normalizeRuntime(removeWixBadge(rewriteUrls(html)), subpage);
+      html = injectDynamicSiteConfig(injectFetchGuard(injectDynamicViewerModel(normalizeRuntime(removeWixBadge(rewriteUrls(html)), subpage))));
       html = extractStyles(html, pageSlug);
       html = extractAnimationScript(html, pageSlug);
       await downloadReferencedAssets(html);

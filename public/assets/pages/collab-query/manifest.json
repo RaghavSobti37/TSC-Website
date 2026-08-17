@@ -3,9 +3,9 @@
   "html": "/pages/collab-query.html",
   "css": "/css/pages/collab-query.css",
   "animations": "/js/pages/collab-query.animations.js",
-  "generatedAt": "2026-08-14T07:28:19.814Z",
+  "generatedAt": "2026-08-17T07:30:07.880Z",
   "totals": {
-    "assets": 91,
+    "assets": 96,
     "missing": 0
   },
   "assetsByType": {
@@ -17,6 +17,33 @@
           "exists": true,
           "virtual": true,
           "path": "/assets/mirror/disabled-telemetry"
+        }
+      },
+      {
+        "type": "other",
+        "url": "/assets/mirror/meghanabhawalkarwo.wixstudio.com/my-site",
+        "local": {
+          "exists": true,
+          "path": "/assets/mirror/meghanabhawalkarwo.wixstudio.com/my-site",
+          "bytes": 0
+        }
+      },
+      {
+        "type": "other",
+        "url": "/assets/mirror/siteassets.parastorage.com/pages/pages/thunderbolt",
+        "local": {
+          "exists": true,
+          "path": "/assets/mirror/siteassets.parastorage.com/pages/pages/thunderbolt",
+          "bytes": 0
+        }
+      },
+      {
+        "type": "other",
+        "url": "/assets/mirror/siteassets.parastorage.com/pages/pages/thunderbolt/",
+        "local": {
+          "exists": true,
+          "path": "/assets/mirror/siteassets.parastorage.com/pages/pages/thunderbolt",
+          "bytes": 0
         }
       },
       {
@@ -48,10 +75,28 @@
       },
       {
         "type": "other",
+        "url": "/assets/mirror/static.parastorage.com/services",
+        "local": {
+          "exists": true,
+          "path": "/assets/mirror/static.parastorage.com/services",
+          "bytes": 0
+        }
+      },
+      {
+        "type": "other",
         "url": "/assets/mirror/static.parastorage.com/services/wix-thunderbolt/dist/",
         "local": {
           "exists": true,
           "path": "/assets/mirror/static.parastorage.com/services/wix-thunderbolt/dist",
+          "bytes": 0
+        }
+      },
+      {
+        "type": "other",
+        "url": "/assets/mirror/static.parastorage.com/unpkg",
+        "local": {
+          "exists": true,
+          "path": "/assets/mirror/static.parastorage.com/unpkg",
           "bytes": 0
         }
       },

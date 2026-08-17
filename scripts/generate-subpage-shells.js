@@ -6,8 +6,6 @@ const publicDir = path.join(__dirname, '..', 'public');
 const pagesDir = path.join(publicDir, 'pages');
 
 const basePage = 'home';
-// Cryptic Wix aliases stay in manifest for redirects; do NOT write public/<blank-*> stubs.
-const CRYPTIC_ALIAS_RE = /^\/(blank-|about-[89]|work[023]|query$)/;
 
 const subpages = [
   { title: 'MBA', route: '/mba', aliases: ['/blank-7', '/work/mba'] },
@@ -44,17 +42,12 @@ const subpages = [
   { title: 'Masterclass Review 02', route: '/masterclass-review02', aliases: ['/forms/masterclass-review02'] },
 ];
 
-function shouldWriteAliasShim(alias) {
-  return !CRYPTIC_ALIAS_RE.test(alias);
-}
-
 const primaryPages = [
   { title: 'Home', route: '/', file: 'home.html' },
   { title: 'About', route: '/about', file: 'about.html' },
   { title: 'Work', route: '/work', file: 'work.html' },
   { title: 'TSC Artists', route: '/artists', file: 'artists.html' },
   { title: 'Artist Path', route: '/artist-path', file: 'artist-path.html' },
-  { title: 'Learn With TSC', route: '/learn-with-tsc', file: 'learn-with-tsc.html' },
   { title: 'Films', route: '/films', file: 'films.html' },
   { title: 'Resources', route: '/resources', file: 'resources.html' },
   { title: 'TSC Academy', route: '/academy', file: 'academy.html' },
@@ -66,11 +59,6 @@ function slugFromRoute(route) {
 
 function pageFileForRoute(route) {
   return `${slugFromRoute(route)}.html`;
-}
-
-function shimPathForRoute(route) {
-  if (route === '/') return path.join(publicDir, 'index.html');
-  return path.join(publicDir, ...route.slice(1).split('/'), 'index.html');
 }
 
 function escapeRegExp(value) {
@@ -165,21 +153,6 @@ function buildShell(page, baseHtml) {
   return html;
 }
 
-function shimHtml(route) {
-  const destination = `/pages/${pageFileForRoute(route)}`;
-  return `<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="refresh" content="0; url=${destination}">
-  <script>location.replace(${JSON.stringify(destination)} + location.search + location.hash);</script>
-</head>
-<body><a href="${destination}">Open ${route}</a></body>
-</html>
-`;
-}
-
 function linkNormalizerScript() {
   return '';
 }
@@ -210,22 +183,6 @@ function main() {
 
   const allKnownRoutes = [...primaryPages.map(page => page.route), ...subpages.map(page => page.route)];
   const aliases = subpages.flatMap(page => page.aliases.map(alias => ({ alias, route: page.route })));
-  for (const page of primaryPages) {
-    const shimPath = shimPathForRoute(page.route);
-    fs.mkdirSync(path.dirname(shimPath), { recursive: true });
-    fs.writeFileSync(shimPath, shimHtml(page.route), 'utf8');
-  }
-  for (const page of subpages) {
-    const shimPath = shimPathForRoute(page.route);
-    fs.mkdirSync(path.dirname(shimPath), { recursive: true });
-    fs.writeFileSync(shimPath, shimHtml(page.route), 'utf8');
-  }
-  for (const { alias, route } of aliases) {
-    if (!shouldWriteAliasShim(alias)) continue;
-    const shimPath = path.join(publicDir, ...alias.slice(1).split('/'), 'index.html');
-    fs.mkdirSync(path.dirname(shimPath), { recursive: true });
-    fs.writeFileSync(shimPath, shimHtml(route), 'utf8');
-  }
 
   for (const file of fs.readdirSync(pagesDir).filter(file => file.endsWith('.html'))) {
     const pagePath = path.join(pagesDir, file);
@@ -242,7 +199,7 @@ function main() {
   };
   fs.writeFileSync(path.join(publicDir, 'pages', 'routes.manifest.json'), `${JSON.stringify(routing, null, 2)}\n`, 'utf8');
   const injectResult = injectAllPages();
-  console.log(`Generated ${createdShells} subpage shells, kept ${keptPages} existing pages, and refreshed ${aliases.length} alias shims.`);
+  console.log(`Generated ${createdShells} subpage shells, kept ${keptPages} existing pages, and mapped ${aliases.length} alias routes.`);
   console.log(`Canonicalized ${updatedPayloads} Thunderbolt payload link files.`);
   console.log(`Responsive assets: scanned ${injectResult.scanned}, updated ${injectResult.updated}.`);
 }

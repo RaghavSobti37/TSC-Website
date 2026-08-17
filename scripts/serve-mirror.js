@@ -43,7 +43,7 @@ const pageRoutes = new Map([
   ['/work', '/pages/work.html'],
   ['/artists', '/pages/artists.html'],
   ['/artist-path', '/pages/artist-path.html'],
-  ['/learn-with-tsc', '/pages/learn-with-tsc.html'],
+  ['/learn-with-tsc', '/pages/academy.html'],
   ['/films', '/pages/films.html'],
   ['/resources', '/pages/resources.html'],
   ['/academy', '/pages/academy.html'],
@@ -62,6 +62,19 @@ if (fs.existsSync(routeManifestPath)) {
     if (alias.alias && target?.file) pageRoutes.set(alias.alias, `/pages/${target.file}`);
   }
 }
+
+// Permanent redirects mirroring vercel.json (merged/renamed pages keep their
+// old URLs working locally the same way production serves them).
+const redirects = new Map([
+  ['/mba-impact', '/mba'],
+  ['/impact-report', '/mba'],
+  ['/work/mba-impact', '/mba'],
+  ['/blog-1', '/start-making-music'],
+  ['/blog-2', '/online-music-course-worth-it'],
+  ['/blog-3', '/artist-release-playbook'],
+  ['/pages/learn-with-tsc.html', '/academy'],
+  ['/academy/learn-with-tsc', '/academy'],
+]);
 
 const mimeTypes = {
   '.css': 'text/css; charset=utf-8',
@@ -87,6 +100,10 @@ function safePart(value, fallback) {
 
 function requestPath(url) {
   const pathname = decodeURIComponent(url.pathname);
+  // Normalize a trailing slash to the canonical clean URL when the route
+  // (and not a real file/directory) is requested: /about/ -> /about.
+  const noSlash = pathname.length > 1 && pathname.endsWith('/') ? pathname.slice(0, -1) : pathname;
+  if (noSlash !== pathname && pageRoutes.has(noSlash)) return pageRoutes.get(noSlash);
   if (pageRoutes.has(pathname)) return pageRoutes.get(pathname);
   if (pathname === '/api/disabled-telemetry' || pathname === '/assets/mirror/disabled-telemetry' || pathname.startsWith('/_api/')) {
     return { json: '{}' };
@@ -130,6 +147,7 @@ function sendFile(absolutePath, request, response) {
     return;
   }
   if (!fs.existsSync(absolutePath) || !fs.statSync(absolutePath).isFile()) {
+    console.warn(`[404] File not found: ${absolutePath} (URL: ${request.url})`);
     response.writeHead(404).end('Not found');
     return;
   }
@@ -172,7 +190,15 @@ function handleApi(request, response, pathname) {
 }
 
 function proxyWixMedia(proxyUrl, fallbackPath, request, response, hops) {
+  const safeEnd = () => {
+    if (response.headersSent) {
+      response.end();
+      return true;
+    }
+    return false;
+  };
   if ((hops || 0) > 4) {
+    if (safeEnd()) return;
     if (fallbackPath) return sendFile(path.resolve(publicDir, `.${fallbackPath}`), request, response);
     response.writeHead(502).end('Too many redirects');
     return;
@@ -187,8 +213,13 @@ function proxyWixMedia(proxyUrl, fallbackPath, request, response, hops) {
     }
     if (up.statusCode !== 200) {
       up.resume();
+      if (safeEnd()) return;
       if (fallbackPath) return sendFile(path.resolve(publicDir, `.${fallbackPath}`), request, response);
       response.writeHead(up.statusCode || 502).end('Upstream image error');
+      return;
+    }
+    if (safeEnd()) {
+      up.resume();
       return;
     }
     response.writeHead(200, {
@@ -197,26 +228,46 @@ function proxyWixMedia(proxyUrl, fallbackPath, request, response, hops) {
     });
     up.pipe(response);
   }).on('error', () => {
+    if (safeEnd()) return;
     if (fallbackPath) return sendFile(path.resolve(publicDir, `.${fallbackPath}`), request, response);
     response.writeHead(502).end('Upstream image error');
   });
 }
 
 http.createServer((request, response) => {
-  const url = new URL(request.url, `http://${request.headers.host || `127.0.0.1:${port}`}`);
-  if (handleApi(request, response, url.pathname)) return;
-  const resolved = requestPath(url);
-  if (resolved.json !== undefined) {
-    response.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'no-store' });
-    response.end(resolved.json);
-    return;
-  }
-  if (resolved.proxy) {
-    proxyWixMedia(resolved.proxy, resolved.fallback, request, response, 0);
-    return;
-  }
+  try {
+    const url = new URL(request.url, `http://${request.headers.host || `127.0.0.1:${port}`}`);
+    if (handleApi(request, response, url.pathname)) return;
+    const redirectTarget = redirects.get(url.pathname);
+    if (redirectTarget) {
+      response.writeHead(301, { Location: redirectTarget, 'Cache-Control': 'no-store' });
+      response.end();
+      return;
+    }
+    const resolved = requestPath(url);
+    if (resolved.json !== undefined) {
+      response.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'no-store' });
+      response.end(resolved.json);
+      return;
+    }
+    if (resolved.proxy) {
+      proxyWixMedia(resolved.proxy, resolved.fallback, request, response, 0);
+      return;
+    }
 
-  sendFile(path.resolve(publicDir, `.${resolved}`), request, response);
+    sendFile(path.resolve(publicDir, `.${resolved}`), request, response);
+  } catch (error) {
+    console.error('[serve-mirror]', request.url, error && error.message ? error.message : error);
+    if (!response.headersSent) {
+      try {
+        response.writeHead(500).end('Internal error');
+      } catch (_) {
+        response.end();
+      }
+    } else {
+      response.end();
+    }
+  }
 }).listen(port, '127.0.0.1', () => {
   console.log(`Mirror server ready at http://127.0.0.1:${port}`);
 });

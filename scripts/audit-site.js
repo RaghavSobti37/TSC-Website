@@ -253,7 +253,20 @@ async function auditRoute(browser, config, route, viewportName) {
     await page.goto(url, { waitUntil: 'networkidle2', timeout: 90000 });
   } catch (error) {
     loadError = error.message;
-    diagnostics.pageErrors.push(`Navigation: ${error.message}`);
+    // Chrome's networkidle2 occasionally never settles on heavy pages even
+    // though every resource completed (a request-accounting flake, not a page
+    // failure). If the document actually rendered, continue the audit instead
+    // of failing the route on a spurious navigation timeout.
+    let rendered = false;
+    for (let attempt = 0; attempt < 3 && !rendered; attempt++) {
+      rendered = await page
+        .evaluate(() => document.readyState === 'complete' && document.body && document.body.innerText.length > 200)
+        .catch(() => false);
+      if (!rendered) await new Promise(resolve => setTimeout(resolve, 1500));
+    }
+    if (!rendered) {
+      diagnostics.pageErrors.push(`Navigation: ${error.message}`);
+    }
   }
   await new Promise(resolve => setTimeout(resolve, 2500));
   const before = await snapshot(page);

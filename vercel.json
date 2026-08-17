@@ -280,16 +280,52 @@
       "destination": "/pages/course-bundle.html"
     },
     {
-      "source": "/mba-impact",
-      "destination": "/pages/mba-impact.html"
+      "source": "/mohit-shankar",
+      "destination": "/pages/mohit-shankar.html"
     },
     {
-      "source": "/impact-report",
-      "destination": "/pages/mba-impact.html"
+      "source": "/artists/mohit-shankar",
+      "destination": "/pages/mohit-shankar.html"
     },
     {
-      "source": "/work/mba-impact",
-      "destination": "/pages/mba-impact.html"
+      "source": "/mahavatar-narsimha-impact",
+      "destination": "/pages/mahavatar-narsimha-impact.html"
+    },
+    {
+      "source": "/films/mahavatar-narsimha-impact",
+      "destination": "/pages/mahavatar-narsimha-impact.html"
+    },
+    {
+      "source": "/hanuman-ansh-impact",
+      "destination": "/pages/hanuman-ansh-impact.html"
+    },
+    {
+      "source": "/films/hanuman-ansh-impact",
+      "destination": "/pages/hanuman-ansh-impact.html"
+    },
+    {
+      "source": "/mahaprabhu-jagannath-impact",
+      "destination": "/pages/mahaprabhu-jagannath-impact.html"
+    },
+    {
+      "source": "/mahaprbhu-impact",
+      "destination": "/pages/mahaprabhu-jagannath-impact.html"
+    },
+    {
+      "source": "/films/mahaprbhu-impact",
+      "destination": "/pages/mahaprabhu-jagannath-impact.html"
+    },
+    {
+      "source": "/films/mahaprabhu-jagannath-impact",
+      "destination": "/pages/mahaprabhu-jagannath-impact.html"
+    },
+    {
+      "source": "/kalki-impact",
+      "destination": "/pages/kalki-impact.html"
+    },
+    {
+      "source": "/films/kalki-impact",
+      "destination": "/pages/kalki-impact.html"
     },
     {
       "source": "/_api/:path*",
@@ -759,6 +795,26 @@
     {
       "source": "/blank-11",
       "destination": "/films",
+      "permanent": true
+    },
+    {
+      "source": "/mba-impact",
+      "destination": "/mba",
+      "permanent": true
+    },
+    {
+      "source": "/impact-report",
+      "destination": "/mba",
+      "permanent": true
+    },
+    {
+      "source": "/work/mba-impact",
+      "destination": "/mba",
+      "permanent": true
+    },
+    {
+      "source": "/:path*/",
+      "destination": "/:path*",
       "permanent": true
     }
   ]

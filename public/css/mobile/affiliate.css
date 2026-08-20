@@ -62,7 +62,9 @@
   }
 
   body[data-page="affiliate"] #comp-mqwcozxs {
+    max-width: 100% !important;
     order: 2 !important;
+    width: 100% !important;
   }
 
   body[data-page="affiliate"] #comp-mqwdnovu {
@@ -86,6 +88,10 @@
   }
 
   body[data-page="affiliate"] #comp-mqwhzev1 {
+    background-image: url("/assets/pages/affiliate/hero-singer.png") !important;
+    background-position: center bottom !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
     bottom: 0 !important;
     height: clamp(220px, 36vw, 410px) !important;
     left: auto !important;
@@ -102,12 +108,10 @@
 
   body[data-page="affiliate"] #comp-mqwhzev1 .YX2qkL,
   body[data-page="affiliate"] #comp-mqwhzev1 wow-image,
+  body[data-page="affiliate"] #comp-mqwhzev1 picture,
   body[data-page="affiliate"] #comp-mqwhzev1 img {
-    height: 100% !important;
-    max-height: none !important;
-    object-fit: cover !important;
-    object-position: center bottom !important;
-    width: 100% !important;
+    display: none !important;
+    visibility: hidden !important;
   }
 
   body[data-page="affiliate"] #comp-mqwe8zdd .wixui-rich-text__text {
@@ -119,7 +123,10 @@
   body[data-page="affiliate"] #comp-mqwcozxs .wixui-rich-text__text {
     font-size: clamp(42px, 9vw, 76px) !important;
     line-height: 0.98 !important;
+    max-width: 100% !important;
+    overflow-wrap: break-word !important;
     white-space: normal !important;
+    word-break: normal !important;
   }
 
   body[data-page="affiliate"] #comp-mqwdnovu .wixui-rich-text__text {
@@ -322,7 +329,7 @@
 
 @media (max-width: 767px) {
   body[data-page="affiliate"] .comp-mqwcognj-container {
-    padding: 38px 28px 86px !important;
+    padding: 38px 22px 86px !important;
   }
 
   body[data-page="affiliate"] #comp-mqwcozxs h1,

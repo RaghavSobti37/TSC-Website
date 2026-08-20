@@ -27,3 +27,38 @@
     max-width: 100% !important;
   }
 }
+
+@media (max-width: 1024px) {
+  html body.responsive[data-page="academy"] main #comp-mqwg32ov > .comp-mqwg32ov-container,
+  html body.responsive[data-page="academy"] main #comp-mqwg32pf > .comp-mqwg32pf-container,
+  html body.responsive[data-page="academy"] main #comp-mqwg3bhc > .comp-mqwg3bhc-container,
+  html body.responsive[data-page="academy"] main #comp-mqwg32q3 > .comp-mqwg32q3-container,
+  html body.responsive[data-page="academy"] main #comp-mqwg32qr > .comp-mqwg32qr-container,
+  html body.responsive[data-page="academy"] main #comp-mqwg4pmn > .comp-mqwg4pmn-container {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 12px !important;
+    grid-template-columns: none !important;
+    grid-template-rows: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+  }
+
+  html body.responsive[data-page="academy"] main :is(#comp-mqwg5ldx, #comp-mqwg70dv, #comp-mqwg724h, #comp-mqwg77ri, #comp-mqwg75sw, #comp-mqwg740u),
+  html body.responsive[data-page="academy"] main :is(#comp-mqwg5ldx, #comp-mqwg70dv, #comp-mqwg724h, #comp-mqwg77ri, #comp-mqwg75sw, #comp-mqwg740u) > [class*="-container"],
+  html body.responsive[data-page="academy"] main :is(#comp-mqwg5ldx, #comp-mqwg70dv, #comp-mqwg724h, #comp-mqwg77ri, #comp-mqwg75sw, #comp-mqwg740u) > [class*="-container"] > [id^="comp-"] {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    transform: none !important;
+  }
+}

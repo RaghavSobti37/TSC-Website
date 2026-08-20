@@ -7,14 +7,14 @@
 @import url("./_family-artists.css");
 
 @media (max-width: 1024px) {
-  body[data-page="harshad-duhita"] main {
+  body[data-page="mohit-shankar"] main {
     overflow-x: clip !important;
   }
 }
 
 @media (max-width: 767px) {
-  body[data-page="harshad-duhita"] main .wixui-button,
-  body[data-page="harshad-duhita"] main [data-testid="buttonElement"] {
+  body[data-page="mohit-shankar"] main .wixui-button,
+  body[data-page="mohit-shankar"] main [data-testid="buttonElement"] {
     width: 100% !important;
     max-width: 100% !important;
   }

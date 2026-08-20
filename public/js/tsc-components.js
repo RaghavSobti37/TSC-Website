@@ -618,6 +618,99 @@
     });
   }
 
+  function mountAboutMobileFilmsCard(path) {
+    if (path !== '/about') return;
+    if (!(window.matchMedia && window.matchMedia('(max-width: 1024px)').matches)) {
+      var stale = document.querySelector('.tsc-mobile-about-films-card');
+      if (stale && stale.parentNode) stale.parentNode.removeChild(stale);
+      document.body.classList.remove('tsc-about-mobile-films-mounted');
+      return;
+    }
+    var original = document.getElementById('comp-mr3hkny1');
+    if (!original || !original.parentNode) {
+      if (!window.__tscAboutMobileFilmsRetry) {
+        window.__tscAboutMobileFilmsRetry = true;
+        [250, 700, 1400, 2600].forEach(function (delay) {
+          window.setTimeout(function () {
+            mountAboutMobileFilmsCard('/about');
+          }, delay);
+        });
+      }
+      return;
+    }
+    var shell = document.querySelector('.tsc-mobile-about-films-card');
+    if (!shell) {
+      shell = document.createElement('section');
+      shell.className = 'tsc-mobile-about-films-card';
+      shell.setAttribute('aria-label', 'TSC Films');
+      shell.innerHTML = [
+        '<article>',
+        '<div class="tsc-mobile-about-films-card__logo">TSC<br>Films</div>',
+        '<p class="tsc-mobile-about-films-card__kicker">Building Audiences For Stories</p>',
+        '<h2>A great film deserves more than successful release.</h2>',
+        '<p>TSC Films partners with filmmakers, producers, and studios to build audience demand through strategic positioning, cultural storytelling, partnerships, release planning, and long-term IP development.</p>',
+        '<div class="tsc-mobile-about-films-card__chips" aria-label="TSC Films focus areas">',
+        '<span>Film Positioning</span>',
+        '<span>Audience Strategy</span>',
+        '<span>Partnerships</span>',
+        '<span>IP Development</span>',
+        '</div>',
+        '<a href="/films">Know More</a>',
+        '</article>'
+      ].join('');
+    }
+    if (shell.parentNode !== original.parentNode || shell.nextSibling !== original) {
+      original.parentNode.insertBefore(shell, original);
+    }
+    try {
+      var placement = window.getComputedStyle(original);
+      ['gridArea', 'gridRow', 'gridColumn'].forEach(function (prop) {
+        var value = placement[prop];
+        if (value && value !== 'auto / auto / auto / auto' && value !== 'auto') {
+          shell.style[prop] = value;
+        }
+      });
+    } catch (err) {}
+    original.setAttribute('aria-hidden', 'true');
+    document.body.classList.add('tsc-about-mobile-films-mounted');
+  }
+
+  function repairMobileDesignDetails(path) {
+    if (!(window.matchMedia && window.matchMedia('(max-width: 1024px)').matches)) return;
+    if (path === '/films') {
+      document.querySelectorAll('#comp-mqmi3w46 h2, #comp-mqmi6yo71 h2, #comp-mqmi8cy13 h2, #comp-mqmi8suv6 h2').forEach(function (title) {
+        title.style.setProperty('height', 'auto', 'important');
+        title.style.setProperty('min-height', '0', 'important');
+        title.style.setProperty('max-height', 'none', 'important');
+        title.style.setProperty('overflow', 'visible', 'important');
+        title.style.setProperty('white-space', 'normal', 'important');
+        title.style.setProperty('text-overflow', 'clip', 'important');
+      });
+    }
+    if (path === '/harshad-duhita' || path === '/mohit-shankar') {
+      ['comp-mq7ox4wz', 'comp-mq7p00rc'].forEach(function (id) {
+        var chip = document.getElementById(id);
+        if (!chip) return;
+        chip.style.setProperty('height', '44px', 'important');
+        chip.style.setProperty('min-height', '44px', 'important');
+        chip.style.setProperty('display', 'inline-flex', 'important');
+        chip.style.setProperty('align-items', 'center', 'important');
+        chip.style.setProperty('justify-content', 'center', 'important');
+        chip.style.setProperty('overflow', 'visible', 'important');
+      });
+    }
+  }
+
+  function repairAffiliateHeroImage(path) {
+    if (path !== '/affiliate') return;
+    document.querySelectorAll('img[src*="hero-singer.png"], img[srcset*="hero-singer.png"]').forEach(function (img) {
+      img.src = '/assets/pages/affiliate/hero-singer.png';
+      img.removeAttribute('srcset');
+      img.removeAttribute('data-src');
+      img.removeAttribute('data-srcset');
+    });
+  }
+
   function wireLockedArtistsDropdownClickGuard() {
     if (window.__tscArtistsDropdownClickGuard) return;
     window.__tscArtistsDropdownClickGuard = true;
@@ -1112,6 +1205,13 @@
       // tsc-mobile-system.css @imports tokens + safe-base — media-gated (no desktop leak)
       ensureStylesheet('/css/tsc-mobile-system.css?v=' + MOBILE_CSS_VERSION, { media: media });
       ensureStylesheet(mobilePageCssHref(path), { media: media });
+      mountAboutMobileFilmsCard(path);
+      repairMobileDesignDetails(path);
+      [350, 900, 1800, 3200].forEach(function (delay) {
+        window.setTimeout(function () {
+          repairMobileDesignDetails(path);
+        }, delay);
+      });
       injectStickyCta(path);
       // Keep cloned Wix chrome as baseline across breakpoints.
       // Custom mobile header/footer changed layout too far from source design.
@@ -4532,6 +4632,12 @@
     wireCoursesDropdownStayOpen();
     wireAcademyHashNavGuard();
     normalizeInternalProtocolRelativeLinks();
+    repairAffiliateHeroImage(path);
+    [350, 900, 1800, 3200].forEach(function (delay) {
+      window.setTimeout(function () {
+        repairAffiliateHeroImage(path);
+      }, delay);
+    });
     forceLearnHubLinksToAcademy();
     ensureAcademyCoursesAnchor();
     ensureAcademyTestimonialsAnchor();

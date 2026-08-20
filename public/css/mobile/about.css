@@ -22,6 +22,122 @@
     padding-left: 0 !important;
     padding-right: 0 !important;
   }
+
+  body[data-page="about"].tsc-about-mobile-films-mounted main #comp-mr3hkny1,
+  body[data-page="about"].tsc-about-mobile-films-mounted main #comp-mr3hkny1_relative {
+    display: none !important;
+    height: 0 !important;
+    min-height: 0 !important;
+    max-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    visibility: hidden !important;
+  }
+
+  body[data-page="about"] main .tsc-mobile-about-films-card {
+    display: block !important;
+    width: 100% !important;
+    padding: 24px 16px 28px !important;
+    background: #652415 !important;
+    color: #ffecd1 !important;
+    box-sizing: border-box !important;
+  }
+
+  body[data-page="about"] main .tsc-mobile-about-films-card article {
+    display: grid !important;
+    gap: 14px !important;
+    width: 100% !important;
+    max-width: 520px !important;
+    margin: 0 auto !important;
+    padding: 18px !important;
+    border: 1.5px solid rgba(255, 236, 209, 0.62) !important;
+    border-radius: 8px !important;
+    box-sizing: border-box !important;
+  }
+
+  body[data-page="about"] main .tsc-mobile-about-films-card__logo {
+    min-height: 92px !important;
+    display: grid !important;
+    place-items: center !important;
+    padding: 14px !important;
+    border-radius: 8px !important;
+    background: #ffecd1 !important;
+    color: #652415 !important;
+    font-size: clamp(24px, 8vw, 34px) !important;
+    line-height: 0.9 !important;
+    font-weight: 800 !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+  }
+
+  body[data-page="about"] main .tsc-mobile-about-films-card__kicker,
+  body[data-page="about"] main .tsc-mobile-about-films-card h2,
+  body[data-page="about"] main .tsc-mobile-about-films-card p {
+    margin: 0 !important;
+    color: inherit !important;
+    letter-spacing: 0 !important;
+    white-space: normal !important;
+    overflow-wrap: break-word !important;
+    word-break: normal !important;
+  }
+
+  body[data-page="about"] main .tsc-mobile-about-films-card__kicker {
+    font-size: 12px !important;
+    line-height: 1.25 !important;
+    font-weight: 800 !important;
+    text-transform: uppercase !important;
+  }
+
+  body[data-page="about"] main .tsc-mobile-about-films-card h2 {
+    font-size: clamp(23px, 7vw, 34px) !important;
+    line-height: 1.12 !important;
+    font-weight: 800 !important;
+  }
+
+  body[data-page="about"] main .tsc-mobile-about-films-card p {
+    font-size: 15.5px !important;
+    line-height: 1.48 !important;
+    color: rgba(255, 236, 209, 0.9) !important;
+  }
+
+  body[data-page="about"] main .tsc-mobile-about-films-card__chips {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 8px !important;
+  }
+
+  body[data-page="about"] main .tsc-mobile-about-films-card__chips span {
+    min-height: 34px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 10px !important;
+    border: 1px solid rgba(255, 236, 209, 0.62) !important;
+    border-radius: 999px !important;
+    color: #ffecd1 !important;
+    font-size: 12px !important;
+    line-height: 1.2 !important;
+    font-weight: 700 !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+  }
+
+  body[data-page="about"] main .tsc-mobile-about-films-card a {
+    min-height: 48px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    border-radius: 5px !important;
+    background: #ffecd1 !important;
+    color: #652415 !important;
+    font-size: 13px !important;
+    line-height: 1 !important;
+    font-weight: 800 !important;
+    text-decoration: none !important;
+    box-sizing: border-box !important;
+  }
 }
 
 @media (max-width: 767px) {
@@ -30,5 +146,160 @@
   body[data-page="about"] main [data-testid="buttonElement"] {
     width: 100% !important;
     max-width: 100% !important;
+  }
+
+  /* TSC Films card: keep the desktop content, but remove the phone-only Wix column squeeze. */
+  body[data-page="about"] main #comp-mr3hkny1,
+  body[data-page="about"] main #comp-mr3hkny1_relative {
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    padding: 24px 16px 28px !important;
+    overflow: visible !important;
+    background: #652415 !important;
+    box-sizing: border-box !important;
+  }
+
+  body[data-page="about"] main #comp-mr3hkny1 > :is([data-testid="responsive-container-content"], [class*="-container"]),
+  body[data-page="about"] main #comp-mr3hknyr {
+    position: relative !important;
+    inset: auto !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    margin: 0 !important;
+    transform: none !important;
+    overflow: visible !important;
+    box-sizing: border-box !important;
+  }
+
+  body[data-page="about"] main #comp-mr3hknyr {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 14px !important;
+    padding: 18px !important;
+    border: 1.5px solid rgba(255, 236, 209, 0.62) !important;
+    border-radius: 8px !important;
+    background: #652415 !important;
+    color: #ffecd1 !important;
+  }
+
+  body[data-page="about"] main #comp-mr3hknyr > .inner-box,
+  body[data-page="about"] main #comp-mr3hknyr :is(#comp-mr3hknyt5, #comp-mr3hknyu4, #comp-mr3hknyx2) {
+    display: none !important;
+  }
+
+  body[data-page="about"] main #comp-mr3hknyr :is(
+    #comp-mr3hknz,
+    #comp-mr3hknz01,
+    #comp-mr3hknz14,
+    #comp-mr3hknz31,
+    #comp-mr3hknz46,
+    #comp-mr3hknz6,
+    #comp-mr3hknz75,
+    #comp-mr3hknz88,
+    #comp-mr3hknza,
+    #comp-mr3hknzc5,
+    #comp-mr3hknze2,
+    #comp-mr3hknzi1
+  ) {
+    position: relative !important;
+    inset: auto !important;
+    left: auto !important;
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    margin: 0 !important;
+    transform: none !important;
+    overflow: visible !important;
+    box-sizing: border-box !important;
+  }
+
+  body[data-page="about"] main #comp-mr3hknz88 {
+    order: 1 !important;
+    min-height: 92px !important;
+    display: grid !important;
+    place-items: center !important;
+    padding: 14px !important;
+    border-radius: 8px !important;
+    background: #ffecd1 !important;
+    color: #652415 !important;
+  }
+
+  body[data-page="about"] main #comp-mr3hknz {
+    order: 2 !important;
+  }
+
+  body[data-page="about"] main #comp-mr3hknzc5 {
+    order: 3 !important;
+  }
+
+  body[data-page="about"] main #comp-mr3hknz14 {
+    order: 4 !important;
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 8px !important;
+  }
+
+  body[data-page="about"] main #comp-mr3hknzi1 {
+    order: 5 !important;
+    min-height: 48px !important;
+  }
+
+  body[data-page="about"] main #comp-mr3hknyr [data-testid="richTextElement"],
+  body[data-page="about"] main #comp-mr3hknyr .wixui-rich-text__text {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    overflow: visible !important;
+    color: inherit !important;
+    text-align: left !important;
+    white-space: normal !important;
+    overflow-wrap: break-word !important;
+    word-break: normal !important;
+    letter-spacing: 0 !important;
+  }
+
+  body[data-page="about"] main #comp-mr3hknz01 :is(h1, h2, h3, p, span, div),
+  body[data-page="about"] main #comp-mr3hknz :is(h1, h2, h3, p, span, div) {
+    font-size: clamp(22px, 7vw, 32px) !important;
+    line-height: 1.12 !important;
+    font-weight: 800 !important;
+    color: #ffecd1 !important;
+  }
+
+  body[data-page="about"] main #comp-mr3hknze2 :is(p, span, div),
+  body[data-page="about"] main #comp-mr3hknzc5 :is(p, span, div) {
+    font-size: 15.5px !important;
+    line-height: 1.48 !important;
+    color: rgba(255, 236, 209, 0.9) !important;
+  }
+
+  body[data-page="about"] main #comp-mr3hknz14 :is([data-testid="richTextElement"], .wixui-rich-text),
+  body[data-page="about"] main #comp-mr3hknz14 :is(p, span, div) {
+    min-height: 34px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 12px !important;
+    border: 1px solid rgba(255, 236, 209, 0.62) !important;
+    border-radius: 999px !important;
+    font-size: 12px !important;
+    line-height: 1.2 !important;
+    font-weight: 700 !important;
+    text-align: center !important;
+    color: #ffecd1 !important;
+    box-sizing: border-box !important;
   }
 }

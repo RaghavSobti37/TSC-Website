@@ -349,4 +349,340 @@
     font-size: 15px !important;
     line-height: 1.35 !important;
   }
+
+  /* Project cards: preserve Wix/desktop content, collapse the desktop-tall report cards for phones. */
+  body[data-page="films"] main :is(#comp-mqmhuw20, #comp-mqmi6yn5, #comp-mqmi8cwy, #comp-mqmi8stx),
+  body[data-page="films"] main :is(#comp-mqmhuw20_relative, #comp-mqmi6yn5_relative, #comp-mqmi8cwy_relative, #comp-mqmi8stx_relative) {
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    padding: 14px 16px !important;
+    overflow: visible !important;
+    background: #ffecd1 !important;
+    box-sizing: border-box !important;
+  }
+
+  body[data-page="films"] main :is(#comp-mqmhuw20, #comp-mqmi6yn5, #comp-mqmi8cwy, #comp-mqmi8stx) > :is([data-testid="responsive-container-content"], [class*="-container"]) {
+    position: relative !important;
+    inset: auto !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    margin: 0 !important;
+    transform: none !important;
+    overflow: visible !important;
+    box-sizing: border-box !important;
+  }
+
+  body[data-page="films"] main :is(#comp-mqmi3w3o, #comp-mqmi6ynt2, #comp-mqmi8cxm2, #comp-mqmi8sui) {
+    position: relative !important;
+    inset: auto !important;
+    left: auto !important;
+    top: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+    width: 100% !important;
+    max-width: 340px !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    margin: 0 auto !important;
+    padding: 14px !important;
+    border-radius: 8px !important;
+    background: #083d3a !important;
+    color: #ffecd1 !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+  }
+
+  body[data-page="films"] main :is(#comp-mqmi3w3o, #comp-mqmi6ynt2, #comp-mqmi8cxm2, #comp-mqmi8sui) > .inner-box {
+    display: none !important;
+  }
+
+  body[data-page="films"] main :is(#comp-mqmi3w3o, #comp-mqmi6ynt2, #comp-mqmi8cxm2, #comp-mqmi8sui) > [class*="-container"] {
+    position: relative !important;
+    inset: auto !important;
+    left: auto !important;
+    top: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    margin: 0 !important;
+    transform: none !important;
+    overflow: visible !important;
+    box-sizing: border-box !important;
+  }
+
+  body[data-page="films"] main :is(
+    #comp-mqmi3w3u,
+    #comp-mqmi6ynw2,
+    #comp-mqmi8cxq,
+    #comp-mqmi8suk2,
+    #comp-mqmi3w3v3,
+    #comp-mqmi3w3x2,
+    #comp-mqmi3w3z,
+    #comp-mqmi3w41,
+    #comp-mqmi6yny,
+    #comp-mqmi6ynz5,
+    #comp-mqmi6yo1,
+    #comp-mqmi6yo2,
+    #comp-mqmi8cxr2,
+    #comp-mqmi8cxt,
+    #comp-mqmi8cxu6,
+    #comp-mqmi8cxw,
+    #comp-mqmi8sul4,
+    #comp-mqmi8sun1,
+    #comp-mqmi8suo6,
+    #comp-mqmi8suq
+  ) {
+    position: relative !important;
+    inset: auto !important;
+    left: auto !important;
+    top: auto !important;
+    display: none !important;
+    width: auto !important;
+    height: auto !important;
+    margin: 0 !important;
+  }
+
+  body[data-page="films"] main :is(
+    #comp-mqmi3w473,
+    #comp-mqmi6yo84,
+    #comp-mqmi8cy26,
+    #comp-mqmi8sux1,
+    #comp-mqmi3w4i1,
+    #comp-mqmi6yok,
+    #comp-mqmi8cyd1,
+    #comp-mqmi8sv4
+  ) {
+    display: none !important;
+  }
+
+  body[data-page="films"] main :is(
+    #comp-mqmi3w424,
+    #comp-mqmi6yo34,
+    #comp-mqmi8cxx5,
+    #comp-mqmi8sur5,
+    #comp-mqmi3w4b3,
+    #comp-mqmi6yoc4,
+    #comp-mqmi8cy66,
+    #comp-mqmi8sv12,
+    #comp-mqmi3w4m5,
+    #comp-mqmi6yoo,
+    #comp-mqmi8cyh4,
+    #comp-mqmi8sv77
+  ) {
+    position: relative !important;
+    inset: auto !important;
+    left: auto !important;
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    margin: 0 !important;
+    transform: none !important;
+    overflow: visible !important;
+    box-sizing: border-box !important;
+  }
+
+  body[data-page="films"] main :is(#comp-mqmi3w424, #comp-mqmi6yo34, #comp-mqmi8cxx5, #comp-mqmi8sur5) {
+    order: 1 !important;
+    padding: 12px !important;
+    border: 1px solid rgba(255, 236, 209, 0.32) !important;
+    border-radius: 8px !important;
+    background: rgba(255, 236, 209, 0.06) !important;
+  }
+
+  body[data-page="films"] main :is(#comp-mqmi3w434, #comp-mqmi6yo44, #comp-mqmi8cxz, #comp-mqmi8sut) {
+    position: relative !important;
+    inset: auto !important;
+    left: auto !important;
+    top: auto !important;
+    display: flex !important;
+    align-items: flex-start !important;
+    gap: 10px !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+  }
+
+  body[data-page="films"] main :is(
+    #comp-mqmi3w444,
+    #comp-mqmi6yo54,
+    #comp-mqmi8cy0,
+    #comp-mqmi8suu1,
+    #comp-mqmi3w46,
+    #comp-mqmi6yo71,
+    #comp-mqmi8cy13,
+    #comp-mqmi8suv6
+  ) {
+    position: relative !important;
+    inset: auto !important;
+    left: auto !important;
+    top: auto !important;
+    width: auto !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    overflow: visible !important;
+    white-space: normal !important;
+  }
+
+  body[data-page="films"] main :is(
+    #comp-mqmi3w444,
+    #comp-mqmi6yo54,
+    #comp-mqmi8cy0,
+    #comp-mqmi8suu1
+  ) {
+    flex: 0 0 auto !important;
+    color: #f0a060 !important;
+  }
+
+  body[data-page="films"] main :is(#comp-mqmi3w46, #comp-mqmi6yo71, #comp-mqmi8cy13, #comp-mqmi8suv6) {
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+  }
+
+  body[data-page="films"] main :is(#comp-mqmi3w46, #comp-mqmi6yo71, #comp-mqmi8cy13, #comp-mqmi8suv6),
+  body[data-page="films"] main :is(#comp-mqmi3w46, #comp-mqmi6yo71, #comp-mqmi8cy13, #comp-mqmi8suv6) :is(p, span, div, h1, h2, h3) {
+    display: block !important;
+    max-width: 100% !important;
+    text-overflow: clip !important;
+    -webkit-line-clamp: initial !important;
+    line-clamp: initial !important;
+    -webkit-box-orient: initial !important;
+  }
+
+  body[data-page="films"] main :is(
+    #comp-mqmi3w444,
+    #comp-mqmi6yo54,
+    #comp-mqmi8cy0,
+    #comp-mqmi8suu1,
+    #comp-mqmi3w46,
+    #comp-mqmi6yo71,
+    #comp-mqmi8cy13,
+    #comp-mqmi8suv6
+  ) :is(p, span, div, h1, h2, h3) {
+    margin: 0 !important;
+    color: inherit !important;
+    font-size: clamp(18px, 5.2vw, 22px) !important;
+    line-height: 1.15 !important;
+    font-weight: 800 !important;
+    letter-spacing: 0 !important;
+    white-space: normal !important;
+    overflow-wrap: break-word !important;
+    word-break: normal !important;
+  }
+
+  body[data-page="films"] main :is(
+    #comp-mqmi3w444,
+    #comp-mqmi6yo54,
+    #comp-mqmi8cy0,
+    #comp-mqmi8suu1
+  ) :is(p, span, div) {
+    font-size: 13px !important;
+    line-height: 1.2 !important;
+    color: #f0a060 !important;
+  }
+
+  body[data-page="films"] main :is(#comp-mqmi3w46, #comp-mqmi6yo71, #comp-mqmi8cy13, #comp-mqmi8suv6) h2 {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    margin: 0 !important;
+    overflow: visible !important;
+    white-space: normal !important;
+    overflow-wrap: break-word !important;
+    word-break: normal !important;
+    text-overflow: clip !important;
+  }
+
+  body[data-page="films"] main :is(#comp-mqmi3w4b3, #comp-mqmi6yoc4, #comp-mqmi8cy66, #comp-mqmi8sv12) {
+    order: 2 !important;
+    aspect-ratio: 16 / 10 !important;
+    overflow: hidden !important;
+    border-radius: 8px !important;
+    background: rgba(255, 236, 209, 0.12) !important;
+  }
+
+  body[data-page="films"] main #comp-mqmi3w4b3 {
+    background-image: url("/assets/films/mahavatar-narsimha.jpg") !important;
+    background-size: cover !important;
+    background-position: center !important;
+  }
+
+  body[data-page="films"] main #comp-mqmi6yoc4 {
+    background-image: url("/assets/mirror/static.wixstatic.com/original-media/19f989_ca20c3bfe20b447fb264a2d00c44069e~mv2.png") !important;
+    background-size: cover !important;
+    background-position: center !important;
+  }
+
+  body[data-page="films"] main #comp-mqmi8cy66 {
+    background-image: url("/assets/films/mahaprabhu-jagannath.png") !important;
+    background-size: cover !important;
+    background-position: center !important;
+  }
+
+  body[data-page="films"] main #comp-mqmi8sv12 {
+    background-image: url("/assets/mirror/static.wixstatic.com/original-media/19f989_f84950fe51a84d3baf15f59a5c864731~mv2.jpg") !important;
+    background-size: cover !important;
+    background-position: center !important;
+  }
+
+  body[data-page="films"] main :is(#comp-mqmi3w4b3, #comp-mqmi6yoc4, #comp-mqmi8cy66, #comp-mqmi8sv12) :is(wow-image, picture, img) {
+    display: none !important;
+  }
+
+  body[data-page="films"] main :is(#comp-mqmi3w4b3, #comp-mqmi6yoc4, #comp-mqmi8cy66, #comp-mqmi8sv12) :is(img, wow-image, picture) {
+    position: relative !important;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    object-fit: cover !important;
+    display: none !important;
+  }
+
+  body[data-page="films"] main :is(#comp-mqmi3w4m5, #comp-mqmi6yoo, #comp-mqmi8cyh4, #comp-mqmi8sv77) {
+    order: 3 !important;
+    min-height: 48px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border-radius: 5px !important;
+    background: #ffecd1 !important;
+    color: #083d3a !important;
+  }
+
+  body[data-page="films"] main :is(#comp-mqmi3w4m5, #comp-mqmi6yoo, #comp-mqmi8cyh4, #comp-mqmi8sv77) :is(a, button, [data-testid="buttonElement"]) {
+    min-height: 48px !important;
+    width: 100% !important;
+  }
+
+  body[data-page="films"] main .tsc-film-report-hitarea {
+    position: absolute !important;
+    inset: 0 !important;
+    z-index: 4 !important;
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 0 !important;
+    overflow: hidden !important;
+    text-indent: -9999px !important;
+  }
 }

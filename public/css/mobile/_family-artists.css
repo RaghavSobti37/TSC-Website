@@ -1816,6 +1816,77 @@
     max-height: 56px !important;
   }
 
+  body[data-page="artist-path"].tsc-artist-path-audience-mounted #comp-mqqt0h6q {
+    display: none !important;
+  }
+
+  body[data-page="artist-path"] .tsc-mobile-artist-path-audience {
+    position: relative !important;
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 28px 16px 34px !important;
+    box-sizing: border-box !important;
+    background: #7f2818 !important;
+    color: #ffecd1 !important;
+    overflow: visible !important;
+  }
+
+  body[data-page="artist-path"] .tsc-mobile-artist-path-audience__inner {
+    width: 100%;
+    max-width: 460px;
+    margin: 0 auto;
+  }
+
+  body[data-page="artist-path"] .tsc-mobile-artist-path-audience__kicker {
+    margin: 0 0 8px;
+    color: #ffb45f;
+    font-size: 12px;
+    font-weight: 800;
+    line-height: 1.2;
+    text-transform: uppercase;
+    letter-spacing: 0;
+    text-align: center;
+  }
+
+  body[data-page="artist-path"] .tsc-mobile-artist-path-audience h2 {
+    margin: 0 auto 18px;
+    max-width: 330px;
+    color: #ffecd1;
+    font-size: clamp(24px, 7.5vw, 32px);
+    font-weight: 800;
+    line-height: 1.08;
+    letter-spacing: 0;
+    text-align: center;
+  }
+
+  body[data-page="artist-path"] .tsc-mobile-artist-path-audience__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    width: 100%;
+  }
+
+  body[data-page="artist-path"] .tsc-mobile-artist-path-audience__grid span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 10px 8px;
+    border: 1.25px solid rgba(255, 236, 209, 0.52);
+    border-radius: 8px;
+    background: rgba(255, 236, 209, 0.08);
+    color: #ffecd1;
+    font-size: 13px;
+    font-weight: 800;
+    line-height: 1.18;
+    text-align: center;
+    word-break: normal;
+    overflow-wrap: normal;
+    box-sizing: border-box;
+  }
+
   /* —— Meet Our Artists: title + hide Wix peek/hover carousel —— */
   body[data-page="artists"] #comp-mqtnpars,
   body[data-page="artists"] #comp-mqtnpars [data-testid="responsive-container-content"],

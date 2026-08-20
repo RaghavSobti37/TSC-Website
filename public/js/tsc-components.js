@@ -675,8 +675,58 @@
     document.body.classList.add('tsc-about-mobile-films-mounted');
   }
 
+  function mountArtistPathMobileAudienceStrip(path) {
+    if (path !== '/artist-path') return;
+    if (!(window.matchMedia && window.matchMedia('(max-width: 1024px)').matches)) {
+      var stale = document.querySelector('.tsc-mobile-artist-path-audience');
+      if (stale && stale.parentNode) stale.parentNode.removeChild(stale);
+      document.body.classList.remove('tsc-artist-path-audience-mounted');
+      return;
+    }
+    var original = document.getElementById('comp-mqqt0h6q');
+    if (!original || !original.parentNode) {
+      if (!window.__tscArtistPathAudienceRetry) {
+        window.__tscArtistPathAudienceRetry = true;
+        [250, 700, 1400, 2600].forEach(function (delay) {
+          window.setTimeout(function () {
+            mountArtistPathMobileAudienceStrip('/artist-path');
+          }, delay);
+        });
+      }
+      return;
+    }
+    var shell = document.querySelector('.tsc-mobile-artist-path-audience');
+    if (!shell) {
+      shell = document.createElement('section');
+      shell.className = 'tsc-mobile-artist-path-audience';
+      shell.setAttribute('aria-label', 'Industry exposure');
+      shell.innerHTML = [
+        '<div class="tsc-mobile-artist-path-audience__inner">',
+        '<p class="tsc-mobile-artist-path-audience__kicker">Industry Exposure</p>',
+        '<h2>Build around the people who can move your music forward.</h2>',
+        '<div class="tsc-mobile-artist-path-audience__grid" aria-label="Artist Path industry network">',
+        '<span>Distributors</span>',
+        '<span>Venue Owners</span>',
+        '<span>Festival Curators</span>',
+        '<span>Brand Professionals</span>',
+        '<span>Publishers</span>',
+        '<span>Filmmakers</span>',
+        '</div>',
+        '</div>'
+      ].join('');
+    }
+    if (shell.parentNode !== original.parentNode || shell.nextSibling !== original) {
+      original.parentNode.insertBefore(shell, original);
+    }
+    original.setAttribute('aria-hidden', 'true');
+    document.body.classList.add('tsc-artist-path-audience-mounted');
+  }
+
   function repairMobileDesignDetails(path) {
     if (!(window.matchMedia && window.matchMedia('(max-width: 1024px)').matches)) return;
+    if (path === '/artist-path') {
+      mountArtistPathMobileAudienceStrip(path);
+    }
     if (path === '/films') {
       document.querySelectorAll('#comp-mqmi3w46 h2, #comp-mqmi6yo71 h2, #comp-mqmi8cy13 h2, #comp-mqmi8suv6 h2').forEach(function (title) {
         title.style.setProperty('height', 'auto', 'important');
@@ -883,7 +933,7 @@
   }
 
   /* 1:1 slug → mobile CSS; prefer window.TSCMobileRouteMap when loaded */
-  var MOBILE_CSS_VERSION = 'mobile-own-5';
+  var MOBILE_CSS_VERSION = 'mobile-own-6';
   var MOBILE_CSS_MEDIA = '(max-width: 1024px)';
 
   var LEARN_PATHS = {
@@ -1206,6 +1256,7 @@
       ensureStylesheet('/css/tsc-mobile-system.css?v=' + MOBILE_CSS_VERSION, { media: media });
       ensureStylesheet(mobilePageCssHref(path), { media: media });
       mountAboutMobileFilmsCard(path);
+      mountArtistPathMobileAudienceStrip(path);
       repairMobileDesignDetails(path);
       [350, 900, 1800, 3200].forEach(function (delay) {
         window.setTimeout(function () {

@@ -1,90 +1,84 @@
 # TSC site map (human + AI)
 
-Readable index of every public page. **Real HTML lives in `public/pages/*.html`.**
-This tree co-locates metadata only — canonical URLs stay flat (`/mba`, `/about`, …).
+Readable index of every canonical public page. Real HTML lives in `public/pages/*.html`; this tree stores metadata and plain content for agents.
 
-## How serving works
+## Agent files
 
-1. `vercel.json` rewrites route → `/pages/<file>.html`
-2. Local: `scripts/serve-mirror.js` loads `public/pages/routes.manifest.json`
-3. Legacy cryptic paths (`/blank-*`, `/about-8*`, `/work0*`, …) → **301** to canonical
-4. Optional nested aliases (`/work/mba`, `/films/kalki`, …) rewrite to same HTML
+- [`/agent-design.md`](../agent-design.md) - design rules and page map
+- [`/agent-content.md`](../agent-content.md) - compressed site copy and route index
+- [`/llms.txt`](../llms.txt) - curated AI discovery index
+- [`/llms-full.txt`](../llms-full.txt) - full AI-readable corpus
+- [`/sitemap.xml`](../sitemap.xml) - canonical URL set
 
-## Primary pages
+## Serving
 
-- **Home** — [`home/`](./home/) → `/` (`pages/home.html`)
-- **About** — [`about/`](./about/) → `/about` (`pages/about.html`)
-- **Work** — [`work/`](./work/) → `/work` (`pages/work.html`)
-- **TSC Artists** — [`artists/`](./artists/) → `/artists` (`pages/artists.html`)
-- **Artist Path** — [`artists/artist-path/`](./artists/artist-path/) → `/artist-path` (`pages/artist-path.html`)
-- **Films** — [`films/`](./films/) → `/films` (`pages/films.html`)
-- **TSC Academy** — [`academy/`](./academy/) → `/academy` (`pages/academy.html`)
-- **Learn With TSC** — [`academy/learn-with-tsc/`](./academy/learn-with-tsc/) → `/learn-with-tsc` (`pages/learn-with-tsc.html`)
-- **Resources** — [`resources/`](./resources/) → `/resources` (`pages/resources.html`)
+1. `vercel.json` rewrites canonical route to `/pages/<file>.html`.
+2. Legacy Wix aliases redirect or rewrite to canonical routes.
+3. Each page folder has `meta.json`, `README.md`, and `content.md`.
 
-## All pages by section
+## Pages
 
 ### home
 
-- [Home](./home/) — `/`
+- [Home](./home/) - `/` -> `pages/home.html`
 
 ### about
 
-- [About](./about/) — `/about`
+- [About](./about/) - `/about` -> `pages/about.html`
 
 ### work
 
-- [Work](./work/) — `/work`
-- [MBA](./work/cases/mba/) — `/mba`
+- [Work](./work/) - `/work` -> `pages/work.html`
+- [MBA](./work/cases/mba/) - `/mba` -> `pages/mba.html`
+- [Havells mYOUsic](./work/cases/havells-myousic/) - `/havells-myousic` -> `pages/havells-myousic.html`
+- [Insta Music League](./work/cases/insta-music-league/) - `/insta-music-league` -> `pages/insta-music-league.html`
+- [The Young Gunns](./work/cases/young-gunns/) - `/young-gunns` -> `pages/young-gunns.html`
 
 ### artists
 
-- [TSC Artists](./artists/) — `/artists`
-- [Harshad Duhita](./artists/roster/harshad-duhita/) — `/harshad-duhita`
-- [YUGM](./artists/roster/yugm/) — `/yugm`
-- [Artist Path](./artists/artist-path/) — `/artist-path`
+- [TSC Artists](./artists/) - `/artists` -> `pages/artists.html`
+- [Artist Path](./artists/artist-path/) - `/artist-path` -> `pages/artist-path.html`
+- [Harshad Duhita](./artists/roster/harshad-duhita/) - `/harshad-duhita` -> `pages/harshad-duhita.html`
+- [Mohit Shankar](./artists/roster/mohit-shankar/) - `/mohit-shankar` -> `pages/mohit-shankar.html`
+- [YUGM](./artists/roster/yugm/) - `/yugm` -> `pages/yugm.html`
 
 ### films
 
-- [Films](./films/) — `/films`
-- [Mahavatar Narsimha](./films/cases/mahavatar-narsimha/) — `/mahavatar-narsimha`
-- [Hanuman ansh](./films/cases/hanuman-ansh/) — `/hanuman-ansh`
-- [Mahaprbhu](./films/cases/mahaprbhu/) — `/mahaprbhu`
-- [Kalki](./films/cases/kalki/) — `/kalki`
-
-### academy
-
-- [TSC Academy](./academy/) — `/academy`
-- [Roots of Hindustani Classical](./academy/courses/roots-of-hindustani-classical/) — `/roots-of-hindustani-classical`
-- [The HeART of Composition](./academy/courses/the-heart-of-composition/) — `/the-heart-of-composition`
-- [Learn With TSC](./academy/learn-with-tsc/) — `/learn-with-tsc`
+- [Films](./films/) - `/films` -> `pages/films.html`
+- [Mahaprbhu](./films/cases/mahaprbhu/) - `/mahaprbhu` -> `pages/mahaprbhu.html`
+- [Mahavatar Narsimha](./films/cases/mahavatar-narsimha/) - `/mahavatar-narsimha` -> `pages/mahavatar-narsimha.html`
+- [Hanuman ansh](./films/cases/hanuman-ansh/) - `/hanuman-ansh` -> `pages/hanuman-ansh.html`
+- [Mahavatar Narsimha Impact Report](./films/impact/mahavatar-narsimha-impact/) - `/mahavatar-narsimha-impact` -> `pages/mahavatar-narsimha-impact.html`
+- [Hanuman Ansh Impact Report](./films/impact/hanuman-ansh-impact/) - `/hanuman-ansh-impact` -> `pages/hanuman-ansh-impact.html`
+- [Mahaprabhu Jagannath Impact Report](./films/impact/mahaprabhu-jagannath-impact/) - `/mahaprabhu-jagannath-impact` -> `pages/mahaprabhu-jagannath-impact.html`
+- [Kalki Impact Report](./films/impact/kalki-impact/) - `/kalki-impact` -> `pages/kalki-impact.html`
+- [Kalki](./films/cases/kalki/) - `/kalki` -> `pages/kalki.html`
 
 ### resources
 
-- [Resources](./resources/) — `/resources`
-- [Indian Culture Mainstream Forms](./resources/articles/from-bhajan-to-clubbing/) — `/from-bhajan-to-clubbing`
-- [How I Curate Music With Independent Artists](./resources/articles/how-i-curate-music-with-independent-artists/) — `/how-i-curate-music-with-independent-artists`
-- [You Released a Song. Now What?](./resources/articles/you-released-a-song-now-what/) — `/you-released-a-song-now-what`
-- [Blog 1](./resources/articles/blog-1/) — `/blog-1`
-- [Blog 2](./resources/articles/blog-2/) — `/blog-2`
-- [Blog 3](./resources/articles/blog-3/) — `/blog-3`
+- [Resources](./resources/) - `/resources` -> `pages/resources.html`
+- [How Do I Start Making Music If I Have No Experience?](./resources/articles/start-making-music/) - `/start-making-music` -> `pages/start-making-music.html`
+- [The Artist Release Playbook](./resources/articles/artist-release-playbook/) - `/artist-release-playbook` -> `pages/artist-release-playbook.html`
+- [Is an Online Music Course Worth It for Beginners?](./resources/articles/online-music-course-worth-it/) - `/online-music-course-worth-it` -> `pages/online-music-course-worth-it.html`
+- [Indian Culture Mainstream Forms](./resources/articles/from-bhajan-to-clubbing/) - `/from-bhajan-to-clubbing` -> `pages/from-bhajan-to-clubbing.html`
+- [You Released a Song. Now What?](./resources/articles/you-released-a-song-now-what/) - `/you-released-a-song-now-what` -> `pages/you-released-a-song-now-what.html`
+- [How I Curate Music With Independent Artists](./resources/articles/how-i-curate-music-with-independent-artists/) - `/how-i-curate-music-with-independent-artists` -> `pages/how-i-curate-music-with-independent-artists.html`
+
+### academy
+
+- [TSC Academy](./academy/) - `/academy` -> `pages/academy.html`
+- [Roots of Hindustani Classical](./academy/courses/roots-of-hindustani-classical/) - `/roots-of-hindustani-classical` -> `pages/roots-of-hindustani-classical.html`
+- [The HeART of Composition](./academy/courses/the-heart-of-composition/) - `/the-heart-of-composition` -> `pages/the-heart-of-composition.html`
+- [A-Z of Music Production](./academy/courses/music-production/) - `/music-production` -> `pages/music-production.html`
+- [All Courses Bundle](./academy/courses/course-bundle/) - `/course-bundle` -> `pages/course-bundle.html`
 
 ### forms
 
-- [Book A Call](./forms/book-a-call/) — `/book-a-call`
-- [Book An Artist](./forms/book-an-artist/) — `/book-an-artist`
-- [Artist Path Query](./forms/artist-query/) — `/artist-query`
-- [Collab Q](./forms/collab-query/) — `/collab-query`
-- [Masterclass Review 01](./forms/masterclass-review01/) — `/masterclass-review01`
-- [Masterclass Review 02](./forms/masterclass-review02/) — `/masterclass-review02`
-- [Classical Review](./forms/classicalreview/) — `/classicalreview`
-
-See also: [`docs/SITE_STRUCTURE.md`](../../docs/SITE_STRUCTURE.md).
-
-## LLM discovery
-
-- [`/llms.txt`](../llms.txt) — curated index for AI agents ([llmstxt.org](https://llmstxt.org/))
-- [`/llms-full.txt`](../llms-full.txt) — full Markdown corpus companion
-- [`/about.md`](../about.md) — plain About page (prefer over Wix HTML)
-- [`/sitemap.xml`](../sitemap.xml) — urlset of all canonical pages
-- Each leaf folder has `README.md` (meta + copy) and `content.md` (copy only)
+- [Collab Q](./forms/collab-query/) - `/collab-query` -> `pages/collab-query.html`
+- [Book An Artist](./forms/book-an-artist/) - `/book-an-artist` -> `pages/book-an-artist.html`
+- [Artist Path Query](./forms/artist-query/) - `/artist-query` -> `pages/artist-query.html`
+- [Book A Call](./forms/book-a-call/) - `/book-a-call` -> `pages/book-a-call.html`
+- [Masterclass Review 01](./forms/masterclass-review01/) - `/masterclass-review01` -> `pages/masterclass-review01.html`
+- [Classical Review](./forms/classicalreview/) - `/classicalreview` -> `pages/classicalreview.html`
+- [Masterclass Review 02](./forms/masterclass-review02/) - `/masterclass-review02` -> `pages/masterclass-review02.html`
+- [Affiliate Program](./forms/affiliate/) - `/affiliate` -> `pages/affiliate.html`

@@ -1,6 +1,6 @@
 # Work
 
-URL: https://wix-site-clone-psi.vercel.app/work
+URL: https://theshakticollective.in/work
 
 # Work
 
@@ -13,7 +13,7 @@ Building platforms, partnerships, and cultural movements that create lasting imp
 - **The Young Gunns** — artist incubation with producers and mentors
 - **TSC Films** — mounting films, building audiences, creating lasting IPs
 
-Related case URL on this site: [MBA](https://wix-site-clone-psi.vercel.app/mba)
+Related case URL on this site: [MBA](https://theshakticollective.in/mba)
 
 ## Copy
 

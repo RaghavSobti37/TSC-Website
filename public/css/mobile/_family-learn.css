@@ -1862,8 +1862,8 @@
     background: #ffecd1 !important;
   }
 
-  .tsc-mobile-course-link-title,
-  .tsc-mobile-course-link-enroll {
+  .tsc-mobile-course-link-card .tsc-mobile-course-link-title,
+  .tsc-mobile-course-link-card .tsc-mobile-course-link-enroll {
     border: 0 !important;
     border-radius: 0 !important;
   }
@@ -1874,7 +1874,9 @@
     background: #ffecd1 !important;
   }
 
-  .tsc-mobile-course-link-enroll {
+  /* Higher specificity than .tsc-mobile-course-links a so the cream label
+     (not teal-on-teal) wins on every course page, not just course-bundle. */
+  .tsc-mobile-course-links .tsc-mobile-course-link-enroll {
     min-height: 52px !important;
     border-top: 1.5px solid #005b53 !important;
     background: #005b53 !important;

@@ -1,6 +1,6 @@
 # TSC Artists
 
-URL: https://wix-site-clone-psi.vercel.app/artists
+URL: https://theshakticollective.in/artists
 
 # TSC Artists
 
@@ -16,10 +16,11 @@ A 360° ecosystem helping independent artists build audiences, unlock opportunit
 **Who we serve:** Artists, festivals, colleges & universities, brands, corporate events, venues & hospitality, cultural institutions, event organisers
 
 **Roster profiles on this site:**
-- [Harshad Duhita](https://wix-site-clone-psi.vercel.app/harshad-duhita)
-- [YUGM](https://wix-site-clone-psi.vercel.app/yugm)
+- [Harshad Duhita](https://theshakticollective.in/harshad-duhita)
+- [Mohit Shankar](https://theshakticollective.in/mohit-shankar)
+- [YUGM](https://theshakticollective.in/yugm)
 
-**Book artists:** https://wix-site-clone-psi.vercel.app/book-an-artist
+**Book artists:** https://theshakticollective.in/book-an-artist
 
 ## Copy
 

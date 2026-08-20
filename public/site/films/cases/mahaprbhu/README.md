@@ -1,9 +1,9 @@
 # Mahaprbhu
 
-> Machine-readable page summary for AI agents. Live HTML: https://wix-site-clone-psi.vercel.app/mahaprbhu
+> Machine-readable page summary for AI agents. Live HTML: https://theshakticollective.in/mahaprbhu
 
 - **Canonical URL:** `/mahaprbhu`
-- **Absolute URL:** https://wix-site-clone-psi.vercel.app/mahaprbhu
+- **Absolute URL:** https://theshakticollective.in/mahaprbhu
 - **HTML:** `pages/mahaprbhu.html`
 - **CSS:** `css/pages/mahaprbhu.css`
 - **JS:** `js/pages/mahaprbhu.animations.js`
@@ -20,6 +20,6 @@
 
 ## Discovery
 
-- [llms.txt](https://wix-site-clone-psi.vercel.app/llms.txt)
-- [llms-full.txt](https://wix-site-clone-psi.vercel.app/llms-full.txt)
-- [sitemap.xml](https://wix-site-clone-psi.vercel.app/sitemap.xml)
+- [llms.txt](https://theshakticollective.in/llms.txt)
+- [llms-full.txt](https://theshakticollective.in/llms-full.txt)
+- [sitemap.xml](https://theshakticollective.in/sitemap.xml)

@@ -8,7 +8,7 @@ const vm = require('vm');
 
 const ROOT = path.join(__dirname, '..');
 const PUBLIC = path.join(ROOT, 'public');
-const BASE = 'https://wix-site-clone-psi.vercel.app';
+const BASE = 'https://theshakticollective.in';
 const LASTMOD = new Date().toISOString().slice(0, 10);
 
 const PRIORITY = {
@@ -80,6 +80,41 @@ function loadLlmsSections() {
   return sections;
 }
 
+function slugFromRoute(route) {
+  return route === '/' ? 'home' : route.replace(/^\//, '');
+}
+
+function siteSection(route) {
+  if (route === '/') return 'home';
+  if (['/about'].includes(route)) return 'about';
+  if (['/work', '/mba', '/havells-myousic', '/insta-music-league', '/young-gunns'].includes(route)) return 'work';
+  if (['/artists', '/artist-path', '/harshad-duhita', '/mohit-shankar', '/yugm'].includes(route)) return 'artists';
+  if (route === '/academy' || ['/roots-of-hindustani-classical', '/the-heart-of-composition', '/music-production', '/course-bundle'].includes(route)) return 'academy';
+  if (route === '/resources' || ['/start-making-music', '/online-music-course-worth-it', '/artist-release-playbook', '/from-bhajan-to-clubbing', '/you-released-a-song-now-what', '/how-i-curate-music-with-independent-artists'].includes(route)) return 'resources';
+  if (route === '/films' || ['/mahaprbhu', '/mahavatar-narsimha', '/hanuman-ansh', '/kalki', '/mahavatar-narsimha-impact', '/hanuman-ansh-impact', '/mahaprabhu-jagannath-impact', '/kalki-impact'].includes(route)) return 'films';
+  if (['/collab-query', '/book-an-artist', '/artist-query', '/book-a-call', '/masterclass-review01', '/masterclass-review02', '/classicalreview', '/affiliate'].includes(route)) return 'forms';
+  return 'resources';
+}
+
+function sitePathForRoute(route) {
+  const slug = slugFromRoute(route);
+  if (route === '/') return 'home';
+  if (route === '/about') return 'about';
+  if (route === '/work') return 'work';
+  if (route === '/artists') return 'artists';
+  if (route === '/artist-path') return 'artists/artist-path';
+  if (['/harshad-duhita', '/mohit-shankar', '/yugm'].includes(route)) return `artists/roster/${slug}`;
+  if (route === '/academy') return 'academy';
+  if (['/roots-of-hindustani-classical', '/the-heart-of-composition', '/music-production', '/course-bundle'].includes(route)) return `academy/courses/${slug}`;
+  if (route === '/resources') return 'resources';
+  if (['/start-making-music', '/online-music-course-worth-it', '/artist-release-playbook', '/from-bhajan-to-clubbing', '/you-released-a-song-now-what', '/how-i-curate-music-with-independent-artists'].includes(route)) return `resources/articles/${slug}`;
+  if (route === '/films') return 'films';
+  if (['/mahaprbhu', '/mahavatar-narsimha', '/hanuman-ansh', '/kalki'].includes(route)) return `films/cases/${slug}`;
+  if (['/mahavatar-narsimha-impact', '/hanuman-ansh-impact', '/mahaprabhu-jagannath-impact', '/kalki-impact'].includes(route)) return `films/impact/${slug}`;
+  if (['/mba', '/havells-myousic', '/insta-music-league', '/young-gunns'].includes(route)) return `work/cases/${slug}`;
+  return `${siteSection(route)}/${slug}`;
+}
+
 function walkMeta(dir, out = []) {
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
     const full = path.join(dir, entry.name);
@@ -87,6 +122,36 @@ function walkMeta(dir, out = []) {
     else if (entry.name === 'meta.json') out.push(full);
   }
   return out;
+}
+
+function aliasesForRoute(manifest, route) {
+  const pages = [...(manifest.primaryPages || []), ...(manifest.subpages || [])];
+  const page = pages.find(item => item.route === route);
+  return page && Array.isArray(page.aliases) ? page.aliases : [];
+}
+
+function ensureSiteMeta(manifest) {
+  fs.mkdirSync(path.join(PUBLIC, 'site'), { recursive: true });
+  for (const page of [...(manifest.primaryPages || []), ...(manifest.subpages || [])]) {
+    if (!page.route || !page.file) continue;
+    const dir = path.join(PUBLIC, 'site', sitePathForRoute(page.route));
+    const metaPath = path.join(dir, 'meta.json');
+    if (fs.existsSync(metaPath)) continue;
+    const slug = slugFromRoute(page.route);
+    fs.mkdirSync(dir, { recursive: true });
+    const cssRel = `css/pages/${slug}.css`;
+    const jsRel = `js/pages/${slug}.animations.js`;
+    const meta = {
+      title: page.title || slug,
+      canonicalRoute: page.route,
+      pageFile: `pages/${page.file}`,
+      css: fs.existsSync(path.join(PUBLIC, cssRel)) ? cssRel : null,
+      js: fs.existsSync(path.join(PUBLIC, jsRel)) ? jsRel : null,
+      section: siteSection(page.route),
+      aliases: aliasesForRoute(manifest, page.route),
+    };
+    fs.writeFileSync(metaPath, `${JSON.stringify(meta, null, 2)}\n`, 'utf8');
+  }
 }
 
 function writeSitemaps(allRoutes) {
@@ -189,6 +254,81 @@ function writeSiteReadmes(contentRoutes, llmsSections) {
   return n;
 }
 
+function writeSiteRootReadme(manifest) {
+  const pages = [...(manifest.primaryPages || []), ...(manifest.subpages || [])];
+  const bySection = new Map();
+  for (const page of pages) {
+    const section = siteSection(page.route);
+    if (!bySection.has(section)) bySection.set(section, []);
+    bySection.get(section).push(page);
+  }
+  const lines = [
+    '# TSC site map (human + AI)',
+    '',
+    'Readable index of every canonical public page. Real HTML lives in `public/pages/*.html`; this tree stores metadata and plain content for agents.',
+    '',
+    '## Agent files',
+    '',
+    '- [`/agent-design.md`](../agent-design.md) - design rules and page map',
+    '- [`/agent-content.md`](../agent-content.md) - compressed site copy and route index',
+    '- [`/llms.txt`](../llms.txt) - curated AI discovery index',
+    '- [`/llms-full.txt`](../llms-full.txt) - full AI-readable corpus',
+    '- [`/sitemap.xml`](../sitemap.xml) - canonical URL set',
+    '',
+    '## Serving',
+    '',
+    '1. `vercel.json` rewrites canonical route to `/pages/<file>.html`.',
+    '2. Legacy Wix aliases redirect or rewrite to canonical routes.',
+    '3. Each page folder has `meta.json`, `README.md`, and `content.md`.',
+    '',
+    '## Pages',
+    '',
+  ];
+  for (const [section, list] of bySection) {
+    lines.push(`### ${section}`, '');
+    for (const page of list) {
+      lines.push(`- [${page.title}](./${sitePathForRoute(page.route)}/) - \`${page.route}\` -> \`pages/${page.file}\``);
+    }
+    lines.push('');
+  }
+  fs.writeFileSync(path.join(PUBLIC, 'site', 'README.md'), lines.join('\n'), 'utf8');
+}
+
+function writeAgentFiles(manifest, contentRoutes) {
+  const designParts = [];
+  for (const rel of ['DESIGN.md', path.join('docs', 'PAGE_DESIGN.md')]) {
+    const full = path.join(ROOT, rel);
+    if (!fs.existsSync(full)) continue;
+    designParts.push(fs.readFileSync(full, 'utf8').trim());
+  }
+  fs.writeFileSync(path.join(PUBLIC, 'agent-design.md'), `${designParts.join('\n\n---\n\n')}\n`, 'utf8');
+
+  const lines = [
+    '# The Shakti Collective Agent Content',
+    '',
+    `Generated: ${LASTMOD}`,
+    `Canonical site: ${BASE}`,
+    '',
+    '## Routes',
+    '',
+  ];
+  for (const page of [...(manifest.primaryPages || []), ...(manifest.subpages || [])]) {
+    const url = page.route === '/' ? `${BASE}/` : `${BASE}${page.route}`;
+    lines.push(`- ${page.title}: ${url}`);
+  }
+  lines.push('', '## Extracted Copy', '');
+  for (const [route, copy] of Object.entries(contentRoutes)) {
+    if (!Array.isArray(copy) || copy.length === 0) continue;
+    lines.push(`### ${route}`, '');
+    for (const item of copy) {
+      const text = String(item).trim();
+      if (text) lines.push(`- ${text}`);
+    }
+    lines.push('');
+  }
+  fs.writeFileSync(path.join(PUBLIC, 'agent-content.md'), lines.join('\n'), 'utf8');
+}
+
 function main() {
   const manifest = JSON.parse(
     fs.readFileSync(path.join(PUBLIC, 'pages', 'routes.manifest.json'), 'utf8')
@@ -201,14 +341,17 @@ function main() {
   const contentRoutes = loadContentRoutes();
   const llmsSections = loadLlmsSections();
 
+  ensureSiteMeta(manifest);
   writeSitemaps(allRoutes);
   const count = writeSiteReadmes(contentRoutes, llmsSections);
+  writeSiteRootReadme(manifest);
+  writeAgentFiles(manifest, contentRoutes);
 
   // About mirror at /about.md for agents that resolve page → .md
   const aboutReadme = fs.readFileSync(path.join(PUBLIC, 'site', 'about', 'content.md'), 'utf8');
   fs.writeFileSync(path.join(PUBLIC, 'about.md'), aboutReadme);
 
-  console.log(`AI corpus OK: sitemap ${allRoutes.length} urls; ${count} site pages; about.md`);
+  console.log(`AI corpus OK: sitemap ${allRoutes.length} urls; ${count} site pages; agent files; about.md`);
 }
 
 main();

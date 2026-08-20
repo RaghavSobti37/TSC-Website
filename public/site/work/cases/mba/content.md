@@ -1,6 +1,6 @@
 # MBA
 
-URL: https://wix-site-clone-psi.vercel.app/mba
+URL: https://theshakticollective.in/mba
 
 ## Copy
 

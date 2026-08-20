@@ -1,9 +1,9 @@
 # Films
 
-> Machine-readable page summary for AI agents. Live HTML: https://wix-site-clone-psi.vercel.app/films
+> Machine-readable page summary for AI agents. Live HTML: https://theshakticollective.in/films
 
 - **Canonical URL:** `/films`
-- **Absolute URL:** https://wix-site-clone-psi.vercel.app/films
+- **Absolute URL:** https://theshakticollective.in/films
 - **HTML:** `pages/films.html`
 - **CSS:** `css/pages/films.css`
 - **JS:** `js/pages/films.animations.js`
@@ -24,10 +24,10 @@ A film deserves more than a successful release — it needs an audience that bel
 **Belief:** Audience should be part of the conversation from day one. Films are IPs capable of communities, partnerships, experiences, and long-term cultural impact.
 
 **Film / story pages on this site:**
-- [Mahavatar Narsimha](https://wix-site-clone-psi.vercel.app/mahavatar-narsimha) — mythology-led animated feature strategy
-- [Hanuman ansh](https://wix-site-clone-psi.vercel.app/hanuman-ansh) — spiritual entertainment IP
-- [Mahaprbhu](https://wix-site-clone-psi.vercel.app/mahaprbhu) — Jagannath cultural resonance
-- [Kalki](https://wix-site-clone-psi.vercel.app/kalki) — culture-forward storytelling of tomorrow through Indian imagination
+- [Mahavatar Narsimha](https://theshakticollective.in/mahavatar-narsimha) — mythology-led animated feature strategy
+- [Hanuman ansh](https://theshakticollective.in/hanuman-ansh) — spiritual entertainment IP
+- [Mahaprbhu](https://theshakticollective.in/mahaprbhu) — Jagannath cultural resonance
+- [Kalki](https://theshakticollective.in/kalki) — culture-forward storytelling of tomorrow through Indian imagination
 
 ## Source copy (verbatim)
 
@@ -52,6 +52,6 @@ A film deserves more than a successful release — it needs an audience that bel
 
 ## Discovery
 
-- [llms.txt](https://wix-site-clone-psi.vercel.app/llms.txt)
-- [llms-full.txt](https://wix-site-clone-psi.vercel.app/llms-full.txt)
-- [sitemap.xml](https://wix-site-clone-psi.vercel.app/sitemap.xml)
+- [llms.txt](https://theshakticollective.in/llms.txt)
+- [llms-full.txt](https://theshakticollective.in/llms-full.txt)
+- [sitemap.xml](https://theshakticollective.in/sitemap.xml)

@@ -1,9 +1,9 @@
 # Mahavatar Narsimha
 
-> Machine-readable page summary for AI agents. Live HTML: https://wix-site-clone-psi.vercel.app/mahavatar-narsimha
+> Machine-readable page summary for AI agents. Live HTML: https://theshakticollective.in/mahavatar-narsimha
 
 - **Canonical URL:** `/mahavatar-narsimha`
-- **Absolute URL:** https://wix-site-clone-psi.vercel.app/mahavatar-narsimha
+- **Absolute URL:** https://theshakticollective.in/mahavatar-narsimha
 - **HTML:** `pages/mahavatar-narsimha.html`
 - **CSS:** `css/pages/mahavatar-narsimha.css`
 - **JS:** `js/pages/mahavatar-narsimha.animations.js`
@@ -17,10 +17,10 @@
 - Mahavatar Narsimha represented the opportunity to establish the foundations of a mythology-led entertainment property capable of growing across audiences, platforms and experiences.
 - TSC supported strategic audience positioning, film mounting strategy, non-theatrical monetisation, partnership development and IP/franchise thinking.
 - Looking Ahead
-- Mahaavatar Narsimha became a key foundation for TSC Films’ approach to culturally rooted film mounting and long-term IP development.
+- Mahavatar Narsimha became a key foundation for TSC Films’ approach to culturally rooted film mounting and long-term IP development.
 
 ## Discovery
 
-- [llms.txt](https://wix-site-clone-psi.vercel.app/llms.txt)
-- [llms-full.txt](https://wix-site-clone-psi.vercel.app/llms-full.txt)
-- [sitemap.xml](https://wix-site-clone-psi.vercel.app/sitemap.xml)
+- [llms.txt](https://theshakticollective.in/llms.txt)
+- [llms-full.txt](https://theshakticollective.in/llms-full.txt)
+- [sitemap.xml](https://theshakticollective.in/sitemap.xml)

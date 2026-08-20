@@ -1,6 +1,6 @@
 # About
 
-URL: https://wix-site-clone-psi.vercel.app/about
+URL: https://theshakticollective.in/about
 
 # About The Shakti Collective
 
@@ -39,7 +39,7 @@ ABOUT US
 
 The Shakti Collective
 
-Unfolding Artist Force 
+Unfolding Artist Force
 
 Building India’s Culture-Forward Artist Ecosystem
 

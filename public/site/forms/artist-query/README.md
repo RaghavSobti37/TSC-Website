@@ -1,9 +1,9 @@
 # Artist Path Query
 
-> Machine-readable page summary for AI agents. Live HTML: https://wix-site-clone-psi.vercel.app/artist-query
+> Machine-readable page summary for AI agents. Live HTML: https://theshakticollective.in/artist-query
 
 - **Canonical URL:** `/artist-query`
-- **Absolute URL:** https://wix-site-clone-psi.vercel.app/artist-query
+- **Absolute URL:** https://theshakticollective.in/artist-query
 - **HTML:** `pages/artist-query.html`
 - **CSS:** `css/pages/artist-query.css`
 - **JS:** `js/pages/artist-query.animations.js`
@@ -35,6 +35,6 @@
 
 ## Discovery
 
-- [llms.txt](https://wix-site-clone-psi.vercel.app/llms.txt)
-- [llms-full.txt](https://wix-site-clone-psi.vercel.app/llms-full.txt)
-- [sitemap.xml](https://wix-site-clone-psi.vercel.app/sitemap.xml)
+- [llms.txt](https://theshakticollective.in/llms.txt)
+- [llms-full.txt](https://theshakticollective.in/llms-full.txt)
+- [sitemap.xml](https://theshakticollective.in/sitemap.xml)

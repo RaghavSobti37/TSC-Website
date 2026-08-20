@@ -1,9 +1,9 @@
 # All Courses Bundle
 
-> Machine-readable page summary for AI agents. Live HTML: https://wix-site-clone-psi.vercel.app/course-bundle
+> Machine-readable page summary for AI agents. Live HTML: https://theshakticollective.in/course-bundle
 
 - **Canonical URL:** `/course-bundle`
-- **Absolute URL:** https://wix-site-clone-psi.vercel.app/course-bundle
+- **Absolute URL:** https://theshakticollective.in/course-bundle
 - **HTML:** `pages/course-bundle.html`
 - **CSS:** `css/pages/course-bundle.css`
 - **Section:** `academy`
@@ -11,10 +11,14 @@
 
 ## Page content
 
-TSC Academy bundle page offering all three courses together: The heART of Music Composition, The Roots of Hindustani Classical, and A to Z of Music Production. The offer clearly marks ₹12,000 down to ₹9,999.
+# All Courses Bundle
+
+Complete TSC Academy course stack combining The HeART of Music Composition, The Roots of Hindustani Classical, and A to Z of Music Production.
+
+**Offer:** ₹12,000 bundled down to ₹9,999.
 
 ## Discovery
 
-- [llms.txt](https://wix-site-clone-psi.vercel.app/llms.txt)
-- [llms-full.txt](https://wix-site-clone-psi.vercel.app/llms-full.txt)
-- [sitemap.xml](https://wix-site-clone-psi.vercel.app/sitemap.xml)
+- [llms.txt](https://theshakticollective.in/llms.txt)
+- [llms-full.txt](https://theshakticollective.in/llms-full.txt)
+- [sitemap.xml](https://theshakticollective.in/sitemap.xml)

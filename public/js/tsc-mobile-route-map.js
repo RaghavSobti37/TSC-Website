@@ -4,7 +4,7 @@
  * DESKTOP LOCK: these sheets must always load with media=(max-width: 1024px).
  */
 (function (root) {
-  var VERSION = 'mobile-own-3';
+  var VERSION = 'mobile-own-4';
   var BASE = '/css/mobile/';
 
   /** Every mirrored page slug → dedicated file under public/css/mobile/ */

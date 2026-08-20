@@ -1,6 +1,6 @@
 # Home
 
-URL: https://wix-site-clone-psi.vercel.app/
+URL: https://theshakticollective.in/
 
 # Home — The Shakti Collective
 

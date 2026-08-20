@@ -43,7 +43,7 @@ function buildRoutes() {
   const pages = [...(manifest.primaryPages || []), ...(manifest.subpages || [])];
   const routes = pages.map(page => page.route).filter(Boolean);
   for (const extra of EXTRA_ROUTES) routes.push(extra.route);
-  return routes;
+  return [...new Set(routes)];
 }
 
 function buildUrlset(routes) {

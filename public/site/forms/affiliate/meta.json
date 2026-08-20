@@ -1,0 +1,11 @@
+{
+  "title": "Affiliate Program",
+  "canonicalRoute": "/affiliate",
+  "pageFile": "pages/affiliate.html",
+  "css": "css/pages/affiliate.css",
+  "js": null,
+  "section": "forms",
+  "aliases": [
+    "/academy/affiliate"
+  ]
+}

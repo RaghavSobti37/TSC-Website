@@ -338,6 +338,14 @@
         "/forms/masterclass-review02"
       ],
       "file": "masterclass-review02.html"
+    },
+    {
+      "title": "Affiliate Program",
+      "route": "/affiliate",
+      "aliases": [
+        "/academy/affiliate"
+      ],
+      "file": "affiliate.html"
     }
   ],
   "aliases": [
@@ -632,6 +640,10 @@
     {
       "alias": "/forms/masterclass-review02",
       "route": "/masterclass-review02"
+    },
+    {
+      "alias": "/academy/affiliate",
+      "route": "/affiliate"
     }
   ],
   "allRoutes": [
@@ -674,6 +686,7 @@
     "/book-a-call",
     "/masterclass-review01",
     "/classicalreview",
-    "/masterclass-review02"
+    "/masterclass-review02",
+    "/affiliate"
   ]
 }

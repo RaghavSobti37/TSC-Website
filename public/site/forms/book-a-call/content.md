@@ -1,6 +1,6 @@
 # Book A Call
 
-URL: https://wix-site-clone-psi.vercel.app/book-a-call
+URL: https://theshakticollective.in/book-a-call
 
 ## Copy
 

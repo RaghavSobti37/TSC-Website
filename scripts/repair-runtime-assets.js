@@ -9,6 +9,7 @@ const directAssets = [
   '/assets/mirror/static.parastorage.com/services/wix-thunderbolt/dist/thunderbolt-css.80a7df57.bundle.min.js',
   '/assets/mirror/static.parastorage.com/services/editor-elements/1.15349.0/rb_wixui.corvid.manifest.min.json',
   '/assets/mirror/static.parastorage.com/services/editor-elements/1.15349.0/rb_dsgnsys.corvid.manifest.min.json',
+  '/assets/mirror/static.wixstatic.com/media/19f989_07ccded965c34fc78a6f77e923c2778a~mv2.jpg/v1/fill/w_246,h_162,fp_0.52_0.73,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Music%20Equipment%20_edited.jpg',
 ];
 
 function walk(dir) {

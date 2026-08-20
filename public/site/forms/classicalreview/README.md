@@ -1,9 +1,9 @@
 # Classical Review
 
-> Machine-readable page summary for AI agents. Live HTML: https://wix-site-clone-psi.vercel.app/classicalreview
+> Machine-readable page summary for AI agents. Live HTML: https://theshakticollective.in/classicalreview
 
 - **Canonical URL:** `/classicalreview`
-- **Absolute URL:** https://wix-site-clone-psi.vercel.app/classicalreview
+- **Absolute URL:** https://theshakticollective.in/classicalreview
 - **HTML:** `pages/classicalreview.html`
 - **CSS:** `css/pages/classicalreview.css`
 - **JS:** `js/pages/classicalreview.animations.js`
@@ -16,6 +16,6 @@ _No structured copy mapped for this route yet._
 
 ## Discovery
 
-- [llms.txt](https://wix-site-clone-psi.vercel.app/llms.txt)
-- [llms-full.txt](https://wix-site-clone-psi.vercel.app/llms-full.txt)
-- [sitemap.xml](https://wix-site-clone-psi.vercel.app/sitemap.xml)
+- [llms.txt](https://theshakticollective.in/llms.txt)
+- [llms-full.txt](https://theshakticollective.in/llms-full.txt)
+- [sitemap.xml](https://theshakticollective.in/sitemap.xml)

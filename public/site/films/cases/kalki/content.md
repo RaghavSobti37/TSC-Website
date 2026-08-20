@@ -1,6 +1,6 @@
 # Kalki
 
-URL: https://wix-site-clone-psi.vercel.app/kalki
+URL: https://theshakticollective.in/kalki
 
 ## Copy
 

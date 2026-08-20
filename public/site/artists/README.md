@@ -1,9 +1,9 @@
 # TSC Artists
 
-> Machine-readable page summary for AI agents. Live HTML: https://wix-site-clone-psi.vercel.app/artists
+> Machine-readable page summary for AI agents. Live HTML: https://theshakticollective.in/artists
 
 - **Canonical URL:** `/artists`
-- **Absolute URL:** https://wix-site-clone-psi.vercel.app/artists
+- **Absolute URL:** https://theshakticollective.in/artists
 - **HTML:** `pages/artists.html`
 - **CSS:** `css/pages/artists.css`
 - **JS:** `js/pages/artists.animations.js`
@@ -25,10 +25,11 @@ A 360° ecosystem helping independent artists build audiences, unlock opportunit
 **Who we serve:** Artists, festivals, colleges & universities, brands, corporate events, venues & hospitality, cultural institutions, event organisers
 
 **Roster profiles on this site:**
-- [Harshad Duhita](https://wix-site-clone-psi.vercel.app/harshad-duhita)
-- [YUGM](https://wix-site-clone-psi.vercel.app/yugm)
+- [Harshad Duhita](https://theshakticollective.in/harshad-duhita)
+- [Mohit Shankar](https://theshakticollective.in/mohit-shankar)
+- [YUGM](https://theshakticollective.in/yugm)
 
-**Book artists:** https://wix-site-clone-psi.vercel.app/book-an-artist
+**Book artists:** https://theshakticollective.in/book-an-artist
 
 ## Source copy (verbatim)
 
@@ -63,6 +64,6 @@ A 360° ecosystem helping independent artists build audiences, unlock opportunit
 
 ## Discovery
 
-- [llms.txt](https://wix-site-clone-psi.vercel.app/llms.txt)
-- [llms-full.txt](https://wix-site-clone-psi.vercel.app/llms-full.txt)
-- [sitemap.xml](https://wix-site-clone-psi.vercel.app/sitemap.xml)
+- [llms.txt](https://theshakticollective.in/llms.txt)
+- [llms-full.txt](https://theshakticollective.in/llms-full.txt)
+- [sitemap.xml](https://theshakticollective.in/sitemap.xml)

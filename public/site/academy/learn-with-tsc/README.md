@@ -1,9 +1,9 @@
 # Learn With TSC
 
-> Machine-readable page summary for AI agents. Live HTML: https://wix-site-clone-psi.vercel.app/learn-with-tsc
+> Machine-readable page summary for AI agents. Live HTML: https://theshakticollective.in/learn-with-tsc
 
 - **Canonical URL:** `/learn-with-tsc`
-- **Absolute URL:** https://wix-site-clone-psi.vercel.app/learn-with-tsc
+- **Absolute URL:** https://theshakticollective.in/learn-with-tsc
 - **HTML:** `pages/learn-with-tsc.html`
 - **CSS:** `css/pages/learn-with-tsc.css`
 - **JS:** `js/pages/learn-with-tsc.animations.js`
@@ -11,14 +11,6 @@
 - **Aliases:** `/academy/learn-with-tsc`
 
 ## Page content
-
-# Learn With TSC
-
-Mentorship-led music education, craft development, creative direction, and artist growth frameworks within The Shakti Collective Academy ecosystem.
-
-Entry point for artists seeking structured learning paths alongside Academy courses and Artist Path.
-
-## Source copy (verbatim)
 
 - Learn from the Maestros.
 - Structured mentorship designed to help artists move from uncertainty to artistic clarity.
@@ -43,6 +35,6 @@ Entry point for artists seeking structured learning paths alongside Academy cour
 
 ## Discovery
 
-- [llms.txt](https://wix-site-clone-psi.vercel.app/llms.txt)
-- [llms-full.txt](https://wix-site-clone-psi.vercel.app/llms-full.txt)
-- [sitemap.xml](https://wix-site-clone-psi.vercel.app/sitemap.xml)
+- [llms.txt](https://theshakticollective.in/llms.txt)
+- [llms-full.txt](https://theshakticollective.in/llms-full.txt)
+- [sitemap.xml](https://theshakticollective.in/sitemap.xml)

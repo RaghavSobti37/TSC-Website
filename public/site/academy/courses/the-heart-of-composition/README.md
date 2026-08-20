@@ -1,9 +1,9 @@
 # The HeART of Composition
 
-> Machine-readable page summary for AI agents. Live HTML: https://wix-site-clone-psi.vercel.app/the-heart-of-composition
+> Machine-readable page summary for AI agents. Live HTML: https://theshakticollective.in/the-heart-of-composition
 
 - **Canonical URL:** `/the-heart-of-composition`
-- **Absolute URL:** https://wix-site-clone-psi.vercel.app/the-heart-of-composition
+- **Absolute URL:** https://theshakticollective.in/the-heart-of-composition
 - **HTML:** `pages/the-heart-of-composition.html`
 - **CSS:** `css/pages/the-heart-of-composition.css`
 - **JS:** `js/pages/the-heart-of-composition.animations.js`
@@ -61,7 +61,7 @@ Explores emotional and technical architecture of composition — bhaav, melody, 
 - Basic Taal
 - Bandish
 - Advanced Ragas
-- Unfolding Artist Force 
+- Unfolding Artist Force
 - Course: A–Z of Music Production
 - Mentor: Luca Petracca
 - Luca Petracca is a music producer and composer from Italy. He studied classical guitar at Conservatory S. Cecilia of Rome and classical composition at Conservatorium van Amsterdam. He has taught music for more than 17 years and produced multiple tracks across creative contexts.
@@ -81,6 +81,6 @@ Explores emotional and technical architecture of composition — bhaav, melody, 
 
 ## Discovery
 
-- [llms.txt](https://wix-site-clone-psi.vercel.app/llms.txt)
-- [llms-full.txt](https://wix-site-clone-psi.vercel.app/llms-full.txt)
-- [sitemap.xml](https://wix-site-clone-psi.vercel.app/sitemap.xml)
+- [llms.txt](https://theshakticollective.in/llms.txt)
+- [llms-full.txt](https://theshakticollective.in/llms-full.txt)
+- [sitemap.xml](https://theshakticollective.in/sitemap.xml)

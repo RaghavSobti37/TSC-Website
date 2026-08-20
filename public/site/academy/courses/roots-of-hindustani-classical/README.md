@@ -1,9 +1,9 @@
 # Roots of Hindustani Classical
 
-> Machine-readable page summary for AI agents. Live HTML: https://wix-site-clone-psi.vercel.app/roots-of-hindustani-classical
+> Machine-readable page summary for AI agents. Live HTML: https://theshakticollective.in/roots-of-hindustani-classical
 
 - **Canonical URL:** `/roots-of-hindustani-classical`
-- **Absolute URL:** https://wix-site-clone-psi.vercel.app/roots-of-hindustani-classical
+- **Absolute URL:** https://theshakticollective.in/roots-of-hindustani-classical
 - **HTML:** `pages/roots-of-hindustani-classical.html`
 - **CSS:** `css/pages/roots-of-hindustani-classical.css`
 - **JS:** `js/pages/roots-of-hindustani-classical.animations.js`
@@ -18,7 +18,7 @@
 
 Builds foundation through sur, raag understanding, voice culture, listening, riyaaz, and expressive mastery.
 
-**Curriculum themes (representative):** What is Music? · Classical & Semi-Classical Forms · History & Gharanas · Swaar, Thaat & Saptak · Introduction to Ragas · Listening Is Learning · Select Your Sa · Kanth Saadhna · Tanpura · Basic Phrases · Basic Taal · Bandish · Advanced Ragas · Unfolding Artist Force 
+**Curriculum themes (representative):** What is Music? · Classical & Semi-Classical Forms · History & Gharanas · Swaar, Thaat & Saptak · Introduction to Ragas · Listening Is Learning · Select Your Sa · Kanth Saadhna · Tanpura · Basic Phrases · Basic Taal · Bandish · Advanced Ragas · Unfolding Artist Force
 
 ## Source copy (verbatim)
 
@@ -61,7 +61,7 @@ Builds foundation through sur, raag understanding, voice culture, listening, riy
 - Basic Taal
 - Bandish
 - Advanced Ragas
-- Unfolding Artist Force 
+- Unfolding Artist Force
 - Course: A–Z of Music Production
 - Mentor: Luca Petracca
 - Luca Petracca is a music producer and composer from Italy. He studied classical guitar at Conservatory S. Cecilia of Rome and classical composition at Conservatorium van Amsterdam. He has taught music for more than 17 years and produced multiple tracks across creative contexts.
@@ -81,6 +81,6 @@ Builds foundation through sur, raag understanding, voice culture, listening, riy
 
 ## Discovery
 
-- [llms.txt](https://wix-site-clone-psi.vercel.app/llms.txt)
-- [llms-full.txt](https://wix-site-clone-psi.vercel.app/llms-full.txt)
-- [sitemap.xml](https://wix-site-clone-psi.vercel.app/sitemap.xml)
+- [llms.txt](https://theshakticollective.in/llms.txt)
+- [llms-full.txt](https://theshakticollective.in/llms-full.txt)
+- [sitemap.xml](https://theshakticollective.in/sitemap.xml)

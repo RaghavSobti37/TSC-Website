@@ -1,6 +1,6 @@
 # Hanuman ansh
 
-URL: https://wix-site-clone-psi.vercel.app/hanuman-ansh
+URL: https://theshakticollective.in/hanuman-ansh
 
 ## Copy
 

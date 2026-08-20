@@ -1,9 +1,9 @@
 # Home
 
-> Machine-readable page summary for AI agents. Live HTML: https://wix-site-clone-psi.vercel.app/
+> Machine-readable page summary for AI agents. Live HTML: https://theshakticollective.in/
 
 - **Canonical URL:** `/`
-- **Absolute URL:** https://wix-site-clone-psi.vercel.app/
+- **Absolute URL:** https://theshakticollective.in/
 - **HTML:** `pages/home.html`
 - **CSS:** `css/pages/home.css`
 - **JS:** `js/pages/home.animations.js`
@@ -90,6 +90,6 @@ The Shakti Collective is a culture-first artist development ecosystem for singer
 
 ## Discovery
 
-- [llms.txt](https://wix-site-clone-psi.vercel.app/llms.txt)
-- [llms-full.txt](https://wix-site-clone-psi.vercel.app/llms-full.txt)
-- [sitemap.xml](https://wix-site-clone-psi.vercel.app/sitemap.xml)
+- [llms.txt](https://theshakticollective.in/llms.txt)
+- [llms-full.txt](https://theshakticollective.in/llms-full.txt)
+- [sitemap.xml](https://theshakticollective.in/sitemap.xml)

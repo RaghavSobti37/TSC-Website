@@ -1,6 +1,6 @@
 # The HeART of Composition
 
-URL: https://wix-site-clone-psi.vercel.app/the-heart-of-composition
+URL: https://theshakticollective.in/the-heart-of-composition
 
 # The HeART of Composition
 
@@ -90,7 +90,7 @@ Bandish
 
 Advanced Ragas
 
-Unfolding Artist Force 
+Unfolding Artist Force
 
 Course: A–Z of Music Production
 

@@ -1,6 +1,6 @@
 # Collab Q
 
-URL: https://wix-site-clone-psi.vercel.app/collab-query
+URL: https://theshakticollective.in/collab-query
 
 ## Copy
 

@@ -1,6 +1,6 @@
 # Book An Artist
 
-URL: https://wix-site-clone-psi.vercel.app/book-an-artist
+URL: https://theshakticollective.in/book-an-artist
 
 ## Copy
 

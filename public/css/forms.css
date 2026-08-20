@@ -1254,6 +1254,50 @@ form[id^="form-"] * {
   border: 1.5px solid #c64f20 !important;
 }
 
+/* Book-a-call: legacy slot grid replacing the free-form HH:MM box */
+[data-field-type="TIME_INPUT"].tsc-has-slot-grid > fieldset > .spq17pn {
+  display: none !important;
+}
+
+.tsc-time-slot-grid {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: 12px;
+}
+
+.tsc-time-slot {
+  background: #fff;
+  border: 1.5px solid rgba(5, 63, 64, 0.22);
+  border-radius: 12px;
+  color: #053f40;
+  cursor: pointer;
+  font: normal normal 500 14px/1.2 Arial, sans-serif;
+  padding: 12px 8px;
+  transition: border-color 0.15s ease, background 0.15s ease, opacity 0.15s ease;
+}
+
+.tsc-time-slot:hover:not(:disabled) {
+  background: rgba(183, 75, 2, 0.06);
+  border-color: #b74b02;
+}
+
+.tsc-time-slot.is-selected {
+  background: #053f40;
+  border-color: #053f40;
+  color: #ffecd1;
+  font-weight: 700;
+}
+
+.tsc-time-slot.is-unavailable {
+  background: #fdf0ec;
+  border-color: rgba(198, 79, 32, 0.35);
+  color: rgba(198, 79, 32, 0.65);
+  cursor: not-allowed;
+  opacity: 0.7;
+  text-decoration: line-through;
+}
+
 /* Submit button cursor and interactions */
 button[data-hook="submit-button"],
 button[data-hook="dropdown-base"],

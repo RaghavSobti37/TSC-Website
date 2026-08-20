@@ -1,9 +1,9 @@
 # Artist Path
 
-> Machine-readable page summary for AI agents. Live HTML: https://wix-site-clone-psi.vercel.app/artist-path
+> Machine-readable page summary for AI agents. Live HTML: https://theshakticollective.in/artist-path
 
 - **Canonical URL:** `/artist-path`
-- **Absolute URL:** https://wix-site-clone-psi.vercel.app/artist-path
+- **Absolute URL:** https://theshakticollective.in/artist-path
 - **HTML:** `pages/artist-path.html`
 - **CSS:** `css/pages/artist-path.css`
 - **JS:** `js/pages/artist-path.animations.js`
@@ -18,7 +18,7 @@ Every artist’s journey is different — but clarity changes everything.
 
 A personalised diagnostic / selective accelerator experience (curated by Rohith Sobti) helping artists understand where they are and what they need next: growth pathways, mentorship direction, learning recommendations, ecosystem access, and community onboarding.
 
-**Inquiry:** https://wix-site-clone-psi.vercel.app/artist-query
+**Inquiry:** https://theshakticollective.in/artist-query
 
 ## Source copy (verbatim)
 
@@ -42,6 +42,6 @@ A personalised diagnostic / selective accelerator experience (curated by Rohith 
 
 ## Discovery
 
-- [llms.txt](https://wix-site-clone-psi.vercel.app/llms.txt)
-- [llms-full.txt](https://wix-site-clone-psi.vercel.app/llms-full.txt)
-- [sitemap.xml](https://wix-site-clone-psi.vercel.app/sitemap.xml)
+- [llms.txt](https://theshakticollective.in/llms.txt)
+- [llms-full.txt](https://theshakticollective.in/llms-full.txt)
+- [sitemap.xml](https://theshakticollective.in/sitemap.xml)

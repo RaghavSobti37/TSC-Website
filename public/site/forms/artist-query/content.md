@@ -1,6 +1,6 @@
 # Artist Path Query
 
-URL: https://wix-site-clone-psi.vercel.app/artist-query
+URL: https://theshakticollective.in/artist-query
 
 ## Copy
 

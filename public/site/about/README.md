@@ -1,9 +1,9 @@
 # About
 
-> Machine-readable page summary for AI agents. Live HTML: https://wix-site-clone-psi.vercel.app/about
+> Machine-readable page summary for AI agents. Live HTML: https://theshakticollective.in/about
 
 - **Canonical URL:** `/about`
-- **Absolute URL:** https://wix-site-clone-psi.vercel.app/about
+- **Absolute URL:** https://theshakticollective.in/about
 - **HTML:** `pages/about.html`
 - **CSS:** `css/pages/about.css`
 - **JS:** `js/pages/about.animations.js`
@@ -46,7 +46,7 @@ The Shakti Collective is a culture-forward artist ecosystem company built to dis
 
 - ABOUT US
 - The Shakti Collective
-- Unfolding Artist Force 
+- Unfolding Artist Force
 - Building India’s Culture-Forward Artist Ecosystem
 - We work across music, films, learning, live experiences, artist partnerships, original IPs and culture-led collaborations — creating the systems artists need to grow, the stories audiences want to believe in, and the cultural properties that can travel from India to the world.
 - Artists do not need only exposure.
@@ -116,6 +116,6 @@ The Shakti Collective is a culture-forward artist ecosystem company built to dis
 
 ## Discovery
 
-- [llms.txt](https://wix-site-clone-psi.vercel.app/llms.txt)
-- [llms-full.txt](https://wix-site-clone-psi.vercel.app/llms-full.txt)
-- [sitemap.xml](https://wix-site-clone-psi.vercel.app/sitemap.xml)
+- [llms.txt](https://theshakticollective.in/llms.txt)
+- [llms-full.txt](https://theshakticollective.in/llms-full.txt)
+- [sitemap.xml](https://theshakticollective.in/sitemap.xml)

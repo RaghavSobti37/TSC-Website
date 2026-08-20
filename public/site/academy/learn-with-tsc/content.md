@@ -1,12 +1,6 @@
 # Learn With TSC
 
-URL: https://wix-site-clone-psi.vercel.app/learn-with-tsc
-
-# Learn With TSC
-
-Mentorship-led music education, craft development, creative direction, and artist growth frameworks within The Shakti Collective Academy ecosystem.
-
-Entry point for artists seeking structured learning paths alongside Academy courses and Artist Path.
+URL: https://theshakticollective.in/learn-with-tsc
 
 ## Copy
 

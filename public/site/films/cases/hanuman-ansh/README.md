@@ -1,9 +1,9 @@
 # Hanuman ansh
 
-> Machine-readable page summary for AI agents. Live HTML: https://wix-site-clone-psi.vercel.app/hanuman-ansh
+> Machine-readable page summary for AI agents. Live HTML: https://theshakticollective.in/hanuman-ansh
 
 - **Canonical URL:** `/hanuman-ansh`
-- **Absolute URL:** https://wix-site-clone-psi.vercel.app/hanuman-ansh
+- **Absolute URL:** https://theshakticollective.in/hanuman-ansh
 - **HTML:** `pages/hanuman-ansh.html`
 - **CSS:** `css/pages/hanuman-ansh.css`
 - **JS:** `js/pages/hanuman-ansh.animations.js`
@@ -21,6 +21,6 @@
 
 ## Discovery
 
-- [llms.txt](https://wix-site-clone-psi.vercel.app/llms.txt)
-- [llms-full.txt](https://wix-site-clone-psi.vercel.app/llms-full.txt)
-- [sitemap.xml](https://wix-site-clone-psi.vercel.app/sitemap.xml)
+- [llms.txt](https://theshakticollective.in/llms.txt)
+- [llms-full.txt](https://theshakticollective.in/llms-full.txt)
+- [sitemap.xml](https://theshakticollective.in/sitemap.xml)

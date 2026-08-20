@@ -1,9 +1,9 @@
 # Book An Artist
 
-> Machine-readable page summary for AI agents. Live HTML: https://wix-site-clone-psi.vercel.app/book-an-artist
+> Machine-readable page summary for AI agents. Live HTML: https://theshakticollective.in/book-an-artist
 
 - **Canonical URL:** `/book-an-artist`
-- **Absolute URL:** https://wix-site-clone-psi.vercel.app/book-an-artist
+- **Absolute URL:** https://theshakticollective.in/book-an-artist
 - **HTML:** `pages/book-an-artist.html`
 - **CSS:** `css/pages/book-an-artist.css`
 - **JS:** `js/pages/book-an-artist.animations.js`
@@ -35,6 +35,6 @@
 
 ## Discovery
 
-- [llms.txt](https://wix-site-clone-psi.vercel.app/llms.txt)
-- [llms-full.txt](https://wix-site-clone-psi.vercel.app/llms-full.txt)
-- [sitemap.xml](https://wix-site-clone-psi.vercel.app/sitemap.xml)
+- [llms.txt](https://theshakticollective.in/llms.txt)
+- [llms-full.txt](https://theshakticollective.in/llms-full.txt)
+- [sitemap.xml](https://theshakticollective.in/sitemap.xml)

@@ -1,9 +1,9 @@
 # TSC Academy
 
-> Machine-readable page summary for AI agents. Live HTML: https://wix-site-clone-psi.vercel.app/academy
+> Machine-readable page summary for AI agents. Live HTML: https://theshakticollective.in/academy
 
 - **Canonical URL:** `/academy`
-- **Absolute URL:** https://wix-site-clone-psi.vercel.app/academy
+- **Absolute URL:** https://theshakticollective.in/academy
 - **HTML:** `pages/academy.html`
 - **CSS:** `css/pages/academy.css`
 - **JS:** `js/pages/academy.animations.js`
@@ -19,12 +19,12 @@ Mentorship-led learning for singers, musicians, producers, and creators building
 **Why Academy:** Information is everywhere; real growth needs structure, feedback, repetition, and mentorship. Immersive, practical, connected to artistic identity — not academic overload.
 
 **Courses on this site:**
-- **The HeART of Composition** — Sandesh Shandilya — emotional architecture of composition (melody, harmony, storytelling, songwriting psychology). URL: https://wix-site-clone-psi.vercel.app/the-heart-of-composition
-- **Roots of Hindustani Classical** — Pandit Prasad Khaparde (Rampur Sahaswan gharana; guided early by Padma Bhushan Ustad Rashid Khan) — raag, sur, voice culture, riyaaz. URL: https://wix-site-clone-psi.vercel.app/roots-of-hindustani-classical
+- **The HeART of Composition** — Sandesh Shandilya — emotional architecture of composition (melody, harmony, storytelling, songwriting psychology). URL: https://theshakticollective.in/the-heart-of-composition
+- **Roots of Hindustani Classical** — Pandit Prasad Khaparde (Rampur Sahaswan gharana; guided early by Padma Bhushan Ustad Rashid Khan) — raag, sur, voice culture, riyaaz. URL: https://theshakticollective.in/roots-of-hindustani-classical
 
 **Also referenced in Academy positioning:** A–Z of Music Production — Luca Petracca (end-to-end production on a laptop).
 
-**Related:** [Learn With TSC](https://wix-site-clone-psi.vercel.app/learn-with-tsc)
+**Related:** [TSC Academy](https://theshakticollective.in/academy)
 
 ## Source copy (verbatim)
 
@@ -51,6 +51,6 @@ Mentorship-led learning for singers, musicians, producers, and creators building
 
 ## Discovery
 
-- [llms.txt](https://wix-site-clone-psi.vercel.app/llms.txt)
-- [llms-full.txt](https://wix-site-clone-psi.vercel.app/llms-full.txt)
-- [sitemap.xml](https://wix-site-clone-psi.vercel.app/sitemap.xml)
+- [llms.txt](https://theshakticollective.in/llms.txt)
+- [llms-full.txt](https://theshakticollective.in/llms-full.txt)
+- [sitemap.xml](https://theshakticollective.in/sitemap.xml)

@@ -904,13 +904,12 @@ footer.site-footer:has(.tsc-mobile-footer) {
     white-space: nowrap;
   }
 
-  .tsc-desktop-site-header-academy .tsc-desktop-site-nav > a.is-active,
-  .tsc-desktop-site-header-academy .tsc-academy-courses-menu.is-active > summary {
-    background: var(--tsc-cream);
-    border-radius: 9px;
-    color: var(--tsc-deep-teal);
-    min-height: 44px;
-    padding: 0 22px;
+  /* No persistent highlight in the academy top nav — items look uniform until hovered. */
+  .tsc-desktop-site-header-academy .tsc-academy-courses-menu > summary:hover {
+    opacity: 1;
+    text-decoration: underline;
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 5px;
   }
 
   .tsc-academy-courses-menu {
@@ -2196,7 +2195,21 @@ body:has(#comp-mr69hwoy) :is(#comp-mr69hwvf5, #comp-mr69hwvh) {
     height: 100% !important;
   }
 
-  body[data-page="about"] #comp-mr3si7jh {
+  body[data-page="about"] #comp-mr3si7hw {
+    height: 1007px !important;
+    min-height: 1007px !important;
+  }
+
+  body[data-page="about"] #comp-mr3smd70 {
+    height: 1426px !important;
+    min-height: 1426px !important;
+  }
+
+  /* Desktop: only the horizontal Wix header nav may exist. The Wix
+     mobile-menu pinned layer is present in the work page DOM and can flash
+     as a second navbar while the runtime hydrates (page CSS loads late) —
+     hide it outright so desktop always shows exactly one navbar. */
+  body[data-page="work"] #comp-mp2vly0q-pinned-layer {
     display: none !important;
     visibility: hidden !important;
     height: 0 !important;
@@ -2206,16 +2219,6 @@ body:has(#comp-mr69hwoy) :is(#comp-mr69hwvf5, #comp-mr69hwvh) {
     padding: 0 !important;
     overflow: hidden !important;
     pointer-events: none !important;
-  }
-
-  body[data-page="about"] #comp-mr3si7hw {
-    height: 807px !important;
-    min-height: 807px !important;
-  }
-
-  body[data-page="about"] #comp-mr3smd70 {
-    height: 1426px !important;
-    min-height: 1426px !important;
   }
 
 }

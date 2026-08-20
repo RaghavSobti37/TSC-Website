@@ -1,6 +1,6 @@
 # Mahaprbhu
 
-URL: https://wix-site-clone-psi.vercel.app/mahaprbhu
+URL: https://theshakticollective.in/mahaprbhu
 
 ## Copy
 

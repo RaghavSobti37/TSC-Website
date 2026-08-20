@@ -1,6 +1,6 @@
 # Mahavatar Narsimha
 
-URL: https://wix-site-clone-psi.vercel.app/mahavatar-narsimha
+URL: https://theshakticollective.in/mahavatar-narsimha
 
 ## Copy
 
@@ -14,4 +14,4 @@ TSC supported strategic audience positioning, film mounting strategy, non-theatr
 
 Looking Ahead
 
-Mahaavatar Narsimha became a key foundation for TSC Films’ approach to culturally rooted film mounting and long-term IP development.
+Mahavatar Narsimha became a key foundation for TSC Films’ approach to culturally rooted film mounting and long-term IP development.

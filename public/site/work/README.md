@@ -1,9 +1,9 @@
 # Work
 
-> Machine-readable page summary for AI agents. Live HTML: https://wix-site-clone-psi.vercel.app/work
+> Machine-readable page summary for AI agents. Live HTML: https://theshakticollective.in/work
 
 - **Canonical URL:** `/work`
-- **Absolute URL:** https://wix-site-clone-psi.vercel.app/work
+- **Absolute URL:** https://theshakticollective.in/work
 - **HTML:** `pages/work.html`
 - **CSS:** `css/pages/work.css`
 - **JS:** `js/pages/work.animations.js`
@@ -22,7 +22,7 @@ Building platforms, partnerships, and cultural movements that create lasting imp
 - **The Young Gunns** — artist incubation with producers and mentors
 - **TSC Films** — mounting films, building audiences, creating lasting IPs
 
-Related case URL on this site: [MBA](https://wix-site-clone-psi.vercel.app/mba)
+Related case URL on this site: [MBA](https://theshakticollective.in/mba)
 
 ## Source copy (verbatim)
 
@@ -36,6 +36,6 @@ Related case URL on this site: [MBA](https://wix-site-clone-psi.vercel.app/mba)
 
 ## Discovery
 
-- [llms.txt](https://wix-site-clone-psi.vercel.app/llms.txt)
-- [llms-full.txt](https://wix-site-clone-psi.vercel.app/llms-full.txt)
-- [sitemap.xml](https://wix-site-clone-psi.vercel.app/sitemap.xml)
+- [llms.txt](https://theshakticollective.in/llms.txt)
+- [llms-full.txt](https://theshakticollective.in/llms-full.txt)
+- [sitemap.xml](https://theshakticollective.in/sitemap.xml)

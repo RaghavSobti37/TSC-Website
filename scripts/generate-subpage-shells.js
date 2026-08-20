@@ -40,6 +40,7 @@ const subpages = [
   { title: 'Masterclass Review 01', route: '/masterclass-review01', aliases: ['/forms/masterclass-review01'] },
   { title: 'Classical Review', route: '/classicalreview', aliases: ['/forms/classicalreview'] },
   { title: 'Masterclass Review 02', route: '/masterclass-review02', aliases: ['/forms/masterclass-review02'] },
+  { title: 'Affiliate Program', route: '/affiliate', aliases: ['/academy/affiliate'] },
 ];
 
 const primaryPages = [

@@ -1,9 +1,9 @@
 # MBA
 
-> Machine-readable page summary for AI agents. Live HTML: https://wix-site-clone-psi.vercel.app/mba
+> Machine-readable page summary for AI agents. Live HTML: https://theshakticollective.in/mba
 
 - **Canonical URL:** `/mba`
-- **Absolute URL:** https://wix-site-clone-psi.vercel.app/mba
+- **Absolute URL:** https://theshakticollective.in/mba
 - **HTML:** `pages/mba.html`
 - **CSS:** `css/pages/mba.css`
 - **JS:** `js/pages/mba.animations.js`
@@ -22,6 +22,6 @@
 
 ## Discovery
 
-- [llms.txt](https://wix-site-clone-psi.vercel.app/llms.txt)
-- [llms-full.txt](https://wix-site-clone-psi.vercel.app/llms-full.txt)
-- [sitemap.xml](https://wix-site-clone-psi.vercel.app/sitemap.xml)
+- [llms.txt](https://theshakticollective.in/llms.txt)
+- [llms-full.txt](https://theshakticollective.in/llms-full.txt)
+- [sitemap.xml](https://theshakticollective.in/sitemap.xml)

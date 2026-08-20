@@ -1,9 +1,9 @@
 # Kalki
 
-> Machine-readable page summary for AI agents. Live HTML: https://wix-site-clone-psi.vercel.app/kalki
+> Machine-readable page summary for AI agents. Live HTML: https://theshakticollective.in/kalki
 
 - **Canonical URL:** `/kalki`
-- **Absolute URL:** https://wix-site-clone-psi.vercel.app/kalki
+- **Absolute URL:** https://theshakticollective.in/kalki
 - **HTML:** `pages/kalki.html`
 - **CSS:** `css/pages/kalki.css`
 - **JS:** `js/pages/kalki.animations.js`
@@ -20,6 +20,6 @@
 
 ## Discovery
 
-- [llms.txt](https://wix-site-clone-psi.vercel.app/llms.txt)
-- [llms-full.txt](https://wix-site-clone-psi.vercel.app/llms-full.txt)
-- [sitemap.xml](https://wix-site-clone-psi.vercel.app/sitemap.xml)
+- [llms.txt](https://theshakticollective.in/llms.txt)
+- [llms-full.txt](https://theshakticollective.in/llms-full.txt)
+- [sitemap.xml](https://theshakticollective.in/sitemap.xml)

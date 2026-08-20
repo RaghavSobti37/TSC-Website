@@ -2759,22 +2759,6 @@
   }
 }
 
-/* Remove TSC Films / Filmmakers card from About page - mobile only */
-@media (max-width: 1024px) {
-  #comp-mr3si7jh {
-    display: none !important;
-    visibility: hidden !important;
-    height: 0 !important;
-    min-height: 0 !important;
-    max-height: 0 !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    overflow: hidden !important;
-    pointer-events: none !important;
-  }
-}
-
-
 /* tsc-leak-guard: force remaining unscoped hides into mobile-only */
 @media (min-width: 1025px) {
   /* no-op — desktop lock; mobile families must not apply via missing media on <link> */

@@ -790,7 +790,7 @@
   }
 
   /* 1:1 slug → mobile CSS; prefer window.TSCMobileRouteMap when loaded */
-  var MOBILE_CSS_VERSION = 'mobile-own-3';
+  var MOBILE_CSS_VERSION = 'mobile-own-4';
   var MOBILE_CSS_MEDIA = '(max-width: 1024px)';
 
   var LEARN_PATHS = {
@@ -1341,6 +1341,25 @@
       }
       if (document.activeElement !== input) input.focus();
     }
+    // Legacy parity: never allow past dates (fallback local form path).
+    function localCountryCode(form) {
+      var sel = form.querySelector('select[name="country-code"]');
+      var val = sel ? String(sel.value || '').trim() : '';
+      var m = val.match(/\+?\d{1,3}/);
+      return m ? (m[0].indexOf('+') === 0 ? m[0] : '+' + m[0]) : '+91';
+    }
+    function refreshLocalDateMin() {
+      var minDate = todayInTimeZone(timezoneForCountryCode(localCountryCode(form)));
+      form.querySelectorAll('.tsc-date-picker input[type="date"]').forEach(function (input) {
+        input.min = minDate;
+        if (input.value && input.value < minDate) input.value = '';
+      });
+    }
+    refreshLocalDateMin();
+    var localCountrySelect = form.querySelector('select[name="country-code"]');
+    if (localCountrySelect) {
+      localCountrySelect.addEventListener('change', refreshLocalDateMin);
+    }
     form.querySelectorAll('.tsc-date-picker input[type="date"]').forEach(function (input) {
       syncDateState(input);
       input.addEventListener('input', function () { syncDateState(input); });
@@ -1751,6 +1770,103 @@
     });
   }
 
+  /** Book-a-call slot logic — mirrors the legacy Next.js book-a-call page. */
+  var BOOK_CALL_SLOTS = [
+    '12:00 PM', '12:30 PM', '01:00 PM', '01:30 PM',
+    '02:00 PM', '02:30 PM', '03:00 PM', '03:30 PM',
+    '04:00 PM', '04:30 PM', '05:00 PM', '05:30 PM',
+    '06:00 PM', '06:30 PM', '07:00 PM', '07:30 PM'
+  ];
+  var SLOT_AVAILABILITY_BUFFER_MS = 90 * 60 * 1000; // 1.5 hours
+  var COUNTRY_TIMEZONES = {
+    '+91': 'Asia/Kolkata',
+    '+1': 'America/New_York',
+    '+44': 'Europe/London',
+    '+971': 'Asia/Dubai',
+    '+61': 'Australia/Sydney',
+    '+65': 'Asia/Singapore',
+    '+49': 'Europe/Berlin',
+    '+33': 'Europe/Paris'
+  };
+  var COUNTRY_FLAG_CODES = {
+    IND: '+91', USA: '+1', GBR: '+44', ARE: '+971',
+    AUS: '+61', SGP: '+65', DEU: '+49', FRA: '+33'
+  };
+
+  function readBookCallCountryCode(wixForm) {
+    if (!wixForm) return '+91';
+    var trigger = wixForm.querySelector('button[data-hook="country-selector-trigger"]');
+    if (!trigger) return '+91';
+    var txt = String(trigger.innerText || trigger.textContent || trigger.getAttribute('aria-label') || '').trim();
+    var m = txt.match(/\+?\d{1,3}/);
+    if (m) return m[0].indexOf('+') === 0 ? m[0] : '+' + m[0];
+    // Runtime may only render the flag — map the flag code to a dial code.
+    var img = trigger.querySelector('img[src*="flags"]');
+    var src = img ? String(img.getAttribute('src') || '').toUpperCase() : '';
+    var fm = src.match(/SQUARE\/([A-Z]{2,3})/);
+    if (fm && COUNTRY_FLAG_CODES[fm[1]]) return COUNTRY_FLAG_CODES[fm[1]];
+    return '+91';
+  }
+
+  function timezoneForCountryCode(code) {
+    return COUNTRY_TIMEZONES[code] || 'Asia/Kolkata';
+  }
+
+  /** "Now" as a device-local Date holding the wall clock of the given timezone. */
+  function wallClockNow(timeZone) {
+    var parts;
+    try {
+      parts = new Intl.DateTimeFormat('en-US', {
+        timeZone: timeZone,
+        year: 'numeric', month: '2-digit', day: '2-digit',
+        hour: '2-digit', minute: '2-digit', second: '2-digit',
+        hour12: false
+      }).formatToParts(new Date());
+    } catch (e) {
+      return new Date();
+    }
+    function getPart(type) {
+      var p = parts.filter(function (x) { return x.type === type; })[0];
+      return p ? p.value : '';
+    }
+    var hour = getPart('hour');
+    if (hour === '24') hour = '00';
+    return new Date(getPart('year') + '-' + getPart('month') + '-' + getPart('day') + 'T' + hour + ':' + getPart('minute') + ':' + getPart('second'));
+  }
+
+  /** YYYY-MM-DD of "today" in the given timezone (for native date-picker min). */
+  function todayInTimeZone(timeZone) {
+    var now = wallClockNow(timeZone);
+    var y = now.getFullYear();
+    var mo = String(now.getMonth() + 1);
+    var d = String(now.getDate());
+    return y + '-' + (mo.length < 2 ? '0' + mo : mo) + '-' + (d.length < 2 ? '0' + d : d);
+  }
+
+  /** '01:30 PM' → '13:30'; returns null for malformed input. */
+  function slotTo24(slot) {
+    var m = String(slot || '').match(/^(\d{1,2}):(\d{2})\s*(AM|PM)$/i);
+    if (!m) return null;
+    var h = parseInt(m[1], 10);
+    var period = m[3].toUpperCase();
+    if (period === 'PM' && h !== 12) h += 12;
+    if (period === 'AM' && h === 12) h = 0;
+    return (h < 10 ? '0' + h : String(h)) + ':' + m[2];
+  }
+
+  /** True when dateStr + timeStr is at least 1.5h in the future in the timezone. */
+  function isSlotAvailable(dateStr, timeStr, timeZone) {
+    if (!dateStr || !timeStr) return false;
+    var t24 = slotTo24(timeStr);
+    if (!t24) return false;
+    try {
+      var slot = new Date(dateStr + 'T' + t24);
+      return slot.getTime() - wallClockNow(timeZone).getTime() >= SLOT_AVAILABILITY_BUFFER_MS;
+    } catch (e) {
+      return false;
+    }
+  }
+
   function bindNativeForm(wixForm, def, name, shared) {
     if (!wixForm || wixForm.dataset.tscNativeBound) return;
     wixForm.dataset.tscNativeBound = 'true';
@@ -1915,6 +2031,28 @@
       hiddenDate.style.cssText = 'position:absolute !important;opacity:0 !important;pointer-events:none !important;width:0 !important;min-width:0 !important;max-width:0 !important;height:0 !important;min-height:0 !important;max-height:0 !important;border:0 !important;padding:0 !important;margin:0 !important;';
       df.appendChild(hiddenDate);
 
+      // Legacy parity: never allow dates before today (in the caller's timezone).
+      function refreshDateMin() {
+        var tz = timezoneForCountryCode(readBookCallCountryCode(wixForm));
+        hiddenDate.min = todayInTimeZone(tz);
+        if (hiddenDate.value && hiddenDate.value < hiddenDate.min) {
+          hiddenDate.value = '';
+          if (dateInput) dateInput.value = '';
+        }
+        if (typeof wixForm._tscRenderSlots === 'function') wixForm._tscRenderSlots();
+      }
+      refreshDateMin();
+
+      // Wix renders the country list in a portal — pick up changes via click.
+      var lastCountry = readBookCallCountryCode(wixForm);
+      document.addEventListener('click', function () {
+        var current = readBookCallCountryCode(wixForm);
+        if (current !== lastCountry) {
+          lastCountry = current;
+          refreshDateMin();
+        }
+      });
+
       function triggerDatePicker() {
         if (typeof hiddenDate.showPicker === 'function') {
           try { hiddenDate.showPicker(); return; } catch(err){}
@@ -1942,6 +2080,7 @@
             dateInput.dispatchEvent(new Event('change', { bubbles: true }));
           }
         }
+        if (typeof wixForm._tscRenderSlots === 'function') wixForm._tscRenderSlots();
       });
     });
 
@@ -1952,6 +2091,61 @@
       var minutesInput = tf.querySelector('[data-hook="minutes"]');
       var ampmBtn = tf.querySelector('[data-hook="ampm"]');
 
+      // Legacy parity: replace the free-form HH:MM box with the fixed slot grid
+      // from the old site — slots inside the 1.5h buffer are unavailable.
+      var slotInput = document.createElement('input');
+      slotInput.type = 'hidden';
+      slotInput.className = 'tsc-slot-value';
+      slotInput.setAttribute('data-tsc-slot', 'true');
+      var slotGrid = document.createElement('div');
+      slotGrid.className = 'tsc-time-slot-grid';
+      slotGrid.setAttribute('role', 'group');
+      slotGrid.setAttribute('aria-label', 'Select a time');
+      tf.appendChild(slotInput);
+      tf.appendChild(slotGrid);
+      tf.classList.add('tsc-has-slot-grid');
+
+      wixForm._tscRenderSlots = function () {
+        var dateInputNode = null;
+        var dateFieldsForForm = wixForm.querySelectorAll('[data-field-type="DATE_PICKER"]');
+        if (dateFieldsForForm[0]) {
+          dateInputNode = dateFieldsForForm[0].querySelector('input[type="date"]') || dateFieldsForForm[0].querySelector('input[data-hook="date-picker-input"]');
+        }
+        var dateStr = dateInputNode ? dateInputNode.value : '';
+        var tz = timezoneForCountryCode(readBookCallCountryCode(wixForm));
+
+        // Clear the pick if the chosen slot has since become unavailable.
+        if (slotInput.value && dateStr && !isSlotAvailable(dateStr, slotInput.value, tz)) {
+          slotInput.value = '';
+        }
+
+        slotGrid.innerHTML = '';
+        BOOK_CALL_SLOTS.forEach(function (slot) {
+          var btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'tsc-time-slot';
+          btn.setAttribute('data-slot', slot);
+          btn.textContent = slot;
+          // Without a date we cannot judge availability — leave all selectable.
+          var taken = !!dateStr && !isSlotAvailable(dateStr, slot, tz);
+          if (taken) {
+            btn.disabled = true;
+            btn.classList.add('is-unavailable');
+            btn.setAttribute('aria-disabled', 'true');
+          }
+          if (!taken && slotInput.value === slot) btn.classList.add('is-selected');
+          btn.addEventListener('click', function () {
+            if (btn.disabled) return;
+            slotInput.value = slot;
+            wixForm._tscRenderSlots();
+          });
+          slotGrid.appendChild(btn);
+        });
+      };
+      wixForm._tscRenderSlots();
+
+      // Keep the old free-form bindings as a fallback (segments are hidden by
+      // CSS when the grid is present).
       if (hoursInput && !hoursInput.value) hoursInput.placeholder = '10';
       if (minutesInput && !minutesInput.value) minutesInput.placeholder = '00';
 
@@ -2016,6 +2210,8 @@
         var minutesInput = wixForm.querySelector('[data-hook="minutes"]');
         var ampmBtn = wixForm.querySelector('[data-hook="ampm"]');
         var ampmVal = ampmBtn ? (ampmBtn.querySelector('.sezcxt9') || ampmBtn).textContent.trim() : 'AM';
+        var slotInput = wixForm.querySelector('input[data-tsc-slot="true"]');
+        var timeZone = timezoneForCountryCode(readBookCallCountryCode(wixForm));
 
         var checkedCourses = [];
         wixForm.querySelectorAll('[data-hook="form-field-which_course_are_you_interested_in"] [data-checked="true"]').forEach(function(item) {
@@ -2029,9 +2225,7 @@
         var emailVal = emailInput ? emailInput.value.trim() : '';
         var courseVal = checkedCourses.join(', ') || 'The heART of Composition';
         var dateVal = dateInput ? dateInput.value.trim() : '';
-        var hoursVal = hoursInput && hoursInput.value.trim() ? hoursInput.value.trim() : '10';
-        var minutesVal = minutesInput && minutesInput.value.trim() ? minutesInput.value.trim() : '00';
-        var timeVal = hoursVal + ':' + minutesVal + ' ' + ampmVal;
+        var timeVal = slotInput && slotInput.value ? slotInput.value : (hoursInput || minutesInput) ? ((hoursInput && hoursInput.value.trim() ? hoursInput.value.trim() : '10') + ':' + (minutesInput && minutesInput.value.trim() ? minutesInput.value.trim() : '00') + ' ' + ampmVal) : '';
 
         if (!firstName) {
           isValid = false;
@@ -2052,6 +2246,15 @@
           isValid = false;
           errorMsg = 'Please select a date for the call';
           if (dateInput) dateInput.click();
+        } else if (dateVal < todayInTimeZone(timeZone)) {
+          isValid = false;
+          errorMsg = 'Please select a date that has not passed';
+        } else if (!timeVal) {
+          isValid = false;
+          errorMsg = 'Please select a time for the call';
+        } else if (!isSlotAvailable(dateVal, timeVal, timeZone)) {
+          isValid = false;
+          errorMsg = 'This slot is no longer available. Please pick a later time.';
         }
 
         payload = {
@@ -2063,6 +2266,7 @@
           course: courseVal,
           date: dateVal,
           time: timeVal,
+          timezone: timeZone,
           source: 'tsc-website'
         };
       } else if (name === 'bookArtist') {
@@ -2224,10 +2428,15 @@
 
   function mountFormInto(target, def, name, shared) {
     if (!target) return;
-    var wixNativeForm = document.querySelector('form[id^="form-"]') || (target.tagName === 'FORM' ? target : target.querySelector('form'));
-    if (wixNativeForm) {
-      bindNativeForm(wixNativeForm, def, name, shared);
-      return;
+    // For multiStep forms, skip the native Wix form and render the TSC
+    // multi-step form instead — the Wix form's own step pagination is broken
+    // and its "Next" button submits the form directly.
+    if (!def.multiStep) {
+      var wixNativeForm = document.querySelector('form[id^="form-"]') || (target.tagName === 'FORM' ? target : target.querySelector('form'));
+      if (wixNativeForm) {
+        bindNativeForm(wixNativeForm, def, name, shared);
+        return;
+      }
     }
     var existingForm = document.querySelector('.tsc-local-form[data-tsc-form="' + name + '"]');
     if (existingForm) return;

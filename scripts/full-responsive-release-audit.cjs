@@ -40,7 +40,7 @@ async function auditPage(page, route, viewport) {
   try {
     const response = await page.goto(BASE + route, { waitUntil: 'domcontentloaded', timeout: 30000 });
     status = response ? response.status() : 0;
-    await new Promise((resolve) => setTimeout(resolve, route === '/academy' ? 1800 : 700));
+    await new Promise((resolve) => setTimeout(resolve, route === '/academy' ? 1800 : 1200));
   } catch (error) {
     navigationError = error.message;
   }
@@ -164,7 +164,7 @@ async function auditPage(page, route, viewport) {
 
   const failures = [];
   if (navigationError) failures.push('navigation: ' + navigationError);
-  if (status !== 200) failures.push('HTTP ' + status);
+  if (status !== 200 && status !== 304) failures.push('HTTP ' + status);
   if (!metrics.title) failures.push('missing title');
   if (metrics.path !== route) failures.push('unexpected path ' + metrics.path);
   if (metrics.overflow > 2) failures.push('horizontal overflow ' + metrics.overflow + 'px');
@@ -216,6 +216,7 @@ async function auditPage(page, route, viewport) {
   try {
     for (const viewport of viewports) {
       const page = await browser.newPage();
+      await page.setCacheEnabled(false);
       await page.setViewport({ width: viewport.width, height: viewport.height, deviceScaleFactor: 1 });
       for (const route of routes) {
         const result = await auditPage(page, route, viewport);

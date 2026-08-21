@@ -1306,6 +1306,16 @@ button[data-hook="ampm"] {
   cursor: pointer !important;
 }
 
+button[data-hook="date-picker-calendar-icon"] {
+  width: 44px !important;
+  min-width: 44px !important;
+  height: 44px !important;
+  min-height: 44px !important;
+  margin: -14px !important;
+  padding: 10px !important;
+  box-sizing: border-box !important;
+}
+
 button[data-hook="submit-button"]:hover {
   opacity: 0.92;
   transform: translateY(-1px);

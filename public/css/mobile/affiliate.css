@@ -329,16 +329,19 @@
 
 @media (max-width: 767px) {
   body[data-page="affiliate"] .comp-mqwcognj-container {
-    padding: 38px 22px 86px !important;
+    gap: 16px !important;
+    padding: 34px 22px 38px !important;
   }
 
   body[data-page="affiliate"] #comp-mqwcozxs h1,
   body[data-page="affiliate"] #comp-mqwcozxs .wixui-rich-text__text {
-    font-size: clamp(38px, 13vw, 56px) !important;
+    font-size: clamp(36px, 11.5vw, 50px) !important;
+    line-height: 1.02 !important;
   }
 
   body[data-page="affiliate"] #comp-mqwdnovu .wixui-rich-text__text {
     font-size: 17px !important;
+    max-width: 100% !important;
   }
 
   body[data-page="affiliate"] #comp-mqwe6h8s,
@@ -356,7 +359,9 @@
   }
 
   body[data-page="affiliate"] #comp-mqwe17k6 {
-    max-width: 190px !important;
+    align-self: stretch !important;
+    max-width: 100% !important;
+    width: 100% !important;
   }
 
   body[data-page="affiliate"] main .wixui-button,
@@ -367,5 +372,27 @@
 
   body[data-page="affiliate"] .comp-mqwg28rw-container {
     gap: 22px !important;
+  }
+
+  body[data-page="affiliate"] #comp-mqwhzev1 {
+    order: 5 !important;
+    position: relative !important;
+    right: auto !important;
+    bottom: auto !important;
+    width: 100% !important;
+    height: 210px !important;
+    margin: 4px 0 0 !important;
+    opacity: 0.82 !important;
+    border-radius: 0 !important;
+  }
+}
+
+@media (max-width: 767px) {
+  body[data-page="affiliate-apply"] main {
+    overflow-x: clip !important;
+  }
+
+  body[data-page="affiliate-apply"] .tsc-local-form {
+    margin: 0 !important;
   }
 }

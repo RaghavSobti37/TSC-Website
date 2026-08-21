@@ -68,6 +68,7 @@
 
   body[data-page="academy"] .tsc-academy-bundle-card {
     display: grid !important;
+    grid-row: 9 / 10 !important;
     gap: 8px !important;
     width: min(100% - 24px, 426px) !important;
     margin: 0 auto 30px !important;
@@ -79,6 +80,18 @@
     box-sizing: border-box !important;
     overflow: hidden !important;
     font-family: var(--wix-font-Paragraph, Arial, sans-serif) !important;
+  }
+
+  body[data-page="academy"] #comp-mpl384rr {
+    grid-row: 10 / 11 !important;
+  }
+
+  body[data-page="academy"] #comp-mpl387ie {
+    grid-row: 11 / 12 !important;
+  }
+
+  body[data-page="academy"] #comp-mqz5bgg8 {
+    grid-row: 12 / 13 !important;
   }
 
   body[data-page="academy"] .tsc-academy-bundle-card__title,
@@ -1941,6 +1954,77 @@
 }
 
 @media (max-width: 1024px) {
+  body[data-page="academy"] #comp-mpjvjuos,
+  body[data-page="academy"] #comp-mpjxmose,
+  body[data-page="academy"] #comp-mpjxxeqt {
+    width: min(100% - 24px, 426px) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    border: 1.5px solid #ffecd1 !important;
+    border-radius: 10px !important;
+    background: #065f68 !important;
+    color: #ffecd1 !important;
+    overflow: hidden !important;
+  }
+
+  body[data-page="academy"] :is(#comp-mpjvjuos, #comp-mpjxmose, #comp-mpjxxeqt) :is(.comp-mpjvo1xd-container, .comp-mpjxmosy-container, .comp-mpjxxerb1-container) {
+    padding: 20px 20px 0 !important;
+    gap: 10px !important;
+    background: transparent !important;
+  }
+
+  body[data-page="academy"] :is(#comp-mpjvjuos, #comp-mpjxmose, #comp-mpjxxeqt) :is(.comp-mpk54qtl-container, .comp-mpjz6jkk-container, .comp-mpk4u9v1-container),
+  body[data-page="academy"] :is(#comp-mpjvjuos, #comp-mpjxmose, #comp-mpjxxeqt) :is(#comp-mpjwxij6, #comp-mpjxmote, .comp-mpjxxers6-container) {
+    min-height: 28px !important;
+    padding: 3px 8px !important;
+    border: 1.5px solid #ffecd1 !important;
+    border-radius: 5px !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+
+  body[data-page="academy"] :is(#comp-mpjo65q32, #comp-mpjxmot0, #comp-mpjxxere2, .tsc-luca-inline-thumb) {
+    height: 132px !important;
+    max-height: 132px !important;
+    border: 1.5px solid #ffecd1 !important;
+    border-radius: 6px !important;
+    overflow: hidden !important;
+  }
+
+  body[data-page="academy"] :is(#comp-mpk52xro, #comp-mpk507k4, #comp-mpjzwem7) {
+    min-height: 142px !important;
+    border: 1.5px solid #ffecd1 !important;
+    border-radius: 5px !important;
+    display: grid !important;
+    place-items: center !important;
+  }
+
+  body[data-page="academy"] :is(.comp-mpk57dp3-container, .comp-mpk4wrdy-container, .comp-mpjz94ph-container) {
+    border: 1.5px solid #ffecd1 !important;
+    border-radius: 5px !important;
+    overflow: hidden !important;
+  }
+
+  body[data-page="academy"] :is(.comp-mpk57dp3-container, .comp-mpk4wrdy-container, .comp-mpjz94ph-container) > [id^="comp-"] {
+    border-color: rgba(255, 236, 209, 0.75) !important;
+    border-radius: 0 !important;
+  }
+
+  body[data-page="academy"] #comp-mpjo65qn,
+  body[data-page="academy"] #comp-mpjxmotk,
+  body[data-page="academy"] #comp-mpjxxery4 {
+    margin: 22px -20px 0 !important;
+    width: calc(100% + 40px) !important;
+  }
+
+  body[data-page="academy"] #comp-mpjo65qn .wixui-button,
+  body[data-page="academy"] #comp-mpjxmotk .wixui-button,
+  body[data-page="academy"] #comp-mpjxxery4 .wixui-button {
+    min-height: 66px !important;
+    border-top: 1.5px solid #ffecd1 !important;
+    border-radius: 0 !important;
+  }
+
   /* Final Academy mobile pass: preserve desktop styling, remove phone-width crush. */
   body[data-page="academy"] .comp-mqwg28rw-container {
     gap: 16px !important;

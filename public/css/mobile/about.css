@@ -39,7 +39,7 @@
     display: block !important;
     width: 100% !important;
     padding: 24px 16px 28px !important;
-    background: #652415 !important;
+    background: #ffecd1 !important;
     color: #ffecd1 !important;
     box-sizing: border-box !important;
   }
@@ -51,8 +51,9 @@
     max-width: 520px !important;
     margin: 0 auto !important;
     padding: 18px !important;
-    border: 1.5px solid rgba(255, 236, 209, 0.62) !important;
+    border: 1.5px solid #005b53 !important;
     border-radius: 8px !important;
+    background: #005b53 !important;
     box-sizing: border-box !important;
   }
 
@@ -63,7 +64,7 @@
     padding: 14px !important;
     border-radius: 8px !important;
     background: #ffecd1 !important;
-    color: #652415 !important;
+    color: #005b53 !important;
     font-size: clamp(24px, 8vw, 34px) !important;
     line-height: 0.9 !important;
     font-weight: 800 !important;
@@ -113,7 +114,7 @@
     align-items: center !important;
     justify-content: center !important;
     padding: 0 10px !important;
-    border: 1px solid rgba(255, 236, 209, 0.62) !important;
+    border: 1px solid rgba(255, 236, 209, 0.72) !important;
     border-radius: 999px !important;
     color: #ffecd1 !important;
     font-size: 12px !important;
@@ -131,7 +132,7 @@
     width: 100% !important;
     border-radius: 5px !important;
     background: #ffecd1 !important;
-    color: #652415 !important;
+    color: #005b53 !important;
     font-size: 13px !important;
     line-height: 1 !important;
     font-weight: 800 !important;
@@ -156,7 +157,7 @@
     max-height: none !important;
     padding: 24px 16px 28px !important;
     overflow: visible !important;
-    background: #652415 !important;
+    background: #ffecd1 !important;
     box-sizing: border-box !important;
   }
 
@@ -182,9 +183,9 @@
     flex-direction: column !important;
     gap: 14px !important;
     padding: 18px !important;
-    border: 1.5px solid rgba(255, 236, 209, 0.62) !important;
+    border: 1.5px solid #005b53 !important;
     border-radius: 8px !important;
-    background: #652415 !important;
+    background: #005b53 !important;
     color: #ffecd1 !important;
   }
 
@@ -232,7 +233,7 @@
     padding: 14px !important;
     border-radius: 8px !important;
     background: #ffecd1 !important;
-    color: #652415 !important;
+    color: #005b53 !important;
   }
 
   body[data-page="about"] main #comp-mr3hknz {
@@ -301,5 +302,24 @@
     text-align: center !important;
     color: #ffecd1 !important;
     box-sizing: border-box !important;
+  }
+}
+
+@media (max-width: 767px) {
+  html body.responsive[data-page="about"] #comp-mr3smd70 {
+    height: 1220px !important;
+    min-height: 1220px !important;
+  }
+
+  html body.responsive[data-page="about"] #comp-mr3smd70 :is(p, span, div, .wixui-rich-text__text) {
+    font-size: clamp(12.5px, 3.2vw, 15px) !important;
+    line-height: 1.5 !important;
+    letter-spacing: 0 !important;
+  }
+
+  html body.responsive[data-page="about"] #comp-mr3smd70 :is(h1, h2, .font_0, .font_2) {
+    font-size: clamp(38px, 10vw, 50px) !important;
+    line-height: 1.05 !important;
+    letter-spacing: 0 !important;
   }
 }

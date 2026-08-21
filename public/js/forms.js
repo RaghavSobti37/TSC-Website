@@ -143,7 +143,8 @@
     affiliateApp: {
       title: 'Apply for Affiliate Program',
       mount: '#comp-mqz7149p',
-      routes: ['/affiliate', '/pages/affiliate.html', '/forms/affiliate'],
+      standalone: true,
+      routes: ['/affiliate-apply', '/pages/affiliate-apply.html', '/forms/affiliate'],
       fields: [
         { label: 'Full Name', type: 'text', required: true },
         { label: 'Email Address', type: 'email', required: true },

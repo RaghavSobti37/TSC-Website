@@ -31,6 +31,8 @@ module.exports = async function leads(req, res) {
       focusArea: trim(body.focusArea),
       capital: trim(body.capital),
       timeline: trim(body.timeline),
+      toEmail: trim(body.toEmail),
+      recipientEmail: trim(body.recipientEmail || body.toEmail),
     };
 
     if (!payload.userType) return sendJson(res, 400, { success: false, error: 'User type is required' });

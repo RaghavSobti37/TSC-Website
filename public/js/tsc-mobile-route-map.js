@@ -19,6 +19,7 @@
     resources: 'resources.css',
     academy: 'academy.css',
     affiliate: 'affiliate.css',
+    'affiliate-apply': 'affiliate.css',
     'harshad-duhita': 'harshad-duhita.css',
     'mohit-shankar': 'mohit-shankar.css',
     yugm: 'yugm.css',

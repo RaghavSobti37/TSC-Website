@@ -27,3 +27,26 @@
     max-width: 100% !important;
   }
 }
+
+@media (max-width: 600px) {
+  body[data-page="work"] #comp-mr69hwoy .tsc-work-report-link {
+    align-self: center !important;
+    background: #b76a14 !important;
+    border: 1.5px solid #ffecd1 !important;
+    border-radius: 12px !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: column !important;
+    height: 510px !important;
+    margin: 0 auto 22px !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    width: min(421px, calc(100vw - 48px)) !important;
+  }
+
+  body[data-page="work"] #comp-mr69hwoy .tsc-work-report-link img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+}

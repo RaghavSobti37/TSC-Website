@@ -581,6 +581,143 @@
     document.body.classList.remove('tsc-films-mobile-originals-mounted');
   }
 
+  function mountFilmsMobileExperience(path) {
+    var existing = document.querySelector('.tsc-films-mobile-experience');
+    var compact = window.matchMedia && window.matchMedia('(max-width: 1024px)').matches;
+    if (path !== '/films' || !compact) {
+      if (existing && existing.parentNode) existing.parentNode.removeChild(existing);
+      document.body.classList.remove('tsc-films-mobile-experience-mounted');
+      return;
+    }
+    var main = document.querySelector('main[data-main-content-parent="true"], main, #SITE_PAGES');
+    if (!main) return;
+    var legacyAbout = document.querySelector('.tsc-mobile-films-about');
+    if (legacyAbout && legacyAbout.parentNode) legacyAbout.parentNode.removeChild(legacyAbout);
+    document.body.classList.remove('tsc-films-mobile-about-mounted');
+    if (!existing) {
+      existing = document.createElement('section');
+      existing.className = 'tsc-films-mobile-experience';
+      existing.setAttribute('aria-label', 'TSC Films');
+      main.insertAdjacentElement('afterbegin', existing);
+    }
+    var heroImages = [
+      '/assets/mirror/static.wixstatic.com/media/19f989_5c0a3ef35c814ae6baf25111624dec72~mv2.jpg/v1/crop/x_0,y_55,w_879,h_586/fill/w_490,h_466,fp_0.50_0.50,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/10_edited.jpg',
+      '/assets/mirror/static.wixstatic.com/media/19f989_ca20c3bfe20b447fb264a2d00c44069e~mv2.png/v1/crop/x_120,y_39,w_853,h_796/fill/w_425,h_462,fp_0.50_0.50,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/11_edited.png',
+      '/assets/mirror/static.wixstatic.com/media/19f989_a9399d943c794787aa9a5a4babaa82b7~mv2.jpg/v1/crop/x_70,y_184,w_979,h_859/fill/w_454,h_464,fp_0.50_0.50,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/9_edited.jpg',
+      '/assets/mirror/static.wixstatic.com/media/19f989_e1540fdd865d4f11a8e9ce58f7481893~mv2.png/v1/crop/x_0,y_110,w_912,h_746/fill/w_490,h_466,fp_0.50_0.50,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/12_edited_edited.png'
+    ];
+    var services = [
+      ['01', 'Positioning', 'Culture-led film positioning, audience clarity, and release narrative.'],
+      ['02', 'Promotions', 'Campaign planning, influencer pushes, communities, and PR moments.'],
+      ['03', 'Music / OTT / TV', 'Music, non-theatrical, broadcast, and platform opportunities.'],
+      ['04', 'Film Mounting', 'Partnerships, franchise thinking, universe building, and long-term IP value.']
+    ];
+    var workCards = [
+      {
+        href: '/mahavatar-narsimha-impact',
+        image: '/assets/films/mahavatar-narsimha.jpg',
+        number: '01',
+        title: 'Mahaavtar Narsimha',
+        summary: 'Culture-led positioning for a devotional animation property with marketing, promotions, and rights strategy.',
+        chips: ['Strategic Positioning', 'Marketing & Promotions', 'Non-Theatrical Rights']
+      },
+      {
+        href: '/hanuman-ansh-impact',
+        image: '/assets/mirror/static.wixstatic.com/original-media/19f989_ca20c3bfe20b447fb264a2d00c44069e~mv2.png',
+        number: '02',
+        title: 'Hanuman Ansh',
+        summary: 'Faith-led IP shaping across film positioning, Times Music rights, and the RAM RAM Universe vision.',
+        chips: ['Positioning', 'Times Music', 'Universe Building']
+      },
+      {
+        href: '/mahaprabhu-jagannath-impact',
+        image: '/assets/films/mahaprabhu-jagannath.png',
+        number: '03',
+        title: 'Mahaprabhu Jagannath',
+        summary: 'Community launch work bringing devotees, influencers, PR, and cultural momentum together.',
+        chips: ['Community', 'PR & Influencers', '10,000+ Launch']
+      },
+      {
+        href: '/kalki-impact',
+        image: '/assets/mirror/static.wixstatic.com/original-media/19f989_f84950fe51a84d3baf15f59a5c864731~mv2.jpg',
+        number: '04',
+        title: 'Past Work',
+        summary: 'IP-led entertainment work across licensing, merchandising, music, partnerships, and brand extensions.',
+        chips: ['Yash Raj Films', 'Music', 'Partnerships']
+      }
+    ];
+    existing.innerHTML = [
+      '<section class="tsc-films-mobile-hero">',
+      '<div class="tsc-films-mobile-hero__collage" aria-hidden="true">',
+      heroImages.map(function (src, index) {
+        return '<img src="' + src + '" alt="" class="tsc-films-mobile-hero__image-' + (index + 1) + '">';
+      }).join(''),
+      '</div>',
+      '<div class="tsc-films-mobile-hero__copy">',
+      '<p>They deserve an audience.</p>',
+      '<h1>Films deserve more than distribution.</h1>',
+      '<span>We help stories find cultural relevance, strategic partnerships, and long-term audience value.</span>',
+      '<a href="mailto:' + escapeHtml(CONTACT_EMAIL) + '">Partner With Us</a>',
+      '</div>',
+      '</section>',
+      '<section class="tsc-films-mobile-band tsc-films-mobile-intro">',
+      '<div class="tsc-films-mobile-logo">TSC<br>Films</div>',
+      '<article>',
+      '<p>About Us</p>',
+      '<h2>A great film is not defined only by how it is made.</h2>',
+      '<span>It is defined by how deeply it connects with people. TSC Films builds demand, relevance, and commercial opportunity around films.</span>',
+      '</article>',
+      '</section>',
+      '<section class="tsc-films-mobile-band">',
+      '<p class="tsc-films-mobile-kicker">What We Do</p>',
+      '<h2>We mount stories for culture, community, and commerce.</h2>',
+      '<div class="tsc-films-mobile-service-grid">',
+      services.map(function (item) {
+        return '<article class="tsc-films-mobile-service"><span>' + item[0] + '</span><h3>' + item[1] + '</h3><p>' + item[2] + '</p></article>';
+      }).join(''),
+      '</div>',
+      '</section>',
+      '<section class="tsc-films-mobile-band tsc-films-mobile-work">',
+      '<p class="tsc-films-mobile-kicker">Film Reports</p>',
+      '<h2>Film properties shaped for audience demand.</h2>',
+      '<div class="tsc-films-mobile-work-list">',
+      workCards.map(function (item) {
+        return [
+          '<a class="tsc-films-mobile-work-card" href="' + item.href + '">',
+          '<div class="tsc-films-mobile-work-card__chips">',
+          item.chips.map(function (chip) { return '<b>' + chip + '</b>'; }).join(''),
+          '</div>',
+          '<img src="' + item.image + '" alt="">',
+          '<span><small>' + item.number + '</small><strong>' + item.title + '</strong><em>' + item.summary + '</em></span>',
+          '<i>Know More</i>',
+          '</a>'
+        ].join('');
+      }).join(''),
+      '</div>',
+      '</section>',
+      '<section class="tsc-films-mobile-band tsc-films-mobile-approach">',
+      '<p class="tsc-films-mobile-kicker">Our Approach</p>',
+      '<h2>Built like a campaign, designed like a cultural property.</h2>',
+      '<div>',
+      [
+        ['Discover', 'Understanding the story, audience, and opportunity.'],
+        ['Design', 'Building a roadmap for audience growth, partnerships, and monetisation.'],
+        ['Activate', 'Executing campaigns, collaborations, and community initiatives.'],
+        ['Amplify', 'Scaling visibility, engagement, and commercial opportunities.']
+      ].map(function (item) {
+        return '<article><strong>' + item[0] + '</strong><span>' + item[1] + '</span></article>';
+      }).join(''),
+      '</div>',
+      '</section>',
+      '<section class="tsc-films-mobile-closing">',
+      '<h2>Because films today need more than marketing.</h2>',
+      '<p>They need communities, strategic partnerships, cultural relevance, and sustainable growth.</p>',
+      '<a href="mailto:' + escapeHtml(CONTACT_EMAIL) + '">Partner With Us</a>',
+      '</section>'
+    ].join('');
+    document.body.classList.add('tsc-films-mobile-experience-mounted');
+  }
+
   function mountFilmBottomCtas(path) {
     if (path !== '/films') return;
     var ctas = [
@@ -1032,6 +1169,7 @@
     '/music-production': true,
     '/course-bundle': true,
     '/affiliate': true,
+    '/affiliate-apply': true,
     '/book-a-call': true,
     '/artist-query': true,
     '/masterclass-review01': true,
@@ -1618,6 +1756,7 @@
         phone: phoneWithCountryCode(values['country-code'], values['phone-whatsapp-number']),
         countryCode: countryCodeFromValue(values['country-code']) || values['country-code'],
         message: affiliateMessage,
+        toEmail: 'rohith@theshakticollective.in',
         source: 'tsc-website-affiliate'
       };
     }
@@ -1846,7 +1985,9 @@
       if (button) {
         button.disabled = true;
         button.dataset.originalText = button.innerHTML;
-        button.innerHTML = 'Sending...';
+        button.classList.add('is-loading');
+        button.setAttribute('aria-label', 'Subscribing');
+        button.innerHTML = '<span class="tsc-button-spinner" aria-hidden="true"></span>';
       }
       try {
         var response = await fetch('/api/newsletter', {
@@ -1863,6 +2004,8 @@
       } finally {
         if (button) {
           button.disabled = false;
+          button.classList.remove('is-loading');
+          button.setAttribute('aria-label', 'Subscribe');
           button.innerHTML = button.dataset.originalText || 'Subscribe';
         }
       }
@@ -2787,7 +2930,12 @@
     document.querySelectorAll('a[href]').forEach(function (anchor) {
       var raw = anchor.getAttribute('href') || '';
       if (!/exlyapp\.com\/(?:checkout|combo)\//i.test(raw)) return;
-      anchor.setAttribute('href', checkoutHref);
+      var scopedCourse = anchor.getAttribute('data-tsc-course-href');
+      if (!scopedCourse) {
+        var card = anchor.closest && anchor.closest('[data-tsc-course-href]');
+        scopedCourse = card && card.getAttribute('data-tsc-course-href');
+      }
+      anchor.setAttribute('href', scopedCourse ? courseCheckoutHref(scopedCourse) : checkoutHref);
       anchor.setAttribute('target', '_blank');
       anchor.setAttribute('rel', 'noreferrer noopener');
     });
@@ -3651,6 +3799,7 @@
 
   var CONTACT_EMAIL = 'artist@theshakticollective.in';
   var LINKEDIN_URL = 'https://www.linkedin.com/company/the-shakti-collective/';
+  var AFFILIATE_APPLY_PATH = '/affiliate-apply';
 
   function footerGroupsFor(academy, whatsappUrl) {
     if (academy) {
@@ -4247,6 +4396,33 @@
     });
   }
 
+  function normalizeAffiliateCtas(path) {
+    path = path || canonicalPathname();
+    if (path !== '/affiliate') return;
+    document.querySelectorAll('a[href]').forEach(function (anchor) {
+      var href = anchor.getAttribute('href') || '';
+      var label = (anchor.textContent || anchor.getAttribute('aria-label') || '').trim();
+      if (!/affiliate\/onboarding|apply to affiliate|start affiliate onboarding/i.test(href + ' ' + label)) return;
+      anchor.setAttribute('href', AFFILIATE_APPLY_PATH);
+      anchor.setAttribute('target', '_self');
+      anchor.removeAttribute('rel');
+      anchor.setAttribute('aria-label', 'Apply to Affiliate');
+      var text = anchor.querySelector('.wixui-button__label, span');
+      if (text && /start affiliate onboarding/i.test(text.textContent || '')) text.textContent = 'Apply to Affiliate';
+      else if (!text && /start affiliate onboarding/i.test(anchor.textContent || '')) anchor.textContent = 'Apply to Affiliate';
+    });
+  }
+
+  function normalizePartnerWithUsCtas() {
+    document.querySelectorAll('a[href]').forEach(function (anchor) {
+      var label = (anchor.textContent || anchor.getAttribute('aria-label') || '').trim();
+      if (!/partner with us/i.test(label)) return;
+      anchor.setAttribute('href', 'mailto:' + CONTACT_EMAIL);
+      anchor.setAttribute('target', '_self');
+      anchor.removeAttribute('rel');
+    });
+  }
+
   function normalizeAcademyLogoLinks() {
     var academyPaths = {
       '/academy': true,
@@ -4453,10 +4629,12 @@
       '<h2>Explore More Courses</h2>',
       '<div class="tsc-mobile-course-links">',
       ACADEMY_COURSE_ITEMS.map(function (item) {
+        var itemData = MOBILE_COURSE_PAGES[item.href] || {};
         return [
-          '<article class="tsc-mobile-course-link-card">',
+          '<article class="tsc-mobile-course-link-card" data-tsc-course-href="' + escapeHtml(item.href) + '">',
+          '<a class="tsc-mobile-course-link-media" href="' + escapeHtml(item.href) + '" aria-hidden="true" tabindex="-1"><img src="' + escapeHtml(itemData.image || '') + '" alt=""></a>',
           '<a class="tsc-mobile-course-link-title" href="' + escapeHtml(item.href) + '">' + escapeHtml(item.label) + '</a>',
-          '<a class="tsc-mobile-course-link-enroll" href="' + escapeHtml(courseCheckoutHref(item.href)) + '" target="_blank" rel="noreferrer noopener">Enroll Now</a>',
+          '<a class="tsc-mobile-course-link-enroll" data-tsc-course-href="' + escapeHtml(item.href) + '" href="' + escapeHtml(courseCheckoutHref(item.href)) + '" target="_blank" rel="noreferrer noopener">Enroll Now</a>',
           '</article>'
         ].join('');
       }).join(''),
@@ -4713,6 +4891,7 @@
       '/collab-query': true,
       '/query': true,
       '/affiliate': true,
+      '/affiliate-apply': true,
       '/masterclass-review01': true,
       '/masterclass-review02': true,
       '/classicalreview': true
@@ -4725,6 +4904,8 @@
     mountSharedChrome();
     mountMobileCoursePage(path);
     normalizeCourseCheckoutLinks(path);
+    normalizeAffiliateCtas(path);
+    normalizePartnerWithUsCtas();
     mountAcademyMobileBundleCard(path);
     linkHomeClosingCtas();
     mountHarshadDigitalPresenceLinks(path);
@@ -4734,6 +4915,7 @@
     mountWorkImpactLinks(path);
     mountFilmsMobileAbout(path);
     mountFilmsMobileOriginals(path);
+    mountFilmsMobileExperience(path);
     mountFilmReportCards(path);
     mountFilmBottomCtas(path);
     if (path === '/about') {
@@ -4747,6 +4929,8 @@
         mountSharedChrome();
         mountMobileCoursePage(path);
         normalizeCourseCheckoutLinks(path);
+        normalizeAffiliateCtas(path);
+        normalizePartnerWithUsCtas();
         mountAcademyMobileBundleCard(path);
         linkHomeClosingCtas();
         mountHarshadDigitalPresenceLinks(path);
@@ -4756,6 +4940,7 @@
         mountWorkImpactLinks(path);
         mountFilmsMobileAbout(path);
         mountFilmsMobileOriginals(path);
+        mountFilmsMobileExperience(path);
         mountFilmReportCards(path);
         mountFilmBottomCtas(path);
         if (path === '/about') fixAboutHeroShellViewBox();
@@ -4769,6 +4954,7 @@
           window.__tscFilmReportRepairTimer = window.setTimeout(function () {
             mountFilmsMobileAbout(path);
             mountFilmsMobileOriginals(path);
+            mountFilmsMobileExperience(path);
             mountFilmReportCards(path);
             mountFilmBottomCtas(path);
           }, 80);
@@ -4787,6 +4973,7 @@
           mountSharedChrome();
           mountFilmsMobileAbout(path);
           mountFilmsMobileOriginals(path);
+          mountFilmsMobileExperience(path);
           mountFilmReportCards(path);
           mountFilmBottomCtas(path);
         }, 40);
@@ -4807,9 +4994,11 @@
           wireMobileAssets();
           mountMobileCoursePage(canonicalPathname());
           mountAcademyMobileBundleCard(canonicalPathname());
+          mountFilmsMobileExperience(canonicalPathname());
         } else {
           mountMobileCoursePage(canonicalPathname());
           mountAcademyMobileBundleCard(canonicalPathname());
+          mountFilmsMobileExperience(canonicalPathname());
         }
       };
       if (mobileMq.addEventListener) mobileMq.addEventListener('change', onMq);

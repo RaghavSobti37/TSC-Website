@@ -1862,6 +1862,25 @@
     background: #ffecd1 !important;
   }
 
+  .tsc-mobile-course-link-media {
+    display: block !important;
+    width: 100% !important;
+    min-height: 132px !important;
+    padding: 0 !important;
+    border: 0 !important;
+    border-bottom: 1.5px solid #005b53 !important;
+    border-radius: 0 !important;
+    overflow: hidden !important;
+  }
+
+  .tsc-mobile-course-link-media img {
+    display: block !important;
+    width: 100% !important;
+    height: 132px !important;
+    object-fit: cover !important;
+    object-position: center !important;
+  }
+
   .tsc-mobile-course-link-card .tsc-mobile-course-link-title,
   .tsc-mobile-course-link-card .tsc-mobile-course-link-enroll {
     border: 0 !important;
@@ -1882,5 +1901,22 @@
     background: #005b53 !important;
     color: #ffecd1 !important;
     font-size: 16px !important;
+  }
+}
+
+@media (max-width: 430px) {
+  .tsc-mobile-course-page {
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+  }
+
+  .tsc-mobile-course-hero-card,
+  .tsc-mobile-course-section {
+    padding: 22px 16px !important;
+  }
+
+  .tsc-mobile-course-link-media,
+  .tsc-mobile-course-link-media img {
+    height: 146px !important;
   }
 }

@@ -3415,3 +3415,46 @@ body.tsc-has-mobile-footer footer section.wixui-footer,
 .tsc-desktop-footer-nav::after {
   display: none !important;
 }
+
+@media (min-width: 1025px) {
+  body[data-page="about"] #comp-mp2vlkc3 {
+    isolation: isolate !important;
+    position: relative !important;
+    z-index: 10000 !important;
+  }
+
+  body[data-page="about"] #comp-mp2vlkc3 a[href="/"] {
+    position: absolute !important;
+    z-index: 10001 !important;
+    pointer-events: auto !important;
+  }
+}
+
+.tsc-button-spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: tsc-button-spin 0.75s linear infinite;
+}
+
+.tsc-desktop-footer-newsrow button.is-loading,
+.tsc-mobile-footer-newsrow button.is-loading {
+  cursor: wait !important;
+}
+
+.tsc-desktop-footer-academy .tsc-desktop-footer-newsrow button,
+.tsc-mobile-footer-academy .tsc-mobile-footer-newsrow button {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  border-color: #ffffff !important;
+  color: #08525f !important;
+  -webkit-text-fill-color: #08525f !important;
+}
+
+@keyframes tsc-button-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -188,6 +188,14 @@
       "destination": "/pages/affiliate.html"
     },
     {
+      "source": "/affiliate-apply",
+      "destination": "/pages/affiliate-apply.html"
+    },
+    {
+      "source": "/forms/affiliate",
+      "destination": "/pages/affiliate-apply.html"
+    },
+    {
       "source": "/academy/affiliate",
       "destination": "/pages/affiliate.html"
     },

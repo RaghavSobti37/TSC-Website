@@ -20,6 +20,17 @@
 }
 
 @media (max-width: 767px) {
+  html body.responsive[data-page="academy"] main :is(#comp-mqwg32ov, #comp-mqwg32pf, #comp-mqwg3bhc, #comp-mqwg32q3, #comp-mqwg32qr, #comp-mqwg4pmn) {
+    min-height: 138px !important;
+    padding: 22px 18px !important;
+  }
+
+  html body.responsive[data-page="academy"] main :is(#comp-mqwg32ov, #comp-mqwg32pf, #comp-mqwg3bhc, #comp-mqwg32q3, #comp-mqwg32qr, #comp-mqwg4pmn) :is(h1, h2, h3, p, span, div, .wixui-rich-text__text) {
+    text-align: left !important;
+  }
+}
+
+@media (max-width: 767px) {
   /* Phone: stack CTAs full-width */
   body[data-page="academy"] main .wixui-button,
   body[data-page="academy"] main [data-testid="buttonElement"] {

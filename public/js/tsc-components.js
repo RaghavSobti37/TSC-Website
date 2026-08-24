@@ -3371,7 +3371,7 @@
       '</div>',
       '<div class="tsc-academy-mobile-guidance__actions">',
       '<a class="tsc-academy-mobile-button tsc-academy-mobile-button--light" href="/book-a-call">Book a Call</a>',
-      '<a class="tsc-academy-mobile-button tsc-academy-mobile-button--outline" href="/academy#courses">Find Your Course</a>',
+      '<a class="tsc-academy-mobile-button tsc-academy-mobile-button--outline" href="/artist-query">Find Your Course</a>',
       '</div>',
       '</div>',
       '</section>'
@@ -4678,6 +4678,23 @@
       anchor.setAttribute('target', '_self');
       anchor.removeAttribute('rel');
     });
+    document.querySelectorAll('[role="button"], [data-testid="linkElement"]').forEach(function (control) {
+      var label = (control.textContent || control.getAttribute('aria-label') || '').trim();
+      if (!/partner with us/i.test(label)) return;
+      control.setAttribute('role', 'link');
+      control.setAttribute('tabindex', '0');
+      control.style.cursor = 'pointer';
+      if (control.dataset && control.dataset.tscPartnerWithUsWired === '1') return;
+      if (control.dataset) control.dataset.tscPartnerWithUsWired = '1';
+      function go(event) {
+        if (event.type === 'keydown' && event.key !== 'Enter' && event.key !== ' ') return;
+        event.preventDefault();
+        event.stopPropagation();
+        window.location.href = 'mailto:' + CONTACT_EMAIL;
+      }
+      control.addEventListener('click', go, true);
+      control.addEventListener('keydown', go, true);
+    });
   }
 
   function normalizeAcademyLogoLinks() {
@@ -5007,6 +5024,39 @@
     ensureAcademySectionAnchor('testimonials', '#comp-mpl384rr', { inside: true });
   }
 
+  function wireFindYourCourseCta(path) {
+    path = path || canonicalPathname();
+    if (path !== '/academy' && path !== '/learn-with-tsc') return;
+    ['#comp-mr0g77kb', '#comp-mrufx9wm5'].forEach(function (selector) {
+      var wrapper = document.querySelector(selector);
+      if (!wrapper) return;
+      wrapper.setAttribute('role', 'link');
+      wrapper.setAttribute('tabindex', '0');
+      wrapper.setAttribute('aria-label', 'Find Your Course');
+      wrapper.style.cursor = 'pointer';
+      wrapper.querySelectorAll('a[href], [data-testid="linkElement"]').forEach(function (node) {
+        if (node.tagName === 'A') {
+          node.setAttribute('href', '/artist-query');
+          node.setAttribute('target', '_self');
+          node.removeAttribute('rel');
+        } else {
+          node.setAttribute('role', 'link');
+          node.setAttribute('tabindex', '0');
+        }
+      });
+      if (wrapper.dataset && wrapper.dataset.tscFindCourseWired === '1') return;
+      if (wrapper.dataset) wrapper.dataset.tscFindCourseWired = '1';
+      function go(event) {
+        if (event.type === 'keydown' && event.key !== 'Enter' && event.key !== ' ') return;
+        event.preventDefault();
+        event.stopPropagation();
+        window.location.assign('/artist-query');
+      }
+      wrapper.addEventListener('click', go, true);
+      wrapper.addEventListener('keydown', go, true);
+    });
+  }
+
   function academyHashScrollTarget(hash) {
     if (!hash || hash.charAt(0) !== '#') return null;
     var id = hash.slice(1);
@@ -5163,7 +5213,9 @@
     normalizeCourseCheckoutLinks(path);
     normalizeAffiliateCtas(path);
     normalizePartnerWithUsCtas();
+    wireFindYourCourseCta(path);
     mountAcademyMobileBundleCard(path);
+    wireAcademyCourseCardNavigation(path);
     linkHomeClosingCtas();
     mountHomeMobileClosingCta(path);
     mountHarshadDigitalPresenceLinks(path);
@@ -5189,10 +5241,12 @@
         normalizeCourseCheckoutLinks(path);
         normalizeAffiliateCtas(path);
         normalizePartnerWithUsCtas();
+        wireFindYourCourseCta(path);
         normalizeInternalProtocolRelativeLinks();
         ensureAcademyCoursesAnchor();
         ensureAcademyTestimonialsAnchor();
         mountAcademyMobileBundleCard(path);
+        wireAcademyCourseCardNavigation(path);
         linkHomeClosingCtas();
         mountHomeMobileClosingCta(path);
         mountHarshadDigitalPresenceLinks(path);

@@ -129,6 +129,60 @@ const BLOG_OG_IMAGES = {
 
 const JSONLD_MARKER = 'tsc-seo-jsonld';
 
+const ENTITY_SAME_AS = [
+  'https://www.instagram.com/the_shakti_collective/',
+  'https://youtube.com/@theshakticollective',
+  'https://www.facebook.com/people/The-Shakti-Collective/61575006284507/',
+  'https://www.linkedin.com/company/the-shakti-collective',
+];
+
+function organizationEntity() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': ['Organization', 'EntertainmentBusiness'],
+    '@id': `${origin}/#organization`,
+    name: siteName,
+    alternateName: ['TSC', 'Shakti Collective', 'The Shakti Collective India'],
+    url: `${origin}/`,
+    logo: `${origin}/assets/brand/tsc-logo.png`,
+    image: DEFAULT_OG_IMAGE,
+    description: 'The Shakti Collective is a culture-first artist development ecosystem for singers, musicians, producers, storytellers, and conscious creative communities.',
+    email: 'Artist@theshakticollective.in',
+    sameAs: ENTITY_SAME_AS,
+    brand: {
+      '@type': 'Brand',
+      name: 'TSC Academy',
+      alternateName: ['TSC', 'The Shakti Collective Academy'],
+      url: `${origin}/academy`,
+    },
+    department: {
+      '@type': 'EducationalOrganization',
+      '@id': `${origin}/academy#academy`,
+      name: 'TSC Academy',
+      alternateName: ['The Shakti Collective Academy', 'TSC music academy'],
+      url: `${origin}/academy`,
+      description: 'TSC Academy is the music learning and mentorship vertical of The Shakti Collective for emerging singers, composers, producers, and independent artists.',
+    },
+  };
+}
+
+function websiteEntity() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    '@id': `${origin}/#website`,
+    name: siteName,
+    alternateName: ['TSC', 'TSC Academy', 'Shakti Collective'],
+    url: `${origin}/`,
+    publisher: { '@id': `${origin}/#organization` },
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: `${origin}/resources?search={search_term_string}`,
+      'query-input': 'required name=search_term_string',
+    },
+  };
+}
+
 function decodeEntities(value) {
   return String(value).replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&#39;/g, "'");
 }
@@ -162,6 +216,21 @@ function buildMeta(html, route) {
 
 function jsonLdBlocks(route, meta) {
   const blocks = [];
+  if (route === '/') {
+    blocks.push(organizationEntity(), websiteEntity());
+  } else if (route === '/academy') {
+    blocks.push({
+      '@context': 'https://schema.org',
+      '@type': 'EducationalOrganization',
+      '@id': `${origin}/academy#academy`,
+      name: 'TSC Academy',
+      alternateName: ['The Shakti Collective Academy', 'TSC music academy'],
+      url: `${origin}/academy`,
+      description: meta.description,
+      parentOrganization: { '@id': `${origin}/#organization` },
+      sameAs: ENTITY_SAME_AS,
+    });
+  }
   const crumbs = route.split('/').filter(Boolean);
   const breadcrumb = {
     '@context': 'https://schema.org',
@@ -187,7 +256,7 @@ function jsonLdBlocks(route, meta) {
       '@type': 'Course',
       name: meta.title.split(' | ')[0],
       description: meta.description,
-      provider: { '@type': 'Organization', name: siteName, sameAs: origin },
+      provider: { '@id': `${origin}/academy#academy` },
     });
   } else if (MOVIE_ROUTES.has(route)) {
     blocks.push({

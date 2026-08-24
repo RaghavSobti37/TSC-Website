@@ -597,6 +597,17 @@
   ],
   "redirects": [
     {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "wix-site-clone-psi.vercel.app"
+        }
+      ],
+      "destination": "https://theshakticollective.in/:path*",
+      "permanent": true
+    },
+    {
       "source": "/about-8",
       "destination": "/book-a-call",
       "permanent": true

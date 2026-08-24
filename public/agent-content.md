@@ -1,6 +1,6 @@
 # The Shakti Collective Agent Content
 
-Generated: 2026-08-20
+Generated: 2026-08-24
 Canonical site: https://theshakticollective.in
 
 ## Routes
@@ -46,6 +46,7 @@ Canonical site: https://theshakticollective.in
 - Classical Review: https://theshakticollective.in/classicalreview
 - Masterclass Review 02: https://theshakticollective.in/masterclass-review02
 - Affiliate Program: https://theshakticollective.in/affiliate
+- Apply for Affiliate Program: https://theshakticollective.in/affiliate-apply
 
 ## Extracted Copy
 

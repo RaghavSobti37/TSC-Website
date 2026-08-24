@@ -63,6 +63,7 @@ Readable index of every canonical public page. Real HTML lives in `public/pages/
 - [Indian Culture Mainstream Forms](./resources/articles/from-bhajan-to-clubbing/) - `/from-bhajan-to-clubbing` -> `pages/from-bhajan-to-clubbing.html`
 - [You Released a Song. Now What?](./resources/articles/you-released-a-song-now-what/) - `/you-released-a-song-now-what` -> `pages/you-released-a-song-now-what.html`
 - [How I Curate Music With Independent Artists](./resources/articles/how-i-curate-music-with-independent-artists/) - `/how-i-curate-music-with-independent-artists` -> `pages/how-i-curate-music-with-independent-artists.html`
+- [Apply for Affiliate Program](./resources/affiliate-apply/) - `/affiliate-apply` -> `pages/affiliate-apply.html`
 
 ### academy
 

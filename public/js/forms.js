@@ -2,7 +2,7 @@
   var ui = window.TSCComponents;
   if (!ui) return;
 
-  ui.ensureStylesheet('/css/forms.css?v=form-slot-grid-1');
+  ui.ensureStylesheet('/css/forms.css?v=form-native-controls-1');
 
   var shared = {
     defaultCountryCode: '+91 India',
@@ -20,9 +20,9 @@
 
   var options = {
     courses: [
-      'The heART of Composition',
+      'The HeART of Composition',
       'Roots of Hindustani Classical',
-      'A to Z of Music Production',
+      'A-Z of Music Production',
       'Other'
     ],
     timeSlots: [
@@ -75,7 +75,7 @@
 
   var forms = {
     bookCall: {
-      title: 'Book A Call',
+      title: 'Book a Call',
       mount: '#comp-mrxe1crw',
       routes: ['/book-a-call', '/pages/book-a-call.html', '/forms/book-a-call', '/blank-8', '/about-8'],
       fields: [
@@ -88,7 +88,7 @@
       ]
     },
     bookArtist: {
-      title: 'Book An Artist',
+      title: 'Book an Artist',
       mount: '#comp-mrxmc0z9',
       routes: ['/book-an-artist', '/pages/book-an-artist.html', '/query', '/forms/book-an-artist'],
       fields: [
@@ -99,9 +99,10 @@
         { label: 'Kind of Engagement?', type: 'select', options: options.engagement, required: true },
         { label: 'Which Artist / Talent?', type: 'select', options: options.talent, required: true },
         { label: 'Nature of Project?', type: 'textarea', full: true },
-        { label: 'When and Where?', type: 'textarea', full: true },
+        { label: 'When?', type: 'text', full: true },
+        { label: 'Where?', type: 'text', full: true },
         { label: 'Expected Scale / Reach', type: 'text', full: true },
-        { label: 'Logistics Provided?', type: 'select', options: options.logistics, full: true },
+        { label: 'Logistics Provided?', type: 'radios', options: options.logistics, full: true },
         { label: 'Additional Vision / Details', type: 'textarea', full: true }
       ]
     },

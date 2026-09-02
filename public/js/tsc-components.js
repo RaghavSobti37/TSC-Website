@@ -1749,7 +1749,7 @@
         collabType: values['kind-of-engagement'],
         artist: values['which-artist-talent'],
         nature: values['nature-of-project'],
-        locationTime: values['when-and-where'],
+        locationTime: [values.when, values.where].filter(Boolean).join(' — ') || values['when-and-where'],
         scale: values['expected-scale-reach'],
         logisticsSupport: values['logistics-provided'],
         additionalVision: values['additional-vision-details'],
@@ -1852,7 +1852,7 @@
   var ARTIST_PATH_COURSES = [
     {
       id: 'composition',
-      title: 'The heART of Composition',
+      title: 'The HeART of Composition',
       mentor: 'Sandesh Shandilya',
       banner: '/assets/mirror/static.wixstatic.com/media/19f989_3583e149066b4ebf9a6f37cc7d80382a~mv2.jpg/v1/crop/x_0,y_7,w_677,h_461/fill/w_640,h_480,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/sandesh_edited.jpg',
       url: '/the-heart-of-composition',
@@ -1868,7 +1868,7 @@
     },
     {
       id: 'production',
-      title: 'A to Z of Music Production',
+      title: 'A-Z of Music Production',
       mentor: 'Luca Petracca',
       banner: '/assets/mirror/static.wixstatic.com/media/19f989_72c26b9f755948e59217c0f217c9af16~mv2.jpeg/v1/fill/w_640,h_517,fp_0.50_0.30,q_80,enc_avif,quality_auto/ab6761610000e5ebf205ff385c2272184580fd45.jpeg',
       url: '/music-production',
@@ -2250,6 +2250,91 @@
     }
   }
 
+  var MONTH_OPTIONS = [
+    'January', 'February', 'March', 'April', 'May', 'June',
+    'July', 'August', 'September', 'October', 'November', 'December'
+  ];
+
+  function bindNativeDropdownMenu(dd, optionsList) {
+    if (!dd || dd.dataset.tscDropdownBound === 'true') return;
+    dd.dataset.tscDropdownBound = 'true';
+    var trigger = dd.querySelector('[data-hook="dropdown-base"]');
+    var textEl = dd.querySelector('[data-hook="dropdown-base-text"]');
+    if (!trigger) return;
+    if (textEl && !textEl.textContent.trim()) {
+      textEl.textContent = 'Select';
+      textEl.style.color = '#7d7a75';
+    }
+    trigger.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      var existingMenu = dd.querySelector('.native-dropdown-menu');
+      if (existingMenu) {
+        existingMenu.remove();
+        trigger.setAttribute('aria-expanded', 'false');
+        return;
+      }
+      document.querySelectorAll('.native-dropdown-menu').forEach(function(m) { m.remove(); });
+      var menu = document.createElement('div');
+      menu.className = 'native-dropdown-menu';
+      optionsList.forEach(function(opt) {
+        var item = document.createElement('div');
+        item.className = 'native-dropdown-item';
+        item.textContent = opt;
+        item.addEventListener('click', function(ev) {
+          ev.stopPropagation();
+          if (textEl) {
+            textEl.textContent = opt;
+            textEl.style.color = opt === 'Select' ? '#7d7a75' : '#053f40';
+          }
+          dd.dataset.selectedValue = opt;
+          dd.setAttribute('data-empty-state', opt === 'Select' ? 'true' : 'false');
+          trigger.setAttribute('aria-expanded', 'false');
+          menu.remove();
+        });
+        menu.appendChild(item);
+      });
+      dd.style.position = 'relative';
+      dd.appendChild(menu);
+      trigger.setAttribute('aria-expanded', 'true');
+    });
+  }
+
+  function readCheckboxGroupSelection(groupRoot) {
+    if (!groupRoot) return '';
+    if (groupRoot.dataset.selectedValue) return groupRoot.dataset.selectedValue;
+    var checked = groupRoot.querySelector('[data-checked="true"]');
+    if (!checked) return '';
+    var label = checked.querySelector('[data-hook="label-wrapper"]');
+    return label ? label.textContent.replace(/\s+/g, ' ').trim() : '';
+  }
+
+  function readBookArtistWhenWhere(wixForm) {
+    var whenField = wixForm.querySelector('[data-hook="form-field-when"]');
+    var whereInput = wixForm.querySelector('[data-hook="form-field-where"] input');
+    var whereVal = whereInput ? whereInput.value.trim() : '';
+    if (!whenField) {
+      var legacy = wixForm.querySelector('[data-hook="form-field-when_and_where"] textarea, textarea[aria-label*="When"]');
+      var legacyVal = legacy ? legacy.value.trim() : '';
+      if (legacyVal) return legacyVal;
+      return whereVal;
+    }
+    var dayInput = whenField.querySelector('[data-hook="DAY"] input');
+    var monthRoot = whenField.querySelector('[data-hook="MONTH"]');
+    var yearInput = whenField.querySelector('[data-hook="YEAR"] input');
+    var dayVal = dayInput ? dayInput.value.trim() : '';
+    var monthVal = monthRoot ? (monthRoot.dataset.selectedValue || '').trim() : '';
+    if (!monthVal && monthRoot) {
+      var monthText = monthRoot.querySelector('[data-hook="dropdown-base-text"]');
+      monthVal = monthText ? monthText.textContent.trim() : '';
+      if (monthVal === 'Select') monthVal = '';
+    }
+    var yearVal = yearInput ? yearInput.value.trim() : '';
+    var whenStr = [dayVal, monthVal, yearVal].filter(Boolean).join(' ');
+    if (whenStr && whereVal) return whenStr + ' — ' + whereVal;
+    return whenStr || whereVal || '';
+  }
+
   function bindNativeForm(wixForm, def, name, shared) {
     if (!wixForm || wixForm.dataset.tscNativeBound) return;
     wixForm.dataset.tscNativeBound = 'true';
@@ -2306,6 +2391,50 @@
       }
     });
 
+    // 2b. Checkbox groups (e.g. Logistics on /book-an-artist) — single-select UX
+    var checkboxGroups = wixForm.querySelectorAll('[data-field-type="CHECKBOX_GROUP"]');
+    checkboxGroups.forEach(function(group) {
+      var wrappers = group.querySelectorAll('[data-hook^="checkbox-"]');
+      function syncGroupSelection(activeWrapper) {
+        wrappers.forEach(function(other) {
+          var otherCb = other.querySelector('input[type="checkbox"]');
+          var isActive = other === activeWrapper;
+          other.setAttribute('data-checked', isActive ? 'true' : 'false');
+          other.setAttribute('aria-checked', isActive ? 'true' : 'false');
+          if (otherCb) otherCb.checked = isActive;
+          other.classList.toggle('is-selected', isActive);
+        });
+        if (activeWrapper) {
+          var activeLabel = activeWrapper.querySelector('[data-hook="label-wrapper"]');
+          group.dataset.selectedValue = activeLabel ? activeLabel.textContent.replace(/\s+/g, ' ').trim() : '';
+        } else {
+          delete group.dataset.selectedValue;
+        }
+      }
+      wrappers.forEach(function(wrapper) {
+        var cb = wrapper.querySelector('input[type="checkbox"]');
+        wrapper.style.cursor = 'pointer';
+        function isWrapperSelected(target) {
+          return target.classList.contains('is-selected') || target.getAttribute('data-checked') === 'true' || !!(cb && cb.checked);
+        }
+        wrapper.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          syncGroupSelection(isWrapperSelected(wrapper) ? null : wrapper);
+        });
+        if (cb) {
+          cb.addEventListener('change', function() {
+            if (!cb.checked) {
+              wrapper.setAttribute('data-checked', 'false');
+              wrapper.classList.remove('is-selected');
+              return;
+            }
+            syncGroupSelection(wrapper);
+          });
+        }
+      });
+    });
+
     // 3. Radio buttons (e.g. Artist selection on /book-an-artist)
     var radioWrappers = wixForm.querySelectorAll('.siroRCe, [data-hook="core-radio-button"]');
     radioWrappers.forEach(function(wrapper) {
@@ -2335,11 +2464,8 @@
     // 4. Dropdowns (e.g. Type of Engagement on /book-an-artist)
     var dropdownWrappers = wixForm.querySelectorAll('[data-field-type="DROPDOWN"]');
     dropdownWrappers.forEach(function(dd) {
-      var trigger = dd.querySelector('[data-hook="dropdown-base"]');
-      var textEl = dd.querySelector('[data-hook="dropdown-base-text"]');
       var fieldLabel = dd.closest('.GLWhGq') ? dd.closest('.GLWhGq').querySelector('.shszO9W') : null;
       var labelText = (fieldLabel ? fieldLabel.textContent.trim() : '').toLowerCase();
-
       var optionsList = ['Select'];
       if (/engagement/i.test(labelText)) {
         optionsList = ['Live Performance', 'Brand Collaboration', 'Social Media Content', 'Music Production / Feature', 'Other'];
@@ -2352,49 +2478,23 @@
       } else {
         optionsList = ['Live Performance', 'Brand Collaboration', 'Cultural Storytelling', 'Other'];
       }
+      bindNativeDropdownMenu(dd, optionsList);
+    });
 
-      if (textEl && !textEl.textContent.trim()) {
-        textEl.textContent = 'Select';
-        textEl.style.color = '#7d7a75';
-      }
+    // 4b. Month dropdown inside DATE_INPUT (e.g. When? on /book-an-artist)
+    wixForm.querySelectorAll('[data-field-type="DATE_INPUT"] [data-hook="MONTH"]').forEach(function(monthRoot) {
+      bindNativeDropdownMenu(monthRoot, MONTH_OPTIONS);
+    });
 
-      if (trigger) {
-        trigger.addEventListener('click', function(e) {
-          e.preventDefault();
-          e.stopPropagation();
-          var existingMenu = dd.querySelector('.native-dropdown-menu');
-          if (existingMenu) {
-            existingMenu.remove();
-            return;
-          }
-          document.querySelectorAll('.native-dropdown-menu').forEach(function(m) { m.remove(); });
-          var menu = document.createElement('div');
-          menu.className = 'native-dropdown-menu';
-          optionsList.forEach(function(opt) {
-            var item = document.createElement('div');
-            item.className = 'native-dropdown-item';
-            item.textContent = opt;
-            item.addEventListener('click', function(ev) {
-              ev.stopPropagation();
-              if (textEl) {
-                textEl.textContent = opt;
-                textEl.style.color = '#053f40';
-              }
-              dd.dataset.selectedValue = opt;
-              dd.setAttribute('data-empty-state', opt === 'Select' ? 'true' : 'false');
-              menu.remove();
-            });
-            menu.appendChild(item);
-          });
-          dd.style.position = 'relative';
-          dd.appendChild(menu);
+    if (!wixForm.dataset.tscDropdownDismissBound) {
+      wixForm.dataset.tscDropdownDismissBound = 'true';
+      document.addEventListener('click', function() {
+        document.querySelectorAll('.native-dropdown-menu').forEach(function(m) { m.remove(); });
+        document.querySelectorAll('[data-hook="dropdown-base"][aria-expanded="true"]').forEach(function(trigger) {
+          trigger.setAttribute('aria-expanded', 'false');
         });
-      }
-    });
-
-    document.addEventListener('click', function() {
-      document.querySelectorAll('.native-dropdown-menu').forEach(function(m) { m.remove(); });
-    });
+      });
+    }
 
     // 5. Date Picker (e.g. /book-a-call)
     var dateFields = wixForm.querySelectorAll('[data-field-type="DATE_PICKER"]');
@@ -2606,7 +2706,7 @@
         var nameVal = (firstName + ' ' + lastName).trim() || firstName;
         var phoneVal = phoneInput ? phoneInput.value.trim() : '';
         var emailVal = emailInput ? emailInput.value.trim() : '';
-        var courseVal = checkedCourses.join(', ') || 'The heART of Composition';
+        var courseVal = checkedCourses.join(', ') || 'The HeART of Composition';
         var dateVal = dateInput ? dateInput.value.trim() : '';
         var timeVal = slotInput && slotInput.value ? slotInput.value : (hoursInput || minutesInput) ? ((hoursInput && hoursInput.value.trim() ? hoursInput.value.trim() : '10') + ':' + (minutesInput && minutesInput.value.trim() ? minutesInput.value.trim() : '00') + ' ' + ampmVal) : '';
 
@@ -2660,22 +2760,21 @@
         var engagementDd = wixForm.querySelector('[data-hook="form-field-type_of_engagement"]');
         var artistRadio = wixForm.querySelector('[data-hook="form-field-select_artist_talent"] [data-checked="true"]');
         
-        var natureInput = wixForm.querySelector('[data-hook="form-field-nature_of_project"] textarea, textarea[aria-label*="Nature"]');
-        var whenWhereInput = wixForm.querySelector('[data-hook="form-field-when_and_where"] textarea, textarea[aria-label*="When"]');
+        var natureInput = wixForm.querySelector('[data-hook="form-field-nature_of_project"] input, [data-hook="form-field-nature_of_project"] textarea, textarea[aria-label*="Nature"]');
         var scaleInput = wixForm.querySelector('[data-hook="form-field-expected_scale_reach"] input, input[aria-label*="Scale"]');
-        var logisticsDd = wixForm.querySelector('[data-hook="form-field-logistics_provided"]');
+        var logisticsGroup = wixForm.querySelector('[data-hook="form-field-logistics_provided"]');
         var visionInput = wixForm.querySelector('[data-hook="form-field-additional_vision_details"] textarea, textarea[aria-label*="Vision"]');
 
         var nameVal = nameInput ? nameInput.value.trim() : '';
         var orgVal = orgInput ? orgInput.value.trim() : '';
         var emailVal = emailInput ? emailInput.value.trim() : '';
         var phoneVal = phoneInput ? phoneInput.value.trim() : '';
-        var engagementVal = (engagementDd && engagementDd.dataset.selectedValue) || 'Live Performance';
-        var artistVal = (artistRadio ? (artistRadio.getAttribute('data-id') || artistRadio.textContent.trim()) : '') || 'Harshad and Duhita Golesar';
+        var engagementVal = (engagementDd && engagementDd.dataset.selectedValue) || '';
+        var artistVal = artistRadio ? (artistRadio.querySelector('[data-hook="label-wrapper"]') || artistRadio).textContent.replace(/\s+/g, ' ').trim() : '';
         var natureVal = natureInput ? natureInput.value.trim() : '';
-        var whenWhereVal = whenWhereInput ? whenWhereInput.value.trim() : '';
+        var whenWhereVal = readBookArtistWhenWhere(wixForm);
         var scaleVal = scaleInput ? scaleInput.value.trim() : '';
-        var logisticsVal = (logisticsDd && logisticsDd.dataset.selectedValue) || 'Yes - Full Travel & Stay';
+        var logisticsVal = readCheckboxGroupSelection(logisticsGroup);
         var visionVal = visionInput ? visionInput.value.trim() : '';
 
         if (!nameVal) {
@@ -2930,7 +3029,7 @@
 
   var ACADEMY_COURSE_ITEMS = [
     { href: '/course-bundle', label: 'All Courses Bundle' },
-    { href: '/music-production', label: 'A to Z of Music Production' },
+    { href: '/music-production', label: 'A-Z of Music Production' },
     { href: '/the-heart-of-composition', label: 'The HeART of Composition' },
     { href: '/roots-of-hindustani-classical', label: 'Roots of Hindustani Classical' }
   ];
@@ -2942,8 +3041,8 @@
     '/roots-of-hindustani-classical': true
   };
 
-  var HEART_COMPOSITION_CHECKOUT_URL = 'https://tscacademy.exlyapp.com/checkout/55bdc656-c92d-4812-a775-944d5becf544?dynamic_link=ad961260-1373-49a9-9307-241497380256';
-  var ROOTS_HINDUSTANI_CHECKOUT_URL = HEART_COMPOSITION_CHECKOUT_URL;
+  var HEART_COMPOSITION_CHECKOUT_URL = 'https://shakticollectivellp.exlyapp.com/checkout/55bdc656-c92d-4812-a775-944d5becf544';
+  var ROOTS_HINDUSTANI_CHECKOUT_URL = 'https://shakticollectivellp.exlyapp.com/checkout/245f8992-f7bd-41c2-aa48-864a1ac2b9cd';
   var MUSIC_PRODUCTION_CHECKOUT_URL = 'https://shakticollectivellp.exlyapp.com/checkout/f4d71afd-d494-49ba-b6e1-c8c53da020f8';
   var COURSE_BUNDLE_CHECKOUT_URL = 'https://shakticollectivellp.exlyapp.com/combo/ae855d75-c65f-4ea5-b5aa-dd2f5e4042f4';
   var COURSE_CHECKOUT_URL = HEART_COMPOSITION_CHECKOUT_URL;
@@ -2958,14 +3057,14 @@
       imageAlt: 'Sandesh Shandilya, Prasad Khaparde, and Luca Petracca',
       intro: 'Composition, Hindustani classical foundations, and music production brought together as one complete artist learning path.',
       stats: ['3 Courses', '₹12,000 Value', 'Now ₹9,999', 'One Enrollment'],
-      learn: ['The heART of Music Composition', 'The Roots of Hindustani Classical', 'A to Z of Music Production', 'A clear path across craft, voice, and production'],
+      learn: ['The heART of Music Composition', 'The Roots of Hindustani Classical', 'A-Z of Music Production', 'A clear path across craft, voice, and production'],
       outcomes: ['Build stronger original compositions', 'Develop classical grounding and disciplined practice', 'Finish cleaner, release-ready tracks'],
       checkout: COURSE_BUNDLE_CHECKOUT_URL
     },
     '/the-heart-of-composition': {
       number: '001',
       title: 'The heART of Music Composition',
-      shortTitle: 'The heART of Composition',
+      shortTitle: 'The HeART of Composition',
       mentor: 'Sandesh Shandilya',
       image: '/assets/mirror/static.wixstatic.com/media/19f989_3583e149066b4ebf9a6f37cc7d80382a~mv2.jpg/v1/crop/x_0,y_7,w_677,h_461/fill/w_960,h_640,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/sandesh_edited.jpg',
       imageAlt: 'Sandesh Shandilya leading a music session',
@@ -2990,8 +3089,8 @@
     },
     '/music-production': {
       number: '003',
-      title: 'A to Z of Music Production',
-      shortTitle: 'A to Z of Music Production',
+      title: 'A-Z of Music Production',
+      shortTitle: 'A-Z of Music Production',
       mentor: 'Luca Petracca',
       image: '/assets/luca/luca-production-session.jpg?v=luca-blu05000-3',
       imageAlt: 'Luca Petracca in a music production studio',
@@ -3058,7 +3157,7 @@
       existing = document.createElement('a');
       existing.className = 'tsc-luca-mobile-media';
       existing.href = '/music-production';
-      existing.setAttribute('aria-label', 'Open A to Z of Music Production');
+      existing.setAttribute('aria-label', 'Open A-Z of Music Production');
       existing.innerHTML =
         '<img src="' +
         escapeHtml(MOBILE_COURSE_PAGES['/music-production'].image) +
@@ -3720,7 +3819,7 @@
     var targets = {
       'All Courses Bundle': '/course-bundle',
       'Course Bundle': '/course-bundle',
-      'A to Z of Music Production': '/music-production',
+      'A-Z of Music Production': '/music-production',
       'A-Z of Music Production': '/music-production',
       'A to Z Course': '/music-production',
       'The HeART of Composition': '/the-heart-of-composition',

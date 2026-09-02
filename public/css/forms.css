@@ -1326,3 +1326,34 @@ button[data-hook="submit-button"]:disabled {
   cursor: not-allowed !important;
 }
 
+/* Native Wix checkbox groups (e.g. Logistics Provided?) */
+[data-field-type="CHECKBOX_GROUP"] [data-hook^="checkbox-"] {
+  cursor: pointer !important;
+  border: 1.5px solid rgba(0, 83, 90, 0.35) !important;
+  border-radius: 7px !important;
+  background: #fff8ec !important;
+  transition: background-color 160ms ease, border-color 160ms ease, color 160ms ease, box-shadow 160ms ease !important;
+}
+
+[data-field-type="CHECKBOX_GROUP"] [data-hook^="checkbox-"]:hover,
+[data-field-type="CHECKBOX_GROUP"] [data-hook^="checkbox-"][data-checked="true"],
+[data-field-type="CHECKBOX_GROUP"] [data-hook^="checkbox-"].is-selected {
+  border-color: #00535a !important;
+  background: #00535a !important;
+  box-shadow: 0 8px 22px rgba(0, 83, 90, 0.18) !important;
+}
+
+[data-field-type="CHECKBOX_GROUP"] [data-hook^="checkbox-"][data-checked="true"] [data-hook="label-wrapper"],
+[data-field-type="CHECKBOX_GROUP"] [data-hook^="checkbox-"].is-selected [data-hook="label-wrapper"],
+[data-field-type="CHECKBOX_GROUP"] [data-hook^="checkbox-"][data-checked="true"] .s_Jh7Ip,
+[data-field-type="CHECKBOX_GROUP"] [data-hook^="checkbox-"].is-selected .s_Jh7Ip {
+  color: #ffecd1 !important;
+}
+
+/* DATE_INPUT month dropdown must sit above sibling fields */
+[data-field-type="DATE_INPUT"] [data-hook="MONTH"] {
+  position: relative !important;
+  z-index: 12 !important;
+  overflow: visible !important;
+}
+

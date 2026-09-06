@@ -306,9 +306,14 @@
 }
 
 @media (max-width: 767px) {
-  html body.responsive[data-page="about"] #comp-mr3smd70 {
-    height: 1220px !important;
-    min-height: 1220px !important;
+  /* Auto-height: fixed 1220px clipped founder cards + caused logo/signature overlap. */
+  html body.responsive[data-page="about"] #comp-mr3smd70,
+  html body.responsive[data-page="about"] #comp-mr3smd70 .comp-mr3smd70-overflow-wrapper,
+  html body.responsive[data-page="about"] #comp-mr3smd70 .comp-mr3smd70-container {
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    overflow: visible !important;
   }
 
   html body.responsive[data-page="about"] #comp-mr3smd70 :is(p, span, div, .wixui-rich-text__text) {
@@ -318,8 +323,14 @@
   }
 
   html body.responsive[data-page="about"] #comp-mr3smd70 :is(h1, h2, .font_0, .font_2) {
-    font-size: clamp(38px, 10vw, 50px) !important;
-    line-height: 1.05 !important;
+    font-size: clamp(28px, 7.5vw, 40px) !important;
+    line-height: 1.08 !important;
     letter-spacing: 0 !important;
+  }
+
+  /* Keep bio name slightly larger than note title without blowing card height. */
+  html body.responsive[data-page="about"] #comp-mr3udab2 :is(h1, .font_0) {
+    font-size: clamp(32px, 8.5vw, 44px) !important;
+    line-height: 1.05 !important;
   }
 }

@@ -1120,7 +1120,7 @@
   }
 
   /* 1:1 slug → mobile CSS; prefer window.TSCMobileRouteMap when loaded */
-  var MOBILE_CSS_VERSION = 'mobile-own-6';
+  var MOBILE_CSS_VERSION = 'mobile-own-7';
   var MOBILE_CSS_MEDIA = '(max-width: 1024px)';
 
   var LEARN_PATHS = {
@@ -3324,171 +3324,14 @@
     lucaCard.insertAdjacentElement('afterend', card);
   }
 
-  function academyMobileCourseCardMarkup(href, index) {
-    var course = MOBILE_COURSE_PAGES[href];
-    if (!course) return '';
-    var mentorLabel = href === '/course-bundle' ? 'Mentors' : 'Mentor';
-    var mentor = href === '/course-bundle' ? 'SANDESH + PRASAD + LUCA' : course.mentor.toUpperCase();
-    return [
-      '<article class="tsc-academy-mobile-course-card">',
-      '<div class="tsc-academy-mobile-course-card__title"><span>' + String(index).padStart(2, '0') + '</span><strong>' + escapeHtml(course.shortTitle) + '</strong></div>',
-      '<figure class="tsc-academy-mobile-course-card__media">',
-      '<img src="' + escapeHtml(course.image) + '" alt="' + escapeHtml(course.imageAlt) + '">',
-      '</figure>',
-      '<div class="tsc-academy-mobile-course-card__mentor"><span>' + mentorLabel + '</span><strong>' + escapeHtml(mentor) + '</strong></div>',
-      '<div class="tsc-academy-mobile-course-card__copy"><p>' + escapeHtml(course.intro) + '</p></div>',
-      '<div class="tsc-academy-mobile-course-card__stats">',
-      course.stats.map(function (stat) {
-        return '<span>' + escapeHtml(stat) + '</span>';
-      }).join(''),
-      '</div>',
-      '<a class="tsc-academy-mobile-course-card__cta" href="' + escapeHtml(href) + '">Know More</a>',
-      '</article>'
-    ].join('');
-  }
-
-  function academyMobileFeatureMarkup(iconSelector, title, copy) {
-    var icon = document.querySelector(iconSelector);
-    return [
-      '<article class="tsc-academy-mobile-feature">',
-      '<div class="tsc-academy-mobile-feature__icon" aria-hidden="true">',
-      icon ? icon.innerHTML : '',
-      '</div>',
-      '<h3>' + escapeHtml(title) + '</h3>',
-      '<p>' + escapeHtml(copy) + '</p>',
-      '</article>'
-    ].join('');
-  }
-
+  // ponytail: one Academy design = Wix DOM + mobile CSS (no custom rebuild)
   function mountAcademyMobileExperience(path) {
     path = path || canonicalPathname();
     if (path !== '/academy') return;
-
-    var compact = window.matchMedia && window.matchMedia('(max-width: 1024px)').matches;
-    var existing = document.querySelector('.tsc-academy-mobile-experience');
-    if (!compact) {
-      if (existing && existing.parentNode) existing.parentNode.removeChild(existing);
-      document.body.classList.remove('tsc-academy-mobile-experience-mounted');
-      return;
-    }
-    if (existing) {
-      document.body.classList.add('tsc-academy-mobile-experience-mounted');
-      return;
-    }
-
-    var features = [
-      ['#comp-mqwgkqsf', 'Partner in Your Journey', "We're not here for a quick course. We're here for your entire artistic evolution, from discovery to mastery"],
-      ['#comp-mqwh4oad1', 'Leading Artists for Mentors', 'Learn from leading industry professionals & artists who have already proven their craft on a global level.'],
-      ['#comp-mqwh7m3x3', 'Aspiring Professionals', 'Our platform is not for hobbyists or casual explorers. This is for those who are serious about their craft and ready to transform'],
-      ['#comp-mqwh89rg', 'Scholarships for EWS', "Talent shouldn't be limited by access. We ensure deserving artists from economically weaker sections can pursue their dreams."],
-      ['#comp-mqwh8gpc4', 'Unconditional Support', 'We make sure that you get any support that you need in your journey, no matter what.'],
-      ['#comp-mqwh8ma64', 'Serving the Community', 'Artists today need more than skill - they need mentorship. This is a safe & non-judgemental space for unfolding the artist in you.']
-    ];
-    var courses = [
-      '/the-heart-of-composition',
-      '/roots-of-hindustani-classical',
-      '/music-production',
-      '/course-bundle'
-    ];
-    var testimonials = [
-      {
-        quote: 'Sandesh Shandilya Sir has been more than a mentor to me. He has been my guiding angel, my godfather, my support, and the reason I walk this musical journey with confidence and gratitude. Through his teachings, I found my voice, my purpose, and the soul of my art.',
-        name: 'Shraddha Mishra',
-        role: 'WINNER: SA RE GA MA PA 2025'
-      },
-      {
-        quote: "Having seen this course come to life, I can confidently say it's pure gold. No other course approaches music composition the way this one does. Sandesh Sir's method of explanation is truly unique. This course reveals the true philosophy and inner world of creation.",
-        name: 'Deepank Soni',
-        role: 'Singer-Songwriter'
-      },
-      {
-        quote: 'Attending a session with Sandesh ji was very calming and inspiring. Not only will you learn how to craft your imagination and translate it into music, but it also helps a musician bring out their emotions perfectly in their compositions.',
-        name: 'Vasav Vasisht',
-        role: 'The Samarpan Collective & Kalakul'
-      }
-    ];
-
-    var shell = document.createElement('main');
-    shell.className = 'tsc-academy-mobile-experience';
-    shell.setAttribute('data-main-content-parent', 'true');
-    shell.innerHTML = [
-      '<section class="tsc-academy-mobile-hero" aria-labelledby="tsc-academy-mobile-title">',
-      '<div class="tsc-academy-mobile-hero__inner">',
-      '<p class="tsc-academy-mobile-kicker">Welcome to TSC Academy</p>',
-      '<h1 id="tsc-academy-mobile-title">Unfolding Artist Force</h1>',
-      '<p class="tsc-academy-mobile-hero__copy">We help artists who aspire to go professional attain their maximum potential by providing the right learning, guidance, incubation & acceleration.</p>',
-      '<a class="tsc-academy-mobile-button" href="/academy#courses">Explore Courses</a>',
-      '</div>',
-      '</section>',
-      '<section class="tsc-academy-mobile-intro" aria-labelledby="tsc-academy-mobile-intro-title">',
-      '<div class="tsc-academy-mobile-section-inner">',
-      '<p class="tsc-academy-mobile-eyebrow">Are you ready?</p>',
-      '<h2 id="tsc-academy-mobile-intro-title">Every artist has a story waiting to unfold.</h2>',
-      '<p>We are a one of a kind group of leading industry professionals & artists who are insanely driven to help artists unfold into an artist that they are truly meant to be.</p>',
-      '<p>We provide 360 degree support to our artists and make sure that they get any support that they need in their journey. A space where artists can learn, collaborate, and create world-class work.</p>',
-      '</div>',
-      '</section>',
-      '<section class="tsc-academy-mobile-features" aria-label="Why TSC Academy">',
-      '<div class="tsc-academy-mobile-section-inner tsc-academy-mobile-feature-grid">',
-      features.map(function (feature) {
-        return academyMobileFeatureMarkup(feature[0], feature[1], feature[2]);
-      }).join(''),
-      '</div>',
-      '</section>',
-      '<section class="tsc-academy-mobile-courses" id="courses" aria-labelledby="tsc-academy-mobile-courses-title">',
-      '<div class="tsc-academy-mobile-section-inner">',
-      '<p class="tsc-academy-mobile-eyebrow">Courses</p>',
-      '<h2 id="tsc-academy-mobile-courses-title">Choose the mentorship path built for your craft.</h2>',
-      '<div class="tsc-academy-mobile-course-grid">',
-      courses.map(function (href, index) {
-        return academyMobileCourseCardMarkup(href, index + 1);
-      }).join(''),
-      '</div>',
-      '</div>',
-      '</section>',
-      '<section class="tsc-academy-mobile-testimonials" id="testimonials" aria-labelledby="tsc-academy-mobile-testimonials-title">',
-      '<div class="tsc-academy-mobile-section-inner">',
-      '<p class="tsc-academy-mobile-eyebrow">Testimonials</p>',
-      '<h2 id="tsc-academy-mobile-testimonials-title">Artists on the journey.</h2>',
-      '<div class="tsc-academy-mobile-testimonial-grid">',
-      testimonials.map(function (testimonial) {
-        return '<figure class="tsc-academy-mobile-testimonial"><blockquote>“' + escapeHtml(testimonial.quote) + '”</blockquote><figcaption><strong>' + escapeHtml(testimonial.name) + '</strong><span>' + escapeHtml(testimonial.role) + '</span></figcaption></figure>';
-      }).join(''),
-      '</div>',
-      '</div>',
-      '</section>',
-      '<section class="tsc-academy-mobile-guidance" id="know-more" aria-labelledby="tsc-academy-mobile-guidance-title">',
-      '<div class="tsc-academy-mobile-section-inner">',
-      '<p class="tsc-academy-mobile-eyebrow">Personal guidance</p>',
-      '<h2 id="tsc-academy-mobile-guidance-title">Still unsure where to start? Let’s talk.</h2>',
-      '<p class="tsc-academy-mobile-guidance__intro">Choosing the right mentorship is a pivotal decision in an artist’s career. Whether you’re curious about the curriculum, the mentorship style, or how our 360-degree support ecosystem works, we’re here to provide clarity.</p>',
-      '<div class="tsc-academy-mobile-guidance__grid">',
-      '<article><strong>Personalized roadmap</strong><span>Understand how our courses fit into your long-term career goals.</span></article>',
-      '<article><strong>Curriculum deep-dive</strong><span>Get specific details about modules, sessions, and outcomes.</span></article>',
-      '<article><strong>Mentorship access</strong><span>Learn how direct interactions with industry legends work.</span></article>',
-      '<article><strong>Scholarship info</strong><span>Ask about eligibility for our EWS & merit-based scholarships.</span></article>',
-      '</div>',
-      '<div class="tsc-academy-mobile-guidance__actions">',
-      '<a class="tsc-academy-mobile-button tsc-academy-mobile-button--light" href="/book-a-call">Book a Call</a>',
-      '<a class="tsc-academy-mobile-button tsc-academy-mobile-button--outline" href="/artist-query">Find Your Course</a>',
-      '</div>',
-      '</div>',
-      '</section>'
-    ].join('');
-
-    var siteContainer = document.getElementById('SITE_CONTAINER');
-    document.body.insertBefore(shell, siteContainer || document.querySelector('.tsc-mobile-footer') || null);
-    shell.querySelectorAll('.tsc-academy-mobile-feature__icon svg').forEach(function (svg) {
-      svg.removeAttribute('class');
-      svg.removeAttribute('data-testid');
-      svg.style.setProperty('position', 'static', 'important');
-      svg.style.setProperty('inset', 'auto', 'important');
-      svg.style.setProperty('display', 'block', 'important');
-      svg.style.setProperty('width', '48px', 'important');
-      svg.style.setProperty('height', '48px', 'important');
-      svg.style.setProperty('transform', 'none', 'important');
+    document.querySelectorAll('.tsc-academy-mobile-experience').forEach(function (node) {
+      if (node.parentNode) node.parentNode.removeChild(node);
     });
-    document.body.classList.add('tsc-academy-mobile-experience-mounted');
+    document.body.classList.remove('tsc-academy-mobile-experience-mounted');
   }
 
   var ACADEMY_NAV_ITEMS = [

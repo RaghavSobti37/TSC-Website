@@ -23,9 +23,10 @@ window.__pageRevealPromise && window.__pageRevealPromise.then(function() {
 (function() {
   // ponytail: one Academy design = Wix DOM + /css/mobile/academy.css
   function removeLegacyAcademyMobileRedesign() {
-    document.querySelectorAll('.tsc-academy-mobile-redesign').forEach(function(node) {
+    document.querySelectorAll('.tsc-academy-mobile-redesign, .tsc-academy-mobile-experience').forEach(function(node) {
       if (node.parentNode) node.parentNode.removeChild(node);
     });
+    if (document.body) document.body.classList.remove('tsc-academy-mobile-experience-mounted');
   }
   function cleanAcademyTicker() {
     document.querySelectorAll('body *').forEach(function(el) {

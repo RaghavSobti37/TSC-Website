@@ -4,7 +4,7 @@
  * Shared reflow + family partial; page-specific overrides below.
  */
 @import url("./_reflow.css");
-@import url("./_family-about.css");
+@import url("./_family-about.css?v=founder-fix-20260906");
 
 @media (max-width: 1024px) {
   /* About: clip mesh; tablet section air */
@@ -307,9 +307,10 @@
 
 @media (max-width: 767px) {
   /* Auto-height: fixed 1220px clipped founder cards + caused logo/signature overlap. */
+  html body.responsive #comp-mr3smd70,
   html body.responsive[data-page="about"] #comp-mr3smd70,
-  html body.responsive[data-page="about"] #comp-mr3smd70 .comp-mr3smd70-overflow-wrapper,
-  html body.responsive[data-page="about"] #comp-mr3smd70 .comp-mr3smd70-container {
+  html body.responsive #comp-mr3smd70 .comp-mr3smd70-overflow-wrapper,
+  html body.responsive #comp-mr3smd70 .comp-mr3smd70-container {
     height: auto !important;
     min-height: 0 !important;
     max-height: none !important;
@@ -317,20 +318,221 @@
   }
 
   /* Body copy only — do not shrink layout wrapper divs / headings. */
-  html body.responsive[data-page="about"] #comp-mr3smd70 :is(#comp-mr3ufej7, #comp-mr3vr2q3, #comp-mr3upy2k, #comp-mr3wcvds, #comp-mr3ue77c, #comp-mr3vhxsi, #comp-mr3vnb3n) :is(p, span, .wixui-rich-text__text) {
+  html body.responsive #comp-mr3smd70 :is(#comp-mr3ufej7, #comp-mr3vr2q3, #comp-mr3upy2k, #comp-mr3wcvds, #comp-mr3ue77c, #comp-mr3vhxsi, #comp-mr3vnb3n) :is(p, span, .wixui-rich-text__text) {
     font-size: clamp(13px, 3.4vw, 15.5px) !important;
-    line-height: 1.48 !important;
+    line-height: 1.55 !important;
     letter-spacing: 0 !important;
   }
 
-  html body.responsive[data-page="about"] #comp-mr3smd70 :is(h1, h2, .font_0, .font_2) {
+  html body.responsive #comp-mr3smd70 :is(h1, h2, .font_0, .font_2) {
     font-size: clamp(28px, 7.5vw, 40px) !important;
     line-height: 1.12 !important;
     letter-spacing: 0 !important;
   }
 
-  html body.responsive[data-page="about"] #comp-mr3udab2 :is(h1, .font_0) {
+  html body.responsive #comp-mr3udab2 :is(h1, .font_0) {
     font-size: clamp(32px, 8.5vw, 44px) !important;
     line-height: 1.08 !important;
+  }
+}
+
+/*
+ * Founder section — production-critical mobile override.
+ * Kept in this cache-busted file (not only @import) so CDN/browsers
+ * cannot keep the old absolute 1080px mesh after deploy.
+ */
+@media (max-width: 1024px) {
+  html body.responsive #comp-mr3smd70,
+  html body.responsive #comp-mr3smd70 .comp-mr3smd70-overflow-wrapper {
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+
+  html body.responsive #comp-mr3smd70 .comp-mr3smd70-container,
+  html body.responsive #comp-mr3smd70 [data-testid="responsive-container-content"] {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 0 !important;
+    height: auto !important;
+    min-height: 0 !important;
+    padding: 24px 16px 36px !important;
+    overflow: visible !important;
+    grid-template-columns: none !important;
+    grid-template-rows: none !important;
+  }
+
+  html body.responsive #comp-mr3vhleo { order: 1 !important; }
+  html body.responsive #comp-mr3w1b39 { order: 2 !important; }
+  html body.responsive #comp-mr3wnsas { order: 3 !important; }
+
+  html body.responsive :is(#comp-mr3vhleo, #comp-mr3wnsas, #comp-mr3w1b39) {
+    position: relative !important;
+    inset: auto !important;
+    left: auto !important;
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    width: min(100%, 424px) !important;
+    max-width: calc(100vw - 32px) !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    margin: 0 auto !important;
+    transform: none !important;
+    grid-area: auto !important;
+    overflow: visible !important;
+  }
+
+  html body.responsive #comp-mr3vhleo {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 12px !important;
+    padding: 18px 16px 8px !important;
+    background: transparent !important;
+    border: 0 !important;
+    --brw: 0px !important;
+  }
+
+  html body.responsive #comp-mr3vhleo > .inner-box {
+    border: 1.5px solid #005b53 !important;
+    border-bottom: 0 !important;
+    border-radius: 12px 12px 0 0 !important;
+    background: #ffecd1 !important;
+  }
+
+  html body.responsive #comp-mr3w1b39 {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 10px !important;
+    margin: 0 auto 18px !important;
+    padding: 4px 16px 18px !important;
+    background: transparent !important;
+    border: 0 !important;
+    --brw: 0px !important;
+  }
+
+  html body.responsive #comp-mr3w1b39 > .inner-box {
+    border: 1.5px solid #005b53 !important;
+    border-top: 0 !important;
+    border-radius: 0 0 12px 12px !important;
+    background: #ffecd1 !important;
+  }
+
+  html body.responsive #comp-mr3wnsas {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 12px !important;
+    padding: 20px 16px 22px !important;
+    background: transparent !important;
+    border: 0 !important;
+    --brw: 0px !important;
+  }
+
+  html body.responsive #comp-mr3wnsas > .inner-box {
+    border: 1.5px solid #005b53 !important;
+    border-radius: 12px !important;
+    background: #ffecd1 !important;
+  }
+
+  html body.responsive #comp-mr3smd70 :is(
+    #comp-mr3tptpe, #comp-mr3vxmi4, #comp-mr3udab2, #comp-mr3ue77c, #comp-mr3ufej7,
+    #comp-mr3v3buy, #comp-mr3v4pxv, #comp-mr3v4vzg,
+    #comp-mr3vots9, #comp-mr3vr2q3, #comp-mr3upy2k, #comp-mr3wcvds,
+    #comp-mr3vo1it, #comp-mr3vhxsi, #comp-mr3vnb3n
+  ) {
+    position: relative !important;
+    inset: auto !important;
+    left: auto !important;
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    margin: 0 !important;
+    transform: none !important;
+    grid-area: auto !important;
+    overflow: visible !important;
+  }
+
+  html body.responsive #comp-mr3tptpe {
+    width: min(190px, 56%) !important;
+    max-width: 190px !important;
+    margin: 0 auto !important;
+    aspect-ratio: 1 / 1.12 !important;
+  }
+
+  html body.responsive #comp-mr3tptpe img {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+
+  html body.responsive #comp-mr3vxmi4 {
+    display: flex !important;
+    flex: 0 0 auto !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: min-content !important;
+  }
+
+  html body.responsive #comp-mr3vxmi4 > .inner-box {
+    display: none !important;
+  }
+
+  html body.responsive :is(#comp-mr3udab2, #comp-mr3ue77c, #comp-mr3ufej7) {
+    flex: 0 0 auto !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: min-content !important;
+  }
+
+  html body.responsive :is(#comp-mr3ufej7, #comp-mr3vr2q3, #comp-mr3upy2k, #comp-mr3wcvds) :is(p, span, .wixui-rich-text__text) {
+    white-space: normal !important;
+    overflow-wrap: anywhere !important;
+    line-height: 1.55 !important;
+  }
+
+  html body.responsive :is(#comp-mr3v3buy, #comp-mr3v4pxv, #comp-mr3v4vzg) {
+    flex: 0 0 58px !important;
+    width: 58px !important;
+    height: 58px !important;
+  }
+
+  html body.responsive #comp-mr3w1b39 img {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+  }
+
+  html body.responsive :is(#comp-mr3vots9, #comp-mr3vr2q3, #comp-mr3upy2k, #comp-mr3wcvds) {
+    width: 100% !important;
+  }
+
+  html body.responsive #comp-mr3vo1it {
+    display: flex !important;
+    flex-direction: column !important;
+    align-self: flex-end !important;
+    align-items: flex-end !important;
+    gap: 4px !important;
+    width: auto !important;
+    max-width: 100% !important;
+    margin-top: 16px !important;
+    text-align: right !important;
+    background: transparent !important;
+  }
+
+  html body.responsive #comp-mr3vo1it > .inner-box {
+    display: none !important;
   }
 }

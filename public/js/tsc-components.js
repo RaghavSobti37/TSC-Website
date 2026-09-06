@@ -727,13 +727,13 @@
       '<div class="tsc-films-mobile-work-list">',
       workCards.map(function (item) {
         return [
-          '<a class="tsc-films-mobile-work-card" href="' + item.href + '">',
+          '<a class="tsc-films-mobile-work-card" href="' + item.href + '" data-tsc-film-report="' + item.href + '">',
           '<div class="tsc-films-mobile-work-card__chips">',
           item.chips.map(function (chip) { return '<b>' + chip + '</b>'; }).join(''),
           '</div>',
           '<img src="' + item.image + '" alt="">',
           '<span><small>' + item.number + '</small><strong>' + item.title + '</strong><em>' + item.summary + '</em></span>',
-          '<i>Know More</i>',
+          '<span class="tsc-films-mobile-work-card__cta">Know More</span>',
           '</a>'
         ].join('');
       }).join(''),
@@ -760,6 +760,18 @@
       '</section>'
     ].join('');
     document.body.classList.add('tsc-films-mobile-experience-mounted');
+    if (existing.getAttribute('data-tsc-work-nav') !== 'true') {
+      existing.setAttribute('data-tsc-work-nav', 'true');
+      existing.addEventListener('click', function (event) {
+        var card = event.target && event.target.closest ? event.target.closest('a.tsc-films-mobile-work-card[href]') : null;
+        if (!card) return;
+        var href = card.getAttribute('href');
+        if (!href || href.charAt(0) === '#') return;
+        event.preventDefault();
+        event.stopPropagation();
+        window.location.assign(href);
+      }, true);
+    }
   }
 
   function mountFilmBottomCtas(path) {
@@ -1114,7 +1126,7 @@
   }
 
   /* 1:1 slug → mobile CSS; prefer window.TSCMobileRouteMap when loaded */
-  var MOBILE_CSS_VERSION = 'mobile-own-8';
+  var MOBILE_CSS_VERSION = 'mobile-own-9';
   var MOBILE_CSS_MEDIA = '(max-width: 1024px)';
 
   var LEARN_PATHS = {

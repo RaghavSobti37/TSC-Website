@@ -965,3 +965,198 @@ body:has(.tsc-mobile-site-header) .report-header {
     box-sizing: border-box !important;
   }
 }
+
+/* ===== Film impact reports: match /films mobile system ===== */
+.report-page--film {
+  --report-ink: #ffecd1;
+  --report-muted: rgba(255, 236, 209, 0.78);
+  --report-paper: #083d3a;
+  --report-card: #681f14;
+  --report-line: rgba(255, 236, 209, 0.28);
+  --report-gold: #ffecd1;
+  --report-green: #083d3a;
+  --report-coral: #7a2417;
+  --report-blue: #083d3a;
+  --report-film-brown: #7a2417;
+  background:
+    linear-gradient(180deg, #083d3a 0%, #0a4542 42%, #083d3a 100%);
+  color: #ffecd1;
+}
+
+.report-page--film .report-header {
+  background: #083d3a;
+  border-bottom: 1.5px solid rgba(255, 236, 209, 0.28);
+  color: #ffecd1;
+}
+
+.report-page--film .report-home,
+.report-page--film .report-nav a {
+  color: #ffecd1;
+  text-decoration: none;
+}
+
+.report-page--film .report-nav a[aria-current="page"],
+.report-page--film .report-nav a:hover {
+  color: #ffecd1;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.report-page--film .report-kicker {
+  color: rgba(255, 236, 209, 0.78);
+  letter-spacing: 0.08em;
+}
+
+.report-page--film .case-wordmark.film,
+.report-page--film .case-wordmark {
+  background: #7a2417;
+  border: 1.5px solid #ffecd1;
+  color: #ffecd1;
+  border-radius: 8px;
+}
+
+.report-page--film .report-hero h1,
+.report-page--film .report-copy h2,
+.report-page--film .report-cta-inner h2 {
+  color: #ffecd1;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+
+.report-page--film .report-subtitle,
+.report-page--film .report-copy p,
+.report-page--film .report-list,
+.report-page--film .proof-item p,
+.report-page--film .proof-item,
+.report-page--film .report-media figcaption {
+  color: rgba(255, 236, 209, 0.9);
+}
+
+.report-page--film .report-panel,
+.report-page--film .report-band,
+.report-page--film .report-support,
+.report-page--film .quote-card,
+.report-page--film .proof-item,
+.report-page--film .process-step,
+.report-page--film .report-case-nav a {
+  background: #681f14;
+  border: 1.5px solid rgba(255, 236, 209, 0.88);
+  color: #ffecd1;
+  border-radius: 8px;
+}
+
+.report-page--film .report-panel h2,
+.report-page--film .section-label,
+.report-page--film .stat span,
+.report-page--film .process-step small,
+.report-page--film .report-case-nav small {
+  color: rgba(255, 236, 209, 0.78);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 800;
+}
+
+.report-page--film .stat,
+.report-page--film .process-step {
+  background: rgba(8, 61, 58, 0.35);
+  border: 1.5px solid rgba(255, 236, 209, 0.45);
+  border-radius: 8px;
+}
+
+.report-page--film .stat strong,
+.report-page--film .process-step strong,
+.report-page--film .report-case-nav strong,
+.report-page--film .proof-item strong {
+  color: #ffecd1;
+  font-weight: 900;
+}
+
+.report-page--film .report-cta-band {
+  background: #7a2417;
+  border-top: 1.5px solid rgba(255, 236, 209, 0.35);
+}
+
+.report-page--film .report-cta-inner a,
+.report-page--film .report-home {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  padding: 0 18px;
+  border-radius: 4px;
+  background: #ffecd1;
+  color: #083d3a !important;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.report-page--film .report-media {
+  border: 1.5px solid rgba(255, 236, 209, 0.88);
+  border-radius: 8px;
+  overflow: hidden;
+  background: #3a1212;
+}
+
+.report-page--film .report-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.report-page--film .report-list li {
+  border-color: rgba(255, 236, 209, 0.28);
+}
+
+.report-page--film mark {
+  background: transparent;
+  color: #ffecd1;
+  font-weight: 900;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+@media (max-width: 1024px) {
+  .report-page--film .report-hero {
+    min-height: 0;
+    padding: 28px 0 24px;
+    grid-template-columns: 1fr;
+    gap: 18px;
+    width: min(100% - 36px, var(--report-max));
+  }
+
+  .report-page--film .report-hero h1 {
+    font-size: clamp(30px, 9.2vw, 42px);
+    line-height: 1.02;
+    max-width: 14ch;
+  }
+
+  .report-page--film .report-subtitle {
+    font-size: 15px;
+    line-height: 1.45;
+    max-width: 34ch;
+  }
+
+  .report-page--film .case-wordmark.film {
+    font-size: clamp(22px, 7vw, 30px);
+    max-width: 100%;
+  }
+
+  .report-page--film .report-panel,
+  .report-page--film .report-band,
+  .report-page--film .report-support,
+  .report-page--film .report-cta-band,
+  .report-page--film .report-case-nav {
+    width: min(100% - 36px, var(--report-max));
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .report-page--film .report-cta-inner a {
+    width: 100%;
+  }
+
+  .report-page--film .report-header {
+    display: none; /* shared mobile chrome from tsc-components */
+  }
+}

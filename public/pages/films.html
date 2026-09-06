@@ -19,8 +19,8 @@
         l.setAttribute('data-tsc-href', bare);
         (document.head || document.documentElement).appendChild(l);
       }
-      link('/css/mobile/boot.css?v=mobile-own-8');
-      link('/css/tsc-mobile-system.css?v=mobile-own-8');
+      link('/css/mobile/boot.css?v=mobile-own-9');
+      link('/css/tsc-mobile-system.css?v=mobile-own-9');
       var p = (location.pathname || '/').replace(/\/+$/, '') || '/';
       if (p.indexOf('/pages/') === 0) p = '/' + p.split('/').pop().replace(/\.html$/i, '');
       if (p === '/home') p = '/';
@@ -75,7 +75,7 @@
         'masterclass-review02': 'masterclass-review02.css'
       };
       var file = map[seg] || 'home.css';
-      link('/css/mobile/' + file + '?v=mobile-own-8');
+      link('/css/mobile/' + file + '?v=mobile-own-9');
       html.classList.add('tsc-mobile-ready');
       html.classList.add('tsc-skel-revealed');
     })();
@@ -35319,7 +35319,7 @@
   </script>
   <script src="/js/pages/films.animations.js" defer></script>
   <script defer src="/js/tsc-mobile-route-map.js?v=mobile-own-6"></script>
-  <script src="/js/tsc-components.js?v=films-hero-1" defer></script>
+  <script src="/js/tsc-components.js?v=films-know-more-1" defer></script>
 </body>
 
 </html>

@@ -9,6 +9,7 @@
 @media (max-width: 1024px) {
   body[data-page="mahavatar-narsimha-impact"] main {
     overflow-x: clip !important;
+    background: #083d3a !important;
   }
 }
 

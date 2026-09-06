@@ -67,6 +67,14 @@
   body:has(.tsc-mobile-site-header) .report-header {
     display: none !important;
   }
+
+  /* Film reports share /films teal + maroon system on phone */
+  body[data-page="mahavatar-narsimha-impact"] .report-page--film,
+  body[data-page="hanuman-ansh-impact"] .report-page--film,
+  body[data-page="mahaprabhu-jagannath-impact"] .report-page--film,
+  body[data-page="kalki-impact"] .report-page--film {
+    padding-bottom: 32px !important;
+  }
 }
 
 @media (max-width: 560px) {

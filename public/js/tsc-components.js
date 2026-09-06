@@ -650,12 +650,8 @@
       existing.setAttribute('aria-label', 'TSC Films');
       main.insertAdjacentElement('afterbegin', existing);
     }
-    var heroImages = [
-      '/assets/mirror/static.wixstatic.com/media/19f989_5c0a3ef35c814ae6baf25111624dec72~mv2.jpg/v1/crop/x_0,y_55,w_879,h_586/fill/w_490,h_466,fp_0.50_0.50,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/10_edited.jpg',
-      '/assets/mirror/static.wixstatic.com/media/19f989_ca20c3bfe20b447fb264a2d00c44069e~mv2.png/v1/crop/x_120,y_39,w_853,h_796/fill/w_425,h_462,fp_0.50_0.50,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/11_edited.png',
-      '/assets/mirror/static.wixstatic.com/media/19f989_a9399d943c794787aa9a5a4babaa82b7~mv2.jpg/v1/crop/x_70,y_184,w_979,h_859/fill/w_454,h_464,fp_0.50_0.50,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/9_edited.jpg',
-      '/assets/mirror/static.wixstatic.com/media/19f989_e1540fdd865d4f11a8e9ce58f7481893~mv2.png/v1/crop/x_0,y_110,w_912,h_746/fill/w_490,h_466,fp_0.50_0.50,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/12_edited_edited.png'
-    ];
+    // One cinematic still — collage reads noisy on phone
+    var heroImage = '/assets/films/mahavatar-narsimha.jpg';
     var services = [
       ['01', 'Positioning', 'Culture-led film positioning, audience clarity, and release narrative.'],
       ['02', 'Promotions', 'Campaign planning, influencer pushes, communities, and PR moments.'],
@@ -698,13 +694,11 @@
     ];
     existing.innerHTML = [
       '<section class="tsc-films-mobile-hero">',
-      '<div class="tsc-films-mobile-hero__collage" aria-hidden="true">',
-      heroImages.map(function (src, index) {
-        return '<img src="' + src + '" alt="" class="tsc-films-mobile-hero__image-' + (index + 1) + '">';
-      }).join(''),
-      '</div>',
+      '<figure class="tsc-films-mobile-hero__visual">',
+      '<img src="' + heroImage + '" alt="Mahavatar Narsimha still">',
+      '</figure>',
       '<div class="tsc-films-mobile-hero__copy">',
-      '<p>They deserve an audience.</p>',
+      '<p class="tsc-films-mobile-kicker">They deserve an audience.</p>',
       '<h1>Films deserve more than distribution.</h1>',
       '<span>We help stories find cultural relevance, strategic partnerships, and long-term audience value.</span>',
       '<a href="mailto:' + escapeHtml(CONTACT_EMAIL) + '">Partner With Us</a>',
@@ -1120,7 +1114,7 @@
   }
 
   /* 1:1 slug → mobile CSS; prefer window.TSCMobileRouteMap when loaded */
-  var MOBILE_CSS_VERSION = 'mobile-own-7';
+  var MOBILE_CSS_VERSION = 'mobile-own-8';
   var MOBILE_CSS_MEDIA = '(max-width: 1024px)';
 
   var LEARN_PATHS = {

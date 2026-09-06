@@ -316,21 +316,21 @@
     overflow: visible !important;
   }
 
-  html body.responsive[data-page="about"] #comp-mr3smd70 :is(p, span, div, .wixui-rich-text__text) {
-    font-size: clamp(12.5px, 3.2vw, 15px) !important;
-    line-height: 1.5 !important;
+  /* Body copy only — do not shrink layout wrapper divs / headings. */
+  html body.responsive[data-page="about"] #comp-mr3smd70 :is(#comp-mr3ufej7, #comp-mr3vr2q3, #comp-mr3upy2k, #comp-mr3wcvds, #comp-mr3ue77c, #comp-mr3vhxsi, #comp-mr3vnb3n) :is(p, span, .wixui-rich-text__text) {
+    font-size: clamp(13px, 3.4vw, 15.5px) !important;
+    line-height: 1.48 !important;
     letter-spacing: 0 !important;
   }
 
   html body.responsive[data-page="about"] #comp-mr3smd70 :is(h1, h2, .font_0, .font_2) {
     font-size: clamp(28px, 7.5vw, 40px) !important;
-    line-height: 1.08 !important;
+    line-height: 1.12 !important;
     letter-spacing: 0 !important;
   }
 
-  /* Keep bio name slightly larger than note title without blowing card height. */
   html body.responsive[data-page="about"] #comp-mr3udab2 :is(h1, .font_0) {
     font-size: clamp(32px, 8.5vw, 44px) !important;
-    line-height: 1.05 !important;
+    line-height: 1.08 !important;
   }
 }

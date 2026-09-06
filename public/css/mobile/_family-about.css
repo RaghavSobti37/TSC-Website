@@ -1980,7 +1980,7 @@
     justify-content: flex-start !important;
     gap: 10px !important;
     box-sizing: border-box !important;
-    padding: 22px 18px 24px !important;
+    padding: 24px 20px 26px !important;
     overflow: visible !important;
     height: auto !important;
     min-height: 0 !important;
@@ -2447,17 +2447,9 @@
   }
 
   /* DOM order is Note → Bio → Logos; desktop visual is Bio (+logos) then Note. */
-  html body.responsive[data-page="about"] #comp-mr3vhleo {
-    order: 1 !important;
-  }
-
-  html body.responsive[data-page="about"] #comp-mr3w1b39 {
-    order: 2 !important;
-  }
-
-  html body.responsive[data-page="about"] #comp-mr3wnsas {
-    order: 3 !important;
-  }
+  html body.responsive[data-page="about"] #comp-mr3vhleo { order: 1 !important; }
+  html body.responsive[data-page="about"] #comp-mr3w1b39 { order: 2 !important; }
+  html body.responsive[data-page="about"] #comp-mr3wnsas { order: 3 !important; }
 
   html body.responsive[data-page="about"] #comp-mr3vhleo,
   html body.responsive[data-page="about"] #comp-mr3wnsas,
@@ -2479,64 +2471,66 @@
     overflow: visible !important;
   }
 
-  /* Bio card + logos share one cream panel (logos are DOM siblings). */
-  html body.responsive[data-page="about"] #comp-mr3vhleo {
+  /* Cards themselves ARE the containers (class *-container is on the same node). */
+  html body.responsive[data-page="about"] #comp-mr3vhleo,
+  html body.responsive[data-page="about"] #comp-mr3vhleo.comp-mr3vhleo-container {
+    display: flex !important;
+    flex-direction: column !important;
+    flex-wrap: nowrap !important;
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+    align-content: flex-start !important;
+    gap: 14px !important;
+    padding: 22px 20px 12px !important;
     margin-bottom: 0 !important;
     border-bottom-left-radius: 0 !important;
     border-bottom-right-radius: 0 !important;
+    background: #ffecd1 !important;
   }
 
-  html body.responsive[data-page="about"] #comp-mr3vhleo .inner-box {
+  html body.responsive[data-page="about"] #comp-mr3vhleo > .inner-box {
+    border: 1.5px solid #005b53 !important;
+    border-bottom: 0 !important;
     border-bottom-left-radius: 0 !important;
     border-bottom-right-radius: 0 !important;
+    background: #ffecd1 !important;
+    border-radius: 12px 12px 0 0 !important;
   }
 
-  html body.responsive[data-page="about"] #comp-mr3w1b39 {
+  html body.responsive[data-page="about"] #comp-mr3w1b39,
+  html body.responsive[data-page="about"] #comp-mr3w1b39.comp-mr3w1b39-container {
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
     gap: 12px !important;
     margin-top: 0 !important;
     margin-bottom: 22px !important;
-    padding: 4px 18px 22px !important;
+    padding: 6px 18px 20px !important;
     background: #ffecd1 !important;
-    border: 1.5px solid #005b53 !important;
-    border-top: 0 !important;
     border-radius: 0 0 12px 12px !important;
   }
 
-  html body.responsive[data-page="about"] #comp-mr3vhleo .inner-box {
+  html body.responsive[data-page="about"] #comp-mr3w1b39 > .inner-box {
     border: 1.5px solid #005b53 !important;
-    border-bottom: 0 !important;
+    border-top: 0 !important;
+    border-radius: 0 0 12px 12px !important;
     background: #ffecd1 !important;
   }
 
-  html body.responsive[data-page="about"] #comp-mr3wnsas {
-    margin-top: 0 !important;
+  html body.responsive[data-page="about"] #comp-mr3wnsas,
+  html body.responsive[data-page="about"] #comp-mr3wnsas.comp-mr3wnsas-container {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 12px !important;
+    padding: 22px 18px 24px !important;
+    background: #ffecd1 !important;
   }
 
-  html body.responsive[data-page="about"] #comp-mr3wnsas .inner-box {
+  html body.responsive[data-page="about"] #comp-mr3wnsas > .inner-box {
     border: 1.5px solid #005b53 !important;
     background: #ffecd1 !important;
     border-radius: 12px !important;
-  }
-
-  html body.responsive[data-page="about"] #comp-mr3vhleo [data-testid="responsive-container-content"],
-  html body.responsive[data-page="about"] #comp-mr3vhleo .comp-mr3vhleo-container {
-    display: flex !important;
-    flex-wrap: wrap !important;
-    align-items: flex-start !important;
-    justify-content: flex-start !important;
-    gap: 16px !important;
-    box-sizing: border-box !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    height: auto !important;
-    min-height: 0 !important;
-    padding: 20px 18px 8px !important;
-    grid-template-columns: none !important;
-    grid-template-rows: none !important;
-    overflow: visible !important;
   }
 
   html body.responsive[data-page="about"] #comp-mr3tptpe,
@@ -2569,9 +2563,11 @@
   }
 
   html body.responsive[data-page="about"] #comp-mr3tptpe {
-    flex: 0 0 min(42%, 168px) !important;
+    flex: 0 0 auto !important;
     order: 1 !important;
-    width: min(42%, 168px) !important;
+    width: min(190px, 52%) !important;
+    max-width: 190px !important;
+    margin: 0 auto !important;
     aspect-ratio: 1 / 1.12 !important;
   }
 
@@ -2582,15 +2578,32 @@
     object-fit: cover !important;
   }
 
-  html body.responsive[data-page="about"] #comp-mr3vxmi4 {
+  html body.responsive[data-page="about"] #comp-mr3vxmi4,
+  html body.responsive[data-page="about"] #comp-mr3vxmi4.comp-mr3vxmi4-container {
     display: flex !important;
-    flex: 1 1 0 !important;
+    flex: 0 0 auto !important;
     order: 2 !important;
     flex-direction: column !important;
+    align-items: stretch !important;
     gap: 8px !important;
     min-width: 0 !important;
-    width: auto !important;
-    max-width: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: min-content !important;
+    background: transparent !important;
+  }
+
+  html body.responsive[data-page="about"] #comp-mr3vxmi4 > .inner-box {
+    display: none !important;
+  }
+
+  html body.responsive[data-page="about"] #comp-mr3udab2,
+  html body.responsive[data-page="about"] #comp-mr3ue77c,
+  html body.responsive[data-page="about"] #comp-mr3ufej7 {
+    flex: 0 0 auto !important;
+    height: auto !important;
+    min-height: min-content !important;
   }
 
   html body.responsive[data-page="about"] #comp-mr3udab2,
@@ -2601,13 +2614,20 @@
   }
 
   html body.responsive[data-page="about"] #comp-mr3ufej7,
-  html body.responsive[data-page="about"] #comp-mr3ufej7 :is(p, span, div, .wixui-rich-text__text),
-  html body.responsive[data-page="about"] #comp-mr3vr2q3 :is(p, span, div, .wixui-rich-text__text),
-  html body.responsive[data-page="about"] #comp-mr3upy2k :is(p, span, div, .wixui-rich-text__text),
-  html body.responsive[data-page="about"] #comp-mr3wcvds :is(p, span, div, .wixui-rich-text__text) {
+  html body.responsive[data-page="about"] #comp-mr3ufej7 :is(p, span, .wixui-rich-text__text),
+  html body.responsive[data-page="about"] #comp-mr3vr2q3 :is(p, span, .wixui-rich-text__text),
+  html body.responsive[data-page="about"] #comp-mr3upy2k :is(p, span, .wixui-rich-text__text),
+  html body.responsive[data-page="about"] #comp-mr3wcvds :is(p, span, .wixui-rich-text__text) {
     white-space: normal !important;
-    overflow-wrap: break-word !important;
+    overflow-wrap: anywhere !important;
     word-break: normal !important;
+    line-height: 1.55 !important;
+  }
+
+  html body.responsive[data-page="about"] #comp-mr3ufej7 p + p,
+  html body.responsive[data-page="about"] #comp-mr3upy2k p + p,
+  html body.responsive[data-page="about"] #comp-mr3wcvds p + p {
+    margin-top: 0.7em !important;
   }
 
   html body.responsive[data-page="about"] #comp-mr3v3buy,
@@ -2627,22 +2647,6 @@
     object-fit: contain !important;
   }
 
-  html body.responsive[data-page="about"] #comp-mr3wnsas [data-testid="responsive-container-content"],
-  html body.responsive[data-page="about"] #comp-mr3wnsas .comp-mr3wnsas-container {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: stretch !important;
-    gap: 12px !important;
-    box-sizing: border-box !important;
-    width: 100% !important;
-    height: auto !important;
-    min-height: 0 !important;
-    padding: 22px 18px 24px !important;
-    grid-template-columns: none !important;
-    grid-template-rows: none !important;
-    overflow: visible !important;
-  }
-
   html body.responsive[data-page="about"] #comp-mr3vots9,
   html body.responsive[data-page="about"] #comp-mr3vr2q3,
   html body.responsive[data-page="about"] #comp-mr3upy2k,
@@ -2653,21 +2657,30 @@
 
   html body.responsive[data-page="about"] #comp-mr3vots9 :is(h1, h2, .font_0, .wixui-rich-text__text) {
     font-size: clamp(28px, 7.2vw, 40px) !important;
-    line-height: 1.08 !important;
+    line-height: 1.12 !important;
     letter-spacing: 0 !important;
   }
 
   /* Signature under quote — never beside overlapping text. */
-  html body.responsive[data-page="about"] #comp-mr3vo1it {
+  html body.responsive[data-page="about"] #comp-mr3vo1it,
+  html body.responsive[data-page="about"] #comp-mr3vo1it.comp-mr3vo1it-container {
     display: flex !important;
     flex-direction: column !important;
     align-self: flex-end !important;
     align-items: flex-end !important;
-    gap: 2px !important;
+    gap: 4px !important;
     width: auto !important;
     max-width: 100% !important;
-    margin-top: 8px !important;
+    margin-top: 16px !important;
+    padding: 0 !important;
     text-align: right !important;
+    background: transparent !important;
+    height: auto !important;
+    min-height: 0 !important;
+  }
+
+  html body.responsive[data-page="about"] #comp-mr3vo1it > .inner-box {
+    display: none !important;
   }
 
   html body.responsive[data-page="about"] #comp-mr3vhxsi,
@@ -2676,10 +2689,15 @@
     max-width: 100% !important;
     text-align: right !important;
   }
+
+  html body.responsive[data-page="about"] #comp-mr3vhxsi :is(p, span, .wixui-rich-text__text),
+  html body.responsive[data-page="about"] #comp-mr3vnb3n :is(p, span, .wixui-rich-text__text) {
+    white-space: normal !important;
+    overflow-wrap: anywhere !important;
+  }
 }
 
 @media (max-width: 600px) {
-  /* Phone: keep desktop-like breathing room; stack photo above copy. */
   html body.responsive[data-page="about"] #comp-mr3smd70,
   html body.responsive[data-page="about"] #comp-mr3smd70 .comp-mr3smd70-overflow-wrapper,
   html body.responsive[data-page="about"] #comp-mr3smd70 [data-testid="responsive-container-content"].comp-mr3smd70-container,
@@ -2704,12 +2722,12 @@
     max-width: calc(100vw - 32px) !important;
   }
 
-  html body.responsive[data-page="about"] #comp-mr3vhleo [data-testid="responsive-container-content"],
-  html body.responsive[data-page="about"] #comp-mr3vhleo .comp-mr3vhleo-container {
+  html body.responsive[data-page="about"] #comp-mr3vhleo,
+  html body.responsive[data-page="about"] #comp-mr3vhleo.comp-mr3vhleo-container {
     flex-direction: column !important;
     align-items: stretch !important;
-    gap: 14px !important;
-    padding: 18px 16px 6px !important;
+    gap: 12px !important;
+    padding: 18px 16px 8px !important;
   }
 
   html body.responsive[data-page="about"] #comp-mr3tptpe,
@@ -2727,7 +2745,7 @@
 
   html body.responsive[data-page="about"] #comp-mr3w1b39 {
     gap: 10px !important;
-    padding: 2px 16px 18px !important;
+    padding: 4px 16px 18px !important;
     margin-bottom: 18px !important;
   }
 
@@ -2740,22 +2758,22 @@
     height: 58px !important;
   }
 
-  html body.responsive[data-page="about"] #comp-mr3wnsas [data-testid="responsive-container-content"],
-  html body.responsive[data-page="about"] #comp-mr3wnsas .comp-mr3wnsas-container {
-    gap: 11px !important;
-    padding: 18px 16px 20px !important;
+  html body.responsive[data-page="about"] #comp-mr3wnsas,
+  html body.responsive[data-page="about"] #comp-mr3wnsas.comp-mr3wnsas-container {
+    gap: 12px !important;
+    padding: 20px 16px 22px !important;
   }
 
   html body.responsive[data-page="about"] #comp-mr3vots9 :is(h1, h2, .font_0, .wixui-rich-text__text) {
     font-size: clamp(26px, 8vw, 36px) !important;
-    line-height: 1.06 !important;
+    line-height: 1.12 !important;
   }
 
   html body.responsive[data-page="about"] #comp-mr3vo1it {
     align-self: flex-end !important;
     width: auto !important;
     max-width: 100% !important;
-    margin-top: 10px !important;
+    margin-top: 8px !important;
   }
 }
 

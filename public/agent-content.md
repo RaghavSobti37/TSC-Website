@@ -19,6 +19,7 @@ Canonical site: https://theshakticollective.in
 - The Young Gunns: https://theshakticollective.in/young-gunns
 - Harshad Duhita: https://theshakticollective.in/harshad-duhita
 - Mohit Shankar: https://theshakticollective.in/mohit-shankar
+- Sadhu Tiwari: https://theshakticollective.in/sadhu-tiwari
 - Roots of Hindustani Classical: https://theshakticollective.in/roots-of-hindustani-classical
 - The HeART of Composition: https://theshakticollective.in/the-heart-of-composition
 - A-Z of Music Production: https://theshakticollective.in/music-production

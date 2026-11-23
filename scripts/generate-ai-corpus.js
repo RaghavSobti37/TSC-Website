@@ -88,7 +88,7 @@ function siteSection(route) {
   if (route === '/') return 'home';
   if (['/about'].includes(route)) return 'about';
   if (['/work', '/mba', '/havells-myousic', '/insta-music-league', '/young-gunns'].includes(route)) return 'work';
-  if (['/artists', '/artist-path', '/harshad-duhita', '/mohit-shankar', '/yugm'].includes(route)) return 'artists';
+  if (['/artists', '/artist-path', '/harshad-duhita', '/mohit-shankar', '/sadhu-tiwari', '/yugm'].includes(route)) return 'artists';
   if (route === '/academy' || ['/roots-of-hindustani-classical', '/the-heart-of-composition', '/music-production', '/course-bundle'].includes(route)) return 'academy';
   if (route === '/resources' || ['/start-making-music', '/online-music-course-worth-it', '/artist-release-playbook', '/from-bhajan-to-clubbing', '/you-released-a-song-now-what', '/how-i-curate-music-with-independent-artists'].includes(route)) return 'resources';
   if (route === '/films' || ['/mahaprbhu', '/mahavatar-narsimha', '/hanuman-ansh', '/kalki', '/mahavatar-narsimha-impact', '/hanuman-ansh-impact', '/mahaprabhu-jagannath-impact', '/kalki-impact'].includes(route)) return 'films';
@@ -103,7 +103,7 @@ function sitePathForRoute(route) {
   if (route === '/work') return 'work';
   if (route === '/artists') return 'artists';
   if (route === '/artist-path') return 'artists/artist-path';
-  if (['/harshad-duhita', '/mohit-shankar', '/yugm'].includes(route)) return `artists/roster/${slug}`;
+  if (['/harshad-duhita', '/mohit-shankar', '/sadhu-tiwari', '/yugm'].includes(route)) return `artists/roster/${slug}`;
   if (route === '/academy') return 'academy';
   if (['/roots-of-hindustani-classical', '/the-heart-of-composition', '/music-production', '/course-bundle'].includes(route)) return `academy/courses/${slug}`;
   if (route === '/resources') return 'resources';

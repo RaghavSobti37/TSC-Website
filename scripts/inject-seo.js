@@ -41,6 +41,7 @@ const DESCRIPTIONS = {
   '/young-gunns': 'The Young Gunns impact report — the journey of the band developed and produced by The Shakti Collective.',
   '/harshad-duhita': 'Harshad Duhita — the singer-songwriter duo from The Shakti Collective. Explore their music, journey, and live performances.',
   '/mohit-shankar': 'Mohit Shankar — artist with The Shakti Collective. Explore his music, journey, and performances.',
+  '/sadhu-tiwari': 'Sadhu Tiwari — singer, composer, lyricist and music director behind Hanuman Ansh's "Jab Zid Par Aa Gayi Parvati". Book him with The Shakti Collective.',
   '/roots-of-hindustani-classical': 'Roots of Hindustani Classical — a TSC Academy online course exploring the foundations, ragas, and tradition of Hindustani classical music.',
   '/the-heart-of-composition': 'The HeART of Composition — a TSC Academy course on the art and craft of writing music, from melody to arrangement.',
   '/music-production': 'A-Z of Music Production — a comprehensive TSC Academy course covering the complete music production process from idea to release.',

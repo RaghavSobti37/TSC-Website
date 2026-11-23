@@ -96,6 +96,14 @@
       "file": "mohit-shankar.html"
     },
     {
+      "title": "Sadhu Tiwari",
+      "route": "/sadhu-tiwari",
+      "aliases": [
+        "/artists/sadhu-tiwari"
+      ],
+      "file": "sadhu-tiwari.html"
+    },
+    {
       "title": "Roots of Hindustani Classical",
       "route": "/roots-of-hindustani-classical",
       "aliases": [
@@ -402,6 +410,10 @@
       "route": "/mohit-shankar"
     },
     {
+      "alias": "/artists/sadhu-tiwari",
+      "route": "/sadhu-tiwari"
+    },
+    {
       "alias": "/blank-9-1",
       "route": "/roots-of-hindustani-classical"
     },
@@ -673,6 +685,7 @@
     "/young-gunns",
     "/harshad-duhita",
     "/mohit-shankar",
+    "/sadhu-tiwari",
     "/roots-of-hindustani-classical",
     "/the-heart-of-composition",
     "/music-production",

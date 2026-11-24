@@ -15,7 +15,6 @@ const fs = require('fs');
 const path = require('path');
 
 const pagesDir = process.argv[2] ? path.resolve(process.argv[2]) : path.join(__dirname, '..', 'public', 'pages');
-const TARGET_WIDTH = 1600;
 // Pages whose first <wow-image> is a hidden duplicate hero: name the real one.
 const HERO_IMAGE_ID = { 'yugm.html': 'img-comp-mqhqa6y01' };
 // Pages that set their own hero image (sadhu-tiwari swaps in its artist photo).
@@ -26,7 +25,8 @@ function decodeAttr(value) {
 }
 
 // Rebuild the Wix transform segment ("v1/fill/..." or "v1/crop/.../fill/...") at a larger size.
-function upgradeUrl(src, info) {
+function upgradeUrl(src, info, targetWidth) {
+  const TARGET_WIDTH = targetWidth;
   const m = src.match(/^(.*?\/v1\/)(.+?)\/([^/]+)$/);
   if (!m || !/blur_\d/.test(m[2])) return null;
   const [, prefix, transform, file] = m;
@@ -85,9 +85,27 @@ for (const name of fs.readdirSync(pagesDir).filter((f) => f.endsWith('.html'))) 
   let img = html.slice(imgAt, imgEnd);
   const srcMatch = img.match(/\ssrc="([^"]+)"/);
   if (!srcMatch) continue;
-  const next = upgradeUrl(srcMatch[1], info);
-  if (!next) continue;
-  img = img.replace(srcMatch[0], ' src="' + next + '"')
+  // Photos ("fill"): responsive renditions, so phones fetch ~480-800px and desktops up to 1600px.
+  // Tiled patterns (pure "crop", shown with object-fit:none) keep one natural-scale crop,
+  // because width descriptors would rescale the pattern.
+  const isPatternCrop = /\/v1\/crop\/[^/]+\/[^/]+$/.test(srcMatch[1]);
+  if (isPatternCrop) {
+    const one = upgradeUrl(srcMatch[1], info, 1600);
+    if (!one) continue;
+    img = img.replace(srcMatch[0], ' src="' + one + '"')
+      .replace(/\sloading="lazy"/, ' loading="eager"')
+      .replace(/\swidth="\d+"/, '').replace(/\sheight="\d+"/, '');
+    if (!/fetchpriority=/.test(img)) img = img.replace('<img', '<img fetchpriority="high"');
+    fs.writeFileSync(file, html.slice(0, imgAt) + img + html.slice(imgEnd), 'utf8');
+    changed += 1;
+    continue;
+  }
+  const widths = [480, 800, 1200, 1600];
+  const variants = widths.map((w) => [w, upgradeUrl(srcMatch[1], info, w)]).filter((v) => v[1]);
+  if (!variants.length) continue;
+  const next = variants.find((v) => v[0] === 800)[1];
+  const srcset = variants.map(([w, url]) => url + ' ' + w + 'w').join(', ');
+  img = img.replace(srcMatch[0], ' src="' + next + '" srcset="' + srcset + '" sizes="100vw"')
     .replace(/\sloading="lazy"/, ' loading="eager"')
     .replace(/\swidth="\d+"/, '').replace(/\sheight="\d+"/, '');
   if (!/fetchpriority=/.test(img)) img = img.replace('<img', '<img fetchpriority="high"');

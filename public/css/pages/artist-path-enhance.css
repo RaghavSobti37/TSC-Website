@@ -70,6 +70,9 @@
     text-decoration: none !important;
     letter-spacing: 0.02em !important;
     line-height: 1.35 !important;
+    box-sizing: border-box !important;
+    max-width: 100% !important;
+    overflow-wrap: anywhere !important;
   }
 
   body[data-page="artist-path"] #comp-mqp9hnbx {

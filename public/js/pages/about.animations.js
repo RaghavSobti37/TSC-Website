@@ -129,6 +129,8 @@
   }
   window.addEventListener('load', scheduleBoots, { once: true });
   window.addEventListener('scroll', requestApply, { passive: true });
+  // <body> can be the scroller; its scroll events only reach a capturing listener.
+  document.addEventListener('scroll', requestApply, { passive: true, capture: true });
   window.addEventListener('resize', requestApply);
 })();
 
@@ -375,5 +377,7 @@
   }
   window.addEventListener('load', scheduleBoots, { once: true });
   window.addEventListener('scroll', requestApply, { passive: true });
+  // <body> can be the scroller; its scroll events only reach a capturing listener.
+  document.addEventListener('scroll', requestApply, { passive: true, capture: true });
   window.addEventListener('resize', refresh);
 })();

@@ -88,10 +88,32 @@
     return offset && offset.offset && typeof offset.offset.value === 'number' ? offset.offset.value / 100 : fallback;
   }
 
+  // A sticky element (or a child of one) stays at the same viewport position while
+  // its track scrolls, so measuring it directly freezes progress. Measure the track
+  // instead, and use layout height because a rotated element can report height 0.
+  function stickyAncestor(element) {
+    var node = element;
+    while (node && node !== document.body) {
+      if (window.getComputedStyle(node).position === 'sticky') return node;
+      node = node.parentElement;
+    }
+    return null;
+  }
+
   function progressFor(element, start, end) {
-    var rect = element.getBoundingClientRect();
     var viewport = window.innerHeight || document.documentElement.clientHeight || 1;
-    var raw = (viewport - rect.top) / Math.max(1, viewport + rect.height);
+    var raw;
+    var sticky = stickyAncestor(element);
+    var track = sticky && sticky.parentElement;
+    if (track) {
+      // Pinned content: 0 when pinning starts, 1 when the track releases it.
+      var stickyTop = parseFloat(window.getComputedStyle(sticky).top) || 0;
+      var travel = Math.max(1, track.offsetHeight - sticky.offsetHeight);
+      raw = (stickyTop - track.getBoundingClientRect().top) / travel;
+    } else {
+      var rect = element.getBoundingClientRect();
+      raw = (viewport - rect.top) / Math.max(1, viewport + (element.offsetHeight || rect.height));
+    }
     var range = Math.max(0.001, end - start);
     return Math.max(0, Math.min(1, (raw - start) / range));
   }

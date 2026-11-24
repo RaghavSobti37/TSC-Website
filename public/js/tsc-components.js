@@ -244,8 +244,13 @@
     };
     document.querySelectorAll('a[href]').forEach(function (anchor) {
       if (anchor.getAttribute('aria-hidden') === 'true') return;
+      // A label we generated earlier goes stale if another script re-points the link.
+      if (anchor.dataset.tscAutoLabelHref && anchor.dataset.tscAutoLabelHref !== anchor.getAttribute('href')) {
+        anchor.removeAttribute('aria-label');
+      }
       var currentName = (anchor.getAttribute('aria-label') || anchor.getAttribute('title') || anchor.textContent || '').trim();
       if (currentName) return;
+      anchor.dataset.tscAutoLabelHref = anchor.getAttribute('href') || '';
       var image = anchor.querySelector('img[alt]');
       var imageAlt = image && (image.getAttribute('alt') || '').trim();
       if (imageAlt) {
@@ -911,6 +916,17 @@
     if (shell.parentNode !== original.parentNode || shell.nextSibling !== original) {
       original.parentNode.insertBefore(shell, original);
     }
+    // The Wix page is a CSS grid with explicit rows; without the original's
+    // placement the new section auto-places into row 1, above the hero.
+    try {
+      var placement = window.getComputedStyle(original);
+      ['gridArea', 'gridRow', 'gridColumn'].forEach(function (prop) {
+        var value = placement[prop];
+        if (value && value !== 'auto / auto / auto / auto' && value !== 'auto') {
+          shell.style[prop] = value;
+        }
+      });
+    } catch (err) {}
     original.setAttribute('aria-hidden', 'true');
     document.body.classList.add('tsc-artist-path-audience-mounted');
   }
@@ -5143,6 +5159,44 @@
     });
   }
 
+  /* Wix buttons that render as <div data-testid="linkElement"> with no href do nothing
+     when clicked. Give each a real destination (by component id, scoped per page). */
+  var DEAD_BUTTON_LINKS = {
+    '/films': {
+      'comp-mqmkrjnm': '/resources',
+      'comp-mqmkth8f': 'mailto:artist@theshakticollective.in'
+    },
+    '/academy': {
+      'comp-mpjxxery4': '/music-production'
+    },
+    '/harshad-duhita': { 'comp-mq7lgwyt': '/book-an-artist?artist=Harshad%20and%20Duhita%20Golesar' },
+    '/mohit-shankar': { 'comp-mq7lgwyt': '/book-an-artist?artist=Mohit%20Shankar' }
+  };
+
+  function repairDeadLinkButtons(path) {
+    var map = DEAD_BUTTON_LINKS[path];
+    if (!map) return;
+    Object.keys(map).forEach(function (compId) {
+      var host = document.getElementById(compId);
+      if (!host) return;
+      var control = host.matches('[data-testid="linkElement"]') ? host : host.querySelector('[data-testid="linkElement"]');
+      if (!control) return;
+      var href = map[compId];
+      if (control.tagName === 'A') {
+        if (control.getAttribute('href') !== href) control.setAttribute('href', href);
+        return;
+      }
+      var anchor = document.createElement('a');
+      Array.prototype.forEach.call(control.attributes, function (attribute) {
+        anchor.setAttribute(attribute.name, attribute.value);
+      });
+      anchor.setAttribute('href', href);
+      anchor.setAttribute('target', '_self');
+      while (control.firstChild) anchor.appendChild(control.firstChild);
+      control.parentNode.replaceChild(anchor, control);
+    });
+  }
+
   function bootUi() {
     if (redirectLegacyLearnHub()) return;
     var path = canonicalPathname();
@@ -5336,8 +5390,12 @@
     wireCourseAccordions();
     watchLinkNormalization();
     ensureSadhuRosterCard();
+    repairDeadLinkButtons(path);
     [0, 400, 1500, 3000, 6000].forEach(function (delay) {
-      window.setTimeout(ensureSadhuRosterCard, delay);
+      window.setTimeout(function () {
+        ensureSadhuRosterCard();
+        repairDeadLinkButtons(path);
+      }, delay);
     });
     [400, 1500, 3000].forEach(function (delay) {
       window.setTimeout(function () {

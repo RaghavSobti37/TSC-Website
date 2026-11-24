@@ -1052,7 +1052,9 @@ footer.site-footer:has(.tsc-mobile-footer) {
     border: 1px solid var(--tsc-cream);
     border-radius: 9px;
     min-height: 38px;
-    padding: 0 17px;
+    /* !important: a generic nav-link reset zeroed this, so the label touched the border. */
+    padding: 0 17px !important;
+    box-sizing: border-box;
   }
 }
 
@@ -3105,6 +3107,18 @@ body.tsc-has-mobile-footer footer section.wixui-footer,
 
 }
 
+/* Academy header: the bordered "MAIN WEBSITE" button had no inner padding, so the
+   label ran into its border. */
+@media (min-width: 1001px) {
+  header a[aria-label="MAIN WEBSITE"] {
+    width: auto !important;
+    min-width: max-content !important;
+    padding: 0 18px !important;
+    box-sizing: border-box !important;
+    justify-content: center !important;
+  }
+}
+
 @media (min-width: 1025px) {
   .tsc-desktop-footer,
   body[data-page] .tsc-desktop-footer {
@@ -3275,6 +3289,13 @@ body.tsc-has-mobile-footer footer section.wixui-footer,
   /* Academy footer: tagline text and subscribe button need contrast */
   .tsc-desktop-footer-academy .tsc-desktop-footer-tagline {
     color: #08525f !important;
+  }
+
+  /* "Start Here" also sits on the cream glow; cream links there were unreadable. */
+  .tsc-desktop-footer-academy .tsc-desktop-footer-group:not(.tsc-desktop-footer-nav .tsc-desktop-footer-group) h3,
+  .tsc-desktop-footer-academy .tsc-desktop-footer-group:not(.tsc-desktop-footer-nav .tsc-desktop-footer-group) a {
+    color: #08525f !important;
+    -webkit-text-fill-color: #08525f !important;
   }
 
   .tsc-desktop-footer-academy .tsc-desktop-footer-newsrow button {

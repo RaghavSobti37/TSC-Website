@@ -22,6 +22,7 @@
     'affiliate-apply': 'affiliate.css',
     'harshad-duhita': 'harshad-duhita.css',
     'mohit-shankar': 'mohit-shankar.css',
+    'sadhu-tiwari': 'sadhu-tiwari.css',
     yugm: 'yugm.css',
     'book-an-artist': 'book-an-artist.css',
     'artist-query': 'artist-query.css',

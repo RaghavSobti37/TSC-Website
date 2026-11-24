@@ -39,7 +39,11 @@
     if (!el || el.__tscStickyBound) return el;
     el.__tscStickyBound = true;
 
-    var lastY = global.scrollY || 0;
+    // Some pages scroll <body> instead of the window, leaving scrollY at 0.
+    function scrollTopNow() {
+      return global.scrollY || (document.scrollingElement && document.scrollingElement.scrollTop) || (document.body && document.body.scrollTop) || 0;
+    }
+    var lastY = scrollTopNow();
     var ticking = false;
 
     function update() {
@@ -50,7 +54,7 @@
         return;
       }
 
-      var y = global.scrollY || 0;
+      var y = scrollTopNow();
       var threshold = global.innerHeight * SCROLL_SHOW_VH;
       var past = y >= threshold;
       var delta = y - lastY;
@@ -77,6 +81,7 @@
     }
 
     global.addEventListener("scroll", onScroll, { passive: true });
+    document.addEventListener("scroll", onScroll, { passive: true, capture: true });
     global.addEventListener("resize", onScroll, { passive: true });
     update();
     return el;

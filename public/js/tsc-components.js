@@ -244,8 +244,13 @@
     };
     document.querySelectorAll('a[href]').forEach(function (anchor) {
       if (anchor.getAttribute('aria-hidden') === 'true') return;
+      // A label we generated earlier goes stale if another script re-points the link.
+      if (anchor.dataset.tscAutoLabelHref && anchor.dataset.tscAutoLabelHref !== anchor.getAttribute('href')) {
+        anchor.removeAttribute('aria-label');
+      }
       var currentName = (anchor.getAttribute('aria-label') || anchor.getAttribute('title') || anchor.textContent || '').trim();
       if (currentName) return;
+      anchor.dataset.tscAutoLabelHref = anchor.getAttribute('href') || '';
       var image = anchor.querySelector('img[alt]');
       var imageAlt = image && (image.getAttribute('alt') || '').trim();
       if (imageAlt) {
@@ -911,6 +916,17 @@
     if (shell.parentNode !== original.parentNode || shell.nextSibling !== original) {
       original.parentNode.insertBefore(shell, original);
     }
+    // The Wix page is a CSS grid with explicit rows; without the original's
+    // placement the new section auto-places into row 1, above the hero.
+    try {
+      var placement = window.getComputedStyle(original);
+      ['gridArea', 'gridRow', 'gridColumn'].forEach(function (prop) {
+        var value = placement[prop];
+        if (value && value !== 'auto / auto / auto / auto' && value !== 'auto') {
+          shell.style[prop] = value;
+        }
+      });
+    } catch (err) {}
     original.setAttribute('aria-hidden', 'true');
     document.body.classList.add('tsc-artist-path-audience-mounted');
   }
@@ -1144,6 +1160,7 @@
     '/artists': true,
     '/harshad-duhita': true,
     '/mohit-shankar': true,
+    '/sadhu-tiwari': true,
     '/yugm': true,
     '/artist-path': true,
     '/book-an-artist': true,
@@ -3362,7 +3379,7 @@
     if (path === '/' || path === '/home') return 'home';
     if (path === '/about') return 'about';
     if (WORK_PATHS[path] || IMPACT_PATHS[path]) return 'work';
-    if (ARTISTS_PATHS[path] || path === '/harshad-duhita' || path === '/mohit-shankar' || path === '/yugm') return 'artists';
+    if (ARTISTS_PATHS[path] || path === '/harshad-duhita' || path === '/mohit-shankar' || path === '/sadhu-tiwari' || path === '/yugm') return 'artists';
     if (FILMS_PATHS[path]) return 'films';
     if (RESOURCES_PATHS[path]) return 'resources';
     if (isAcademyPath(path)) return 'academy';
@@ -5082,6 +5099,104 @@
   ensureStylesheet('/css/tsc-wix-motion.css?v=hero-word-single-1');
   ensureScript('/js/tsc-wix-motion.js?v=motion-replay-all-3');
   ensureScript('/js/tsc-wix-authored-motion.js?v=motion-payload-auto-3');
+  /* Sadhu Tiwari roster card: Wix hydration drops non-model nodes, so clone YUGM's card at runtime. */
+  function ensureSadhuRosterCard() {
+    if (canonicalPathname() !== '/artists') return;
+    if (document.getElementById('comp-sdhtw8rsp')) return;
+    var source = document.getElementById('comp-mqtq8rsp');
+    if (!source || !source.parentNode) return;
+    var card = source.cloneNode(true);
+    card.querySelectorAll('[id]').forEach(function (node) {
+      node.id = node.id.replace('comp-mqtq8r', 'comp-sdhtw8r');
+    });
+    card.id = 'comp-sdhtw8rsp';
+    [card].concat(Array.prototype.slice.call(card.querySelectorAll('[class]'))).forEach(function (node) {
+      if (typeof node.className === 'string' && node.className.indexOf('comp-mqtq8r') !== -1) {
+        node.className = node.className.replace(/comp-mqtq8r/g, 'comp-sdhtw8r');
+      }
+    });
+    card.querySelectorAll('[data-motion-part]').forEach(function (node) {
+      node.setAttribute('data-motion-part', node.getAttribute('data-motion-part').replace(/comp-mqtq8r/g, 'comp-sdhtw8r'));
+    });
+    card.querySelectorAll('a[href]').forEach(function (a) {
+      a.setAttribute('href', '/sadhu-tiwari');
+      a.setAttribute('target', '_self');
+      a.removeAttribute('rel');
+    });
+    var name = card.querySelector('#comp-sdhtw8rt23 p');
+    if (name) name.textContent = 'Sadhu Tiwari';
+    var bio = card.querySelector('#comp-sdhtw8rt44');
+    if (bio) {
+      var paragraphs = bio.querySelectorAll('p');
+      if (paragraphs[0]) paragraphs[0].textContent = 'Singer, composer, lyricist and music director bringing India’s devotional heritage and regional folk soul into contemporary cinema and live performance.';
+      if (paragraphs[1]) paragraphs[1].textContent = 'The voice behind Hanuman Ansh’s “Jab Zid Par Aa Gayi Parvati” and Best Music Director at the Jagran Film Festival Awards 2026.';
+    }
+    var img = card.querySelector('#comp-sdhtw8rsv img');
+    if (img) {
+      img.removeAttribute('srcset');
+      img.setAttribute('src', 'https://i.ytimg.com/vi/Mri6_BCaUpk/maxresdefault.jpg');
+      img.setAttribute('alt', 'Sadhu Tiwari performing live');
+      img.style.objectPosition = '22% 40%';
+      var wow = img.closest('wow-image');
+      if (wow) wow.removeAttribute('data-image-info');
+    }
+    source.parentNode.insertBefore(card, source.nextSibling);
+    // Wix sizes the copy through runtime, id-scoped styles; mirror YUGM's computed type.
+    var sourceText = source.querySelectorAll('p');
+    card.querySelectorAll('p').forEach(function (node, index) {
+      var ref = sourceText[index];
+      if (!ref) return;
+      var cs = window.getComputedStyle(ref);
+      ['fontSize', 'lineHeight', 'fontWeight', 'fontFamily', 'color'].forEach(function (prop) {
+        node.style[prop] = cs[prop];
+      });
+    });
+    // The sliding text panel is as tall as its copy; match YUGM so both cards peek the same amount.
+    ['rsw7', 'rt05'].forEach(function (suffix) {
+      var ref = document.getElementById('comp-mqtq8' + suffix);
+      var mine = document.getElementById('comp-sdhtw8' + suffix);
+      if (ref && mine) mine.style.minHeight = ref.getBoundingClientRect().height + 'px';
+    });
+  }
+
+  /* Wix buttons that render as <div data-testid="linkElement"> with no href do nothing
+     when clicked. Give each a real destination (by component id, scoped per page). */
+  var DEAD_BUTTON_LINKS = {
+    '/films': {
+      'comp-mqmkrjnm': '/resources',
+      'comp-mqmkth8f': 'mailto:artist@theshakticollective.in'
+    },
+    '/academy': {
+      'comp-mpjxxery4': '/music-production'
+    },
+    '/harshad-duhita': { 'comp-mq7lgwyt': '/book-an-artist?artist=Harshad%20and%20Duhita%20Golesar' },
+    '/mohit-shankar': { 'comp-mq7lgwyt': '/book-an-artist?artist=Mohit%20Shankar' }
+  };
+
+  function repairDeadLinkButtons(path) {
+    var map = DEAD_BUTTON_LINKS[path];
+    if (!map) return;
+    Object.keys(map).forEach(function (compId) {
+      var host = document.getElementById(compId);
+      if (!host) return;
+      var control = host.matches('[data-testid="linkElement"]') ? host : host.querySelector('[data-testid="linkElement"]');
+      if (!control) return;
+      var href = map[compId];
+      if (control.tagName === 'A') {
+        if (control.getAttribute('href') !== href) control.setAttribute('href', href);
+        return;
+      }
+      var anchor = document.createElement('a');
+      Array.prototype.forEach.call(control.attributes, function (attribute) {
+        anchor.setAttribute(attribute.name, attribute.value);
+      });
+      anchor.setAttribute('href', href);
+      anchor.setAttribute('target', '_self');
+      while (control.firstChild) anchor.appendChild(control.firstChild);
+      control.parentNode.replaceChild(anchor, control);
+    });
+  }
+
   function bootUi() {
     if (redirectLegacyLearnHub()) return;
     var path = canonicalPathname();
@@ -5274,6 +5389,14 @@
     }
     wireCourseAccordions();
     watchLinkNormalization();
+    ensureSadhuRosterCard();
+    repairDeadLinkButtons(path);
+    [0, 400, 1500, 3000, 6000].forEach(function (delay) {
+      window.setTimeout(function () {
+        ensureSadhuRosterCard();
+        repairDeadLinkButtons(path);
+      }, delay);
+    });
     [400, 1500, 3000].forEach(function (delay) {
       window.setTimeout(function () {
         normalizeInternalProtocolRelativeLinks();

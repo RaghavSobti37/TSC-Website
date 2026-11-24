@@ -39,7 +39,8 @@ window.__pageRevealPromise && window.__pageRevealPromise.then(function() {
       var text = (node.textContent || '').replace(/\s+/g, ' ').trim();
       if (!/coming soon|registrations opening|program starts|7th july|7th august|registrations open till/i.test(text)) return;
       var p = node.querySelector('.wixui-rich-text__text, p, h2') || node;
-      p.textContent = copy;
+      // The small Start / Apply-by cards only fit a short label.
+      p.textContent = /^comp-mqpa7920__/.test(node.id) ? 'Dates TBA' : copy;
       p.classList.add('tsc-coming-soon-badge');
     });
   }
@@ -93,8 +94,13 @@ window.__pageRevealPromise && window.__pageRevealPromise.then(function() {
       ticking = true;
       requestAnimationFrame(scrub);
     }
-    window.addEventListener('scroll', onScroll, { passive: true });
-    window.addEventListener('resize', onScroll);
+    if (!window.__tscFrameworkScrollBound) {
+      window.__tscFrameworkScrollBound = true;
+      window.addEventListener('scroll', onScroll, { passive: true });
+      // On this page <body> is the scroller, and its scroll events never reach window.
+      document.addEventListener('scroll', onScroll, { passive: true, capture: true });
+      window.addEventListener('resize', onScroll);
+    }
     scrub();
   }
 

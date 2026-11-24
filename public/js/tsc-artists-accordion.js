@@ -17,6 +17,19 @@
       bio: 'comp-mqtq8rt44',
       btn: 'comp-mqtq8rt66',
       href: '/yugm'
+    },
+    {
+      root: 'comp-sdhtw8rsp',
+      img: 'comp-sdhtw8rsv',
+      name: 'comp-sdhtw8rt23',
+      bio: 'comp-sdhtw8rt44',
+      btn: 'comp-sdhtw8rt66',
+      href: '/sadhu-tiwari',
+      // Card is added at runtime (tsc-components.js), so it may not exist yet when this mounts.
+      fallbackName: 'Sadhu Tiwari',
+      fallbackBio: 'Singer, composer, lyricist and music director bringing India’s devotional heritage and regional folk soul into contemporary cinema and live performance.',
+      fallbackSrc: 'https://i.ytimg.com/vi/Mri6_BCaUpk/maxresdefault.jpg',
+      fallbackAlt: 'Sadhu Tiwari performing live'
     }
   ];
 
@@ -71,8 +84,9 @@
   function collectArtists() {
     return CARD_SPECS.map(function (spec, index) {
       var img = imgOf(spec.img);
-      var name = textOf(spec.name) || 'Artist ' + (index + 1);
-      var bio = shortBio(textOf(spec.bio));
+      if (!img.src && spec.fallbackSrc) img = { src: spec.fallbackSrc, alt: spec.fallbackAlt || '' };
+      var name = textOf(spec.name) || spec.fallbackName || 'Artist ' + (index + 1);
+      var bio = shortBio(textOf(spec.bio) || spec.fallbackBio || '');
       var href = hrefOf(spec);
       return {
         id: 'tsc-artist-' + index,

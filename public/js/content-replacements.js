@@ -2171,7 +2171,8 @@
   var ARTIST_ROSTER_HREFS = {
     'comp-mqtpn27z': '/harshad-duhita',
     'comp-mqtq8rt66': '/yugm',
-    'comp-mqutenqm': '/mohit-shankar'
+    'comp-mqutenqm': '/mohit-shankar',
+    'comp-sdhtw8rt66': '/sadhu-tiwari'
   };
 
   function repairArtistsRosterLinks() {
@@ -2195,6 +2196,7 @@
       if (/harshad|duhita/i.test(name)) href = '/harshad-duhita';
       else if (/yugm/i.test(name)) href = '/yugm';
       else if (/mohit|artist 3/i.test(name)) href = '/mohit-shankar';
+      else if (/sadhu/i.test(name)) href = '/sadhu-tiwari';
       if (!href) return;
       var cta = card.querySelector('.tsc-artist-acc__cta');
       if (cta) {

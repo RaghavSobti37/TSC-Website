@@ -14,6 +14,7 @@ const subpages = [
   { title: 'The Young Gunns', route: '/young-gunns', aliases: ['/work0', '/work/young-gunns'] },
   { title: 'Harshad Duhita', route: '/harshad-duhita', aliases: ['/blank-10', '/artists/harshad-duhita'] },
   { title: 'Mohit Shankar', route: '/mohit-shankar', aliases: ['/artists/mohit-shankar'] },
+  { title: 'Sadhu Tiwari', route: '/sadhu-tiwari', aliases: ['/artists/sadhu-tiwari'] },
   { title: 'Roots of Hindustani Classical', route: '/roots-of-hindustani-classical', aliases: ['/blank-9-1', '/about-9-1', '/academy/roots-of-hindustani-classical'] },
   { title: 'The HeART of Composition', route: '/the-heart-of-composition', aliases: ['/blank-9', '/about-9', '/academy/the-heart-of-composition'] },
   { title: 'A-Z of Music Production', route: '/music-production', aliases: ['/academy/music-production', '/courses/music-production'] },
@@ -99,13 +100,15 @@ function canonicalizeAliasLinks(text) {
 }
 
 function rewriteLinks(html) {
+  // Each pattern must stay inside one <a>…</a>; a lazy [\s\S]*? used to run on into
+  // later links and re-point nav "TSC Artists" links to /book-an-artist.
   html = canonicalizeAliasLinks(html);
   html = html.replace(
-    /(<a\b(?=[^>]*href=["']\/artists["'])[^>]*\bhref=)(["'])\/artists\2([^>]*>[\s\S]*?Book an Artist[\s\S]*?<\/a>)/gi,
+    /(<a\b(?=[^>]*href=["']\/artists["'])[^>]*\bhref=)(["'])\/artists\2([^>]*>(?:(?!<\/a>)[\s\S])*?Book an Artist(?:(?!<\/a>)[\s\S])*?<\/a>)/gi,
     '$1$2/book-an-artist$2$3'
   );
   html = html.replace(
-    /(<a\b(?=[^>]*href=["']\/book-an-artist["'])[^>]*\bhref=)(["'])\/book-an-artist\2([^>]*>[\s\S]*?(?:Book an Artist|Partner With Us)[\s\S]*?<\/a>)/gi,
+    /(<a\b(?=[^>]*href=["']\/book-an-artist["'])[^>]*\bhref=)(["'])\/book-an-artist\2([^>]*>(?:(?!<\/a>)[\s\S])*?(?:Book an Artist|Partner With Us)(?:(?!<\/a>)[\s\S])*?<\/a>)/gi,
     '$1$2/book-an-artist$2$3'
   );
   return html;

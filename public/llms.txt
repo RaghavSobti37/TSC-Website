@@ -32,6 +32,7 @@ Full corpus for LLMs: [llms-full.txt](https://theshakticollective.in/llms-full.t
 
 - [Harshad Duhita](https://theshakticollective.in/harshad-duhita): TSC artist profile
 - [Mohit Shankar](https://theshakticollective.in/mohit-shankar): TSC artist profile
+- [Sadhu Tiwari](https://theshakticollective.in/sadhu-tiwari): TSC artist profile (singer, composer, lyricist, music director; Hanuman Ansh)
 - [YUGM](https://theshakticollective.in/yugm): TSC artist profile
 
 ## Films & stories

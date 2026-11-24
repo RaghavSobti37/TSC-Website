@@ -296,6 +296,18 @@
       "destination": "/pages/mohit-shankar.html"
     },
     {
+      "source": "/sadhu-tiwari",
+      "destination": "/pages/sadhu-tiwari.html"
+    },
+    {
+      "source": "/artists/sadhu-tiwari",
+      "destination": "/pages/sadhu-tiwari.html"
+    },
+    {
+      "source": "/links/sadhu-tiwari",
+      "destination": "/links/sadhu-tiwari.html"
+    },
+    {
       "source": "/mahavatar-narsimha-impact",
       "destination": "/pages/mahavatar-narsimha-impact.html"
     },

@@ -20,6 +20,7 @@ const NESTED_ALIASES = [
   { alias: '/work/mba', route: '/mba' },
   { alias: '/artists/harshad-duhita', route: '/harshad-duhita' },
   { alias: '/artists/mohit-shankar', route: '/mohit-shankar' },
+  { alias: '/artists/sadhu-tiwari', route: '/sadhu-tiwari' },
   { alias: '/artists/yugm', route: '/yugm' },
   { alias: '/artists/artist-path', route: '/artist-path' },
   { alias: '/films/mahavatar-narsimha', route: '/mahavatar-narsimha' },
@@ -128,6 +129,14 @@ const SITE_NODES = [
     pageFile: 'mohit-shankar.html',
     section: 'artists',
     aliases: ['/artists/mohit-shankar'],
+  },
+  {
+    sitePath: 'artists/roster/sadhu-tiwari',
+    title: 'Sadhu Tiwari',
+    canonicalRoute: '/sadhu-tiwari',
+    pageFile: 'sadhu-tiwari.html',
+    section: 'artists',
+    aliases: ['/artists/sadhu-tiwari'],
   },
   {
     sitePath: 'artists/roster/yugm',

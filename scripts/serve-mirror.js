@@ -48,6 +48,7 @@ const pageRoutes = new Map([
   ['/resources', '/pages/resources.html'],
   ['/academy', '/pages/academy.html'],
   ['/affiliate', '/pages/affiliate.html'],
+  ['/links/sadhu-tiwari', '/links/sadhu-tiwari.html'],
 ]);
 
 const routeManifestPath = path.join(publicDir, 'pages', 'routes.manifest.json');

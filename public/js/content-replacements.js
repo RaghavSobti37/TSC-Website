@@ -1322,7 +1322,7 @@
       navLinks.map(function (item) {
         var href = item[0];
         var active = href === activePath ||
-          (!academyMode && href === '/artists' && (activePath === '/artist-path' || activePath === '/harshad-duhita' || activePath === '/yugm')) ||
+          (!academyMode && href === '/artists' && (activePath === '/artist-path' || activePath === '/harshad-duhita' || activePath === '/sadhu-tiwari' || activePath === '/yugm')) ||
           (!academyMode && href === '/work' && (activePath === '/mba' || activePath === '/havells-myousic' || activePath === '/insta-music-league' || activePath === '/young-gunns')) ||
           (academyMode && href === '/academy' && (activePath === '/academy' || activePath === '/learn-with-tsc')) ||
           (academyMode && href === '/resources' && activePath === '/resources');
@@ -2072,7 +2072,7 @@
 
   function repairArtistPages() {
     var path = normalizedPath();
-    if (path !== '/harshad-duhita' && path !== '/mohit-shankar' && path !== '/yugm') return;
+    if (path !== '/harshad-duhita' && path !== '/mohit-shankar' && path !== '/sadhu-tiwari' && path !== '/yugm') return;
 
     var main = document.querySelector('main');
     if (!main) return;
@@ -2106,6 +2106,12 @@
         description: 'An independent singer, composer and live performer building intimate, contemporary Indian music with heartfelt songwriting and stage-ready storytelling.',
         badge: 'TSC Artist',
         artistQuery: '/query?artist=Mohit%20Shankar'
+      },
+      '/sadhu-tiwari': {
+        title: 'Sadhu Tiwari',
+        description: 'Bringing India’s devotional heritage and regional folk soul into contemporary cinema and live performance.',
+        badge: 'Best Music Director - Jagran Film Festival Awards 2026',
+        artistQuery: '/book-an-artist?artist=Sadhu%20Tiwari'
       },
       '/yugm': {
         title: 'YUGM',

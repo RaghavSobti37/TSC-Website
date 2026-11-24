@@ -40,6 +40,7 @@
     '/start-making-music': 'thunderbolt-features--19f989_a451290c3da98b8d15fd3b35a8549bba_1302.json--desktop--f145183b.bundle.min.json',
     '/the-heart-of-composition': 'thunderbolt-features--19f989_ecc6d2e2b7a3a7e5fd966f757c8d0099_1301.json--desktop--f145183b.bundle.min.json',
     '/work': 'thunderbolt-features--19f989_a89e6d8c684584a5a5841afdb9e1d6eb_1316.json--desktop--f145183b.bundle.min.json',
+    '/sadhu-tiwari': 'thunderbolt-features--19f989_5ad7b1a0c0de4e3a9b1e5ad7b1a0c0de_1362.json--desktop--f145183b.bundle.min.json',
     '/yugm': 'thunderbolt-features--19f989_dc1d76e58ecbad2de8aa4285466030bb_1362.json--desktop--f145183b.bundle.min.json'
   };
 

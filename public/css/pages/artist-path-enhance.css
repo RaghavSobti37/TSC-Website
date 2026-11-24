@@ -154,6 +154,46 @@
     opacity: 1 !important;
     transform: none !important;
   }
+
+  /* Final Thoughts CTA: Wix stacks these in one grid cell with fixed top margins,
+     so on narrow screens the stretched button covered the tagline. Stack them. */
+  body[data-page="artist-path"] #comp-mqrx4fri {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 18px !important;
+    height: auto !important;
+    padding: 20px 18px 24px !important;
+    box-sizing: border-box !important;
+  }
+  body[data-page="artist-path"] #comp-mqrx93g5 p,
+  body[data-page="artist-path"] #comp-mqrx93g5 span {
+    color: rgba(255, 236, 209, 0.88) !important;
+  }
+  body[data-page="artist-path"] #comp-mqrx4fri > [id^="comp-"] {
+    margin: 0 !important;
+    position: relative !important;
+    inset: auto !important;
+    transform: none !important;
+  }
+  body[data-page="artist-path"] #comp-mqrx4fri > #comp-mqrx93g5 { order: 1; }
+  body[data-page="artist-path"] #comp-mqrx4fri > #comp-mqrx9ta2 { order: 2; }
+  body[data-page="artist-path"] #comp-mqrx4fri > #comp-mqrxb60j {
+    order: 3;
+    height: auto !important;
+    min-height: 52px !important;
+    max-height: 60px !important;
+    padding: 0 24px !important;
+    box-sizing: border-box !important;
+    align-self: center !important;
+    width: min(100%, 280px) !important;
+  }
+  body[data-page="artist-path"] #comp-mqrx4fri > #comp-mqrxadf6 { order: 4; }
+  body[data-page="artist-path"] #comp-mqrtsm7a,
+  body[data-page="artist-path"] #comp-mqrtsm7a > [data-testid="responsive-container-content"] {
+    height: auto !important;
+    min-height: 0 !important;
+  }
 }
 
 /* Desktop too: benefits scroll + framework scrub */

@@ -85,21 +85,10 @@ for (const name of fs.readdirSync(pagesDir).filter((f) => f.endsWith('.html'))) 
   let img = html.slice(imgAt, imgEnd);
   const srcMatch = img.match(/\ssrc="([^"]+)"/);
   if (!srcMatch) continue;
-  // Photos ("fill"): responsive renditions, so phones fetch ~480-800px and desktops up to 1600px.
-  // Tiled patterns (pure "crop", shown with object-fit:none) keep one natural-scale crop,
-  // because width descriptors would rescale the pattern.
-  const isPatternCrop = /\/v1\/crop\/[^/]+\/[^/]+$/.test(srcMatch[1]);
-  if (isPatternCrop) {
-    const one = upgradeUrl(srcMatch[1], info, 1600);
-    if (!one) continue;
-    img = img.replace(srcMatch[0], ' src="' + one + '"')
-      .replace(/\sloading="lazy"/, ' loading="eager"')
-      .replace(/\swidth="\d+"/, '').replace(/\sheight="\d+"/, '');
-    if (!/fetchpriority=/.test(img)) img = img.replace('<img', '<img fetchpriority="high"');
-    fs.writeFileSync(file, html.slice(0, imgAt) + img + html.slice(imgEnd), 'utf8');
-    changed += 1;
-    continue;
-  }
+  // Photos ("fill") only: responsive renditions, so phones fetch ~480-800px and desktops
+  // up to 1600px. Tiled pattern backgrounds (pure "crop", object-fit:none) are left to Wix:
+  // a larger crop measurably added ~250KB without improving paint times.
+  if (/\/v1\/crop\/[^/]+\/[^/]+$/.test(srcMatch[1])) continue;
   const widths = [480, 800, 1200, 1600];
   const variants = widths.map((w) => [w, upgradeUrl(srcMatch[1], info, w)]).filter((v) => v[1]);
   if (!variants.length) continue;

@@ -5141,6 +5141,22 @@
       if (wow) wow.removeAttribute('data-image-info');
     }
     source.parentNode.insertBefore(card, source.nextSibling);
+    // Wix slides YUGM's text panel up on hover by adding a variant class from its own
+    // runtime, which never sees this clone. The matching CSS for the clone's panel is
+    // already in the page, so toggle the same class here.
+    var hoverPanel = document.getElementById('comp-sdhtw8rsw7');
+    if (hoverPanel) {
+      hoverPanel.classList.remove('variants-mqtq8rsx');
+      var raise = function () { hoverPanel.classList.add('variants-mqtq8rsx'); };
+      var lower = function () {
+        if (card.matches(':hover') || card.contains(document.activeElement)) return;
+        hoverPanel.classList.remove('variants-mqtq8rsx');
+      };
+      card.addEventListener('mouseenter', raise);
+      card.addEventListener('mouseleave', lower);
+      card.addEventListener('focusin', raise);
+      card.addEventListener('focusout', function () { window.setTimeout(lower, 0); });
+    }
     // Wix sizes the copy through runtime, id-scoped styles; mirror YUGM's computed type.
     var sourceText = source.querySelectorAll('p');
     card.querySelectorAll('p').forEach(function (node, index) {

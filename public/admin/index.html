@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Newsletter Admin | TSC</title>
+  <link rel="icon" href="/assets/brand/tsc-favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="stylesheet" href="/admin/admin.css?v=3">
+  <script src="/admin/admin.js?v=1" defer></script>
+</head>
+<body>
+  <header class="bar">
+    <div class="bar__inner">
+      <a class="brand" href="/" aria-label="The Shakti Collective home"><img src="/assets/brand/tsc-favicon-32.png" alt="" width="28" height="28"> The Shakti Collective</a>
+      <button class="btn btn--ghost" id="logout" type="button" hidden>Sign out</button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="login" id="login-view" hidden aria-labelledby="login-title">
+      <h1 id="login-title">Newsletter admin</h1>
+      <p class="muted">Sign in to see and export subscribers.</p>
+      <form id="login-form" class="login__form" novalidate>
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password" autocomplete="current-password" required>
+        <button class="btn btn--primary" type="submit">Sign in</button>
+        <p class="error" id="login-error" role="alert" hidden></p>
+      </form>
+    </section>
+
+    <section id="setup-view" class="login" hidden>
+      <h1>Admin access is not set up</h1>
+      <p class="muted">Add <code>ADMIN_PASSWORD_HASH</code> and <code>ADMIN_SESSION_SECRET</code> to the site's environment variables, then reload.</p>
+    </section>
+
+    <section id="app-view" hidden aria-labelledby="app-title">
+      <div class="head">
+        <h1 id="app-title">Newsletter subscribers</h1>
+        <a class="btn btn--primary" id="export" href="/api/admin/subscribers?format=csv">Export CSV</a>
+      </div>
+
+      <dl class="stats">
+        <div class="stat"><dt>Total</dt><dd id="stat-total">–</dd></div>
+        <div class="stat"><dt>Subscribed</dt><dd id="stat-active">–</dd></div>
+        <div class="stat"><dt>Unsubscribed</dt><dd id="stat-unsub">–</dd></div>
+        <div class="stat"><dt>Joined in last 30 days</dt><dd id="stat-30">–</dd></div>
+      </dl>
+
+      <form class="filters" id="filters" role="search">
+        <label class="sr-only" for="q">Search</label>
+        <input id="q" type="search" placeholder="Search email, name or source" autocomplete="off">
+        <label class="sr-only" for="status">Status</label>
+        <select id="status">
+          <option value="all">All</option>
+          <option value="subscribed">Subscribed</option>
+          <option value="unsubscribed">Unsubscribed</option>
+        </select>
+      </form>
+
+      <p class="error" id="app-error" role="alert" hidden></p>
+
+      <div class="table-wrap">
+        <table>
+          <caption class="sr-only">Newsletter subscribers</caption>
+          <thead>
+            <tr><th scope="col">Email</th><th scope="col">Source</th><th scope="col">Joined</th><th scope="col">Status</th><th scope="col"><span class="sr-only">Actions</span></th></tr>
+          </thead>
+          <tbody id="rows"></tbody>
+        </table>
+        <p class="muted empty" id="empty" hidden>No subscribers match.</p>
+      </div>
+
+      <nav class="pager" aria-label="Pages">
+        <button class="btn btn--ghost" id="prev" type="button">Previous</button>
+        <span id="page-info" class="muted"></span>
+        <button class="btn btn--ghost" id="next" type="button">Next</button>
+      </nav>
+    </section>
+  </main>
+</body>
+</html>

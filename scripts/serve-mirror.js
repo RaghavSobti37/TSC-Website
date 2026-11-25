@@ -14,6 +14,10 @@ const apiRoutes = new Map([
   ['/api/newsletter', '../api/newsletter.js'],
   ['/api/reviews', '../api/reviews.js'],
   ['/api/reviews02', '../api/reviews02.js'],
+  ['/api/admin/login', '../api/admin/login.js'],
+  ['/api/admin/logout', '../api/admin/logout.js'],
+  ['/api/admin/session', '../api/admin/session.js'],
+  ['/api/admin/subscribers', '../api/admin/subscribers.js'],
 ]);
 
 function loadLocalEnv() {
@@ -49,6 +53,7 @@ const pageRoutes = new Map([
   ['/academy', '/pages/academy.html'],
   ['/affiliate', '/pages/affiliate.html'],
   ['/links/sadhu-tiwari', '/links/sadhu-tiwari.html'],
+  ['/admin', '/admin/index.html'],
 ]);
 
 const routeManifestPath = path.join(publicDir, 'pages', 'routes.manifest.json');

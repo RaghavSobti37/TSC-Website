@@ -4,7 +4,7 @@ const {
   readJsonBody,
   sendJson,
 } = require('./_lib/taskmaster.cjs');
-const store = require('./_lib/newsletterStore.cjs');
+const db = require('./_lib/newsletterDb.cjs');
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 // Taskmaster only sends the confirmation email / CRM contact now; never let it
@@ -47,18 +47,18 @@ module.exports = async function newsletter(req, res) {
     }
     const source = String(body.source || 'tsc-footer').slice(0, 80);
 
-    if (store.isConfigured()) {
-      // Primary record: the newsletter sheet.
-      const result = await store.addSubscribers([{ email, source, sourceSite: 'tsc-website', subscribedAt: new Date().toISOString() }]);
+    if (db.isConfigured()) {
+      // Primary record: the subscribers collection in MongoDB.
+      const result = await db.subscribe({ email, source, sourceSite: 'tsc-website' });
       const notified = await notifyTaskmaster(email, source);
       if (!notified.ok) console.warn('[newsletter] Taskmaster notify failed', notified.status || '', notified.timedOut ? 'timeout' : '');
       return sendJson(res, 200, {
         success: true,
-        message: result.added ? 'Welcome to the TSC Family!' : "You're already on the list. Thank you!",
+        message: result.created || result.reactivated ? 'Welcome to the TSC Family!' : "You're already on the list. Thank you!",
       });
     }
 
-    // Not configured yet (no Google env): fall back to the original Taskmaster-only path.
+    // Not configured yet (no NEWSLETTER_MONGODB_URI): fall back to the original Taskmaster-only path.
     const { ok, status, body: tm } = await forwardToTaskmaster({
       url: resolveWebhookUrl('TASKMASTER_NEWSLETTER_WEBHOOK_URL', '/api/webhooks/newsletter'),
       secret: process.env.NEWSLETTER_WEBHOOK_SECRET,

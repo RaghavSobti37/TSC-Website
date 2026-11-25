@@ -23,18 +23,18 @@ window.__pageRevealPromise && window.__pageRevealPromise.then(function() {
   var IMAGES = {
     'img-comp-mqhqa6y01': [Y + 'Mri6_BCaUpk/maxresdefault.jpg', '22% 30%'],
     'comp-mqji4hyt_img': [Y + 'fOQ_4x9Gmok/hqdefault.jpg', '50% 40%'],
-    'img-comp-mqhqa7052': [Y + 'Mri6_BCaUpk/maxresdefault.jpg', '25% 35%'],
+    'img-comp-mqhqa7052': [Y + 'xpUh21LdPuI/hqdefault.jpg', '50% 50%'],
     'img-comp-mqhqa707': [Y + 'fOQ_4x9Gmok/hqdefault.jpg', '50% 40%'],
     'img-comp-mqhqa70z5': [Y + 'Q4SQb0iSVas/maxresdefault.jpg', '70% 40%'],
-    'img-comp-mqjlrudj': [Y + 'hjCrwtJzf3M/hqdefault.jpg', '50% 50%'],
-    'img-comp-mqjjks9s': [Y + 'hjCrwtJzf3M/maxresdefault.jpg', '20% 40%'],
-    'img-comp-mqjimmpk': [Y + 'Mri6_BCaUpk/maxresdefault.jpg', '20% 35%'],
-    'img-comp-mqhqa73t2__item1': [Y + 'Q4SQb0iSVas/hqdefault.jpg', '70% 50%'],
+    'img-comp-mqjlrudj': [Y + 'Mri6_BCaUpk/maxresdefault.jpg', '25% 35%'],
+    'img-comp-mqjjks9s': [Y + 'Mri6_BCaUpk/maxresdefault.jpg', '20% 35%'],
+    'img-comp-mqjimmpk': [Y + 'Q4SQb0iSVas/maxresdefault.jpg', '70% 40%'],
+    'img-comp-mqhqa73t2__item1': [Y + 'rjfxLq3OQ0w/hqdefault.jpg', '50% 50%'],
     'img-comp-mqhqa73t2__item-j9ples3e': [Y + 'xpUh21LdPuI/hqdefault.jpg', '50% 50%'],
     'img-comp-mqhqa73t2__item-j9plerjk': [Y + 'Mri6_BCaUpk/hqdefault.jpg', '22% 50%'],
-    'img-comp-mqi6gg5o2__item1': [Y + 'LGErAK9-v0I/hqdefault.jpg', '50% 50%'],
+    'img-comp-mqi6gg5o2__item1': [Y + 'irbvn45c7wU/hqdefault.jpg', '50% 50%'],
     'img-comp-mqi6gg5o2__item-j9ples3e': [Y + 'hzZemQVdTJw/hqdefault.jpg', '50% 50%'],
-    'img-comp-mqi6gg5o2__item-j9plerjk': [Y + 'fOQ_4x9Gmok/hqdefault.jpg', '50% 40%']
+    'img-comp-mqi6gg5o2__item-j9plerjk': [Y + 'Mri6_BCaUpk/hqdefault.jpg', '22% 50%']
   };
   var VIDEO_BOX = 'comp-mqji4hyt';
   var EMBED = 'https://www.youtube-nocookie.com/embed/fOQ_4x9Gmok?rel=0&playsinline=1';
@@ -77,10 +77,10 @@ window.__pageRevealPromise && window.__pageRevealPromise.then(function() {
     box.querySelectorAll('[aria-label*="Play video"]').forEach(function (n) { n.setAttribute('aria-label', 'Sadhu Tiwari award video'); });
   }
 
-  // Connect buttons reuse YUGM's Instagram/Facebook slots; show a music icon instead.
+  // The Apple Music button reuses YUGM's Facebook slot; show a music icon instead.
   var NOTE_PATH = 'M19 3v12.5a3 3 0 1 1-2-2.8V8.2l-8 1.8v7.5a3 3 0 1 1-2-2.8V6l12-3Z';
   function applyIcons() {
-    ['comp-mqhqa75f', 'comp-mqhqa75r'].forEach(function (id) {
+    ['comp-mqhqa75r'].forEach(function (id) {
       var host = document.getElementById(id);
       var svg = host && host.querySelector('svg');
       if (!svg || svg.getAttribute('data-tsc-note') === '1') return;

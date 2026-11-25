@@ -1,0 +1,81 @@
+:root {
+  --cream: #FFECD1;
+  --paper: #FFF8EE;
+  --teal: #083D3A;
+  --teal-2: #126D5E;
+  --terracotta: #B74B02;
+  --ink: #241815;
+  --muted: #6B5A50;
+  --line: rgba(36, 24, 21, 0.14);
+  --danger: #9B1C1C;
+  --radius: 14px;
+  --font: "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body { background: var(--paper); color: var(--ink); font: 16px/1.5 var(--font); }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--terracotta); outline-offset: 2px; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+[hidden] { display: none !important; }
+
+.bar { background: var(--teal); color: var(--cream); }
+.bar__inner { max-width: 1120px; margin: 0 auto; padding: 12px 16px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.brand { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 600; }
+
+main { max-width: 1120px; margin: 0 auto; padding: 32px 16px 64px; }
+h1 { font-size: clamp(24px, 3vw, 32px); line-height: 1.15; margin: 0 0 8px; color: var(--teal); }
+.muted { color: var(--muted); margin: 0; }
+code { background: var(--cream); padding: 1px 6px; border-radius: 6px; }
+
+.btn { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 0 18px; border-radius: 999px; border: 1.5px solid transparent; font: 600 15px/1 var(--font); text-decoration: none; cursor: pointer; }
+.btn--primary { background: var(--terracotta); color: #fff; }
+.btn--primary:hover { background: #963D02; }
+.btn--ghost { background: transparent; border-color: currentColor; color: inherit; }
+.btn:disabled { opacity: 0.45; cursor: default; }
+
+.login { max-width: 420px; margin: 8vh auto 0; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 28px; }
+.login__form { display: grid; gap: 10px; margin-top: 20px; }
+label { font-weight: 600; font-size: 14px; }
+input, select { min-height: 44px; padding: 0 12px; border: 1.5px solid var(--line); border-radius: 10px; font: 16px var(--font); background: #fff; color: var(--ink); }
+input:focus-visible, select:focus-visible { border-color: var(--terracotta); }
+.error { color: var(--danger); margin: 4px 0 0; }
+
+.head { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 20px; }
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; margin: 0 0 20px; }
+.stat { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 14px 16px; }
+.stat dt { color: var(--muted); font-size: 14px; }
+.stat dd { margin: 4px 0 0; font-size: 28px; font-weight: 700; color: var(--teal); font-variant-numeric: tabular-nums; }
+
+.filters { display: grid; grid-template-columns: 1fr auto; gap: 10px; margin-bottom: 14px; }
+.table-wrap { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 15px; }
+th, td { text-align: left; padding: 12px 14px; border-bottom: 1px solid var(--line); vertical-align: middle; }
+th { font-size: 13px; color: var(--muted); font-weight: 600; background: var(--paper); }
+tr:last-child td { border-bottom: 0; }
+td.email { font-weight: 600; word-break: break-all; }
+td.when { white-space: nowrap; font-variant-numeric: tabular-nums; }
+.pill { display: inline-block; padding: 2px 10px; border-radius: 999px; font-size: 13px; font-weight: 600; }
+.pill--on { background: rgba(18, 109, 94, 0.12); color: var(--teal-2); }
+.pill--off { background: rgba(155, 28, 28, 0.1); color: var(--danger); }
+.row-btn { min-height: 36px; padding: 0 12px; font-size: 13px; }
+.empty { padding: 24px; text-align: center; }
+.pager { display: flex; align-items: center; justify-content: center; gap: 14px; margin-top: 16px; }
+
+@media (max-width: 640px) {
+  .filters { grid-template-columns: 1fr; }
+  /* Rows become stacked cards: the email gets the full width. */
+  thead { display: none; }
+  table, tbody, tr, td { display: block; }
+  tr { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 6px 12px; padding: 14px 16px; border-bottom: 1px solid var(--line); }
+  tr:last-child { border-bottom: 0; }
+  td { border: 0; padding: 0; }
+  td.email { grid-column: 1 / -1; font-size: 15px; }
+  td:nth-child(2), td.when { color: var(--muted); font-size: 14px; }
+  td.when { text-align: right; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}

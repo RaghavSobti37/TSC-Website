@@ -303,7 +303,7 @@
   }
 
   function mountYugmBandCardToggles(path) {
-    if (path !== '/yugm') return;
+    if (path !== '/yugm' && path !== '/sadhu-tiwari') return;
     if (window.__tscYugmBandTogglesBound) return;
     var cards = [
       {
@@ -370,7 +370,7 @@
   }
 
   function mountYugmHeroMedia(path) {
-    if (path !== '/yugm') return;
+    if (path !== '/yugm' && path !== '/sadhu-tiwari') return;
     function rewriteUrl(value) {
       return String(value || '')
         .replace(/^https?:\/\/[^/]+\/assets\/mirror\/static\.wixstatic\.com/i, 'https://static.wixstatic.com')
@@ -394,8 +394,10 @@
   }
 
   function mountYugmIplYearFix(path) {
-    if (path !== '/yugm') return;
-    var timelineYears = [
+    if (path !== '/yugm' && path !== '/sadhu-tiwari') return;
+    // The year corrections below are YUGM's own; the Sadhu page (same template) only
+    // shares the desktop timeline layout further down.
+    var timelineYears = path !== '/yugm' ? [] : [
       ['#comp-mqhqa70a .wixui-rich-text__text', '2025'],
       ['#comp-mqhqa70h3 .wixui-rich-text__text', '2023']
     ];
@@ -405,7 +407,7 @@
         year.textContent = item[1];
       }
     });
-    document.querySelectorAll('#comp-mqhqa7081 .wixui-rich-text__text, #comp-mqhqa70f5 .wixui-rich-text__text').forEach(function (node) {
+    if (path === '/yugm') document.querySelectorAll('#comp-mqhqa7081 .wixui-rich-text__text, #comp-mqhqa70f5 .wixui-rich-text__text').forEach(function (node) {
       if (/^\s*(?:2024|2026)\s*$/.test(node.textContent || '')) {
         var title = node.parentElement && node.parentElement.parentElement && node.parentElement.parentElement.textContent || '';
         if (/IPL 2025/i.test(title)) node.textContent = '2025';
@@ -1401,6 +1403,7 @@
       'online-music-course-worth-it': 'blog-2',
       'artist-release-playbook': 'blog-3',
       'mohit-shankar': 'harshad-duhita',
+      'sadhu-tiwari': 'yugm',
       'impact-report': 'mba-impact'
     };
     return dataPageAlias[base] || base;

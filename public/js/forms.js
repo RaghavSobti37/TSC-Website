@@ -40,7 +40,6 @@
       'Other'
     ],
     talent: [
-      'Harshad and Duhita Golesar',
       'YUGM',
       'Sadhu Tiwari',
       'Open to Recommendations'
@@ -178,7 +177,6 @@
   function normalizeArtistNameParam(value) {
     var raw = String(value || '').trim().toLowerCase();
     if (!raw) return '';
-    if (/harshad|duhita/.test(raw)) return 'Harshad and Duhita Golesar';
     if (/yugm/.test(raw)) return 'YUGM';
     if (/sadhu|tiwari/.test(raw)) return 'Sadhu Tiwari';
     if (/open/.test(raw) && /recommend/.test(raw)) return 'Open to Recommendations';

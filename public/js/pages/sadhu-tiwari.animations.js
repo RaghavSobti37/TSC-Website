@@ -22,19 +22,19 @@ window.__pageRevealPromise && window.__pageRevealPromise.then(function() {
   var Y = 'https://i.ytimg.com/vi/';
   var IMAGES = {
     'img-comp-mqhqa6y01': [Y + 'Mri6_BCaUpk/maxresdefault.jpg', '22% 30%'],
-    'comp-mqji4hyt_img': [Y + 'fOQ_4x9Gmok/hqdefault.jpg', '50% 40%'],
-    'img-comp-mqhqa7052': [Y + 'xpUh21LdPuI/hqdefault.jpg', '50% 50%'],
-    'img-comp-mqhqa707': [Y + 'fOQ_4x9Gmok/hqdefault.jpg', '50% 40%'],
+    'comp-mqji4hyt_img': [Y + 'fOQ_4x9Gmok/maxresdefault.jpg', '50% 40%'],
+    'img-comp-mqhqa7052': [Y + 'xpUh21LdPuI/maxresdefault.jpg', '50% 50%'],
+    'img-comp-mqhqa707': [Y + 'fOQ_4x9Gmok/maxresdefault.jpg', '50% 40%'],
     'img-comp-mqhqa70z5': [Y + 'Q4SQb0iSVas/maxresdefault.jpg', '70% 40%'],
     'img-comp-mqjlrudj': [Y + 'Mri6_BCaUpk/maxresdefault.jpg', '25% 35%'],
     'img-comp-mqjjks9s': [Y + 'Mri6_BCaUpk/maxresdefault.jpg', '20% 35%'],
     'img-comp-mqjimmpk': [Y + 'Q4SQb0iSVas/maxresdefault.jpg', '70% 40%'],
-    'img-comp-mqhqa73t2__item1': [Y + 'rjfxLq3OQ0w/hqdefault.jpg', '50% 50%'],
-    'img-comp-mqhqa73t2__item-j9ples3e': [Y + 'xpUh21LdPuI/hqdefault.jpg', '50% 50%'],
-    'img-comp-mqhqa73t2__item-j9plerjk': [Y + 'Mri6_BCaUpk/hqdefault.jpg', '22% 50%'],
-    'img-comp-mqi6gg5o2__item1': [Y + 'irbvn45c7wU/hqdefault.jpg', '50% 50%'],
-    'img-comp-mqi6gg5o2__item-j9ples3e': [Y + 'hzZemQVdTJw/hqdefault.jpg', '50% 50%'],
-    'img-comp-mqi6gg5o2__item-j9plerjk': [Y + 'Mri6_BCaUpk/hqdefault.jpg', '22% 50%']
+    'img-comp-mqhqa73t2__item1': [Y + 'rjfxLq3OQ0w/maxresdefault.jpg', '50% 50%'],
+    'img-comp-mqhqa73t2__item-j9ples3e': [Y + 'xpUh21LdPuI/maxresdefault.jpg', '50% 50%'],
+    'img-comp-mqhqa73t2__item-j9plerjk': [Y + 'Mri6_BCaUpk/maxresdefault.jpg', '22% 50%'],
+    'img-comp-mqi6gg5o2__item1': [Y + 'irbvn45c7wU/maxresdefault.jpg', '50% 50%'],
+    'img-comp-mqi6gg5o2__item-j9ples3e': [Y + 'hzZemQVdTJw/maxresdefault.jpg', '50% 50%'],
+    'img-comp-mqi6gg5o2__item-j9plerjk': ['https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/a2/02/eb/a202eb0e-9f54-ae1f-ff42-52e2221e25bd/840214416545.png/600x600bb.jpg', '50% 50%']
   };
   var VIDEO_BOX = 'comp-mqji4hyt';
   var EMBED = 'https://www.youtube-nocookie.com/embed/fOQ_4x9Gmok?rel=0&playsinline=1';

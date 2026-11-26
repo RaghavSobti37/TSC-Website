@@ -2496,7 +2496,7 @@
       if (/engagement/i.test(labelText)) {
         optionsList = ['Live Performance', 'Brand Collaboration', 'Social Media Content', 'Music Production / Feature', 'Other'];
       } else if (/talent|artist/i.test(labelText)) {
-        optionsList = ['Harshad and Duhita Golesar', 'YUGM', 'Open to Recommendations'];
+        optionsList = ['YUGM', 'Sadhu Tiwari', 'Open to Recommendations'];
       } else if (/logistics/i.test(labelText)) {
         optionsList = ['Yes - Full Travel & Stay', 'Partially Provided', 'To be Negotiated', 'Not Provided'];
       } else if (/collaboration/i.test(labelText)) {
@@ -5216,6 +5216,36 @@
     });
   }
 
+  /* /artists hero "Explore Artists": Wix's anchor target is missing from the
+     mirror, so the button did nothing. Scroll to the Meet Our Artists section. */
+  function scrollToArtistsRoster() {
+    var target = document.getElementById('comp-mqtnpars');
+    if (!target) return false;
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    target.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+    return true;
+  }
+
+  function mountArtistsExploreButton(path) {
+    if (path !== '/artists') return;
+    var link = document.querySelector('#comp-mquvv9nj a');
+    if (link && link.getAttribute('href') !== '/artists#meet-our-artists') {
+      link.removeAttribute('data-anchor');
+      link.setAttribute('href', '/artists#meet-our-artists');
+    }
+    if (document.documentElement.getAttribute('data-tsc-explore') === 'true') return;
+    document.documentElement.setAttribute('data-tsc-explore', 'true');
+    // One capture-phase listener survives Wix re-rendering the button.
+    document.addEventListener('click', function (event) {
+      if (!event.target.closest || !event.target.closest('#comp-mquvv9nj')) return;
+      if (scrollToArtistsRoster()) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
+    }, true);
+    if (window.location.hash === '#meet-our-artists') scrollToArtistsRoster();
+  }
+
   function bootUi() {
     if (redirectLegacyLearnHub()) return;
     var path = canonicalPathname();
@@ -5410,10 +5440,24 @@
     watchLinkNormalization();
     ensureSadhuRosterCard();
     repairDeadLinkButtons(path);
+    mountArtistsExploreButton(path);
+    if (path === '/artists' && window.MutationObserver) {
+      // Wix re-renders the roster when it scrolls into view, dropping the added card.
+      var rosterQueued = false;
+      new MutationObserver(function () {
+        if (rosterQueued) return;
+        rosterQueued = true;
+        window.requestAnimationFrame(function () {
+          rosterQueued = false;
+          ensureSadhuRosterCard();
+        });
+      }).observe(document.body, { childList: true, subtree: true });
+    }
     [0, 400, 1500, 3000, 6000].forEach(function (delay) {
       window.setTimeout(function () {
         ensureSadhuRosterCard();
         repairDeadLinkButtons(path);
+        mountArtistsExploreButton(path);
       }, delay);
     });
     [400, 1500, 3000].forEach(function (delay) {

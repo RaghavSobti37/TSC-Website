@@ -3479,3 +3479,9 @@ body.tsc-has-mobile-footer footer section.wixui-footer,
     transform: rotate(360deg);
   }
 }
+
+/* /artist-path FAQ: Wix gives the accordion a fixed 1007px width, so between
+   phone and wide desktop it ran off both edges of the screen. */
+#comp-mqruqvzx {
+  max-width: 100% !important;
+}

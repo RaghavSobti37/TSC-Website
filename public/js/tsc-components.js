@@ -5093,7 +5093,7 @@
 
   /* Critical desktop nav lock BEFORE any header mount (stops size/colour flash). */
   ensureStylesheet('/css/tsc-nav-overrides.css?v=nav-restore-links-1');
-  ensureStylesheet('/css/tsc-responsive.css?v=yugm-hero-exact-1');
+  ensureStylesheet('/css/tsc-responsive.css?v=faq-fit-1');
   ensureStylesheet('/css/pages/yugm-fixes.css?v=yugm-hero-exact-1');
   ensureStylesheet('/css/tsc-desktop-nav-lock.css?v=nav-lock-noop-1');
   ensureStylesheet('/css/tsc-brand-card.css');
@@ -5141,7 +5141,15 @@
       img.setAttribute('alt', 'Sadhu Tiwari performing live');
       img.style.objectPosition = '22% 40%';
       var wow = img.closest('wow-image');
-      if (wow) wow.removeAttribute('data-image-info');
+      if (wow) {
+        var imageShell = document.createElement('div');
+        imageShell.id = wow.id;
+        imageShell.className = wow.className;
+        imageShell.setAttribute('data-motion-part', wow.getAttribute('data-motion-part') || '');
+        var picture = wow.querySelector('picture');
+        if (picture) imageShell.appendChild(picture);
+        wow.replaceWith(imageShell);
+      }
     }
     source.parentNode.insertBefore(card, source.nextSibling);
     // Wix slides YUGM's text panel up on hover by adding a variant class from its own
@@ -5216,34 +5224,120 @@
     });
   }
 
-  /* /artists hero "Explore Artists": Wix's anchor target is missing from the
-     mirror, so the button did nothing. Scroll to the Meet Our Artists section. */
-  function scrollToArtistsRoster() {
-    var target = document.getElementById('comp-mqtnpars');
-    if (!target) return false;
+  /* In-page buttons whose Wix anchor target is missing from the mirror: they
+     did nothing, or (Explore Music on the artist templates) opened another
+     artist's page. Each trigger scrolls to its section; /page#hash links land there too. */
+  var ARTIST_DISCOGRAPHY = [{ hash: 'discography', target: 'comp-mqhqa736', triggers: ['#comp-mqhqa6yh'] }];
+  var LEGACY_ARTIST_DISCOGRAPHY = [{ hash: 'discography', target: 'comp-mq7yt1kx', triggers: ['#comp-mq7limoj', '#comp-mqfgsqei'] }];
+  var SECTION_LINKS = {
+    '/artists': [{ hash: 'meet-our-artists', target: 'comp-mqtnpars', triggers: ['#comp-mquvv9nj'] }],
+    '/yugm': ARTIST_DISCOGRAPHY,
+    '/sadhu-tiwari': ARTIST_DISCOGRAPHY,
+    '/harshad-duhita': LEGACY_ARTIST_DISCOGRAPHY,
+    '/mohit-shankar': LEGACY_ARTIST_DISCOGRAPHY,
+    // Hero "Explore Courses" pointed at /academy itself (a reload). The header's
+    // #courses / #testimonials links are handled by wireAcademyHashNavGuard.
+    '/academy': [{ hash: 'courses', target: 'comp-mpjvjuos', triggers: ['#comp-mqwe17k6'] }]
+  };
+
+  function scrollToSection(id) {
+    var el = document.getElementById(id);
+    if (!el) return false;
+    var target = el.closest('section') || el;
     var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     target.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
     return true;
   }
 
-  function mountArtistsExploreButton(path) {
-    if (path !== '/artists') return;
-    var link = document.querySelector('#comp-mquvv9nj a');
-    if (link && link.getAttribute('href') !== '/artists#meet-our-artists') {
-      link.removeAttribute('data-anchor');
-      link.setAttribute('href', '/artists#meet-our-artists');
-    }
-    if (document.documentElement.getAttribute('data-tsc-explore') === 'true') return;
-    document.documentElement.setAttribute('data-tsc-explore', 'true');
-    // One capture-phase listener survives Wix re-rendering the button.
+  function mountSectionLinks(path) {
+    var defs = SECTION_LINKS[path];
+    if (!defs) return;
+    defs.forEach(function (def) {
+      def.triggers.forEach(function (selector) {
+        var links = selector.charAt(0) === '#' ? document.querySelectorAll(selector + ' a, a' + selector) : document.querySelectorAll(selector);
+        Array.prototype.forEach.call(links, function (link) {
+          var href = path + '#' + def.hash;
+          if (link.getAttribute('href') === href) return;
+          link.removeAttribute('data-anchor');
+          link.setAttribute('href', href);
+          link.setAttribute('target', '_self');
+        });
+      });
+    });
+    if (document.documentElement.getAttribute('data-tsc-section-links') === 'true') return;
+    document.documentElement.setAttribute('data-tsc-section-links', 'true');
+    // One capture-phase listener survives Wix re-rendering the buttons.
     document.addEventListener('click', function (event) {
-      if (!event.target.closest || !event.target.closest('#comp-mquvv9nj')) return;
-      if (scrollToArtistsRoster()) {
-        event.preventDefault();
-        event.stopPropagation();
+      if (!event.target.closest) return;
+      for (var i = 0; i < defs.length; i++) {
+        if (!event.target.closest(defs[i].triggers.join(', '))) continue;
+        if (scrollToSection(defs[i].target)) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        return;
       }
     }, true);
-    if (window.location.hash === '#meet-our-artists') scrollToArtistsRoster();
+    var landing = defs.filter(function (def) { return window.location.hash === '#' + def.hash; })[0];
+    if (landing) window.setTimeout(function () { scrollToSection(landing.target); }, 800);
+  }
+
+  /* /resources "Get Resource" buttons: Wix bound them to its CMS through Velo code
+     that never runs on this mirror, so they did nothing. Each repeater item's id
+     ends in its record id; the records (with their link) ship in #wix-warmup-data. */
+  var RESOURCE_BUTTON_SELECTOR = '[id*="__"][role="button"], [id*="__"][data-tsc-resource]';
+  var resourceLinks = null;
+
+  function readResourceLinks() {
+    if (resourceLinks) return resourceLinks;
+    resourceLinks = {};
+    var node = document.getElementById('wix-warmup-data');
+    if (!node) return resourceLinks;
+    try {
+      (function walk(value, depth) {
+        if (!value || typeof value !== 'object' || depth > 12) return;
+        if (value.recordsByCollectionId) {
+          Object.keys(value.recordsByCollectionId).forEach(function (collection) {
+            var records = value.recordsByCollectionId[collection] || {};
+            Object.keys(records).forEach(function (id) {
+              var link = records[id] && records[id].link;
+              if (typeof link === 'string' && /^https?:\/\/[^/\s]+\.[^/\s]+/i.test(link)) resourceLinks[id] = link;
+            });
+          });
+          return;
+        }
+        Object.keys(value).forEach(function (key) { walk(value[key], depth + 1); });
+      })(JSON.parse(node.textContent || '{}'), 0);
+    } catch (e) {}
+    return resourceLinks;
+  }
+
+  function resourceLinkFor(control) {
+    var id = control && control.id ? control.id.split('__')[1] : '';
+    return id ? readResourceLinks()[id] || '' : '';
+  }
+
+  function mountResourceButtons(path) {
+    if (path !== '/resources') return;
+    Array.prototype.forEach.call(document.querySelectorAll(RESOURCE_BUTTON_SELECTOR), function (control) {
+      if (!resourceLinkFor(control)) return;
+      control.setAttribute('data-tsc-resource', 'true');
+      control.setAttribute('role', 'link');
+      control.style.cursor = 'pointer';
+    });
+    if (document.documentElement.getAttribute('data-tsc-resource-buttons') === 'true') return;
+    document.documentElement.setAttribute('data-tsc-resource-buttons', 'true');
+    function open(event) {
+      if (event.type === 'keydown' && event.key !== 'Enter' && event.key !== ' ') return;
+      var control = event.target.closest ? event.target.closest(RESOURCE_BUTTON_SELECTOR) : null;
+      var link = resourceLinkFor(control);
+      if (!link) return;
+      event.preventDefault();
+      event.stopPropagation();
+      window.open(link, '_blank', 'noopener,noreferrer');
+    }
+    document.addEventListener('click', open, true);
+    document.addEventListener('keydown', open, true);
   }
 
   function bootUi() {
@@ -5440,7 +5534,8 @@
     watchLinkNormalization();
     ensureSadhuRosterCard();
     repairDeadLinkButtons(path);
-    mountArtistsExploreButton(path);
+    mountSectionLinks(path);
+    mountResourceButtons(path);
     if (path === '/artists' && window.MutationObserver) {
       // Wix re-renders the roster when it scrolls into view, dropping the added card.
       var rosterQueued = false;
@@ -5457,7 +5552,8 @@
       window.setTimeout(function () {
         ensureSadhuRosterCard();
         repairDeadLinkButtons(path);
-        mountArtistsExploreButton(path);
+        mountSectionLinks(path);
+        mountResourceButtons(path);
       }, delay);
     });
     [400, 1500, 3000].forEach(function (delay) {

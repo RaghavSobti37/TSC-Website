@@ -43,6 +43,11 @@ window.__pageRevealPromise && window.__pageRevealPromise.then(function() {
       p.textContent = /^comp-mqpa7920__/.test(node.id) ? 'Dates TBA' : copy;
       p.classList.add('tsc-coming-soon-badge');
     });
+    // FAQ answer read "Registrations are open until Coming soon. The program begins on Coming soon."
+    var faq = document.getElementById('comp-mqruqw0l');
+    if (faq && /coming soon/i.test(faq.textContent || '')) {
+      (faq.querySelector('p') || faq).textContent = 'Dates for the next cohort will be announced soon. Registrations reopen then.';
+    }
   }
 
   function isMobileViewport() {
@@ -135,4 +140,13 @@ window.__pageRevealPromise && window.__pageRevealPromise.then(function() {
   else boot();
   window.addEventListener('load', boot);
   [400, 1200, 2500].forEach(function(d) { setTimeout(boot, d); });
+  // The FAQ renders only when scrolled into view, after the timers above.
+  if (window.MutationObserver) {
+    var queued = false;
+    new MutationObserver(function() {
+      if (queued) return;
+      queued = true;
+      requestAnimationFrame(function() { queued = false; upgradeComingSoon(); });
+    }).observe(document.documentElement, { childList: true, subtree: true });
+  }
 })();
